@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status__c</fullName>
+    <label>Status</label>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>New</fullName>
+                <default>true</default>
+                <label>New</label>
+            </value>
+            <value>
+                <fullName>In progress</fullName>
+                <default>false</default>
+                <label>In progress</label>
+            </value>
+            <value>
+                <fullName>Test Value</fullName>
+                <default>false</default>
+                <label>Test Value</label>
+            </value>
+            <value>
+                <fullName>Referred to Requester</fullName>
+                <default>false</default>
+                <label>Referred to Requester</label>
+            </value>
+            <value>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+                <label>On Hold</label>
+            </value>
+            <value>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+                <label>Rejected</label>
+            </value>
+            <value>
+                <fullName>Closed</fullName>
+                <default>false</default>
+                <label>Closed</label>
+            </value>
+            <value>
+                <fullName>Backlog</fullName>
+                <default>false</default>
+                <label>Backlog</label>
+            </value>
+            <value>
+                <fullName>Assessment</fullName>
+                <default>false</default>
+                <label>Assessment</label>
+            </value>
+            <value>
+                <fullName>Under Development</fullName>
+                <default>false</default>
+                <label>Under Development</label>
+            </value>
+            <value>
+                <fullName>Testing</fullName>
+                <default>false</default>
+                <label>Testing</label>
+            </value>
+            <value>
+                <fullName>Delivered</fullName>
+                <default>false</default>
+                <label>Delivered</label>
+            </value>
+            <value>
+                <fullName>Delta Freeze</fullName>
+                <default>false</default>
+                <label>Delta Freeze</label>
+            </value>
+            <value>
+                <fullName>Pending Internal Information</fullName>
+                <default>false</default>
+                <label>Pending Internal Information</label>
+            </value>
+            <value>
+                <fullName>Pending Team Resource</fullName>
+                <default>false</default>
+                <label>Pending Team Resource</label>
+            </value>
+            <value>
+                <fullName>Completed</fullName>
+                <default>false</default>
+                <label>Completed</label>
+            </value>
+            <value>
+                <fullName>Rejected - other</fullName>
+                <default>false</default>
+                <label>Rejected - other</label>
+            </value>
+            <value>
+                <fullName>Rejected - request inaccurate</fullName>
+                <default>false</default>
+                <label>Rejected - request inaccurate</label>
+            </value>
+            <value>
+                <fullName>Rejected - already exists</fullName>
+                <default>false</default>
+                <label>Rejected - already exists</label>
+            </value>
+            <value>
+                <fullName>Rejected - duplicate</fullName>
+                <default>false</default>
+                <label>Rejected - duplicate</label>
+            </value>
+            <value>
+                <fullName>Rejected - inaccurate</fullName>
+                <default>false</default>
+                <label>Rejected - inaccurate</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
