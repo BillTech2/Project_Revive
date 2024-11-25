@@ -1,0 +1,17 @@
+a {
+    display: block;
+    padding: 0 0.5rem;
+    color: #1C1C1A;
+    font-family: 'ABCSocial-Regular';
+    text-decoration: none;
+    transition: color .1s linear;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 350px;
+}
+
+a:hover {
+    color:#1c4094;
+    text-decoration: none;
+}

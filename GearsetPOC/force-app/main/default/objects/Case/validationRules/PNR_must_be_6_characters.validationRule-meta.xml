@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PNR_must_be_6_characters</fullName>
+    <active>true</active>
+    <description>Length should not be greater than 6</description>
+    <errorConditionFormula>AND(NOT($Setup.Escape_Validation_Rules_GDPR__c.Escape_Validation_Rule_Checkbox__c),(
+
+NOT(
+ISBLANK(PNR__c)||  
+REGEX(PNR__c , &quot;[a-zA-Z0-9]{6}&quot;)
+)
+
+))</errorConditionFormula>
+    <errorDisplayField>PNR__c</errorDisplayField>
+    <errorMessage>PNR must be 6 characters long (one PNR only).</errorMessage>
+</ValidationRule>

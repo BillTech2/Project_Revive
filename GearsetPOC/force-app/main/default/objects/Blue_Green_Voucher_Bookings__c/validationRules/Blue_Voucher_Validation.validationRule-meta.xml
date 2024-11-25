@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Blue_Voucher_Validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISPICKVAL(Ticket__c,&quot;Blue Voucher&quot;)
+&amp;&amp;
+ISBLANK( Total_Number_of_Vouchers_Used__c )</errorConditionFormula>
+    <errorDisplayField>Ticket__c</errorDisplayField>
+    <errorMessage>Please enter the amount of old or new vouchers that have been used</errorMessage>
+</ValidationRule>

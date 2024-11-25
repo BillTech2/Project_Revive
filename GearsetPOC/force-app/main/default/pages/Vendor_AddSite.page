@@ -1,0 +1,400 @@
+<apex:page sidebar="false"  standardStyleSheets="false" controller="Vendor_AddSiteController"   docType="html-5.0">
+   <style type="text/css">
+      .detailList {
+      table-layout: fixed;
+      }
+      .labelCol {
+      text-align: right!important;
+      width: 30% !important;
+      max-width: 30% !important;
+      font-weight: normal !important;
+      }       
+      .accordionPanel .ui-accordion .ui-accordion-content{padding:0 0 ;border:0}
+      .odd {background-color: #FCF7F7;}
+      .even {background-color: #E3DCDB;}
+      
+      .headerStyle {
+           font-family: "Calibri", Georgia, Serif;
+           font-size:15px;
+           color:white;
+           background-color:#1975A3;
+       }
+   </style>
+   <apex:form id="form" >
+      <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+      <script type="text/javascript">
+         function clearValue()
+            {
+                alert( "entered function");
+            document.getElementById('{!$Component.form.Block1.Section2.item2_1.prevcompnoVal}').value = '';
+            
+           
+            alert();
+                return false;
+            }
+         function getRemoteSuppliers() 
+         {
+         alert( "entered function");
+        // var isNewOrEdit = document.getElementById('{!$Component.form.Block1.Section1.item1_1.newOrEditSupplier}').value;
+    //    if (isNewOrEdit == 'Yes'){
+      //     if (this.value == 'Yes'){
+      //      alert('Yes');
+      //      document.getElementById('{!$Component.form.Block1.Section2.item2_2.extsupLbl}').style.display = "block";
+      //      document.getElementById('{!$Component.form.Block1.Section2.item2_2.extsupVal}').style.display = "block";          
+       //     document.getElementById('{!$Component.form.Block1.Section3.item3_2.effdateLbl}').style.display = "block";  
+       //     document.getElementById('{!$Component.form.Block1.Section3.item3_2.effdateVal}').style.display = "block";  
+       //     document.getElementById('{!$Component.form.Block1.Section3.item3_1.supVal}').style.display = "block"; 
+                  
+       //     }
+       //     else {
+          
+       //        document.getElementById('{!$Component.form.Block1.Section2.item2_2.extsupLbl}').style.display = "none";           
+       //        document.getElementById ('{!$Component.form.Block1.Section2.item2_2.extsupVal}').style.display = "none";
+       //        document.getElementById('{!$Component.form.Block1.Section3.item3_2.effdateLbl}').style.display = "none";
+       //        document.getElementById('{!$Component.form.Block1.Section3.item3_2.effdateVal}').style.display= "none";
+       //        document.getElementById('{!$Component.form.Block1.Section3.item3_1.supVal}').style.display = "block";
+         
+        //    }*/
+        // }
+        }
+         
+         function getApprcontrctFields (id){
+         var isAppr = document.getElementById(id).value;  
+         if (isAppr == '0'){
+            document.getElementById('{!$Component.form.Block1.Section6.item6_1.contrefnoLbl}').style.display = "block";   
+            document.getElementById('{!$Component..form.Block1.Section6.item6_1.contrefnoVal}').style.display = "block";
+         
+         } else if (isAppr == '1'){
+          document.getElementById('{!$Component.form.Block1.Section6.item6_1.contrefnoLbl}').style.display = "block";   
+            document.getElementById('{!$Component.form.Block1.Section6.item6_1.contrefnoVal}').style.display = "block";
+         } else if (isAppr == '2'){
+            document.getElementById('{!$Component.form.Block1.Section6.item6_1.contrefnoLbl}').style.display = "block";   
+            document.getElementById('{!$Component.form.Block1.Section6.item6_1.contrefnoVal}').style.display = "block";
+         }
+         
+         
+         function getRequiredFields(id){
+         var isVAT = document.getElementById(id).value;  
+         if (isVAT == '1'){
+            document.getElementById('{!$Component.form.vatexempt}').style.display = "none";
+            document.getElementById('{!$Component.form.vatexemptLbl}').style.display = "none";
+         } else if (isVAT == '2'){
+            
+            document.getElementById('{!$Component.formVATExemptReason}').style.display = "none";
+            document.getElementById('{!$Component.form.vatexemptLbl}').style.display = "none";
+         } else if (isVAT == '0'){
+          
+            document.getElementById('{!$Component.form.vatexempt}').style.display = "block";
+            document.getElementById('{!$Component.form.vatexemptLbl}').style.display = "block";
+         }
+         }
+      </script>
+      <html>
+         <head>
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+            <title>EUROSTAR</title>
+            <apex:stylesheet value="{!URLFOR($Resource.customCSS, 'customCSS/css/jquery-ui.css')}"/>
+            <apex:stylesheet value="{!URLFOR($Resource.customCSS, 'customCSS/css/reset.css')}"/>
+            <apex:stylesheet value="{!URLFOR($Resource.customCSS, 'customCSS/css/style.css')}"/>
+         </head>
+         <body>
+            <div class="container">
+               <div class="mid-panel">
+                  <div class="bread-crums"><a href="#">Site Management</a> <i>&gt;</i> <a href="#" class="underline">Add Site</a></div>
+                  <div class="form-panel">
+                     <dl>
+                        <apex:pageMessages />
+                     </dl>
+                     <div class="accordionPanel row margin-top0">
+                        <div id="accordion" class="ui-accordion ui-widget ui-helper-reset">
+                           <h3 class="ui-accordion-header ui-helper-reset ui-state-default ui-accordion-icons ui-corner-top ui-accordion-header-active ui-state-active">
+                              <span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-s"></span>
+                              General Details
+                           </h3>
+                           <div class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom ui-accordion-content-active">
+                            
+                                 <apex:pageBlock id="Block1">
+                                    
+                                    <apex:pageBlockSection id="Section1" columns="2">
+                                       <apex:pageBlockSectionItem id="item1_1"  helpText="Supplier Name">
+                                          <apex:outputLabel value="Supplier Name* " id="supLbl" />
+                                          <apex:inputField value="{!Request.suppname__c}"  id="supVal" style="width:200px"/>
+                                       </apex:pageBlockSectionItem>
+                                       <apex:pageBlockSectionItem id="item1_2" helpText="Site Name">
+                                          <apex:outputLabel value="Site Name* " id="sitenameLbl" />
+                                          <apex:inputField value="{!Request.sitename__c}" id="sitenameVal"  style="width:200px"/>
+                                       </apex:pageBlockSectionItem>
+                                    </apex:pageBlockSection>
+                                    <apex:pageBlockSection id="Section2" columns="2">
+                                       <apex:pageBlockSectionItem id="item2_1" helpText="Site Address" >
+                                          <apex:outputLabel value="Site Address*" id="siteaddrLbl" />
+                                          <apex:inputField value="{!Request.siteaddress__c
+                                             }"  id="siteaddrVal" style="width:200px"/>
+                                       </apex:pageBlockSectionItem>
+                                        <apex:pageBlockSectionItem id="item7_1" helpText="category">
+                                          <apex:outputLabel value="Category* " id="categoryLbl" />
+                                          <apex:selectList size="1" id="category" value="{!categoryCode}">
+                                             <apex:selectOptions value="{!CategoryOptions}" />
+                                          </apex:selectList>
+                                       </apex:pageBlockSectionItem>
+                                       
+                                         </apex:pageBlockSection>
+                                       <div style="background-color:#E0E0E0">
+                                            <apex:pageBlockSection id="Section10_1" columns="2">
+                                                <apex:pageBlockSectionItem id="item10_1" helpText="This is the location where the goods/services are to be delivered to">
+                                                    <apex:outputLabel value="Supplier Correspondence Address Line1* " id="corradd1Lbl" />
+                                                    <apex:inputField value="{!Request.coraddress1__c}" id="corradd1Val" style="width:250px" />
+                                                </apex:pageBlockSectionItem>
+                                                  <apex:pageBlockSectionItem id="item10_7" >
+                                                    <apex:outputLabel value="State " id="corrstateLbl" />
+                                                    <apex:inputField value="{!Request.corstate__c}" id="corrstateVal" style="width:150px" />
+                                                </apex:pageBlockSectionItem>
+                                                
+                                                 </apex:pageBlockSection>
+                                                 <apex:pageBlockSection id="Section10_2" columns="2">
+                                                  <apex:pageBlockSectionItem id="item10_2" >
+                                                    <apex:outputLabel value="Address Line2 " id="corradd2Lbl" />
+                                                    <apex:inputField value="{!Request.coraddress2__c}" id="corradd2Val" style="width:250px" />
+                                                </apex:pageBlockSectionItem>
+                                                  <apex:pageBlockSectionItem id="item10_8" >
+                                                    <apex:outputLabel value="Province" id="corrprovinceLbl" />
+                                                    <apex:inputField value="{!Request.corprovince__c}" id="corrprovinceVal" style="width:150px" />
+                                                </apex:pageBlockSectionItem>
+                                                
+                                                <apex:pageBlockSectionItem id="item10_3" >
+                                                    <apex:outputLabel value="Address Line3 " id="corradd3Lbl" />
+                                                    <apex:inputField value="{!Request.coraddress3__c}" id="corradd3Val" style="width:250px" />
+                                                </apex:pageBlockSectionItem>
+                                                 <apex:pageBlockSectionItem id="item10_9" >
+                                                    <apex:outputLabel value="Postal Code* " id="corrzipLbl" />
+                                                    <apex:inputField value="{!Request.corrzipcode__c}" id="corrzipVal" style="width:150px" />
+                                                </apex:pageBlockSectionItem>
+                                                                                         
+                                                 </apex:pageBlockSection>
+                                                  <apex:pageBlockSection id="Section10_3" columns="2">
+                                                    <apex:pageBlockSectionItem id="item10_4" >
+                                                    <apex:outputLabel value=" Address Line4" id="corradd3Lbl" />
+                                                    <apex:inputField value="{!Request.coraddress4__c}" id="corradd4Val" style="width:250px" />
+                                                </apex:pageBlockSectionItem>
+                                                      <apex:pageBlockSectionItem id="item10_10" helpText="Supplier Correspondence Phone. Only numbers are allowed, space or any other characters are allowed">
+                                                    <apex:outputLabel value=" Phone * " id="corrphLbl" />
+                                                    <apex:inputField value="{!Request.corphone__c}" id="corrphVal" style="width:150px" />
+                                                </apex:pageBlockSectionItem>  
+                                                   </apex:pageBlockSection>
+                                                   <apex:pageBlockSection id="Section10_4" columns="2">
+                                                <apex:pageBlockSectionItem id="item10_5" >
+                                                    <apex:outputLabel value=" City*" id="corrcityLbl" />
+                                                    <apex:inputField value="{!Request.corcity__c}" id="corrcityVal" style="width:250px" />
+                                                </apex:pageBlockSectionItem>
+                                                <apex:pageBlockSectionItem id="item11_1" helpText="Supplier Correspondence Fax. Only numbers are allowed, space or any other characters are allowed">
+                                                    <apex:outputLabel value="  Fax" id="corrfaxLbl" />
+                                                    <apex:inputField value="{!Request.corfax__c}" id="corrfaxVal" style="width:150px" />
+                                                </apex:pageBlockSectionItem>                                                     
+                                                 </apex:pageBlockSection>
+                                                   <apex:pageBlockSection id="Section10_5" columns="2">
+                                                 <apex:pageBlockSectionItem id="item10_6" >
+                                                    <apex:outputLabel value="County" id="corrcountyLbl" />
+                                                    <apex:inputField value="{!Request.corcounty__c}" id="corrcountyVal" style="width:250px" />
+                                                </apex:pageBlockSectionItem>  
+                                                                                            
+                                            </apex:pageBlockSection>
+                                        </div>  
+                                    <apex:pageBlockSection id="Section12" columns="1">
+                                       <apex:pageBlockSectionItem id="item12_1"  helpText="Bill-To Address if different from Ship-to Address">
+                                          <apex:outputLabel value="A different Bill-To Address" id="payaddrchkLbl" style="width:400px;"/>
+                                            <apex:actionRegion >
+                                          <apex:inputcheckbox value="{!chkBx}" label="payaddrchkVal">   
+                                         <apex:actionSupport event="onclick" action="{!click}"/>   
+                                         </apex:inputcheckbox>
+                                       </apex:actionRegion>
+                                       </apex:pageBlockSectionItem>
+                                    </apex:pageBlockSection>
+                                    <div>
+                                  <div style="background-color:#E0E0E0">
+                                                    <apex:pageBlockSection id="Section13_1" columns="2" rendered="{!displayInputputText}">
+                                                        <apex:pageBlockSectionItem id="item13_1">
+                                                            <apex:outputLabel value="Remittance Address Line1*" id="payadd1Lbl" />
+                                                            <apex:inputField value="{!Request.payaddress1__c}" id="payadd1Val"  style="width:250px" />
+                                                        </apex:pageBlockSectionItem>
+                                                            <apex:pageBlockSectionItem id="item13_7">
+                                                            <apex:outputLabel value="State" id="paystateLbl" />
+                                                            <apex:inputField value="{!Request.paystate__c}" id="paystateVal" style="width:150px"  />
+                                                        </apex:pageBlockSectionItem>
+                                                          
+                                                           </apex:pageBlockSection>
+                                                           <apex:pageBlockSection id="Section13_2" columns="2" rendered="{!displayInputputText}">
+                                                           <apex:pageBlockSectionItem id="item13_2">
+                                                            <apex:outputLabel value="Address Line2" id="payadd2Lbl" />
+                                                            <apex:inputField value="{!Request.payaddress2__c}" id="payadd2Val" style="width:250px" />
+                                                        </apex:pageBlockSectionItem>
+                                                           <apex:pageBlockSectionItem id="item13_8">
+                                                            <apex:outputLabel value="Province" id="payprovinceLbl" />
+                                                            <apex:inputField value="{!Request.payprovince__c}" id="payprovinceVal" style="width:150px" />
+                                                        </apex:pageBlockSectionItem>
+                                                          </apex:pageBlockSection>
+                                                           <apex:pageBlockSection id="Section13_3" columns="2" rendered="{!displayInputputText}">
+                                                        <apex:pageBlockSectionItem id="item13_3" >
+                                                            <apex:outputLabel value="Address Line3" id="payadd3Lbl" />
+                                                            <apex:inputField value="{!Request.payaddress3__c}" id="payadd3Val" style="width:250px" />
+                                                        </apex:pageBlockSectionItem>
+                                                          <apex:pageBlockSectionItem id="item13_9">
+                                                            <apex:outputLabel value=" Postal Code*" id="payzipLbl" />
+                                                            <apex:inputField value="{!Request.payzipcode__c}" id="payzipVal" style="width:150px" />
+                                                        </apex:pageBlockSectionItem>
+                                                           </apex:pageBlockSection>
+                                                               <apex:pageBlockSection id="Section13_4" columns="2" rendered="{!displayInputputText}">
+                                                          <apex:pageBlockSectionItem id="item13_4">
+                                                            <apex:outputLabel value="Address Line4" id="payadd4Lbl" />
+                                                            <apex:inputField value="{!Request.payaddress4__c}" id="payadd4Val" style="width:250px" />
+                                                        </apex:pageBlockSectionItem>
+                                                           <apex:pageBlockSectionItem id="item13_10">
+                                                            <apex:outputLabel value="Phone*" id="payphLbl" />
+                                                            <apex:inputField value="{!Request.payphone__c}" id="payphVal" style="width:150px" />
+                                                          </apex:pageBlockSectionItem>
+                                                         </apex:pageBlockSection>
+                                                         <apex:pageBlockSection id="Section13_5" columns="2" rendered="{!displayInputputText}">
+                                                        <apex:pageBlockSectionItem id="item13_5" >
+                                                            <apex:outputLabel value="City*" id="paycityLbl" />
+                                                            <apex:inputField value="{!Request.paycity__c}" id="paycityVal" />
+                                                        </apex:pageBlockSectionItem>
+                                                             <apex:pageBlockSectionItem id="item13_11">
+                                                            <apex:outputLabel value="Fax" id="payfaxLbl" />
+                                                            <apex:inputField value="{!Request.payfax__c}" id="payfaxVal" style="width:150px" />
+                                                        </apex:pageBlockSectionItem>
+                                                          </apex:pageBlockSection>
+                                                           <apex:pageBlockSection id="Section13_6" columns="2" rendered="{!displayInputputText}"> 
+                                                          <apex:pageBlockSectionItem id="item13_6">
+                                                            <apex:outputLabel value=" County" id="paycountyLbl" />
+                                                            <apex:inputField value="{!Request.paycounty__c}" id="paycountyVal" />
+                                                        </apex:pageBlockSectionItem>
+                                                            </apex:pageBlockSection>                              
+                                               </div>
+                                    </div>
+                                    
+                                    <apex:pageBlockSection id="Section14" columns="2">
+                                            <apex:pageBlockSectionItem id="item11_2" helpText="Country">
+                                                    <apex:outputLabel value="Country* " id="countryLbl" />
+                                                    <apex:actionRegion >
+                                                        <apex:selectList size="1" id="Country" value="{!countryCode}">
+                                                            <!-- <apex:actionSupport event="onselect" action="{!vatcountry}" /> -->
+                                                            <apex:selectOptions value="{!CountryOptions}" />
+                                                        </apex:selectList>
+                                                    </apex:actionRegion>
+                                                </apex:pageBlockSectionItem>
+                                                 <apex:pageBlockSectionItem id="item14_1" helpText="Payment Currency">
+                                                    <apex:outputLabel value="Payment Currency* " id="paycurrLbl" />
+                                                    <apex:selectList size="1" id="paycurr" style="width:200px" value="{!currencyCode}">
+                                                        <apex:selectOptions value="{!CurrencyOptions}" />
+                                                    </apex:selectList>
+                                                </apex:pageBlockSectionItem>   
+                                                
+                                            </apex:pageBlockSection>
+                                            <apex:pageBlockSection id="Section15_1" columns="2">
+                                            <apex:pageBlockSectionItem id="item14_2" helpText="If EIL doesnâ??t have any account manager, please provide the name of the main person you have been in contact with to set up the supplier">
+                                                    <apex:outputLabel value="Supplier Account Manager Contact* " id="contnameLbl" />
+                                                    <apex:inputField value="{!Request.contactname__c}" id="contnameVal" style="width:200px" />
+                                                </apex:pageBlockSectionItem>
+                                            
+                                            <apex:pageBlockSectionItem id="item15_1" helpText="please provide the email address of the main person you have been in contact with to set up the supplier">
+                                                    <apex:outputLabel value="Supplier Account Manager Email Address* " id="contactemailLbl" />
+                                                    <apex:inputField value="{!Request.contactemail__c}" id="contactemailVal" style="width:200px" />
+                                                </apex:pageBlockSectionItem>
+                                                
+                                                 </apex:pageBlockSection>
+
+                                                <apex:pageBlockSection id="Section15_2" columns="2">  
+                                            <apex:pageBlockSectionItem id="item15_2" helpText="Email Address for Purchase Order">
+                                                    <apex:outputLabel value="Email for Purchase Order " id="puremailLbl" />
+                                                    <apex:inputField value="{!Request.purchemail__c}" id="puremailVal" style="width:200px" />
+                                                </apex:pageBlockSectionItem>                                                
+                                               <apex:pageBlockSectionItem id="item15_3" helpText="Email Address for Remittance">
+                                                    <apex:outputLabel value="Email for Remittance " id="remitemailLbl" />
+                                                    <apex:inputField id="remitemailVal" value="{!Request.remitemail__c}" style="width:200px" />
+                                                </apex:pageBlockSectionItem>
+                                            </apex:pageBlockSection>
+                                     </apex:pageBlock>
+                                        
+                           </div>
+                         
+                           <h3 class="ui-accordion-header ui-helper-reset ui-state-default ui-accordion-icons ui-corner-top ui-accordion-header-active ui-state-active">
+                              <span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-s"></span>
+                              Vendor Bank Details
+                           </h3>
+                           <div class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom ui-accordion-content-active">
+                            
+                                 <apex:pageBlock id="Block4">
+                                    <apex:pageBlockSection id="Section18" columns="2">
+                                       <apex:pageBlockSectionItem id="item18_1" helpText="Bank">
+                                          <apex:selectRadio layout="lineDirection"  value="{!Request.bank__c}">
+                                            
+                                             <apex:selectOption itemLabel="UK" itemValue="UK"></apex:selectOption>
+                                             <apex:selectOption itemLabel="Other Bank" itemValue="Other Bank"></apex:selectOption>
+                                          </apex:selectRadio>
+                                       </apex:pageBlockSectionItem>
+                                       <apex:pageBlockSectionItem id="item18_2"  helpText="Upload Bank Details">
+                                          <apex:outputLabel value="Upload Bank Details* " for="file"/>
+                                          <!-- <apex:inputFile value="{!document.body}" filename="{!document.name}" id="file"/> -->
+                                          <apex:inputFile fileName="{!fileName}" contentType="{!contentType}" value="{!bankfile}"  id="file"/>
+                                       </apex:pageBlockSectionItem>
+                                    </apex:pageBlockSection>
+                                    <apex:pageBlockSection id="Section181" columns="2">
+                                    
+
+                                             <apex:pageBlockSectionItem id="item181_1" helpText="Files already Uploaded" rendered="{!fileUpload}" >
+                                                 <apex:outputLabel value="Uploaded File's Name" />
+                                                 <apex:outputText value="{!fileName}" />
+                                             </apex:pageBlockSectionItem>
+
+                                            </apex:pageBlockSection>
+                                     <p><b>NB. The file must be as supplied by the Vendor in a format that cannot be altered (e.g. a scanned copy of an official bank details document). The authorised file format is restricted to PDF only </b></p>
+                                 </apex:pageBlock>
+                            
+                           </div>
+                           <h3 class="ui-accordion-header ui-helper-reset ui-state-default ui-accordion-icons ui-corner-top ui-accordion-header-active ui-state-active">
+                              <span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-s"></span>
+                              Additional Details
+                           </h3>
+                             <div class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom ui-accordion-content-active">
+                              <apex:pageBlock id="Block5">
+                                 <apex:pageBlockSection id="Section20" columns="2">
+                                    <apex:pageBlockSectionItem id="item20_1"  helpText="Comments">
+                                       <apex:outputLabel value="Comments* " id="commentsLbl" />
+                                       <apex:inputTextarea value="{!Request.comments__c}"  id="commentsVal" style="width:400px" rows="5"/>
+                                    </apex:pageBlockSectionItem>
+                                 </apex:pageBlockSection>
+                              </apex:pageBlock>
+
+                           </div>
+                             <!-- <div class="bottomMsg"> -->   
+    <apex:dataTable value="{!Trial}" var="audittrial"  border="2" rendered="{!Trial.size>0}" style="table-layout:fixed;width:830px;" columns="4" columnsWidth="15%,15%,15%,55%" rowClasses="odd,even">
+    <!-- <apex:column value="{!audittrial.name}" headerValue="Audit Id" headerClass="headerStyle" id="AuditTrialIdLbl" style="word-wrap:break-word" styleClas="cell" /> -->
+    <apex:column value="{!audittrial.Actioned_Date__c}" headerValue="Date" headerClass="headerStyle" style="word-wrap:break-word" styleClass="cell" width="8%"/>
+    <apex:column value="{!audittrial.Action__c}" headerValue="Action"  headerClass="headerStyle" style="word-wrap:break-word" styleClass="cell" /> 
+    <apex:column value="{!audittrial.Actioned_By_User__r.Firstname} {!audittrial.Actioned_By_User__r.Lastname}" headerValue="Actioned By" headerClass="headerStyle" style="word-wrap:break-word" styleClass="cell"/>
+    
+    <apex:column value="{!audittrial.Long_Comment__c }" headerValue="Comments" headerClass="headerStyle" style="word-wrap:break-word" width="10%" styleClass="cell"/>
+    </apex:dataTable>  
+<!-- </div> -->    
+                     </div>
+                  </div>
+               </div>
+            </div>
+              </div>
+            <!--<div class="blue-panel">
+               <i class="divider"></i>
+               <div class="textforum">
+                  <b>NEW PAYMENT TERMS!!!! PLEASE ENSURE YOU ARE FAMILIAR WITH THEM!!! THANK YOU.</b>
+                  <p>Please note that Eurostar's standard payment terms are 30 days from invoice date, Do not agree any other payment terms. Please also ensure that you make the vendor aware of our standard payment terms, so the vendor knows them before they commit.</p>
+               </div>
+            </div>-->
+            <div class="bottom-button text-align-center">
+               <apex:commandButton disabled="{!submitDisabled}" onclick="if(!confirm('Are you sure?')){return false;}" action="{!saveOrUpdate}" value="Submit" />
+            <apex:commandButton action="{!formselection}" immediate="true" value="Cancel" html-formnovalidate="formnovalidate"/>
+            </div>
+            <apex:includeScript value="{!URLFOR($Resource.customCSS, 'customCSS/js/jquery-1.10.2.js')}"/>
+            <apex:includeScript value="{!URLFOR($Resource.customCSS, 'customCSS/js/jquery-ui.js')}"/>
+            <apex:includeScript value="{!URLFOR($Resource.customCSS, 'customCSS/js/custom.js')}"/>
+         </body>
+      </html>
+   </apex:form>
+</apex:page>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Start_cannot_be_after_End</fullName>
+    <active>true</active>
+    <description>Pay Period Start cannot be after Pay Period End.</description>
+    <errorConditionFormula>Pay_Period_Start__c   &gt;   Pay_Period_End__c</errorConditionFormula>
+    <errorDisplayField>Pay_Period_Start__c</errorDisplayField>
+    <errorMessage>Pay Period Start must be prior to Pay Period End.  Please enter a date that is before Pay Period End.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,15 @@
+<template>
+    <div class="slds-is-relative">
+        <div>
+            <lightning-input type="file" 
+                                label="" 
+                                onchange={handleFileChanges} 
+                                multiple>
+            </lightning-input>
+        </div>
+        <div class="slds-text-body_small slds-m-top_small">{successMessage}</div>
+        <template if:true={showLoadingSpinner}>
+            <lightning-spinner alternative-text="Uploading..." size="medium"></lightning-spinner>
+        </template>
+    </div><br />
+</template>

@@ -1,0 +1,338 @@
+<apex:component >
+<style>
+     /* PRE CHAT PAGE*/
+    .navbar-header  {
+        background-color: #0e1640; width:100%; padding:10px;
+        }
+    .navbar-brand-mob {display:block;margin: 20px 20px; 0 20px;}
+        .navbar-brand {
+  width:100%;
+}
+    .navbar-brand img {
+  height: 60px;
+  display: block;
+}
+        .navbar-brand-mob img{
+                height: 55px;
+            	}
+    .prechat-open h1 {font-family: "eurostarsansregular", "Tahoma", "Geneva", sans-serif;
+    color: #06183D;
+    }
+    .prechat-open {width:95%; padding:16px 16px 0; float: left;}
+    .prechat-box {width:95%; padding:0 16px; float: left;}
+.prechat-field p, prechat-open p, #waitingMessage {font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333;
+      margin-bottom: 3px;}
+    
+    
+    #waitingMessage {  height: auto!important;}
+    
+        .prechat-field {
+  float: left;
+    width: 100%;
+}
+    
+    #nameError, #emailError {color:#cc0000; margin-top:8px; float:left;}
+    
+.prechat-field input,.liveAgentChatInput, .pbBody h1  {
+    height: auto!important;
+    padding: 6px 12px!important;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc !important;
+  float: left;
+  width: 90%;
+  font-size: 14px;
+}
+  
+    .liveAgentSendButton {float: right!important;width: 20%!important;margin-top: 0!important;  padding: 5px!important;height: auto !important;right: 0!important;
+ }
+    #liveAgentClientChat form {padding: 4px;}
+  
+#prechat_submit, .liveAgentSendButton, .liveAgentEndButton, .liveAgentSaveButton {
+  font-family: "eurostarsansregular", "Tahoma", "Geneva", sans-serif;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
+    border-color: #24b5c9;
+  background-color: #24b5c9;
+    cursor:pointer;
+  color: #fff;
+  padding: 2% 0;
+  font-size: 14px;
+  float: left;
+  clear: both;
+  margin-top:16px;
+  width: 97%;
+  height: auto;
+  text-shadow: 1px 1px 1px #11455A;
+  background: #0071a0;
+  }
+    
+     #prechat_submit {opacity:1;}
+    
+.liveAgentEndButton, .liveAgentSaveButton {
+  width: 40%;
+  float: left;
+  clear: none;
+  margin: 0 5%;
+    padding:1% 0; 
+    border: 1px solid #06183d;
+  background-color: #f1f2f2;
+  cursor: pointer;
+  color: #06183d;
+  margin-top: 10px;
+  height: auto;
+  text-shadow: none;
+}
+    
+    .liveAgentEndButton:hover, .liveAgentSaveButton:hover, .liveAgentSendButton:hover {text-decoration:underline;}
+    
+    
+#prechat_submit:hover {text-decoration:underline;}
+   body.sfdcBody {background:#fff;}
+    .bodyDiv {
+  background-color: #fff;
+  border:0;
+  -moz-border-radius-bottomleft:0;
+  -moz-border-radius-bottomright:0;
+  border-bottom-right-radius:0;
+  border-bottom-left-radius:0;
+  -moz-box-shadow:none;
+  -webkit-box-shadow:none;
+  box-shadow:none;
+  float: left;
+  min-width: 100%;
+}
+    #AppBodyHeader .phHeader td.left img:first-child, body #AppBodyHeader .phHeaderCustomLogo {
+  display:none;
+}
+    #contentWrapper {
+  min-width: 100%;
+}
+    .hasMotif {
+    margin: 0;
+}
+    .noSidebarCell {
+    padding:0;
+}
+   @media (max-width: 1024px) {
+.navbar-brand img {
+  height: 60px; display:block;
+} 
+}
+    
+    
+/* LIVE CHAT PAGE*/
+#waitingMessage { height: 100%; width: 100%; vertical-align: middle; text-align: center;
+display: none; }
+.banner {height: 120px;
+    background-color: #0e1640;
+    float:left;
+    width:100%;
+    padding-top: 10px;
+    }
+span.operator strong {
+color:#ff0000;
+}
+span.messageText {font-size:1em!important;}
+span.client strong {
+color:#999;
+}
+        .system {
+  padding: 16px 0;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 97%;
+   }
+    .chat_error {padding: 0 ; margin-bottom: 16px;}
+    .chat_error button {
+display:none;
+    }
+    
+        .chat_container {width: 100%; float:left; padding: 0; background-color: #fff;margin-bottom: 20px;}
+        #chat_box_container {  height: 86%;
+  overflow-y: auto;}
+        .chat_box_send {
+  bottom: 0;
+  float: left;
+  width: 96%;
+  position: absolute;
+  background: #fff;
+  padding-bottom: 8px;
+  display: block;
+    margin-left: 8px;
+}
+
+#liveAgentClientChat.liveAgentStateWaiting #waitingMessage { display: table; }
+#liveAgentSaveButton, #liveAgentEndButton { z-index: 2; }
+.liveAgentChatInput {
+height: 25px;
+border-width: 1px;
+border-style: solid;
+border-color: #000;
+padding: 2px 0 2px 4px;
+background: #fff;
+display: block;
+width: 70%;
+margin: 8px;
+}
+.liveAgentSendButton {
+display: block;
+width: 60px;
+height: 31px;
+padding: 0 0 3px;
+position: absolute;
+bottom: 0;
+margin-bottom: 16px;
+margin-right: 8px;
+}
+#liveAgentChatLog {
+overflow-y: auto;
+    overflow-x: hidden;
+left: 0;
+right: 0;
+bottom: 155px;
+float:left;
+margin:0;
+padding: 8px;
+    width:95%;
+    height:60%;
+    position:absolute;
+}
+   
+    .file_transfer {
+  position: absolute;
+  bottom: 50px;
+  width: 100%;
+  padding: 8px;
+}
+   #liveAgentChatLog.chat_box_container_big { bottom: 80px !important;}
+    
+    #liveAgentChatLogText {font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333;
+  background-color: #fff;
+      margin-bottom: 3px;}
+    
+    #fileDragLabel, .liveAgentFileNameLabel {float: left; margin: 8px 0; text-align: left; width: 100%;}
+    #fileDropLabel {float: left; margin: 16px 8px; text-align: left; display:block !important;font-family: "eurostarsansregular", "Tahoma", "Geneva", sans-serif;}
+    #fileSelectInput {margin: 16px 0;}
+    #fileDragLabel a {text-align:center;  margin-left: 8px;}
+    .liveAgentFileDragArea {float: left; width:100%;}
+    
+    .liveAgentFileCancelButton:hover {text-decoration:underline;}
+    .liveAgentFileCancelButton {
+    font-family: "eurostarsansregular", "Tahoma", "Geneva", sans-serif;
+  border: 1px solid #06183d;
+  background-color: #f1f2f2;
+  cursor: pointer;
+  color: #06183d;
+  padding: 5px 26px;
+  font-size: 14px;
+  height: auto;
+  text-shadow: none;
+}
+    
+    .liveAgentFileSendButton {
+    font-family: "eurostarsansregular", "Tahoma", "Geneva", sans-serif;
+ border-color: #24b5c9;
+  background-color: #0071a0;
+  cursor: pointer;
+  color: #fff;
+  padding: 5px 26px;
+  font-size: 14px;
+  margin:0 8px;
+  height: auto;
+  text-shadow: none;
+    float:left;
+    }
+
+    
+    /* SURVEY PAGE*/   
+    h1 {
+  font-family: "eurostarsansregular","Tahoma","Geneva",sans-serif;
+  color: #06183D!important;
+  font-weight: 400;
+  font-size: 18px;
+    margin-bottom:8px;
+}
+    
+    .pbBody h1 {border:none !important;margin-bottom:0;padding-top:0!important;padding-left:0!important;font-size:12px !important;
+    }
+    
+        #survey_container {padding:8px 16px; float:left;margin:8px;}
+
+    input[type=radio] {
+  margin-right:8px;
+  line-height: normal;
+    float:left;
+}
+    
+
+    .pbBody {margin:0 !important;}
+    .pbBody label {float:left;}
+    
+    .pbBody td {
+    margin-top: 8px;
+  color: #333;
+  padding: 0 10px 4px 10px;
+  float: none;
+  width: auto;
+  display: inline-block;
+  cursor: pointer;
+  background: #fff;
+}
+    .pbBody td:last-child {}
+    .pbBody tr td:hover {background: #fff;}
+    .pbBody label {cursor: pointer;}
+    
+.bPageBlock {background-color: #fff !important;
+      border-bottom: 0 !important;
+  border-left: 0 !important;
+  border-right: 0 !important;
+  -moz-border-radius: 0 !important;
+  -webkit-border-radius: 0 !important;
+  border-radius: 0 !important;
+    border-color: #fff!important;
+    padding-top:0;
+    }
+    
+    textarea {
+  margin-top:8px;
+      width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  display: block !important;
+  height: 50px;
+}
+    
+    .end-chat-button {padding:16px 16px 16px 0;}
+    
+    html input [type=button], body .btn, body input.btn, body .btn:hover, body input.btn:hover {
+    border-color: #24b5c9;
+  background-color: #24b5c9;
+  color: #fff;
+  padding: 2% 0;
+  font-size: 1em;
+    font-weight:400;
+  margin: 0 5%;
+  float: right;
+  clear: both;
+  width: 95%;
+  height: auto;
+  background: #0071a0;
+    }
+    
+    body .btn:hover, body input.btn:hover {text-decoration:underline;}
+    
+    #row, #radio {width:100%;}
+
+    </style>
+</apex:component>

@@ -1,0 +1,283 @@
+<apex:page id="SimpleHandleCases" standardController="Case" recordSetVar="Cs" extensions="DLT_MassHandleSimpleCases_Ctrl" docType="html-5.0" lightningstylesheets="true" >
+    
+    <br/>
+    <style>
+        .table-striped tbody tr:nth-of-type(odd){
+        background-color:rgba(90,90,90,.25);
+        }
+        h1 {
+        font-size:20px; 
+        }
+        .btStyle {
+        font-size:13px !important;
+        text-decoration:none !important;
+        }
+        .inputText {
+        width:132px;
+        }
+        .required-field::after {
+        color: red;
+        margin-left:5px;
+        content: {!$Label.DLT_Text_Body_Exact};
+        float: right;
+        }
+      
+        .pannelConfigs {
+        margin-left: 50px;
+        }
+        
+        .memSpace{
+        margin-left: 25px;
+        }
+        .memSpaceSmall{
+        margin-left: 10px;
+        }
+        .memSpaceType{
+        margin-left: 48px;
+        }
+        .memSpaceRange{
+        margin-left: 42px;
+        }
+        
+    </style>
+
+    <apex:includeScript value="/soap/ajax/18.0/connection.js"/>
+
+    <script>
+        var GetIDs= '{!getIds}';
+        var selectedCasesCount = 0; 
+        var casesToProcessCnt = 0;
+    </script>
+
+    <apex:outputPanel >
+        <h1>
+            {!$Label.DLT_Handling_Simple_Cases}
+        </h1>
+    </apex:outputPanel>
+
+    <script>
+    selectedCount = {!selectedCasesCount};
+    if(selectedCount == 0)
+    {
+        alert({!$Label.DLT_Select_Case}); 
+        window.history.back();
+    }
+    </script>
+    
+    
+    <apex:form id="simpleCaseMassHandling" rendered="{!displayForm == false}">
+        <!-- Message block -->
+        <apex:outputPanel id="filterBlock" >
+            <apex:pageBlock title="Case Information" rendered="{!displayTextBody==false}" >
+                <apex:outputPanel rendered="{!jobInfo==false}">
+                    <apex:outputPanel rendered="{!hasPermission}">
+                        <apex:outputPanel rendered="{!caseInfo}">
+                            <apex:outputLabel value="{!$Label.DLT_Eligible_Message_1} {!selectedCasesCount} {!$Label.DLT_Eligible_Message_2} {!casesToProcessCnt} {!$Label.DLT_Eligible_Message_3}"/>
+                        </apex:outputPanel>
+                        <apex:outputPanel rendered="{!caseInfo==false}">
+                            <apex:outputLabel value="{!$Label.DLT_Eligible_Message_1} {!selectedCasesCount} {!$Label.DLT_Eligible_Message_2} {!casesToProcessCnt} {!$Label.DLT_Eligible_Message_3}" /><br /><br />
+                            <apex:outputLabel value="{!$Label.DLT_Eligible_Message_4} {!errorCount} {!$Label.DLT_Eligible_Message_5}"/><br /><br />
+                            <apex:outputLabel value="{!$Label.DLT_Eligible_Message_6}"/>
+                        </apex:outputPanel>
+                    </apex:outputPanel>
+                    <apex:outputPanel rendered="{!!hasPermission}">
+                        <div style="text-align:center">
+                            <apex:outputLabel value="{!$Label.DLT_Permission_Message}"/>
+                        </div>
+                    </apex:outputPanel>
+                    
+                </apex:outputPanel>
+                <apex:outputPanel rendered="{!jobInfo}">
+                       <apex:outputLabel value="{!$Label.DLT_Job_Error}"/>
+                </apex:outputPanel>
+                
+                <!-- Filters Section -->
+                <apex:pageBlockSection id="pgSecId" columns="3">
+                    
+                </apex:pageBlockSection>
+                <apex:pageBlockButtons location="bottom" rendered="{!disableNext}">
+                    <apex:commandButton value="{!$Label.CompApp_Cancel}" styleClass="btStyle" action="{!redirectToList}"/>
+                    <apex:commandButton value="{!$Label.CompApp_Next}" styleClass="btStyle" disabled="true" action="{!nextButton}" reRender="textBodyBlock,filterBlock" />
+                    <apex:actionStatus startText="{!$Label.DLT_Saving}" stopText="" id="closers"/>
+                </apex:pageBlockButtons>
+                <apex:pageBlockButtons location="bottom" rendered="{!disableNext==false}" >
+                    <apex:commandButton value="{!$Label.CompApp_Cancel}" styleClass="btStyle" action="{!redirectToList}"/>
+                    <apex:commandButton value="{!$Label.CompApp_Next}" styleClass="btStyle" action="{!nextButton}" reRender="textBodyBlock,filterBlock" />
+                    <apex:actionStatus startText="{!$Label.DLT_Saving}" stopText="" id="closer"/>
+                </apex:pageBlockButtons>
+                <apex:pageMessages id="errormessage" /><br/> 
+                
+            </apex:pageBlock>
+        </apex:outputPanel>
+        
+        <apex:outputPanel id="textBodyBlock"> 
+            <apex:pageBlock title="{!$Label.DLT_Text_Body_Info}" rendered="{!displayTextBody}">
+                
+                <apex:pageBlockSection >
+                    <apex:pageBlockSectionItem id="TextBody" dataStyleClass="button1">
+                        <apex:outputLabel value="{!$Label.DLT_Text_Body}" styleClass="button1"/>
+                        <apex:selectList value="{!textBodySelected}" size="1"  styleClass="memSpaceType">
+                            <apex:selectOption itemValue="" itemLabel="{!$Label.DLT_Pick_Value}"/>
+                            <apex:selectOptions value="{!possibleTextBodies}" />
+                        </apex:selectList>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem id="TextSubject" dataStyleClass="button1">
+                        <apex:outputLabel value="{!$Label.DLT_Mailing_Reference}" styleClass="button1"/>
+                        <apex:inputText id="textSubject" value="{!textSubject}"/>
+                    </apex:pageBlockSectionItem>
+                    
+                </apex:pageBlockSection>
+                <apex:pageBlockSection >
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel />
+                        <apex:outputLabel styleClass="required-field" value=""/>
+                    </apex:pageBlockSectionItem> 
+                </apex:pageBlockSection> 
+                
+                <apex:pageBlockButtons location="bottom"  >
+                    <apex:commandButton value="{!$Label.DLT_Preview}" styleClass="btStyle" action="{!previewBtn}" reRender="textBodyPreview" />
+                </apex:pageBlockButtons>
+                
+                <apex:pageMessages id="errormessage" /><br/> 
+                
+            </apex:pageBlock>
+        </apex:outputPanel>
+        
+        
+        <apex:outputPanel id="textBodyPreview" > 
+            <apex:pageBlock title="{!$Label.DLT_Preview_Info}" rendered="{!previewTextBody}" >
+                <apex:pageBlockSection columns="1">
+                    <apex:pageBlock title="{!$Label.DLT_Preview_Info} {!$Label.CompApp_English}: "  rendered="{!errorText}">
+                        <apex:outputLabel value="{!textBodyEN}" escape="false"  />
+                    </apex:pageBlock> 
+                    <apex:pageBlock title="{!$Label.DLT_Preview_Info} {!$Label.DLT_French}: "  rendered="{!errorText}">
+                        <apex:outputLabel value="{!textBodyFR}" escape="false" />
+                    </apex:pageBlock>
+                    <apex:pageBlock title="{!$Label.DLT_Preview_Info} {!$Label.CompApp_German}: "  rendered="{!errorText}">
+                        <apex:outputLabel value="{!textBodyDE}" escape="false" />
+                    </apex:pageBlock>
+                    <apex:pageBlock title="{!$Label.DLT_Preview_Info} {!$Label.DLT_Dutch}: "  rendered="{!errorText}">
+                        <apex:outputLabel value="{!textBodyNL}" escape="false" />
+                    </apex:pageBlock>
+                </apex:pageBlockSection>
+                <apex:pageBlockButtons location="bottom" rendered="{!errorText==false}">
+                    <apex:commandButton value="{!$Label.DLT_Confirm_Close}" disabled="true" onclick="if(!confirm('{!$Label.DLT_Are_You_Sure}')){return false};" styleClass="btStyle" action="{!closeCaseBtn}" reRender="successMsg,textBodyPreview,textBodyBlock"/>
+                    
+                    <apex:commandButton value="{!$Label.CompApp_Cancel}" styleClass="btStyle" action="{!redirectToList}"/>
+                </apex:pageBlockButtons>
+                <apex:pageBlockButtons location="bottom" rendered="{!errorText}">
+                    <apex:commandButton value="{!$Label.DLT_Confirm_Create_Compensation}" onclick="if(!confirm('{!$Label.DLT_Are_You_Sure}')){return false};" styleClass="btStyle" action="{!createCompensationHandling}"/>
+                    <apex:commandButton value="{!$Label.DLT_Confirm_No_Compensation}" onclick="if(!confirm('{!$Label.DLT_Are_You_Sure_Email}')){return false};" styleClass="btStyle" action="{!closeCaseBtn}" reRender="successMsg,textBodyPreview,textBodyBlock"/>
+                    
+                    <apex:commandButton value="{!$Label.CompApp_Cancel}" styleClass="btStyle" action="{!redirectToList}"/>
+                </apex:pageBlockButtons>
+                <apex:pageMessages id="errormessage" /><br/>
+            </apex:pageBlock>
+        </apex:outputPanel>
+        
+        <apex:outputPanel id="successMsg"> 
+            <apex:pageBlock title="{!$Label.DLT_Case_Info}"  rendered="{!closeCase}">
+                
+                <apex:pageBlockSection >
+                    {!$Label.DLT_Success_Send_Close}
+                </apex:pageBlockSection>            
+                <apex:pageMessages id="errormessage" /><br/> 
+                
+            </apex:pageBlock>
+        </apex:outputPanel>
+    </apex:form>
+
+     <!-- COMPENSATION -->
+    
+     <apex:form id="CreateCompensationForm" rendered="{!displayForm == true}">
+        <apex:pageBlock title="{!$Label.DLT_Compensation_Title}" rendered="{!displaySuccess == False}">
+            <apex:pageMessages id="showErrorMsg"></apex:pageMessages>
+            <apex:pageBlockSection id="contentSection" title="Content Section" columns="2">
+                
+            <!-- INITIAL COMPENSATION PICKLIST-->
+
+            <apex:panelGroup styleClass="pannelConfigs" >
+                <apex:outputLabel value="{!$Label.DLT_Record_Type}" />
+                    <apex:selectList value="{!selectedRecordType}" size="1"  styleClass="memSpaceType">
+                        <apex:selectOption itemValue="" itemLabel="{!$Label.DLT_Pick_Value	}"/>
+                        <apex:selectOptions value="{!possibleRecordTypes}" />
+                        <apex:actionSupport event="onchange" reRender="CreateCompensationForm" action="{!getType}"  />
+                    </apex:selectList>
+                <br/><br/>
+            </apex:panelGroup>
+
+            <apex:panelGroup styleClass="pannelConfigs">
+                <br/><br/>  
+            </apex:panelGroup>
+
+            <apex:panelGroup styleClass="pannelConfigs">
+                <apex:outputLabel value="{!$Label.DLT_Refund_Type}"  />
+                <apex:outputText value="{!$Label.DLT_Goodwill}" styleClass="memSpace" /> 
+                <br/><br/>
+            </apex:panelGroup>
+                
+            </apex:pageBlockSection>
+            
+            
+            <!--  VOUCHER picklist fields-->
+            <apex:pageBlockSection id="Voucher" title="{!$Label.DLT_Voucher}" rendered="{!displayVoucher}" columns="2"  >
+
+                <apex:panelGroup styleClass="pannelConfigs">
+                    <apex:outputLabel value="{!$Label.DLT_Payment_Currency}"  />
+                    <apex:inputField value="{!compensation.Payment_Currency__c}"  styleClass="memSpaceSmall"/>
+                    <br/><br/>
+                </apex:panelGroup>
+
+                <apex:panelGroup styleClass="pannelConfigs">
+                    <apex:outputLabel value="{!$Label.DLT_Payment_Amount}"  />
+                    <apex:inputField value="{!compensation.Payment_Amount__c}"  styleClass="memSpaceSmall"/>
+                    <br/><br/>
+                </apex:panelGroup>
+
+                <apex:panelGroup styleClass="pannelConfigs">
+                    <br/><br/>
+                </apex:panelGroup>
+      
+            </apex:pageBlockSection>
+            
+            <!--  END of code VOUCHER-->
+            
+            <!--  POINTS picklist fields-->
+            <apex:pageBlockSection id="Points" title="{!$Label.DLT_Points_Title}" rendered="{!displayPoints}" columns="2">
+                
+                <apex:panelGroup styleClass="pannelConfigs">
+                    <apex:outputLabel value="{!$Label.DLT_Points}"  />
+                    <apex:inputField value="{!compensation.Points_Amount__c}" styleClass="memSpaceSmall"/>
+                    <br/><br/>
+                </apex:panelGroup>
+                
+                <apex:panelGroup styleClass="pannelConfigs">
+                    <br/><br/>
+                </apex:panelGroup>
+                
+            </apex:pageBlockSection>
+            
+            <!--  END of code Points-->
+            
+        
+            <apex:pageBlockButtons >
+                <apex:commandButton id="saveDisabled" value="{!$Label.DLT_Save}" styleClass="btStyle" disabled="{!errorText}"  action="{!createCompensation}" reRender="CreateCompensationForm"/>
+                <apex:commandButton value="Cancel"  action="{!redirectToList}"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+        
+        <apex:outputPanel >
+            <apex:pageBlock title="{!$Label.DLT_Case_Info}"  rendered="{!displaySuccess}">
+                <apex:pageBlockSection >
+                    {!$Label.DLT_Eligible_Message_1} {!beforeValidationCaseCount} {!$Label.DLT_Eligible_Message_2} {!afterValidationCaseCount} {!$Label.DLT_Eligible_Message_3} 
+                    {!$Label.DLT_Success_Create_Compensation}
+                </apex:pageBlockSection> 
+                <apex:pageBlockButtons >
+                    <apex:commandButton value="{!$Label.DLT_Home}" styleClass="btStyle" action="{!redirectToList}"/>
+                </apex:pageBlockButtons>
+            </apex:pageBlock>
+        </apex:outputPanel>
+        
+    </apex:form>
+
+</apex:page>

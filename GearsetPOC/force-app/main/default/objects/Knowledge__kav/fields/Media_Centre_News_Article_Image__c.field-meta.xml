@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Media_Centre_News_Article_Image__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Please provide image URL for news, this image will display on main news page left to title and summary.</inlineHelpText>
+    <label>News Article Image</label>
+    <length>200</length>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

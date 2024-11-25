@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Currency_Bank_Details</fullName>
+    <active>true</active>
+    <errorConditionFormula>RecordType.Name == &#39;Bank Transfer&#39;
+&amp;&amp;
+(
+    (
+    ISPICKVAL(Payment_Currency__c,&#39;EUR&#39;)
+    &amp;&amp;
+        (
+        ISBLANK(Swift_Sort_Code__c) ||
+        ISBLANK(IBAN_Account_Number__c) ||
+        NOT(ISBLANK(Bank_Account_Number__c)) ||
+        NOT(ISBLANK(Bank_Sort_Code__c))
+        )
+    )
+    ||
+    (
+    ISPICKVAL(Payment_Currency__c,&#39;GBP&#39;)
+    &amp;&amp;
+        (
+        ISBLANK(Bank_Account_Number__c) ||
+        ISBLANK(Bank_Sort_Code__c) ||
+        NOT(ISBLANK(Swift_Sort_Code__c)) ||
+        NOT(ISBLANK(IBAN_Account_Number__c))
+        )
+    )
+)
+&amp;&amp; NOT(ISPICKVAL(Claim_Status__c, &#39;Draft&#39;))
+&amp;&amp; NOT(ISPICKVAL(Claim_Status__c, &#39;Cancelled&#39;))</errorConditionFormula>
+    <errorDisplayField>Payment_Currency__c</errorDisplayField>
+    <errorMessage>For GBP, enter only &quot;UK Sort Code&quot; &amp; &quot;UK Account Number&quot;. For EUR, enter only &quot;BIC/Swift Code&quot; &amp; &quot;IBAN&quot;</errorMessage>
+</ValidationRule>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PayPal_Validation2</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISBLANK( Paypal_email__c) &amp;&amp;  RecordType.Name == &quot;Paypal Transfer&quot; &amp;&amp; NOT(ISPICKVAL(Claim_Status__c, &#39;Draft&#39;))
+&amp;&amp; NOT(ISPICKVAL(Claim_Status__c, &#39;Cancelled&#39;))</errorConditionFormula>
+    <errorDisplayField>Paypal_email__c</errorDisplayField>
+    <errorMessage>PayPal Email Required</errorMessage>
+</ValidationRule>

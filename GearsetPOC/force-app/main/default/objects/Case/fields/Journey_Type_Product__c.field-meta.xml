@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Journey_Type_Product__c</fullName>
+    <label>Journey Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Cross channel routes</fullName>
+                <default>false</default>
+                <label>Cross channel routes</label>
+            </value>
+            <value>
+                <fullName>Continental routes</fullName>
+                <default>false</default>
+                <label>Continental routes</label>
+            </value>
+            <value>
+                <fullName>Connections</fullName>
+                <default>false</default>
+                <label>Connections</label>
+            </value>
+            <value>
+                <fullName>Ski routes</fullName>
+                <default>false</default>
+                <label>Ski routes</label>
+            </value>
+            <value>
+                <fullName>Sun routes</fullName>
+                <default>false</default>
+                <label>Sun routes</label>
+            </value>
+            <value>
+                <fullName>Luggage - London</fullName>
+                <default>false</default>
+                <label>Luggage London</label>
+            </value>
+            <value>
+                <fullName>Luggage - Continent</fullName>
+                <default>false</default>
+                <label>Luggage Continent</label>
+            </value>
+            <value>
+                <fullName>Webform case - please review</fullName>
+                <default>false</default>
+                <label>Webform case - please review</label>
+            </value>
+            <value>
+                <fullName>System - please review</fullName>
+                <default>false</default>
+                <label>System - please review</label>
+            </value>
+            <value>
+                <fullName>Amsterdam</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Amsterdam</label>
+            </value>
+            <value>
+                <fullName>Amsterdam/Rotterdam</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Amsterdam/Rotterdam</label>
+            </value>
+            <value>
+                <fullName>Any Belgian and Any Dutch</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Any Belgian and Any Dutch</label>
+            </value>
+            <value>
+                <fullName>Belgium</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Belgium</label>
+            </value>
+            <value>
+                <fullName>Child fare</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Child fare</label>
+            </value>
+            <value>
+                <fullName>Concession (Core)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Concession (Core)</label>
+            </value>
+            <value>
+                <fullName>Concession (Other)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Concession (Other)</label>
+            </value>
+            <value>
+                <fullName>Customer Room Booking</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Customer Room Booking</label>
+            </value>
+            <value>
+                <fullName>Disney</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Disney</label>
+            </value>
+            <value>
+                <fullName>France</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>France</label>
+            </value>
+            <value>
+                <fullName>French provinces (connections)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>French provinces (connections)</label>
+            </value>
+            <value>
+                <fullName>General Query</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>General Query</label>
+            </value>
+            <value>
+                <fullName>Germany</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Germany</label>
+            </value>
+            <value>
+                <fullName>Gift Certiciate</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Gift Certiciate</label>
+            </value>
+            <value>
+                <fullName>Gift Certificate</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Gift Certificate</label>
+            </value>
+            <value>
+                <fullName>Inter caps</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Inter caps</label>
+            </value>
+            <value>
+                <fullName>Interlining Or Domestic rail</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Interlining Or Domestic rail</label>
+            </value>
+            <value>
+                <fullName>Intra-schengen (BXS-ROT/AMS)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Intra-schengen (BXS-ROT/AMS)</label>
+            </value>
+            <value>
+                <fullName>Intra-schengen (LIU-BXS)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Intra-schengen (LIU-BXS)</label>
+            </value>
+            <value>
+                <fullName>Kent stations</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Kent stations</label>
+            </value>
+            <value>
+                <fullName>Lyon South of France</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Lyon South of France</label>
+            </value>
+            <value>
+                <fullName>Passholder</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Passholder</label>
+            </value>
+            <value>
+                <fullName>Prize Winner</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Prize Winner</label>
+            </value>
+            <value>
+                <fullName>Ski</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Ski</label>
+            </value>
+            <value>
+                <fullName>Snap</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Snap</label>
+            </value>
+            <value>
+                <fullName>Sundry</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Sundry</label>
+            </value>
+            <value>
+                <fullName>Thalys Through Fare</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Thalys Through Fare</label>
+            </value>
+            <value>
+                <fullName>The Netherlands</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>The Netherlands</label>
+            </value>
+            <value>
+                <fullName>United Kingdom</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>United Kingdom</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

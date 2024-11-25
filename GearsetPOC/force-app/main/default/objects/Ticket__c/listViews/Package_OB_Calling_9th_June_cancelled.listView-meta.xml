@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Package_OB_Calling_9th_June_cancelled</fullName>
+    <columns>NAME</columns>
+    <columns>PNR__c</columns>
+    <columns>Departure_Date__c</columns>
+    <columns>Point_of_Sale__c</columns>
+    <columns>Full_Name__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Package_Booking__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Cancelled__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Departure_Date__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>6/9/2021</value>
+    </filters>
+    <filters>
+        <field>Ticket_Status__c</field>
+        <operation>equals</operation>
+        <value>Active</value>
+    </filters>
+    <filters>
+        <field>Departure_Date__c</field>
+        <operation>lessOrEqual</operation>
+        <value>6/18/2021</value>
+    </filters>
+    <label>Package OB Calling 9 to 12 JUNE CNXD</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>EBSC_Groups</group>
+    </sharedTo>
+</ListView>

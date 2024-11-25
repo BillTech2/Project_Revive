@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Twitter_High_Influencers</fullName>
+    <columns>Profile_Picture__c</columns>
+    <columns>Name</columns>
+    <columns>Provider</columns>
+    <columns>CreatedDate</columns>
+    <columns>Followers</columns>
+    <columns>Following</columns>
+    <columns>High_Influencer__c</columns>
+    <columns>ProfileUrl</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Provider</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>High_Influencer__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>Twitter High Influencers</label>
+    <language>en_US</language>
+</ListView>

@@ -1,0 +1,757 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product__c</fullName>
+    <label>Product</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Supplier__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Dorset Square Hotel - Superior Room</fullName>
+                <default>false</default>
+                <label>Dorset Square Hotel - Superior Room</label>
+            </value>
+            <value>
+                <fullName>Dorset Square Hotel - Luxury Room</fullName>
+                <default>false</default>
+                <label>Dorset Square Hotel - Luxury Room</label>
+            </value>
+            <value>
+                <fullName>Dorset Square Hotel - Deluxe Room</fullName>
+                <default>false</default>
+                <label>Dorset Square Hotel - Deluxe Room</label>
+            </value>
+            <value>
+                <fullName>The 181 Hamper</fullName>
+                <default>false</default>
+                <label>The 181 Hamper</label>
+            </value>
+            <value>
+                <fullName>The Fine Supplies Hamper</fullName>
+                <default>false</default>
+                <label>The Fine Supplies Hamper</label>
+            </value>
+            <value>
+                <fullName>The Sweet Hamper</fullName>
+                <default>false</default>
+                <label>The Sweet Hamper</label>
+            </value>
+            <value>
+                <fullName>The Sovereign Hamper</fullName>
+                <default>false</default>
+                <label>The Sovereign Hamper</label>
+            </value>
+            <value>
+                <fullName>The Blenheim Hamper</fullName>
+                <default>false</default>
+                <label>The Blenheim Hamper</label>
+            </value>
+            <value>
+                <fullName>The Grosvenor Hamper</fullName>
+                <default>false</default>
+                <label>The Grosvenor Hamper</label>
+            </value>
+            <value>
+                <fullName>The English Essentials</fullName>
+                <default>false</default>
+                <label>The English Essentials</label>
+            </value>
+            <value>
+                <fullName>The Fine Selection Hamper</fullName>
+                <default>false</default>
+                <label>The Fine Selection Hamper</label>
+            </value>
+            <value>
+                <fullName>The Burlington Hamper</fullName>
+                <default>false</default>
+                <label>The Burlington Hamper</label>
+            </value>
+            <value>
+                <fullName>The Epicure Hamper</fullName>
+                <default>false</default>
+                <label>The Epicure Hamper</label>
+            </value>
+            <value>
+                <fullName>French Voucher</fullName>
+                <default>false</default>
+                <label>French Voucher</label>
+            </value>
+            <value>
+                <fullName>Belgian Voucher</fullName>
+                <default>false</default>
+                <label>Belgian Voucher</label>
+            </value>
+            <value>
+                <fullName>Mama Shelter Lyon</fullName>
+                <default>false</default>
+                <label>Mama Shelter Lyon</label>
+            </value>
+            <value>
+                <fullName>Mama Shelter Marsaille</fullName>
+                <default>false</default>
+                <label>Mama Shelter Marsaille</label>
+            </value>
+            <value>
+                <fullName>Heritage Cufflinks</fullName>
+                <default>false</default>
+                <label>Heritage Cufflinks</label>
+            </value>
+            <value>
+                <fullName>Starwalker Ballpoint Pen</fullName>
+                <default>false</default>
+                <label>Starwalker Ballpoint Pen</label>
+            </value>
+            <value>
+                <fullName>Starwalker Mechanical Pencil</fullName>
+                <default>false</default>
+                <label>Starwalker Mechanical Pencil</label>
+            </value>
+            <value>
+                <fullName>Long Wallet</fullName>
+                <default>false</default>
+                <label>Long Wallet</label>
+            </value>
+            <value>
+                <fullName>Oval Chain Bracelet</fullName>
+                <default>false</default>
+                <label>Oval Chain Bracelet</label>
+            </value>
+            <value>
+                <fullName>Starwalker Fineliner Pen</fullName>
+                <default>false</default>
+                <label>Starwalker Fineliner Pen</label>
+            </value>
+            <value>
+                <fullName>Meisterstuck Ballpoint Pen</fullName>
+                <default>false</default>
+                <label>Meisterstuck Ballpoint Pen</label>
+            </value>
+            <value>
+                <fullName>Meisterstuck Mechanical Pencil</fullName>
+                <default>false</default>
+                <label>Meisterstuck Mechanical Pencil</label>
+            </value>
+            <value>
+                <fullName>Starwalker Fountain Pen</fullName>
+                <default>false</default>
+                <label>Starwalker Fountain Pen</label>
+            </value>
+            <value>
+                <fullName>Meisterstuck Rollerball Pen</fullName>
+                <default>false</default>
+                <label>Meisterstuck Rollerball Pen</label>
+            </value>
+            <value>
+                <fullName>Meisterstuck Fountain Pen</fullName>
+                <default>false</default>
+                <label>Meisterstuck Fountain Pen</label>
+            </value>
+            <value>
+                <fullName>Gift Card</fullName>
+                <default>false</default>
+                <label>Gift Card</label>
+            </value>
+            <value>
+                <fullName>Voucher</fullName>
+                <default>false</default>
+                <label>Voucher</label>
+            </value>
+            <value>
+                <fullName>Firenze Laptop Bag</fullName>
+                <default>false</default>
+                <label>Firenze Laptop Bag</label>
+            </value>
+            <value>
+                <fullName>Chicargo Eco Backpack</fullName>
+                <default>false</default>
+                <label>Chicargo Eco Backpack</label>
+            </value>
+            <value>
+                <fullName>Courchevel Trolley</fullName>
+                <default>false</default>
+                <label>Courchevel Trolley</label>
+            </value>
+            <value>
+                <fullName>Detroit Universal Tablet with Bluetooth Keyboard</fullName>
+                <default>false</default>
+                <label>Detroit Universal Tablet with Bluetooth Keyboard</label>
+            </value>
+            <value>
+                <fullName>Manhatten Backpack Trolley</fullName>
+                <default>false</default>
+                <label>Manhatten Backpack Trolley</label>
+            </value>
+            <value>
+                <fullName>GO LED Commuter Bag</fullName>
+                <default>false</default>
+                <label>GO LED Commuter Bag</label>
+            </value>
+            <value>
+                <fullName>Sochi Laptop and Tablet Case</fullName>
+                <default>false</default>
+                <label>Sochi Laptop and Tablet Case</label>
+            </value>
+            <value>
+                <fullName>Le Meridien Etoile Urban Room</fullName>
+                <default>false</default>
+                <label>Le Meridien Etoile Urban Room</label>
+            </value>
+            <value>
+                <fullName>Le Meridien Etoile Smart Room</fullName>
+                <default>false</default>
+                <label>Le Meridien Etoile Smart Room</label>
+            </value>
+            <value>
+                <fullName>Le Meridien Etoile Chic Room</fullName>
+                <default>false</default>
+                <label>Le Meridien Etoile Chic Room</label>
+            </value>
+            <value>
+                <fullName>Prince de Galles Art Deco Room</fullName>
+                <default>false</default>
+                <label>Prince de Galles Art Deco Room</label>
+            </value>
+            <value>
+                <fullName>The Westin Paris Superior Room</fullName>
+                <default>false</default>
+                <label>The Westin Paris Superior Room</label>
+            </value>
+            <value>
+                <fullName>W Paris Opera Cosy Room</fullName>
+                <default>false</default>
+                <label>W Paris Opera Cosy Room</label>
+            </value>
+            <value>
+                <fullName>Aloft Brussels Aloft Room</fullName>
+                <default>false</default>
+                <label>Aloft Brussels Aloft Room</label>
+            </value>
+            <value>
+                <fullName>Aloft Brussels Savvy Room</fullName>
+                <default>false</default>
+                <label>Aloft Brussels Savvy Room</label>
+            </value>
+            <value>
+                <fullName>Four Points Brussels Classic Room</fullName>
+                <default>false</default>
+                <label>Four Points Brussels Classic Room</label>
+            </value>
+            <value>
+                <fullName>Four Points Brussels Deluxe Room</fullName>
+                <default>false</default>
+                <label>Four Points Brussels Deluxe Room</label>
+            </value>
+            <value>
+                <fullName>Le Meridien Picadilly Classic Room</fullName>
+                <default>false</default>
+                <label>Le Meridien Picadilly Classic Room</label>
+            </value>
+            <value>
+                <fullName>Le Meridien Picadilly Deluxe Room</fullName>
+                <default>false</default>
+                <label>Le Meridien Picadilly Deluxe Room</label>
+            </value>
+            <value>
+                <fullName>Park Tower Knightsbridge Classic Room</fullName>
+                <default>false</default>
+                <label>Park Tower Knightsbridge Classic Room</label>
+            </value>
+            <value>
+                <fullName>Park Tower Knightsbridge Executive Room</fullName>
+                <default>false</default>
+                <label>Park Tower Knightsbridge Executive Room</label>
+            </value>
+            <value>
+                <fullName>Park Tower Knightsbridge Panoramic Room</fullName>
+                <default>false</default>
+                <label>Park Tower Knightsbridge Panoramic Room</label>
+            </value>
+            <value>
+                <fullName>Sheraton Grand London Park Lane Classic Room</fullName>
+                <default>false</default>
+                <label>Sheraton Grand London Park Lane Classic Room</label>
+            </value>
+            <value>
+                <fullName>Sheraton Grand London Park Lane Superior Room</fullName>
+                <default>false</default>
+                <label>Sheraton Grand London Park Lane Superior Room</label>
+            </value>
+            <value>
+                <fullName>Sheraton Grand London Park Lane Club Room</fullName>
+                <default>false</default>
+                <label>Sheraton Grand London Park Lane Club Room</label>
+            </value>
+            <value>
+                <fullName>W London Leicester Square Wonderful Room</fullName>
+                <default>false</default>
+                <label>W London Leicester Square Wonderful Room</label>
+            </value>
+            <value>
+                <fullName>W London Leicester Square Spectacular Room</fullName>
+                <default>false</default>
+                <label>W London Leicester Square Spectacular Room</label>
+            </value>
+            <value>
+                <fullName>W London Leicester Square Fabulous Room</fullName>
+                <default>false</default>
+                <label>W London Leicester Square Fabulous Room</label>
+            </value>
+            <value>
+                <fullName>Jerome Quiot New Recommended Reds</fullName>
+                <default>false</default>
+                <label>Jerome Quiot New Recommended Reds</label>
+            </value>
+            <value>
+                <fullName>Paul Sapin Glorious Trio</fullName>
+                <default>false</default>
+                <label>Paul Sapin Glorious Trio</label>
+            </value>
+            <value>
+                <fullName>Châteauneuf-du-Pape Magnum</fullName>
+                <default>false</default>
+                <label>Châteauneuf-du-Pape Magnum</label>
+            </value>
+            <value>
+                <fullName>6 Best Selling Reds</fullName>
+                <default>false</default>
+                <label>6 Best Selling Reds</label>
+            </value>
+            <value>
+                <fullName>6 Best Selling Whites</fullName>
+                <default>false</default>
+                <label>6 Best Selling Whites</label>
+            </value>
+            <value>
+                <fullName>The Masters Trio</fullName>
+                <default>false</default>
+                <label>The Masters Trio</label>
+            </value>
+            <value>
+                <fullName>Mixed 6 Cellar</fullName>
+                <default>false</default>
+                <label>Mixed 6 Cellar</label>
+            </value>
+            <value>
+                <fullName>12 Best Selling Reds</fullName>
+                <default>false</default>
+                <label>12 Best Selling Reds</label>
+            </value>
+            <value>
+                <fullName>12 Best Selling Whites</fullName>
+                <default>false</default>
+                <label>12 Best Selling Whites</label>
+            </value>
+            <value>
+                <fullName>12 Château Cellar Selection</fullName>
+                <default>false</default>
+                <label>12 Château Cellar Selection</label>
+            </value>
+            <value>
+                <fullName>Champagne Luxurious Gift Box</fullName>
+                <default>false</default>
+                <label>Champagne Luxurious Gift Box</label>
+            </value>
+            <value>
+                <fullName>Vintage Armagnac</fullName>
+                <default>false</default>
+                <label>Vintage Armagnac</label>
+            </value>
+            <value>
+                <fullName>Duo of Veuve Clicquot</fullName>
+                <default>false</default>
+                <label>Duo of Veuve Clicquot</label>
+            </value>
+            <value>
+                <fullName>Magnum of Taittinger</fullName>
+                <default>false</default>
+                <label>Magnum of Taittinger</label>
+            </value>
+            <value>
+                <fullName>Duo of Bollinger Champagne</fullName>
+                <default>false</default>
+                <label>Duo of Bollinger Champagne</label>
+            </value>
+            <value>
+                <fullName>A Magnum of Bollinger</fullName>
+                <default>false</default>
+                <label>A Magnum of Bollinger</label>
+            </value>
+            <value>
+                <fullName>A case of Gardet Champagne</fullName>
+                <default>false</default>
+                <label>A case of Gardet Champagne</label>
+            </value>
+            <value>
+                <fullName>A case of Pol Roger Champagne</fullName>
+                <default>false</default>
+                <label>A case of Pol Roger Champagne</label>
+            </value>
+            <value>
+                <fullName>A case of Bollinger</fullName>
+                <default>false</default>
+                <label>A case of Bollinger</label>
+            </value>
+            <value>
+                <fullName>Eurostar Wine Heaven Hamper</fullName>
+                <default>false</default>
+                <label>Eurostar Wine Heaven Hamper</label>
+            </value>
+            <value>
+                <fullName>Veuve Clicquot Hamper</fullName>
+                <default>false</default>
+                <label>Veuve Clicquot Hamper</label>
+            </value>
+            <value>
+                <fullName>Buy An Acre Fund</fullName>
+                <default>false</default>
+                <label>Buy An Acre Fund</label>
+            </value>
+            <value>
+                <fullName>Postage</fullName>
+                <default>false</default>
+                <label>Postage</label>
+            </value>
+            <value>
+                <fullName>European Bubbles</fullName>
+                <default>false</default>
+                <label>European Bubbles</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Starwood - Euro</controllingFieldValue>
+            <valueName>Le Meridien Etoile Urban Room</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Starwood - Euro</controllingFieldValue>
+            <valueName>Le Meridien Etoile Smart Room</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Starwood - Euro</controllingFieldValue>
+            <valueName>Le Meridien Etoile Chic Room</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Starwood - Euro</controllingFieldValue>
+            <valueName>Prince de Galles Art Deco Room</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Starwood - Euro</controllingFieldValue>
+            <valueName>The Westin Paris Superior Room</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Starwood - Euro</controllingFieldValue>
+            <valueName>W Paris Opera Cosy Room</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Starwood - Euro</controllingFieldValue>
+            <valueName>Aloft Brussels Aloft Room</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Starwood - Euro</controllingFieldValue>
+            <valueName>Aloft Brussels Savvy Room</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Starwood - Euro</controllingFieldValue>
+            <valueName>Four Points Brussels Classic Room</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Starwood - Euro</controllingFieldValue>
+            <valueName>Four Points Brussels Deluxe Room</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Starwood - Pound</controllingFieldValue>
+            <valueName>Le Meridien Picadilly Classic Room</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Starwood - Pound</controllingFieldValue>
+            <valueName>Le Meridien Picadilly Deluxe Room</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Starwood - Pound</controllingFieldValue>
+            <valueName>Park Tower Knightsbridge Classic Room</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Starwood - Pound</controllingFieldValue>
+            <valueName>Park Tower Knightsbridge Executive Room</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Starwood - Pound</controllingFieldValue>
+            <valueName>Park Tower Knightsbridge Panoramic Room</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Starwood - Pound</controllingFieldValue>
+            <valueName>Sheraton Grand London Park Lane Classic Room</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Starwood - Pound</controllingFieldValue>
+            <valueName>Sheraton Grand London Park Lane Superior Room</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Starwood - Pound</controllingFieldValue>
+            <valueName>Sheraton Grand London Park Lane Club Room</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Starwood - Pound</controllingFieldValue>
+            <valueName>W London Leicester Square Wonderful Room</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Starwood - Pound</controllingFieldValue>
+            <valueName>W London Leicester Square Spectacular Room</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Starwood - Pound</controllingFieldValue>
+            <valueName>W London Leicester Square Fabulous Room</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tordoffs</controllingFieldValue>
+            <valueName>Jerome Quiot New Recommended Reds</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tordoffs</controllingFieldValue>
+            <valueName>Paul Sapin Glorious Trio</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tordoffs</controllingFieldValue>
+            <valueName>Châteauneuf-du-Pape Magnum</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tordoffs</controllingFieldValue>
+            <valueName>6 Best Selling Reds</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tordoffs</controllingFieldValue>
+            <valueName>6 Best Selling Whites</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tordoffs</controllingFieldValue>
+            <valueName>The Masters Trio</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tordoffs</controllingFieldValue>
+            <valueName>Mixed 6 Cellar</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tordoffs</controllingFieldValue>
+            <valueName>12 Best Selling Reds</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tordoffs</controllingFieldValue>
+            <valueName>12 Best Selling Whites</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tordoffs</controllingFieldValue>
+            <valueName>12 Château Cellar Selection</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tordoffs</controllingFieldValue>
+            <valueName>Champagne Luxurious Gift Box</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tordoffs</controllingFieldValue>
+            <valueName>Vintage Armagnac</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tordoffs</controllingFieldValue>
+            <valueName>Duo of Veuve Clicquot</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tordoffs</controllingFieldValue>
+            <valueName>Magnum of Taittinger</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tordoffs</controllingFieldValue>
+            <valueName>Duo of Bollinger Champagne</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tordoffs</controllingFieldValue>
+            <valueName>A Magnum of Bollinger</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tordoffs</controllingFieldValue>
+            <valueName>A case of Gardet Champagne</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tordoffs</controllingFieldValue>
+            <valueName>A case of Pol Roger Champagne</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tordoffs</controllingFieldValue>
+            <valueName>A case of Bollinger</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tordoffs</controllingFieldValue>
+            <valueName>Eurostar Wine Heaven Hamper</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tordoffs</controllingFieldValue>
+            <valueName>Veuve Clicquot Hamper</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tordoffs</controllingFieldValue>
+            <valueName>European Bubbles</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>World Land Trust</controllingFieldValue>
+            <valueName>Buy An Acre Fund</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Firmdale</controllingFieldValue>
+            <valueName>Dorset Square Hotel - Superior Room</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Firmdale</controllingFieldValue>
+            <valueName>Dorset Square Hotel - Luxury Room</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Firmdale</controllingFieldValue>
+            <valueName>Dorset Square Hotel - Deluxe Room</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fortnum and Mason</controllingFieldValue>
+            <valueName>The 181 Hamper</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fortnum and Mason</controllingFieldValue>
+            <valueName>The Fine Supplies Hamper</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fortnum and Mason</controllingFieldValue>
+            <valueName>The Sweet Hamper</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fortnum and Mason</controllingFieldValue>
+            <valueName>The Sovereign Hamper</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fortnum and Mason</controllingFieldValue>
+            <valueName>The Blenheim Hamper</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fortnum and Mason</controllingFieldValue>
+            <valueName>The Grosvenor Hamper</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fortnum and Mason</controllingFieldValue>
+            <valueName>The English Essentials</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fortnum and Mason</controllingFieldValue>
+            <valueName>The Fine Selection Hamper</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fortnum and Mason</controllingFieldValue>
+            <valueName>The Burlington Hamper</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fortnum and Mason</controllingFieldValue>
+            <valueName>The Epicure Hamper</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fortnum and Mason</controllingFieldValue>
+            <valueName>Postage</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Kadeos</controllingFieldValue>
+            <valueName>French Voucher</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Kadeos</controllingFieldValue>
+            <valueName>Belgian Voucher</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Mama Shelter</controllingFieldValue>
+            <valueName>Mama Shelter Lyon</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Mama Shelter</controllingFieldValue>
+            <valueName>Mama Shelter Marsaille</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Montblanc</controllingFieldValue>
+            <valueName>Heritage Cufflinks</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Montblanc</controllingFieldValue>
+            <valueName>Starwalker Ballpoint Pen</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Montblanc</controllingFieldValue>
+            <valueName>Starwalker Mechanical Pencil</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Montblanc</controllingFieldValue>
+            <valueName>Long Wallet</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Montblanc</controllingFieldValue>
+            <valueName>Oval Chain Bracelet</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Montblanc</controllingFieldValue>
+            <valueName>Starwalker Fineliner Pen</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Montblanc</controllingFieldValue>
+            <valueName>Meisterstuck Ballpoint Pen</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Montblanc</controllingFieldValue>
+            <valueName>Meisterstuck Mechanical Pencil</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Montblanc</controllingFieldValue>
+            <valueName>Starwalker Fountain Pen</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Montblanc</controllingFieldValue>
+            <valueName>Meisterstuck Rollerball Pen</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Montblanc</controllingFieldValue>
+            <valueName>Meisterstuck Fountain Pen</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Mr &amp; Mrs Smith - Euro</controllingFieldValue>
+            <controllingFieldValue>Mr &amp; Mrs Smith - Pound</controllingFieldValue>
+            <controllingFieldValue>Selfridge</controllingFieldValue>
+            <valueName>Gift Card</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Nicolas</controllingFieldValue>
+            <valueName>Voucher</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Port Design</controllingFieldValue>
+            <valueName>Firenze Laptop Bag</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Port Design</controllingFieldValue>
+            <valueName>Chicargo Eco Backpack</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Port Design</controllingFieldValue>
+            <valueName>Courchevel Trolley</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Port Design</controllingFieldValue>
+            <valueName>Detroit Universal Tablet with Bluetooth Keyboard</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Port Design</controllingFieldValue>
+            <valueName>Manhatten Backpack Trolley</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Port Design</controllingFieldValue>
+            <valueName>GO LED Commuter Bag</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Port Design</controllingFieldValue>
+            <valueName>Sochi Laptop and Tablet Case</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

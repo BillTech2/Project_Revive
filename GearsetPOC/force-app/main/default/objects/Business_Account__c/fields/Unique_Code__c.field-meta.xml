@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Unique_Code__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+    FCE_London_Active__c, FCE_London__c,
+    IF(
+        FCE_Continent_Active__c, FCE_Continent__c,
+        IF(
+            GDS_Code_Active__c, GDS_Code__c,
+            IF(
+                Corporate_Code_Active__c, Corporate_Code__c,
+                IF(
+                    GND_BE_Continent_Active__c, GND_BE_Continent__r.Name,
+                    IF(
+                        GND_BE_London_Active__c, GND_BE_London__r.Name,
+                        IF(
+                            GND_NL_Continent_Active__c, GND_NL_Continent__r.Name,
+                            IF(
+                                GND_NL_London_Active__c, GND_NL_London__r.Name,
+                                NULL
+                            )
+                        )
+                    )
+                )
+            )
+        )
+    )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Unique Code</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

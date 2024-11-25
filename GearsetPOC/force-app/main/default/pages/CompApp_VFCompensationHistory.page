@@ -1,0 +1,44 @@
+<apex:page Standardcontroller="Compensation__c"
+		   showHeader="false"
+		   standardStylesheets="false"
+		   sidebar="false"
+		   extensions="CompApp_VFCompensationHistoryCtrl">
+
+	<style>
+		.slds-scope .slds-table td {
+		    padding-top: 0px;
+		    padding-bottom: 0px;
+  		}
+	</style>
+	
+	<apex:slds />
+	<apex:pageBlock >
+		<apex:outputText value="{!Compensation__c.Id}" rendered="false"/>
+		<apex:outputText value="Could not display compensation history at this time." rendered="{!NOT(isDataExist)}"/>
+		<apex:pageBlockTable styleClass="slds-scope slds-table slds-table_bordered slds-table_col-bordered slds-text-body_small"
+							 value="{!rows}"
+							 var="row"
+							 rendered="{!isDataExist}">
+			<apex:column styleClass="slds-is-resizable slds-cell-wrap">
+				<apex:facet name="header">Type</apex:facet>
+				<apex:outputText value="{!row.tType}"/>
+			</apex:column>
+			<apex:column styleClass="slds-is-resizable slds-cell-wrap">
+				<apex:facet name="header">Description</apex:facet>
+				<apex:outputText value="{!row.Description}"/>
+			</apex:column>
+			<apex:column styleClass="slds-is-resizable slds-cell-wrap">
+				<apex:facet name="header">Calculation Trace</apex:facet>
+				<apex:outputText value="{!row.CalculationTrace}"/>
+			</apex:column>
+			<apex:column styleClass="slds-text-align_right">
+				<apex:facet name="header">Voucher</apex:facet>
+				<apex:outputText value="{!row.Voucher}"/>
+			</apex:column>
+			<apex:column styleClass="slds-text-align_right">
+				<apex:facet name="header">Points</apex:facet>
+				<apex:outputText value="{!row.Points}"/>
+			</apex:column>
+		</apex:pageBlockTable>
+	</apex:pageBlock>
+</apex:page>

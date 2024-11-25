@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Station_From__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <description>Station From</description>
+    <inlineHelpText>Enter the origin of journey from which this rule is applicable</inlineHelpText>
+    <label>Station From</label>
+    <referenceTo>Stations__c</referenceTo>
+    <relationshipLabel>Additional Compensation Rules</relationshipLabel>
+    <relationshipName>Additional_Compensation_Rules</relationshipName>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

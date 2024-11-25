@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FAQ_articles_to_be_updated</fullName>
+    <columns>ARTICLE_NUMBER</columns>
+    <columns>TITLE</columns>
+    <columns>PUBLISH_STATUS</columns>
+    <columns>LANGUAGE</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>LAST_PUBLISHED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>PUBLISH_STATUS</field>
+        <operation>equals</operation>
+        <value>2</value>
+    </filters>
+    <filters>
+        <field>LAST_PUBLISHED_DATE</field>
+        <operation>lessThan</operation>
+        <value>3/6/2024 12:00 AM</value>
+    </filters>
+    <filters>
+        <field>RECORD_TYPE</field>
+        <operation>equals</operation>
+        <value>Knowledge__kav.FAQ</value>
+    </filters>
+    <label>FAQ articles to be updated</label>
+</ListView>

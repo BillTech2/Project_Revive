@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Trains_With_Additional_Compensation</fullName>
+    <columns>Departure_Date_Time_Format__c</columns>
+    <columns>NAME</columns>
+    <columns>From__c</columns>
+    <columns>To__c</columns>
+    <columns>Equipment_Code__c</columns>
+    <columns>Cancelled__c</columns>
+    <columns>Incidents__c</columns>
+    <columns>On_Time__c</columns>
+    <columns>Delay_in_Minutes__c</columns>
+    <columns>Compensation_Reason__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>All__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <label>Trains With Additional Compensation</label>
+    <language>en_US</language>
+</ListView>

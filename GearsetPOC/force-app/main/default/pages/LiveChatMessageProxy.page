@@ -1,0 +1,7 @@
+<apex:page sidebar="false" showheader="false" standardStylesheets="false" docType="html-5.0" applyHtmlTag="false">
+<c:esrCookies ></c:esrCookies>
+<c:esrMessages ></c:esrMessages>
+<script type="text/javascript">
+ESR.initMessageProxy();
+</script>
+</apex:page>

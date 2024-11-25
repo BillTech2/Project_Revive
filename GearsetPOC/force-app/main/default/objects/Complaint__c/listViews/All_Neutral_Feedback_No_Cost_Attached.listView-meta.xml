@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Neutral_Feedback_No_Cost_Attached</fullName>
+    <columns>CREATED_DATE</columns>
+    <columns>NAME</columns>
+    <columns>Complaint_Summary_Text__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Type_of_Feedback__c</field>
+        <operation>equals</operation>
+        <value>Neutral</value>
+    </filters>
+    <filters>
+        <field>Cost_Attached_to_Feedback__c</field>
+        <operation>equals</operation>
+        <value>No</value>
+    </filters>
+    <label>All Neutral Feedback (No Cost Attached)</label>
+    <language>en_US</language>
+</ListView>

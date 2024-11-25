@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Builds_rapport_through_tone_or_language__c</fullName>
+    <inlineHelpText>Adapts style to the customer using positive words.  Mirrors pace, pitch and tone.  Would not mirror tone for an angry customer.</inlineHelpText>
+    <label>Builds rapport through tone/language</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Yes_or_No</valueSetName>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Category_Unique_Name__c</fullName>
+    <description>The Category Name as in -&gt; set in up -&gt; in Data Categories</description>
+    <externalId>false</externalId>
+    <label>Category Unique Name</label>
+    <length>255</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Assigned_Accounts</fullName>
+    <columns>NAME</columns>
+    <columns>Managed__c</columns>
+    <columns>Category__c</columns>
+    <columns>HQ__c</columns>
+    <columns>Owner__c</columns>
+    <columns>RECORDTYPE</columns>
+    <filterScope>Mine</filterScope>
+    <label>*My Assigned Accounts</label>
+    <language>en_US</language>
+    <sharedTo />
+</ListView>

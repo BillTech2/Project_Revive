@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Package_OB_21_08_to_27_08_RUNNING</fullName>
+    <columns>NAME</columns>
+    <columns>PNR__c</columns>
+    <columns>Departure_Date__c</columns>
+    <columns>Point_of_Sale__c</columns>
+    <columns>Full_Name__c</columns>
+    <columns>Checked_In__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Package_Booking__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Cancelled__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Departure_Date__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>8/21/2021</value>
+    </filters>
+    <filters>
+        <field>Ticket_Status__c</field>
+        <operation>equals</operation>
+        <value>Active</value>
+    </filters>
+    <filters>
+        <field>Departure_Date__c</field>
+        <operation>lessOrEqual</operation>
+        <value>8/27/2021</value>
+    </filters>
+    <label>Package OB 21/08 to 27/08 RUNNING</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>EBSC_All_Groups</group>
+    </sharedTo>
+</ListView>

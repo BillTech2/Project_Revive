@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason__c</fullName>
+    <label>Reason</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Type__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Social Media Payment</fullName>
+                <default>false</default>
+                <label>Social Media Payment</label>
+            </value>
+            <value>
+                <fullName>CB/CBE</fullName>
+                <default>false</default>
+                <label>CB/CBE</label>
+            </value>
+            <value>
+                <fullName>Vulnerable Customer</fullName>
+                <default>false</default>
+                <label>Vulnerable Customer</label>
+            </value>
+            <value>
+                <fullName>Multiple Bookings / Exchanges</fullName>
+                <default>false</default>
+                <label>Multiple Bookings / Exchanges</label>
+            </value>
+            <value>
+                <fullName>Disruption</fullName>
+                <default>false</default>
+                <label>Disruption</label>
+            </value>
+            <value>
+                <fullName>E-Voucher Not Received</fullName>
+                <default>false</default>
+                <label>E-Voucher Not Received</label>
+            </value>
+            <value>
+                <fullName>Child Only Booking</fullName>
+                <default>false</default>
+                <label>Child Only Booking</label>
+            </value>
+            <value>
+                <fullName>DC Account</fullName>
+                <default>false</default>
+                <label>DC Account</label>
+            </value>
+            <value>
+                <fullName>Paper Gift Vouchers</fullName>
+                <default>false</default>
+                <label>Paper Gift Vouchers</label>
+            </value>
+            <value>
+                <fullName>Exchange of ECC &amp; Station Bookings</fullName>
+                <default>false</default>
+                <label>Exchange of ECC &amp; Station Bookings</label>
+            </value>
+            <value>
+                <fullName>Previously Changed Offline</fullName>
+                <default>false</default>
+                <label>Previously Changed Offline</label>
+            </value>
+            <value>
+                <fullName>Re-Accommodated Ticket</fullName>
+                <default>false</default>
+                <label>Re-Accommodated Ticket</label>
+            </value>
+            <value>
+                <fullName>Interline Exchange</fullName>
+                <default>false</default>
+                <label>Interline Exchange</label>
+            </value>
+            <value>
+                <fullName>Training</fullName>
+                <default>false</default>
+                <label>Training</label>
+            </value>
+            <value>
+                <fullName>Operator Error(staff)</fullName>
+                <default>false</default>
+                <label>Operator Error(staff)</label>
+            </value>
+            <value>
+                <fullName>Death/ Illness / Injury</fullName>
+                <default>false</default>
+                <label>Death/ Illness / Injury</label>
+            </value>
+            <value>
+                <fullName>Eurostar Changes to Timetable</fullName>
+                <default>false</default>
+                <label>Eurostar Changes to Timetable</label>
+            </value>
+            <value>
+                <fullName>Delays</fullName>
+                <default>false</default>
+                <label>Delays</label>
+            </value>
+            <value>
+                <fullName>Fraud</fullName>
+                <default>false</default>
+                <label>Fraud</label>
+            </value>
+            <value>
+                <fullName>System Error</fullName>
+                <default>false</default>
+                <label>System Error</label>
+            </value>
+            <value>
+                <fullName>Customer Error</fullName>
+                <default>false</default>
+                <label>Customer Error</label>
+            </value>
+            <value>
+                <fullName>Strike</fullName>
+                <default>false</default>
+                <label>Strike</label>
+            </value>
+            <value>
+                <fullName>Flow Forward</fullName>
+                <default>false</default>
+                <label>Flow Forward</label>
+            </value>
+            <value>
+                <fullName>Upgrade</fullName>
+                <default>false</default>
+                <label>Upgrade</label>
+            </value>
+            <value>
+                <fullName>Missed Departure</fullName>
+                <default>false</default>
+                <label>Missed Departure</label>
+            </value>
+            <value>
+                <fullName>Function not available online (loyalty only)</fullName>
+                <default>false</default>
+                <label>Function not available online (loyalty only)</label>
+            </value>
+            <value>
+                <fullName>Day of Travel Exchange</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Day of Travel Exchange</label>
+            </value>
+            <value>
+                <fullName>EFT Free Upgrade</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>EFT Free Upgrade</label>
+            </value>
+            <value>
+                <fullName>Exchange With Different Payment Card</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Exchange With Different Payment Card</label>
+            </value>
+            <value>
+                <fullName>Old Compensation</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Old Compensation</label>
+            </value>
+            <value>
+                <fullName>Over / Under Charged</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Over / Under Charged</label>
+            </value>
+            <value>
+                <fullName>Part Point / Part Cash Payment</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Part Point / Part Cash Payment</label>
+            </value>
+            <value>
+                <fullName>Special Event Reward Tickets</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Special Event Reward Tickets</label>
+            </value>
+            <value>
+                <fullName>System Failure</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>System Failure</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Booking Write-Off</controllingFieldValue>
+            <valueName>Operator Error(staff)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Booking Write-Off</controllingFieldValue>
+            <valueName>Death/ Illness / Injury</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Booking Write-Off</controllingFieldValue>
+            <valueName>Eurostar Changes to Timetable</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Booking Write-Off</controllingFieldValue>
+            <valueName>Delays</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Booking Write-Off</controllingFieldValue>
+            <valueName>Fraud</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Booking Write-Off</controllingFieldValue>
+            <valueName>System Error</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Booking Write-Off</controllingFieldValue>
+            <valueName>Customer Error</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Booking Write-Off</controllingFieldValue>
+            <valueName>Strike</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Booking Write-Off</controllingFieldValue>
+            <valueName>Flow Forward</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Booking Write-Off</controllingFieldValue>
+            <valueName>Upgrade</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Booking Write-Off</controllingFieldValue>
+            <valueName>Missed Departure</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Trade_Contract_Codes</fullName>
+    <columns>NAME</columns>
+    <columns>Company_Name__c</columns>
+    <columns>Branch__c</columns>
+    <columns>Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Trade_Contracts_Account__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <label>Trade Contract Codes</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>EBSC_Commercial_Support</group>
+    </sharedTo>
+</ListView>

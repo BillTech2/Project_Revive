@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Exchange_Queue_Case</fullName>
+    <columns>CASES.CASE_NUMBER</columns>
+    <columns>Preferred_Language__c</columns>
+    <columns>CASES.SUBJECT</columns>
+    <columns>CASES.STATUS</columns>
+    <columns>Departure_Date__c</columns>
+    <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
+    <columns>Days_Since_Last_Contact__c</columns>
+    <columns>NAME</columns>
+    <columns>Loyalty_Tier__c</columns>
+    <columns>CASES.RECORDTYPE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Carrier__c</columns>
+    <filterScope>Queue</filterScope>
+    <filters>
+        <field>CASES.STATUS</field>
+        <operation>notEqual</operation>
+        <value>Closed</value>
+    </filters>
+    <label>Exchange - Queue</label>
+    <queue>Exchange_Queue</queue>
+    <sharedTo>
+        <allInternalUsers />
+    </sharedTo>
+</ListView>

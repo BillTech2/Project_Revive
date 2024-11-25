@@ -1,0 +1,16 @@
+<template>
+    <template if:true={isOpenedPopup}>
+        <div class="modal">
+            <div class="modal-content">
+                <p class="text">This Customer currently has {totalCases} open cases. </br> </br> Click Yes to assign them all to you and resolve, </br> or No to assign this single case to yourself. </p>
+                <div class="buttons">
+                    <lightning-button variant="base" label="Close" onclick={closeModal} class="slds-m-left_x-small"></lightning-button>
+                    <div>
+                        <lightning-button variant="brand-outline" label="No" onclick={assignCase} class="slds-m-left_x-small"></lightning-button>
+                        <lightning-button variant="brand" label="Yes" onclick={assignAllCases} class="slds-m-left_x-small"></lightning-button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+</template>

@@ -1,0 +1,1655 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Secondary_Code__c</fullName>
+    <inlineHelpText>select the most relevant secondary system code.</inlineHelpText>
+    <label>Secondary Code</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Primary_Code__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>A* - Air Production - Whole System</fullName>
+                <default>false</default>
+                <label>A* - Air Production - Whole System</label>
+            </value>
+            <value>
+                <fullName>AC - Compressors (Main and Auxiliary)</fullName>
+                <default>false</default>
+                <label>AC - Compressors (Main and Auxiliary)</label>
+            </value>
+            <value>
+                <fullName>AD - Air Dryers</fullName>
+                <default>false</default>
+                <label>AD - Air Dryers</label>
+            </value>
+            <value>
+                <fullName>AH - Horn</fullName>
+                <default>false</default>
+                <label>AH - Horn</label>
+            </value>
+            <value>
+                <fullName>AP - Pipework (incl Hoses)</fullName>
+                <default>false</default>
+                <label>AP - Pipework (incl Hoses)</label>
+            </value>
+            <value>
+                <fullName>AR - Reservoirs (other than brakes)</fullName>
+                <default>false</default>
+                <label>AR - Reservoirs (other than brakes)</label>
+            </value>
+            <value>
+                <fullName>AS - Pressure Switches, Governors and Regulators</fullName>
+                <default>false</default>
+                <label>AS - Pressure Switches, Governors and Regulators</label>
+            </value>
+            <value>
+                <fullName>AV - Valves/Cocks (other than Brakes)</fullName>
+                <default>false</default>
+                <label>AV - Valves/Cocks (other than Brakes)</label>
+            </value>
+            <value>
+                <fullName>B* - Brakes - Whole System</fullName>
+                <default>false</default>
+                <label>B* - Brakes - Whole System</label>
+            </value>
+            <value>
+                <fullName>B1 - Brake Disc</fullName>
+                <default>false</default>
+                <label>B1 - Brake Disc</label>
+            </value>
+            <value>
+                <fullName>BA - Actuator</fullName>
+                <default>false</default>
+                <label>BA - Actuator</label>
+            </value>
+            <value>
+                <fullName>BB - Blocks/Pads</fullName>
+                <default>false</default>
+                <label>BB - Blocks/Pads</label>
+            </value>
+            <value>
+                <fullName>BD - Rheostatic Braking and Brake Resistor</fullName>
+                <default>false</default>
+                <label>BD - Rheostatic Braking and Brake Resistor</label>
+            </value>
+            <value>
+                <fullName>BG - Gauges and Indicators (not cab)</fullName>
+                <default>false</default>
+                <label>BG - Gauges and Indicators (not cab)</label>
+            </value>
+            <value>
+                <fullName>BH - Parking Brake</fullName>
+                <default>false</default>
+                <label>BH - Parking Brake</label>
+            </value>
+            <value>
+                <fullName>BL - Callipers</fullName>
+                <default>false</default>
+                <label>BL - Callipers</label>
+            </value>
+            <value>
+                <fullName>BP - Pipework, Hoses and Seals</fullName>
+                <default>false</default>
+                <label>BP - Pipework, Hoses and Seals</label>
+            </value>
+            <value>
+                <fullName>BR - Reservoirs (brakes)</fullName>
+                <default>false</default>
+                <label>BR - Reservoirs (brakes)</label>
+            </value>
+            <value>
+                <fullName>BT - Brake Panel (373) / Brake Control Unit (374)</fullName>
+                <default>false</default>
+                <label>BT - Brake Panel (373) / Brake Control Unit (374)</label>
+            </value>
+            <value>
+                <fullName>BV - Valves/Cocks/Governors</fullName>
+                <default>false</default>
+                <label>BV - Valves/Cocks/Governors</label>
+            </value>
+            <value>
+                <fullName>C* - Car Body - Whole System</fullName>
+                <default>false</default>
+                <label>C* - Car Body - Whole System</label>
+            </value>
+            <value>
+                <fullName>CA - Bodyshell</fullName>
+                <default>false</default>
+                <label>CA - Bodyshell</label>
+            </value>
+            <value>
+                <fullName>CB - Bodyside Windows</fullName>
+                <default>false</default>
+                <label>CB - Bodyside Windows</label>
+            </value>
+            <value>
+                <fullName>CD - Streamline Panels (Underframe)</fullName>
+                <default>false</default>
+                <label>CD - Streamline Panels (Underframe)</label>
+            </value>
+            <value>
+                <fullName>CE - Emergency windows</fullName>
+                <default>false</default>
+                <label>CE - Emergency windows</label>
+            </value>
+            <value>
+                <fullName>CG - Bodyside Panels/Skirts/Filler Covers</fullName>
+                <default>false</default>
+                <label>CG - Bodyside Panels/Skirts/Filler Covers</label>
+            </value>
+            <value>
+                <fullName>CM - Nose Doors</fullName>
+                <default>false</default>
+                <label>CM - Nose Doors</label>
+            </value>
+            <value>
+                <fullName>CN - Exterior Signage and Labels</fullName>
+                <default>false</default>
+                <label>CN - Exterior Signage and Labels</label>
+            </value>
+            <value>
+                <fullName>CR - Roof/Guttering/Drains</fullName>
+                <default>false</default>
+                <label>CR - Roof/Guttering/Drains</label>
+            </value>
+            <value>
+                <fullName>CS - Snowscreens (373)</fullName>
+                <default>false</default>
+                <label>CS - Snowscreens (373)</label>
+            </value>
+            <value>
+                <fullName>CT - Tail, Marker, Head Lights (incl covers),  Bodyside Indicator/Obstruction Lights</fullName>
+                <default>false</default>
+                <label>CT - Tail, Marker, Head Lights (incl covers),  Bodyside Indicator/Obstruction Lights</label>
+            </value>
+            <value>
+                <fullName>CV - Gangways - Mechanical and Bellows</fullName>
+                <default>false</default>
+                <label>CV - Gangways - Mechanical and Bellows</label>
+            </value>
+            <value>
+                <fullName>E* - Auxiliary Supplies - Whole System</fullName>
+                <default>false</default>
+                <label>E* - Auxiliary Supplies - Whole System</label>
+            </value>
+            <value>
+                <fullName>EB - Batteries/Charging</fullName>
+                <default>false</default>
+                <label>EB - Batteries/Charging</label>
+            </value>
+            <value>
+                <fullName>EC - Contactors/Relays/Converters</fullName>
+                <default>false</default>
+                <label>EC - Contactors/Relays/Converters</label>
+            </value>
+            <value>
+                <fullName>EF - Fuses and Circuit Breakers</fullName>
+                <default>false</default>
+                <label>EF - Fuses and Circuit Breakers</label>
+            </value>
+            <value>
+                <fullName>EJ - Jumpers</fullName>
+                <default>false</default>
+                <label>EJ - Jumpers</label>
+            </value>
+            <value>
+                <fullName>G* - Collector Equipment - Whole System</fullName>
+                <default>false</default>
+                <label>G* - Collector Equipment - Whole System</label>
+            </value>
+            <value>
+                <fullName>GA - Pantograph Air Motor</fullName>
+                <default>false</default>
+                <label>GA - Pantograph Air Motor</label>
+            </value>
+            <value>
+                <fullName>GD - Collector Equipment Controls</fullName>
+                <default>false</default>
+                <label>GD - Collector Equipment Controls</label>
+            </value>
+            <value>
+                <fullName>GE - Roof Earthing Switch</fullName>
+                <default>false</default>
+                <label>GE - Roof Earthing Switch</label>
+            </value>
+            <value>
+                <fullName>GG - Energy Meter</fullName>
+                <default>false</default>
+                <label>GG - Energy Meter</label>
+            </value>
+            <value>
+                <fullName>GH - Pantograph Heads inc Carbons</fullName>
+                <default>false</default>
+                <label>GH - Pantograph Heads inc Carbons</label>
+            </value>
+            <value>
+                <fullName>GI - Insulators</fullName>
+                <default>false</default>
+                <label>GI - Insulators</label>
+            </value>
+            <value>
+                <fullName>GJ - Auto Dropping Device</fullName>
+                <default>false</default>
+                <label>GJ - Auto Dropping Device</label>
+            </value>
+            <value>
+                <fullName>GL - Roof HT Cables/Busbars</fullName>
+                <default>false</default>
+                <label>GL - Roof HT Cables/Busbars</label>
+            </value>
+            <value>
+                <fullName>GP - Pantograph Assembly</fullName>
+                <default>false</default>
+                <label>GP - Pantograph Assembly</label>
+            </value>
+            <value>
+                <fullName>GV - VCB / HTCB</fullName>
+                <default>false</default>
+                <label>GV - VCB / HTCB</label>
+            </value>
+            <value>
+                <fullName>HB - Auxiliary Heaters</fullName>
+                <default>false</default>
+                <label>HB - Auxiliary Heaters</label>
+            </value>
+            <value>
+                <fullName>HC - Cab HVAC</fullName>
+                <default>false</default>
+                <label>HC - Cab HVAC</label>
+            </value>
+            <value>
+                <fullName>HD - Air Conditioning Ducts</fullName>
+                <default>false</default>
+                <label>HD - Air Conditioning Ducts</label>
+            </value>
+            <value>
+                <fullName>HS - Trailer/Saloon HVAC</fullName>
+                <default>false</default>
+                <label>HS - Trailer/Saloon HVAC</label>
+            </value>
+            <value>
+                <fullName>I* - Interiors - Whole System/Environment</fullName>
+                <default>false</default>
+                <label>I* - Interiors - Whole System/Environment</label>
+            </value>
+            <value>
+                <fullName>IA - Litter Bins</fullName>
+                <default>false</default>
+                <label>IA - Litter Bins</label>
+            </value>
+            <value>
+                <fullName>IB - Blinds/Curtains</fullName>
+                <default>false</default>
+                <label>IB - Blinds/Curtains</label>
+            </value>
+            <value>
+                <fullName>IC - Sockets (inc Laptop, Cleaners)</fullName>
+                <default>false</default>
+                <label>IC - Sockets (inc Laptop, Cleaners)</label>
+            </value>
+            <value>
+                <fullName>IF - Carpets and Floor Coverings</fullName>
+                <default>false</default>
+                <label>IF - Carpets and Floor Coverings</label>
+            </value>
+            <value>
+                <fullName>IG - Partitions inc Glass</fullName>
+                <default>false</default>
+                <label>IG - Partitions inc Glass</label>
+            </value>
+            <value>
+                <fullName>IH - Grab Handles/Hand Rails</fullName>
+                <default>false</default>
+                <label>IH - Grab Handles/Hand Rails</label>
+            </value>
+            <value>
+                <fullName>IJ - TM-TDD (374)</fullName>
+                <default>false</default>
+                <label>IJ - TM-TDD (374)</label>
+            </value>
+            <value>
+                <fullName>IL - Interior Lighting</fullName>
+                <default>false</default>
+                <label>IL - Interior Lighting</label>
+            </value>
+            <value>
+                <fullName>IN - Interior Signage and Labelling</fullName>
+                <default>false</default>
+                <label>IN - Interior Signage and Labelling</label>
+            </value>
+            <value>
+                <fullName>IP - Interior Panelling (Walls and Ceilings)</fullName>
+                <default>false</default>
+                <label>IP - Interior Panelling (Walls and Ceilings)</label>
+            </value>
+            <value>
+                <fullName>IR - Luggage Racks</fullName>
+                <default>false</default>
+                <label>IR - Luggage Racks</label>
+            </value>
+            <value>
+                <fullName>IS - Seats</fullName>
+                <default>false</default>
+                <label>IS - Seats</label>
+            </value>
+            <value>
+                <fullName>IT - Tables</fullName>
+                <default>false</default>
+                <label>IT - Tables</label>
+            </value>
+            <value>
+                <fullName>IW - Wheelchair Facilities</fullName>
+                <default>false</default>
+                <label>IW - Wheelchair Facilities</label>
+            </value>
+            <value>
+                <fullName>J* - Cab - Whole System</fullName>
+                <default>false</default>
+                <label>J* - Cab - Whole System</label>
+            </value>
+            <value>
+                <fullName>JB - Cab Door</fullName>
+                <default>false</default>
+                <label>JB - Cab Door</label>
+            </value>
+            <value>
+                <fullName>JC - Cab Cupboards/Armoire de Cabine</fullName>
+                <default>false</default>
+                <label>JC - Cab Cupboards/Armoire de Cabine</label>
+            </value>
+            <value>
+                <fullName>JD - Cab Desk inc Switches / Isolation switches</fullName>
+                <default>false</default>
+                <label>JD - Cab Desk inc Switches / Isolation switches</label>
+            </value>
+            <value>
+                <fullName>JF - Indicator Lamps inc Fault Indicators/Eggbox</fullName>
+                <default>false</default>
+                <label>JF - Indicator Lamps inc Fault Indicators/Eggbox</label>
+            </value>
+            <value>
+                <fullName>JG - Gauges (incl Speedo, brakes etc)</fullName>
+                <default>false</default>
+                <label>JG - Gauges (incl Speedo, brakes etc)</label>
+            </value>
+            <value>
+                <fullName>JI - Cab Blinds</fullName>
+                <default>false</default>
+                <label>JI - Cab Blinds</label>
+            </value>
+            <value>
+                <fullName>JK - Traction/Power-Brake Controller</fullName>
+                <default>false</default>
+                <label>JK - Traction/Power-Brake Controller</label>
+            </value>
+            <value>
+                <fullName>JL - Cab Lighting</fullName>
+                <default>false</default>
+                <label>JL - Cab Lighting</label>
+            </value>
+            <value>
+                <fullName>JM - Cab Interior Panels (Ceiling/Wall)</fullName>
+                <default>false</default>
+                <label>JM - Cab Interior Panels (Ceiling/Wall)</label>
+            </value>
+            <value>
+                <fullName>JS - Driver&#39;s Seat</fullName>
+                <default>false</default>
+                <label>JS - Driver&#39;s Seat</label>
+            </value>
+            <value>
+                <fullName>JT - GDI (373) / TD-TDD (374)</fullName>
+                <default>false</default>
+                <label>JT - GDI (373) / TD-TDD (374)</label>
+            </value>
+            <value>
+                <fullName>JV - Windscreen Wipers/Washer and Demister</fullName>
+                <default>false</default>
+                <label>JV - Windscreen Wipers/Washer and Demister</label>
+            </value>
+            <value>
+                <fullName>JW - Windscreen Glass</fullName>
+                <default>false</default>
+                <label>JW - Windscreen Glass</label>
+            </value>
+            <value>
+                <fullName>K* - Catering Equipment - Whole System</fullName>
+                <default>false</default>
+                <label>K* - Catering Equipment - Whole System</label>
+            </value>
+            <value>
+                <fullName>K1 - Galley and Bar Sinks</fullName>
+                <default>false</default>
+                <label>K1 - Galley and Bar Sinks</label>
+            </value>
+            <value>
+                <fullName>K2 - Galley Storage</fullName>
+                <default>false</default>
+                <label>K2 - Galley Storage</label>
+            </value>
+            <value>
+                <fullName>KA - Ovens</fullName>
+                <default>false</default>
+                <label>KA - Ovens</label>
+            </value>
+            <value>
+                <fullName>KC - Microwaves</fullName>
+                <default>false</default>
+                <label>KC - Microwaves</label>
+            </value>
+            <value>
+                <fullName>KM - Coffee Machine</fullName>
+                <default>false</default>
+                <label>KM - Coffee Machine</label>
+            </value>
+            <value>
+                <fullName>KO - Galley Internal Doors</fullName>
+                <default>false</default>
+                <label>KO - Galley Internal Doors</label>
+            </value>
+            <value>
+                <fullName>KP - Panelling, fittings and shutters</fullName>
+                <default>false</default>
+                <label>KP - Panelling, fittings and shutters</label>
+            </value>
+            <value>
+                <fullName>KR - Fridges</fullName>
+                <default>false</default>
+                <label>KR - Fridges</label>
+            </value>
+            <value>
+                <fullName>KW - Water Heaters</fullName>
+                <default>false</default>
+                <label>KW - Water Heaters</label>
+            </value>
+            <value>
+                <fullName>M* - Miscellaneous</fullName>
+                <default>false</default>
+                <label>M* - Miscellaneous</label>
+            </value>
+            <value>
+                <fullName>MC - Cleaning</fullName>
+                <default>false</default>
+                <label>MC - Cleaning</label>
+            </value>
+            <value>
+                <fullName>MD - Spare Power Car (373)</fullName>
+                <default>false</default>
+                <label>MD - Spare Power Car (373)</label>
+            </value>
+            <value>
+                <fullName>N* - Train Control- Whole System</fullName>
+                <default>false</default>
+                <label>N* - Train Control- Whole System</label>
+            </value>
+            <value>
+                <fullName>N1 - CCU (374)</fullName>
+                <default>false</default>
+                <label>N1 - CCU (374)</label>
+            </value>
+            <value>
+                <fullName>N2 - KLIP stations (374)</fullName>
+                <default>false</default>
+                <label>N2 - KLIP stations (374)</label>
+            </value>
+            <value>
+                <fullName>N3 - MVB (374)</fullName>
+                <default>false</default>
+                <label>N3 - MVB (374)</label>
+            </value>
+            <value>
+                <fullName>NA - Cards (373)</fullName>
+                <default>false</default>
+                <label>NA - Cards (373)</label>
+            </value>
+            <value>
+                <fullName>NB - Software (373)</fullName>
+                <default>false</default>
+                <label>NB - Software (373)</label>
+            </value>
+            <value>
+                <fullName>NC - CCAM (373)</fullName>
+                <default>false</default>
+                <label>NC - CCAM (373)</label>
+            </value>
+            <value>
+                <fullName>ND - Racks (373)</fullName>
+                <default>false</default>
+                <label>ND - Racks (373)</label>
+            </value>
+            <value>
+                <fullName>O1 - Wheelchair lift (374)</fullName>
+                <default>false</default>
+                <label>O1 - Wheelchair lift (374)</label>
+            </value>
+            <value>
+                <fullName>OA - Power Car Doors</fullName>
+                <default>false</default>
+                <label>OA - Power Car Doors</label>
+            </value>
+            <value>
+                <fullName>OB - Doors - Retractable Steps</fullName>
+                <default>false</default>
+                <label>OB - Doors - Retractable Steps</label>
+            </value>
+            <value>
+                <fullName>OG - Fire / gangway doors</fullName>
+                <default>false</default>
+                <label>OG - Fire / gangway doors</label>
+            </value>
+            <value>
+                <fullName>OI - Saloon / interior doors</fullName>
+                <default>false</default>
+                <label>OI - Saloon / interior doors</label>
+            </value>
+            <value>
+                <fullName>OS - Access / loading doors</fullName>
+                <default>false</default>
+                <label>OS - Access / loading doors</label>
+            </value>
+            <value>
+                <fullName>OT - Train Manager&#39;s Office Door</fullName>
+                <default>false</default>
+                <label>OT - Train Manager&#39;s Office Door</label>
+            </value>
+            <value>
+                <fullName>P* - Power Equipment - Whole System</fullName>
+                <default>false</default>
+                <label>P* - Power Equipment - Whole System</label>
+            </value>
+            <value>
+                <fullName>P1 - Transformer Drumswitch (374)</fullName>
+                <default>false</default>
+                <label>P1 - Transformer Drumswitch (374)</label>
+            </value>
+            <value>
+                <fullName>PA - 250kVA Trailer Inverter (373) / ACU (374)</fullName>
+                <default>false</default>
+                <label>PA - 250kVA Trailer Inverter (373) / ACU (374)</label>
+            </value>
+            <value>
+                <fullName>PC - Coolant / Cooling circuit</fullName>
+                <default>false</default>
+                <label>PC - Coolant / Cooling circuit</label>
+            </value>
+            <value>
+                <fullName>PE - Earthing System/Key Sequence</fullName>
+                <default>false</default>
+                <label>PE - Earthing System/Key Sequence</label>
+            </value>
+            <value>
+                <fullName>PG - Common Bloc (373)</fullName>
+                <default>false</default>
+                <label>PG - Common Bloc (373)</label>
+            </value>
+            <value>
+                <fullName>PJ - Transformer radiators / cooling</fullName>
+                <default>false</default>
+                <label>PJ - Transformer radiators / cooling</label>
+            </value>
+            <value>
+                <fullName>PK - Motor Bloc (373) / TCU (374)</fullName>
+                <default>false</default>
+                <label>PK - Motor Bloc (373) / TCU (374)</label>
+            </value>
+            <value>
+                <fullName>PM - Traction Motor</fullName>
+                <default>false</default>
+                <label>PM - Traction Motor</label>
+            </value>
+            <value>
+                <fullName>PN - 40kVA Inverter IR-AUX (373)</fullName>
+                <default>false</default>
+                <label>PN - 40kVA Inverter IR-AUX (373)</label>
+            </value>
+            <value>
+                <fullName>PT - Main Transformer</fullName>
+                <default>false</default>
+                <label>PT - Main Transformer</label>
+            </value>
+            <value>
+                <fullName>PU - Traction Motor Blower</fullName>
+                <default>false</default>
+                <label>PU - Traction Motor Blower</label>
+            </value>
+            <value>
+                <fullName>SB - BRS</fullName>
+                <default>false</default>
+                <label>SB - BRS</label>
+            </value>
+            <value>
+                <fullName>SJ - VACMA</fullName>
+                <default>false</default>
+                <label>SJ - VACMA</label>
+            </value>
+            <value>
+                <fullName>SK - KVB</fullName>
+                <default>false</default>
+                <label>SK - KVB</label>
+            </value>
+            <value>
+                <fullName>SL - TVM / ETCS</fullName>
+                <default>false</default>
+                <label>SL - TVM / ETCS</label>
+            </value>
+            <value>
+                <fullName>SM - 50Hz Monitor/DT-50</fullName>
+                <default>false</default>
+                <label>SM - 50Hz Monitor/DT-50</label>
+            </value>
+            <value>
+                <fullName>SN - TBL / ATBL</fullName>
+                <default>false</default>
+                <label>SN - TBL / ATBL</label>
+            </value>
+            <value>
+                <fullName>ST - AWS/TPWS</fullName>
+                <default>false</default>
+                <label>ST - AWS/TPWS</label>
+            </value>
+            <value>
+                <fullName>SU - Tachometry/Speed Switch</fullName>
+                <default>false</default>
+                <label>SU - Tachometry/Speed Switch</label>
+            </value>
+            <value>
+                <fullName>SW - WSP</fullName>
+                <default>false</default>
+                <label>SW - WSP</label>
+            </value>
+            <value>
+                <fullName>SX - ATESS</fullName>
+                <default>false</default>
+                <label>SX - ATESS</label>
+            </value>
+            <value>
+                <fullName>T* - Transmission - Whole System</fullName>
+                <default>false</default>
+                <label>T* - Transmission - Whole System</label>
+            </value>
+            <value>
+                <fullName>TC - Cardan Shaft/Tripode/Drive Couplings</fullName>
+                <default>false</default>
+                <label>TC - Cardan Shaft/Tripode/Drive Couplings</label>
+            </value>
+            <value>
+                <fullName>TD - Final Drive Gearbox</fullName>
+                <default>false</default>
+                <label>TD - Final Drive Gearbox</label>
+            </value>
+            <value>
+                <fullName>TG - Reductor Gearbox</fullName>
+                <default>false</default>
+                <label>TG - Reductor Gearbox</label>
+            </value>
+            <value>
+                <fullName>TS - Sensors and Transducers</fullName>
+                <default>false</default>
+                <label>TS - Sensors and Transducers</label>
+            </value>
+            <value>
+                <fullName>TT - Torque Reaction Arm/Link</fullName>
+                <default>false</default>
+                <label>TT - Torque Reaction Arm/Link</label>
+            </value>
+            <value>
+                <fullName>U1 - Inter-vehicle Couplers</fullName>
+                <default>false</default>
+                <label>U1 - Inter-vehicle Couplers</label>
+            </value>
+            <value>
+                <fullName>UA - Axleboxes/Bearings/Covers</fullName>
+                <default>false</default>
+                <label>UA - Axleboxes/Bearings/Covers</label>
+            </value>
+            <value>
+                <fullName>UC - Couplers</fullName>
+                <default>false</default>
+                <label>UC - Couplers</label>
+            </value>
+            <value>
+                <fullName>UD - Dampers</fullName>
+                <default>false</default>
+                <label>UD - Dampers</label>
+            </value>
+            <value>
+                <fullName>UE - Electrical Cables/Earth Bonds and Braids</fullName>
+                <default>false</default>
+                <label>UE - Electrical Cables/Earth Bonds and Braids</label>
+            </value>
+            <value>
+                <fullName>UF - Bogies</fullName>
+                <default>false</default>
+                <label>UF - Bogies</label>
+            </value>
+            <value>
+                <fullName>UG - Lifeguard</fullName>
+                <default>false</default>
+                <label>UG - Lifeguard</label>
+            </value>
+            <value>
+                <fullName>UI - Sanding Equipment</fullName>
+                <default>false</default>
+                <label>UI - Sanding Equipment</label>
+            </value>
+            <value>
+                <fullName>UK - Flange Lubrication</fullName>
+                <default>false</default>
+                <label>UK - Flange Lubrication</label>
+            </value>
+            <value>
+                <fullName>UL - Levelling Valves</fullName>
+                <default>false</default>
+                <label>UL - Levelling Valves</label>
+            </value>
+            <value>
+                <fullName>UN - NDT</fullName>
+                <default>false</default>
+                <label>UN - NDT</label>
+            </value>
+            <value>
+                <fullName>UO - Tyre Turning</fullName>
+                <default>false</default>
+                <label>UO - Tyre Turning</label>
+            </value>
+            <value>
+                <fullName>UP - Pipework</fullName>
+                <default>false</default>
+                <label>UP - Pipework</label>
+            </value>
+            <value>
+                <fullName>UQ - Air Suspension</fullName>
+                <default>false</default>
+                <label>UQ - Air Suspension</label>
+            </value>
+            <value>
+                <fullName>US - Suspension Springs</fullName>
+                <default>false</default>
+                <label>US - Suspension Springs</label>
+            </value>
+            <value>
+                <fullName>UU - Underframe (incl Anti Roll Bars, Fixing Accessories)</fullName>
+                <default>false</default>
+                <label>UU - Underframe (incl Anti Roll Bars, Fixing Accessories)</label>
+            </value>
+            <value>
+                <fullName>UW - Wheelsets</fullName>
+                <default>false</default>
+                <label>UW - Wheelsets</label>
+            </value>
+            <value>
+                <fullName>UY - Resilient Mounts</fullName>
+                <default>false</default>
+                <label>UY - Resilient Mounts</label>
+            </value>
+            <value>
+                <fullName>UZ - Testing inc Rough Riding</fullName>
+                <default>false</default>
+                <label>UZ - Testing inc Rough Riding</label>
+            </value>
+            <value>
+                <fullName>W* - Toilets - Whole System</fullName>
+                <default>false</default>
+                <label>W* - Toilets - Whole System</label>
+            </value>
+            <value>
+                <fullName>WA - Toilet Pans and Seats</fullName>
+                <default>false</default>
+                <label>WA - Toilet Pans and Seats</label>
+            </value>
+            <value>
+                <fullName>WB - Wash Basins incl Taps</fullName>
+                <default>false</default>
+                <label>WB - Wash Basins incl Taps</label>
+            </value>
+            <value>
+                <fullName>WC - Flush System (valves and pipework)</fullName>
+                <default>false</default>
+                <label>WC - Flush System (valves and pipework)</label>
+            </value>
+            <value>
+                <fullName>WD - Disabled Toilet Alarm System</fullName>
+                <default>false</default>
+                <label>WD - Disabled Toilet Alarm System</label>
+            </value>
+            <value>
+                <fullName>WE - Toilet Control</fullName>
+                <default>false</default>
+                <label>WE - Toilet Control</label>
+            </value>
+            <value>
+                <fullName>WG - Baby Changing Shelf</fullName>
+                <default>false</default>
+                <label>WG - Baby Changing Shelf</label>
+            </value>
+            <value>
+                <fullName>WJ - Panelling and Furniture inc Handrails</fullName>
+                <default>false</default>
+                <label>WJ - Panelling and Furniture inc Handrails</label>
+            </value>
+            <value>
+                <fullName>WL - Level Sensors/Indicators</fullName>
+                <default>false</default>
+                <label>WL - Level Sensors/Indicators</label>
+            </value>
+            <value>
+                <fullName>WM - Vanity Unit (incl soap / tissue dispenser, hand dryer, shaver socket, mirror)</fullName>
+                <default>false</default>
+                <label>WM - Vanity Unit (incl soap / tissue dispenser, hand dryer, shaver socket, mirror)</label>
+            </value>
+            <value>
+                <fullName>WO - Toilet Door including runners and guides</fullName>
+                <default>false</default>
+                <label>WO - Toilet Door including runners and guides</label>
+            </value>
+            <value>
+                <fullName>WW - Tanks and Pump</fullName>
+                <default>false</default>
+                <label>WW - Tanks and Pump</label>
+            </value>
+            <value>
+                <fullName>X* - Communications - Whole System</fullName>
+                <default>false</default>
+                <label>X* - Communications - Whole System</label>
+            </value>
+            <value>
+                <fullName>X1 - Lorient (373) / RDT (374)</fullName>
+                <default>false</default>
+                <label>X1 - Lorient (373) / RDT (374)</label>
+            </value>
+            <value>
+                <fullName>XD - Passenger Infromation Systems (PIS / PID&#39;s)</fullName>
+                <default>false</default>
+                <label>XD - Passenger Infromation Systems (PIS / PID&#39;s)</label>
+            </value>
+            <value>
+                <fullName>XE - Passenger Communication inc Alarms</fullName>
+                <default>false</default>
+                <label>XE - Passenger Communication inc Alarms</label>
+            </value>
+            <value>
+                <fullName>XF - WiFi/Infotainment</fullName>
+                <default>false</default>
+                <label>XF - WiFi/Infotainment</label>
+            </value>
+            <value>
+                <fullName>XP - PA / Intercom</fullName>
+                <default>false</default>
+                <label>XP - PA / Intercom</label>
+            </value>
+            <value>
+                <fullName>XR - Radios (GSMR)</fullName>
+                <default>false</default>
+                <label>XR - Radios (GSMR)</label>
+            </value>
+            <value>
+                <fullName>Z* - Fire and Emergency Equipment - Whole System</fullName>
+                <default>false</default>
+                <label>Z* - Fire and Emergency Equipment - Whole System</label>
+            </value>
+            <value>
+                <fullName>ZC - Emergency Coupler</fullName>
+                <default>false</default>
+                <label>ZC - Emergency Coupler</label>
+            </value>
+            <value>
+                <fullName>ZD - Fire Alarm System (passenger area)</fullName>
+                <default>false</default>
+                <label>ZD - Fire Alarm System (passenger area)</label>
+            </value>
+            <value>
+                <fullName>ZE - Onboard Emergency Equipment (incl ladders)</fullName>
+                <default>false</default>
+                <label>ZE - Onboard Emergency Equipment (incl ladders)</label>
+            </value>
+            <value>
+                <fullName>ZF - Portable Fire Extinguishers</fullName>
+                <default>false</default>
+                <label>ZF - Portable Fire Extinguishers</label>
+            </value>
+            <value>
+                <fullName>ZU - Power Car/Traction Unit Fire Extinguisher System</fullName>
+                <default>false</default>
+                <label>ZU - Power Car/Traction Unit Fire Extinguisher System</label>
+            </value>
+            <value>
+                <fullName>n/a</fullName>
+                <default>false</default>
+                <label>n/a</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Z - Fire and Emergency Equipment</controllingFieldValue>
+            <valueName>Z* - Fire and Emergency Equipment - Whole System</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Z - Fire and Emergency Equipment</controllingFieldValue>
+            <valueName>ZC - Emergency Coupler</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Z - Fire and Emergency Equipment</controllingFieldValue>
+            <valueName>ZD - Fire Alarm System (passenger area)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Z - Fire and Emergency Equipment</controllingFieldValue>
+            <valueName>ZE - Onboard Emergency Equipment (incl ladders)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Z - Fire and Emergency Equipment</controllingFieldValue>
+            <valueName>ZF - Portable Fire Extinguishers</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Z - Fire and Emergency Equipment</controllingFieldValue>
+            <valueName>ZU - Power Car/Traction Unit Fire Extinguisher System</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>n/a</controllingFieldValue>
+            <valueName>n/a</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>G - Collector Equipment and Roof Electrical</controllingFieldValue>
+            <valueName>G* - Collector Equipment - Whole System</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>G - Collector Equipment and Roof Electrical</controllingFieldValue>
+            <valueName>GA - Pantograph Air Motor</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>G - Collector Equipment and Roof Electrical</controllingFieldValue>
+            <valueName>GD - Collector Equipment Controls</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>G - Collector Equipment and Roof Electrical</controllingFieldValue>
+            <valueName>GE - Roof Earthing Switch</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>G - Collector Equipment and Roof Electrical</controllingFieldValue>
+            <valueName>GG - Energy Meter</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>G - Collector Equipment and Roof Electrical</controllingFieldValue>
+            <valueName>GH - Pantograph Heads inc Carbons</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>G - Collector Equipment and Roof Electrical</controllingFieldValue>
+            <valueName>GI - Insulators</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>G - Collector Equipment and Roof Electrical</controllingFieldValue>
+            <valueName>GJ - Auto Dropping Device</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>G - Collector Equipment and Roof Electrical</controllingFieldValue>
+            <valueName>GL - Roof HT Cables/Busbars</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>G - Collector Equipment and Roof Electrical</controllingFieldValue>
+            <valueName>GP - Pantograph Assembly</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>G - Collector Equipment and Roof Electrical</controllingFieldValue>
+            <valueName>GV - VCB / HTCB</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>M - Miscellaneous</controllingFieldValue>
+            <valueName>M* - Miscellaneous</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>M - Miscellaneous</controllingFieldValue>
+            <valueName>MC - Cleaning</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>M - Miscellaneous</controllingFieldValue>
+            <valueName>MD - Spare Power Car (373)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>N - Train Control</controllingFieldValue>
+            <valueName>N* - Train Control- Whole System</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>N - Train Control</controllingFieldValue>
+            <valueName>N1 - CCU (374)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>N - Train Control</controllingFieldValue>
+            <valueName>N2 - KLIP stations (374)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>N - Train Control</controllingFieldValue>
+            <valueName>N3 - MVB (374)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>N - Train Control</controllingFieldValue>
+            <valueName>NA - Cards (373)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>N - Train Control</controllingFieldValue>
+            <valueName>NB - Software (373)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>N - Train Control</controllingFieldValue>
+            <valueName>NC - CCAM (373)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>N - Train Control</controllingFieldValue>
+            <valueName>ND - Racks (373)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>P - Electric Traction and Power Equipment</controllingFieldValue>
+            <valueName>P* - Power Equipment - Whole System</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>P - Electric Traction and Power Equipment</controllingFieldValue>
+            <valueName>P1 - Transformer Drumswitch (374)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>P - Electric Traction and Power Equipment</controllingFieldValue>
+            <valueName>PA - 250kVA Trailer Inverter (373) / ACU (374)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>P - Electric Traction and Power Equipment</controllingFieldValue>
+            <valueName>PC - Coolant / Cooling circuit</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>P - Electric Traction and Power Equipment</controllingFieldValue>
+            <valueName>PE - Earthing System/Key Sequence</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>P - Electric Traction and Power Equipment</controllingFieldValue>
+            <valueName>PG - Common Bloc (373)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>P - Electric Traction and Power Equipment</controllingFieldValue>
+            <valueName>PJ - Transformer radiators / cooling</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>P - Electric Traction and Power Equipment</controllingFieldValue>
+            <valueName>PK - Motor Bloc (373) / TCU (374)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>P - Electric Traction and Power Equipment</controllingFieldValue>
+            <valueName>PM - Traction Motor</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>P - Electric Traction and Power Equipment</controllingFieldValue>
+            <valueName>PN - 40kVA Inverter IR-AUX (373)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>P - Electric Traction and Power Equipment</controllingFieldValue>
+            <valueName>PT - Main Transformer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>P - Electric Traction and Power Equipment</controllingFieldValue>
+            <valueName>PU - Traction Motor Blower</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>W - Water and Toilet Systems</controllingFieldValue>
+            <valueName>W* - Toilets - Whole System</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>W - Water and Toilet Systems</controllingFieldValue>
+            <valueName>WA - Toilet Pans and Seats</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>W - Water and Toilet Systems</controllingFieldValue>
+            <valueName>WB - Wash Basins incl Taps</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>W - Water and Toilet Systems</controllingFieldValue>
+            <valueName>WC - Flush System (valves and pipework)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>W - Water and Toilet Systems</controllingFieldValue>
+            <valueName>WD - Disabled Toilet Alarm System</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>W - Water and Toilet Systems</controllingFieldValue>
+            <valueName>WE - Toilet Control</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>W - Water and Toilet Systems</controllingFieldValue>
+            <valueName>WG - Baby Changing Shelf</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>W - Water and Toilet Systems</controllingFieldValue>
+            <valueName>WJ - Panelling and Furniture inc Handrails</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>W - Water and Toilet Systems</controllingFieldValue>
+            <valueName>WL - Level Sensors/Indicators</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>W - Water and Toilet Systems</controllingFieldValue>
+            <valueName>WM - Vanity Unit (incl soap / tissue dispenser, hand dryer, shaver socket, mirror)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>W - Water and Toilet Systems</controllingFieldValue>
+            <valueName>WO - Toilet Door including runners and guides</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>W - Water and Toilet Systems</controllingFieldValue>
+            <valueName>WW - Tanks and Pump</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>X - Communication and Information Systems</controllingFieldValue>
+            <valueName>X* - Communications - Whole System</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>X - Communication and Information Systems</controllingFieldValue>
+            <valueName>X1 - Lorient (373) / RDT (374)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>X - Communication and Information Systems</controllingFieldValue>
+            <valueName>XD - Passenger Infromation Systems (PIS / PID&#39;s)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>X - Communication and Information Systems</controllingFieldValue>
+            <valueName>XE - Passenger Communication inc Alarms</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>X - Communication and Information Systems</controllingFieldValue>
+            <valueName>XF - WiFi/Infotainment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>X - Communication and Information Systems</controllingFieldValue>
+            <valueName>XP - PA / Intercom</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>X - Communication and Information Systems</controllingFieldValue>
+            <valueName>XR - Radios (GSMR)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>K - Catering Equipment</controllingFieldValue>
+            <valueName>K* - Catering Equipment - Whole System</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>K - Catering Equipment</controllingFieldValue>
+            <valueName>K1 - Galley and Bar Sinks</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>K - Catering Equipment</controllingFieldValue>
+            <valueName>K2 - Galley Storage</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>K - Catering Equipment</controllingFieldValue>
+            <valueName>KA - Ovens</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>K - Catering Equipment</controllingFieldValue>
+            <valueName>KC - Microwaves</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>K - Catering Equipment</controllingFieldValue>
+            <valueName>KM - Coffee Machine</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>K - Catering Equipment</controllingFieldValue>
+            <valueName>KO - Galley Internal Doors</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>K - Catering Equipment</controllingFieldValue>
+            <valueName>KP - Panelling, fittings and shutters</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>K - Catering Equipment</controllingFieldValue>
+            <valueName>KR - Fridges</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>K - Catering Equipment</controllingFieldValue>
+            <valueName>KW - Water Heaters</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>O - Doors</controllingFieldValue>
+            <valueName>O1 - Wheelchair lift (374)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>O - Doors</controllingFieldValue>
+            <valueName>OA - Power Car Doors</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>O - Doors</controllingFieldValue>
+            <valueName>OB - Doors - Retractable Steps</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>O - Doors</controllingFieldValue>
+            <valueName>OG - Fire / gangway doors</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>O - Doors</controllingFieldValue>
+            <valueName>OI - Saloon / interior doors</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>O - Doors</controllingFieldValue>
+            <valueName>OS - Access / loading doors</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>O - Doors</controllingFieldValue>
+            <valueName>OT - Train Manager&#39;s Office Door</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>S - Safety Systems</controllingFieldValue>
+            <valueName>SB - BRS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>S - Safety Systems</controllingFieldValue>
+            <valueName>SJ - VACMA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>S - Safety Systems</controllingFieldValue>
+            <valueName>SK - KVB</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>S - Safety Systems</controllingFieldValue>
+            <valueName>SL - TVM / ETCS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>S - Safety Systems</controllingFieldValue>
+            <valueName>SM - 50Hz Monitor/DT-50</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>S - Safety Systems</controllingFieldValue>
+            <valueName>SN - TBL / ATBL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>S - Safety Systems</controllingFieldValue>
+            <valueName>ST - AWS/TPWS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>S - Safety Systems</controllingFieldValue>
+            <valueName>SU - Tachometry/Speed Switch</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>S - Safety Systems</controllingFieldValue>
+            <valueName>SW - WSP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>S - Safety Systems</controllingFieldValue>
+            <valueName>SX - ATESS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>T - Transmission</controllingFieldValue>
+            <valueName>T* - Transmission - Whole System</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>T - Transmission</controllingFieldValue>
+            <valueName>TC - Cardan Shaft/Tripode/Drive Couplings</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>T - Transmission</controllingFieldValue>
+            <valueName>TD - Final Drive Gearbox</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>T - Transmission</controllingFieldValue>
+            <valueName>TG - Reductor Gearbox</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>T - Transmission</controllingFieldValue>
+            <valueName>TS - Sensors and Transducers</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>T - Transmission</controllingFieldValue>
+            <valueName>TT - Torque Reaction Arm/Link</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>U - Underframe, Bogies and Couplers</controllingFieldValue>
+            <valueName>U1 - Inter-vehicle Couplers</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>U - Underframe, Bogies and Couplers</controllingFieldValue>
+            <valueName>UA - Axleboxes/Bearings/Covers</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>U - Underframe, Bogies and Couplers</controllingFieldValue>
+            <valueName>UC - Couplers</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>U - Underframe, Bogies and Couplers</controllingFieldValue>
+            <valueName>UD - Dampers</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>U - Underframe, Bogies and Couplers</controllingFieldValue>
+            <valueName>UE - Electrical Cables/Earth Bonds and Braids</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>U - Underframe, Bogies and Couplers</controllingFieldValue>
+            <valueName>UF - Bogies</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>U - Underframe, Bogies and Couplers</controllingFieldValue>
+            <valueName>UG - Lifeguard</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>U - Underframe, Bogies and Couplers</controllingFieldValue>
+            <valueName>UI - Sanding Equipment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>U - Underframe, Bogies and Couplers</controllingFieldValue>
+            <valueName>UK - Flange Lubrication</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>U - Underframe, Bogies and Couplers</controllingFieldValue>
+            <valueName>UL - Levelling Valves</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>U - Underframe, Bogies and Couplers</controllingFieldValue>
+            <valueName>UN - NDT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>U - Underframe, Bogies and Couplers</controllingFieldValue>
+            <valueName>UO - Tyre Turning</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>U - Underframe, Bogies and Couplers</controllingFieldValue>
+            <valueName>UP - Pipework</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>U - Underframe, Bogies and Couplers</controllingFieldValue>
+            <valueName>UQ - Air Suspension</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>U - Underframe, Bogies and Couplers</controllingFieldValue>
+            <valueName>US - Suspension Springs</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>U - Underframe, Bogies and Couplers</controllingFieldValue>
+            <valueName>UU - Underframe (incl Anti Roll Bars, Fixing Accessories)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>U - Underframe, Bogies and Couplers</controllingFieldValue>
+            <valueName>UW - Wheelsets</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>U - Underframe, Bogies and Couplers</controllingFieldValue>
+            <valueName>UY - Resilient Mounts</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>U - Underframe, Bogies and Couplers</controllingFieldValue>
+            <valueName>UZ - Testing inc Rough Riding</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>A - Air Production</controllingFieldValue>
+            <valueName>A* - Air Production - Whole System</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>A - Air Production</controllingFieldValue>
+            <valueName>AC - Compressors (Main and Auxiliary)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>A - Air Production</controllingFieldValue>
+            <valueName>AD - Air Dryers</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>A - Air Production</controllingFieldValue>
+            <valueName>AH - Horn</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>A - Air Production</controllingFieldValue>
+            <valueName>AP - Pipework (incl Hoses)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>A - Air Production</controllingFieldValue>
+            <valueName>AR - Reservoirs (other than brakes)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>A - Air Production</controllingFieldValue>
+            <valueName>AS - Pressure Switches, Governors and Regulators</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>A - Air Production</controllingFieldValue>
+            <valueName>AV - Valves/Cocks (other than Brakes)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>B - Brakes</controllingFieldValue>
+            <valueName>B* - Brakes - Whole System</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>B - Brakes</controllingFieldValue>
+            <valueName>B1 - Brake Disc</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>B - Brakes</controllingFieldValue>
+            <valueName>BA - Actuator</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>B - Brakes</controllingFieldValue>
+            <valueName>BB - Blocks/Pads</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>B - Brakes</controllingFieldValue>
+            <valueName>BD - Rheostatic Braking and Brake Resistor</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>B - Brakes</controllingFieldValue>
+            <valueName>BG - Gauges and Indicators (not cab)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>B - Brakes</controllingFieldValue>
+            <valueName>BH - Parking Brake</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>B - Brakes</controllingFieldValue>
+            <valueName>BL - Callipers</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>B - Brakes</controllingFieldValue>
+            <valueName>BP - Pipework, Hoses and Seals</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>B - Brakes</controllingFieldValue>
+            <valueName>BR - Reservoirs (brakes)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>B - Brakes</controllingFieldValue>
+            <valueName>BT - Brake Panel (373) / Brake Control Unit (374)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>B - Brakes</controllingFieldValue>
+            <valueName>BV - Valves/Cocks/Governors</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>C - Car Body</controllingFieldValue>
+            <valueName>C* - Car Body - Whole System</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>C - Car Body</controllingFieldValue>
+            <valueName>CA - Bodyshell</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>C - Car Body</controllingFieldValue>
+            <valueName>CB - Bodyside Windows</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>C - Car Body</controllingFieldValue>
+            <valueName>CD - Streamline Panels (Underframe)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>C - Car Body</controllingFieldValue>
+            <valueName>CE - Emergency windows</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>C - Car Body</controllingFieldValue>
+            <valueName>CG - Bodyside Panels/Skirts/Filler Covers</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>C - Car Body</controllingFieldValue>
+            <valueName>CM - Nose Doors</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>C - Car Body</controllingFieldValue>
+            <valueName>CN - Exterior Signage and Labels</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>C - Car Body</controllingFieldValue>
+            <valueName>CR - Roof/Guttering/Drains</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>C - Car Body</controllingFieldValue>
+            <valueName>CS - Snowscreens (373)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>C - Car Body</controllingFieldValue>
+            <valueName>CT - Tail, Marker, Head Lights (incl covers),  Bodyside Indicator/Obstruction Lights</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>C - Car Body</controllingFieldValue>
+            <valueName>CV - Gangways - Mechanical and Bellows</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>E - Auxiliary Supplies</controllingFieldValue>
+            <valueName>E* - Auxiliary Supplies - Whole System</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>E - Auxiliary Supplies</controllingFieldValue>
+            <valueName>EB - Batteries/Charging</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>E - Auxiliary Supplies</controllingFieldValue>
+            <valueName>EC - Contactors/Relays/Converters</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>E - Auxiliary Supplies</controllingFieldValue>
+            <valueName>EF - Fuses and Circuit Breakers</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>E - Auxiliary Supplies</controllingFieldValue>
+            <valueName>EJ - Jumpers</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>H - Heating and Air Conditioning</controllingFieldValue>
+            <valueName>HB - Auxiliary Heaters</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>H - Heating and Air Conditioning</controllingFieldValue>
+            <valueName>HC - Cab HVAC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>H - Heating and Air Conditioning</controllingFieldValue>
+            <valueName>HD - Air Conditioning Ducts</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>H - Heating and Air Conditioning</controllingFieldValue>
+            <valueName>HS - Trailer/Saloon HVAC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>I - Interiors</controllingFieldValue>
+            <valueName>I* - Interiors - Whole System/Environment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>I - Interiors</controllingFieldValue>
+            <valueName>IA - Litter Bins</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>I - Interiors</controllingFieldValue>
+            <valueName>IB - Blinds/Curtains</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>I - Interiors</controllingFieldValue>
+            <valueName>IC - Sockets (inc Laptop, Cleaners)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>I - Interiors</controllingFieldValue>
+            <valueName>IF - Carpets and Floor Coverings</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>I - Interiors</controllingFieldValue>
+            <valueName>IG - Partitions inc Glass</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>I - Interiors</controllingFieldValue>
+            <valueName>IH - Grab Handles/Hand Rails</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>I - Interiors</controllingFieldValue>
+            <valueName>IJ - TM-TDD (374)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>I - Interiors</controllingFieldValue>
+            <valueName>IL - Interior Lighting</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>I - Interiors</controllingFieldValue>
+            <valueName>IN - Interior Signage and Labelling</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>I - Interiors</controllingFieldValue>
+            <valueName>IP - Interior Panelling (Walls and Ceilings)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>I - Interiors</controllingFieldValue>
+            <valueName>IR - Luggage Racks</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>I - Interiors</controllingFieldValue>
+            <valueName>IS - Seats</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>I - Interiors</controllingFieldValue>
+            <valueName>IT - Tables</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>I - Interiors</controllingFieldValue>
+            <valueName>IW - Wheelchair Facilities</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>J - Cab</controllingFieldValue>
+            <valueName>J* - Cab - Whole System</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>J - Cab</controllingFieldValue>
+            <valueName>JB - Cab Door</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>J - Cab</controllingFieldValue>
+            <valueName>JC - Cab Cupboards/Armoire de Cabine</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>J - Cab</controllingFieldValue>
+            <valueName>JD - Cab Desk inc Switches / Isolation switches</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>J - Cab</controllingFieldValue>
+            <valueName>JF - Indicator Lamps inc Fault Indicators/Eggbox</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>J - Cab</controllingFieldValue>
+            <valueName>JG - Gauges (incl Speedo, brakes etc)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>J - Cab</controllingFieldValue>
+            <valueName>JI - Cab Blinds</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>J - Cab</controllingFieldValue>
+            <valueName>JK - Traction/Power-Brake Controller</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>J - Cab</controllingFieldValue>
+            <valueName>JL - Cab Lighting</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>J - Cab</controllingFieldValue>
+            <valueName>JM - Cab Interior Panels (Ceiling/Wall)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>J - Cab</controllingFieldValue>
+            <valueName>JS - Driver&#39;s Seat</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>J - Cab</controllingFieldValue>
+            <valueName>JT - GDI (373) / TD-TDD (374)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>J - Cab</controllingFieldValue>
+            <valueName>JV - Windscreen Wipers/Washer and Demister</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>J - Cab</controllingFieldValue>
+            <valueName>JW - Windscreen Glass</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

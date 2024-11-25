@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Closed_QA_Requests</fullName>
+    <columns>NAME</columns>
+    <columns>QA_Assessor__c</columns>
+    <columns>Assesment_Type__c</columns>
+    <columns>Case__c</columns>
+    <columns>Submission_User__c</columns>
+    <columns>Status__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Closed</value>
+    </filters>
+    <label>Closed QA Requests</label>
+    <sharedTo>
+        <group>QA_Assessment_Team</group>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Commercial_Gesture_Eligible_Flag__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+NOT(OR(ISBLANK(PP_Commercial_Gesture__c), PP_Commercial_Gesture__c == 0))
+,
+IMAGE(&quot; /resource/WarningImage&quot;, &#39;warningImage&#39;) ,
+&#39;&#39;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Commercial Gesture Eligible Flag</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

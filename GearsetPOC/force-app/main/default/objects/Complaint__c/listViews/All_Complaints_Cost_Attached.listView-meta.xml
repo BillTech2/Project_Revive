@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Complaints_Cost_Attached</fullName>
+    <columns>CREATED_DATE</columns>
+    <columns>NAME</columns>
+    <columns>Complaint_Summary_Text__c</columns>
+    <columns>Cost_Attached_to_Feedback__c</columns>
+    <columns>Type_of__c</columns>
+    <columns>Currency__c</columns>
+    <columns>Feedback_Cost__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Type_of_Feedback__c</field>
+        <operation>equals</operation>
+        <value>Complaint</value>
+    </filters>
+    <filters>
+        <field>Cost_Attached_to_Feedback__c</field>
+        <operation>equals</operation>
+        <value>Yes</value>
+    </filters>
+    <label>All Complaints (Cost Attached)</label>
+    <language>en_US</language>
+</ListView>

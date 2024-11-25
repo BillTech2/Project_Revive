@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Calendar_Color__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( Main_Category__c == &#39;REGULATION:Covid-Brexit&#39;, &#39;#DAC5ED&#39;,
+IF( Main_Category__c == &#39;DISRUPTION&#39;, &#39;#FFACA6&#39;,
+IF( Main_Category__c == &#39;BAU CX&#39;, &#39;#C8FACA&#39;,
+IF( Main_Category__c == &#39;MARKETING(Sales,Inspirational)&#39;, &#39;#FBFFC9&#39;,
+IF( Main_Category__c == &#39;LOYALTY&#39;, &#39;#A6ECFF&#39;,
+IF( Main_Category__c == &#39;OTHERS&#39; || Main_Category__c == &#39;OTHER&#39; , &#39;#D9D9D9&#39;, &#39;#FFFFFF&#39;
+))))))</formula>
+    <label>Calendar Color</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

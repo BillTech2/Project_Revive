@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FAQ_Excluded_Market_Place__c</fullName>
+    <description>Market place on which we don&#39;t want the article to display</description>
+    <inlineHelpText>Market place on which we don&#39;t want the article to display</inlineHelpText>
+    <label>Excluded Market Place</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>uk-en</fullName>
+                <default>false</default>
+                <label>uk-en</label>
+            </value>
+            <value>
+                <fullName>be-en</fullName>
+                <default>false</default>
+                <label>be-en</label>
+            </value>
+            <value>
+                <fullName>us-en</fullName>
+                <default>false</default>
+                <label>us-en</label>
+            </value>
+            <value>
+                <fullName>fr-fr</fullName>
+                <default>false</default>
+                <label>fr-fr</label>
+            </value>
+            <value>
+                <fullName>be-fr</fullName>
+                <default>false</default>
+                <label>be-fr</label>
+            </value>
+            <value>
+                <fullName>be-nl</fullName>
+                <default>false</default>
+                <label>be-nl</label>
+            </value>
+            <value>
+                <fullName>nl-nl</fullName>
+                <default>false</default>
+                <label>nl-nl</label>
+            </value>
+            <value>
+                <fullName>rw-en</fullName>
+                <default>false</default>
+                <label>rw-en</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>8</visibleLines>
+</CustomField>

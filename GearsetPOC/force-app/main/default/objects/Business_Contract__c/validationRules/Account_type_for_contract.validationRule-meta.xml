@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_type_for_contract</fullName>
+    <active>true</active>
+    <description>The Account related to the Contract cannot be of type “Prospect” or “Other”</description>
+    <errorConditionFormula>AND(
+NOT($User.B2b_Bypass_Validation_Rules__c),
+ISNEW(),
+!ISPICKVAL(AccountId__r.Red_Account_Type__c, &#39;TCF2&#39;),
+!ISPICKVAL(AccountId__r.Red_Account_Type__c, &#39;TCF1&#39;),
+!ISPICKVAL(AccountId__r.Red_Account_Type__c, &#39;Covid&#39;), 
+ AccountId__r.RecordType.Name = &#39;Corporate Account&#39;,
+ RecordType.Name = &#39;Corporate Continent&#39;
+)</errorConditionFormula>
+    <errorMessage>The account related to the Contract must be of the type TCF 1 or TCF 2</errorMessage>
+</ValidationRule>

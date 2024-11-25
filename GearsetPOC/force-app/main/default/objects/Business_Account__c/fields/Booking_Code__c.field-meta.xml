@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Booking_Code__c</fullName>
+    <label>Booking Code</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>FCE</fullName>
+                <default>false</default>
+                <label>FCE</label>
+            </value>
+            <value>
+                <fullName>GND Belgium London</fullName>
+                <default>false</default>
+                <label>GND Belgium London</label>
+            </value>
+            <value>
+                <fullName>GND Belgium Continent</fullName>
+                <default>false</default>
+                <label>GND Belgium Continent</label>
+            </value>
+            <value>
+                <fullName>GND The Netherlands London</fullName>
+                <default>false</default>
+                <label>GND The Netherlands London</label>
+            </value>
+            <value>
+                <fullName>GND The Netherlands Continent</fullName>
+                <default>false</default>
+                <label>GND The Netherlands Continent</label>
+            </value>
+            <value>
+                <fullName>Corporate Code</fullName>
+                <default>false</default>
+                <label>Corporate Code</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

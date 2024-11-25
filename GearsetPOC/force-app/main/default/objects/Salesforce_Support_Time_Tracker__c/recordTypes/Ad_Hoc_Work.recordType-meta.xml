@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ad_Hoc_Work</fullName>
+    <active>true</active>
+    <label>Ad-Hoc Work</label>
+    <picklistValues>
+        <picklist>COE_Department__c</picklist>
+        <values>
+            <fullName>CRE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CodeSwat</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Commercial Support</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Care</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>D%2Eo%2EN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EuroDespatch</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Groups</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HLC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Helpdesk</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IS Servicedesk</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Leadership</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loyalty</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QA %2F Insight</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sales Team</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Social</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Hub</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Webhelp %28Bucharest%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Webhelp %28Derby%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Webhelp %28Live Chat%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Improvement_Development_Workstream__c</picklist>
+        <values>
+            <fullName>New Booking Upsell Process</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rail Care Team Registration Form</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Returned EFT Card Tracking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Teleopti Salesforce Integration</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Meeting_Regarding__c</picklist>
+        <values>
+            <fullName>All Staff Meeting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Anthony %28CRM Management%29 Or His Interns</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Aria</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CodeSwat</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disruption %2F ICT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Eureka</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Eurostar Signature Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Personal Meetings</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QA %2F I%26I</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Salesforce</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>StellaConnect</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Webhelp</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Project__c</picklist>
+        <values>
+            <fullName>Blue%2FOverseas Vouchers - Aria</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Club Eurostar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Digital Genius</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Eureka to Salesforce</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>StellaConnect Integration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Webhelp Reporting</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Blocked</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Waiting Response</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

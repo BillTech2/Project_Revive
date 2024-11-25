@@ -1,0 +1,4 @@
+<apex:page standardController="Business_Contract__c" 
+    extensions="DLT_EndContractButtonController" 
+    action="{!closeContract}">
+</apex:page>

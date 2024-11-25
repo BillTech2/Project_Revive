@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Capacity_View</fullName>
+    <columns>NAME</columns>
+    <columns>Train_Number__c</columns>
+    <columns>From_Station__c</columns>
+    <columns>To_Station__c</columns>
+    <columns>Days_of_Week__c</columns>
+    <columns>Boxed_Max_Space__c</columns>
+    <columns>Assembled_Max_Space__c</columns>
+    <columns>Effective_FromDate__c</columns>
+    <columns>Effective_Till_Date__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>Capacity View</label>
+    <language>en_US</language>
+</ListView>

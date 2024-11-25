@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Aria_ESV_Issued__c</fullName>
+    <label>Aria ESV Issued</label>
+    <summarizedField>Voucher_yearly_allocation__c.Total_number_of_vouchers_allocated__c</summarizedField>
+    <summaryForeignKey>Voucher_yearly_allocation__c.Customer__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

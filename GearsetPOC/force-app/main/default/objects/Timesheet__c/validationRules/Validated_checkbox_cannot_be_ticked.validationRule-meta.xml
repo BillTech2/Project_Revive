@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validated_checkbox_cannot_be_ticked</fullName>
+    <active>true</active>
+    <description>Validated checkbox cannot be manually ticked by Timesheet Owner, but can be unticked</description>
+    <errorConditionFormula>Validated__c=true &amp;&amp; $Permission.Fire_Validated_checkbox_cannot_be_ticked_validation</errorConditionFormula>
+    <errorDisplayField>Validated__c</errorDisplayField>
+    <errorMessage>Please Submit for Approval in order to Validate</errorMessage>
+</ValidationRule>

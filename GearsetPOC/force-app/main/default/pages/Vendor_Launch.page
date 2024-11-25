@@ -1,0 +1,61 @@
+<apex:page sidebar="false"  standardStyleSheets="false" controller="Vendor_LaunchController" >
+    <apex:form >
+        <html>
+            <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+                <title>EUROSTAR</title>
+                <apex:stylesheet value="{!URLFOR($Resource.customCSS, 'customCSS/css/jquery-ui.css')}"/>
+                <apex:stylesheet value="{!URLFOR($Resource.customCSS, 'customCSS/css/reset.css')}"/>
+                <apex:stylesheet value="{!URLFOR($Resource.customCSS, 'customCSS/css/style.css')}"/>
+            </head>
+            <body>
+                <div class="container">
+                    <div class="mid-panel">
+                        <div class="select-page row">
+                            <h3>Supplier Management</h3>
+                            <apex:selectRadio layout="pageDirection" value="{!Option}">
+                                <apex:selectOption itemLabel="New Supplier" itemValue="1"></apex:selectOption>
+                                <apex:selectOption itemLabel="Modify Supplier" itemValue="2"></apex:selectOption>
+                                <apex:selectOption itemLabel="Deactivate Supplier" itemValue="3"></apex:selectOption>
+                                <apex:actionSupport event="onclick" action="{!formselection}"  />
+                            </apex:selectRadio>
+                        </div>
+                        <div class="select-page row">
+                            <h3>Site Management</h3>
+                            <apex:selectRadio layout="pageDirection"  value="{!selectedOption}">
+                                <apex:selectOption itemLabel="Add Site" itemValue="4"></apex:selectOption>
+                                <apex:selectOption itemLabel="Deactivate Site" itemValue="5"></apex:selectOption>
+                                <apex:actionSupport event="onclick" 
+                           action="{!formselection2}"  />
+                            </apex:selectRadio>
+                        </div>
+                    </div>--
+               
+               
+                    <div class="blue-panel vendor">
+                        <i class="divider"></i>
+                        <div class="textforum">
+                            <b>New Supplier</b>
+                            <p>Add a completely new supplier - fill in ALL information in ALL fields.</p>
+                        </div>
+                        <div class="textforum">
+                            <b>Modify Supplier</b>
+                            <p>Make changes to any part of the existing information against an existing supplier. Always enter the supplier name. Otherwise ONLY complete the fields in which you want to make a change</p>
+                        </div>
+                        <div class="textforum">
+                            <b>DEACTIVATE</b>
+                            <p>Used to 'DEACTIVATE' a supplier from iProcurement OR to DEACTIVATE a specific SITE against an existing supplier</p>
+                        </div>
+                        <div class="textforum">
+                            <b>ADD SITE</b>
+                            <p>ADD a new address to an EXISTING supplier. Enter existing supplier name and ONLY complete fields that require change</p>
+                        </div>
+                    </div>
+                </div>
+                <apex:includeScript value="{!URLFOR($Resource.customCSS, 'customCSS/js/jquery-1.10.2.js')}"/>
+                <apex:includeScript value="{!URLFOR($Resource.customCSS, 'customCSS/js/jquery-ui.js')}"/>
+                <apex:includeScript value="{!URLFOR($Resource.customCSS, 'customCSS/js/custom.js')}"/>
+            </body>
+        </html>
+    </apex:form>
+</apex:page>

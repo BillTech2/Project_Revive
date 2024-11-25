@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Group_Booking_Price_Details__c</fullName>
+    <defaultValue>&quot;Adult: X -- Per Person: £X.X&quot; +  BR()  +
+&quot;Youth (12-25 years): X -- Per Person: £X.X&quot; +  BR()  +
+&quot;Child (4-11 years): X -- Per Person: £X.X&quot; + BR() + 
+&quot;Add on: X -- Per Person: £X.X&quot; + BR() + 
+&quot;Wheelchair: X -- Per Person: £X.X&quot; + BR() + 
+&quot;Companion: X -- Per Person: £X.X&quot; + BR() + 
+&quot;Cello (companion fare): X -- Per Person: £X.X&quot; + BR() + 
+&quot;Senior Passenger: X -- Per Person: £X.X&quot; + BR() + 
+&quot;Non-Refundable Deposit: X -- Per Person: £X.X&quot; + BR() + 
+&quot;Special Delivery Charge: X -- Per Person: £8.00&quot; + BR() + 
+&quot;Overseas postage (Airsure): X -- Per Person: £10.00&quot; + BR() + 
+&quot;Admin Fee: X -- Per Person: £X.X&quot; + BR() + 
+&quot;Ticket reissue fee: X -- Per Person: £X.X&quot; + BR() + 
+&quot;Catering: X -- Per Person: £X.X&quot; + BR() + 
+&quot;Headrest covers: X -- Per Person: £X.X&quot;</defaultValue>
+    <description>Here is written price details of the group booking such as Passenger types details and Sundries details</description>
+    <inlineHelpText>Here is written price details of the group booking such as Passenger types details and Sundries details</inlineHelpText>
+    <label>Price Details</label>
+    <length>32768</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>14</visibleLines>
+</CustomField>

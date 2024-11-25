@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Corporate_Business_Accounts</fullName>
+    <columns>NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Business_Account__c.Corporate_Account</value>
+    </filters>
+    <label>Corporate Business Accounts</label>
+    <sharedTo>
+        <role>Sales_Admin</role>
+        <roleAndSubordinatesInternal>Sales_Admin</roleAndSubordinatesInternal>
+    </sharedTo>
+</ListView>

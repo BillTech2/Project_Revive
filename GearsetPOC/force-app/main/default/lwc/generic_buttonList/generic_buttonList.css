@@ -1,0 +1,25 @@
+.slds-large-size_1-of-1 .button-wrapper {
+    display: inline-block;
+    width: 350px;
+}
+
+.button-wrapper{
+    height: 100%;
+}
+
+.btn-list-label{
+    cursor: pointer;
+    font-family: 'ABCSocial-Regular','Pembroke-Regular','Arial','Sans-Serif';
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 20px;
+    color: #55565a;
+    text-align: center;
+}
+
+@media screen and (max-width: 480px) {
+    .slds-large-size_1-of-1 .button-wrapper {
+        display: inline-block;
+        width: 100%;
+    }
+}

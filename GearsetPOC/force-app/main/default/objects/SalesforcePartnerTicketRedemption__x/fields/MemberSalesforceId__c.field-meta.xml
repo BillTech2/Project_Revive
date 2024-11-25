@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MemberSalesforceId__c</fullName>
+    <description>MemberSalesforceId</description>
+    <externalDeveloperName>MemberSalesforceId</externalDeveloperName>
+    <isFilteringDisabled>false</isFilteringDisabled>
+    <isNameField>false</isNameField>
+    <isSortingDisabled>false</isSortingDisabled>
+    <label>Member salesforce id</label>
+    <length>128</length>
+    <referenceTo>SalesforceMember__x</referenceTo>
+    <relationshipLabel>Non Eurostar ticket redemption</relationshipLabel>
+    <relationshipName>SalesforcePartnerTicketRedemption</relationshipName>
+    <type>ExternalLookup</type>
+</CustomField>

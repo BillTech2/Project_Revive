@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NQP__c</fullName>
+    <description>This represents the member&#39;s reward points available to spend.
+Reward Points are also known as non-qualifying points.</description>
+    <inlineHelpText>This represents the member&#39;s reward points available to spend.
+Reward Points are also known as non-qualifying points.</inlineHelpText>
+    <label>Reward Points</label>
+    <summarizedField>LoyaltyMemberCurrency.Points_Balance_Custom__c</summarizedField>
+    <summaryFilterItems>
+        <field>LoyaltyMemberCurrency.Name</field>
+        <operation>equals</operation>
+        <value>Reward Points</value>
+    </summaryFilterItems>
+    <summaryForeignKey>LoyaltyMemberCurrency.LoyaltyMemberId</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

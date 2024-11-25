@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PNR_must_not_contain_numbers</fullName>
+    <active>false</active>
+    <errorConditionFormula>CONTAINS( PNR_s__c,&quot;1&quot;) 
+|| 
+CONTAINS( PNR_s__c,&quot;2&quot;) 
+|| 
+CONTAINS( PNR_s__c,&quot;3&quot;) 
+|| 
+CONTAINS( PNR_s__c,&quot;4&quot;) 
+|| 
+CONTAINS( PNR_s__c,&quot;5&quot;) 
+|| 
+CONTAINS( PNR_s__c,&quot;6&quot;) 
+|| 
+CONTAINS( PNR_s__c,&quot;7&quot;) 
+|| 
+CONTAINS( PNR_s__c,&quot;8&quot;) 
+|| 
+CONTAINS( PNR_s__c,&quot;9&quot;) 
+|| 
+CONTAINS( PNR_s__c,&quot;0&quot;)</errorConditionFormula>
+    <errorMessage>PNR must not contain numbers</errorMessage>
+</ValidationRule>

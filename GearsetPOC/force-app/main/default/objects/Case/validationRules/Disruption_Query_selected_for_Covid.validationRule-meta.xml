@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Disruption_Query_selected_for_Covid</fullName>
+    <active>false</active>
+    <description>Disruption Query picklist value needs to be selected when Alternative Option for Covid selected.</description>
+    <errorConditionFormula>(ISPICKVAL(Alternative_Disruption__c,&quot;Covid - Refunds or exchanges&quot;) ||  ISPICKVAL(Alternative_Disruption__c,&quot;Covid - Vouchers&quot;)||  ISPICKVAL(Alternative_Disruption__c,&quot;Covid - Information and communication&quot;)||  ISPICKVAL(Alternative_Disruption__c,&quot;Covid - Eurodespatch&quot;)) &amp;&amp;   TEXT(Disruption_Query__c)=&quot;&quot;</errorConditionFormula>
+    <errorDisplayField>Disruption_Query__c</errorDisplayField>
+    <errorMessage>Please ensure that you have selected Disruption Query option.</errorMessage>
+</ValidationRule>

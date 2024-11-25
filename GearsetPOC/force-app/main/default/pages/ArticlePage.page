@@ -1,0 +1,231 @@
+<apex:page showHeader="false" sidebar="false" controller="ArticlePageController" language="{!userLang}">
+    <style type="text/css">
+        
+        html, body {
+            height: 100%;
+        }
+
+        .tftextinput{
+            margin: 20px auto;
+            padding: 5px 15px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            border: 1px solid #C9CBCB;
+            border-radius: 3px;
+            width: 100%;
+            max-width: 230px;
+        }
+        .tftextinput-wrapper{
+            background: #ECEFEF;
+            display: none;
+
+        }
+        .apexp .bPageBlock.apexDefaultPageBlock .pbBody{
+            margin: 0;
+        }
+        .apexp .bPageBlock p{
+            margin-top: 5px;
+/*            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;*/
+            max-width: 320px;
+        }
+        @media (max-width: 480px){
+            .apexp .bPageBlock p{
+                max-width: 95%;
+            }
+        }
+
+        body .secondaryPalette.bPageBloc, body .bPageBlock{
+            border: none!important;
+            margin-bottom: 0;
+        }
+        body .secondaryPalette.bPageBlock{
+            background: #fff;
+        }
+        .apexp{
+            overflow-x: hidden;
+            padding: 0 10px 0 15px;
+        }
+        .pdBody{
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        .apexp .bPageBlock p:last-child{
+            margin-bottom: 15px;
+        } 
+        .tfbutton::-moz-focus-inner {
+          border: 0;
+        }
+        .read-more-link{
+            float: right;
+            display: inline-block;
+            margin-bottom: 10px;
+            margin-right: 15px;
+        }
+        .apexp h3{
+            margin-top: 15px;
+            margin-right: 15px;
+            display: inline-block;
+            font-size: 13px;
+        }
+        form{
+            overflow: auto; 
+            overflow-x: hidden;
+        }
+        #no-found{
+            background: #fff;
+        }
+        #no-found span{
+            display: inline-block;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+        article{
+            background: #fff;
+        }
+        article p{
+            margin-bottom: 0!important;
+        }
+        article:last-child{
+            margin-bottom: 15px;
+        }
+        .tftextinput-wrapper{
+            height: 70px;
+            text-align: center;
+        }
+        #test{
+            position: absolute;
+            width: 100%;
+        }
+        .pbBody a{
+            font-size: 13px;
+        }
+    </style>
+    <apex:form >
+    <c:esrMessages ></c:esrMessages>
+        <div class="tftextinput-wrapper">
+            <input id="textSearch" type="text" class="tftextinput" name="q" placeholder="What do you need help with?" />
+        </div>
+
+        <div id="test">
+            <apex:pageBlock id="pageBlockTable" >
+            <div id="no-found">
+                <apex:outputPanel rendered="{!isNoResult}">
+                    <label id="isNoArticle" name="">{!$Label.DynamicFAQ_No_search_result}: {!textSearch}</label> 
+                </apex:outputPanel>
+            </div>
+            <apex:outputPanel id="table" rendered="{!isShowArticle}">
+                <apex:repeat value="{!articleWr}" var="article">
+                    <article>
+                        <h3>
+                            <a class="articleLink" href="{!article.articleId}" target="_blank">{!article.title}</a>
+                        </h3>
+                        <p>
+                            <apex:outputText value="{!article.summary}" escape="false"/>
+                        </p>
+                    </article>
+                </apex:repeat>
+            </apex:outputPanel>
+
+            <apex:outputPanel id="read-more" rendered="{!isShomReadMoreLink}">
+                <a class="read-more-link" href="{!readMoreLink}" target="_blank" >{!$Label.DynamicFAQ_Read_more} ...</a>
+            </apex:outputPanel>
+        </apex:pageBlock>
+        </div>
+
+        <apex:actionFunction action="{!getArticleList}" name="textSearchCtrl"  reRender="pageBlockTable" oncomplete="setIframeHeight()">
+            <apex:param name="textSearch" assignTo="{!textSearch}" value=""/>
+            <apex:param name="language" assignTo="{!language}" value=""/>
+            <apex:param name="urlValue" assignTo="{!urlValue}" value=""/>
+            <apex:param name="isSendEmail" assignTo="{!isSendEmail}" value=""/>
+            <apex:param name="isFromPlagin" assignTo="{!isFromPlagin}" value=""/>
+        </apex:actionFunction>
+
+        <apex:actionFunction action="{!setKeyWordsFromPlugin}" name="setKeyWordsFromPlugin" reRender="">
+            <apex:param name="searchKeyWordsFromPlugin" assignTo="{!searchKeyWordsFromPlugin}" value=""/>
+            <apex:param name="language" assignTo="{!language}" value=""/>
+            <apex:param name="urlValue" assignTo="{!urlValue}" value=""/>
+            <apex:param name="isSendEmail" assignTo="{!isSendEmail}" value=""/>
+            <apex:param name="isFromPlagin" assignTo="{!isFromPlagin}" value=""/>
+        </apex:actionFunction>
+
+    </apex:form>
+
+    <script>
+    	//console.log('init article page');
+        var isManualSearch = false;
+        var language = '';
+        var searchInput = document.getElementById('textSearch');
+	    parent.postMessage('redy', '*');
+        var messenger; 
+
+        function search() {
+            if (searchInput.value.length > 2) {
+                textSearchCtrl(searchInput.value, language, '', 'false','false');
+                isManualSearch = true;
+            } 
+            if (searchInput.value.length <= 2 && isManualSearch) {
+                textSearchCtrl('',language, '', 'false','false');
+                isManualSearch = false;
+            }
+        }
+        
+        function setIframeHeight() {
+            var a = document.querySelector('#test');
+            if (searchInput.value.length > 2) {
+                setTimeout(sendAnalityc, 500);
+            }
+            var message = a.scrollHeight;
+            parent.postMessage(message,'*');
+
+        }
+
+        function sendAnalityc() {
+            function searchObject() {
+                this.searchKeys = null;
+                this.size = null;
+            }
+            var newSearch = new searchObject();
+            newSearch.searchKeys = searchInput.value;
+            newSearch.size = document.getElementsByTagName('h3').length;
+            
+            messenger.postEventMessage('dynamicFAQStatistics', JSON.stringify(newSearch));
+        }
+
+        window.addEventListener("message", function(e) {
+            //console.log('article page message call');
+            //console.log(e.data);
+            if (e.data.urlValue !== undefined) {
+                messenger = ESR.Messenger(false, '', e.data.urlValue);
+                textSearchCtrl('', '', e.data.urlValue, 'false', 'true');
+            } else if (e.data.inputvalue !== undefined){
+                searchInput.value = e.data.inputvalue;
+                search();
+            }  else    if (e.data.getArticlesHeight === true){
+                var a = document.querySelector('#test');
+                var articlesHeight = a.scrollHeight;
+                parent.postMessage(articlesHeight,'*');
+            } else {
+                obj = JSON.parse(e.data);
+                language = obj.language;
+
+                if (!isManualSearch) {
+                    textSearchCtrl(obj.searchKeys, obj.language, obj.urlValue, obj.isSendEmail, 'true');
+                } else {
+                    setKeyWordsFromPlugin(obj.searchKeys, obj.language, obj.urlValue, obj.isSendEmail, 'true');
+                } 
+            }
+        });
+
+        window.addEventListener('click',function(e){
+            if (e.target.classList.contains('articleLink')) {
+                parent.postMessage({key : "TheArticle",
+                                    value : e.target.innerText},'*');
+            }
+
+        });
+    
+    </script>
+</apex:page>

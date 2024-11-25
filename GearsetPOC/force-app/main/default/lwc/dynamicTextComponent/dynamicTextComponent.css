@@ -1,0 +1,49 @@
+.slds-button.button-submit {
+    /* box-shadow: 0 2px 0 0 #d2b82b, 0 3px 2px 0 rgb(0 0 0 / 20%); */
+    background-color: #326bf6;
+    padding: 14px 40px;
+    text-transform: capitalize;
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 22px;
+    border-radius: 4px;
+    background-clip: padding-box;
+    font-family: 'ABCSocial-Bold';
+    font-style: normal;
+    color: #ffffff;
+    height: auto;
+    text-align: center;
+}
+
+.slds-button.button-submit:hover {
+	/* box-shadow: 0 2px 0 0 #d2b82b, 0 3px 2px 0 rgba(0, 0, 0, .2); */
+	background-color: #1c4094;
+	color: #ffffff;
+	border-radius: 4px;
+	border: none;
+}
+
+.slds-button.button-submit:focus {
+	box-shadow: 0 2px 0 0 #d2b82b, 0 3px 2px 0 rgba(0, 0, 0, .2);
+	color: #55565a;
+	border-radius: 4px;
+	outline: auto;
+	border: none;
+}
+
+.page-subtitle{
+    cursor: pointer;
+    font-family: 'ABCSocial-Bold';
+    font-size: 24px;
+    line-height: 26px;
+    color: #00286A;
+    text-align: center;
+}
+
+.dynamic-font {
+    font-size: 16px;
+    line-height: 18px;
+    font-family: 'ABCSocial-Regular';
+    color: #1C1C1A;
+    --lwc-brandTextLink: #0D57CC;
+}

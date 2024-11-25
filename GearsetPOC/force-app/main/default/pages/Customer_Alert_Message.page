@@ -1,0 +1,10 @@
+<apex:page standardController="case">
+  <script>
+     if(
+          "{!Case.Account}" == "001b000000hFhjAAAS"
+      )
+          alert('Please ensure that you leave a note on Salesforce and the booking to confirm that this passenger is allowed to bring his own soup on-board. Also ensure that the train manager is made aware via ITM that this passenger may request for his soup to be heated.');
+     
+  </script>
+
+</apex:page>

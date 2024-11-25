@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Company__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>Company</label>
+    <lookupFilter>
+        <active>true</active>
+        <errorMessage>Either the Company does not exist or they do not have an active account</errorMessage>
+        <filterItems>
+            <field>Trade_Contracts_Company__c.Status_of_Account__c</field>
+            <operation>equals</operation>
+            <value>Active</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Trade_Contracts_Company__c</referenceTo>
+    <relationshipLabel>E4A Held Bookings</relationshipLabel>
+    <relationshipName>E4A_Held_Bookings</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

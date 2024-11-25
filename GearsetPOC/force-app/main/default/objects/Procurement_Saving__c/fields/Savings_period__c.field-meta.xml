@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Savings_period__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Number of months for which the period of savings apply.
+It can be length of a negotiated contract.
+For example, if 3 years, insert &quot;36&quot;</inlineHelpText>
+    <label>Savings period</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

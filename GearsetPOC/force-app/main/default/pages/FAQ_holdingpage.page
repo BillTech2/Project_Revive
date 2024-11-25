@@ -1,0 +1,82 @@
+<apex:page sidebar="false" showheader="false" standardStylesheets="false" docType="html-5.0" applyHtmlTag="false">
+
+    
+    <html>
+    <head>
+
+      <meta charset="utf-8"/>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  
+      <meta name="author" content="Eurostar International Limited"/>
+
+        <link rel="icon" type="image/png" href="{!$Resource.Favicon}" />
+        
+    
+    <c:css ></c:css>
+    <apex:stylesheet value="{!URLFOR($Resource.styles, 'css/cssoveride.css')}" />
+    
+
+      <title>Eurostar Holding Page</title>
+     </head>
+
+<body>
+
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+        
+            <div class="navbar-brand-mob">
+                <a href="http://www.eurostar.com" style="display:block;">
+             <img src="http://www.eurostar.com/profiles/eurostar/themes/eurostar/base/img/anniversary/logo-anniversary-en.png"/>
+            </a>
+            </div> 
+    </div>
+
+    <!-- right hand side links-->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <div class="navbar-brand">
+                <a href="http://www.eurostar.com" style="display:block;">
+             <img src="http://www.eurostar.com/profiles/eurostar/themes/eurostar/base/img/anniversary/logo-anniversary-en.png"/>
+            </a>
+      <ul class="nav navbar-nav navbar-right">
+        <li style="font-size: 18px;"><a href="http://www.eurostar.com">Eurostar.com</a></li>
+      </ul>
+      </div>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+  
+
+    
+       
+    
+<div class="container">
+    <div class="row row-offcanvas row-offcanvas-right">
+        <div class="col-xs-12 col-sm-9">
+
+            
+          <div class="row"> 
+
+          <h1>Online Compensation</h1>
+<p>We’re just making some final tweaks, online compensation will be with us soon. In the meantime, please call us on <b>03432 186186</b> or email us at <a href="mailto:contactus@eurostar.com">contactus@eurostar.com</a> to process your claim.
+</p>
+<br/><br/>
+<h1>Compensation en ligne</h1>
+<p>L’option de faire votre demande de compensation en ligne sera disponible d’ici peu, nous faisons juste quelques ajustements de dernière minutes avant le lancement. 
+<br/>Pour faire votre réclamation, appelez-nous au <b>01 70 70 60 88</b> depuis la France ou au <b>02 400 67 31</b> depuis la Belgique. Vous pouvez aussi nous envoyer un email à l’adresse <a href="mailto:contactus@eurostar.com">contactus@eurostar.com</a>.
+</p>
+              
+          </div><!--/row-->
+        </div><!--/.col-xs-12.col-sm-9-->
+        </div>
+</div>
+<!--***** /.container *****-->
+
+
+
+  </body>
+</html> 
+</apex:page>

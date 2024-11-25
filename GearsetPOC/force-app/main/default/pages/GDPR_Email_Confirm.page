@@ -1,0 +1,73 @@
+<apex:page id="GDPR_Email_Confirm" action="{!confirmCase}" showHeader="false" sidebar="false" language="{!selectedLanguageCode}" controller="GDPR_Email_Confirm_Controller" standardStylesheets="false" applyHtmlTag="false" applyBodyTag="false" showChat="false">
+
+    <apex:variable var="mobileToScreenSize"  value="{! '42.983em' }" />
+
+    <apex:variable var="tabletFromScreenSize" value="{! '43em' }" />
+    <apex:variable var="tabletToScreenSize"   value="{! '59.93em' }" />
+
+    <html data-ieuglyhack="en">
+
+    <head>
+        <meta name="viewport" content="width=device-width" />
+
+        <title>Data Request Confirmation</title>
+
+        <link rel="shortcut icon" href="{!URLFOR($Resource.EurostarFavIcon)}"/>
+        <!-- Styles -->
+        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.CompApp_Res, '/res/all-prembrokeWeb.css')}"/>
+
+        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.CompApp_Res, '/css/12-cols-grid.css')}"/>
+        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.CompApp_Res, '/css/no-grid.css')}" />
+        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.CompApp_Res, '/css/select2-3.4.5.css')}"/>
+
+        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.CompApp_Res, '/css/elements.css')}"/>
+        <link rel="stylesheet" type="text/css" media="only screen and (max-width: {! mobileToScreenSize })" href="{!URLFOR($Resource.CompApp_Res, '/css/elements-mobile.css')}"/>
+        <link rel="stylesheet" type="text/css" media="only screen and (min-width: {! tabletFromScreenSize }) and (max-width: {! tabletToScreenSize })" href="{!URLFOR($Resource.CompApp_Res, '/css/elements-tablet.css')}"/>
+
+        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.CompApp_Res, '/css/template-base.css')}"/>
+        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.CompApp_Eurostar_Ticket_Examples, '/ticket-examples.css')}"/>
+
+        <!-- The images are too big to zip with other resources -->
+        <style>
+            .ng-cloak, .x-ng-cloak {
+                display: none !important;
+            }
+
+            a:hover {
+                cursor: pointer;
+            }
+
+
+            #app-root .valid .input-wrapper::before   { background-image: url("{!URLFOR($Resource.CompApp_Res, '/res/SVGS/tick_correct.svg')}"); }
+            #app-root .invalid .input-wrapper::before { background-image: url("{!URLFOR($Resource.CompApp_Res, '/res/SVGS/exclaimation_mark.svg')}"); }
+            #app-root .tooltip-sign  { background-image: url("{!URLFOR($Resource.CompApp_Res, '/res/SVGS/helpFilled.svg')}"); }
+
+        </style>
+
+        <header id="app-header-template">
+            <div id="app-header-template-top-section">
+                <div id="top-section-logo"></div>
+            </div>
+
+        </header>
+    </head>
+
+    <body>
+        <div id="app-root">
+            <div  class="row p1" style="padding-top: 1rem">
+                {!messageOnThePage}
+            </div>
+        </div>
+    </body>
+
+    <footer id="app-footer-template">
+        <div id="app-footer-template-image">
+            <div id="app-footer-template-content">
+                <p id="app-footer-template-image-description" >Visit our Help Centre for <br/> more information</p>
+                <a class="primary" href="{!$Setup.HelpCentre__c.URL__c}">Help Centre</a>
+            </div>
+        </div>
+        <p id="app-footer-template-copyright">© {! YEAR(TODAY()) } Eurostar International Ltd. All Rights Reserved. <a id="app-footer-template-link" href="http://www.eurostar.com">www.eurostar.com</a></p>
+    </footer>
+    </html>
+</apex:page>

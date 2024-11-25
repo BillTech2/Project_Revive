@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Age_Category__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(FBC__c = &quot;BFMPOPSB&quot;, &quot;Junior Traveller&quot;,
+IF(LEFT(RIGHT(FBC__c,3),1) = &quot;C&quot;, &quot;Child&quot;,
+IF(LEFT(RIGHT(FBC__c,3),1) = &quot;Y&quot;, &quot;Youth&quot;,
+&quot;Adult&quot;
+)))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Adult (26+ years)
+Youth (12-25 years)
+Children (4-11 years)</inlineHelpText>
+    <label>Age Category</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

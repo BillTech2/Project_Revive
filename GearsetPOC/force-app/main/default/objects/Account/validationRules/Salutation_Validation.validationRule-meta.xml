@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Salutation_Validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>NOT($Permission.Integration_User)
+  &amp;&amp; ISPICKVAL(Preferred_Language__pc , &#39;German&#39;)
+  &amp;&amp; ISBLANK(TEXT(Salutation))
+		&amp;&amp; OR( ISNEW(), 
+								ISCHANGED(Salutation) 
+								&amp;&amp;  NOT(ISBLANK(TEXT(PRIORVALUE(Salutation))))
+					)</errorConditionFormula>
+    <errorDisplayField>Salutation</errorDisplayField>
+    <errorMessage>Please populate the Salutation</errorMessage>
+</ValidationRule>

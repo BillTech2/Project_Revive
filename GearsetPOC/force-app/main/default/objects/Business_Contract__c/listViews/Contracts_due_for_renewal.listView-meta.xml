@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contracts_due_for_renewal</fullName>
+    <columns>NAME</columns>
+    <columns>AccountId__c</columns>
+    <columns>OWNER.FIRST_NAME</columns>
+    <columns>OWNER.LAST_NAME</columns>
+    <columns>Review_Date__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>End_of_Contract__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Review_Date__c</field>
+        <operation>lessOrEqual</operation>
+        <value>NEXT_N_DAYS:30</value>
+    </filters>
+    <label>Contracts due for renewal</label>
+</ListView>

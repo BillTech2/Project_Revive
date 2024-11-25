@@ -1,0 +1,71 @@
+<template>
+    <template if:false={showSpinner}>
+
+      <div if:true={isShowErrorMessage} class="messageWindow">
+        <div class="draftStyleHeader">{errorMessageHeder}</div>
+        <div class="draftStyleBody">{errorMessageBody}</div>
+      </div>
+      <br>
+
+      <lightning-record-edit-form object-api-name={quickActionFields.sObjectName} record-type-id={quickActionFields.recordTypeId}>
+        <template for:each={quickActionFields.fields} for:item="line">
+          <div class="slds-grid slds-grid_vertical" key={line}>
+            <div class="slds-col">
+              <div class="slds-grid slds-gutters">
+                <template for:each={line} for:item="field">
+                  <div if:false={isDisabled} class="slds-col сellStyle" key={field.fieldName}>
+                    <div if:false={field.isHidden} key={field.fieldName} style={field.style}>
+                      <lightning-input-field  if:true={field.isRequired}  
+                                              data-id={field.fieldName}
+                                              field-name={field.fieldName} 
+                                              value={field.value} 
+                                              required
+                                              onchange={handleChange}>
+                      </lightning-input-field>
+                      <lightning-input-field  if:false={field.isRequired} 
+                                              data-id={field.fieldName}
+                                              field-name={field.fieldName} 
+                                              value={field.value} 
+                                              onchange={handleChange}>
+                      </lightning-input-field>
+                    </div>
+                  </div>
+                  <div if:true={isDisabled}  class="slds-col" key={field.fieldName} style={field.style}>
+                    <lightning-input-field   
+                                            data-id={field.fieldName}
+                                            field-name={field.fieldName} 
+                                            value={field.value} 
+                                            disabled
+                                            onchange={handleChange}>
+                    </lightning-input-field>
+                  </div>
+                </template>
+              </div>
+            </div>
+          </div>
+        </template>
+      </lightning-record-edit-form>
+
+      <div  if:true={quickActionFields.isDraft} class="slds-grid slds-gutters slds-grid_align-end">
+        <div if:true={quickActionFields.isDraftOwner} class="slds-col">
+          <lightning-button class="slds-m-top_small" variant="brand" label="Cancel the draft" onclick={handleCancelDraft}></lightning-button>
+        </div>
+        <div if:true={quickActionFields.isDraftOwner} class="slds-col">
+          <lightning-button class="slds-m-top_small" variant="brand" label="Confirm" onclick={handleConfirmDraft}></lightning-button>
+        </div>
+        <div if:false={quickActionFields.isDraftOwner} class="slds-col">
+          <lightning-button class="slds-m-top_small" variant="destructive" label="Discard the draft" onclick={handleCancelDraft}></lightning-button>
+        </div>
+      </div>
+      <div if:false={quickActionFields.isDraft} class="slds-grid slds-gutters slds-grid_align-end">
+        <div if:false={quickActionFields.isDraft} class="slds-col">
+          <lightning-button class="slds-m-top_small" variant="brand" label="Save" onclick={handleConfirmDraft}></lightning-button>
+        </div>
+      </div>
+  </template>
+  <template if:true={showSpinner}>
+      <div class="slds-spinner_container slds-is-relative slds-p-around_medium">
+          <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+      </div>
+  </template>
+</template>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RI_Crew_Report_Type__c</fullName>
+    <inlineHelpText>select the required crew report type</inlineHelpText>
+    <label>Crew Report Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Driver</fullName>
+                <default>false</default>
+                <label>Driver</label>
+            </value>
+            <value>
+                <fullName>Train Manager</fullName>
+                <default>false</default>
+                <label>Train Manager</label>
+            </value>
+            <value>
+                <fullName>Driver &amp; Train Manager</fullName>
+                <default>false</default>
+                <label>Driver &amp; Train Manager</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

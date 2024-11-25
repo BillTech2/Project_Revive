@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LOG_Mandatory_check</fullName>
+    <active>false</active>
+    <description>Check if Reason for contact, technical/customer issue, and customer struggle are populated when case is closed. Developed as part of jira 996</description>
+    <errorConditionFormula>ISPICKVAL(Status,&quot;Closed&quot;)
+&amp;&amp;
+OR(
+ISBLANK(TEXT(Initial_Reason_For_Contact__c)),
+ISPICKVAL(Initial_Reason_For_Contact__c,&quot;Phone Case - please complete&quot;),
+AND(
+OR(ISBLANK(TEXT(Customer_Struggle__c)), ISPICKVAL(Customer_Struggle__c,&quot;Phone Case - please complete&quot;), ISPICKVAL(Customer_Struggle__c,&quot;Webform case - please review&quot;), ISPICKVAL(Customer_Struggle__c,&quot;System - please review&quot;)),
+AND(
+ISBLANK(TEXT(Customer_Issue__c)), ISBLANK(TEXT(Technical_Issue__c )))))</errorConditionFormula>
+    <errorMessage>Please select options from the &quot;Initial reason for contact&quot;, &quot;Customer Struggle&quot;, or &quot;Customer/Technical Issue&quot; fields to continue.</errorMessage>
+</ValidationRule>

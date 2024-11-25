@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Business_Areas__c</fullName>
+    <label>Business Areas</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Business Continuity Team</fullName>
+                <default>false</default>
+                <label>Business Continuity Team</label>
+            </value>
+            <value>
+                <fullName>Commercial</fullName>
+                <default>false</default>
+                <label>Commercial</label>
+            </value>
+            <value>
+                <fullName>Company Wide</fullName>
+                <default>false</default>
+                <label>Company Wide</label>
+            </value>
+            <value>
+                <fullName>CRE Manager</fullName>
+                <default>false</default>
+                <label>CRE Manager</label>
+            </value>
+            <value>
+                <fullName>Customer Services</fullName>
+                <default>false</default>
+                <label>Customer Services</label>
+            </value>
+            <value>
+                <fullName>ECC</fullName>
+                <default>false</default>
+                <label>ECC</label>
+            </value>
+            <value>
+                <fullName>Engineering</fullName>
+                <default>false</default>
+                <label>Engineering</label>
+            </value>
+            <value>
+                <fullName>Finance</fullName>
+                <default>false</default>
+                <label>Finance</label>
+            </value>
+            <value>
+                <fullName>IS</fullName>
+                <default>false</default>
+                <label>IS</label>
+            </value>
+            <value>
+                <fullName>Operations Control</fullName>
+                <default>false</default>
+                <label>Operations Control</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>10</visibleLines>
+</CustomField>

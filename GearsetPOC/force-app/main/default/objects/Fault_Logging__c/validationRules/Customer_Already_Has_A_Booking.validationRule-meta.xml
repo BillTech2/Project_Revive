@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer_Already_Has_A_Booking</fullName>
+    <active>true</active>
+    <description>If yes is selected on the Customer Already Has A Booking picklist then a ticket number must be entered</description>
+    <errorConditionFormula>ISPICKVAL( Customer_Already_Has_A_Booking__c, &quot;Yes&quot;)
+&amp;&amp; 
+ISBLANK(Ticket_Number__c)</errorConditionFormula>
+    <errorDisplayField>Ticket_Number__c</errorDisplayField>
+    <errorMessage>Please enter a ticket number for the customers booking</errorMessage>
+</ValidationRule>

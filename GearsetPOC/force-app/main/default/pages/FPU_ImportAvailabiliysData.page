@@ -1,0 +1,16 @@
+<apex:page standardController="FPU_Availability__c" extensions="FPU_ImportAvailabiliysDataController" recordSetVar="importData">
+
+ <apex:form >
+      <apex:sectionHeader title="Upload data from CSV file"/>
+      <apex:pagemessages />
+      <apex:pageBlock >
+             <!--  Component to allow user to upload file from local machine -->
+             <center>
+              <apex:inputFile value="{!contentFile}" filename="{!nameFile}" /> <apex:commandButton action="{!ReadFile}" value="Upload File" id="theButton" style="width:70px;"/>
+             </center>  
+
+      </apex:pageBlock>       
+   </apex:form>   
+
+
+</apex:page>

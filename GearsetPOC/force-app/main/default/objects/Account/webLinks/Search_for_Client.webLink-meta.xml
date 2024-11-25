@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Search_for_Client</fullName>
+    <availability>online</availability>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Search for Client</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <requireRowSelection>false</requireRowSelection>
+    <url>https://eurostar.my.salesforce.com/_ui/search/ui/UnifiedSearchResults?searchType=2&amp;sen=a7v&amp;sen=001&amp;sen=a54&amp;sen=a56&amp;sen=005&amp;sen=a58&amp;sen=500&amp;sen=800&amp;sen=a5L&amp;sen=a5A&amp;sen=a7R&amp;sen=a5B&amp;str=#!/fen=001&amp;initialViewMode=detail&amp;str=</url>
+</WebLink>

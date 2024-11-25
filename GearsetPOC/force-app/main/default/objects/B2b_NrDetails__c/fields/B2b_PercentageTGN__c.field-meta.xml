@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>B2b_PercentageTGN__c</fullName>
+    <label>Percentage TGN</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>B2b_Road__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>5 %</fullName>
+                <default>false</default>
+                <label>5 %</label>
+            </value>
+            <value>
+                <fullName>10 %</fullName>
+                <default>false</default>
+                <label>10 %</label>
+            </value>
+            <value>
+                <fullName>15 %</fullName>
+                <default>false</default>
+                <label>15 %</label>
+            </value>
+            <value>
+                <fullName>20 %</fullName>
+                <default>false</default>
+                <label>20 %</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Paris - The Netherlands</controllingFieldValue>
+            <controllingFieldValue>Belgium - The Netherlands</controllingFieldValue>
+            <valueName>5 %</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Paris - The Netherlands</controllingFieldValue>
+            <controllingFieldValue>Belgium - The Netherlands</controllingFieldValue>
+            <valueName>10 %</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Paris - The Netherlands</controllingFieldValue>
+            <controllingFieldValue>Belgium - The Netherlands</controllingFieldValue>
+            <valueName>15 %</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Paris - The Netherlands</controllingFieldValue>
+            <controllingFieldValue>Belgium - The Netherlands</controllingFieldValue>
+            <valueName>20 %</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

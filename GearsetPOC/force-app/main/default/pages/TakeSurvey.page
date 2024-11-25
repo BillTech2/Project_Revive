@@ -1,0 +1,439 @@
+<apex:page standardcontroller="Survey__c"
+    extensions="ViewSurveyController,LiveChatClass"
+    cache="false"
+    sidebar="false"
+    showheader="false"
+    standardStylesheets="false"
+    applyHtmlTag="false"
+    language="{!userLang}"
+>
+    <html>
+    <head profile="http://www.w3.org/2005/10/profile">
+    
+        <link rel="icon" type="image/png" href="{!$Resource.EurostarFavIcon}" />
+        <link rel="shortcut icon" href="{!$Resource.EurostarFavIcon}" type="image/x-icon"/>    
+
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+    <script type="text/javascript" src="{!URLFOR($Resource.jsPDF,'/jsPDF-1.2.60/examples/js/jquery/jquery-1.7.1.min.js')}"></script>
+
+    <apex:outputpanel rendered="{!IF(CONTAINS(userAgent, 'MSIE 8.0'),false,true)}">
+
+<!--         <apex:stylesheet value="{!URLFOR($Resource.bootstrap, 'dist/css/bootstrap.min.css')}" />
+        <apex:stylesheet value="{!URLFOR($Resource.fontawesome, 'font-awesome-4.3.0/css/font-awesome.min.css')}" /> -->
+
+<!--         <c:cssoveride ></c:cssoveride>
+        <c:csschat ></c:csschat> -->
+
+        <apex:stylesheet value="{!URLFOR($Resource.LiveAgent, '/lib/normalize.css')}" />
+        <apex:stylesheet value="{!URLFOR($Resource.LiveAgent, '/lib/eurostar_style_guide.min.css')}" />
+        <c:csschat ></c:csschat>
+        <c:cssiechat ></c:cssiechat>
+
+        <style>
+            html, body{
+                height: 100%;
+                overflow: auto;
+            }
+            body{
+                position: relative;
+                -webkit-overflow-scrolling: touch;
+            }
+            body.new-window{
+                height: auto;
+            }
+            .survey-block {
+                padding: 16px 16px 70px 16px;
+            }
+
+            .thankyou-form {
+                padding: 0px;
+            }
+
+            .question {
+                margin-top: 20px;
+                margin-bottom: 10px;
+            }
+
+            .questionNumber {
+                color: #119fb3;
+            }
+
+            textarea {
+                border: 1px solid #119fb3;
+                border-radius: 3px;
+            }
+
+            .submit-survey {
+                margin-top: 20px;
+                padding: 8px 30px;
+                width: 100%;
+                font-size: 15px;
+                font-weight: normal;
+            }
+
+            .answer-as {
+                display: inline-block;
+                margin-top: 20px;
+            }
+            .pbBody td{
+                width: 100%;
+            }
+
+            td {
+                display: block;
+                width: 100%;
+            }
+            .log {
+                background-image: url('{!URLFOR($Resource.LiveAgent, 'icons/log.svg')}');
+                background-position: 50% 50%;
+                background-repeat: no-repeat;
+                background-size: 30px 33px;
+                display: inline-block;
+                height: 33px;
+                left: 0;
+                position: absolute;
+                top: 5px;
+                width: 30px;
+            }
+            .pdf-link{
+                display: inline-block; 
+                position: relative;
+                margin-bottom: 10px;
+                font-size: 16px;
+                background-color: #fd0;
+                box-shadow: 0 2px 0 0 #d6ba00,0 3px 2px 0 rgba(0,0,0,.2);
+                padding: 5px 15px;
+                text-decoration: none;
+                border-radius: 4px;
+            }
+
+            .pdf-link:hover{
+                color: #000;
+            }
+
+            .survey-block.focused{
+                height: 200vh;
+            }
+            #checkbox label {
+                padding-top: 0;
+            }
+            .Custom57Block label{
+                position: relative;
+                text-indent: 25px;
+                padding-top: 4px;
+            }
+            .Custom57Block label span{
+                position: absolute;
+                left: 0;
+                top: 8px;
+            }
+            
+        </style>
+    </apex:outputpanel>
+
+    <apex:outputpanel rendered="{!IF(CONTAINS(userAgent, 'MSIE 8.0'),true,false)}">
+        <c:cssiechat ></c:cssiechat>
+    </apex:outputpanel>
+
+    <style>
+        <apex:outputText value="{!surveyContainerCss}" />
+    </style>
+    <style>
+        html input [type=button], body .btn, body input.btn, body .btn:hover, body input.btn:hover
+        {
+            padding: 8px 0;
+            width: 95%;
+            margin-left: 16px;
+            float: left;
+        }
+        html {
+            height: 100%;-ms-overflow-style:auto;
+        }
+        body {padding-top:0;}
+
+        h1 {
+            font-size: 23px;
+        }
+        #checkbox input {
+            position: absolute;
+            margin-top: 4px;
+        }
+        #checkbox label{
+            padding-left: 20px;
+        }
+        #row td {width: 15%}
+    </style>
+    </head>
+    <body>
+    
+
+    <script>
+        function gettranscript (Classname)
+        {
+            var ChatIDField = document.getElementsByClassName(Classname);
+            ChatIDField[0].value = "{!JSENCODE($CurrentPage.parameters.transcript)}";
+        }
+    </script>
+
+    <apex:outputPanel id="survey_container" layout="block" styleClass="survey-block">
+    <div id="close-out" class="esr-close-out" style="
+        position: fixed;
+        left: 0;
+        width: 100%;
+        top: 0;
+        height: 100%;
+        display: none;
+        z-index: 1000000;
+    "></div>
+
+ <!-- =========================================================================================== -->
+<!--                                     SURVEY
+                                is displayed when the customer ends the chat
+<!-- =========================================================================================== -->
+
+
+
+    <!--apex:form id="theForm" rendered="{!$CurrentPage.parameters.disconnectedBy == 'client' || thankYouRendered == true}"-->
+    <apex:form id="theForm" styleClass="thankyou-form">
+    
+        <apex:outputPanel rendered="{!thankYouRendered == false}">
+            <h1>
+                {!$Label.Survey_Force_Label_Thanks_Message}
+            </h1>
+
+            <a class="pdf-link" id="esr_chat_log_link" target="_blank">{!$Label.Survey_Force_Label_Download_Pdf}</a>
+
+        </apex:outputPanel>
+
+        <apex:outputPanel id="seeSurvey" rendered="{!thankYouRendered == false}" >
+            <apex:outputField value="{!Survey__c.Survey_Header__c}"/>
+            <span style="display:none;">{!Survey__c.Hide_Survey_Name__c}</span>
+            <span style="display:none;">{!Survey__c.Hide_Survey_Name__c == false}</span>
+            <!--h1><apex:outputField value="{!Survey__c.Name}" rendered="{!Survey__c.Hide_Survey_Name__c == false}" /></h1-->
+            <div>
+                {!$Label.Survey_Force_Label_Final_Thanks_Message}
+            </div>
+        </apex:outputPanel>
+
+        <apex:pageMessages />
+        <apex:pageBlock rendered="{!thankYouRendered == false}" >
+            <div id="qList">
+                <apex:repeat value="{!allQuestions}" var="qPreview" id="aQPreview">
+                    <!-- Kuske's Chat Key code -->
+                    <!-- If question name contains 'ChatID' then render the special code below, if not then contiue as normal -->
+                    <apex:pageBlock rendered="{!CONTAINS(qPreview.question, 'ChatID')}">
+                        <apex:inputHidden html-class="ChatID" rendered="{!qPreview.renderFreeText}" value="{!qPreview.choices}"/>
+
+                        <script>
+                    gettranscript ('ChatID');
+                        </script>
+
+                    </apex:pageBlock>
+
+                    <apex:pageBlock rendered="{!NOT(CONTAINS(qPreview.question, 'ChatID'))}">
+                    <div id="{!qPreview.id}" >
+                        <apex:pageBlock id="pblock">
+                            <div class="question">
+                                <span class="questionNumber">{!qPreview.orderNumber}. </span>
+                                {!qPreview.question}
+
+                                <apex:outputPanel rendered="{!qPreview.required}" styleClass="requiredText">
+                                    ({!$Label.LABS_SF_Required})
+                                </apex:outputPanel>
+                            </div>
+                             <div id="radio">
+                              <apex:selectRadio rendered="{!qPreview.renderSelectRadio}" value="{!qPreview.selectedOption}" >
+                               <apex:selectOptions value="{!qPreview.singleOptions}"/>
+                              </apex:selectRadio>
+                            </div>
+                            <div id="checkbox">
+                              <apex:selectCheckboxes layout="pageDirection" rendered="{!qPreview.renderSelectCheckboxes}" value="{!qPreview.selectedOptions}" >
+                                <apex:selectOptions value="{!qPreview.multiOptions}"/>
+                              </apex:selectCheckboxes>
+                            </div>
+                            <div id="text">
+                               <apex:inputTextArea cols="50" rows="4" rendered="{!qPreview.renderFreeText}" value="{!qPreview.choices}"/>
+                            </div>
+                            <div id="row">
+                              <apex:selectRadio layout="lineDirection"  rendered="{!qPreview.renderSelectRow}" value="{!qPreview.selectedOption}">
+                                <apex:selectOptions value="{!qPreview.rowOptions}"/>
+                              </apex:selectRadio>
+                            </div>
+                        <!-- IN ORDER TO ADD A QUESTION TYPE YOU MUST CHANGE THE JAVASCRIPT BELOW AS WELL -->
+                        </apex:pageBlock>
+
+                </div>  <!-- qPreview.id -->
+                </apex:pageBlock>
+
+
+                </apex:repeat>
+
+            </div> <!-- qList -->
+        </apex:pageBlock>
+
+        <apex:outputPanel rendered="{!thankYouRendered == false}">
+            <apex:actionFunction action="{!submitResults}" name="submit"/>
+            <apex:commandButton id="surveySubmitButton" styleClass="component c-action c-action--primary submit-survey" action="{!submitResults}" value="{!$Label.LABS_SF_SubmitSurvey}" onclick="submitBtn__click(); return true;"/>            
+        </apex:outputPanel>
+
+        <apex:outputPanel rendered="{!thankYouRendered == true}">
+            <h1>{!$Label.Survey_Force_Label_Eurostar_Live_Chat}</h1>
+            <apex:outputText rendered="{!isSurveyThankYouText}" value="{!$Label.LABS_SF_Survey_Submitted_Thank_you}" escape="false" />
+            <apex:outputText rendered="{!isSurveyThankYouTextNoAgent}" value="{!$Label.LABS_SF_Survey_NOT_Submitted_Thank_you}" escape="false" />
+        </apex:outputPanel>
+
+        <c:esrCookies ></c:esrCookies>
+        <script>
+            var hostUrl = '{!$CurrentPage.parameters.userHostUrl}';
+            var newWindow = '{!$CurrentPage.parameters.esrIsNewWindow}';
+
+
+            var submited = false;
+            console.log(hostUrl);
+            
+            function postEventMessage(event, payload){
+                if(!hostUrl){
+                }
+                var postEventWindow =  window.parent;
+                try{
+                    if(newWindow !== 'true'){
+                        postEventWindow.postMessage({
+                            event: event,
+                            payload: payload
+                        }, hostUrl);
+                    }
+                }catch(e){
+                    console.log('Event ' + event + ' not posted. Non critical error');
+                }
+             
+            }
+
+            console.log('{thankYouRendered}' + {!thankYouRendered});
+
+            var submitBtn = document.getElementById('{!$Component.surveySubmitButton}');
+            function submitBtn__click(){
+                if(!submited){
+                    submited = true;
+                    var closeOut = document.getElementById('close-out');
+                    closeOut.style.display = 'block';//submitBtn.disabled = true;
+                }
+                return true;
+
+            };
+            function esrvidget__OnSurveySubmit() {
+                if({!thankYouRendered}){
+                    postEventMessage('postChatFinished',{status:'OK'});
+                }
+            }
+        
+            function isNewWindow() {
+                return newWindow === 'true';
+            }
+
+            esrvidget__OnSurveySubmit();
+
+            window.addEventListener("focus", function(args){
+                console.log(args);
+                postEventMessage('chatWindowFocused', {status: window.closed});
+            });
+            
+            window.addEventListener("blur", function(args){
+                console.log('blur');
+                postEventMessage('chatWindowMinimized',{status:'OK'});
+            });
+
+            window.addEventListener("beforeunload", function(args){
+                if(isNewWindow()){
+                    ESR.beforeUnload();
+                }
+            });
+
+            if (isNewWindow()) {
+                document.body.classList.add('new-window');
+                ESR.afterRedirect();
+            }
+        </script>
+    </apex:form>
+
+</apex:outputPanel>
+
+<div id="afterFeedback" style="display: none;">
+    {!$Label.Survey_Force_Label_Thanks_For_Feedback}
+</div>
+
+
+    <script>
+
+        var submited = false;
+        function submitSurvey(){
+            if(submited){
+                submitResults();
+                submited = true;
+            }
+        }
+
+        function initLogURL(elementId){
+
+            Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.LiveChatClass.getContentURLSurvey}', '{!$CurrentPage.parameters.liveChatKey}', '{!$CurrentPage.parameters.timeNow}',
+                function(result, event){
+                    var elem = document.getElementById(elementId);
+                    if (elem) {
+                        console.log('result = ' + result);
+                        elem.href = result.replace('amp;','');
+                    }
+                },
+                {escape: true}
+            );
+        }
+
+        initLogURL('esr_chat_log_link');
+
+    </script>
+
+    <script>
+        document.title = "{!$Label.Survey_Force_Label_Thanks_Message}";
+
+        var radios = document.querySelectorAll('input[type="radio"]');
+
+        for (var i = 0, length = radios.length; i < length; ++i) {
+            var radio = radios[i];
+            var label = radio.parentElement.querySelector('label');
+
+            label.innerHTML = '<span></span> ' + label.innerHTML;
+        }
+
+
+        var userAgent = window.navigator.userAgent;
+        var commentsTextarea = document.querySelector('#text > textarea');
+
+        if (userAgent.match(/iPhone/i)) {
+            
+            if (commentsTextarea){
+                
+                commentsTextarea.addEventListener('focus', function(){
+                    parent.postMessage({body_fixed: true}, '*');          
+                });
+                commentsTextarea.addEventListener('blur', function(){
+                    parent.postMessage({body_fixed: false}, '*');
+                });
+            }
+        }
+
+        if (userAgent.match(/iPad/i)) {
+
+            if (commentsTextarea){
+                commentsTextarea.addEventListener('focusin', function(){
+                    parent.postMessage({esr_chat_fixed: false}, '*'); 
+                });
+                commentsTextarea.addEventListener('blur', function(){
+                    parent.postMessage({esr_chat_fixed: true}, '*'); 
+                });
+            }
+        }
+
+   </script>
+
+    </body>
+    </html>
+</apex:page>

@@ -1,0 +1,19 @@
+<apex:component >
+
+  
+    <!-- search row -->
+		
+			<span id="j_id0:j_id14">
+				<ul class="search-ul">
+				     <li><a href="mc_news?language=">News</a></li>
+				     <li><a href="mc_financial?language=">Financial Results</a></li>
+				     <li><a href="mc_contact?language=">Contact</a></li>
+				</ul>
+				<div class="search-buttons">
+					<button class="form-control search-btn">{!$Label.mc_Search}</button>
+					<input class="form-control" height="50" placeholder="{!$Label.mc_Search}" type="text" width="25"/>
+				</div>
+			</span>
+			
+			<!-- /search row -->
+</apex:component>

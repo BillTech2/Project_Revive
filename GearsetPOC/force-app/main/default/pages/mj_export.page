@@ -1,0 +1,55 @@
+<apex:page controller="mj_export" docType="html-5.0"  language="{!selectedLanguageCode}" sidebar="false" showheader="false" standardStylesheets="false"  applyHtmlTag="false" cache="false" >
+<html>
+<head>
+        <c:css ></c:css>
+        <c:cssdwm ></c:cssdwm>
+        <apex:stylesheet value="{!URLFOR($Resource.styles, 'css/cssoveride.css')}" />
+
+     <title>{!$Label.MJ_homepagetitle}</title>
+    </head>    
+    
+    <body>
+        <c:disruption_webform_header ></c:disruption_webform_header>
+        
+                
+                
+                
+  		<div class="container" >
+            <h4>
+                 {!$Label.MJ_admin_line1}
+            </h4>
+            {!$Label.MJ_admin_line2}<br/>
+            1) {!$Label.MJ_admin_step1} - <a href="http://eurostar.managedtext2.com/wfNewLogin.aspx" target="_new">http://eurostar.managedtext2.com/wfNewLogin.aspx</a>
+            <br/>2) {!$Label.MJ_admin_step2}
+            <br/>3) {!$Label.MJ_admin_step3}
+            <br/>4) {!$Label.MJ_admin_step4}
+            <br/>5) {!$Label.MJ_admin_step5}
+            <br/>6) {!$Label.MJ_admin_step6}
+            <br/>
+            
+        </div>
+       
+         <div class="container" >
+             <hr/>
+             <h4>
+             	List of volunteers per time slot:
+             </h4>
+  <br/>
+              <apex:repeat value="{!FinalList}" var="x">
+                    <h4>{!x}</h4>
+                 	<h5>{!FinalList[x]}</h5>
+                 	<h5>{!NameList[x]}</h5>
+                   <br/>
+             	
+             </apex:repeat>
+             
+        </div>
+  
+        <c:footer_mj ></c:footer_mj>
+        <c:js ></c:js>
+    </body>
+    
+    
+    
+</html>
+</apex:page>

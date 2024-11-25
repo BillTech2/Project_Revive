@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Delay_Actor__c</fullName>
+    <description>Used in Marketing Cloud by CCCs to decide whether to send a template offering e-vouchers and refund or the template offering just e-vouchers.</description>
+    <externalId>false</externalId>
+    <formula>Train__r.Delay_Actor__c</formula>
+    <label>Delay Actor</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

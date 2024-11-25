@@ -1,0 +1,172 @@
+<apex:page showHeader="false" sidebar="false" controller="VoucherApp_CtrlApp" language="{!selectedLanguageCode}" standardStylesheets="false" applyHtmlTag="false" applyBodyTag="false" docType="html-5.0">
+
+<apex:variable var="mobileToScreenSize"  value="{! '42.983em' }" />
+
+<apex:variable var="tabletFromScreenSize" value="{! '43em' }" />
+<apex:variable var="tabletToScreenSize"   value="{! '59.93em' }" />
+
+<html data-ieuglyhack="en">
+    <head>
+        <meta name="viewport" content="width=device-width" />
+
+        <title>{!$Label.VoucherApp_TabTitle}</title>
+        <link rel="shortcut icon" href="{!URLFOR($Resource.EurostarFavIcon)}"/>
+        <!-- Styles -->
+        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.VoucherApp_Res, '/res/all-prembrokeWeb.css')}"/>
+
+        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.VoucherApp_Res, '/css/12-cols-grid.css')}"/>
+        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.VoucherApp_Res, '/css/no-grid.css')}" />
+        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.VoucherApp_Res, '/css/angular-date-picker.css')}"/>
+        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.VoucherApp_Res, '/css/select2-3.4.5.css')}"/>
+
+        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.VoucherApp_Res, '/css/elements.css')}"/>
+        <link rel="stylesheet" type="text/css" media="only screen and (max-width: {! mobileToScreenSize })" href="{!URLFOR($Resource.VoucherApp_Res, '/css/elements-mobile.css')}"/>
+        <link rel="stylesheet" type="text/css" media="only screen and (min-width: {! tabletFromScreenSize }) and (max-width: {! tabletToScreenSize })" href="{!URLFOR($Resource.VoucherApp_Res, '/css/elements-tablet.css')}"/>
+        
+        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.VoucherApp_Res, '/css/template-base.css')}"/>
+        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.CompApp_Eurostar_Ticket_Examples, '/ticket-examples.css')}"/>
+        
+        <!-- Loading jQuery, angular -->
+        <script src="{!URLFOR($Resource.VoucherApp_Res, '/vendor/jquery2.1.3.js')}"></script>
+        <script src="{!URLFOR($Resource.VoucherApp_Res, '/vendor/jquery.query-object.js')}"></script>
+
+        <script src="{!URLFOR($Resource.VoucherApp_Res, '/vendor/angular1.3.15.js')}"></script>
+        <script src="{!URLFOR($Resource.VoucherApp_Res, '/vendor/angular-route.1.4.4.js')}"></script>
+        <script src="{!URLFOR($Resource.VoucherApp_Res, '/vendor/angular-sanitize.1.4.4.js')}"></script>
+        <script src="{!URLFOR($Resource.VoucherApp_Res, '/vendor/nocaptchRecaptcha.angular.js')}"></script>
+        <script src="{!URLFOR($Resource.VoucherApp_Res, '/vendor/angularjs-autocomplete.min.js')}"></script>
+        <script src="{!URLFOR($Resource.VoucherApp_Res, '/js/angular-date-picker.js')}"></script>
+
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-select/0.13.1/select.min.css"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-select/0.13.1/select.min.js"></script>
+
+        <!-- Loading Angular Controllers-->
+        <script src="{!URLFOR($Resource.VoucherApp_Res, '/js/app.js')}"></script>
+        <script src="{!URLFOR($Resource.VoucherApp_Res, '/js/make-claim-ctrl.js')}"></script>        
+        <script src="{!URLFOR($Resource.VoucherApp_Res, '/js/soft-error.js')}"></script>
+
+        <!-- Miscellenous -->
+        <script src="{!URLFOR($Resource.VoucherApp_Res, '/js/pop-in-api.js')}"></script>
+        <script src="{!URLFOR($Resource.VoucherApp_Res, '/js/template.js')}"></script>
+        <script src="{!URLFOR($Resource.VoucherApp_Res, '/js/browser-assert.js')}"></script>
+
+        <!-- The images are too big to zip with other resources -->
+        <style>
+            .ng-cloak, .x-ng-cloak {
+              display: none !important;
+            }
+
+            a:hover {
+                    cursor: pointer;
+                }
+
+
+            #app-root .valid .input-wrapper::before   { background-image: url("{!URLFOR($Resource.VoucherApp_Res, '/res/SVGS/tick_correct.svg')}"); }
+            #app-root .invalid .input-wrapper::before { background-image: url("{!URLFOR($Resource.VoucherApp_Res, '/res/SVGS/exclaimation_mark.svg')}"); }
+            #app-root .tooltip-sign  { background-image: url("{!URLFOR($Resource.VoucherApp_Res, '/res/SVGS/helpFilled.svg')}"); }
+
+
+        </style>
+
+        <header id="app-header-template">
+            <div id="app-header-template-top-section">
+               <div id="top-section-logo"></div>
+                <div id="top-section-lang-select-box">
+                    <div id="select-box-selected-lang">{!$Label.CompApp_english}</div>
+                    <img id="select-box-arrow" src="{!URLFOR($Resource.VoucherApp_Res, '/res/SVGS/arrow_down.svg')}" height="14" width="14" onclick="showLanguageSelectionMenu();"/>
+                </div>
+                <div id="top-section-title">
+                    {!$Label.HelpCentreHeader}
+                </div>
+            </div>
+            <div id="app-header-template-lang-selection-menu">
+                <h6 id="lang-selection-menu-description" style="margin-bottom: 10px; color: #ffffff;">{!$Label.CompApp_selectLang}</h6>
+                <div id="app-header-template-line"></div>
+                <div id="app-header-template-options">
+                    <a class="options-button" hreflang="en">{!$Label.CompApp_english}</a>
+                    <br/>
+                    <a class="options-button" hreflang="fr">{!$Label.CompApp_Francias}</a>
+                    <br/>
+                    <a class="options-button" hreflang="nl">{!$Label.CompApp_Nederlands}</a>
+                </div>
+            </div>
+        </header>
+
+
+    </head>
+    
+    <body>
+
+        <div id="app-root" ng-app="compApp" >
+            <h1 class="row">{!$Label.VoucherApp_RequestDenied_header}</h1>
+
+            <div class="row p1">{!$Label.VoucherApp_RequestDenied_body}</div>
+            
+            <div class="row commands-section">
+                <a class="btn primary" href="http://voucher.eurostar.com">{!$Label.VoucherApp_RequestDenied_retry}</a>
+            </div>
+
+            <div class="row commands-section">
+                <a class="btn primary" href="{!$Setup.HelpCentre__c.URL__c}">{!$Label.VoucherApp_Success_goback}</a>
+            </div>
+            
+            <script>
+                var GLOBAL_REMOTE_USER_IP = '{!USER_IP}';
+            </script>
+        </div>
+        
+        <footer id="app-footer-template">
+            <div id="app-footer-template-image">
+                <div id="app-footer-template-content">
+                    <p id="app-footer-template-image-description" >{!$label.VoucherApp_helpCentre}</p>
+                    <a class="primary" href="{!$Setup.HelpCentre__c.URL__c}">Help Centre</a>
+                </div>
+            </div>
+            <p id="app-footer-template-copyright">© {!YEAR(TODAY())} {!$Label.CompApp_EurostarRights} <a id="app-footer-template-link" href="http://www.eurostar.com">{!$Label.CompApp_eurostar_site}</a></p>
+        </footer>
+
+    </body>
+    
+    <site:googleAnalyticsTracking />
+
+    <script>
+        sfdc_prevent_message_warning = true;
+        if (!window.jQuery) {
+            var message = [
+                '{! JSENCODE($Label.CompApp_ie8Error) }'
+            ].join('\n');
+            location.href = confirm(message) ? 'http://windows.microsoft.com/en-gb/internet-explorer/download-ie' : 'http://www.eurostar.com/';
+        }
+
+        $(function(){
+            checkBrowserSupport();
+            $('#select-box-selected-lang').text($('#app-header-template-options .options-button[hreflang="{!selectedLanguageCode}"]').text());
+        });
+        
+        var APP_HEADER_TEMPLATE_LANG_SELECTION_MENU = {
+                OPEN:  "{! URLFOR($Resource.VoucherApp_Res, '/res/SVGS/arrow_up.svg') }",
+                CLOSE: "{! URLFOR($Resource.VoucherApp_Res, '/res/SVGS/arrow_down.svg') }",
+        }
+        var GLOBAL_REMOTE_USER_IP = '{!USER_IP}';
+        var SFDC_SITE_PREFIX = '{!$Site.Prefix}' === ''? '/apex':'{!$Site.Prefix}';
+    
+        // TODO: Michael 06.10.15 - iOS not supported event  window.onbeforeunload
+        // window.onpagehide = function (e) {
+        //     return '{!$Label.CompApp_refresh_page_message}';
+        // }
+
+        window.onbeforeunload = function (e) {
+            if (!sfdc_prevent_message_warning){
+                var e = e || window.event;
+                // For IE and Firefox
+                if (e) {
+                    e.returnValue = '{!$Label.CompApp_refresh_page_message}';
+                }
+                // For Safari & Chrome
+                return '{!$Label.CompApp_refresh_page_message}';
+            }
+        };
+    </script>
+    <apex:form />
+</html>
+</apex:page>

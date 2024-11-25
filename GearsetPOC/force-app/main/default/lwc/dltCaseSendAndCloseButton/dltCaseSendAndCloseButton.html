@@ -1,0 +1,9 @@
+<template>
+    <div class="slds-var-m-top_medium slds-var-m-bottom_medium slds-is-relative">
+        <lightning-button-group class="slds-align_absolute-center ">
+            <lightning-button label="Send Email And Close Case" onclick={handleClick} variant="brand"></lightning-button>
+        </lightning-button-group>
+
+        <lightning-spinner if:true={spinnerStatus.isLoading} alternative-text="Loading"></lightning-spinner>
+    </div>
+</template>

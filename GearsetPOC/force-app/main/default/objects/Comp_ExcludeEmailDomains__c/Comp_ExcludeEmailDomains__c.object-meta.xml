@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>Using in compensation forms for email fields</description>
+    <enableFeeds>false</enableFeeds>
+    <label>Exclude Email Domain List</label>
+    <visibility>Public</visibility>
+</CustomObject>

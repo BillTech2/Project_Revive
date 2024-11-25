@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Website_Language__c</fullName>
+    <description>The web to case form provides a reference to Language and website that the user submitted the query from.  e.g. be-nl - Belgian website, Dutch Language</description>
+    <label>Website Language</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>uk-en</fullName>
+                <default>false</default>
+                <label>uk-en</label>
+            </value>
+            <value>
+                <fullName>fr-fr</fullName>
+                <default>false</default>
+                <label>fr-fr</label>
+            </value>
+            <value>
+                <fullName>be-nl</fullName>
+                <default>false</default>
+                <label>be-nl</label>
+            </value>
+            <value>
+                <fullName>be-en</fullName>
+                <default>false</default>
+                <label>be-en</label>
+            </value>
+            <value>
+                <fullName>be-fr</fullName>
+                <default>false</default>
+                <label>be-fr</label>
+            </value>
+            <value>
+                <fullName>rw-en</fullName>
+                <default>false</default>
+                <label>rw-en</label>
+            </value>
+            <value>
+                <fullName>us-EN</fullName>
+                <default>false</default>
+                <label>us-EN</label>
+            </value>
+            <value>
+                <fullName>nl-NL</fullName>
+                <default>false</default>
+                <label>nl-NL</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PRR_Claim</fullName>
+    <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
+    <columns>CASES.CASE_NUMBER</columns>
+    <columns>Language_Icon__c</columns>
+    <columns>Days_Since_Last_Contact__c</columns>
+    <columns>SLA__c</columns>
+    <columns>CASES.SUBJECT</columns>
+    <columns>Type_of_PRR_Requested__c</columns>
+    <columns>Compensation_Currency__c</columns>
+    <columns>NAME</columns>
+    <columns>Loyalty__c</columns>
+    <columns>CASES.STATUS</columns>
+    <columns>CASES.RECORDTYPE</columns>
+    <columns>PRR_Amount__c</columns>
+    <columns>PNR__c</columns>
+    <columns>Carrier__c</columns>
+    <filterScope>Queue</filterScope>
+    <filters>
+        <field>CASES.STATUS</field>
+        <operation>notEqual</operation>
+        <value>Closed</value>
+    </filters>
+    <label>PRR Claims - Queue</label>
+    <queue>PRR</queue>
+</ListView>

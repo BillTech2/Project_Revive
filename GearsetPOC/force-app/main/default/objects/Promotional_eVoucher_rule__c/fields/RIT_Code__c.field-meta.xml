@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RIT_Code__c</fullName>
+    <description>Populates RIT code based on the value of the rule.
+Used for Nectar eVouchers. This code is provided by Nectar and is unique to each voucher value (e.g. £10   RIT0027279)</description>
+    <externalId>false</externalId>
+    <formula>IF(AND(ISPICKVAL(Partner__r.Partner_Name__c, &#39;Nectar&#39;),Evoucher_Value__c = 10), &#39;RIT0027279&#39;, 
+IF(AND(ISPICKVAL(Partner__r.Partner_Name__c, &#39;Nectar&#39;),Evoucher_Value__c = 25), &#39;RIT0027280&#39;, 
+IF(AND(ISPICKVAL(Partner__r.Partner_Name__c, &#39;Nectar&#39;),Evoucher_Value__c = 50), &#39;RIT0027281&#39;, 
+IF(AND(ISPICKVAL(Partner__r.Partner_Name__c, &#39;Nectar&#39;),Evoucher_Value__c = 100), &#39;RIT0027282&#39;,&#39;&#39;))))</formula>
+    <label>Nectar RIT Code</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

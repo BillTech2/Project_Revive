@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Insurance_Reference_Format</fullName>
+    <active>false</active>
+    <errorConditionFormula>RecordType.Name = &quot;Insurance Exchange&quot;  &amp;&amp;  
+NOT(
+CONTAINS( New_Insurance_Reference__c , &quot;ESTGB&quot;)
+||
+CONTAINS( New_Insurance_Reference__c , &quot;ESTFR&quot;)
+||
+CONTAINS( New_Insurance_Reference__c , &quot;ESTBE&quot;)
+||
+CONTAINS( New_Insurance_Reference__c , &quot;ESTNL&quot;)
+||
+CONTAINS( New_Insurance_Reference__c , &quot;ESPBE&quot;)
+||
+CONTAINS( New_Insurance_Reference__c , &quot;ESPGB&quot;)
+||
+CONTAINS( New_Insurance_Reference__c, &quot;ESPFR&quot;)
+||
+CONTAINS( New_Insurance_Reference__c, &quot;ESPNL&quot;)
+)</errorConditionFormula>
+    <errorDisplayField>New_Insurance_Reference__c</errorDisplayField>
+    <errorMessage>Incorrect format for New Insurance Reference. The reference must start with either:
+&quot;ESTGB&quot;
+&quot;ESTFR&quot;
+&quot;ESTBE&quot;
+&quot;ESTNL&quot;
+&quot;ESPBE&quot;
+&quot;ESPGB&quot;
+&quot;ESPFR&quot;
+&quot;ESPNL&quot;</errorMessage>
+</ValidationRule>

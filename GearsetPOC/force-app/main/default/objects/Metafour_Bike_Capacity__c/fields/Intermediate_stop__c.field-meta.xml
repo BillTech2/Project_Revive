@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Intermediate_stop__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Intermediate stop</description>
+    <inlineHelpText>Check if it is an intermediate stop</inlineHelpText>
+    <label>Intermediate stop</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

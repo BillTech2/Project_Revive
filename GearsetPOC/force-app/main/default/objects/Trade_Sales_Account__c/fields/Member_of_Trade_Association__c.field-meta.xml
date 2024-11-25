@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Member_of_Trade_Association__c</fullName>
+    <label>Member of Trade Association</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Railteam</fullName>
+                <default>false</default>
+                <label>Railteam</label>
+            </value>
+            <value>
+                <fullName>AAA</fullName>
+                <default>false</default>
+                <label>AAA</label>
+            </value>
+            <value>
+                <fullName>ABTA</fullName>
+                <default>false</default>
+                <label>ABTA</label>
+            </value>
+            <value>
+                <fullName>Advantage</fullName>
+                <default>false</default>
+                <label>Advantage</label>
+            </value>
+            <value>
+                <fullName>ANVR</fullName>
+                <default>false</default>
+                <label>ANVR</label>
+            </value>
+            <value>
+                <fullName>ASTA</fullName>
+                <default>false</default>
+                <label>ASTA</label>
+            </value>
+            <value>
+                <fullName>CARTA</fullName>
+                <default>false</default>
+                <label>CARTA</label>
+            </value>
+            <value>
+                <fullName>DVR</fullName>
+                <default>false</default>
+                <label>DVR</label>
+            </value>
+            <value>
+                <fullName>ETC</fullName>
+                <default>false</default>
+                <label>ETC</label>
+            </value>
+            <value>
+                <fullName>ETOA</fullName>
+                <default>false</default>
+                <label>ETOA</label>
+            </value>
+            <value>
+                <fullName>FGTO</fullName>
+                <default>false</default>
+                <label>FGTO</label>
+            </value>
+            <value>
+                <fullName>GBTA</fullName>
+                <default>false</default>
+                <label>GBTA</label>
+            </value>
+            <value>
+                <fullName>GNTO</fullName>
+                <default>false</default>
+                <label>GNTO</label>
+            </value>
+            <value>
+                <fullName>GTMC</fullName>
+                <default>false</default>
+                <label>GTMC</label>
+            </value>
+            <value>
+                <fullName>MDLF</fullName>
+                <default>false</default>
+                <label>MDLF</label>
+            </value>
+            <value>
+                <fullName>NAITA</fullName>
+                <default>false</default>
+                <label>NAITA</label>
+            </value>
+            <value>
+                <fullName>UIG</fullName>
+                <default>false</default>
+                <label>UIG</label>
+            </value>
+            <value>
+                <fullName>USTOA</fullName>
+                <default>false</default>
+                <label>USTOA</label>
+            </value>
+            <value>
+                <fullName>Visit Britain</fullName>
+                <default>false</default>
+                <label>Visit Britain</label>
+            </value>
+            <value>
+                <fullName>Visit England</fullName>
+                <default>false</default>
+                <label>Visit England</label>
+            </value>
+            <value>
+                <fullName>Visit London</fullName>
+                <default>false</default>
+                <label>Visit London</label>
+            </value>
+            <value>
+                <fullName>Visit Scotland</fullName>
+                <default>false</default>
+                <label>Visit Scotland</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

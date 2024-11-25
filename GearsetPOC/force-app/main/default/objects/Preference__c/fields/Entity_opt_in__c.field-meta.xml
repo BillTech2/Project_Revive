@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Entity_opt_in__c</fullName>
+    <defaultValue>&quot;EIL&quot;</defaultValue>
+    <label>Entity Opt In</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Eurostar_Limited</valueSetName>
+    </valueSet>
+</CustomField>

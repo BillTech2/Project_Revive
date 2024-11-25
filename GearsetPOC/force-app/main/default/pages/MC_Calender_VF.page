@@ -1,0 +1,57 @@
+<apex:page sidebar="true" showHeader="true" controller="AnyEventCalCtrl">
+    <apex:includeLightning />
+   <apex:includeScript value="/lightning/lightning.out.js" />
+    <div id="filterComponent" style="padding:5px;display:inline-block;">
+            
+        <apex:form id="formid">
+            <div id="businessUnitComponent" style="margin:2px;">
+                <apex:outputLabel >Filter by Business Unit:</apex:outputLabel>
+                <apex:selectList styleClass="businessUnitFilter filter" value="{!selectedBusUnit}" size="1" multiselect="false" style="margin:5px;">
+                    <apex:selectOptions value="{!busunitlist}"></apex:selectOptions>
+                </apex:selectList>
+            </div>
+        </apex:form>
+        
+        <div id="channelComponent" style="margin:2px;">
+            <label for="Filters">Filter by Channel:</label>
+            <select class="filter" id="channel_selector" style="margin:5px;">
+              <option value="all">ALL</option>
+              <option value="Email">EMAIL</option>
+              <option value="SMS">SMS</option>
+            </select>
+        </div>
+    
+
+  </div>  
+<div id="lightning" />
+    <script>
+        $Lightning.use("c:MC_Calender_APP", function() {
+            $Lightning.createComponent("c:AnyCalendar",
+          { 
+            sObjectLabel : "MC Calendar Master",
+            sObjectName: "MC_Calendar_Master__c" ,
+            titleField:"Subcategory__c",
+            startDateTimeField:"Date_Sent__c",
+            endDateTimeField:"EndDate_forCalender__c",
+            /*descriptionField:"Message_Name__c",*/
+              colorField:"Calendar_Color__c",
+              businessUnitField:"Business_Unit__c",
+              childCountField:"Child_count__c",
+              channelField:"Channel__c",
+              channelIconUrlField:"Channel_Icon_Url__c",
+            userField:"OwnerId",
+            filterByUserField:"false",
+            //calendarButtons:"Week & Month", //
+            weekends:"false",
+            eventBackgroundColor:"#CFEBFE",
+            eventBorderColor:"#ffffff",
+            eventTextColor:"#00396b"
+          },
+          "lightning",
+          function(cmp) {
+            // do some stuff
+              //console.log("Component is created!");
+          });
+        });
+    </script>
+</apex:page>

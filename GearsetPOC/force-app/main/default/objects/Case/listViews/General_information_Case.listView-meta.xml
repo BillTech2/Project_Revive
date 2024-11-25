@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>General_information_Case</fullName>
+    <booleanFilter>(1 OR 2) AND 3</booleanFilter>
+    <columns>CASES.CASE_NUMBER</columns>
+    <columns>Preferred_Language__c</columns>
+    <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
+    <columns>NAME</columns>
+    <columns>CASES.SUBJECT</columns>
+    <columns>SLA__c</columns>
+    <columns>CASES.STATUS</columns>
+    <columns>CASES.PRIORITY</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Carrier__c</columns>
+    <filterScope>ScopingRule</filterScope>
+    <filters>
+        <field>OWNER_NAME</field>
+        <operation>contains</operation>
+        <value>General Information</value>
+    </filters>
+    <filters>
+        <field>OWNER_NAME</field>
+        <operation>contains</operation>
+        <value>Customer Care</value>
+    </filters>
+    <filters>
+        <field>CASES.STATUS</field>
+        <operation>notEqual</operation>
+        <value>Closed</value>
+    </filters>
+    <label>General Information - Queue</label>
+    <sharedTo>
+        <allInternalUsers />
+    </sharedTo>
+</ListView>

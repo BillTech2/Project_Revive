@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_For_Exchange_Cancellation__c</fullName>
+    <label>Reason For Exchange/Cancellation</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Status__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Booking Cancelled By Customer</fullName>
+                <default>false</default>
+                <label>Booking Cancelled By Customer</label>
+            </value>
+            <value>
+                <fullName>Booking Cancelled By Eurostar</fullName>
+                <default>false</default>
+                <label>Booking Cancelled By Eurostar</label>
+            </value>
+            <value>
+                <fullName>Change Of Product Required</fullName>
+                <default>false</default>
+                <label>Change Of Product Required</label>
+            </value>
+            <value>
+                <fullName>Sense Of Occasion Product No Longer Needed</fullName>
+                <default>false</default>
+                <label>Sense Of Occasion Product No Longer Needed</label>
+            </value>
+            <value>
+                <fullName>Change Of Coach/Seat Number</fullName>
+                <default>false</default>
+                <label>Change Of Coach/Seat Number</label>
+            </value>
+            <value>
+                <fullName>Change Of Travel Date/Time</fullName>
+                <default>false</default>
+                <label>Change Of Travel Date/Time</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Exchanged</controllingFieldValue>
+            <valueName>Change Of Product Required</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Exchanged</controllingFieldValue>
+            <valueName>Change Of Coach/Seat Number</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Exchanged</controllingFieldValue>
+            <valueName>Change Of Travel Date/Time</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Exchanged</controllingFieldValue>
+            <controllingFieldValue>Cancelled</controllingFieldValue>
+            <valueName>Other</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cancelled</controllingFieldValue>
+            <valueName>Booking Cancelled By Customer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cancelled</controllingFieldValue>
+            <valueName>Booking Cancelled By Eurostar</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cancelled</controllingFieldValue>
+            <valueName>Sense Of Occasion Product No Longer Needed</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

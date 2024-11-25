@@ -1,0 +1,67 @@
+<apex:component >
+  <footer class="bs-docs-footer" role="contentinfo">
+  <div class="container" style="padding-top:0;">
+      <hr/>
+    <div class ="footer-block"> 
+        <ul class="bs-docs-footer-links text-muted">
+        <h4>Offres trains</h4>
+            <li><a href="http://www.eurostar.com/fr-fr/offres-speciales/offres-train/trains-pour-angleterre">Trains pour l&#039;Angleterre</a></li>
+			<li><a href="http://www.eurostar.com/fr-fr/offres-speciales/offres-train/trains-pour-langleterre/londres-pour-86-euros">Trains pour Londres</a></li>
+			<li><a href="http://www.eurostar.com/fr-fr/offres-speciales/offres-train/tarif-seniors">Tarif Seniors Londres</a></li>
+			<li><a href="http://www.eurostar.com/fr-fr/offres-speciales/offres-train/trains-pour-langleterre/londres-tarif-jeunes">Tarif jeunes Londres</a></li>
+        </ul>
+    </div>
+    <div class ="footer-block">
+            <ul class="bs-docs-footer-links text-muted">
+        <h4>Séjours</h4>
+        <li><a href="http://www.eurostar.com/fr-fr/destinations/sejours-angleterre">Séjours Angleterre</a></li>
+		<li><a href="http://www.eurostar.com/fr-fr/destinations/sejours-en-angleterre/sejours-londres">Séjours Londres</a></li>
+        </ul>
+    </div>
+    <div class ="footer-block">
+        <ul class="bs-docs-footer-links text-muted">
+        <h4>Informations générales</h4>
+        <li><a href="http://www.eurostar.com/fr-fr/sitemap">Plan du site</a></li>
+		<li><a href="http://www.eurostar.com/fr-fr/conditions-dutilisation">Conditions d&#039;utilisation</a></li>
+		<li><a href="http://www.eurostar.com/fr-fr/conditions-de-transport" target="_blank">Conditions de transport</a></li>
+		<li><a href="http://www.eurostar.com/fr-fr/confidentialite-des-donnees">Confidentialité des données</a></li>
+		<li><a href="http://www.eurostar.com/fr-fr/utilisation-des-cookies">Utilisation des cookies</a></li>
+		<li><a href="http://www.eurostar.com/fr-fr/accessibilit%C3%A9">Accessibilité</a></li>
+		<li><a href="http://www.eurostar.com/fr-fr/a-propos-deurostar/application-eurostar">Application Eurostar</a></li>
+		<li><a href="http://www.eurostar.com/mobile">Site mobile</a></li>
+        </ul>
+        </div>
+        <div class ="footer-block">
+        <ul class="bs-docs-footer-links text-muted">
+        <h4>Information sur l&#039;entreprise</h4>
+        <li><a href="/fr-fr/a-propos-deurostar">A propos d’Eurostar</a></li>
+<li><a href="/fr-fr/contactez-nous">Contactez-nous</a></li>
+<li><a href="/fr-fr/eurostar-s%E2%80%99engage-pour-ses-voyageurs">Eurostar s’engage pour ses voyageurs</a></li>
+<li><a href="/fr-fr/a-propos-deurostar/carrieres-eurostar">Travailler pour Eurostar</a></li>
+            <h4 style="margin-top: 30px;">Restez connecté</h4>
+            <li class= "socnet"><a href="http://facebook.com/eurostar" target="_blank"><i class="fa fa-facebook-square fa-2x" style="margin-right:5px;"></i> Facebook</a></li>
+            <li class= "socnet"><a href="http://twitter.com/eurostar" target="_blank"><i class="fa fa-twitter-square fa-2x"  style="margin-right:5px;"></i> Twitter</a></li>
+              <li class= "socnetmob"><a href="http://facebook.com/eurostar" target="_blank"><i class="fa fa-facebook-square fa-4x" style="margin-right:10px;"></i></a><a href="http://twitter.com/eurostar"  target="_blank"><i class="fa fa-twitter-square fa-4x"></i></a></li>
+            <br/><li> <a href="http://www.eurostar.com/newsletters/signup">Abonnez-vous à notre newsletter</a></li>
+        </ul>
+        </div>
+      
+              
+          <div id="footer-bottom" style="margin-top: 30px; float: left; border-top: 1px solid #eee; padding-top: 50px;">
+            <div id="footer-bottom-inner">
+                <div class="region region-footer-bottom">
+    <div id="block-eurostar-gateway-legal-footer" class="block block-eurostar-gateway">
+
+    
+  <div class="content">
+      <p>© {!year(today())} Eurostar International Ltd. Tous droits réservés</p>   </div>
+</div>
+  </div>
+            </div>
+          </div> <!-- /#footer-bottom -->
+      
+  </div>
+
+</footer>
+             
+</apex:component>

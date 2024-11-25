@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Request_a_replacement_membership_pack</fullName>
+    <availability>online</availability>
+    <description>Request a replacement membership pack</description>
+    <displayType>button</displayType>
+    <height>600</height>
+    <linkType>page</linkType>
+    <masterLabel>Request New Card</masterLabel>
+    <openType>sidebar</openType>
+    <page>RequestReplacementMembershipPack</page>
+    <protected>false</protected>
+</WebLink>

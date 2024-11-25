@@ -1,0 +1,11 @@
+<template>
+    <nav role="navigation" aria-label="Breadcrumbs">
+        <ol class="slds-breadcrumb slds-list_horizontal slds-wrap">
+            <template for:each={breadcrumbElements} for:item="bcItem">
+                <li class="slds-breadcrumb__item slds-truncate" key={bcItem.step}>
+                    <c-generic_breadcrumb-item label={bcItem.label} step={bcItem.step}></c-generic_breadcrumb-item>
+                </li>
+            </template>
+        </ol>
+    </nav>
+</template>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fare_Range__c</fullName>
+    <description>Shows the Fare Range from the Account</description>
+    <externalId>false</externalId>
+    <formula>IF ( INCLUDES ( AccountId__r.Fare_Range__c , &quot;Public&quot; ), &quot;Public; &quot;,null ) &amp;
+IF ( INCLUDES ( AccountId__r.Fare_Range__c , &quot;RIT&quot; ), &quot;RIT; &quot;,null ) &amp;
+IF ( INCLUDES ( AccountId__r.Fare_Range__c , &quot;Allotment&quot; ), &quot;Allotment; &quot;,null ) &amp;
+IF ( INCLUDES ( AccountId__r.Fare_Range__c , &quot;Groups&quot; ), &quot;Groups; &quot;,null ) &amp;
+IF ( INCLUDES ( AccountId__r.Fare_Range__c , &quot;Concession Fares&quot; ), &quot;Concession Fares; &quot;,null ) &amp;
+IF ( INCLUDES ( AccountId__r.Fare_Range__c , &quot;FIP&quot; ), &quot;FIP; &quot;,null )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Fare Range</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

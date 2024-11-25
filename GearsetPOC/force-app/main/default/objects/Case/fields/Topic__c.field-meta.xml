@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Topic__c</fullName>
+    <label>Topic</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Accessibility</fullName>
+                <default>false</default>
+                <label>Accessibility</label>
+            </value>
+            <value>
+                <fullName>Additional Charges</fullName>
+                <default>false</default>
+                <label>Additional Charges</label>
+            </value>
+            <value>
+                <fullName>Amenities</fullName>
+                <default>false</default>
+                <label>Amenities</label>
+            </value>
+            <value>
+                <fullName>Animals</fullName>
+                <default>false</default>
+                <label>Animals</label>
+            </value>
+            <value>
+                <fullName>Assistance dog</fullName>
+                <default>false</default>
+                <label>Assistance dog</label>
+            </value>
+            <value>
+                <fullName>Bikes</fullName>
+                <default>false</default>
+                <label>Bikes</label>
+            </value>
+            <value>
+                <fullName>Booking Confirmation</fullName>
+                <default>false</default>
+                <label>Booking Confirmation</label>
+            </value>
+            <value>
+                <fullName>Brexit</fullName>
+                <default>false</default>
+                <label>Brexit</label>
+            </value>
+            <value>
+                <fullName>Catering</fullName>
+                <default>false</default>
+                <label>Catering</label>
+            </value>
+            <value>
+                <fullName>Check-In Or Security</fullName>
+                <default>false</default>
+                <label>Check-In Or Security</label>
+            </value>
+            <value>
+                <fullName>Children &amp; Infants</fullName>
+                <default>false</default>
+                <label>Children &amp; Infants</label>
+            </value>
+            <value>
+                <fullName>Club Eurostar</fullName>
+                <default>false</default>
+                <label>Club Eurostar</label>
+            </value>
+            <value>
+                <fullName>Communication</fullName>
+                <default>false</default>
+                <label>Communication</label>
+            </value>
+            <value>
+                <fullName>Communications</fullName>
+                <default>false</default>
+                <label>Communications</label>
+            </value>
+            <value>
+                <fullName>Connections</fullName>
+                <default>false</default>
+                <label>Connections</label>
+            </value>
+            <value>
+                <fullName>Credit Notes</fullName>
+                <default>false</default>
+                <label>Credit Notes</label>
+            </value>
+            <value>
+                <fullName>Destination Info</fullName>
+                <default>false</default>
+                <label>Destination Info</label>
+            </value>
+            <value>
+                <fullName>Disruption</fullName>
+                <default>false</default>
+                <label>Disruption</label>
+            </value>
+            <value>
+                <fullName>Documents Or Paperwork</fullName>
+                <default>false</default>
+                <label>Documents Or Paperwork</label>
+            </value>
+            <value>
+                <fullName>Fraud</fullName>
+                <default>false</default>
+                <label>Fraud</label>
+            </value>
+            <value>
+                <fullName>General feedback</fullName>
+                <default>false</default>
+                <label>General feedback</label>
+            </value>
+            <value>
+                <fullName>Health and Safety</fullName>
+                <default>false</default>
+                <label>Health and Safety</label>
+            </value>
+            <value>
+                <fullName>History</fullName>
+                <default>false</default>
+                <label>History</label>
+            </value>
+            <value>
+                <fullName>Invoices</fullName>
+                <default>false</default>
+                <label>Invoices</label>
+            </value>
+            <value>
+                <fullName>Lounge</fullName>
+                <default>false</default>
+                <label>Lounge</label>
+            </value>
+            <value>
+                <fullName>Luggage</fullName>
+                <default>false</default>
+                <label>Luggage</label>
+            </value>
+            <value>
+                <fullName>Medical Supplies</fullName>
+                <default>false</default>
+                <label>Medical Supplies</label>
+            </value>
+            <value>
+                <fullName>Musical Instruments</fullName>
+                <default>false</default>
+                <label>Musical Instruments</label>
+            </value>
+            <value>
+                <fullName>Names</fullName>
+                <default>false</default>
+                <label>Names</label>
+            </value>
+            <value>
+                <fullName>Onboard experience</fullName>
+                <default>false</default>
+                <label>Onboard experience</label>
+            </value>
+            <value>
+                <fullName>Oxygen canisters</fullName>
+                <default>false</default>
+                <label>Oxygen canisters</label>
+            </value>
+            <value>
+                <fullName>Payments</fullName>
+                <default>false</default>
+                <label>Payments</label>
+            </value>
+            <value>
+                <fullName>Phone Case - please complete</fullName>
+                <default>false</default>
+                <label>Phone Case - please complete</label>
+            </value>
+            <value>
+                <fullName>Policy</fullName>
+                <default>false</default>
+                <label>Policy</label>
+            </value>
+            <value>
+                <fullName>Problems accessing loyalty account</fullName>
+                <default>false</default>
+                <label>Problems accessing loyalty account</label>
+            </value>
+            <value>
+                <fullName>Proforma</fullName>
+                <default>false</default>
+                <label>Proforma</label>
+            </value>
+            <value>
+                <fullName>Promotions</fullName>
+                <default>false</default>
+                <label>Promotions</label>
+            </value>
+            <value>
+                <fullName>Real Time Train Information</fullName>
+                <default>false</default>
+                <label>Real Time Train Information</label>
+            </value>
+            <value>
+                <fullName>Receipts</fullName>
+                <default>false</default>
+                <label>Receipts</label>
+            </value>
+            <value>
+                <fullName>Request to add points/ticket to account</fullName>
+                <default>false</default>
+                <label>Request to add points/ticket to account</label>
+            </value>
+            <value>
+                <fullName>Request to change personal details</fullName>
+                <default>false</default>
+                <label>Request to change personal details</label>
+            </value>
+            <value>
+                <fullName>Seats</fullName>
+                <default>false</default>
+                <label>Seats</label>
+            </value>
+            <value>
+                <fullName>Special Assistance</fullName>
+                <default>false</default>
+                <label>Special Assistance - General</label>
+            </value>
+            <value>
+                <fullName>Staff</fullName>
+                <default>false</default>
+                <label>Staff</label>
+            </value>
+            <value>
+                <fullName>Station</fullName>
+                <default>false</default>
+                <label>Station</label>
+            </value>
+            <value>
+                <fullName>Station Information</fullName>
+                <default>false</default>
+                <label>Station Information</label>
+            </value>
+            <value>
+                <fullName>Survey</fullName>
+                <default>false</default>
+                <label>Survey</label>
+            </value>
+            <value>
+                <fullName>System - please review</fullName>
+                <default>false</default>
+                <label>System - please review</label>
+            </value>
+            <value>
+                <fullName>Ticket Collection</fullName>
+                <default>false</default>
+                <label>Ticket Collection</label>
+            </value>
+            <value>
+                <fullName>Ticket Conditions</fullName>
+                <default>false</default>
+                <label>Ticket Conditions</label>
+            </value>
+            <value>
+                <fullName>Timetable</fullName>
+                <default>false</default>
+                <label>Timetable</label>
+            </value>
+            <value>
+                <fullName>Travel Classes</fullName>
+                <default>false</default>
+                <label>Travel Classes</label>
+            </value>
+            <value>
+                <fullName>Travel documents</fullName>
+                <default>false</default>
+                <label>Travel documents</label>
+            </value>
+            <value>
+                <fullName>Travel Proof</fullName>
+                <default>false</default>
+                <label>Travel Proof</label>
+            </value>
+            <value>
+                <fullName>Unaccompanied Minors</fullName>
+                <default>false</default>
+                <label>Unaccompanied Minors</label>
+            </value>
+            <value>
+                <fullName>Urgent special assistance</fullName>
+                <default>false</default>
+                <label>Urgent special assistance</label>
+            </value>
+            <value>
+                <fullName>Vouchers</fullName>
+                <default>false</default>
+                <label>Vouchers</label>
+            </value>
+            <value>
+                <fullName>Webform case - please review</fullName>
+                <default>false</default>
+                <label>Webform case - please review</label>
+            </value>
+            <value>
+                <fullName>Website</fullName>
+                <default>false</default>
+                <label>Website</label>
+            </value>
+            <value>
+                <fullName>Website or app</fullName>
+                <default>false</default>
+                <label>Website or app</label>
+            </value>
+            <value>
+                <fullName>Wheelchair or mobility scooter</fullName>
+                <default>false</default>
+                <label>Wheelchair or mobility scooter</label>
+            </value>
+            <value>
+                <fullName>Wifi</fullName>
+                <default>false</default>
+                <label>Wifi</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

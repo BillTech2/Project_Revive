@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DotCom</fullName>
+    <columns>NAME</columns>
+    <columns>Related_Amount__c</columns>
+    <columns>Related_Currency__c</columns>
+    <columns>Expiry_Date__c</columns>
+    <columns>Integration_Status__c</columns>
+    <columns>Integration_Error__c</columns>
+    <columns>Alias__c</columns>
+    <columns>Voucher_Number_Encrypted__c</columns>
+    <columns>Amount__c</columns>
+    <columns>Expiring_date__c</columns>
+    <columns>Status__c</columns>
+    <columns>PNR__c</columns>
+    <columns>Email__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>eVoucher__c.DotCom</value>
+    </filters>
+    <label>DotCom</label>
+    <language>en_US</language>
+</ListView>

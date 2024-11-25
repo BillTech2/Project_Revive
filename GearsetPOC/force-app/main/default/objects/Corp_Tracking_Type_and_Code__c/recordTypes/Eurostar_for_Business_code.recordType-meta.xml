@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Eurostar_for_Business_code</fullName>
+    <active>true</active>
+    <label>Eurostar for Business code</label>
+    <picklistValues>
+        <picklist>Corp_Type__c</picklist>
+        <values>
+            <fullName>SNCF_FCECode</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+</RecordType>

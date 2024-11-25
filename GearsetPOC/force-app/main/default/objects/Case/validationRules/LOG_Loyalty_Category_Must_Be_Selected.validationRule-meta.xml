@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LOG_Loyalty_Category_Must_Be_Selected</fullName>
+    <active>false</active>
+    <description>If &quot;Club Eurostar&quot; Category is selected, then Loyalty Category and Loyalty Topic must be selected</description>
+    <errorConditionFormula>ISPICKVAL(Category__c, &quot;Club Eurostar&quot;)
+&amp;&amp;
+ISBLANK(TEXT(Loyalty_Category__c))
+&amp;&amp;
+ISBLANK(TEXT(Loyalty_Topic__c))</errorConditionFormula>
+    <errorMessage>As the category is loyalty related, please select an option for Loyalty Category and Topic</errorMessage>
+</ValidationRule>

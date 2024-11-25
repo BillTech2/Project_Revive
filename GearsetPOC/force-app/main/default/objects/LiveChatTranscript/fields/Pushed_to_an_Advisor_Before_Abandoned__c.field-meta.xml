@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pushed_to_an_Advisor_Before_Abandoned__c</fullName>
+    <formula>ISPICKVAL(Status, &quot;Missed&quot;)
+&amp;&amp;
+NOT(OwnerId = &quot;005b0000000pZ9r&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Pushed to an Advisor Before Abandoned</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

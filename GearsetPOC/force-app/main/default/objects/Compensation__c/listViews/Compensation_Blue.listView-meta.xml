@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Compensation_Blue</fullName>
+    <columns>NAME</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>Payment_Amount__c</columns>
+    <columns>Payment_Currency__c</columns>
+    <columns>PNR__c</columns>
+    <columns>Comments__c</columns>
+    <columns>Compensation_Type__c</columns>
+    <columns>Reason_Code__c</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Carrier__c</field>
+        <operation>equals</operation>
+        <value>Blue,Purple</value>
+    </filters>
+    <filters>
+        <field>Comp_Approval_Status__c</field>
+        <operation>equals</operation>
+        <value>Awaiting Approval</value>
+    </filters>
+    <label>Compensation Blue</label>
+    <sharedTo>
+        <group>EBSC_Approvers</group>
+    </sharedTo>
+</ListView>

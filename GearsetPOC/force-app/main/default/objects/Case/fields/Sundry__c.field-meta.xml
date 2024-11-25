@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sundry__c</fullName>
+    <label>Sundry</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Sense of Occasion</fullName>
+                <default>false</default>
+                <label>Sense of Occasion</label>
+            </value>
+            <value>
+                <fullName>Meal</fullName>
+                <default>false</default>
+                <label>Meal</label>
+            </value>
+            <value>
+                <fullName>Seats</fullName>
+                <default>false</default>
+                <label>Seats</label>
+            </value>
+            <value>
+                <fullName>Ticket Collection</fullName>
+                <default>false</default>
+                <label>Ticket Collection</label>
+            </value>
+            <value>
+                <fullName>Voucher</fullName>
+                <default>false</default>
+                <label>Voucher</label>
+            </value>
+            <value>
+                <fullName>Insurance</fullName>
+                <default>false</default>
+                <label>Insurance</label>
+            </value>
+            <value>
+                <fullName>Urgent assistance</fullName>
+                <default>false</default>
+                <label>Urgent assistance</label>
+            </value>
+            <value>
+                <fullName>Club Eurostar monthly prizedraw</fullName>
+                <default>false</default>
+                <label>Club Eurostar monthly prizedraw</label>
+            </value>
+            <value>
+                <fullName>Non Urgent assistance</fullName>
+                <default>false</default>
+                <label>Non Urgent assistance</label>
+            </value>
+            <value>
+                <fullName>Names</fullName>
+                <default>false</default>
+                <label>Names</label>
+            </value>
+            <value>
+                <fullName>Choose an option</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Choose an option</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

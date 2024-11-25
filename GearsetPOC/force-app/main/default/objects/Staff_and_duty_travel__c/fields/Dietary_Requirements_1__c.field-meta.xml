@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dietary_Requirements_1__c</fullName>
+    <description>This field will be used for the dietary requirements of the first passenger</description>
+    <label>Dietary Requirements 1</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Vegetarian</fullName>
+                <default>false</default>
+                <label>Vegetarian</label>
+            </value>
+            <value>
+                <fullName>Kosher</fullName>
+                <default>false</default>
+                <label>Kosher</label>
+            </value>
+            <value>
+                <fullName>Halal</fullName>
+                <default>false</default>
+                <label>Halal</label>
+            </value>
+            <value>
+                <fullName>Vegan</fullName>
+                <default>false</default>
+                <label>Vegan</label>
+            </value>
+            <value>
+                <fullName>Diabetic</fullName>
+                <default>false</default>
+                <label>Diabetic</label>
+            </value>
+            <value>
+                <fullName>Low fat</fullName>
+                <default>false</default>
+                <label>Low fat</label>
+            </value>
+            <value>
+                <fullName>Low salt</fullName>
+                <default>false</default>
+                <label>Low salt</label>
+            </value>
+            <value>
+                <fullName>Gluten free</fullName>
+                <default>false</default>
+                <label>Gluten free</label>
+            </value>
+            <value>
+                <fullName>Child meal</fullName>
+                <default>false</default>
+                <label>Child meal</label>
+            </value>
+            <value>
+                <fullName>Dairy free</fullName>
+                <default>false</default>
+                <label>Dairy free</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

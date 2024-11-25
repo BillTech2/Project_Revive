@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LOG_Customer_Profile_Must_Be_Linked</fullName>
+    <active>true</active>
+    <description>Forces a link to a customer profile if certain customer type is selected on the customer type picklist</description>
+    <errorConditionFormula>AND(NOT($Setup.Escape_Validation_Rules_GDPR__c.Escape_Validation_Rule_Checkbox__c),(
+
+
+OR( 
+ISPICKVAL(Customer_Type__c,&quot;Public&quot;), 
+ISPICKVAL(Customer_Type__c,&quot;Loyalty&quot;), 
+ISPICKVAL(Customer_Type__c,&quot;Trade&quot;), 
+ISPICKVAL(Customer_Type__c,&quot;Special Assistance&quot;), 
+ISPICKVAL(Customer_Type__c,&quot;Packages or Hotels&quot;), 
+ISPICKVAL(Customer_Type__c,&quot;Eurodespatch&quot;), 
+ISPICKVAL(Customer_Type__c,&quot;Feedback&quot;)) 
+&amp;&amp; 
+ISBLANK( AccountId )
+
+))</errorConditionFormula>
+    <errorMessage>Case must be linked to a Customer Profile - if no customer profile exists then please create one</errorMessage>
+</ValidationRule>

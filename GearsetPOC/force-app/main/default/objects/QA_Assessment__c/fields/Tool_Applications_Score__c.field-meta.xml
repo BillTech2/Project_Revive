@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tool_Applications_Score__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( ISPICKVAL( Tool_Applications_check__c ,&quot;YES&quot;),5,IF(ISPICKVAL(Tool_Applications_check__c,&quot;Partial&quot;),2.5,0))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Tool Applications Score</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

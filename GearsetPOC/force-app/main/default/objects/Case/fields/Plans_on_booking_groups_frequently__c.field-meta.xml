@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Plans_on_booking_groups_frequently__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>Plans on booking groups frequently with Eurostar</inlineHelpText>
+    <label>Plans on booking groups frequently</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Distributor_2__c</fullName>
+    <label>Distributor 2</label>
+    <required>true</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Distributor_1__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>EHL Digital</fullName>
+                <default>false</default>
+                <label>EHL Digital</label>
+            </value>
+            <value>
+                <fullName>EIL B2B</fullName>
+                <default>false</default>
+                <label>EIL B2B</label>
+            </value>
+            <value>
+                <fullName>EIL Digital</fullName>
+                <default>false</default>
+                <label>EIL Digital</label>
+            </value>
+            <value>
+                <fullName>EIL EBSC</fullName>
+                <default>false</default>
+                <label>EIL EBSC</label>
+            </value>
+            <value>
+                <fullName>EIL Stations</fullName>
+                <default>false</default>
+                <label>EIL Stations</label>
+            </value>
+            <value>
+                <fullName>THALYS</fullName>
+                <default>false</default>
+                <label>THALYS</label>
+            </value>
+            <value>
+                <fullName>SNCF</fullName>
+                <default>false</default>
+                <label>SNCF</label>
+            </value>
+            <value>
+                <fullName>SNCB</fullName>
+                <default>false</default>
+                <label>SNCB</label>
+            </value>
+            <value>
+                <fullName>NS</fullName>
+                <default>false</default>
+                <label>NS</label>
+            </value>
+            <value>
+                <fullName>DB</fullName>
+                <default>false</default>
+                <label>DB</label>
+            </value>
+            <value>
+                <fullName>RAIL EUROPE</fullName>
+                <default>false</default>
+                <label>RAIL EUROPE</label>
+            </value>
+            <value>
+                <fullName>CFL</fullName>
+                <default>false</default>
+                <label>CFL</label>
+            </value>
+            <value>
+                <fullName>SBB</fullName>
+                <default>false</default>
+                <label>SBB</label>
+            </value>
+            <value>
+                <fullName>OTHER DISTRIBUTORS</fullName>
+                <default>false</default>
+                <label>OTHER DISTRIBUTORS</label>
+            </value>
+            <value>
+                <fullName>DSB</fullName>
+                <default>false</default>
+                <label>DSB</label>
+            </value>
+            <value>
+                <fullName>Unknown</fullName>
+                <default>false</default>
+                <label>Unknown</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>EIL</controllingFieldValue>
+            <valueName>EHL Digital</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>EIL</controllingFieldValue>
+            <valueName>EIL B2B</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>EIL</controllingFieldValue>
+            <valueName>EIL Digital</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>EIL</controllingFieldValue>
+            <valueName>EIL EBSC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>EIL</controllingFieldValue>
+            <valueName>EIL Stations</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>EIL</controllingFieldValue>
+            <controllingFieldValue>THALYS</controllingFieldValue>
+            <controllingFieldValue>SNCF</controllingFieldValue>
+            <controllingFieldValue>SNCB</controllingFieldValue>
+            <controllingFieldValue>NS</controllingFieldValue>
+            <controllingFieldValue>DB</controllingFieldValue>
+            <controllingFieldValue>RAIL EUROPE</controllingFieldValue>
+            <controllingFieldValue>OTHER SELLING RAILWAYS</controllingFieldValue>
+            <valueName>Unknown</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>THALYS</controllingFieldValue>
+            <valueName>THALYS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SNCF</controllingFieldValue>
+            <valueName>SNCF</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SNCB</controllingFieldValue>
+            <valueName>SNCB</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NS</controllingFieldValue>
+            <valueName>NS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>DB</controllingFieldValue>
+            <valueName>DB</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>RAIL EUROPE</controllingFieldValue>
+            <valueName>RAIL EUROPE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OTHER SELLING RAILWAYS</controllingFieldValue>
+            <valueName>CFL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OTHER SELLING RAILWAYS</controllingFieldValue>
+            <valueName>SBB</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OTHER SELLING RAILWAYS</controllingFieldValue>
+            <valueName>OTHER DISTRIBUTORS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OTHER SELLING RAILWAYS</controllingFieldValue>
+            <valueName>DSB</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Number_of_Points_Shared__c</fullName>
+    <description>This is an auto field that shows the calculated number of points shared/donated to another member of the program.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>This is an auto field that shows the calculated number of points shared/donated to another member of the program.</inlineHelpText>
+    <label>Number of Points Shared</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

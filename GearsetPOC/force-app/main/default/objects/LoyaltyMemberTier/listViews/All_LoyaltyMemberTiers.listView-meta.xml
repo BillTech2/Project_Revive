@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_LoyaltyMemberTiers</fullName>
+    <columns>LoyaltyMember</columns>
+    <columns>LoyaltyTier</columns>
+    <columns>Tier_Immunity__c</columns>
+    <columns>ReasonForChange</columns>
+    <columns>Membership_Number__c</columns>
+    <columns>ChangeReasonType</columns>
+    <columns>LastModifiedBy</columns>
+    <columns>LastModifiedDate</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>LoyaltyMember</field>
+        <operation>equals</operation>
+        <value>30838110000001273</value>
+    </filters>
+    <label>All Loyalty Member Tiers</label>
+</ListView>

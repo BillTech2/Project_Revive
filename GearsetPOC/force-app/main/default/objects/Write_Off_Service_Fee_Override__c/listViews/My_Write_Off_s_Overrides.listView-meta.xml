@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Write_Off_s_Overrides</fullName>
+    <columns>NAME</columns>
+    <columns>Type__c</columns>
+    <filterScope>Mine</filterScope>
+    <label>My Write-Off&#39;s &amp; Overrides</label>
+    <language>en_US</language>
+</ListView>

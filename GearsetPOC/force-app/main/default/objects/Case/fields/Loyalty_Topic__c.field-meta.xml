@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Loyalty_Topic__c</fullName>
+    <label>Loyalty Topic</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>How to join/leave?</fullName>
+                <default>false</default>
+                <label>How to join/leave?</label>
+            </value>
+            <value>
+                <fullName>What are the benefits?</fullName>
+                <default>false</default>
+                <label>What are the benefits?</label>
+            </value>
+            <value>
+                <fullName>What is Club Eurostar?</fullName>
+                <default>false</default>
+                <label>What is Club Eurostar?</label>
+            </value>
+            <value>
+                <fullName>Tier info</fullName>
+                <default>false</default>
+                <label>Tier info</label>
+            </value>
+            <value>
+                <fullName>Status info</fullName>
+                <default>false</default>
+                <label>Status info</label>
+            </value>
+            <value>
+                <fullName>Communications</fullName>
+                <default>false</default>
+                <label>Communications</label>
+            </value>
+            <value>
+                <fullName>Earning points</fullName>
+                <default>false</default>
+                <label>Earning points</label>
+            </value>
+            <value>
+                <fullName>Spending points</fullName>
+                <default>false</default>
+                <label>Spending points</label>
+            </value>
+            <value>
+                <fullName>Partner rewards</fullName>
+                <default>false</default>
+                <label>Partner rewards</label>
+            </value>
+            <value>
+                <fullName>Points extension (covid policy)</fullName>
+                <default>false</default>
+                <label>Points extension (covid policy)</label>
+            </value>
+            <value>
+                <fullName>Tier expiry</fullName>
+                <default>false</default>
+                <label>Tier expiry</label>
+            </value>
+            <value>
+                <fullName>Points expiry</fullName>
+                <default>false</default>
+                <label>Points expiry</label>
+            </value>
+            <value>
+                <fullName>Ticket conditions</fullName>
+                <default>false</default>
+                <label>Ticket conditions</label>
+            </value>
+            <value>
+                <fullName>Tierfreeze (covid policy)</fullName>
+                <default>false</default>
+                <label>Tierfreeze (covid policy)</label>
+            </value>
+            <value>
+                <fullName>Club Eurostar monthly prizedraw</fullName>
+                <default>false</default>
+                <label>Club Eurostar monthly prizedraw</label>
+            </value>
+            <value>
+                <fullName>Status query</fullName>
+                <default>false</default>
+                <label>Status query</label>
+            </value>
+            <value>
+                <fullName>Tier query</fullName>
+                <default>false</default>
+                <label>Tier query</label>
+            </value>
+            <value>
+                <fullName>Querying missing points</fullName>
+                <default>false</default>
+                <label>Querying missing points</label>
+            </value>
+            <value>
+                <fullName>Querying points balance</fullName>
+                <default>false</default>
+                <label>Querying points balance</label>
+            </value>
+            <value>
+                <fullName>Querying points awarded for specific ticket</fullName>
+                <default>false</default>
+                <label>Querying points awarded for specific ticket</label>
+            </value>
+            <value>
+                <fullName>Querying zero points ticket</fullName>
+                <default>false</default>
+                <label>Querying zero points ticket</label>
+            </value>
+            <value>
+                <fullName>Fraud</fullName>
+                <default>false</default>
+                <label>Fraud</label>
+            </value>
+            <value>
+                <fullName>History/statement query</fullName>
+                <default>false</default>
+                <label>History/statement query</label>
+            </value>
+            <value>
+                <fullName>Request to reopen a closed account</fullName>
+                <default>false</default>
+                <label>Request to reopen a closed account</label>
+            </value>
+            <value>
+                <fullName>Open a new account</fullName>
+                <default>false</default>
+                <label>Open a new account</label>
+            </value>
+            <value>
+                <fullName>Close an account</fullName>
+                <default>false</default>
+                <label>Close an account</label>
+            </value>
+            <value>
+                <fullName>Request to change personal details</fullName>
+                <default>false</default>
+                <label>Request to change personal details</label>
+            </value>
+            <value>
+                <fullName>Request to reset password</fullName>
+                <default>false</default>
+                <label>Request to reset password</label>
+            </value>
+            <value>
+                <fullName>Request to add points/ticket to account</fullName>
+                <default>false</default>
+                <label>Request to add points/ticket to account</label>
+            </value>
+            <value>
+                <fullName>Request to remove bookings from account</fullName>
+                <default>false</default>
+                <label>Request to remove bookings from account</label>
+            </value>
+            <value>
+                <fullName>Problems with online account (display, details . balance etc)</fullName>
+                <default>false</default>
+                <label>Problems with online account (display, details . balance etc)</label>
+            </value>
+            <value>
+                <fullName>Problems with the app</fullName>
+                <default>false</default>
+                <label>Problems with the app</label>
+            </value>
+            <value>
+                <fullName>Requesting a new card</fullName>
+                <default>false</default>
+                <label>Requesting a new card</label>
+            </value>
+            <value>
+                <fullName>Request to add/change security info</fullName>
+                <default>false</default>
+                <label>Request to add/change security info</label>
+            </value>
+            <value>
+                <fullName>Account queries</fullName>
+                <default>false</default>
+                <label>Account queries</label>
+            </value>
+            <value>
+                <fullName>Problems accessing loyalty account</fullName>
+                <default>false</default>
+                <label>Problems accessing loyalty account</label>
+            </value>
+            <value>
+                <fullName>Webform case - please review</fullName>
+                <default>false</default>
+                <label>Webform case - please review</label>
+            </value>
+            <value>
+                <fullName>Tier and status info</fullName>
+                <default>false</default>
+                <label>Tier and status info</label>
+            </value>
+            <value>
+                <fullName>Earning and Spending points</fullName>
+                <default>false</default>
+                <label>Earning and Spending points</label>
+            </value>
+            <value>
+                <fullName>Tier and Points expiry</fullName>
+                <default>false</default>
+                <label>Tier and Points expiry</label>
+            </value>
+            <value>
+                <fullName>Covid Policy</fullName>
+                <default>false</default>
+                <label>Covid Policy</label>
+            </value>
+            <value>
+                <fullName>Request to change personal or security info</fullName>
+                <default>false</default>
+                <label>Request to change personal or security info</label>
+            </value>
+            <value>
+                <fullName>Failed security checks/not authorised</fullName>
+                <default>false</default>
+                <label>Failed security checks/not authorised</label>
+            </value>
+            <value>
+                <fullName>Points promotions</fullName>
+                <default>false</default>
+                <label>Points promotions</label>
+            </value>
+            <value>
+                <fullName>Customer Room Booking</fullName>
+                <default>false</default>
+                <label>Customer Room Booking</label>
+            </value>
+            <value>
+                <fullName>Subscription Question</fullName>
+                <default>false</default>
+                <label>Subscription Question</label>
+            </value>
+            <value>
+                <fullName>Renewal or Purchase</fullName>
+                <default>false</default>
+                <label>Renewal or Purchase</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

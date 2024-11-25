@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FPU_Avail_Departure_Time__c</fullName>
+    <defaultValue>&quot;00:00:00&quot;</defaultValue>
+    <description>Departure time of available trains</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Departure time of available trains</inlineHelpText>
+    <label>FPU_Avail_Departure_Time</label>
+    <length>8</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

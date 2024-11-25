@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QA_for_Derby_TL_s_Has_Been_Fed_Back</fullName>
+    <columns>NAME</columns>
+    <columns>SLA__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>Advisor_Name__c</columns>
+    <columns>Advisor_Location__c</columns>
+    <columns>Feedback_Category__c</columns>
+    <columns>Type_of_Feedback__c</columns>
+    <columns>Date_That_Feedback_Was_Given__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Advisor_Location__c</field>
+        <operation>equals</operation>
+        <value>Webhelp Derby</value>
+    </filters>
+    <filters>
+        <field>Feedback_Validated__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Has Been Fed Back</value>
+    </filters>
+    <filters>
+        <field>Is_the_Advisor_a_Line_Manager__c</field>
+        <operation>equals</operation>
+        <value>Yes</value>
+    </filters>
+    <label>QA for Derby TL&#39;s (Has Been Fed Back)</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>Advisor_QA_QA_Team</group>
+        <group>Supervisor_QA_Feedback_Derby</group>
+    </sharedTo>
+</ListView>

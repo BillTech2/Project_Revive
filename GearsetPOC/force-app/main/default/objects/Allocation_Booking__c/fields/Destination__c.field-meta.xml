@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Destination__c</fullName>
+    <label>Destination</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Type_of_PSA__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Core</fullName>
+                <default>false</default>
+                <label>Core</label>
+            </value>
+            <value>
+                <fullName>ABS</fullName>
+                <default>false</default>
+                <label>ABS</label>
+            </value>
+            <value>
+                <fullName>Lyon</fullName>
+                <default>false</default>
+                <label>Lyon</label>
+            </value>
+            <value>
+                <fullName>AMS</fullName>
+                <default>false</default>
+                <label>AMS</label>
+            </value>
+            <value>
+                <fullName>ROT</fullName>
+                <default>false</default>
+                <label>ROT</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Leisure Agent PSA</controllingFieldValue>
+            <controllingFieldValue>TMC PSA</controllingFieldValue>
+            <controllingFieldValue>Partnership PSA</controllingFieldValue>
+            <valueName>Core</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Leisure Agent PSA</controllingFieldValue>
+            <valueName>ABS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Leisure Agent PSA</controllingFieldValue>
+            <controllingFieldValue>TMC PSA</controllingFieldValue>
+            <controllingFieldValue>Partnership PSA</controllingFieldValue>
+            <valueName>Lyon</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Leisure Agent PSA</controllingFieldValue>
+            <controllingFieldValue>TMC PSA</controllingFieldValue>
+            <controllingFieldValue>Partnership PSA</controllingFieldValue>
+            <valueName>AMS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>TMC PSA</controllingFieldValue>
+            <controllingFieldValue>Partnership PSA</controllingFieldValue>
+            <valueName>ROT</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

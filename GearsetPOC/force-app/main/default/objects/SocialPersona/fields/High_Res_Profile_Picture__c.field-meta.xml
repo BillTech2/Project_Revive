@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>High_Res_Profile_Picture__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF ( ISPICKVAL(Provider,&quot;Facebook&quot;),IMAGE(ExternalPictureURL,&quot;Profile Pic&quot;,70,70), 
+
+IF ( LEN(ExternalPictureURL)  &gt; 99,IMAGE(ExternalPictureURL,&quot;Profile Pic&quot;,70,70),
+
+IF(   (CONTAINS(ExternalPictureURL, &quot;.jpg&quot;) &amp;&amp; (LEN(ExternalPictureURL) = 74) ), 
+IMAGE(  (LEFT(ExternalPictureURL, 63) + &quot;.jpg&quot;)  ,&quot;High Res Profile Picture jpg 74&quot;, 70,70),
+
+IF(   (CONTAINS(ExternalPictureURL, &quot;.jpg&quot;) &amp;&amp; (LEN(ExternalPictureURL) = 72) ), 
+IMAGE(  (LEFT(ExternalPictureURL, 61) + &quot;.jpg&quot;)  ,&quot;High Res Profile Picture jpg 72&quot;, 70,70),
+
+IF(   (CONTAINS(ExternalPictureURL, &quot;.jpg&quot;) &amp;&amp; (LEN(ExternalPictureURL) = 69) ), 
+IMAGE(  (LEFT(ExternalPictureURL, 58) + &quot;.jpg&quot;)  ,&quot;High Res Profile Picture jpg 69&quot;, 70,70),
+
+IF(   (CONTAINS(ExternalPictureURL, &quot;.jpg&quot;) &amp;&amp; (LEN(ExternalPictureURL) = 68) ), 
+IMAGE(  (LEFT(ExternalPictureURL, 57) + &quot;.jpg&quot;)  ,&quot;High Res Profile Picture jpg 68&quot;, 70,70),
+
+IF(   (CONTAINS(ExternalPictureURL, &quot;.jpg&quot;) &amp;&amp; (LEN(ExternalPictureURL) = 65) ), 
+IMAGE(  (LEFT(ExternalPictureURL, 54) + &quot;.jpg&quot;)  ,&quot;High Res Profile Picture jpg 65&quot;, 70,70),
+
+IF(   (CONTAINS(ExternalPictureURL, &quot;.jpg&quot;) &amp;&amp; (LEN(ExternalPictureURL) = 64) ), 
+IMAGE(  (LEFT(ExternalPictureURL, 53) + &quot;.jpg&quot;)  ,&quot;High Res Profile Picture jpg 64&quot;, 70,70),
+
+IF(   (CONTAINS(ExternalPictureURL, &quot;.jpg&quot;) &amp;&amp; (LEN(ExternalPictureURL) = 63) ), 
+IMAGE(  (LEFT(ExternalPictureURL, 52) + &quot;.jpg&quot;)  ,&quot;High Res Profile Picture jpg 63&quot;, 70,70),
+
+IF(   CONTAINS(ExternalPictureURL, &quot;.jpg&quot;), 
+IMAGE(ExternalPictureURL ,&quot;High Res Profile Picture jpg&quot;, 70,70),
+
+IF(   (CONTAINS(ExternalPictureURL, &quot;.jpeg&quot;) &amp;&amp; (LEN(ExternalPictureURL) = 99) ), 
+IMAGE(  (LEFT(ExternalPictureURL, 87) + &quot;.jpeg&quot;)  ,&quot;High Res Profile Picture jpeg 99&quot;, 70,70),
+
+IF(   (CONTAINS(ExternalPictureURL, &quot;.jpeg&quot;) &amp;&amp; (LEN(ExternalPictureURL) = 91) ), 
+IMAGE(  (LEFT(ExternalPictureURL, 79) + &quot;.jpeg&quot;)  ,&quot;High Res Profile Picture jpeg 91&quot;, 70,70),
+
+IF(   (CONTAINS(ExternalPictureURL, &quot;.jpeg&quot;) &amp;&amp; (LEN(ExternalPictureURL) = 79) ), 
+IMAGE(  (LEFT(ExternalPictureURL, 67) + &quot;.jpeg&quot;)  ,&quot;High Res Profile Picture jpeg 79&quot;, 70,70),
+
+IF(   CONTAINS(ExternalPictureURL, &quot;.jpeg&quot; ), 
+IMAGE( ExternalPictureURL ,&quot;High Res Profile Picture jpeg&quot;, 70,70),
+
+IF(   (CONTAINS(ExternalPictureURL, &quot;.png&quot;) &amp;&amp; (LEN(ExternalPictureURL) = 79) ), 
+IMAGE(  (LEFT(ExternalPictureURL, 68) + &quot;.png&quot;)  ,&quot;High Res Profile Picture png 79&quot;, 70,70),
+
+IF(   (CONTAINS(ExternalPictureURL, &quot;.png&quot;) &amp;&amp; (LEN(ExternalPictureURL) = 68) ), 
+IMAGE(  (LEFT(ExternalPictureURL, 57) + &quot;.png&quot;)  ,&quot;High Res Profile Picture png 68&quot;, 70,70),
+
+IMAGE( ExternalPictureURL  ,&quot;High Res Profile Picture png&quot;, 70,70)
+
+
+))))))))))))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Profile Pic</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

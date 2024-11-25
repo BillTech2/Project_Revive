@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>API_Status__c</fullName>
+    <label>API Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>API Testing</fullName>
+                <default>false</default>
+                <label>API Testing</label>
+            </value>
+            <value>
+                <fullName>API Active</fullName>
+                <default>false</default>
+                <label>API Active</label>
+            </value>
+            <value>
+                <fullName>API Abandoned</fullName>
+                <default>false</default>
+                <label>API Abandoned</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

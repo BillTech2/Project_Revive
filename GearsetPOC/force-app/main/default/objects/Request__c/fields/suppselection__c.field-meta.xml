@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>suppselection__c</fullName>
+    <label>suppselection</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>3 Quotes</fullName>
+                <default>true</default>
+                <label>3 Quotes</label>
+            </value>
+            <value>
+                <fullName>Full RFP/Tender Process</fullName>
+                <default>false</default>
+                <label>Full RFP/Tender Process</label>
+            </value>
+            <value>
+                <fullName>Single Source</fullName>
+                <default>false</default>
+                <label>Single Source</label>
+            </value>
+            <value>
+                <fullName>None of the above</fullName>
+                <default>false</default>
+                <label>None of the above</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

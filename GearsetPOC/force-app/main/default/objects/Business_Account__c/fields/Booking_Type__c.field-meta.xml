@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Booking_Type__c</fullName>
+    <label>Corporate Tracking Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Public booking (no points used)</fullName>
+                <default>false</default>
+                <label>Public booking (no points used)</label>
+            </value>
+            <value>
+                <fullName>Points Booking (core/direct)</fullName>
+                <default>false</default>
+                <label>Points Booking (core/direct)</label>
+            </value>
+            <value>
+                <fullName>Indirect route with points</fullName>
+                <default>false</default>
+                <label>Indirect route with points</label>
+            </value>
+            <value>
+                <fullName>Non Eurostar with points</fullName>
+                <default>false</default>
+                <label>Non Eurostar with points</label>
+            </value>
+            <value>
+                <fullName>Wheelchair traveller with or without Companion</fullName>
+                <default>false</default>
+                <label>Wheelchair traveller with or without Companion</label>
+            </value>
+            <value>
+                <fullName>Standalone companion</fullName>
+                <default>false</default>
+                <label>Standalone companion</label>
+            </value>
+            <value>
+                <fullName>Assisted traveller with companion</fullName>
+                <default>false</default>
+                <label>Assisted traveller with companion</label>
+            </value>
+            <value>
+                <fullName>Assisted traveller with Guide dog</fullName>
+                <default>false</default>
+                <label>Assisted traveller with Guide dog</label>
+            </value>
+            <value>
+                <fullName>Standalone guide dog</fullName>
+                <default>false</default>
+                <label>Standalone guide dog</label>
+            </value>
+            <value>
+                <fullName>Musical Instrument</fullName>
+                <default>false</default>
+                <label>Musical Instrument</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

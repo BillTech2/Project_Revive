@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_CTCs</fullName>
+    <availability>online</availability>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <height>0</height>
+    <linkType>url</linkType>
+    <masterLabel>Account CTCs</masterLabel>
+    <openType>sidebar</openType>
+    <protected>false</protected>
+    <requireRowSelection>false</requireRowSelection>
+    <url>/lightning/action/quick/Business_Account__c.Account_CTCs?recordId={!CASESAFEID(Business_Account__c.Id)}</url>
+</WebLink>

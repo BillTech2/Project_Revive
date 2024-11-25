@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Class_Return_2__c</fullName>
+    <description>This field will be used for the class of the second choice for the return journey</description>
+    <label>Class (Return)</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Business Premier</fullName>
+                <default>false</default>
+                <label>Business Premier</label>
+            </value>
+            <value>
+                <fullName>Standard</fullName>
+                <default>false</default>
+                <label>Standard</label>
+            </value>
+            <value>
+                <fullName>Standard Premier</fullName>
+                <default>false</default>
+                <label>Standard Premier</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

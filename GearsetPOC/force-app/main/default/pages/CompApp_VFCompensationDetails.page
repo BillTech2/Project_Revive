@@ -1,0 +1,151 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false" applyHtmlTag="false" applyBodyTag="false" showChat="false" controller="CompApp_CtrlConfirmationDetails" language="{!selectedLanguageCode}" >
+    <apex:variable value="{!termsAndConditionsURL}" var="websiteTermsAndConditions" />
+    <apex:variable value="{!conditionsOfCarriageURL}" var="websiteConditionsOfCarriage" />
+    <div class="ng-cloak">
+        <div class="row"> <!-- isMultipleCOmpensationTypeAvailable -->
+
+            <h1 ng-show="$angularState.isMultipleCOmpensationTypeAvailable()">
+                {!$label.CompApp_Chosen_option}
+                <span ng-show="$angularState.selectedCompensation === 'voucher'">{!$label.CompApp_evoucher}</span>
+                <span ng-show="$angularState.selectedCompensation === 'points'" >{!$label.CompApp_points}</span>
+            </h1>
+
+            <h1 ng-hide="$angularState.isMultipleCOmpensationTypeAvailable()">
+                {!$label.CompApp_Eligible_evoucher}
+            </h1>
+
+        </div>
+
+        <div class="row"> <!-- compensationReason -->
+            
+            <!-- Train Only-->
+            <div class="p1 ng-cloak" ng-show="$angularState.compensation.compensationReason === 'Train' ">
+                    {!$Label.CompApp_Train_P1} {{ $angularState.travel.dateOfTravel }}
+                    {!$label.CompApp_Train_P2} {!$label.CompApp_Train_P3} 
+            </div> 
+            <!-- Delay and Train -->
+            <div class="p1 ng-cloak" ng-show="$angularState.compensation.compensationReason === 'DelayAndTrain' ">
+                    {!$Label.CompApp_Delay_Train_PartOne} {{ $angularState.travel.dateOfTravel }}
+                    {!$label.CompApp_Delay_Train_PartTwo} {!$label.CompApp_Delay_Train_PartThree} 
+            </div>
+            <!-- Delay and Train And Incident -->
+            <div class="p1 ng-cloak" ng-show="$angularState.compensation.compensationReason === 'DelayAndTrainAndIncident' ">
+                    {!$Label.CompApp_TrainDelayIncident_P1} {{ $angularState.travel.dateOfTravel }}
+                    {!$label.CompApp_TrainDelayIncident_P2} {!$label.CompApp_TrainDelayIncident_P3}  
+            </div>
+            <!-- Incident Only-->
+            <div class="p1 ng-cloak" ng-show="$angularState.compensation.compensationReason === 'Incident' ">
+                    {!$Label.CompApp_Incident_Apology_PartOne} {{ $angularState.travel.dateOfTravel }}
+                    {!$label.CompApp_Incident_Apology_PartTwo} 
+            </div> 
+            <!-- Delay and Incident -->
+            <div class="p1 ng-cloak" ng-show="$angularState.compensation.compensationReason === 'DelayAndIncident' ">
+                    {!$Label.CompApp_Delay_Incident_Apology_PartOne} {{ $angularState.travel.dateOfTravel }}
+                    {!$label.CompApp_Delay_Incident_Apology_PartTwo}  
+            </div>
+            <!-- Delay Only -->
+            <div ng-show="$angularState.compensation.compensationReason === 'Delay' ">
+                <div class="p1 ng-cloak" ng-show="$angularState.isMultipleCOmpensationTypeAvailable() ">
+                    {!$Label.CompApp_Delay_Apology_PartOne} {{ $angularState.travel.dateOfTravel }}
+                    {!$label.CompApp_Delay_Apology_PartTwo}     
+                </div>
+
+                <div class="p1 ng-cloak" ng-hide="$angularState.isMultipleCOmpensationTypeAvailable() ">
+                    {!$Label.CompApp_Delay_Apology_PartOne} {{ $angularState.travel.dateOfTravel }}
+                    {!$label.CompApp_Delay_Apology_PartTwo} 
+                </div>
+            </div>
+        </div>
+
+        <div class="row"> <!-- selectedCompensation -->
+            <div ng-show="$angularState.selectedCompensation === 'voucher'">
+                <div class="display-panel cell-panel">
+                    <h2>{!$label.CompApp_evoucher_details}</h2>
+                    <h3>{!$label.CompApp_delay_amount}</h3>
+                    <div class="points ng-cloak">
+                        {{$angularState.compensation.sumVoucher | userCurrency:$angularState.compensation.currency}}
+                    </div>
+                    <div class="p1">{!$label.CompApp_evoucher_details_email}</div>
+                </div>
+            </div>
+
+            <div ng-show="$angularState.selectedCompensation === 'points'">
+                <div class="display-panel cell-panel">
+                    <h2>{!$label.CompApp_points}</h2>
+                    <p>{!$label.CompApp_Memebership_number} <span id="membership-number-encripted" class="ng-cloak">****{{$angularState.personalInfo.membershipNumber}}</span></p>
+                    <p>{!$label.CompApp_Eligble_points}</p>
+                    <div class="points "><span id="compensation-points" class="ng-cloak">{{$angularState.compensation.sumPoints}}</span> {!$label.CompApp_points}</div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row commands-section" ng-show="$angularState.isMultipleCOmpensationTypeAvailable()">
+            <a class="btn secondary" ng-click="$location.path('/selecttype');">{!$label.CompApp_Change_options}</a>
+        </div>
+
+        <!--h2 class="row" ng-show="$angularState.selectedCompensation === 'voucher'">{!$label.CompApp_perferred_email}</h2-->
+
+        <div class="row p2" ng-show="$angularState.selectedCompensation === 'voucher'">{!$label.CompApp_required_fields}</div>
+
+        <!--div class="row {{formManager.primaryEmailValdity | validityClass}}" ng-show="$angularState.selectedCompensation === 'voucher'">
+            <label for="email" class="cell-label">{!$label.CompApp_email}</label>
+            <div class="input-wrapper validity-sign cell-input">
+                <input 
+                    placeholder="{!$label.CompApp_Traveller_Email}" 
+                    id="email"
+                    ng-keyup="formManager.primaryEmailValdity = isPrimaryEmailValid()" 
+                    ng-model="formManager.primaryEmail"
+                /> 
+                <div class="error-message">{!$label.CompApp_enterEmailCompDetails}</div>
+            </div>
+        </div-->
+
+        <!--div class="row {{formManager.secondaryEmailValdity | validityClass}}" ng-show="$angularState.selectedCompensation === 'voucher'">
+            <label for="email" class="cell-label">{!$label.CompApp_Confirm_email}</label>
+            <div class="input-wrapper validity-sign cell-input">
+                <input 
+                    placeholder="{!$label.CompApp_Traveller_Email}" 
+                    id="email"
+                    ng-paste="preventPaste($event)"
+                    ng-keyup="formManager.secondaryEmailValdity = isSecondaryEmailValid()" 
+                    ng-model="formManager.secondaryEmail"
+                /> 
+                <div class="error-message">{!$label.CompApp_confirmEmailCompDetails}</div>
+            </div>
+        </div-->
+
+        <div class="row {{formManager.isReadTermsAndConditionsValdity | validityClass}}">
+            <label for="terms-and-conditions" class="cell-label">{!$label.CompApp_Terms_Conditions} *</label> 
+            <div class="input-wrapper cell-input">
+                <div>
+                    <input
+                        type="checkbox"
+                        id="terms-and-conditions"
+                        ng-paste="preventPaste($event)"
+                        ng-model="formManager.isReadTermsAndConditions"
+                        ng-change="formManager.isReadTermsAndConditionsValdity = formManager.isReadTermsAndConditions"
+                    />
+                    <span ng-show="$angularState.selectedCompensation === 'voucher'">
+                        <span class="p2">{!$label.CompApp_read_and_accept}</span>
+                        <a href="{!$Label.CompApp_TermsAndConditionsURL }" target="_blank">{!$label.CompApp_Terms_Conditions}</a>
+                    </span>
+
+                    <span ng-show="$angularState.selectedCompensation === 'points'">
+                        <span class="p2">{!$label.CompApp_TermsAndConditionsPoints}</span>
+                    </span>
+
+
+                    <div class="error-message">{!$label.CompApp_Read_and_Check}</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row commands-section">
+            <a class="btn primary" ng-click="processClaim();">{!$label.CompApp_Process_claim}</a>
+            <a class="btn secondary" ng-click="restartProcess()">{!$label.CompApp_Cancel}</a>
+            <p class="error-message-main" ng-hide="formManager.noErrors">{!$label.CompApp_incorrectData}</p>
+        </div>
+
+    </div>
+</apex:page>

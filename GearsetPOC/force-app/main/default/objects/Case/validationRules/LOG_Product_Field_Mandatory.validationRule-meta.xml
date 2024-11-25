@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LOG_Product_Field_Mandatory</fullName>
+    <active>false</active>
+    <description>Product field becomes mandatory based on the Initial Reason For Contact</description>
+    <errorConditionFormula>OR(
+ISPICKVAL(Initial_Reason_For_Contact__c, &quot;Buy Or Book&quot;),
+ISPICKVAL(Initial_Reason_For_Contact__c, &quot;Change&quot;),
+ISPICKVAL(Initial_Reason_For_Contact__c, &quot;Cancel Or Refund&quot;))
+&amp;&amp;
+ISBLANK(TEXT(Journey_Type_Product__c))</errorConditionFormula>
+    <errorDisplayField>Journey_Type_Product__c</errorDisplayField>
+    <errorMessage>Please enter a Journey Type or Product</errorMessage>
+</ValidationRule>

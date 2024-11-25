@@ -1,0 +1,915 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>B2b_Percentage_Discount_Premium__c</fullName>
+    <label>Percentage Discount Premium</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>B2b_Route__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>5 FRBE</fullName>
+                <default>false</default>
+                <label>5 FRBE</label>
+            </value>
+            <value>
+                <fullName>6 FRBE</fullName>
+                <default>false</default>
+                <label>6 FRBE</label>
+            </value>
+            <value>
+                <fullName>7 FRBE</fullName>
+                <default>false</default>
+                <label>7 FRBE</label>
+            </value>
+            <value>
+                <fullName>8 FRBE</fullName>
+                <default>false</default>
+                <label>8 FRBE</label>
+            </value>
+            <value>
+                <fullName>9 FRBE</fullName>
+                <default>false</default>
+                <label>9 FRBE</label>
+            </value>
+            <value>
+                <fullName>10 FRBE</fullName>
+                <default>false</default>
+                <label>10 FRBE</label>
+            </value>
+            <value>
+                <fullName>11 FRBE</fullName>
+                <default>false</default>
+                <label>11 FRBE</label>
+            </value>
+            <value>
+                <fullName>12 FRBE</fullName>
+                <default>false</default>
+                <label>12 FRBE</label>
+            </value>
+            <value>
+                <fullName>13 FRBE</fullName>
+                <default>false</default>
+                <label>13 FRBE</label>
+            </value>
+            <value>
+                <fullName>14 FRBE</fullName>
+                <default>false</default>
+                <label>14 FRBE</label>
+            </value>
+            <value>
+                <fullName>15 FRBE</fullName>
+                <default>false</default>
+                <label>15 FRBE</label>
+            </value>
+            <value>
+                <fullName>16 FRBE</fullName>
+                <default>false</default>
+                <label>16 FRBE</label>
+            </value>
+            <value>
+                <fullName>17 FRBE</fullName>
+                <default>false</default>
+                <label>17 FRBE</label>
+            </value>
+            <value>
+                <fullName>18 FRBE</fullName>
+                <default>false</default>
+                <label>18 FRBE</label>
+            </value>
+            <value>
+                <fullName>19 FRBE</fullName>
+                <default>false</default>
+                <label>19 FRBE</label>
+            </value>
+            <value>
+                <fullName>20 FRBE</fullName>
+                <default>false</default>
+                <label>20 FRBE</label>
+            </value>
+            <value>
+                <fullName>21 FRBE</fullName>
+                <default>false</default>
+                <label>21 FRBE</label>
+            </value>
+            <value>
+                <fullName>22 FRBE</fullName>
+                <default>false</default>
+                <label>22 FRBE</label>
+            </value>
+            <value>
+                <fullName>23 FRBE</fullName>
+                <default>false</default>
+                <label>23 FRBE</label>
+            </value>
+            <value>
+                <fullName>Deutscher Bund FRBE</fullName>
+                <default>false</default>
+                <label>Deutscher Bund FRBE</label>
+            </value>
+            <value>
+                <fullName>5 FRDE</fullName>
+                <default>false</default>
+                <label>5 FRDE</label>
+            </value>
+            <value>
+                <fullName>6 FRDE</fullName>
+                <default>false</default>
+                <label>6 FRDE</label>
+            </value>
+            <value>
+                <fullName>7 FRDE</fullName>
+                <default>false</default>
+                <label>7 FRDE</label>
+            </value>
+            <value>
+                <fullName>8 FRDE</fullName>
+                <default>false</default>
+                <label>8 FRDE</label>
+            </value>
+            <value>
+                <fullName>9 FRDE</fullName>
+                <default>false</default>
+                <label>9 FRDE</label>
+            </value>
+            <value>
+                <fullName>10 FRDE</fullName>
+                <default>false</default>
+                <label>10 FRDE</label>
+            </value>
+            <value>
+                <fullName>11 FRDE</fullName>
+                <default>false</default>
+                <label>11 FRDE</label>
+            </value>
+            <value>
+                <fullName>12 FRDE</fullName>
+                <default>false</default>
+                <label>12 FRDE</label>
+            </value>
+            <value>
+                <fullName>13 FRDE</fullName>
+                <default>false</default>
+                <label>13 FRDE</label>
+            </value>
+            <value>
+                <fullName>14 FRDE</fullName>
+                <default>false</default>
+                <label>14 FRDE</label>
+            </value>
+            <value>
+                <fullName>15 FRDE</fullName>
+                <default>false</default>
+                <label>15 FRDE</label>
+            </value>
+            <value>
+                <fullName>16 FRDE</fullName>
+                <default>false</default>
+                <label>16 FRDE</label>
+            </value>
+            <value>
+                <fullName>17 FRDE</fullName>
+                <default>false</default>
+                <label>17 FRDE</label>
+            </value>
+            <value>
+                <fullName>18 FRDE</fullName>
+                <default>false</default>
+                <label>18 FRDE</label>
+            </value>
+            <value>
+                <fullName>19 FRDE</fullName>
+                <default>false</default>
+                <label>19 FRDE</label>
+            </value>
+            <value>
+                <fullName>20 FRDE</fullName>
+                <default>false</default>
+                <label>20 FRDE</label>
+            </value>
+            <value>
+                <fullName>21 FRDE</fullName>
+                <default>false</default>
+                <label>21 FRDE</label>
+            </value>
+            <value>
+                <fullName>22 FRDE</fullName>
+                <default>false</default>
+                <label>22 FRDE</label>
+            </value>
+            <value>
+                <fullName>23 FRDE</fullName>
+                <default>false</default>
+                <label>23 FRDE</label>
+            </value>
+            <value>
+                <fullName>Deutscher Bund FRDE</fullName>
+                <default>false</default>
+                <label>Deutscher Bund FRDE</label>
+            </value>
+            <value>
+                <fullName>5 FRNL</fullName>
+                <default>false</default>
+                <label>5 FRNL</label>
+            </value>
+            <value>
+                <fullName>6 FRNL</fullName>
+                <default>false</default>
+                <label>6 FRNL</label>
+            </value>
+            <value>
+                <fullName>7 FRNL</fullName>
+                <default>false</default>
+                <label>7 FRNL</label>
+            </value>
+            <value>
+                <fullName>8 FRNL</fullName>
+                <default>false</default>
+                <label>8 FRNL</label>
+            </value>
+            <value>
+                <fullName>9 FRNL</fullName>
+                <default>false</default>
+                <label>9 FRNL</label>
+            </value>
+            <value>
+                <fullName>10 FRNL</fullName>
+                <default>false</default>
+                <label>10 FRNL</label>
+            </value>
+            <value>
+                <fullName>11 FRNL</fullName>
+                <default>false</default>
+                <label>11 FRNL</label>
+            </value>
+            <value>
+                <fullName>12 FRNL</fullName>
+                <default>false</default>
+                <label>12 FRNL</label>
+            </value>
+            <value>
+                <fullName>13 FRNL</fullName>
+                <default>false</default>
+                <label>13 FRNL</label>
+            </value>
+            <value>
+                <fullName>14 FRNL</fullName>
+                <default>false</default>
+                <label>14 FRNL</label>
+            </value>
+            <value>
+                <fullName>15 FRNL</fullName>
+                <default>false</default>
+                <label>15 FRNL</label>
+            </value>
+            <value>
+                <fullName>16 FRNL</fullName>
+                <default>false</default>
+                <label>16 FRNL</label>
+            </value>
+            <value>
+                <fullName>17 FRNL</fullName>
+                <default>false</default>
+                <label>17 FRNL</label>
+            </value>
+            <value>
+                <fullName>18 FRNL</fullName>
+                <default>false</default>
+                <label>18 FRNL</label>
+            </value>
+            <value>
+                <fullName>19 FRNL</fullName>
+                <default>false</default>
+                <label>19 FRNL</label>
+            </value>
+            <value>
+                <fullName>20 FRNL</fullName>
+                <default>false</default>
+                <label>20 FRNL</label>
+            </value>
+            <value>
+                <fullName>21 FRNL</fullName>
+                <default>false</default>
+                <label>21 FRNL</label>
+            </value>
+            <value>
+                <fullName>22 FRNL</fullName>
+                <default>false</default>
+                <label>22 FRNL</label>
+            </value>
+            <value>
+                <fullName>23 FRNL</fullName>
+                <default>false</default>
+                <label>23 FRNL</label>
+            </value>
+            <value>
+                <fullName>Deutscher Bund FRNL</fullName>
+                <default>false</default>
+                <label>Deutscher Bund FRNL</label>
+            </value>
+            <value>
+                <fullName>5 BEDE</fullName>
+                <default>false</default>
+                <label>5 BEDE</label>
+            </value>
+            <value>
+                <fullName>6 BEDE</fullName>
+                <default>false</default>
+                <label>6 BEDE</label>
+            </value>
+            <value>
+                <fullName>7 BEDE</fullName>
+                <default>false</default>
+                <label>7 BEDE</label>
+            </value>
+            <value>
+                <fullName>8 BEDE</fullName>
+                <default>false</default>
+                <label>8 BEDE</label>
+            </value>
+            <value>
+                <fullName>9 BEDE</fullName>
+                <default>false</default>
+                <label>9 BEDE</label>
+            </value>
+            <value>
+                <fullName>10 BEDE</fullName>
+                <default>false</default>
+                <label>10 BEDE</label>
+            </value>
+            <value>
+                <fullName>11 BEDE</fullName>
+                <default>false</default>
+                <label>11 BEDE</label>
+            </value>
+            <value>
+                <fullName>12 BEDE</fullName>
+                <default>false</default>
+                <label>12 BEDE</label>
+            </value>
+            <value>
+                <fullName>13 BEDE</fullName>
+                <default>false</default>
+                <label>13 BEDE</label>
+            </value>
+            <value>
+                <fullName>14 BEDE</fullName>
+                <default>false</default>
+                <label>14 BEDE</label>
+            </value>
+            <value>
+                <fullName>15 BEDE</fullName>
+                <default>false</default>
+                <label>15 BEDE</label>
+            </value>
+            <value>
+                <fullName>16 BEDE</fullName>
+                <default>false</default>
+                <label>16 BEDE</label>
+            </value>
+            <value>
+                <fullName>17 BEDE</fullName>
+                <default>false</default>
+                <label>17 BEDE</label>
+            </value>
+            <value>
+                <fullName>18 BEDE</fullName>
+                <default>false</default>
+                <label>18 BEDE</label>
+            </value>
+            <value>
+                <fullName>19 BEDE</fullName>
+                <default>false</default>
+                <label>19 BEDE</label>
+            </value>
+            <value>
+                <fullName>20 BEDE</fullName>
+                <default>false</default>
+                <label>20 BEDE</label>
+            </value>
+            <value>
+                <fullName>21 BEDE</fullName>
+                <default>false</default>
+                <label>21 BEDE</label>
+            </value>
+            <value>
+                <fullName>22 BEDE</fullName>
+                <default>false</default>
+                <label>22 BEDE</label>
+            </value>
+            <value>
+                <fullName>23 BEDE</fullName>
+                <default>false</default>
+                <label>23 BEDE</label>
+            </value>
+            <value>
+                <fullName>Deutscher Bund BEDE</fullName>
+                <default>false</default>
+                <label>Deutscher Bund BEDE</label>
+            </value>
+            <value>
+                <fullName>5 BENL</fullName>
+                <default>false</default>
+                <label>5 BENL</label>
+            </value>
+            <value>
+                <fullName>6 BENL</fullName>
+                <default>false</default>
+                <label>6 BENL</label>
+            </value>
+            <value>
+                <fullName>7 BENL</fullName>
+                <default>false</default>
+                <label>7 BENL</label>
+            </value>
+            <value>
+                <fullName>8 BENL</fullName>
+                <default>false</default>
+                <label>8 BENL</label>
+            </value>
+            <value>
+                <fullName>9 BENL</fullName>
+                <default>false</default>
+                <label>9 BENL</label>
+            </value>
+            <value>
+                <fullName>10 BENL</fullName>
+                <default>false</default>
+                <label>10 BENL</label>
+            </value>
+            <value>
+                <fullName>11 BENL</fullName>
+                <default>false</default>
+                <label>11 BENL</label>
+            </value>
+            <value>
+                <fullName>12 BENL</fullName>
+                <default>false</default>
+                <label>12 BENL</label>
+            </value>
+            <value>
+                <fullName>13 BENL</fullName>
+                <default>false</default>
+                <label>13 BENL</label>
+            </value>
+            <value>
+                <fullName>14 BENL</fullName>
+                <default>false</default>
+                <label>14 BENL</label>
+            </value>
+            <value>
+                <fullName>15 BENL</fullName>
+                <default>false</default>
+                <label>15 BENL</label>
+            </value>
+            <value>
+                <fullName>16 BENL</fullName>
+                <default>false</default>
+                <label>16 BENL</label>
+            </value>
+            <value>
+                <fullName>17 BENL</fullName>
+                <default>false</default>
+                <label>17 BENL</label>
+            </value>
+            <value>
+                <fullName>18 BENL</fullName>
+                <default>false</default>
+                <label>18 BENL</label>
+            </value>
+            <value>
+                <fullName>19 BENL</fullName>
+                <default>false</default>
+                <label>19 BENL</label>
+            </value>
+            <value>
+                <fullName>20 BENL</fullName>
+                <default>false</default>
+                <label>20 BENL</label>
+            </value>
+            <value>
+                <fullName>21 BENL</fullName>
+                <default>false</default>
+                <label>21 BENL</label>
+            </value>
+            <value>
+                <fullName>22 BENL</fullName>
+                <default>false</default>
+                <label>22 BENL</label>
+            </value>
+            <value>
+                <fullName>23 BENL</fullName>
+                <default>false</default>
+                <label>23 BENL</label>
+            </value>
+            <value>
+                <fullName>Deutscher Bund BENL</fullName>
+                <default>false</default>
+                <label>Deutscher Bund BENL</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Paris - Belgium</controllingFieldValue>
+            <valueName>5 FRBE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Paris - Belgium</controllingFieldValue>
+            <valueName>6 FRBE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Paris - Belgium</controllingFieldValue>
+            <valueName>7 FRBE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Paris - Belgium</controllingFieldValue>
+            <valueName>8 FRBE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Paris - Belgium</controllingFieldValue>
+            <valueName>9 FRBE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Paris - Belgium</controllingFieldValue>
+            <valueName>10 FRBE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Paris - Belgium</controllingFieldValue>
+            <valueName>11 FRBE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Paris - Belgium</controllingFieldValue>
+            <valueName>12 FRBE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Paris - Belgium</controllingFieldValue>
+            <valueName>13 FRBE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Paris - Belgium</controllingFieldValue>
+            <valueName>14 FRBE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Paris - Belgium</controllingFieldValue>
+            <valueName>15 FRBE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Paris - Belgium</controllingFieldValue>
+            <valueName>16 FRBE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Paris - Belgium</controllingFieldValue>
+            <valueName>17 FRBE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Paris - Belgium</controllingFieldValue>
+            <valueName>18 FRBE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Paris - Belgium</controllingFieldValue>
+            <valueName>19 FRBE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Paris - Belgium</controllingFieldValue>
+            <valueName>20 FRBE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Paris - Belgium</controllingFieldValue>
+            <valueName>21 FRBE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Paris - Belgium</controllingFieldValue>
+            <valueName>22 FRBE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Paris - Belgium</controllingFieldValue>
+            <valueName>23 FRBE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Paris - Belgium</controllingFieldValue>
+            <valueName>Deutscher Bund FRBE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Paris - Germany</controllingFieldValue>
+            <valueName>5 FRDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Paris - Germany</controllingFieldValue>
+            <valueName>6 FRDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Paris - Germany</controllingFieldValue>
+            <valueName>7 FRDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Paris - Germany</controllingFieldValue>
+            <valueName>8 FRDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Paris - Germany</controllingFieldValue>
+            <valueName>9 FRDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Paris - Germany</controllingFieldValue>
+            <valueName>10 FRDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Paris - Germany</controllingFieldValue>
+            <valueName>11 FRDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Paris - Germany</controllingFieldValue>
+            <valueName>12 FRDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Paris - Germany</controllingFieldValue>
+            <valueName>13 FRDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Paris - Germany</controllingFieldValue>
+            <valueName>14 FRDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Paris - Germany</controllingFieldValue>
+            <valueName>15 FRDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Paris - Germany</controllingFieldValue>
+            <valueName>16 FRDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Paris - Germany</controllingFieldValue>
+            <valueName>17 FRDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Paris - Germany</controllingFieldValue>
+            <valueName>18 FRDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Paris - Germany</controllingFieldValue>
+            <valueName>19 FRDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Paris - Germany</controllingFieldValue>
+            <valueName>20 FRDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Paris - Germany</controllingFieldValue>
+            <valueName>21 FRDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Paris - Germany</controllingFieldValue>
+            <valueName>22 FRDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Paris - Germany</controllingFieldValue>
+            <valueName>23 FRDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Paris - Germany</controllingFieldValue>
+            <valueName>Deutscher Bund FRDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Paris - The Netherlands</controllingFieldValue>
+            <valueName>5 FRNL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Paris - The Netherlands</controllingFieldValue>
+            <valueName>6 FRNL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Paris - The Netherlands</controllingFieldValue>
+            <valueName>7 FRNL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Paris - The Netherlands</controllingFieldValue>
+            <valueName>8 FRNL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Paris - The Netherlands</controllingFieldValue>
+            <valueName>9 FRNL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Paris - The Netherlands</controllingFieldValue>
+            <valueName>10 FRNL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Paris - The Netherlands</controllingFieldValue>
+            <valueName>11 FRNL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Paris - The Netherlands</controllingFieldValue>
+            <valueName>12 FRNL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Paris - The Netherlands</controllingFieldValue>
+            <valueName>13 FRNL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Paris - The Netherlands</controllingFieldValue>
+            <valueName>14 FRNL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Paris - The Netherlands</controllingFieldValue>
+            <valueName>15 FRNL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Paris - The Netherlands</controllingFieldValue>
+            <valueName>16 FRNL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Paris - The Netherlands</controllingFieldValue>
+            <valueName>17 FRNL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Paris - The Netherlands</controllingFieldValue>
+            <valueName>18 FRNL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Paris - The Netherlands</controllingFieldValue>
+            <valueName>19 FRNL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Paris - The Netherlands</controllingFieldValue>
+            <valueName>20 FRNL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Paris - The Netherlands</controllingFieldValue>
+            <valueName>21 FRNL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Paris - The Netherlands</controllingFieldValue>
+            <valueName>22 FRNL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Paris - The Netherlands</controllingFieldValue>
+            <valueName>23 FRNL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Paris - The Netherlands</controllingFieldValue>
+            <valueName>Deutscher Bund FRNL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Belgium - Germany</controllingFieldValue>
+            <valueName>5 BEDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Belgium - Germany</controllingFieldValue>
+            <valueName>6 BEDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Belgium - Germany</controllingFieldValue>
+            <valueName>7 BEDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Belgium - Germany</controllingFieldValue>
+            <valueName>8 BEDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Belgium - Germany</controllingFieldValue>
+            <valueName>9 BEDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Belgium - Germany</controllingFieldValue>
+            <valueName>10 BEDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Belgium - Germany</controllingFieldValue>
+            <valueName>11 BEDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Belgium - Germany</controllingFieldValue>
+            <valueName>12 BEDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Belgium - Germany</controllingFieldValue>
+            <valueName>13 BEDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Belgium - Germany</controllingFieldValue>
+            <valueName>14 BEDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Belgium - Germany</controllingFieldValue>
+            <valueName>15 BEDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Belgium - Germany</controllingFieldValue>
+            <valueName>16 BEDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Belgium - Germany</controllingFieldValue>
+            <valueName>17 BEDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Belgium - Germany</controllingFieldValue>
+            <valueName>18 BEDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Belgium - Germany</controllingFieldValue>
+            <valueName>19 BEDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Belgium - Germany</controllingFieldValue>
+            <valueName>20 BEDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Belgium - Germany</controllingFieldValue>
+            <valueName>21 BEDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Belgium - Germany</controllingFieldValue>
+            <valueName>22 BEDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Belgium - Germany</controllingFieldValue>
+            <valueName>23 BEDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Belgium - Germany</controllingFieldValue>
+            <valueName>Deutscher Bund BEDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Belgium - The Netherlands</controllingFieldValue>
+            <valueName>5 BENL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Belgium - The Netherlands</controllingFieldValue>
+            <valueName>6 BENL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Belgium - The Netherlands</controllingFieldValue>
+            <valueName>7 BENL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Belgium - The Netherlands</controllingFieldValue>
+            <valueName>8 BENL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Belgium - The Netherlands</controllingFieldValue>
+            <valueName>9 BENL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Belgium - The Netherlands</controllingFieldValue>
+            <valueName>10 BENL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Belgium - The Netherlands</controllingFieldValue>
+            <valueName>11 BENL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Belgium - The Netherlands</controllingFieldValue>
+            <valueName>12 BENL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Belgium - The Netherlands</controllingFieldValue>
+            <valueName>13 BENL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Belgium - The Netherlands</controllingFieldValue>
+            <valueName>14 BENL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Belgium - The Netherlands</controllingFieldValue>
+            <valueName>15 BENL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Belgium - The Netherlands</controllingFieldValue>
+            <valueName>16 BENL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Belgium - The Netherlands</controllingFieldValue>
+            <valueName>17 BENL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Belgium - The Netherlands</controllingFieldValue>
+            <valueName>18 BENL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Belgium - The Netherlands</controllingFieldValue>
+            <valueName>19 BENL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Belgium - The Netherlands</controllingFieldValue>
+            <valueName>20 BENL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Belgium - The Netherlands</controllingFieldValue>
+            <valueName>21 BENL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Belgium - The Netherlands</controllingFieldValue>
+            <valueName>22 BENL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Belgium - The Netherlands</controllingFieldValue>
+            <valueName>23 BENL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Belgium - The Netherlands</controllingFieldValue>
+            <valueName>Deutscher Bund BENL</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

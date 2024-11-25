@@ -1,0 +1,62 @@
+<apex:page showHeader="false" sidebar="false" language="{!selectedLanguageCode}" controller="CompApp_CtrlApp" standardStylesheets="false" applyHtmlTag="false" applyBodyTag="false" showChat="false">
+
+    <div>
+<!--
+        <div class="row p1">{!$label.CompApp_successfully_claimed_compensation}</div>
+
+-->
+        
+
+        <h2 class="row" ng-show="$root.$angularState.selectedCompensation === 'voucher'">
+            {{ '{! $label.CompApp_evoucher_sent }' | strReplace :'&lt;email&gt;' :('&lt;'+$root.$angularState.personalInfo.email+'&gt;') }}
+        </h2>
+<!-- 
+        <div class="row p2 ng-cloak" ng-show="$root.$angularState.selectedCompensation === 'voucher'">
+            {{ $root.$angularState.personalInfo.email }}
+        </div>
+
+ -->
+         <div class="row p1" ng-show="$root.$angularState.selectedCompensation === 'voucher'">
+            {!$label.CompApp_receive_email_shortly}
+        </div>
+
+        <div class="row p2" ng-show="$root.$angularState.selectedCompensation === 'voucher'">
+            {!$label.CompApp_eurostar_thanks}
+        </div>
+
+
+
+
+        <h2 class="row" ng-show="$root.$angularState.selectedCompensation === 'points'">
+            {!$label.CompApp_eligible_points_received}
+        </h2>
+
+        <div class="row p1" ng-show="$root.$angularState.selectedCompensation === 'points'">
+            {!$label.CompApp_new_points_balance}
+        </div>
+
+        <div class="row p1 ng-cloak" ng-show="$root.$angularState.selectedCompensation === 'points'">
+            {{ $angularState.compensation.sumPoints }} {!$label.CompApp_points_added} {{ $root.$angularState.personalInfo.membershipNumber }}. {!$label.CompApp_independent_points} <a href="https://www.eurostar.com/uk-en/login" target="_blank"> {!$label.CompApp_account_log_in}</a>.
+        </div>
+
+
+
+
+        <h3 class="row p1" ng-show="$root.$angularState.selectedCompensation === 'prr'">
+            {!$label.CompApp_PRR_Sent}
+        </h3>
+
+        <div class="row p2 ng-cloak" ng-show="$root.$angularState.selectedCompensation === 'prr'">
+            {{ $root.$angularState.personalInfo.email }}
+        </div>
+
+        <h2 class="row" ng-show="$root.$angularState.selectedCompensation === 'prr'">
+            {!$label.CompApp_PRR_Confirmation_Message}
+        </h2>
+
+        <div class="row commands-section">
+            <a class="btn secondary" ng-click="restartProcess()">{!$label.CompApp_make_claim}</a>
+            <a href="http://www.eurostar.com/" target="_blank" class="btn secondary" ng-click="">{!$label.CompApp_visit_eurostar}</a>
+        </div>
+    </div>
+</apex:page>

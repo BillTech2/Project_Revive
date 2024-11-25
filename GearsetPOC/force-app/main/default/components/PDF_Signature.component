@@ -1,0 +1,66 @@
+<apex:component layout="none" >
+    <apex:attribute name="phoneNumber" description="This is value to store phone number" type="String" required="true"/>
+    <table>
+        <tr>
+            <td>
+                <b>
+                    <apex:outputLabel style="font-size: 8pt;" value="{!$Label.PDF_Signature_Thalys_Name}"/> 
+                </b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <apex:outputText style="font-weight:bold;font-size: 8pt;" value="{!$Label.PDF_Signature_VAT_Number_Label} "/>
+                <apex:outputText style="font-size: 8pt;" value="{!$Label.PDF_Signature_VAT_Number}"/>
+            </td>
+            <td>
+                <b>
+                    <apex:outputText style="font-size: 8pt;" value="{!$Label.PDF_Signature_Phone_Number_Label}"/>
+                </b>
+                <apex:outputText style="font-size: 8pt;" value="{!phoneNumber}"/>
+            </td>
+            <td>
+                <apex:outputText style="font-size: 8pt;" value="{!$Label.PDF_Signature_Distributed_Message}"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <apex:outputText style="font-size: 8pt;" value="{!$Label.PDF_Signature_Address_Street_and_Number_FR}"/>
+            </td>
+            <td>
+                <apex:outputText style="font-size: 8pt;" value="{!$Label.PDF_Signature_Phone_Number_Disclaimer}"/>
+            </td>
+            <td>
+                <b>
+                    <apex:outputText style="font-size: 8pt;" value="{!$Label.PDF_Signature_Account_Number_Label}"/>
+                </b>
+                <apex:outputText style="font-size: 8pt;" value="{!$Label.PDF_Signature_Account_Number}"/>
+            </td>
+        </tr> 
+        <tr>
+            <td>
+                <apex:outputText style="font-size: 8pt;" value="{!$Label.PDF_Signature_Address_Street_and_Number_NL}"/>
+            </td>
+
+            <td>
+                <apex:outputText style="font-size: 8pt;" value="{!$Label.PDF_Signature_website}"/>
+            </td>
+            <td>
+                <b>
+                    <apex:outputText style="font-size: 8pt;" value="{!$Label.PDF_Signature_BIC_Number_Label}"/>
+                </b>
+                <apex:outputText style="font-size: 8pt;" value="{!$Label.PDF_Signature_BIC_Number}"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <apex:outputText style="font-size: 8pt;" value="{!$Label.PDF_Signature_Address_Postal_Code_and_City}"/>
+            </td>
+            <td>
+            </td>
+            <td>
+            </td>
+        </tr>
+
+    </table>
+</apex:component>

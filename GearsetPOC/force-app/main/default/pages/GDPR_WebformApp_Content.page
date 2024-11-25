@@ -1,0 +1,317 @@
+<apex:page id="GDPR_WebformApp_Content" language="{!selectedLanguageCode}" controller="GDPR_WebformApp_ContentController"  showHeader="false" sidebar="false"  standardStylesheets="false" applyHtmlTag="false" applyBodyTag="false">
+
+    <h2 class="row">{! $label.GDPR_Your_Information}</h2>
+
+    <div class="row {{formManager.firstNameValdity | validityClass}}">
+        <label for="first-name" class="cell-label">{!$label.CompApp_First_name}</label>
+        <div class="input-wrapper validity-sign cell-input">
+            <input
+                    maxlength="30"
+                    id="first-name"
+                    ng-pattern="USER_NAME_REGEX"
+                    ng-change="formManager.firstNameValdity = !! $angularState.gdprInfo.firstName"
+                    ng-model="$angularState.gdprInfo.firstName"
+            />
+            <div class="error-message">{!$label.CompApp_enterFirstName}</div>
+        </div>
+    </div>
+
+    <div class="row {{formManager.lastNameValdity | validityClass}}">
+        <label for="surname" class="cell-label">{!$label.CompApp_Surname}</label>
+        <div class="input-wrapper validity-sign cell-input">
+            <input
+                    maxlength="30"
+                    id="surname"
+                    ng-pattern="USER_30_NAME_REGEX"
+                    ng-change="formManager.lastNameValdity = !! $angularState.gdprInfo.lastName"
+                    ng-model="$angularState.gdprInfo.lastName"
+            />
+            <div class="error-message">{!$label.CompApp_enterLastName}</div>
+        </div>
+    </div>
+
+    <div class="row {{formManager.emailValidity | validityClass}} {{formManager.uniqueEmail | uniqueEmailClass}} {{formManager.uniqueEmailForPersonalAcc | uniqueEmailClassForPersonalAcc}}">
+        <label for="email" class="cell-label">{! $label.GDPR_Email}</label>
+        <div class="input-wrapper validity-sign cell-input">
+            <input type="email"
+                   id="email"
+                   ng-change="formManager.emailValidity = isPrimaryEmailValid()"
+                   ng-model="$angularState.gdprInfo.email"
+            />
+            <div class="error-message" id="emailAddressError">{!$label.CompApp_enterEmailPRR}</div>
+            <div class="error-message-email">
+                Duplicate
+            </div>
+        </div>
+    </div>
+
+    <div class="row {{formManager.singleSelectValidity | validityClass}}">
+        <label for="singleSelect" class="cell-label-gdpr-options" style="white-space: pre-line;" ng-show="showOption('1')">{! $label.GDPR_First_dropdown_data_using_warning}</label>
+        <label for="singleSelect" class="cell-label" ng-show="!showOption('1')">{! $label.GDPR_First_dropdown_list}</label>
+        <div class="input-wrapper validity-sign cell-input">
+            <select name="singleSelect"
+                    id="singleSelect"
+                    ng-change="selectOption()"
+                    ng-model="singleSelect">
+                <option value="0">{! $label.GDPR_Initial_drop_down_0}</option><!---Select(NEW)--->
+                <option value="2">{! $label.GDPR_Initial_drop_down_2}</option><!--I would like to request my data-->
+                <option value="3">{! $label.GDPR_Initial_drop_down_3}</option><!--I would like to update my data-->
+                <option value="4">{! $label.GDPR_Initial_drop_down_4}</option><!--I would like you to delete my data-->
+                <option value="5">{! $label.GDPR_Initial_drop_down_5}</option><!--I would like to provide feedback on how my data has been handled-->
+                <option value="1">{! $label.GDPR_Initial_drop_down_1}</option><!--I would like to know how you use my data-->
+                <option value="6">{! $label.GDPR_Initial_drop_down_6}</option><!--I would like request information for a governing body / the police-->
+            </select>
+            <div class="error-message">{! $label.GDPR_Initial_drop_down_error}</div>
+        </div>
+    </div>
+
+    <div class="row " ng-show="showOption('2')">
+        <label for="singleSelect" class="cell-label-gdpr-options"></label>
+        <div class="input-wrapper validity-sign cell-input">
+            <select name="singleSelect"
+                    id="singleSelect"
+                    ng-change="selectSecondaryDropDown()"
+                    ng-model="secondaryDropDown">
+                <option value="1">{! $label.GDPR_Secondary_drop_down_2_1}</option><!--I would like to request a call recording-->
+                <option value="2">{! $label.GDPR_Secondary_drop_down_2_2}</option><!--I would like to request a written transcript (chat/social post/email)-->
+                <option value="3">{! $label.GDPR_Secondary_drop_down_2_3}</option><!--I would like to request my full travel history-->
+                <option value="4">{! $label.GDPR_Secondary_drop_down_2_4}</option><!--I would like to request my specific travel history/proof of purchase-->
+                <option value="5">{! $label.GDPR_Secondary_drop_down_2_5}</option><!--I would like to request my Club Eurostar information-->
+                <option value="6">{! $label.GDPR_Secondary_drop_down_2_6}</option><!--I would like to request something else-->
+                <option value="8">{! $label.GDPR_Secondary_drop_down_2_8}</option><!--I would like to request all my personal data-->
+            </select>
+        </div>
+    </div>
+
+    <div class="row " ng-show="showOption('3')">
+        <label for="singleSelect" class="cell-label-gdpr-options"></label>
+        <div class="input-wrapper validity-sign cell-input">
+            <select name="singleSelect"
+                    id="singleSelect"
+                    ng-change="selectSecondaryDropDown()"
+                    ng-model="secondaryDropDown">
+                <option value="1">{! $label.GDPR_Secondary_drop_down_3_1}</option><!--I would like to update my Club Eurostar data-->
+                <option value="2">{! $label.GDPR_Secondary_drop_down_3_2}</option><!--I would like to update my personal data-->
+                <option value="3">{! $label.GDPR_Secondary_drop_down_3_3}</option><!--I would like to update my communication/marketing preferences-->
+            </select>
+        </div>
+    </div>
+
+    <div class="row " ng-show="showOption('4')">
+        <label for="singleSelect" class="cell-label-gdpr-options"></label>
+        <div class="input-wrapper validity-sign cell-input">
+            <select name="singleSelect"
+                    id="singleSelect"
+                    ng-change="selectSecondaryDropDown()"
+                    ng-model="secondaryDropDown">
+                <option value="1">{! $label.GDPR_Secondary_drop_down_4_1}</option><!--I would like to delete my Club Eurostar account-->
+                <option value="4">{! $label.GDPR_Secondary_drop_down_4_4}</option><!--I would like to delete all my personal data-->
+                <option value="2">{! $label.GDPR_Secondary_drop_down_4_2}</option><!--I would like to delete my email address-->
+                <option value="3">{! $label.GDPR_Secondary_drop_down_4_3}</option><!--I would like to delete something else-->
+            </select>
+        </div>
+    </div>
+
+    <div class="row " ng-show="showThirdList()">
+        <label for="singleSelect" class="cell-label-gdpr-options"></label>
+        <div class="input-wrapper validity-sign cell-input">
+            <select name="singleSelect"
+                    id="singleSelect"
+                    ng-model="tertiaryDropDown">
+                <option value="1">{! $label.GDPR_Tertiary_drop_down_1}</option><!--Carte Blanche-->
+                <option value="2">{! $label.GDPR_Tertiary_drop_down_2}</option><!--Avantage-->
+                <option value="3">{! $label.GDPR_Tertiary_drop_down_3}</option><!--Classique-->
+            </select>
+        </div>
+    </div>
+
+    <div class="row " ng-show="showSpecOption('2-4')">
+        <label class="gdpr-attach-label" ng-show="showSpecOption('2-4')">{! $label.GDPR_Attach_block_part1}
+            <a href="https://Eurostar.com"><b>Eurostar.com</b></a>{! $label.GDPR_Attach_block_part1_1}
+            <a href="{! $label.GDPR_managebooking_href}"><b>{! $label.GDPR_managebooking_label}</b></a>
+            <br/><br/>{! $label.GDPR_Attach_block_part2}
+        </label>
+    </div>
+
+    <div class="row " ng-show="showAttachBlock()">
+        <label class="gdpr-attach-label" ng-show="showSpecOption('2-4')">{! $label.GDPR_Attach_block_part1}
+            <a href="{! $label.GDPR_managebooking_href}">{! $label.GDPR_managebooking_label}</a>
+            <br/><br/>{! $label.GDPR_Attach_block_part2}
+        </label>
+        <br/>
+        <label class="gdpr-attach-label" ng-hide="showSpecOption('6-1')">{! $label.GDPR_Attach_block_label1_part1}
+            (<a href="{! $Resource.GDPR_Protection_form_EN}" download="Data Protection Personal Data Request Form">English,</a>
+            <a href="{! $Resource.GDPR_Protection_form_FR}" download="Data Protection Personal Data Request Form"> French, </a>
+            <a href="{! $Resource.GDPR_Protection_form_NL}" download="Data Protection Personal Data Request Form"> Dutch</a>)
+            {! $label.GDPR_Attach_block_label1_part2}
+        </label>
+        <label ng-show="showSpecOption('6-1')">{! $label.GDPR_Attach_block_label2_part1}
+            <!--(<a href="{! $Resource.GDPR_Protection_form_EN}" download="Data Protection Personal Data Request Form">English,</a>-->
+            <!--<a href="{! $Resource.GDPR_Protection_form_FR}" download="Data Protection Personal Data Request Form"> French, </a>-->
+            <!--<a href="{! $Resource.GDPR_Protection_form_NL}" download="Data Protection Personal Data Request Form"> Dutch</a>)-->
+            {! $label.GDPR_Attach_block_label2_part2}
+
+        </label>
+        <!--Upload smth-->
+
+        <!--Completed Identification form-->
+        <div class="row {{formManager.file1SizeValidity | validityClass}} {{formManager.file1EmptyValidity | isEmptyAttachment}}" ng-show="showAttachBlock()">
+            <label for="fileInput" class="cell-label" ng-show="showSpecOption('2-1')">{! $label.GDPR_Attach1_label1}</label><!--Completed Identification form *-->
+            <label for="fileInput" class="cell-label" ng-show="showSpecOption('2-2')">{! $label.GDPR_Attach1_label1}</label><!--Completed Identification form *-->
+            <label for="fileInput" class="cell-label" ng-show="showSpecOption('2-3')">{! $label.GDPR_Attach1_label1}</label><!--Completed Identification form *-->
+            <label for="fileInput" class="cell-label" ng-show="showSpecOption('2-4')">{! $label.GDPR_Attach1_label1}</label><!--Completed Identification form *-->
+            <label for="fileInput" class="cell-label" ng-show="showSpecOption('2-5')">{! $label.GDPR_Attach1_label1}</label><!--Completed Identification form *-->
+            <label for="fileInput" class="cell-label" ng-show="showSpecOption('2-6')">{! $label.GDPR_Attach1_label1}</label><!--Completed Identification form *-->
+            <label for="fileInput" class="cell-label" ng-show="showSpecOption('2-8')">{! $label.GDPR_Attach1_label1}</label><!--Completed Identification form *-->
+            <label for="fileInput" class="cell-label" ng-show="showOption('4')">{! $label.GDPR_Attach1_label1}</label><!--Completed Identification form *-->
+            <label for="fileInput" class="cell-label" ng-show="showSpecOption('3-1')">{! $label.GDPR_Attach1_label1}</label><!--Completed Identification form *-->
+            <label for="fileInput" class="cell-label" ng-show="showSpecOption('3-2')">{! $label.GDPR_Attach1_label1}</label><!--Completed Identification form *-->
+            <label for="fileInput" class="cell-label" ng-show="showOption('6')">{! $label.GDPR_Attach1_label2}</label><!--Completed Data Protection form *-->
+            <div class="input-wrapper cell-input">
+                <div class="input-file-wrapper">
+                    <input type="file" id="file1Input" class="hidden" style="outline: none;"
+                           onchange="angular.element(this).scope().addAttachment(this, 1)"
+                    />
+                    <label for="file1Input" class="btn secondary">{!$label.CompApp_chooseFile}</label>
+                    <!--<span class="hint">{!$label.CompApp_maxUpload}</span>-->
+                    <span class="hint">"3MB maximum upload"</span>
+                </div>
+                <div class="error-message">{!$label.CompApp_fileTooBig}</div>
+                <div class="error-message-empty-attach">{! $label.GDPR_emptyfile_error}</div>
+            </div>
+        </div>
+        <!--ng-repeat="selectedFile in selectedFileList"-->
+        <div class="row" ng-show="identificationForm != null">
+            <label class="cell-label" style="width:{{ $angularState.system.maxLabelWidth }}px;">&nbsp;</label>
+            <div class="cell-input">
+                <div>
+                    <img ng-click="removeAttachment(selectedFile, 1);" style="display: inline-block; cursor: pointer;" src="{!URLFOR($Resource.CompApp_Res, '/res/BigRedX.png')}" width="14" height="14"/>
+                    <span style="display: inline-block; vertical-align: 10%;">&nbsp;&nbsp;{{ identificationForm.name }}</span>
+                </div>
+                <div class="error-message">{!$label.CompApp_pleaseSelectGoodSize}</div>
+            </div>
+        </div>
+        <!--Proof of ID 1-->
+        <div class="row {{formManager.file2SizeValidity | validityClass}} {{formManager.file2EmptyValidity | isEmptyAttachment}}" ng-show="showProofOfID()">
+            <label for="fileInput" class="cell-label">{! $label.GDPR_Attach2_label}</label>
+            <div class="input-wrapper cell-input">
+                <div class="input-file-wrapper">
+                    <input type="file" id="file2Input" class="hidden" style="outline: none;"
+                           onchange="angular.element(this).scope().addAttachment(this, 2)"
+                    />
+                    <label for="file2Input" class="btn secondary">{!$label.CompApp_chooseFile}</label>
+                    <!--<span class="hint">{!$label.CompApp_maxUpload}</span>-->
+                    <span class="hint">"3MB maximum upload"</span>
+                </div>
+                <div class="error-message">{!$label.CompApp_fileTooBig}</div>
+                <div class="error-message-empty-attach">{! $label.GDPR_emptyfile_error}</div>
+            </div>
+        </div>
+
+        <div class="row" ng-show="proofOfID1 != null">
+            <label class="cell-label" style="width:{{ $angularState.system.maxLabelWidth }}px;">&nbsp;</label>
+            <div class="cell-input">
+                <div>
+                    <img ng-click="removeAttachment(selectedFile, 2);" style="display: inline-block; cursor: pointer;" src="{!URLFOR($Resource.CompApp_Res, '/res/BigRedX.png')}" width="14" height="14"/>
+                    <span style="display: inline-block; vertical-align: 10%;">&nbsp;&nbsp;{{ proofOfID1.name }}</span>
+                </div>
+                <div class="error-message">{!$label.CompApp_pleaseSelectGoodSize}</div>
+            </div>
+        </div>
+        <!--Proof of ID 2-->
+        <div class="row {{formManager.file3SizeValidity | validityClass}} {{formManager.file3EmptyValidity | isEmptyAttachment}}" ng-show="showProofOfID()">
+            <label for="fileInput" class="cell-label">{! $label.GDPR_Attach3_label}</label>
+            <div class="input-wrapper cell-input">
+                <div class="input-file-wrapper">
+                    <input type="file" id="file3Input" class="hidden" style="outline: none;"
+                           onchange="angular.element(this).scope().addAttachment(this, 3)"
+                    />
+                    <label for="file3Input" class="btn secondary">{!$label.CompApp_chooseFile}</label>
+                    <!--<span class="hint">{!$label.CompApp_maxUpload}</span>-->
+                    <span class="hint">"3MB maximum upload"</span>
+                </div>
+                <div class="error-message">{!$label.CompApp_fileTooBig}</div>
+                <div class="error-message-empty-attach">{! $label.GDPR_emptyfile_error}</div>
+            </div>
+        </div>
+
+        <div class="row" ng-show="proofOfID2 != null">
+            <label class="cell-label" style="width:{{ $angularState.system.maxLabelWidth }}px;">&nbsp;</label>
+            <div class="cell-input">
+                <div>
+                    <img ng-click="removeAttachment(selectedFile, 3);" style="display: inline-block; cursor: pointer;" src="{!URLFOR($Resource.CompApp_Res, '/res/BigRedX.png')}" width="14" height="14"/>
+                    <span style="display: inline-block; vertical-align: 10%;">&nbsp;&nbsp;{{ proofOfID2.name }}</span>
+                </div>
+                <div class="error-message">{!$label.CompApp_pleaseSelectGoodSize}</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row gdpr-main-text-box {{formManager.optionTextValidity | validityClass}}" style="margin-top: 5rem;"  ng-hide="firstOptionNotSelected()">
+        <label class="cell-label-gdpr-options" style="white-space: pre-line;" ng-show="showSpecOption('1-1')"><a href="{! $label.GDPR_Privacy_Policy_Link}" ng-show="showOption('1')"><b>{! $label.GDPR_Privacy_Policy_Label}</b></a><br style="line-height:1px;"/>{! $label.GDPR_Textbox_label1_extended}</label>
+        <label class="cell-label-gdpr-options" style="white-space: pre-line;" ng-show="showSpecOption('2-1')">{! $label.GDPR_Textbox_label2}</label>
+        <label class="cell-label-gdpr-options" style="white-space: pre-line;" ng-show="showSpecOption('2-2')">{! $label.GDPR_Textbox_label3}</label>
+        <label class="cell-label-gdpr-options" style="white-space: pre-line;" ng-show="showSpecOption('2-3')">{! $label.GDPR_Textbox_label4}</label>
+        <label class="cell-label-gdpr-options" style="white-space: pre-line;" ng-show="showSpecOption('2-4')">{! $label.GDPR_Textbox_label4}</label>
+        <label class="cell-label-gdpr-options" style="white-space: pre-line;" ng-show="showSpecOption('2-5')">{! $label.GDPR_Textbox_label5}</label>
+        <label class="cell-label-gdpr-options" style="white-space: pre-line;" ng-show="showSpecOption('2-6')">{! $label.GDPR_Textbox_label1}</label>
+        <label class="cell-label-gdpr-options" style="white-space: pre-line;" ng-show="showSpecOption('2-8')">{! $label.GDPR_Textbox_label1}</label>
+        <label class="cell-label-gdpr-options" style="white-space: pre-line;" ng-show="showSpecOption('3-1')">{! $label.GDPR_Textbox_label6}</label>
+        <label class="cell-label-gdpr-options" style="white-space: pre-line;" ng-show="showSpecOption('3-2')">{! $label.GDPR_Textbox_label7}</label>
+        <label class="cell-label-gdpr-options" style="white-space: pre-line;" ng-show="showSpecOption('3-3')">{! $label.GDPR_Textbox_label7}</label>
+        <label class="cell-label-gdpr-options" style="white-space: pre-line;" ng-show="showSpecOption('4-1')">{! $label.GDPR_Textbox_label8}</label>
+        <label class="cell-label-gdpr-options" style="white-space: pre-line;" ng-show="showSpecOption('4-2')">{! $label.GDPR_Textbox_label9}</label>
+        <label class="cell-label-gdpr-options" style="white-space: pre-line;" ng-show="showSpecOption('4-3')">{! $label.GDPR_Textbox_label10}</label>
+        <label class="cell-label-gdpr-options" style="white-space: pre-line;" ng-show="showSpecOption('4-4')">{! $label.GDPR_Textbox_label10}</label>
+        <label class="cell-label-gdpr-options" style="white-space: pre-line;" ng-show="showSpecOption('5-1')">{! $label.GDPR_Textbox_label11}</label>
+        <label class="cell-label-gdpr-options" style="white-space: pre-line;" ng-show="showSpecOption('6-1')">{! $label.GDPR_Textbox_label1}</label>
+
+        <div class="input-wrapper validity-sign cell-input">
+            <textarea
+                    id="val3"
+                    style="height: 4rem;"
+                    ng-model="$angularState.gdprInfo.textFromOption"
+                    ng-change="changeOptionText()"
+            ></textarea>
+            <div class="error-message">{! $label.GDPR_First_textbox_error}</div>
+        </div>
+    </div>
+
+    <div class="row " style="margin-top: 2rem;">
+        <label for="additionalComment" class="cell-label">{! $label.GDPR_Additional_comment}</label>
+        <div class="input-wrapper validity-sign cell-input">
+            <textarea
+                id="additionalComment"
+                maxlength="10000"
+                ng-model="$angularState.gdprInfo.additionalComments"
+                style="height: 4rem;"
+            ></textarea>
+        </div>
+    </div>
+
+    <div class="row {{ formManager.captchaValdity | validityClass }}">
+        <label for="recaptcha" class="cell-label" >{!$label.VoucherApp_robot_question}</label>
+        <div class="cell-input">
+            <no-captcha
+                g-recaptcha-response="captchaResponse"
+                theme='light'
+                control="noCaptchaControl"
+                site-key="{!GDPR_GOOGLE_CAPTCHA_SITE_KEY}"
+            >
+            </no-captcha>
+            <div class="error-message">{!$label.CompApp_Validate_not_robot}</div>
+        </div>
+    </div>
+
+    <div class="row commands-section">
+        <a href="" class="btn primary" ng-click="submitGDPRForm();" id="register-button">{!$label.CompApp_Submit}</a>
+        <p class="error-message-main" ng-hide="formManager.noErrors">{!$label.CompApp_incorrectDataPrr}</p>
+        <div class="lds-spinner" hidden="hidden"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    </div>
+
+    <script>
+        var GLOBAL_REMOTE_USER_IP = '{!USER_IP}';
+        var pageLanguageCode = '{!selectedLanguageCode}'
+    </script>
+
+</apex:page>

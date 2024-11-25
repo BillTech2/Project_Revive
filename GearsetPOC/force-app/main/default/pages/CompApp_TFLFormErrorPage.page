@@ -1,0 +1,18 @@
+<apex:page showHeader="false" sidebar="false" id="CompApp_TFLFormErrorPage" language="{!selectedLanguageCode}" controller="CompApp_CtrlApp" standardStylesheets="false" applyHtmlTag="false" applyBodyTag="false" showChat="false">
+
+    <div>
+        <div class="grid-row grid-group">
+            <h2 class="grid-col grid-col-span_12_of_12" style="margin-top: 1rem" ng-bind-html="$root.$angularState.system.softErrorMessageHeader"></h2>
+        </div>
+
+        <!--<div class="grid-row grid-group">-->
+            <!--<div class="grid-col grid-col-span_12_of_12 p1" ng-bind-html="$root.$angularState.system.softErrorMessageBody"></div>-->
+        <!--</div>-->
+
+        <section>
+            <div class="row commands-section">
+                <a ref="#/" class="btn primary" ng-click="restartTFLRegistration()">{!$label.CompApp_TFL_Register_Another_User}</a>
+            </div>
+        </section>
+    </div>
+</apex:page>

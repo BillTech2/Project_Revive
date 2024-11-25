@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_booking_a_group_for_the_first_time__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>Is booking a group with Eurostar for the first time</inlineHelpText>
+    <label>Is booking a group for the first time</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CorpTracking_must_be_active</fullName>
+    <active>true</active>
+    <description>The Corporate Tracking code related to the Account must be active in order to create a contract.</description>
+    <errorConditionFormula>!($User.B2b_Bypass_Validation_Rules__c)
+&amp;&amp; 
+ISNEW()
+&amp;&amp;
+(
+(
+RecordType.DeveloperName = &#39;Thalys&#39;
+&amp;&amp;
+(
+(AccountId__r.FCE_Continent_Active__c  = FALSE)
+&amp;&amp;
+(AccountId__r.GND_BE_Continent_Active__c  = FALSE)
+&amp;&amp;
+(AccountId__r.GND_NL_Continent_Active__c = FALSE)
+&amp;&amp;
+(AccountId__r.GDS_Code_Active__c = FALSE)
+))
+||
+(
+RecordType.DeveloperName = &#39;Corporate&#39;
+&amp;&amp;
+(
+(AccountId__r.FCE_London_Active__c = FALSE)
+&amp;&amp;
+(AccountId__r.GND_BE_London_Active__c = FALSE)
+&amp;&amp;
+(AccountId__r.GND_NL_London_Active__c = FALSE)
+&amp;&amp;
+(AccountId__r.Corporate_Code_Active__c  = FALSE)
+))
+)</errorConditionFormula>
+    <errorMessage>One of the above mentioned codes must be active, i.e. the checkbox of the same name must be TRUE</errorMessage>
+</ValidationRule>

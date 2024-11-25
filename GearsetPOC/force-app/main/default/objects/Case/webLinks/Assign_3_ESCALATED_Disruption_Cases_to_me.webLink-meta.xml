@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Assign_3_ESCALATED_Disruption_Cases_to_me</fullName>
+    <availability>online</availability>
+    <displayType>massActionButton</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Assign 3 ESCALATED Disruption Cases to me</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <requireRowSelection>true</requireRowSelection>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/33.0/connection.js&quot;)} 
+
+try{ 
+	
+	var assignedRecord = 0; /* Will be used to count the number of assigned cases */
+	var updateRecord = new Array();	
+	/*======================================================================================
+						GET UP TO 100 CASES (we just need 3 but if many people click at the same time on the button, we don&#39;t want one of them to get no case)
+						(as they don&#39;t have the permission to assign cases that are not assigned to the queue)
+	========================================================================================
+	
+	---------  If the profile is Eurostar Staff or Sensee (or now ECC Staff), we don&#39;t want them to access &#39;Escalated&#39; and &#39;Re-opened&#39; Cases through the button -------------------*/
+	if(&quot;{!$Profile.Name}&quot;==&quot;Sensee&quot;)
+	{
+		var myqueryCase = &quot;SELECT Id,CaseNumber FROM Case WHERE OwnerId = &#39;00Gb0000001lZIY&#39; AND Status = &#39;Open&#39; ORDER BY Disruption_Priority__c ASC limit 100&quot;;
+	}
+	/*---------  Else, they can get all disruption cases except closed ones -------------------*/
+	else 
+	{
+		var myqueryCase = &quot;SELECT Id,CaseNumber FROM Case WHERE OwnerId = &#39;00Gb0000001lZIY&#39; AND Status = &#39;Escalated&#39; ORDER BY Disruption_Priority__c ASC limit 100&quot;;
+	}
+	resultCase = sforce.connection.query(myqueryCase); 
+	Caserecords = resultCase.getArray(&quot;records&quot;);
+	/*=================================================================================
+						/GET UP TO 100 CASES
+	 ==================================================================================*/
+	
+	/* We go through the whole list of cases we have now*/
+	for( var i=0; i&lt;100 ; i++) 
+	{
+		/* We make sure that the user don&#39;t get more that 3 cases assigned to himself */
+		if(assignedRecord&lt;3) 
+		{
+			/* We check if the element of the array is not empty (it happens if there is not enough cases in the queue)  */
+			if(Caserecords[i]) 
+			{
+				var update_Case = Caserecords[i];
+				
+				/* Find the related Disruption Case  */
+				var myqueryDisruptionCase = &quot;SELECT Id,Name FROM Disruption_Case__c WHERE Name = &#39;&quot; + Caserecords[i].CaseNumber + &quot;&#39; limit 1&quot;; 
+				resultDisruptionCase = sforce.connection.query(myqueryDisruptionCase);
+				DisruptionCaserecords = resultDisruptionCase.getArray(&quot;records&quot;);
+				
+				/* We check that the Disruption Case exists (it should exist every time but we don&#39;t want to get an error if it doesn&#39;t) */
+				if(DisruptionCaserecords[0])
+				{
+					/* Update the related Disruption Case  */
+					var update_DisruptionCase = DisruptionCaserecords[0];
+					update_DisruptionCase.OwnerId = &quot;{!$User.Id}&quot;;
+					updateRecord.push(update_DisruptionCase); 
+					result = sforce.connection.update(updateRecord); 
+					
+					/* If the update is successful, we increase the number of assigned record  */
+					if(result[i].getBoolean(&quot;success&quot;))
+					{
+						assignedRecord = assignedRecord + 1;
+					}
+					console.log(assignedRecord);
+				}
+				else
+				{
+				alert(&#39;Cannot find the Disruption Case linked to the case number &#39; + Caserecords[i].CaseNumber);
+				}
+				
+			}
+			else
+			{
+				if(i==0)
+				{
+					alert(&#39;There is no more open case in the Disruption Queue!&#39;);
+				}
+				i=100;
+			}
+		}
+		else
+		i=100;
+	}
+	parent.location.href = parent.location.href;
+	
+}
+catch(e){
+alert(&#39;An Error has Occured. Error: &#39; + e);
+}</url>
+</WebLink>

@@ -1,0 +1,225 @@
+<apex:page id="SalesforceTicketRedemption"
+			docType="html-5.0"
+			showHeader="true"
+			sidebar="true"
+			tabStyle="SalesforceTicketRedemption__x"
+			standardController="SalesforceTicketRedemption__x"
+			extensions="SalesforceTicketRedemptionController">
+
+	<apex:sectionHeader title="{!$ObjectType.SalesforceTicketRedemption__x.Label} Edit"
+						subtitle="New {!$ObjectType.SalesforceTicketRedemption__x.Label}" />
+	<c:LoyaltyTierAccessCheck accessedButtonName="Loyalty_ticket_redemption">
+		<apex:form id="mainForm">
+			<apex:pageBlock title="{!$ObjectType.SalesforceTicketRedemption__x.Label} Edit" mode="edit">
+				<apex:pageMessages id="messages"/>
+				<apex:pageBlockSection columns="1" id="dataTable">
+					<apex:selectList value="{!selectedOrigin}" label="Origin" size="1" required="false" onchange="valueWasChanged('selectedOrigin');">
+						<apex:selectOptions value="{!partnerLocation}"/>
+					</apex:selectList>
+					<apex:selectList value="{!selectedDestination}" label="Destination" size="1" required="false" onchange="valueWasChanged('selectedDestination');">
+						<apex:selectOptions value="{!partnerLocation}"/>
+					</apex:selectList>
+					<apex:inputText value="{!quantity}" label="Number of passengers" required="false" onchange="valueWasChanged('quantity');"/>
+					<apex:inputField value="{!member.DepartureDateTime__c}" required="false"/>
+					<apex:inputField value="{!member.ReturnDateTime__c}" required="false"/>
+					<apex:inputText value="{!member.Pnr__c}" required="false"/>
+					<!-- Outbound -->
+					<apex:inputText value="{!outboundRewardId}" label="Outbound RewardId" required="false" />
+					<apex:selectList value="{!selectedOutboundTrClass}" label="Travel class Outbound" size="1"
+									 required="false" onchange="valueWasChanged('selectedOutboundTrClass');">
+						<apex:selectOptions value="{!travelClasses}"/>
+					</apex:selectList>
+					<apex:selectList value="{!selectedOutboundTicketType}" label="Ticket Type Outbound" size="1"
+									 required="false" onchange="valueWasChanged('selectedOutboundTicketType');" rendered="{!selectedOutboundTrClass != 'BusinessPremier'}">
+						<apex:selectOptions value="{!ticketType}"/>
+					</apex:selectList>
+					<apex:selectList value="{!selectedOutboundTicketType}" label="Ticket Type Outbound" size="1" disabled="true"
+									 required="false" rendered="{!selectedOutboundTrClass == 'BusinessPremier'}">
+						<apex:selectOption itemLabel="none" itemValue="null"/>
+					</apex:selectList>
+					<!-- Inbound -->
+					<apex:inputText value="{!inboundRewardId}" label="Inbound RewardId" required="false" />
+					<apex:selectList value="{!selectedInboundTrClass}" label="Travel class Inbound" size="1"
+									 required="false" onchange="valueWasChanged('selectedInboundTrClass');">
+						<apex:selectOption itemLabel="" itemValue=""/>
+						<apex:selectOptions value="{!travelClasses}"/>
+					</apex:selectList>
+					<apex:selectList value="{!selectedInboundTicketType}" label="Ticket Type Inbound" size="1"
+									 required="false" onchange="valueWasChanged('selectedInboundTicketType');" rendered="{!selectedInboundTrClass != 'BusinessPremier'}">
+						<apex:selectOption itemLabel="" itemValue=""/>
+						<apex:selectOptions value="{!ticketType}"/>
+					</apex:selectList>
+					<apex:selectList value="{!selectedInboundTicketType}" label="Ticket Type Inbound" size="1" disabled="true"
+									 required="false" rendered="{!selectedInboundTrClass == 'BusinessPremier'}">
+						<apex:selectOption itemLabel="none" itemValue="null"/>
+					</apex:selectList>
+					<apex:pageBlockSectionItem id="pointsBlock">
+						<apex:outputLabel value="Points to deduct:"/>
+						<apex:outputText id="pointsValue" value="{!pointsCost}" label="Points to deduct dynamic"/>
+					</apex:pageBlockSectionItem>
+					<apex:actionStatus startText="incrementing..." id="counterStatus"/>
+				</apex:pageBlockSection>
+				<apex:pageBlockButtons >
+					<apex:commandButton action="{!save}" value=" Save "/>
+					<apex:commandButton action="{!SaveAndNew}" value="Save & New"/>
+					<apex:commandButton action="{!cancel}" immediate="true" html-formnovalidate="formnovalidate" value="Cancel"/>
+				</apex:pageBlockButtons>
+				<apex:outputPanel id="redirectPanel" >
+					<apex:outputText rendered="{!shouldRedirect}">
+						<script type="text/javascript">
+							window.top.location.href = '{!redirectUrl}';
+						</script>
+					</apex:outputText>
+				</apex:outputPanel>
+			</apex:pageBlock>
+
+			<apex:actionFunction name="valueWasChanged" action="{!valueWasChanged}" reRender="dataTable,jsFunction" oncomplete="getPoints();">
+				<apex:param name="source" assignTo="{!triggeredSource}" value=""/>
+			</apex:actionFunction>
+
+			<apex:actionFunction name="setPointsCost" reRender="dataTable" status="counterStatus">
+				<apex:param name="points" assignTo="{!pointsCost}" value=""/>
+				<apex:param name="OutboundReward" assignTo="{!outboundRewardId}" value=""/>
+				<apex:param name="InboundReward" assignTo="{!inboundRewardId}" value=""/>
+			</apex:actionFunction>
+		</apex:form>
+
+		<apex:outputPanel id="jsFunction">
+			<script>
+				function getPoints() {
+					var selectedOutboundTrClass    = '{!selectedOutboundTrClass}';
+					var selectedOutboundTicketType = '{!selectedOutboundTicketType}';
+					var selectedInboundTrClass     = '{!selectedInboundTrClass}';
+					var selectedInboundTicketType  = '{!selectedInboundTicketType}';
+					var quantity = '{!quantity}';
+					var rewardIds = getRewardId();
+
+					var selectedDestination = {!selectedDestination};
+
+					if (selectedOutboundTrClass.length > 0 && quantity > 0) {
+						var pointsSource = JSON.parse('{!ticketDataSource}');
+						var obj;
+						var pointsCost = 0;
+
+						console.log("pointsSource ", pointsSource);
+
+						selectedOutboundTicketType = selectedOutboundTicketType ? selectedOutboundTicketType : null;
+						selectedInboundTicketType = selectedInboundTicketType ? selectedInboundTicketType : null;
+						// for (var i = 0; pointsSource.value.length > i; i++) {
+						// 	obj = pointsSource.value[i];
+						// 	// OUTBOUND
+						// 	if (obj.TicketTypeCode == selectedOutboundTicketType && obj.TravelClassCode == selectedOutboundTrClass) {
+						// 		if (obj.hasOwnProperty('PointsCost')) {
+						// 			pointsCost += obj.PointsCost * parseInt(quantity);
+						// 		}
+						// 	}
+						// 	// INBOUND
+						// 	if (obj.TicketTypeCode == selectedInboundTicketType && obj.TravelClassCode == selectedInboundTrClass) {
+						// 		if (obj.hasOwnProperty('PointsCost')) {
+						// 			pointsCost += obj.PointsCost * parseInt(quantity);
+						// 		}
+						// 	}
+						// }
+
+						console.log("rewardIds ");
+
+						pointsCost = rewardIds[2] * parseInt(quantity) + rewardIds[3] * parseInt(quantity);
+
+						setPointsCost(pointsCost, rewardIds[0], rewardIds[1]);
+					}
+				}
+
+				function getRewardId() {
+					console.log("getRewardId");
+					var selectedOutboundTrClass    = '{!selectedOutboundTrClass}';
+					var selectedOutboundTicketType = '{!selectedOutboundTicketType}';
+					var selectedInboundTrClass     = '{!selectedInboundTrClass}';
+					var selectedInboundTicketType  = '{!selectedInboundTicketType}';
+					var selectedOrigin			   = '{!selectedOrigin}';
+					var selectedDestination		   = '{!selectedDestination}';
+					var pointsSource 			   = JSON.parse('{!ticketDataSource}').value;
+					var matchedOutboundReward	   = [];
+					var matchedInboundReward	   = [];
+					var outboundReturn;
+					var inboundReturn;
+					var outboundPoints;
+					var inboundPoints;
+
+					console.log(pointsSource);
+
+					//calculating outboundRewardID
+					matchedOutboundReward = pointsSource.filter(obj => obj.TravelClassCode == selectedOutboundTrClass ||
+							obj.TravelClassCode == null);
+					matchedOutboundReward = matchedOutboundReward.filter(obj => obj.TicketTypeCode == selectedOutboundTicketType ||
+							obj.TicketTypeCode == null);
+					matchedOutboundReward = matchedOutboundReward.filter(obj => obj.OriginCode == selectedOrigin ||
+							obj.OriginCode == null);
+					matchedOutboundReward = matchedOutboundReward.filter(obj => obj.DestinationCode == selectedDestination ||
+							obj.DestinationCode == null);
+
+					if (matchedOutboundReward.length > 1) {
+						var arr = matchedOutboundReward.filter(obj => obj.DestinationCode == selectedDestination);
+
+						if (arr.length > 1) {
+							arr = arr.filter(obj => obj.OriginCode == selectedOrigin);
+						}
+						if (arr.length > 1) {
+							arr = arr.filter(obj => obj.TicketTypeCode == selectedOutboundTicketType);
+						}
+						if (arr.length > 1) {
+							arr = arr.filter(obj => obj.TravelClassCode == selectedOutboundTrClass);
+						}
+
+						matchedOutboundReward = arr;
+					}
+
+					if (matchedOutboundReward.length === 1) {
+						console.log("outdound set");
+						outboundReturn = matchedOutboundReward[0].RewardId;
+						outboundPoints = matchedOutboundReward[0].PointsCost;
+					} else if (matchedOutboundReward.length === 0) {
+						outboundReturn = '';
+						outboundPoints = 0;
+					}
+
+					//calculating inboundRewardID
+					matchedInboundReward = pointsSource.filter(obj => obj.TravelClassCode == selectedInboundTrClass ||
+							obj.TravelClassCode == null);
+					matchedInboundReward = matchedInboundReward.filter(obj => obj.TicketTypeCode == selectedInboundTicketType ||
+							obj.TicketTypeCode == null);
+					matchedInboundReward = matchedInboundReward.filter(obj => obj.OriginCode == selectedDestination ||
+							obj.OriginCode == null);
+					matchedInboundReward = matchedInboundReward.filter(obj => obj.DestinationCode == selectedOrigin ||
+							obj.DestinationCode == null);
+
+					if (matchedInboundReward.length > 1) {
+						var arr = matchedInboundReward.filter(obj => obj.OriginCode == selectedDestination);
+
+						if (arr.length > 1) {
+							arr = arr.filter(obj => obj.DestinationCode == selectedOrigin);
+						}
+						if (arr.length > 1) {
+							arr = arr.filter(obj => obj.TicketTypeCode == selectedInboundTicketType);
+						}
+						if (arr.length > 1) {
+							arr = arr.filter(obj => obj.TravelClassCode == selectedInboundTrClass);
+						}
+
+						matchedInboundReward = arr;
+					}
+
+					if (matchedInboundReward.length === 1) {
+						console.log("indound set");
+						inboundReturn = matchedInboundReward[0].RewardId;
+						inboundPoints = matchedInboundReward[0].PointsCost;
+					} else if (matchedInboundReward.length === 0) {
+						inboundReturn = '';
+						inboundPoints = 0;
+					}
+
+					return [outboundReturn, inboundReturn, outboundPoints, inboundPoints];
+				}
+			</script>
+		</apex:outputPanel>
+	</c:LoyaltyTierAccessCheck>
+</apex:page>

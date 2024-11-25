@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Awaiting_Approval_Team_AUM</fullName>
+    <booleanFilter>1 AND (2 OR 3)</booleanFilter>
+    <columns>CREATED_DATE</columns>
+    <columns>NAME</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>Payment_Amount__c</columns>
+    <columns>Payment_Currency__c</columns>
+    <columns>PNR__c</columns>
+    <columns>Comments__c</columns>
+    <columns>Compensation_Type__c</columns>
+    <columns>Reason_Code__c</columns>
+    <columns>Comp_Approval_Status__c</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Comp_Approval_Status__c</field>
+        <operation>equals</operation>
+        <value>Awaiting Approval</value>
+    </filters>
+    <filters>
+        <field>CREATEDBY_USER</field>
+        <operation>equals</operation>
+        <value>Edvine Mola,Jordan Braeckman,Kevin Duberti,Idriss Duberti,Sara Chacor,Emmanuel Gaspar</value>
+    </filters>
+    <filters>
+        <field>CREATEDBY_USER</field>
+        <operation>equals</operation>
+        <value>Isaline Ronvaux,Lise Dehard,Trinity Ngudie Katende,Jamila EL HALLA,Jade Ghouailia,Amina Ketia MBALA,Cassandra Heyvaert,Mariam ARFAOUI,Estelle Jadin,Florence Beaurir</value>
+    </filters>
+    <label>Awaiting Approval - Team AUM</label>
+</ListView>

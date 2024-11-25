@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>AILLEURS BUSINESS</fullName>
+        <default>false</default>
+        <label>AILLEURS BUSINESS</label>
+    </customValue>
+    <customValue>
+        <fullName>ALTOUR</fullName>
+        <default>false</default>
+        <label>ALTOUR</label>
+    </customValue>
+    <customValue>
+        <fullName>AMEX GBT</fullName>
+        <default>false</default>
+        <label>AMEX GBT</label>
+    </customValue>
+    <customValue>
+        <fullName>AMPLITUDE VOYAGES</fullName>
+        <default>false</default>
+        <label>AMPLITUDE VOYAGES</label>
+    </customValue>
+    <customValue>
+        <fullName>APPLE</fullName>
+        <default>false</default>
+        <label>APPLE</label>
+    </customValue>
+    <customValue>
+        <fullName>ATPI</fullName>
+        <default>false</default>
+        <label>ATPI</label>
+    </customValue>
+    <customValue>
+        <fullName>BCD TRAVEL</fullName>
+        <default>false</default>
+        <label>BCD TRAVEL</label>
+    </customValue>
+    <customValue>
+        <fullName>BLUE CUBE</fullName>
+        <default>false</default>
+        <label>BLUE CUBE</label>
+    </customValue>
+    <customValue>
+        <fullName>BUSINESS FIRST PARTNERSHIP</fullName>
+        <default>false</default>
+        <label>BUSINESS FIRST PARTNERSHIP</label>
+    </customValue>
+    <customValue>
+        <fullName>CAP 5 VOYAGES</fullName>
+        <default>false</default>
+        <label>CAP 5 VOYAGES</label>
+    </customValue>
+    <customValue>
+        <fullName>CENTRAL VOYAGES</fullName>
+        <default>false</default>
+        <label>CENTRAL VOYAGES</label>
+    </customValue>
+    <customValue>
+        <fullName>CLARITY</fullName>
+        <default>false</default>
+        <label>CLARITY</label>
+    </customValue>
+    <customValue>
+        <fullName>CMS VACANCES</fullName>
+        <default>false</default>
+        <label>CMS VACANCES</label>
+    </customValue>
+    <customValue>
+        <fullName>CTM</fullName>
+        <default>false</default>
+        <label>CTM</label>
+    </customValue>
+    <customValue>
+        <fullName>CWT</fullName>
+        <default>false</default>
+        <label>CWT</label>
+    </customValue>
+    <customValue>
+        <fullName>EGENCIA</fullName>
+        <default>false</default>
+        <label>EGENCIA</label>
+    </customValue>
+    <customValue>
+        <fullName>FCM</fullName>
+        <default>false</default>
+        <label>FCM</label>
+    </customValue>
+    <customValue>
+        <fullName>GLOBAL TRAVEL COLLECTION</fullName>
+        <default>false</default>
+        <label>GLOBAL TRAVEL COLLECTION</label>
+    </customValue>
+    <customValue>
+        <fullName>GLOBEO</fullName>
+        <default>false</default>
+        <label>GLOBEO</label>
+    </customValue>
+    <customValue>
+        <fullName>GRAY DAWES</fullName>
+        <default>false</default>
+        <label>GRAY DAWES</label>
+    </customValue>
+    <customValue>
+        <fullName>HAVAS VOYAGE</fullName>
+        <default>false</default>
+        <label>HAVAS VOYAGE</label>
+    </customValue>
+    <customValue>
+        <fullName>INTERMONDE</fullName>
+        <default>false</default>
+        <label>INTERMONDE</label>
+    </customValue>
+    <customValue>
+        <fullName>MASTERS IN TRAVEL</fullName>
+        <default>false</default>
+        <label>MASTERS IN TRAVEL</label>
+    </customValue>
+    <customValue>
+        <fullName>NAVAN</fullName>
+        <default>false</default>
+        <label>NAVAN</label>
+    </customValue>
+    <customValue>
+        <fullName>OMNIA TRAVEL</fullName>
+        <default>false</default>
+        <label>OMNIA TRAVEL</label>
+    </customValue>
+    <customValue>
+        <fullName>REED &amp; MACKAY</fullName>
+        <default>false</default>
+        <label>REED &amp; MACKAY</label>
+    </customValue>
+    <customValue>
+        <fullName>SCHIPHOL TRAVEL</fullName>
+        <default>false</default>
+        <label>SCHIPHOL TRAVEL</label>
+    </customValue>
+    <customValue>
+        <fullName>TAG</fullName>
+        <default>false</default>
+        <label>TAG</label>
+    </customValue>
+    <customValue>
+        <fullName>TRANSVINCENNES</fullName>
+        <default>false</default>
+        <label>TRANSVINCENNES</label>
+    </customValue>
+    <customValue>
+        <fullName>TRAVEL PLUS</fullName>
+        <default>false</default>
+        <label>TRAVEL PLUS</label>
+    </customValue>
+    <customValue>
+        <fullName>TURQUOISE VOYAGES</fullName>
+        <default>false</default>
+        <label>TURQUOISE VOYAGES</label>
+    </customValue>
+    <customValue>
+        <fullName>UNIGLOBE</fullName>
+        <default>false</default>
+        <label>UNIGLOBE</label>
+    </customValue>
+    <customValue>
+        <fullName>VCK TRAVEL</fullName>
+        <default>false</default>
+        <label>VCK TRAVEL</label>
+    </customValue>
+    <customValue>
+        <fullName>VELOCE TRAVEL</fullName>
+        <default>false</default>
+        <label>VELOCE TRAVEL</label>
+    </customValue>
+    <customValue>
+        <fullName>VOYAGEXPERT</fullName>
+        <default>false</default>
+        <label>VOYAGEXPERT</label>
+    </customValue>
+    <customValue>
+        <fullName>WE GOOD TRAVEL</fullName>
+        <default>false</default>
+        <label>WE GOOD TRAVEL</label>
+    </customValue>
+    <masterLabel>TMC</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

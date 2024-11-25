@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Loyalty_Tier__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( 
+ISPICKVAL(Contact.Loyalty_Status__c,&quot;EPP Default Tier&quot;),&quot;Classique&quot;, 
+IF( 
+OR( 
+ISPICKVAL(Contact.Loyalty_Status__c,&quot;Carte Classique&quot;), 
+ISPICKVAL(Contact.Loyalty_Status__c,&quot;Carte Classique (Corporate)&quot;), 
+ISPICKVAL(Contact.Loyalty_Status__c,&quot;Carte Classique (Eurostar Staff)&quot;)), &quot;Avantage&quot;, 
+IF( 
+OR( 
+ISPICKVAL(Contact.Loyalty_Status__c,&quot;Carte Blanche&quot;), 
+ISPICKVAL(Contact.Loyalty_Status__c,&quot;Carte Blanche (Eurostar Staff)&quot;), 
+ISPICKVAL(Contact.Loyalty_Status__c,&quot;Carte Blanche(Corporate)&quot;), 
+ISPICKVAL(Contact.Loyalty_Status__c,&quot;Carte Blanche (VIP)&quot;)),&quot;Carte Blanche&quot;, 
+IF( 
+ISPICKVAL(Contact.Loyalty_Status__c,&quot;Carte Blanche (Elite)&quot;),&quot;Carte Blanche (Elite)&quot;,NULL 
+))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Loyalty Tier</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

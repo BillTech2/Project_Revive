@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Shared_With_Members_Ids__c</fullName>
+    <description>This field is auto-populated when points are shared/donated to other members and is used to store the IDs of other members of the program who are receiving points from the current member. A member can share points with up-to-up for other members within the defined program period.</description>
+    <inlineHelpText>A member can share a limited value of points with other members within the defined program period</inlineHelpText>
+    <label>Shared With Members Ids</label>
+    <length>131072</length>
+    <trackHistory>false</trackHistory>
+    <type>LongTextArea</type>
+    <visibleLines>2</visibleLines>
+</CustomField>

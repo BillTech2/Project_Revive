@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Invoice_URL__c</fullName>
+    <externalId>false</externalId>
+    <formula>&#39;https://www.eurostar.com/customer-dashboard/&#39; +
+ IF( ISPICKVAL( Member__r.Preferred_Language__pc , &#39;English (UK)&#39;) , &#39;en&#39;, 
+ IF(ISPICKVAL( Member__r.Preferred_Language__pc , &#39;French&#39;), &#39;fr&#39;, 
+ IF(ISPICKVAL( Member__r.Preferred_Language__pc , &#39;Dutch&#39;), &#39;nl&#39;, 
+ IF(ISPICKVAL( Member__r.Preferred_Language__pc , &#39;German&#39;), &#39;de&#39;, &#39;en&#39;) ) ) ) +
+&#39;/subscriptions/view-invoice?&#39; +
+&#39;type=invoice&amp;&#39; + 
+&#39;orderNumber=&#39; +  Order_Number__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Invoice URL</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

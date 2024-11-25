@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>High_Influencer__c</fullName>
+    <formula>Followers   &gt;=  5000
+||
+( Name = &quot;EurostarGeorge&quot;
+||
+Name = &quot;EurostarJustinp&quot;
+||
+Name = &quot;TMAndrewD&quot;
+||
+Name = &quot;Sonja1Tm&quot;
+||
+Name = &quot;LMEEurostar&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>High Influencer</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

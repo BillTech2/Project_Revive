@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Junior_Traveller_Send_mail</fullName>
+    <active>true</active>
+    <description>Cannot send email without entering Booking Ref id</description>
+    <errorConditionFormula>AND( Send_Email__c = true , ISBLANK( Booking_Ref_Number__c ))</errorConditionFormula>
+    <errorDisplayField>Booking_Ref_Number__c</errorDisplayField>
+    <errorMessage>Please enter Booking Ref Number before sending email</errorMessage>
+</ValidationRule>

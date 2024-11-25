@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Invalid_Contact_Phone__c</fullName>
+    <description>This formula is here to help us prevent from sending invalid/polluted phone numbers to Marketing Cloud. There is a filter in Marketing Cloud Imports that excludes phone numbers marked as invalid here.</description>
+    <formula>IF(ISBLANK(Contact_Phone__c), true, false)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Marketing Cloud Invalid Phone</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,130 @@
+/**
+ * Created by JU on 27.09.2022.
+ */
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: grey;
+    border-radius: 10px;
+}
+
+.page-body{
+    padding:4%;
+}
+
+.page-body_content{
+    height:100%;
+}
+
+.generalText{
+    font-size: 16px;
+    line-height: 20px;
+    font-family: 'Pembroke-Regular', 'Arial', 'Sans-Serif';
+    color: #333333;
+}
+
+.greeting{
+    padding-bottom: 3%;
+}
+
+.addCommentsForm{
+    padding-top: 5%;
+}
+
+
+
+.parkingPage{
+    font-size: 25px;
+    line-height: 30px;
+    text-align: center;
+    font-family: 'Pembroke-Regular', 'Arial', 'Sans-Serif';
+    color: #333333;
+}
+
+.historyModal{
+    width:100%;
+    background-color: #F5F5F5;
+    padding: 5px;
+    margin-top: 2%;
+    border-color: #8e8e8e;
+    border-radius:  4px;
+    box-shadow: 0 2px 0 0 #C8C8C8, 0 3px 2px 0 rgb(0 0 0 / 20%);
+    max-height: 40vh;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+
+.historyText-body{
+    font-size: 15px;
+    line-height: 15px;
+    font-family: 'Pembroke-Regular', 'Arial', 'Sans-Serif';
+    color: #333333;
+    padding-bottom: 2%;
+    font-weight: lighter;
+}
+
+.historyText-header{
+    padding-bottom: 2px;
+    font-size: 15px;
+    line-height: 15px;
+    font-family: 'Pembroke-Regular', 'Arial', 'Sans-Serif';
+    color: #333333;
+    padding-top: 2px;
+    font-weight: bold;
+}
+
+.slds-button.confirm-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: inline-block;
+    border-radius: 4px;
+    background-clip: padding-box;
+    font-style: normal;
+    -webkit-text-decoration: none;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    width: 350px;
+    position: relative;
+    left:50%;
+    transform: translate(-50%);
+    -webkit-transition: background-color 0.2s ease-out;
+    transition: background-color 0.2s ease-out;
+    cursor: pointer;
+    font-family: Pembroke,Arial,sans-serif;
+    font-size: 18px;
+    line-height: 22px;
+    padding: 16px 30px;
+    font-weight: 500;
+    border: none;
+    color: #55565A;
+    background-color: #FBDD0F;
+    box-shadow: 0 2px 0 0 #d2b82b, 0 3px 2px 0 rgb(0 0 0 / 20%);
+    height: 100%;
+}
+
+.slds-button.confirm-button:hover {
+    color:inherit;
+    background-color:#ffea6a;
+}
+
+.slds-button.confirm-button:focus {
+    box-shadow:none;
+}
+
+.slds-button.confirm-button:disabled {
+    background-color:#E6E6E7;
+    box-shadow:none;
+    cursor:default;
+    color:#55565A;
+    border-color:#E6E6E7;
+}

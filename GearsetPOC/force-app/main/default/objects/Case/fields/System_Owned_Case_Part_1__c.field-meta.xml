@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>System_Owned_Case_Part_1__c</fullName>
+    <formula>OwnerId = &#39;00Gb00000041ssA&#39;
+||
+OwnerId =&#39;00Gb00000041ssF&#39;
+||
+OwnerId =&#39;00Gb0000002r4sO&#39;
+||
+OwnerId =&#39;00Gb00000041vYC&#39;
+||
+OwnerId =&#39;00Gb00000012onb&#39;
+||
+OwnerId =&#39;00Gb00000041wHE&#39;
+||
+OwnerId =&#39;00Gb00000041w0h&#39;
+||
+OwnerId =&#39;00Gb00000041w0c&#39;
+||
+OwnerId =&#39;00Gb0000001lZIY&#39;
+||
+OwnerId =&#39;00Gb0000002r4s9&#39;
+||
+OwnerId =&#39;00Gb00000044l8c&#39;
+||
+OwnerId =&#39;00Gb00000012s6U&#39;
+||
+OwnerId =&#39;00Gb00000012onl&#39;
+||
+OwnerId =&#39;00Gb0000002rBFW&#39;
+||
+OwnerId =&#39;00Gb00000014JuM&#39;
+||
+OwnerId =&#39;00Gb00000012onW&#39;
+||
+OwnerId =&#39;00Gb0000002r14p&#39;
+||
+OwnerId =&#39;00Gb0000002r14k&#39;
+||
+OwnerId =&#39;00Gb0000002r14u&#39;
+||
+OwnerId =&#39;00Gb0000002Bk9V&#39;
+||
+OwnerId =&#39;00Gb00000012onq&#39;
+||
+OwnerId =&#39;00Gb0000002r9HL&#39;</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>System Owned Case (Part 1)</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

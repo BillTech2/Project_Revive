@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Company_Cant_Be_Empty_For_Status_Managed</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+  ISPICKVAL(Tmc_Managed_Status__c, &quot;Managed&quot;),
+  ISBLANK(Tmc_Managed_Company__c)
+)</errorConditionFormula>
+    <errorDisplayField>Tmc_Managed_Company__c</errorDisplayField>
+    <errorMessage>Tmc Managed Company cannot be empty if Tmc Managed Status is Managed</errorMessage>
+</ValidationRule>

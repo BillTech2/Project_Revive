@@ -1,0 +1,152 @@
+<apex:page showHeader="false" sidebar="false" controller="CustomerMergeController">
+<script type="text/javascript">
+    var leftAccountID;
+    var rightAccountID;
+    var errorMesg;
+    function mergeAcc(){
+        if(leftAccountID==null || rightAccountID==null){
+            if(leftAccountID==null){
+                errorMesg = '{!$Label.MergeAccounts_ChooseLeft}';
+                if(rightAccountID==null){
+                    errorMesg = '{!$Label.MergeAccounts_ChooseAccounts}';
+                }
+            }
+            else {
+                errorMesg = '{!$Label.MergeAccounts_ChooseRight}';
+            }
+            alert(errorMesg);
+        }
+        else if (leftAccountID == rightAccountID){
+            alert('{!$Label.MergeAccounts_ChooseDifferent}');
+        }
+        else{
+            window.open('/apex/MergePage?firstId='+leftAccountID+'&secondId='+rightAccountID);
+        }
+    }
+
+
+    function func()
+    {
+        alert('function calling');
+    }
+ 
+</script>
+    <apex:form >
+        <apex:pageBlock >
+
+            <apex:pageBlockSection columns="2">
+
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="{!$Label.MergeAccounts_SelectSearchCriteria}"></apex:outputLabel>
+                    <apex:selectList multiselect="false" size="1" value="{!searchCriteriaLeft}">
+                        <apex:selectOptions value="{!items}"/>
+                    </apex:selectList>
+                </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="{!$Label.MergeAccounts_SelectSearchCriteria}"></apex:outputLabel>
+                    <apex:selectList multiselect="false" size="1" value="{!searchCriteriaRight}">
+                        <apex:selectOptions value="{!items}"/>
+                    </apex:selectList>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>    
+
+            <apex:pageBlockSection columns="2">
+                <apex:pageBlockSectionItem >
+                    <apex:inputText value="{!searchStringLeft}"></apex:inputText>
+                    <apex:commandButton value="{!$Label.MergeAccounts_FindCustomers}" action="{!leftSearch}" reRender="LeftTable,errorLeft,LeftTrigger" onclick="changeWarningStatus('left','block',true)" oncomplete="changeWarningStatus('left','none',false)" id="leftButton"></apex:commandButton>
+
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+
+                    <apex:inputText value="{!searchStringRight}"></apex:inputText>
+                    <apex:commandButton value="{!$Label.MergeAccounts_FindCustomers}" action="{!rightSearch}" reRender="rightTable,errorRight,RightTrigger" onclick="changeWarningStatus('right','block',true)" oncomplete="changeWarningStatus('right','none',false)" id="rightButton"></apex:commandButton>
+
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+
+
+                        <apex:pageBlockSection columns="2">
+                <apex:pageBlockSectionItem >
+                    
+                    <p id="leftWait" style="
+                    display: none;
+                    border-left: 6px solid blue;
+                    height: 100%;
+                    background-color: lightgrey;
+                    text-align: center;
+                    font-size: 18px;
+                    color: blue;
+                    width: 100%;"> Search in progress, please wait</p>
+                </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem >
+                <p id="rightWait"  style="    border-left: 6px solid blue;
+                display: none;
+                height: 100%;
+                background-color: lightgrey;
+                text-align: center;
+                font-size: 18px;
+                color: blue;
+                width: 100%;"> Search in progress, please wait</p>
+                    
+                </apex:pageBlockSectionItem>
+
+            </apex:pageBlockSection>
+
+            <apex:pageBlockSection columns="2">
+                <apex:pageBlockSectionItem >
+                    <apex:pageMessages id="errorLeft"></apex:pageMessages>
+                    
+                </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem >
+                    <apex:pageMessages id="errorRight"></apex:pageMessages>
+                    
+                </apex:pageBlockSectionItem>
+
+            </apex:pageBlockSection>
+
+            <apex:pageBlockSection columns="2">
+                <apex:pageBlockSectionItem >
+
+                    <apex:pageBlockTable value="{!leftWrap}" var="item1" id="LeftTable">
+                        <apex:column >
+                            <input type="radio" name="left" value="{!item1.acc.Id}" onclick="leftAccountID = this.value; console.log(leftAccountID);" />
+                        </apex:column>
+                        <apex:column value="{!item1.acc.Name}" headerValue="Name"/>
+                        <apex:column value="{!item1.acc.PersonEmail}" headerValue="Email"/>
+                        <apex:column value="{!item1.acc.Facebook_Account__c}" headerValue="Facebook"/>
+                        <apex:column value="{!item1.acc.Twitter_Handle_Search__c}" headerValue="Twitter"/>
+                        <apex:column value="{!item1.acc.PersonMobilePhone}" headerValue="Phone"/>
+                        <apex:column value="{!item1.acc.Id}" headerValue="Id"/>
+                    </apex:pageBlockTable>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+
+                    <apex:pageBlockTable value="{!rightWrap}" var="item2" id="rightTable">
+                        <apex:column >
+                            <input type="radio" name="right" value="{!item2.acc.Id}" onchange="rightAccountID = this.value; console.log(rightAccountID);" />
+                        </apex:column>
+                        <apex:column value="{!item2.acc.Name}" headerValue="Name"/>
+                        <apex:column value="{!item2.acc.PersonEmail}" headerValue="Email"/>
+                        <apex:column value="{!item2.acc.Facebook_Account__c}" headerValue="Facebook"/>
+                        <apex:column value="{!item2.acc.Twitter_Handle_Search__c}" headerValue="Twitter"/>
+                        <apex:column value="{!item2.acc.PersonMobilePhone}" headerValue="Phone"/>
+                        <apex:column value="{!item2.acc.Id}" headerValue="Id"/>
+                    </apex:pageBlockTable>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <div align="center">
+                <button reRender = "" onclick="mergeAcc();" style="width:10%; height:25px">{!$Label.MergeAccounts_Next}</button>
+            </div>
+        </apex:pageBlock>
+        <script>
+
+    function changeWarningStatus(param,displayType,isDiabled){
+        document.querySelector('[id*="'+param+'Wait"]').style.display = displayType;
+        document.querySelector('[id*="'+param+'Button"]').disabled = isDiabled;
+    }
+        </script>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Routes__c</fullName>
+    <label>Routes</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>France - Belgium</fullName>
+                <default>false</default>
+                <label>France - Belgium</label>
+            </value>
+            <value>
+                <fullName>France - Germany</fullName>
+                <default>false</default>
+                <label>France - Germany</label>
+            </value>
+            <value>
+                <fullName>France - The Netherlands</fullName>
+                <default>false</default>
+                <label>France - The Netherlands</label>
+            </value>
+            <value>
+                <fullName>Belgium - Germany</fullName>
+                <default>false</default>
+                <label>Belgium - Germany</label>
+            </value>
+            <value>
+                <fullName>Belgium - The Netherlands</fullName>
+                <default>false</default>
+                <label>Belgium - The Netherlands</label>
+            </value>
+            <value>
+                <fullName>London - Belgium</fullName>
+                <default>false</default>
+                <label>London - Belgium</label>
+            </value>
+            <value>
+                <fullName>London - France</fullName>
+                <default>false</default>
+                <label>London - France</label>
+            </value>
+            <value>
+                <fullName>London - The Netherlands</fullName>
+                <default>false</default>
+                <label>London - The Netherlands</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Transaction_Journal_Process_Date__c</fullName>
+    <formula>DATETIMEVALUE(Subscription__r.Subscription_Confirm_Date__c + Subscription_Rules__r.Reward_points_interval__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Transaction Journal Process Date</label>
+    <required>false</required>
+    <type>DateTime</type>
+</CustomField>

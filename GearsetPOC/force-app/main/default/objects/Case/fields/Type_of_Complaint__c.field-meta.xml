@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type_of_Complaint__c</fullName>
+    <label>Type of Complaint</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Staff Complaint</fullName>
+                <default>false</default>
+                <label>Staff Complaint</label>
+            </value>
+            <value>
+                <fullName>Food Complaint</fullName>
+                <default>false</default>
+                <label>Food Complaint</label>
+            </value>
+            <value>
+                <fullName>Policy Complaint</fullName>
+                <default>false</default>
+                <label>Policy Complaint</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

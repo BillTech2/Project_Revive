@@ -1,0 +1,76 @@
+:host {
+    --lwc-fontSize2: 14px;
+    --slds-g-color-neutral-base-10: #1c1c1c;
+    --slds-g-color-neutral-base-50: #646463;
+    --slds-g-color-neutral-base-30: #1c1c1c;
+    --lwc-formLabelFontSize: 14px;
+    --slds-c-input-text-color: #646463;
+    --slds-c-textarea-spacing-block-start: 0.75rem;
+    --slds-c-textarea-spacing-block-end: 0.75rem;
+}
+
+.button-submit {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: inline-block;
+    border-radius: 4px;
+    background-clip: padding-box;
+    font-style: normal;
+    -webkit-text-decoration: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    text-align: center;
+    -webkit-transition: background-color 0.2s ease-out;
+    transition: background-color 0.2s ease-out;
+    cursor: pointer;
+    font-family: 'ABCSocial-Bold';
+    font-size: 18px;
+    line-height: 22px;
+    padding: 0.5rem 2rem;
+    font-weight: 500;
+    width: auto;
+    border: none;
+    color: #000000;
+    background-color: #ffc305;
+    /* box-shadow: 0 2px 0 0 #d2b82b, 0 3px 2px 0 rgb(0 0 0 / 20%); */
+}
+
+.button-submit:hover {
+    color: #000000;
+    background-color: #cc9c04;
+}
+
+.button-submit:focus {
+    box-shadow: none;
+}
+
+.button-submit:disabled {
+    background-color: #e6e6e7;
+    box-shadow: none;
+    cursor: default;
+    color: #55565a;
+    border-color: #e6e6e7;
+}
+
+.slds-form-element {
+    width: 100%;
+}
+
+.slds-input {
+    padding: 13px;
+}
+
+.font-family {
+    font-family: 'ABCSocial-Regular';
+    color: #1c1c1a !important;
+}
+
+
+.combobox-input {
+    font-size: 14px;
+}
+
+.input-custom {
+    font-size: 16px;
+}

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Language_Icon__c</fullName>
+    <externalId>false</externalId>
+    <formula>Case(Preferred_Language__c, 
+&quot;Dutch&quot;       ,Image(&quot;/servlet/servlet.FileDownload?file=015b0000000KFcx&quot;,&quot;Dutch&quot;       ,20,20),
+&quot;English (UK)&quot;,Image(&quot;/servlet/servlet.FileDownload?file=015b0000000KFdC&quot;,&quot;English (UK)&quot;,20,20),
+&quot;English&quot;     ,Image(&quot;/servlet/servlet.FileDownload?file=015b0000000KFdC&quot;,&quot;English&quot;     ,20,20),
+&quot;English (US)&quot;,Image(&quot;/servlet/servlet.FileDownload?file=015b0000000KFdH&quot;,&quot;English (US)&quot;,20,20),
+&quot;French&quot;      ,Image(&quot;/servlet/servlet.FileDownload?file=015b0000000KFcs&quot;,&quot;French&quot;      ,20,20),
+&quot;German&quot;      ,Image(&quot;/servlet/servlet.FileDownload?file=015b0000000KFdW&quot;,&quot;German&quot;      ,20,20),
+&quot;Italian&quot;     ,Image(&quot;/servlet/servlet.FileDownload?file=015b0000000KFdb&quot;,&quot;Italian&quot;     ,20,20),
+&quot;Spanish&quot;     ,Image(&quot;/servlet/servlet.FileDownload?file=015b0000000KFdg&quot;,&quot;Spanish&quot;     ,20,20),
+&quot;Portuguese&quot;  ,Image(&quot;/servlet/servlet.FileDownload?file=015b0000000p7oY&quot;,&quot;Portuguese&quot;  ,20,20),
+null)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Language Icon</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

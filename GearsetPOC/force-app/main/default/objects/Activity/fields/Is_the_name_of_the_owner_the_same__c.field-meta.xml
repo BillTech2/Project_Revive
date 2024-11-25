@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_the_name_of_the_owner_the_same__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Is the name of the owner the same as the EU pet passport or (animal/pet) health certificate?</description>
+    <inlineHelpText>Is the name of the owner the same as the EU pet passport or (animal/pet) health certificate?</inlineHelpText>
+    <label>Is the name of the owner the same?</label>
+    <type>Checkbox</type>
+</CustomField>

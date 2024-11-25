@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Field_Check</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+OR(
+ISPICKVAL(Status__c, &quot;In Progress&quot;) ,
+ISPICKVAL(Status__c, &quot;Closed&quot;)
+),
+OR(
+ISBLANK( TEXT(Assesment_Type__c )),
+ISBLANK( QA_Assessor__c )
+)
+)</errorConditionFormula>
+    <errorMessage>QA Assessor &amp; Type must be populated.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Corp_Tracking_Type_And_Code__c</fullName>
+    <label>Corporate Code</label>
+    <referenceTo>Corp_Tracking_Type_and_Code__c</referenceTo>
+    <relationshipLabel>Account CTCs</relationshipLabel>
+    <relationshipName>Account_CTCs</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

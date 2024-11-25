@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Trade_Account_Must_be_Active</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISNEW()
+&amp;&amp;
+NOT(ISPICKVAL(Company__r.Status_of_Account__c,&quot;Active&quot;))</errorConditionFormula>
+    <errorMessage>Inactive accounts cannot hold bookings</errorMessage>
+</ValidationRule>

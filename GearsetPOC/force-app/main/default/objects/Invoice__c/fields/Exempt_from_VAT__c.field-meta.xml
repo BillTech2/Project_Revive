@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Exempt_from_VAT__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>= TRUE if no VAT must be applied for the related Subscription(s). In this case, a proof document must be attached.</description>
+    <label>Exempt from VAT</label>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

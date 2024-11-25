@@ -1,0 +1,115 @@
+<!--
+ - Created by JU on 27.09.2022.
+ -->
+
+<!-- Track Case -->
+<template>
+
+    <div if:true={showSpinner}>
+        <lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
+    </div>
+
+    <div if:false={showSpinner}>
+        <div class = "page-body">
+
+            <div class = "page-body_content" if:true={isParkingPage}>
+
+                
+                <div class="parkingPage" if:true={isParkingPageLabel}>
+                    {ParkingPageTr}
+                </div>
+
+                <div if:true={isSaveSuccessful}>
+                    <div class="parkingPage" >
+                        {SuccessfulUpdateTr}
+                    </div>
+                </div>
+
+                <div if:true={isSaveFailed}>
+                    <div class="parkingPage" >
+                        {FailUpdateTr}
+                    </div>
+                </div>
+
+            </div>
+
+
+
+            <div class = "page-body_content">
+                <div if:false={isParkingPage}>
+                    <div class="greeting">
+                        <p class="generalText">{GreetingTr} {customerName},</p>
+                        <div if:true={isClosedMoreThanTenWeeks}><lightning-formatted-rich-text class="generalText" value={ClosedMoreThanTenWeeksTr}></lightning-formatted-rich-text></div>
+                        <div if:true={isOpenCase}><p class="generalText">{OpenCaseTr}</p></div>
+                        <div if:true={isClosedLessThanTenWeeks}><p class="generalText">{ClosedLessThanTenWeeksTr}</p></div>
+
+                    </div>
+
+                    <a if:true={displayRedirectToContactUs} href={label.ContactUsButtonLink} class="slds-button confirm-button">
+                        {redirectToContactUsTr}</a>
+
+                    <!-- <button if:true={displayRedirectToContactUs} class="slds-button slds-button_full-width slds-align_absolute-center confirm-button"
+                            onclick={redirectToContactUs}>{label.redirectToContactUs}</button>
+
+                   <c-generic_button if:true={displayRedirectToContactUs} lang-code={langCode}
+                                      button-label-name="cu_ContactUs"
+                                      onbtnclick={redirectToContactUs}>
+                    </c-generic_button> -->
+
+                    <div if:true={displayQueryHistory}>
+                        <div class="generalText">{CaseHistoryTr}</div>
+                        <div class="historyModal">
+                            <div class="historyText-header">{CaseDescriptionTr}</div>
+                            <div class="historyText-body">{caseDescription}</div>
+                            <div class="historyText-header">{CommunicationHistoryTr}</div>
+                            <template for:each={emailMessages} for:item="email">
+
+                                <lightning-formatted-rich-text class="historyText-body" key ={email.Id} value={email.HtmlBody}>
+                                    </lightning-formatted-rich-text>
+                                <!-- <div class="historyText-body" >{email.TextBody}</div>-->
+                                </template>
+                            </div>
+                        </div>
+
+
+
+
+
+
+                        <div class="addCommentsForm" if:true={displayAddCommentsForm}>
+                            <div class="slds-form-element">
+                                <label class="generalText">{addInfoTr}</label>
+                                <div class="slds-form-element__control">
+                                    <div class="slds-text-body_small slds-text-color_error" if:true={typeSomethingComment}>{typeSomeTextTr}</div>
+                                    <lightning-textarea name={inputLabelName} placeholder={inputPlaceholder} onchange={handleChange}>{value}</lightning-textarea>
+                                </div>
+                            </div>
+
+                            <!--<c-generic_fileuploader
+                                    lang-code={langCode}
+                            ></c-generic_fileuploader>-->
+                        <lightning-input label="" name="file uploader" onchange={handleFilesChange} type="file" multiple></lightning-input>
+
+
+                        <div class="slds-text-body_small slds-text-color_error">{fileNames}
+                            <template if:true={showLoadingSpinner} class="slds-is-relative" style="min-height: 50vh;">
+                                <lightning-spinner class="slds-is-fixed" alternative-text="loading......" size="medium"></lightning-spinner>
+                            </template>
+                        </div><br/>
+                        <button class="slds-button slds-button_full-width slds-align_absolute-center confirm-button"
+                                onclick={submitButton}>{trSubmitTr}</button>
+                     <!--   <c-generic_button lang-code={langCode}
+                                          button-label-name="cu_Submit"
+                                          onbtnclick={submitButton}>
+                        </c-generic_button> -->
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</template>

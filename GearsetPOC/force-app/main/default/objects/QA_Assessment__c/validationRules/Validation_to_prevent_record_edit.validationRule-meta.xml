@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validation_to_prevent_record_edit</fullName>
+    <active>false</active>
+    <description>The above stated validation rule fires when the currently logged in User&#39;s Id who is accessing the record is not the same as the Reocrd&#39;s OwnerId field value</description>
+    <errorConditionFormula>$User.Id &lt;&gt; OwnerId</errorConditionFormula>
+    <errorMessage>You cannot edit this record if you are not the record owner</errorMessage>
+</ValidationRule>

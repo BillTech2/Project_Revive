@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Case_Train_Required</fullName>
+    <active>false</active>
+    <description>The customer has to chose a train if he wants to submit the disruption form</description>
+    <errorConditionFormula>AND
+(
+	ISBLANK( Train__c     ),
+	TEXT(Origin) = &quot;Disruption Web&quot;
+)</errorConditionFormula>
+    <errorDisplayField>Train__c</errorDisplayField>
+    <errorMessage>Please chose a train</errorMessage>
+</ValidationRule>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Upload_E_Certificate</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    NOT($Permission.Integration_User),
+    AND(
+        Ecertificate_uploaded__c = False,
+        PRIORVALUE(Exempt_from_VAT__c) = False,
+        ISCHANGED(Exempt_from_VAT__c)
+    )
+)</errorConditionFormula>
+    <errorMessage>Upload E-Certificate before checking Exempt from VAT</errorMessage>
+</ValidationRule>

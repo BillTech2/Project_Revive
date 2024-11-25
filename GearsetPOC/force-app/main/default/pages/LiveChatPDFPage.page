@@ -1,0 +1,161 @@
+<apex:page renderAs="pdf" showHeader="false" sidebar="false" standardStylesheets="false" applyHtmlTag="false" docType="html-5.0" controller="LiveChatPDFController" language="{!userLang}">
+
+<head>
+
+
+    <style>
+/*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */progress,sub,sup{vertical-align:baseline}button,hr,input{overflow:visible}[type=checkbox],[type=radio],legend{box-sizing:border-box;padding:0}html{font-family:sans-serif;}body{margin:0}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background-color:transparent;-webkit-text-decoration-skip:objects}a:active,a:hover{outline-width:0}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}svg:not(:root){overflow:hidden}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}figure{margin:1em 40px}hr{box-sizing:content-box;height:0}button,input,select,textarea{font:inherit;margin:0}optgroup{font-weight:700}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:ButtonText dotted 1px}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{color:inherit;display:table;max-width:100%;white-space:normal}textarea{overflow:auto}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-input-placeholder{color:inherit;opacity:.54}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}
+    
+    </style>
+    
+    <style>
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* info */
+
+.info {
+    margin-bottom: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.info-table {
+    border: 1px solid #3d547e;
+    border-left: none;
+    border-spacing: 0;
+    table-layout: fixed;
+}
+
+.info-head,
+.info-option,
+.info-value {
+    padding: 5px 9px;
+}
+
+.info-head {
+    background-color: #3d547e;
+    color: #ffffff;
+    text-align: left;
+}
+
+.info-option,
+.info-value {
+    border-top: 1px solid #3d547e;
+    border-left: 1px solid #3d547e;
+}
+a {
+    color:#000000;
+}
+
+.transcript-info {
+    font-size: 14px;
+}
+.col1 { width: 110px; }
+.coln { width: 100%px; }
+    </style>
+
+</head>
+<body>
+
+
+    <apex:image value="{!URLFOR($Resource.LiveAgent, 'logo.png')}"/>
+    
+    <div class="info">
+        <table class="info-table">
+        <col class="col1"/>
+        <col class="coln"/>
+            <tr>
+                <th class="info-head" colspan="2">{!$Label.Live_Chat_Label_General_Info}</th>
+            </tr>
+            <tr>
+                <td class="info-option">{!$Label.Live_Chat_Label_Advisor}</td>
+                <td class="info-value">
+                    <apex:outputText value="{!advisor}"/>
+                </td>
+            </tr>
+            <tr>
+                <td class="info-option">{!$Label.Live_Chat_Label_Start_Date}</td>
+                <td class="info-value">
+                    <apex:outputText value="{0,date,dd/MM/yyyy}">
+                        <apex:param value="{!startTime}" /> 
+                    </apex:outputText>
+                </td>
+            </tr>
+            <tr>
+                <td class="info-option">{!$Label.Live_Chat_Label_Start_chat}</td>
+                <td class="info-value">
+                    <apex:outputText value="{0,date,HH:mm:ss }">
+                        <apex:param value="{!startTime}" /> 
+                    </apex:outputText>
+                </td>
+            </tr>
+            <tr>
+                <td class="info-option">{!$Label.Live_Chat_Label_End_chat}</td>
+                <td class="info-value">
+                    <apex:outputText value="{0,date,HH:mm:ss }">
+                        <apex:param value="{!endTime}" /> 
+                    </apex:outputText>
+                </td>
+            </tr>
+            <tr>
+                <td class="info-option">{!$Label.Live_Chat_Label_Duration}</td>
+                <td class="info-value">
+                    <apex:outputText value="{!totalHourFinal}"/>:<apex:outputText value="{0,date,mm:ss}">
+                        <apex:param value="{!duration}" /> 
+                    </apex:outputText>
+                </td>
+            </tr>
+        </table>
+    </div>
+    
+    <table class="info-table">
+        <tr>
+            <th class="info-head" colspan="2">{!$Label.Live_Chat_Label_Chat_Transcript}</th>
+        </tr>
+        <apex:repeat value="{!logLiveChat}" var="log">
+            <apex:outputPanel rendered="{!log.typeUser == 'agent'}" >
+                <tr>
+                    <td style="white-space: nowrap">
+                        <apex:outputText value="{0,date,HH:mm:ss }">
+                           <apex:param value="{!log.timeMessage}" /> 
+                        </apex:outputText>
+                    </td>
+                    <td>
+                        <strong><apex:outputText style="color: #3d547e; white-space: nowrap" value="{!log.nameUser}:"/></strong>
+                    </td>
+
+                    <td class="advisor">
+                        <apex:outputText style="color:#000000;" value="{!log.textMessage}" escape="false"/>
+                    </td>
+                </tr>
+            </apex:outputPanel>
+
+            <apex:outputPanel rendered="{!log.typeUser != 'agent'}" >
+                <tr>
+                    <td style="white-space: nowrap">
+                        <apex:outputText value="{0,date,HH:mm:ss }">
+                            <apex:param value="{!log.timeMessage}" /> 
+                        </apex:outputText>
+                    </td>
+                    <td >
+                        <strong><apex:outputText style="color: #3d547e; white-space: nowrap" value="{!log.nameUser}:"/></strong>
+                    </td>
+                    <td >
+                        <apex:outputText style="color:#000000; " value="{!log.textMessage}" escape="false"/>
+                    </td>
+                </tr>
+            </apex:outputPanel>       
+        </apex:repeat>
+    </table>
+  </body>
+</apex:page>

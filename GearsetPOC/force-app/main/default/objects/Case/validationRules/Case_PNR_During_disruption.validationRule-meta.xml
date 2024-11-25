@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Case_PNR_During_disruption</fullName>
+    <active>false</active>
+    <description>PNR have to contain 6 letters when the customer submit the disruption web form</description>
+    <errorConditionFormula>AND
+(
+	NOT(REGEX( PNR__c , &#39;[a-zA-Z0-9]{6}&#39;)),
+	TEXT(Origin) = &quot;Disruption Web&quot;
+)</errorConditionFormula>
+    <errorDisplayField>PNR__c</errorDisplayField>
+    <errorMessage>Sorry, that reference doesn’t match our records. It should be 6 letters long, with no numbers.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>GBP_Payment_Amount__c</fullName>
+    <formula>CASE( Payment_Currency__c , 
+&#39;GBP&#39;, Total_Compensation_Amt__c , 
+&#39;EUR&#39;, Total_Compensation_Amt__c / $Setup.Currency_Rate__c.EUR_Rate__c , 
+&#39;USD&#39;, Total_Compensation_Amt__c / $Setup.Currency_Rate__c.USD_Rate__c , 
+0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Total Compensation Amount (GBP)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

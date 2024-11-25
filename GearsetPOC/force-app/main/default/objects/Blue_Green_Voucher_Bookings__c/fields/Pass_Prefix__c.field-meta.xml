@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pass_Prefix__c</fullName>
+    <label>Pass Prefix</label>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>AO_Ashford_Staff</fullName>
+                <default>false</default>
+                <label>AO - Ashford Staff</label>
+            </value>
+            <value>
+                <fullName>EO_Ebbsfleet_Staff</fullName>
+                <default>false</default>
+                <label>EO - Ebbsfleet Staff</label>
+            </value>
+            <value>
+                <fullName>SO_London_Staff</fullName>
+                <default>false</default>
+                <label>SO - London Staff</label>
+            </value>
+            <value>
+                <fullName>TO_Temple_Mills_Staff</fullName>
+                <default>false</default>
+                <label>TO - Temple Mills Staff</label>
+            </value>
+            <value>
+                <fullName>RT_Retired_Staff</fullName>
+                <default>false</default>
+                <label>RT - Retired Eurostar Staff</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

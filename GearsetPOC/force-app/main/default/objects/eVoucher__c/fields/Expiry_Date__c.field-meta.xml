@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Expiry_Date__c</fullName>
+    <formula>CASE( RecordType.Name , 
+					&quot;Promotional&quot;, Promotional_eVoucher_rule__r.Expiry_Date__c, 
+					&quot;Service Recovery&quot;,  
+					    IF( AND( Compensation__r.eVoucher_rule_override__c != NULL, Promotional_eVoucher_rule__c != NULL, NOT(ISBLANK(Promotional_eVoucher_rule__r.Expiry_Date__c)) ),      Promotional_eVoucher_rule__r.Expiry_Date__c , CreatedDate + 365) , 
+					&quot;Partner&quot;,  Promotional_eVoucher_rule__r.Expiry_Date__c, 
+					&quot;DotCom&quot;, Promotional_eVoucher_rule__r.Expiry_Date__c,
+CreatedDate )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Expiry Date of the Rule governing the Voucher: 
+- The Promotional Rule for Promotional and Partner Vouchers
+- One year after the Creation Date for Service Recovery Vouchers</inlineHelpText>
+    <label>Rule Expiry Date</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

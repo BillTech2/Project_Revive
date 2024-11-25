@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LOG_1_Disruption_Field_Must_Be_Selected</fullName>
+    <active>false</active>
+    <description>If the initial reason for contact is disruption related then either &quot;Travel Based Disruption&quot; or &quot;Alternative Disruption&quot; must be selected</description>
+    <errorConditionFormula>ISPICKVAL( Initial_Reason_For_Contact__c ,&quot;Disruption or Compensation&quot;) 
+&amp;&amp; 
+ISBLANK(TEXT(Travel_Based_Disruption__c )) 
+&amp;&amp; 
+ISBLANK(TEXT(Alternative_Disruption__c ))</errorConditionFormula>
+    <errorMessage>As the initial reason for contact is disruption related, please select an option for either Travel Based Disruption or Alternative Disruption</errorMessage>
+</ValidationRule>

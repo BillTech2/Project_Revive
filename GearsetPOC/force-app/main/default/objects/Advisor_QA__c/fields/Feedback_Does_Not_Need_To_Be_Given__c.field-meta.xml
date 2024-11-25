@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Feedback_Does_Not_Need_To_Be_Given__c</fullName>
+    <defaultValue>false</defaultValue>
+    <label>Feedback Does Not Need To Be Given</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

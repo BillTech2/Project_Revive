@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Connecting_Destination__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(CreatedBy.FirstName = &quot;KAFKA&quot;,Non_Eurostar_Destination__c,IF(NOT(ISBLANK(Non_Eurostar_Destination__c)),Non_Eurostar_Destination__c,
+
+IF(ABS_Any_Belgian_Station__c=true,&quot;ABS (Any Belgian Station)&quot;,
+
+&quot;&quot;
+
+)))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Connecting Destination</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

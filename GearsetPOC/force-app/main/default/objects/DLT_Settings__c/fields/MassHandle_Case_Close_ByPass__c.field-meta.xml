@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MassHandle_Case_Close_ByPass__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Used in Mass Handle Simple Cases functionality - checking this checkbox results in sending emails WITHOUT closing the cases</description>
+    <inlineHelpText>Used in Mass Handle Simple Cases functionality - checking this checkbox results in sending emails WITHOUT closing the cases
+FALSE - sends emails and close cases
+TRUE - only sends emails</inlineHelpText>
+    <label>MassHandle Case Close ByPass</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

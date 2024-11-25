@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_graterThan2</fullName>
+    <columns>User__c</columns>
+    <columns>Date__c</columns>
+    <columns>NAME</columns>
+    <columns>Concurrency_rate__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Concurrency_rate__c</field>
+        <operation>greaterThan</operation>
+        <value>2</value>
+    </filters>
+    <label>All-graterThan2</label>
+    <language>en_US</language>
+</ListView>

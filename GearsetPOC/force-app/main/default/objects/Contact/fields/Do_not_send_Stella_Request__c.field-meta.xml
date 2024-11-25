@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Do_not_send_Stella_Request__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Checkbox will stop any requests being send to this customer. Used in Workflow StellaConnect - Populate Date/Time field for email case &amp; StellaConnect - Populate Date/Time field for phone case</description>
+    <inlineHelpText>Ticking this box will stop any requests being send to this customer</inlineHelpText>
+    <label>Do not send Stella Request</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

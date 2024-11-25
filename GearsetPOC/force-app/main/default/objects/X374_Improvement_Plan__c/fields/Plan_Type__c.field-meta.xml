@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Plan_Type__c</fullName>
+    <label>Plan Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>DIP</fullName>
+                <default>false</default>
+                <label>DIP</label>
+            </value>
+            <value>
+                <fullName>MIP</fullName>
+                <default>false</default>
+                <label>MIP</label>
+            </value>
+            <value>
+                <fullName>OIP</fullName>
+                <default>false</default>
+                <label>OIP</label>
+            </value>
+            <value>
+                <fullName>RIP</fullName>
+                <default>false</default>
+                <label>RIP</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

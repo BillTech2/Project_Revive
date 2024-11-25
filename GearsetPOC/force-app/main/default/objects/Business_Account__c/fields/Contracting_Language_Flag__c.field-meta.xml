@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contracting_Language_Flag__c</fullName>
+    <description>Formula field with a graphical indicator of Contracting Language</description>
+    <externalId>false</externalId>
+    <formula>CASE(
+	Contracting_Language__c,
+	&quot;English&quot;, IMAGE(&quot;/resource/flag_British&quot;, &quot;Preferred Language = English&quot;),
+	&quot;Dutch&quot;, IMAGE(&quot;/resource/flag_NL&quot;, &quot;Preferred Language = Dutch&quot;),
+	&quot;French&quot;, IMAGE(&quot;/resource/Flag_France&quot;, &quot;Preferred Language = French&quot;),
+	&quot;German&quot;, IMAGE(&quot;/resource/flag_German&quot;, &quot;Preferred Language = German&quot;),
+	&quot;&quot;
+	)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Contracting Language Flag</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

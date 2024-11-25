@@ -1,0 +1,118 @@
+<apex:page id="SalesforcePartnerTicketRedemption"
+			showHeader="true"
+			sidebar="true"
+			tabStyle="SalesforcePartnerTicketRedemption__x"
+			standardController="SalesforcePartnerTicketRedemption__x"
+			extensions="SPartnerTicketRedemptionController">
+
+	<apex:sectionHeader title="{!$ObjectType.SalesforcePartnerTicketRedemption__x.Label} Edit"
+						subtitle="New {!$ObjectType.SalesforcePartnerTicketRedemption__x.Label}" />
+	<c:LoyaltyTierAccessCheck accessedButtonName="Non_Eurostar_ticket_redemption">
+		<apex:form id="mainForm">
+			<apex:pageBlock title="{!$ObjectType.SalesforcePartnerTicketRedemption__x.Label} Edit" mode="edit">
+				<apex:pageMessages id="messages"/>
+				<apex:pageBlockSection columns="1" id="dataTable">
+					<apex:selectList value="{!selectedOrigin}" label="Origin" size="1" onchange="valueWasChanged('selectedOrigin');">
+						<apex:selectOptions value="{!partnerLocation}"/>
+					</apex:selectList>
+					<apex:selectList value="{!selectedDestination}" label="Destination" size="1" onchange="valueWasChanged('selectedDestination');">
+						<apex:selectOptions value="{!partnerLocation}"/>
+					</apex:selectList>
+					<apex:selectList value="{!selectedOutboundTrClass}" label="Travel class Outbound" size="1" onchange="valueWasChanged('selectedOutboundTrClass');">
+						<apex:selectOptions value="{!travelClasses}"/>
+					</apex:selectList>
+					<apex:selectList value="{!selectedInboundTrClass}" label="Travel class Inbound" size="1" onchange="valueWasChanged('selectedInboundTrClass');">
+						<apex:selectOption itemLabel="" itemValue=""/>
+						<apex:selectOptions value="{!travelClasses}"/>
+					</apex:selectList>
+					<apex:inputText value="{!quantity}" label="Number of passengers" onchange="valueWasChanged('quantity');"/>
+					<apex:pageBlockSectionItem rendered="{!isFoundCost}">
+						<apex:outputLabel value="Points to deduct:"/>
+						<apex:outputText id="pointsValue" value="{!pointsCost}"/>
+					</apex:pageBlockSectionItem>
+					<apex:pageBlockSectionItem rendered="{!Not(isFoundCost)}">
+						<apex:outputLabel value="Points to deduct:"/>
+						<apex:outputText id="pointsMessage" value="{!pointsMessage}"/>
+					</apex:pageBlockSectionItem>
+					<apex:inputText value="{!pnr}" label="PNR" required="true"/>
+					<apex:actionStatus startText="incrementing..." id="counterStatus"/>
+				</apex:pageBlockSection>
+				<apex:pageBlockButtons >
+					<apex:commandButton action="{!save}" value=" Save " rerender="redirectPanel"/>
+					<apex:commandButton action="{!SaveAndNew}" value="Save & New"/>
+					<apex:commandButton action="{!cancel}" value="Cancel"/>
+				</apex:pageBlockButtons>
+				<apex:outputPanel id="redirectPanel" >
+					<apex:outputText rendered="{!shouldRedirect}">
+						<script type="text/javascript">
+							window.top.location.href = '{!redirectUrl}';
+						</script>
+					</apex:outputText>
+				</apex:outputPanel>
+			</apex:pageBlock>
+			<apex:actionFunction name="valueWasChanged" action="{!valueWasChanged}" reRender="dataTable,jsFunction" oncomplete="getPoints();">
+				<apex:param name="source" assignTo="{!triggeredSource}" value=""/>
+			</apex:actionFunction>
+
+			<apex:actionFunction name="setPointsCost" reRender="dataTable" status="counterStatus">
+				<apex:param name="points" assignTo="{!pointsCost}" value=""/>
+				<apex:param name="isFound" assignTo="{!isFoundCost}" value=""/>
+				<apex:param name="pointsMessage" assignTo="{!pointsMessage}" value=""/>
+			</apex:actionFunction>
+		</apex:form>
+
+		<apex:outputPanel id="jsFunction">
+			<script>
+				function getPoints() {
+					var separator = '||';
+					var selectedOrigin = '{!selectedOrigin}';
+					var selectedDestination = '{!selectedDestination}';
+					var selectedOutboundTrClass = '{!selectedOutboundTrClass}';
+					var selectedInboundTrClass = '{!selectedInboundTrClass}';
+					var quantity = '{!quantity}';
+
+					var searchpointsValue = selectedOrigin.length > 0 && selectedDestination.length > 0 &&
+											selectedOutboundTrClass.length > 0 && quantity >= 0;
+
+					var isFound = false;
+					var pointsCost = 0;
+					var pointsMessage = '';
+					if (searchpointsValue) {
+						var pointsSource = JSON.parse('{!ticketDataSource}');
+						var obj;
+
+						if (selectedOrigin.indexOf(separator) !== -1) {
+							selectedOrigin = selectedOrigin.substring(selectedOrigin.indexOf(separator) + separator.length);
+						}
+						if (selectedDestination.indexOf(separator) !== -1) {
+							selectedDestination = selectedDestination.substring(selectedDestination.indexOf(separator) + separator.length);
+						}
+
+						for (var i = 0; pointsSource.value.length > i; i++) {
+							obj = pointsSource.value[i];
+							// OUTBOUND
+							if (obj.OriginGroupId == selectedOrigin && obj.DestinationGroupId == selectedDestination
+								&& obj.TravelClassCode == selectedOutboundTrClass) {
+								if (obj.hasOwnProperty('PointsCost')) {
+									pointsCost += obj.PointsCost * parseInt(quantity);
+									isFound = true;
+								}
+							}
+							// INBOUND
+							if (obj.OriginGroupId == selectedDestination && obj.DestinationGroupId == selectedOrigin
+								&& obj.TravelClassCode == selectedInboundTrClass) {
+								if (obj.hasOwnProperty('PointsCost')) {
+									pointsCost += obj.PointsCost * parseInt(quantity);
+									isFound = true;
+								}
+							}
+						}
+					}
+					pointsMessage = isFound ? '' : '{!$Label.Loyalty_Missing_Reward_Info}';
+					setPointsCost(pointsCost,isFound,pointsMessage);
+				}
+			</script>
+		</apex:outputPanel>
+	</c:LoyaltyTierAccessCheck>
+
+</apex:page>

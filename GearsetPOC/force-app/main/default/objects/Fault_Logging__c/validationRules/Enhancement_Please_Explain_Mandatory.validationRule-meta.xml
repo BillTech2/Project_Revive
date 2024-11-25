@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Enhancement_Please_Explain_Mandatory</fullName>
+    <active>true</active>
+    <description>The Please Explain field is mandatory if Other is selected on the &quot;How will this impact ECC&quot; field</description>
+    <errorConditionFormula>ISPICKVAL( How_Would_This_Impact_ECC__c , &quot;Other&quot;) 
+&amp;&amp;
+ ISBLANK( Please_Explain__c )</errorConditionFormula>
+    <errorDisplayField>How_Would_This_Impact_ECC__c</errorDisplayField>
+    <errorMessage>Please Explain how this Enhancement will impact ECC</errorMessage>
+</ValidationRule>

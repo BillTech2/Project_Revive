@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Closing</fullName>
+    <active>false</active>
+    <errorConditionFormula>IF( ISPICKVAL( EIL_Status__c , &quot;Closed&quot;), ISBLANK( Closure_Comments__c ) ||  ISPICKVAL( Follow_Up_Actions__c , &quot;&quot;) ||    ISPICKVAL( Final_Attribution__c ,&quot;&quot;)  ,FALSE)</errorConditionFormula>
+    <errorMessage>Please select a Follow up Action, a Final Attribution and complete the Closure Comments.</errorMessage>
+</ValidationRule>

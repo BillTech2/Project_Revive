@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Self_assessments</fullName>
+    <columns>NAME</columns>
+    <columns>Case__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>Status__c</columns>
+    <columns>Submission_User__c</columns>
+    <columns>QA_Assessor__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Assesment_Type__c</field>
+        <operation>equals</operation>
+        <value>Self-assessment</value>
+    </filters>
+    <label>Self-assessments</label>
+    <sharedTo>
+        <group>QA_Senior_Advisors</group>
+    </sharedTo>
+</ListView>

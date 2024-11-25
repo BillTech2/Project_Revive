@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mark_As_Blue_Vouchers_Received</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Mark As Blue Vouchers Received</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/22.0/connection.js&quot;)} 
+
+var updateRecord = new Array(); 
+var myquery = &quot;SELECT Id FROM Staff_and_duty_travel__c WHERE Id = &#39;{!Staff_and_duty_travel__c.Id}&#39; limit 1&quot;; 
+
+result = sforce.connection.query(myquery); 
+records = result.getArray(&quot;records&quot;); 
+
+if(records[0]) 
+{ 
+var update_Staff_and_duty_travel__c = records[0]; 
+update_Staff_and_duty_travel__c.Blue_vouchers_received__c= &#39;TRUE&#39;; 
+updateRecord.push(update_Staff_and_duty_travel__c); 
+} 
+
+result = sforce.connection.update(updateRecord); 
+parent.location.href = parent.location.href;</url>
+</WebLink>

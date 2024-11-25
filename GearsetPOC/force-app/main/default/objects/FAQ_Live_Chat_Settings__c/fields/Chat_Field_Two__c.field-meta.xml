@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Chat_Field_Two__c</fullName>
+    <description>The 2nd field within the Javascript &#39;liveagent.init&#39; string
+
+liveagent.init(&#39;https://d.la2w1cs.salesforceliveagent.com/chat&#39;, &#39;XXXXXXXXX&#39;, &#39;00Dg0000006RFjC&#39;);</description>
+    <externalId>false</externalId>
+    <label>Chat Field 2</label>
+    <length>50</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

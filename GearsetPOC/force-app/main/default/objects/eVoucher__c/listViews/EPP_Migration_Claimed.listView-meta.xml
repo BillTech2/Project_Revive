@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EPP_Migration_Claimed</fullName>
+    <columns>LAST_UPDATE</columns>
+    <columns>NAME</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <columns>Claimer_IP__c</columns>
+    <columns>Promotional_eVoucher_rule__c</columns>
+    <columns>Amount__c</columns>
+    <columns>Currency__c</columns>
+    <columns>Alias__c</columns>
+    <columns>Customer__c</columns>
+    <columns>Email__c</columns>
+    <columns>Language__c</columns>
+    <columns>Expiry_Date__c</columns>
+    <columns>Integration_Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>eVoucher__c.Promotional</value>
+    </filters>
+    <filters>
+        <field>Claimed__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>EPP_Migration_Voucher__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>EPP Migration (Claimed)</label>
+    <language>en_US</language>
+</ListView>

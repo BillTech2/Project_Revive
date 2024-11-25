@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Create_New_Client</fullName>
+    <availability>online</availability>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <height>600</height>
+    <linkType>url</linkType>
+    <masterLabel>Create New Client</masterLabel>
+    <openType>sidebar</openType>
+    <protected>false</protected>
+    <requireRowSelection>false</requireRowSelection>
+    <url>/lightning/o/Account/new?recordtypeId=012b0000000LX51&amp;
+defaultFieldValues=
+BusinessID_B__c={!Business_Account__c.BusinessID_B__c},
+Business_Account__c={!Business_Account__c.Id},
+Trade_Contracts_Company__c={!Trade_Contracts_Company__c.Id},
+Is_Business_Account_B__c=true</url>
+</WebLink>

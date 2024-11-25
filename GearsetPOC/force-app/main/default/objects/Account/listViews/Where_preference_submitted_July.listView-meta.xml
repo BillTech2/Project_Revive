@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Where_preference_submitted_July</fullName>
+    <columns>PC_FIRST_NAME</columns>
+    <columns>PC_LAST_NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Customer_Email__pc</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Where_Preference_Submitted__pc</columns>
+    <columns>Market_Preference__pc</columns>
+    <columns>Market_Preference_3rd_Party__pc</columns>
+    <columns>Email_Opt_In__pc</columns>
+    <columns>Email_3rd_Party_Opt_In__pc</columns>
+    <columns>EHL_email_opt_in__pc</columns>
+    <columns>EHL_email_3rd_party_opt_in__pc</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Email_Opt_In__pc</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Where_Preference_Submitted__pc</field>
+        <operation>equals</operation>
+        <value>Snap</value>
+    </filters>
+    <label>Where preference submitted &#39;July&#39;</label>
+    <language>en_US</language>
+</ListView>

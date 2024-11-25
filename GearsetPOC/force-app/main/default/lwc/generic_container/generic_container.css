@@ -1,0 +1,148 @@
+.header-around-padding {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 1rem;
+}
+.header-title {
+    font-size: 50px;
+    /*font-weight: bold;*/
+    color: #00286a;
+    font-family: 'LaPontaise-Semibold';
+    line-height: 38px;
+}
+
+.header-text {
+    font-size: 18px;
+    line-height: 20px;
+    font-family: 'ABCSocial-Regular';
+    color: #1c1c1a;
+}
+
+.header-text p {
+    text-align: center;
+}
+
+.header-text a {
+    white-space: nowrap;
+    color: #1c4094;
+    transition: color 1s;
+}
+
+.header-text a:hover {
+    text-decoration: none;
+    color: #1c4094;
+}
+
+.page-subtitle {
+    cursor: pointer;
+    font-family: 'ABCSocial-Bold';
+    font-size: 24px;
+    line-height: 26px;
+    color: #00286a;
+    text-align: center;
+}
+
+.wrapper {
+    background: #f5f5f5;
+    padding-top: 85px;
+}
+
+.slds-box.inner-background {
+    background: #ffffff;
+    border-color: #ffffff;
+}
+
+.prev-btn-block .slds-button {
+    font-family: ABCSocial-Regular;
+    border: 1px solid #1c4094;
+    border-radius: 4px;
+    color: #ffffff;
+    padding: 0 20px;
+    transition: all 0.2s;
+    background: #1c4094;
+    text-transform: capitalize;
+}
+
+.prev-btn-block .slds-button:hover {
+}
+.prev-btn-block .slds-button:focus {
+    box-shadow: none;
+    outline: none;
+    color: #ffffff;
+    border: 1px solid #1c4094;
+    border-radius: 4px;
+    background: #1c4094;
+}
+
+.exit-button-container {
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.primary {
+    height: 18px;
+    padding: 16px 30px;
+    border-radius: 4px;
+    display: inline-block;
+    text-decoration: none !important;
+    font-family: 'ABCSocial-Regular';
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 16px;
+    text-align: center;
+    color: #ffffff;
+    background-color: #00286a;
+    width: 200px;
+}
+
+@media screen and (min-width: 1366px) {
+    .max-width-restriction {
+        width: 58.3333333333%;
+    }
+    .inner-background {
+        width: 50%;
+    }
+}
+
+@font-face {
+    font-family: 'Arial';
+    src: url(/resource/PreferenceCenterPageFonts/PreferenceCenterPageFonts/Arial.ttf);
+}
+@font-face {
+    font-family: 'Helvetica';
+    src: url(/resource/PreferenceCenterPageFonts/PreferenceCenterPageFonts/Helvetica.ttf);
+}
+@font-face {
+    font-family: 'Sans-Serif';
+    src: url(/resource/PreferenceCenterPageFonts/PreferenceCenterPageFonts/Sans-Serif.ttf);
+}
+
+@font-face {
+    font-family: 'Aspect-Bold';
+    src: url('/resource/PreferenceCenterPageFonts/PreferenceCenterPageFonts/Aspect-Bold/aspect-bold.ttf');
+}
+@font-face {
+    font-family: 'Aspect-Light';
+    src: url('/resource/PreferenceCenterPageFonts/PreferenceCenterPageFonts/Aspect-Light/aspect-light.woff2');
+}
+
+@font-face {
+    font-family: 'Pembroke-Bold';
+    src: url('/resource/PreferenceCenterPageFonts/PreferenceCenterPageFonts/PembrokeWeb-Bold/pembrokeweb-bold.eot');
+    src: url('/resource/PreferenceCenterPageFonts/PreferenceCenterPageFonts/PembrokeWeb-Bold/pembrokeweb-bold.eot')
+            format('embedded-opentype'),
+        url('PembrokeWeb-Bold/pembrokeweb-bold.woff') format('woff'),
+        url('PembrokeWeb-Bold/pembrokeweb-bold.ttf') format('truetype'),
+        url('PembrokeWeb-Bold/pembrokeweb-bold.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pembroke-Regular';
+    src: url('/resource/PreferenceCenterPageFonts/PreferenceCenterPageFonts/PembrokeWeb-Regular/pembrokeweb-regular.ttf')
+        format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

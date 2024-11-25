@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Group_Booking_TNR__c</fullName>
+    <description>TNR is the 8 letter reference that you get when you take a deposit payment as a sundry on Opera</description>
+    <inlineHelpText>TNR is the 8 letter reference that you get when you take a deposit payment as a sundry on Opera</inlineHelpText>
+    <label>TNR</label>
+    <length>32768</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mobile_Browser__c</fullName>
+    <label>Mobile Browser</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Platform__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Device Default Browser</fullName>
+                <default>false</default>
+                <label>Device Default Browser</label>
+            </value>
+            <value>
+                <fullName>Safari</fullName>
+                <default>false</default>
+                <label>Safari</label>
+            </value>
+            <value>
+                <fullName>Internet Explorer</fullName>
+                <default>false</default>
+                <label>Internet Explorer</label>
+            </value>
+            <value>
+                <fullName>Google Chrome</fullName>
+                <default>false</default>
+                <label>Google Chrome</label>
+            </value>
+            <value>
+                <fullName>Mozilla Firefox</fullName>
+                <default>false</default>
+                <label>Mozilla Firefox</label>
+            </value>
+            <value>
+                <fullName>Opera</fullName>
+                <default>false</default>
+                <label>Opera</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Mobile Website</controllingFieldValue>
+            <valueName>Device Default Browser</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Mobile Website</controllingFieldValue>
+            <valueName>Safari</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Mobile Website</controllingFieldValue>
+            <valueName>Internet Explorer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Mobile Website</controllingFieldValue>
+            <valueName>Google Chrome</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Mobile Website</controllingFieldValue>
+            <valueName>Mozilla Firefox</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Mobile Website</controllingFieldValue>
+            <valueName>Opera</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Mobile Website</controllingFieldValue>
+            <valueName>Other</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

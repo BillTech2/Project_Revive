@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Agents_start_date_must_be_3_days_away</fullName>
+    <active>false</active>
+    <description>Agent start date must be at least 3 days away from the request date</description>
+    <errorConditionFormula>RecordTypeId = &quot;012b0000000UdV6&quot;
+&amp;&amp;
+Agent_Start_Date__c - TODAY() &lt; 3</errorConditionFormula>
+    <errorMessage>Please enter a date &gt;3 days from today. 
+Please contact the techteam@eurostar.com if the request needs to be completed in &lt;3 days</errorMessage>
+</ValidationRule>

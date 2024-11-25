@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Staff_Member__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>Staff Member</label>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Blue &amp; Green Voucher Bookings</relationshipLabel>
+    <relationshipName>Blue_Green_Voucher_Bookings</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

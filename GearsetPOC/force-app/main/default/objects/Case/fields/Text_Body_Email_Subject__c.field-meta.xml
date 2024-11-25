@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Text_Body_Email_Subject__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(TEXT( Preferred_Language__c), 
+&#39;English&#39;, &#39;Regarding Eurostar Case: &#39; + CaseNumber  , 
+&#39;French&#39;, &#39;Concernant votre dossier Eurostar: &#39; + CaseNumber   ,
+&#39;German&#39;, &#39;Ihre Eurostar Vorgangsnummer:  &#39; + CaseNumber   ,
+&#39;Dutch&#39;, &#39;Betreffende Eurostar: &#39; + CaseNumber   ,
+&#39;Regarding Eurostar Case: + CaseNumber&#39;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Text Body Email Subject</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

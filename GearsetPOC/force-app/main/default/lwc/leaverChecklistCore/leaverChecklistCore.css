@@ -1,0 +1,130 @@
+.section {
+  box-sizing: border-box;
+  padding: 0;
+  display: table;
+  width: 100%;
+}
+
+.main-title {
+  font-size: 200%;
+  font-weight: bold;
+  text-decoration: underline;
+  text-align: center;
+  margin-bottom: 0.7rem;
+}
+
+.section-header-main {
+  font-size: 110%;
+  font-weight: bold;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.stick-next {
+  float: left;
+}
+
+.section-header-sub {
+  font-size: 110%;
+  font-style: italic;
+}
+
+.section-wordings {
+  padding: 0 0.5rem 0.5rem
+}
+
+.benefit-title {
+  color: #000000;
+  font-weight: bold;
+  background-color: #d9d9d9;
+  line-height: 1.2rem;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+  height: 40px;
+  vertical-align: middle;
+  display: table-cell;
+  padding-left: 7px;
+  border-left: 1px solid black;
+  font-size: 95%;
+}
+
+.benefit-options-container {
+  vertical-align: middle;
+  text-align: center;
+  border-left: 1px solid black;
+  background-color: #ffffff;
+  display: table-cell;
+}
+
+.monies-process-title {
+  color: #000000;
+  background-color: #d9d9d9;
+  line-height: 1.2rem;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+  height: 40px;
+  vertical-align: middle;
+  display: table-cell;
+  padding-left: 7px;
+  border-left: 1px solid black;
+}
+
+.monies-process-option-container {
+  vertical-align: middle;
+  text-align: center;
+  border-left: 1px solid black;
+  background-color: #ffffff;
+  display: table-cell;
+  padding-top: 0.4em;
+}
+
+.monies-process-responsible-container {
+  vertical-align: middle;
+  border-left: 1px solid black;
+  background-color: #ffffff;
+  display: table-cell;
+  border-right: 1px solid black;
+  padding-left: 7px;
+  font-weight: bold;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+.text-center {
+  text-align: center;
+}
+
+
+.bg-color-benefit-data {
+  background-color: #ffffff;
+}
+
+.border-l-1-sol-bl {
+  border-left: 1px solid black;
+}
+
+.border-r-1-sol-bl {
+  border-right: 1px solid black;
+}
+
+.border-t-1-sol-bl {
+  border-top: 1px solid black;
+}
+
+.border-b-1-sol-bl {
+  border-bottom: 1px solid black;
+}
+
+.edit-icon {
+  opacity: 0.2;
+}
+
+.edit-icon:hover {
+  opacity: 1.0;
+}
+
+.warning-checkbox {
+  box-shadow: inset 0px 0px 9px 0px #ff0000;
+}

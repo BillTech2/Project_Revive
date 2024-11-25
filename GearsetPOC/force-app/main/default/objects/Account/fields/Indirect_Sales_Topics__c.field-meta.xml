@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Indirect_Sales_Topics__c</fullName>
+    <label>Indirect Sales Topics</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Commercial</fullName>
+                <default>false</default>
+                <label>Commercial</label>
+            </value>
+            <value>
+                <fullName>Corporate Newsletter</fullName>
+                <default>false</default>
+                <label>Corporate Newsletter</label>
+            </value>
+            <value>
+                <fullName>Disruption - Continental</fullName>
+                <default>false</default>
+                <label>Disruption - Continental</label>
+            </value>
+            <value>
+                <fullName>Disruption - London</fullName>
+                <default>false</default>
+                <label>Disruption - London</label>
+            </value>
+            <value>
+                <fullName>E4A Topics</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>E4A Topics</label>
+            </value>
+            <value>
+                <fullName>E4B Newsletter</fullName>
+                <default>false</default>
+                <label>E4B Newsletter</label>
+            </value>
+            <value>
+                <fullName>Leisure Newsletter</fullName>
+                <default>false</default>
+                <label>Leisure Newsletter</label>
+            </value>
+            <value>
+                <fullName>MICE</fullName>
+                <default>false</default>
+                <label>MICE</label>
+            </value>
+            <value>
+                <fullName>Miscellaneous topics</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Miscellaneous topics</label>
+            </value>
+            <value>
+                <fullName>Partner API Comms</fullName>
+                <default>false</default>
+                <label>Partner API Comms</label>
+            </value>
+            <value>
+                <fullName>Promo &amp; OOS</fullName>
+                <default>false</default>
+                <label>Promo &amp; OOS</label>
+            </value>
+            <value>
+                <fullName>Promo Live</fullName>
+                <default>false</default>
+                <label>Promo Live</label>
+            </value>
+            <value>
+                <fullName>Promo Testing</fullName>
+                <default>false</default>
+                <label>Promo Testing</label>
+            </value>
+            <value>
+                <fullName>RIT Comms</fullName>
+                <default>false</default>
+                <label>RIT Comms</label>
+            </value>
+            <value>
+                <fullName>Strike</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Strike</label>
+            </value>
+            <value>
+                <fullName>Timetable</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Timetable</label>
+            </value>
+            <value>
+                <fullName>TMC newsletter</fullName>
+                <default>false</default>
+                <label>TMC newsletter</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

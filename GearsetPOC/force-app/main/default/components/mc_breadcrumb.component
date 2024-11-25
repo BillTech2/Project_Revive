@@ -1,0 +1,8 @@
+<apex:component >
+    
+     <apex:attribute name="mc_language" description="mc_language" type="String" required="true"/>
+    
+            
+            
+            
+</apex:component>

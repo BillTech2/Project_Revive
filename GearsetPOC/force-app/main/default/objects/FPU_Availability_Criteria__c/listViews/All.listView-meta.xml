@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>FPU_AvailCrit_FBC__c</columns>
+    <columns>FPU_AvailCrit_PaxType__c</columns>
+    <columns>FPU_AvailCrit_Status__c</columns>
+    <columns>FPU_AvailCrit_LastOffer_Bought__c</columns>
+    <columns>FPU_AvailCrit_LastOffer_Proposed__c</columns>
+    <columns>FPU_AvailCrit_TravelPeriod_FromDate__c</columns>
+    <columns>FPU_AvailCrit_TravelPeriod_ToDate__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+    <language>en_US</language>
+</ListView>

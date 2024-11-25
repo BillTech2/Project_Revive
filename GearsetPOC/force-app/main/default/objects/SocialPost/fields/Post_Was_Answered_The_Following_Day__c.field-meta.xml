@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Post_Was_Answered_The_Following_Day__c</fullName>
+    <formula>DateValue(CreatedDate) = (DateValue(HarvestDate) +1)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Post Was Answered The Following Day</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

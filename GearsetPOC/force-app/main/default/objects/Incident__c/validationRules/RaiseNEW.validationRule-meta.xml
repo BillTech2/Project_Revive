@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RaiseNEW</fullName>
+    <active>false</active>
+    <errorConditionFormula>ISBLANK( Incident_Title__c ) || ISBLANK( Initial_Report__c ) ||  ISBLANK( Diagram__c ) || ISBLANK(Location__c) ||  ISBLANK( Incident_Date__c ) || ISBLANK(Delay_Minutes__c) || ISPICKVAL(Fleet__c,&quot;&quot;) ||  ISPICKVAL(  Leading_Half_Set__c  ,&quot;&quot;) || ISPICKVAL(  Trailing_Half_Set__c  ,&quot;&quot;)</errorConditionFormula>
+    <errorMessage>Please ensureIncident Title, Initial Report, Diagram, Location, Incident Date, Delay Minutes, Fleet, Leading Half Set  and Trailing Half-Set fields are complete</errorMessage>
+</ValidationRule>

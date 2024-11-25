@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Level__c</fullName>
+    <label>Account Level</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Revenue__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Level 1</fullName>
+                <default>false</default>
+                <label>Level 1</label>
+            </value>
+            <value>
+                <fullName>Level 2</fullName>
+                <default>false</default>
+                <label>Level 2</label>
+            </value>
+            <value>
+                <fullName>Level 3</fullName>
+                <default>false</default>
+                <label>Level 3</label>
+            </value>
+            <value>
+                <fullName>Level 4</fullName>
+                <default>false</default>
+                <label>Level 4</label>
+            </value>
+            <value>
+                <fullName>Level 5</fullName>
+                <default>false</default>
+                <label>Level 5</label>
+            </value>
+            <value>
+                <fullName>Level 6</fullName>
+                <default>false</default>
+                <label>Level 6</label>
+            </value>
+            <value>
+                <fullName>Level 7</fullName>
+                <default>false</default>
+                <label>Level 7</label>
+            </value>
+            <value>
+                <fullName>Level 8</fullName>
+                <default>false</default>
+                <label>Level 8</label>
+            </value>
+            <value>
+                <fullName>Level 9</fullName>
+                <default>false</default>
+                <label>Level 9</label>
+            </value>
+            <value>
+                <fullName>Level 10</fullName>
+                <default>false</default>
+                <label>Level 10</label>
+            </value>
+            <value>
+                <fullName>Level 11</fullName>
+                <default>false</default>
+                <label>Level 11</label>
+            </value>
+            <value>
+                <fullName>Level 12</fullName>
+                <default>false</default>
+                <label>Level 12</label>
+            </value>
+            <value>
+                <fullName>Level 13</fullName>
+                <default>false</default>
+                <label>Level 13</label>
+            </value>
+            <value>
+                <fullName>Level 14</fullName>
+                <default>false</default>
+                <label>Level 14</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>1.6M - 1.8M</controllingFieldValue>
+            <valueName>Level 11</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>1.8M - 2M</controllingFieldValue>
+            <valueName>Level 12</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>2.M - 2.5M</controllingFieldValue>
+            <valueName>Level 13</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>2.5M - …</controllingFieldValue>
+            <valueName>Level 14</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>10K - 25K</controllingFieldValue>
+            <valueName>Level 1</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>25K - 50K</controllingFieldValue>
+            <valueName>Level 2</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>50K - 100K</controllingFieldValue>
+            <valueName>Level 3</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>100K - 350K</controllingFieldValue>
+            <valueName>Level 4</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>350K - 650K</controllingFieldValue>
+            <valueName>Level 5</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>650K - 750K</controllingFieldValue>
+            <valueName>Level 6</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>750K - 1M</controllingFieldValue>
+            <valueName>Level 7</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>1M - 1.2M</controllingFieldValue>
+            <valueName>Level 8</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>1.2M - 1.4M</controllingFieldValue>
+            <valueName>Level 9</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>1.4M - 1.6M</controllingFieldValue>
+            <valueName>Level 10</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

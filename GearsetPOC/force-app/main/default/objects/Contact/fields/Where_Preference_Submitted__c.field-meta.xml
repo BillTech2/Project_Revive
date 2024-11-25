@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Where_Preference_Submitted__c</fullName>
+    <description>Indicates the location the persons marketing preferences where submitted. Created for GDPR compliance. Updated by .com?</description>
+    <label>Where Preference Submitted</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Accounts</fullName>
+                <default>false</default>
+                <label>Accounts</label>
+            </value>
+            <value>
+                <fullName>Mobile App</fullName>
+                <default>false</default>
+                <label>Mobile App</label>
+            </value>
+            <value>
+                <fullName>Onboard App</fullName>
+                <default>false</default>
+                <label>Onboard App</label>
+            </value>
+            <value>
+                <fullName>Newsletter signups</fullName>
+                <default>false</default>
+                <label>Newsletter signups</label>
+            </value>
+            <value>
+                <fullName>Snap</fullName>
+                <default>false</default>
+                <label>Snap</label>
+            </value>
+            <value>
+                <fullName>e-voucher platform</fullName>
+                <default>false</default>
+                <label>e-voucher platform</label>
+            </value>
+            <value>
+                <fullName>Booking path</fullName>
+                <default>false</default>
+                <label>Booking path</label>
+            </value>
+            <value>
+                <fullName>Gift voucher platform</fullName>
+                <default>false</default>
+                <label>Gift voucher platform</label>
+            </value>
+            <value>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+                <label>Inactive</label>
+            </value>
+            <value>
+                <fullName>Website - BPA In Path Dropouts</fullName>
+                <default>false</default>
+                <label>Website - BPA In Path Dropouts</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

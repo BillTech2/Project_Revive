@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Closing_TMST_E300</fullName>
+    <active>true</active>
+    <description>currently same rule as for &quot;awaiting closure&quot;</description>
+    <errorConditionFormula>AND(
+ ISPICKVAL( EIL_Status__c ,&quot;Closed&quot;),
+NOT(ISPICKVAL( Fleet__c ,&quot;E320&quot;)),
+OR(
+ISBLANK( Name),
+ISBLANK( Incident_Date__c),
+ISBLANK( Incident_Title__c),
+ISBLANK( Initial_Report__c ),
+ISBLANK( Diagram__c ),
+ISBLANK( Delay_Minutes__c),
+ISBLANK( Location__c), 
+ISPICKVAL( Fleet__c ,&quot;&quot;),
+ISPICKVAL( Leading_Half_Set__c ,&quot;&quot;),
+ISPICKVAL( Trailing_Half_Set__c ,&quot;&quot;),
+ISPICKVAL( TIGRE_code__c ,&quot;&quot;),
+ISBLANK(EIL_Lead_Investigator__c),
+ISBLANK( EIL_Summary_Conclusion__c ),
+ISPICKVAL( Follow_Up_Actions__c, &quot;&quot;),
+ISBLANK( Follow_Up_References__c ),
+ISPICKVAL( Final_Attribution__c ,&quot;&quot;)
+))</errorConditionFormula>
+    <errorMessage>Please ensure all sections are completed, and select a Follow up Action, and a Final Attribution.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dutch_Language_Additional_Payment</fullName>
+    <active>true</active>
+    <description>Blocks the Dutch Language option from Additional Payment form</description>
+    <errorConditionFormula>RecordTypeId = &quot;012260000008zg1&quot;
+&amp;&amp;
+  ISPICKVAL(Requested_Language__c,&quot;Dutch&quot;)</errorConditionFormula>
+    <errorMessage>There are no Dutch Templates for Additional Payment Confirmations, please send this confirmation in either English or French</errorMessage>
+</ValidationRule>

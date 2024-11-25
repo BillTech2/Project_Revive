@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Case_Trade</fullName>
+    <availability>online</availability>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <height>600</height>
+    <linkType>url</linkType>
+    <masterLabel>New Case</masterLabel>
+    <openType>sidebar</openType>
+    <protected>false</protected>
+    <requireRowSelection>false</requireRowSelection>
+    <url>/lightning/o/Case/new?recordtypeId=012b0000000UdM3&amp;
+defaultFieldValues=
+Company_Name__c={!Trade_Contracts_Company__c.Id},
+Origin=Email Trade Contracts,
+Type=Trade Contracts</url>
+</WebLink>

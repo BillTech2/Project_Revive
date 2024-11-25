@@ -1,0 +1,15 @@
+<apex:page >
+  <apex:includeLightning />
+    <div  id="compContainer" />
+  <script>
+    $Lightning.use("c:Send_FCE_Code_to_S3_APP", function() {
+         $Lightning.createComponent("c:Send_FCE_Code_to_S3",
+             {},
+             "compContainer",
+             function(cmp) {
+          console.log("c:VFPageApp loaded successfully in VF page");
+             }
+         );
+     });
+  </script>
+</apex:page>

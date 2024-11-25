@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Supervisors_experts_seniors</fullName>
+    <booleanFilter>1 AND 2 AND 3 AND ( 4 OR 5 OR 6 OR 7 OR 8 )</booleanFilter>
+    <columns>CASES.CASE_NUMBER</columns>
+    <columns>NAME</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>CASES.SUBJECT</columns>
+    <columns>Carrier_Flag__c</columns>
+    <columns>PNR__c</columns>
+    <columns>Created_Date_For_Reporting__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CASES.STATUS</field>
+        <operation>equals</operation>
+        <value>Awaiting Internal</value>
+    </filters>
+    <filters>
+        <field>Sub_Status__c</field>
+        <operation>equals</operation>
+        <value>Supervisor</value>
+    </filters>
+    <filters>
+        <field>Carrier__c</field>
+        <operation>equals</operation>
+        <value>Red,Blue,Purple</value>
+    </filters>
+    <filters>
+        <field>CORE.USERS.ALIAS</field>
+        <operation>equals</operation>
+        <value>Alexandr,Anha,Ann.VanD,Ashley.M,Aurelie.,Automne.,Bak,Benedict,Boate.ki,Brigitte,Camille.,Cecilia.,Charles-,Christia,David,diane.ki,Didier.M,Drucilia,edvine.m,Ella,Emmanuel,florence,Gabriel.,Gracia.E,Guillain,Guillaum,Gwenaell</value>
+    </filters>
+    <filters>
+        <field>CORE.USERS.ALIAS</field>
+        <operation>equals</operation>
+        <value>jade.gho,Jade.Sta,Joachim.,Jordan.B,June.abe,Justine.,Kamila.M,Kevin.Du,KimHell,Labinot.,Laura.Hu,Liubov.G,Lorena.D,Isaline.</value>
+    </filters>
+    <filters>
+        <field>CORE.USERS.ALIAS</field>
+        <operation>equals</operation>
+        <value>mailinda,Manuella,mariam.a,Marie.Lu,Melisand,Melissa.,Michaela,Mohamed-,Nadia.De,Nicole.N,Nina.Lan,Noelle.M</value>
+    </filters>
+    <filters>
+        <field>CORE.USERS.ALIAS</field>
+        <operation>equals</operation>
+        <value>,Pascale.,Patrice.,paul.har,philip.D,Rania.Lo,Reda.Akc,Ruben.Te,Sabrine,Laurence,Florence,cassandr,Amina-Ke</value>
+    </filters>
+    <filters>
+        <field>CORE.USERS.ALIAS</field>
+        <operation>equals</operation>
+        <value>,Samir.Be,Sara.Cha,Sarah.Ca,Sarah.Ya,Soumaya.,Tanguy.S,Tristan.,Uma.NAGE,Valentin,yasmine.,Yasmine.,Gilbert.,Boate.ki,Idriss.D,Nele.DAN,Danielle</value>
+    </filters>
+    <label>Supervisors - experts Red</label>
+</ListView>

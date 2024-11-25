@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Red_NewAccountWebformCorporate__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Based on the webform on thalys site . All appliactions for corporate fares go through this webform. action is required upon receipt of a request, and a tick box to remove the required action once it has been completed</description>
+    <label>Red Webform</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

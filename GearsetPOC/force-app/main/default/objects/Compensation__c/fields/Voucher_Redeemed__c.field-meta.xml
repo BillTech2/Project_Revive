@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Voucher_Redeemed__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Set by an agent when the customer uses the voucher, e.g. for another booking. Used only if old face value voucher (voucher issued before Service Recovery eVouchers)</description>
+    <inlineHelpText>Used only if old face value voucher (voucher issued before Service Recovery eVouchers)</inlineHelpText>
+    <label>Redeemed by ECC (old face value voucher)</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

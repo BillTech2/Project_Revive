@@ -1,0 +1,48 @@
+<apex:page id="IloyalInformationLayout"
+            standardController="Account"
+            tabStyle="Account"
+            showHeader="false"
+            sidebar="false"
+            extensions="IloyalInformationLayoutController"
+            lightningStylesheets="true">
+
+    <apex:pageBlock mode="maindetail"> 
+ 
+        <apex:pageMessages />
+        <apex:pageBlockSection columns="1">
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="{!$ObjectType.SalesforceMember__x.fields.RegistrationDate__c.label}"/>
+                <apex:outputField value="{!member.RegistrationDate__c}"/>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="{!$ObjectType.SalesforceMember__x.fields.MembershipExpiry__c.label}"/>
+                <apex:outputField value="{!member.MembershipExpiry__c}"/>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="{!$ObjectType.SalesforceMember__x.fields.StatusDescription__c.label}"/>
+                <apex:outputField value="{!member.StatusDescription__c}"/>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="{!$ObjectType.SalesforceMember__x.fields.TierDescription__c.label}"/>
+                <apex:outputField value="{!member.TierDescription__c}"/>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="{!$ObjectType.SalesforceMember__x.fields.SubTierDescription__c.label}"/>
+                <apex:outputField value="{!member.SubTierDescription__c}"/>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="{!$ObjectType.SalesforceMember__x.fields.StatusPointsBalance__c.label}"/>
+                <apex:outputField value="{!member.StatusPointsBalance__c}"/>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="{!$ObjectType.SalesforceMember__x.fields.RewardPointsBalance__c.label}"/>
+                <apex:outputField value="{!member.RewardPointsBalance__c}"/>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="{!$ObjectType.SalesforceMember__x.fields.NumberOfTrips__c.label}"/>
+                <apex:outputField value="{!member.NumberOfTrips__c}"/>
+            </apex:pageBlockSectionItem>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+
+</apex:page>

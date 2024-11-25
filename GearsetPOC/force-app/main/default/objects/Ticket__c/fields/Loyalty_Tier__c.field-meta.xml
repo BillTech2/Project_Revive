@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Loyalty_Tier__c</fullName>
+    <description>Populated from Redshift - iLoyal (legacy) Data - NOT accurate
+CC - Carte Classique
+CB - Carte Blanche
+CBE - Carte Blanche Elite</description>
+    <inlineHelpText>NOTE: This field contains iLoyal Data and is NOT an accurate source of loyalty tier. Please check Booker  Loyalty Member Tier Description</inlineHelpText>
+    <label>Booker Loyalty Tier</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Carte Blanche</fullName>
+                <default>false</default>
+                <label>Carte Blanche</label>
+            </value>
+            <value>
+                <fullName>Carte Blanche (Corporate)</fullName>
+                <default>false</default>
+                <label>Carte Blanche (Corporate)</label>
+            </value>
+            <value>
+                <fullName>Carte Blanche (Elite)</fullName>
+                <default>false</default>
+                <label>Carte Blanche (Elite)</label>
+            </value>
+            <value>
+                <fullName>Carte Blanche (Eurostar Staff)</fullName>
+                <default>false</default>
+                <label>Carte Blanche (Eurostar Staff)</label>
+            </value>
+            <value>
+                <fullName>Carte Blanche (VIP)</fullName>
+                <default>false</default>
+                <label>Carte Blanche (VIP)</label>
+            </value>
+            <value>
+                <fullName>Carte Classique</fullName>
+                <default>false</default>
+                <label>Carte Classique</label>
+            </value>
+            <value>
+                <fullName>Carte Classique (Corporate)</fullName>
+                <default>false</default>
+                <label>Carte Classique (Corporate)</label>
+            </value>
+            <value>
+                <fullName>Carte Classique (Eurostar Staff)</fullName>
+                <default>false</default>
+                <label>Carte Classique (Eurostar Staff)</label>
+            </value>
+            <value>
+                <fullName>EPP Default Tier</fullName>
+                <default>false</default>
+                <label>EPP Default Tier</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

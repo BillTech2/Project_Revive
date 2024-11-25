@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Market_Preference_3rd_Party__c</fullName>
+    <label>Market Preference 3rd Party</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>default</fullName>
+                <default>false</default>
+                <label>default</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

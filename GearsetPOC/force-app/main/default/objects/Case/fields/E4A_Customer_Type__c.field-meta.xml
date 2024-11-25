@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>E4A_Customer_Type__c</fullName>
+    <label>E4A Company Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Airline</fullName>
+                <default>false</default>
+                <label>Airline</label>
+            </value>
+            <value>
+                <fullName>Corporate</fullName>
+                <default>false</default>
+                <label>Corporate</label>
+            </value>
+            <value>
+                <fullName>Distributor (rail operator)</fullName>
+                <default>false</default>
+                <label>Distributor (rail operator)</label>
+            </value>
+            <value>
+                <fullName>Distributors (Train operating company)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Distributors (Train operating company)</label>
+            </value>
+            <value>
+                <fullName>Groups</fullName>
+                <default>false</default>
+                <label>Groups</label>
+            </value>
+            <value>
+                <fullName>Inbounder</fullName>
+                <default>false</default>
+                <label>Inbounder</label>
+            </value>
+            <value>
+                <fullName>Leisure Agent</fullName>
+                <default>false</default>
+                <label>Leisure Agent</label>
+            </value>
+            <value>
+                <fullName>MICE</fullName>
+                <default>false</default>
+                <label>MICE</label>
+            </value>
+            <value>
+                <fullName>Online Travel Agencies (OTA)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Online Travel Agencies (OTA)</label>
+            </value>
+            <value>
+                <fullName>Online Travel Agent</fullName>
+                <default>false</default>
+                <label>Online Travel Agent</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Reward Redemption</fullName>
+                <default>false</default>
+                <label>Reward Redemption</label>
+            </value>
+            <value>
+                <fullName>SME</fullName>
+                <default>false</default>
+                <label>SME</label>
+            </value>
+            <value>
+                <fullName>Technical provider</fullName>
+                <default>false</default>
+                <label>Technical provider</label>
+            </value>
+            <value>
+                <fullName>TMC</fullName>
+                <default>false</default>
+                <label>TMC</label>
+            </value>
+            <value>
+                <fullName>Tour Operator</fullName>
+                <default>false</default>
+                <label>Tour Operator</label>
+            </value>
+            <value>
+                <fullName>Travel Management Company</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Travel Management Company</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

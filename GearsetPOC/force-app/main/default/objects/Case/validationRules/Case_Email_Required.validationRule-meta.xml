@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Case_Email_Required</fullName>
+    <active>true</active>
+    <description>Email field is required when a customer submit the disruption webform</description>
+    <errorConditionFormula>AND
+(
+	ISBLANK( Disruption_Email__c   ),
+	TEXT(Origin) = &quot;Disruption Web&quot;
+)</errorConditionFormula>
+    <errorDisplayField>Disruption_Email__c</errorDisplayField>
+    <errorMessage>Please write an email address on which we can contact you</errorMessage>
+</ValidationRule>

@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X374IP_MIP</fullName>
+    <active>true</active>
+    <description>Maintenance Improvement Plan</description>
+    <label>MIP</label>
+    <picklistValues>
+        <picklist>Next_action__c</picklist>
+        <values>
+            <fullName>EIL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Joint</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Siemens</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Plan_Type__c</picklist>
+        <values>
+            <fullName>DIP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MIP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OIP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RIP</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Risk_rating_likelihood__c</picklist>
+        <values>
+            <fullName>1- highly unlikely %2F remote %285 yearly %2F once in life%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2- unlikely %2F possible %28yearly %2F 5-yearly%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3- occasional %28bi-monthly %2F yearly%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4- regular %28weekly %2F monthly%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5- common %28daily %2F weekly%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Risk_rating_severity__c</picklist>
+        <values>
+            <fullName>1 %E2%80%93 insignificant %E2%80%93 trivial or no effect on service%2C rolling stock or infrastructure%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2 %E2%80%93 Staff %2F Passenger minor injury requiring 1st aid%2C Service Delay of 5 mins or Rolling stock %2F infrastructure damage up to %C2%A31000</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3 %E2%80%93 Major injury requiring hospitalisation %2F RIDDOR%2C Service cancellation%2C Damage up to %C2%A310k</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4 %E2%80%93 Serious injury %E2%80%93 loss of eye%2F limb%2E Multiple service cancellations%2E Damage up to %C2%A0%C2%A3100k</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5 %E2%80%93 Fatality%2E Long term disruption to service %2F Fleet out of service%2E Catastrophic damage in excess of %C2%A3100k%2E</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>X374IP_Benefit_type__c</picklist>
+        <values>
+            <fullName>Comfort</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Improvement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Process</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reliability</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Remedy text</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Safety%2FSecurity</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>X374IP_Prioirity__c</picklist>
+        <values>
+            <fullName>High</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Low</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>X374IP_Status__c</picklist>
+        <values>
+            <fullName>Awaiting software update</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closure proposed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Future wishlist</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Implementation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Investigation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monitoring</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>On hold- future development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Solution agreed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Solution identified</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

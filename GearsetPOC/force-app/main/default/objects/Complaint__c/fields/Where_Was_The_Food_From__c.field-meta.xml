@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Where_Was_The_Food_From__c</fullName>
+    <label>Where Was The Food From?</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Type_of_Complaint__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Standard Premier</fullName>
+                <default>false</default>
+                <label>Standard Premier</label>
+            </value>
+            <value>
+                <fullName>Business Premier</fullName>
+                <default>false</default>
+                <label>Business Premier</label>
+            </value>
+            <value>
+                <fullName>Sense of Occasion Product</fullName>
+                <default>false</default>
+                <label>Sense of Occasion Product</label>
+            </value>
+            <value>
+                <fullName>Bar Buffet</fullName>
+                <default>false</default>
+                <label>Bar Buffet</label>
+            </value>
+            <value>
+                <fullName>Business Lounge</fullName>
+                <default>false</default>
+                <label>Business Lounge</label>
+            </value>
+            <value>
+                <fullName>Station Facility</fullName>
+                <default>false</default>
+                <label>Station Facility</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Food</controllingFieldValue>
+            <valueName>Standard Premier</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Food</controllingFieldValue>
+            <valueName>Business Premier</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Food</controllingFieldValue>
+            <valueName>Sense of Occasion Product</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Food</controllingFieldValue>
+            <valueName>Bar Buffet</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Food</controllingFieldValue>
+            <valueName>Business Lounge</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Food</controllingFieldValue>
+            <valueName>Station Facility</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

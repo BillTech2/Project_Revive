@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type_of_PRR_Requested__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF (RecordTypeId  = &quot;012b0000000g3XE&quot;,
+
+   IF(Compensate_My_Existing_Card__c =TRUE, &quot;Card Refund&quot;,
+   IF(NOT(ISBLANK( Bank_Account_Number__c)),&quot;UK Bank Refund&quot;,
+   IF(NOT(ISBLANK( Swift_Sort_Code__c )),&quot;EUR Bank Refund&quot;, &quot;Paypal&quot;
+   ))),
+   &quot;&quot;
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Type of PRR Requested</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

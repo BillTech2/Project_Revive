@@ -1,0 +1,68 @@
+<apex:component >
+	<apex:attribute name="uniqueDescriptionName" description="The API name of the Data Category" type="String" required="true"/>
+    
+    <apex:outputpanel layout="none" rendered="{!uniqueDescriptionName=='General'}">
+    	{!$Label.FAQ_CATEGORY_DESCRIPTION_GENERAL}
+    </apex:outputpanel>
+    <apex:outputpanel layout="none" rendered="{!uniqueDescriptionName=='Stations'}">
+    	{!$Label.FAQ_CATEGORY_DESCRIPTION_STATIONS}
+    </apex:outputpanel>
+    <apex:outputpanel layout="none" rendered="{!uniqueDescriptionName=='Luggage'}">
+    	{!$Label.FAQ_CATEGORY_DESCRIPTION_LUGGAGE}
+    </apex:outputpanel>
+    <apex:outputpanel layout="none" rendered="{!uniqueDescriptionName=='Eurostar_For_Business'}">
+            {!$Label.FAQ_CATEGORY_DESCRIPTION_EUROSTAR_FOR_BUSINESS}
+    </apex:outputpanel>
+
+
+    <apex:outputpanel layout="none" rendered="{!uniqueDescriptionName=='Loyalty_Programmes'}">
+    	{!$Label.FAQ_CATEGORY_DESCRIPTION_LOYALTY_PROGRAMMES}
+    </apex:outputpanel>
+
+    <apex:outputpanel layout="none" rendered="{!uniqueDescriptionName=='Your_Destination'}">
+    	{!$Label.FAQ_CATEGORY_DESCRIPTION_YOUR_DESTINATION}
+    </apex:outputpanel>
+    <apex:outputpanel layout="none" rendered="{!uniqueDescriptionName=='Your_Booking'}">
+    	{!$Label.FAQ_CATEGORY_DESCRIPTION_YOUR_BOOKING}
+    </apex:outputpanel>
+
+    <apex:outputpanel layout="none" rendered="{!uniqueDescriptionName=='Payment'}">
+    	
+    </apex:outputpanel>
+    <apex:outputpanel layout="none" rendered="{!uniqueDescriptionName=='Connections'}">
+    	{!$Label.FAQ_CATEGORY_DESCRIPTION_CONNECTIONS}
+    </apex:outputpanel>
+    <apex:outputpanel layout="none" rendered="{!uniqueDescriptionName=='Mobile'}">
+    	{!$Label.FAQ_CATEGORY_DESCRIPTION_MOBILE}
+    </apex:outputpanel>
+    <apex:outputpanel layout="none" rendered="{!uniqueDescriptionName=='Making_A_Booking'}">
+    	{!$Label.FAQ_CATEGORY_DESCRIPTION_MAKING_A_BOOKING}
+    </apex:outputpanel>
+    <apex:outputpanel layout="none" rendered="{!uniqueDescriptionName=='Compensation'}">
+    	{!$Label.FAQ_CATEGORY_DESCRIPTION_COMPENSATION}
+    </apex:outputpanel>
+    <apex:outputpanel layout="none" rendered="{!uniqueDescriptionName=='Hotels'}">
+    	{!$Label.FAQ_CATEGORY_DESCRIPTION_HOTELS}
+    </apex:outputpanel>
+    
+    <apex:outputpanel layout="none" rendered="{!uniqueDescriptionName=='Onboard'}">
+    	{!$Label.FAQ_CATEGORY_DESCRIPTION_ONBOARD}
+    </apex:outputpanel>
+    <apex:outputpanel layout="none" rendered="{!uniqueDescriptionName=='Seating'}">
+    	{!$Label.FAQ_CATEGORY_DESCRIPTION_SEATING}
+    </apex:outputpanel>
+    <apex:outputpanel layout="none" rendered="{!uniqueDescriptionName=='Parking'}">
+    	{!$Label.FAQ_CATEGORY_DESCRIPTION_PARKING}
+    </apex:outputpanel>
+    <apex:outputpanel layout="none" rendered="{!uniqueDescriptionName=='Tickets'}">
+    	{!$Label.FAQ_CATEGORY_DESCRIPTION_TICKETS}
+    </apex:outputpanel>
+    <apex:outputpanel layout="none" rendered="{!uniqueDescriptionName=='Exchanges'}">
+    	{!$Label.FAQ_CATEGORY_DESCRIPTION_EXCHANGES}
+    </apex:outputpanel>
+    <apex:outputpanel layout="none" rendered="{!uniqueDescriptionName=='New_Fleet'}">
+    	{!$Label.FAQ_CATEGORY_DESCRIPTION_NEW_FLEET}
+    </apex:outputpanel>
+    
+
+</apex:component>

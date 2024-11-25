@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Points_sent_to_Partner__c</fullName>
+    <defaultValue>false</defaultValue>
+    <label>Points sent to Partner</label>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Legacy_Customer_Number__c</fullName>
+    <description>Number of the Imported Customer (Used in the Group Booking database import)
+
+NOT TO BE DISPLAYED</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Legacy Number of the Imported Customer (Used in the Group Booking database import)
+
+NOT TO BE DISPLAYED</inlineHelpText>
+    <label>Legacy Customer Number</label>
+    <precision>4</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

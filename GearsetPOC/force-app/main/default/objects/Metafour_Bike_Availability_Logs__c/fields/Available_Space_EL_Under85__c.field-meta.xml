@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Available_Space_EL_Under85__c</fullName>
+    <description>for Metafour Luggage Booking</description>
+    <externalId>false</externalId>
+    <formula>IF(  Total_Space_EL_Under85__c = 0 , 0 , Total_Space_EL_Under85__c  - (  Booked_Space_EL_Under85__c +  Unconfirmed_Space_EL_Under85__c  +  Booked_Space_EL_Over85__c +  Unconfirmed_Space_EL_Over85__c  + 3 * Booked_Space_VIP_Booking__c + 3 * Unconfirmed_Space_VIP_Booking__c) )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Available Space EL Under85</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

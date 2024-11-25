@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X374_closed_by_SIE__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <inlineHelpText>Automatically populated based on the Siemens user who proposed closure</inlineHelpText>
+    <label>Closed by (SIE)</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>User.CompanyName</field>
+            <operation>equals</operation>
+            <value>Siemens</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>User</referenceTo>
+    <relationshipName>X374_Closed_by_SIE</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

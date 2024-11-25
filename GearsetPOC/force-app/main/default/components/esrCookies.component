@@ -1,0 +1,125 @@
+<apex:component >
+<!-- cookies -->
+<script type="text/javascript">
+function getCookie(name) {
+    var matches = document.cookie.match(new RegExp(
+        "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+    ));
+    return matches ? decodeURIComponent(matches[1]) : undefined;
+}
+
+function setCookie(name, value, options) {
+    options = options || {};
+
+    var expires = options.expires;
+
+    if (typeof expires == "number" && expires) {
+        var d = new Date();
+        d.setTime(d.getTime() + expires * 1000);
+        expires = options.expires = d;
+    }
+    if (expires && expires.toUTCString) {
+        options.expires = expires.toUTCString();
+    }
+
+    value = encodeURIComponent(value);
+
+    var updatedCookie = name + "=" + value;
+
+    for (var propName in options) {
+        updatedCookie += "; " + propName;
+        var propValue = options[propName];
+        if (propValue !== true) {
+            updatedCookie += "=" + propValue;
+        }
+    }
+
+    document.cookie = updatedCookie;
+}
+
+function deleteCookie(name) {
+    setCookie(name, "", {
+        expires: -1
+    });
+}
+</script>
+
+<!-- chat cookies -->
+<script type="text/javascript">
+if (!window.ESR) {
+    window.ESR = {};
+}
+
+(function() {
+    var mobile = /Android|iPhone|iPad|iPod|IEMobile|webOS|BlackBerry|Opera Mini/i.test(navigator.userAgent);
+    var setRunningInterval;
+
+    ESR.cookies = {
+        loading: 'esr-livechat-loading',
+        running: 'esr-livechat-running'
+    };
+
+    ESR.afterRedirect = function() {
+        setCookie(ESR.cookies.loading, '', {
+            expires: -1,
+            path: '/'
+        });
+
+        startRunning();
+        window.addEventListener('unload', finishRunning);
+    };
+
+    ESR.beforeRedirect = function() {
+        finishRunning();
+
+        setCookie(ESR.cookies.loading, true, {
+            expires: getExpiration(30),
+            path: '/'
+        });
+    };
+
+    ESR.beforeUnload = function() {
+        if (!getCookie(ESR.cookies.loading)) {
+            finishRunning();
+        }
+    };
+
+    ///
+
+    function getExpiration(seconds) {
+        var expires = new Date();
+        expires.setTime(expires.getTime() + seconds * 1000);
+        return expires;
+    }
+
+    function startRunning() {
+        setRunningCookie();
+        if (!mobile) {
+            setRunningInterval = setInterval(setRunningCookie, 1000);
+        }
+
+        ///
+
+        function setRunningCookie() {
+            setCookie(ESR.cookies.running, true, mobile ? {
+                path: '/'
+            } : {
+                expires: getExpiration(10),
+                path: '/'
+            });
+        }
+    }
+
+    function finishRunning() {
+        if (!mobile) {
+            clearInterval(setRunningInterval);
+        }
+
+        setCookie(ESR.cookies.running, '', {
+            expires: -1,
+            path: '/'
+        });
+    }
+})();
+</script>
+</apex:component>

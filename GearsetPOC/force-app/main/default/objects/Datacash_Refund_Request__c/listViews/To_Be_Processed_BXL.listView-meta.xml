@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>To_Be_Processed_BXL</fullName>
+    <booleanFilter>1 AND 2 AND 3 AND (4 OR 5 OR 6 OR 7 OR 8 OR 9 OR 10)</booleanFilter>
+    <columns>NAME</columns>
+    <columns>PNR__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>Case__c</columns>
+    <columns>Currency__c</columns>
+    <columns>Amount_To_Be_Refunded__c</columns>
+    <columns>Reason_For_Using_Datacash__c</columns>
+    <columns>PNR_If_Booking_Is_Not_On_Salesforce__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Refund_Processed__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Duplicate_Request_No_Longer_Needed__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Refund_Pending__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>CREATEDBY_USER</field>
+        <operation>equals</operation>
+        <value>Edvine Mola,Jordan Braeckman,Kevin Duberti,Idriss Duberti,Sara Chacor,Natacha Lagache,Gilbert Eich</value>
+    </filters>
+    <filters>
+        <field>CREATEDBY_USER</field>
+        <operation>equals</operation>
+        <value>Labinot Lutolli,Camille Gillisjans,June Aberkan,Patrice Cremers,Valentine Boudart,Bart Keppens,Katia Nouichi,Brigitte Nannan,Paul Hart,Kim Hell,Gracia Ekoondo,Sabrine Trabelsi,Manuella Ndaye Ngenyi,Reda Akchich</value>
+    </filters>
+    <filters>
+        <field>CREATEDBY_USER</field>
+        <operation>equals</operation>
+        <value>Alexandre Corbi,Anastasyia Piuko,Automne Carpentier,Claire Desoulle,Drucilia Mabika,Gabriel Berhili,Sarah Canard,Sarah Nicole Yahya,Kamila Medova,Nadia Demeyere,Guillaume Le Polain De Waroux,Yasmine Al Zaatiti,Joachim Denninger</value>
+    </filters>
+    <filters>
+        <field>CREATEDBY_USER</field>
+        <operation>equals</operation>
+        <value>,Liubov Gaspard,Nicole Nsingi,Tanguy Simonart,Lorena Diericx,Anastasiya Piuko,Mélisande Efomi,Orelle Dhaenens,Isaline Ronvaux,Lise Dehard,Trinity Ngudie Katende,Mélissa Liégeois,Justine Motmans</value>
+    </filters>
+    <filters>
+        <field>CREATEDBY_USER</field>
+        <operation>equals</operation>
+        <value>Danielle NyalipeteLikayi,Gwenaelle Demeuter,Laura Hubeau,Cecilia Kabeya,Marie Lukusa,Christiano Lumbay,Ashley Mianzuila,Jamila EL HALLA,Jade Ghouailia,Amina Ketia MBALA,Cassandra Heyvaert,Mariam ARFAOUI,Estelle Jadin,Florence Beaurir</value>
+    </filters>
+    <filters>
+        <field>CREATEDBY_USER</field>
+        <operation>equals</operation>
+        <value>Cécilia Kabeya,Ruben Tesch,Yasmine Boustane,Elayono Masezerano,Orelle Dhaenens,Didier Mbulu,Noelle Mulaba,Uma Nagendirarajah,Philip De Mesmacker,Samir Ben Mimoun,Soumaya Boussbiba,Diane Kikaya</value>
+    </filters>
+    <filters>
+        <field>CREATEDBY_USER</field>
+        <operation>equals</operation>
+        <value>Danielle Nyalipete Likayi,Boaté Kinkela,Mailinda Kroza,Charles-Emmanuel Libbrecht,Benedicte Nkutshi,Emmanuel Gaspar,Pascale Nicolay,Raphael De Brouwer,Guilain Belo,David Mihai Chira,Melissande Efomi,Nina Langoecker,Rania Loulichki</value>
+    </filters>
+    <label>To Be Processed - BXL</label>
+</ListView>

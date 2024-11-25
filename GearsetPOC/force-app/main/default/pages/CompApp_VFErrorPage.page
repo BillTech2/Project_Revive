@@ -1,0 +1,67 @@
+<apex:page showHeader="false" sidebar="false" language="{!selectedLanguageCode}" controller="CompApp_CtrlApp" standardStylesheets="false" applyHtmlTag="false" applyBodyTag="false" showChat="false">
+
+    <div>
+        <!--div class="grid-row grid-group">
+            <h1 class="grid-col grid-col-span_12_of_12" ng-bind-html="$root.$angularState.system.softErrorMessageHeader"></h1>
+        </div>
+
+        <div class="grid-row grid-group">
+            <div class="grid-col grid-col-span_12_of_12 p1" ng-bind-html="$root.$angularState.system.softErrorMessageBody"></div>
+        </div-->
+
+        <div class="grid-row grid-group" ng-show="!$root.$angularState.system.softErrorMessageHeader.startsWith('CompApp_')">
+            <h1 class="grid-col grid-col-span_12_of_12" ng-bind-html="$root.$angularState.system.softErrorMessageHeader"></h1>
+        </div>
+
+        <div class="grid-row grid-group" ng-show="!$root.$angularState.system.softErrorMessageBody.startsWith('CompApp_')">
+            <div class="grid-col grid-col-span_12_of_12 p1" ng-bind-html="$root.$angularState.system.softErrorMessageBody"></div>
+        </div>
+
+        <div class="grid-row grid-group" ng-show="$root.$angularState.system.softErrorMessageHeader == 'CompApp_Invalid_Claim_Email_Header'">
+            <h1 class="grid-col grid-col-span_12_of_12">{!$label.CompApp_Invalid_Claim_Email_Header}</h1>
+        </div>
+
+        <div class="grid-row grid-group" ng-show="$root.$angularState.system.softErrorMessageBody == 'CompApp_Invalid_Claim_Email'">
+            <div class="grid-col grid-col-span_12_of_12 p1">{!$label.CompApp_Invalid_Claim_Email}</div>
+        </div>
+
+        <div class="grid-row grid-group" ng-show="$root.$angularState.system.softErrorMessageHeader == 'CompApp_Compensation_non_qualified_travel_date_Header'">
+            <h1 class="grid-col grid-col-span_12_of_12">{!$label.CompApp_Compensation_non_qualified_travel_date_Header}</h1>
+        </div>
+
+        <div class="grid-row grid-group" ng-show="$root.$angularState.system.softErrorMessageBody == 'CompApp_Compensation_non_qualified_travel_date'">
+            <div class="grid-col grid-col-span_12_of_12 p1">{!$label.CompApp_Compensation_non_qualified_travel_date}</div>
+        </div>
+
+        <div class="grid-row grid-group" ng-show="$root.$angularState.system.softErrorMessageHeader == 'CompApp_Compensation_already_claimed_Header'">
+            <h1 class="grid-col grid-col-span_12_of_12">{!$label.CompApp_Compensation_already_claimed_Header}</h1>
+        </div>
+
+        <div class="grid-row grid-group" ng-show="$root.$angularState.system.softErrorMessageBody == 'CompApp_Compensation_already_claimed'">
+            <div class="grid-col grid-col-span_12_of_12 p1">{!$label.CompApp_Compensation_already_claimed}</div>
+        </div>
+
+        <div class="grid-row grid-group" ng-show="$root.$angularState.system.softErrorMessageHeader == 'CompApp_No_Applicable_Compensation_Found_Header'">
+            <h1 class="grid-col grid-col-span_12_of_12">{!$label.CompApp_No_Applicable_Compensation_Found_Header}</h1>
+        </div>
+
+        <div class="grid-row grid-group" ng-show="$root.$angularState.system.softErrorMessageBody == 'CompApp_No_Applicable_Compensation_Found'">
+            <div class="grid-col grid-col-span_12_of_12 p1">{!$label.CompApp_No_Applicable_Compensation_Found}</div>
+        </div>
+
+        <div class="grid-row grid-group" ng-show="$root.$angularState.system.softErrorMessageHeader == 'CompApp_Invalid_Form_Header'">
+            <h1 class="grid-col grid-col-span_12_of_12">{!$label.CompApp_Invalid_Form_Header}</h1>
+        </div>
+
+        <div class="grid-row grid-group" ng-show="$root.$angularState.system.softErrorMessageBody == 'CompApp_Invalid_Form'">
+            <div class="grid-col grid-col-span_12_of_12 p1"><apex:outputText escape="false"  value="{!$Label.CompApp_Invalid_Form}"/></div>
+        </div>
+
+
+        <section>
+            <div class="row commands-section">
+                <a ref="#/" class="btn primary" ng-click="restartProcess()">{!$label.CompApp_make_claim}</a>
+            </div>
+        </section>
+    </div>
+</apex:page>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>isvat__c</fullName>
+    <description>Is VAT registered?</description>
+    <inlineHelpText>Is VAT registered?</inlineHelpText>
+    <label>isvat</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Yes</fullName>
+                <default>true</default>
+                <label>Yes</label>
+            </value>
+            <value>
+                <fullName>No</fullName>
+                <default>false</default>
+                <label>No</label>
+            </value>
+            <value>
+                <fullName>VAT Exempt</fullName>
+                <default>false</default>
+                <label>VAT Exempt</label>
+            </value>
+            <value>
+                <fullName>Awaiting VAT registration</fullName>
+                <default>false</default>
+                <label>Awaiting VAT registration</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Loyalty_Member_Compact_Layout</fullName>
+    <fields>MembershipNumber</fields>
+    <fields>Member_Tier__c</fields>
+    <fields>MemberStatus</fields>
+    <fields>QP__c</fields>
+    <fields>NQP__c</fields>
+    <fields>Manual_Tier_Immunity_Level__c</fields>
+    <fields>Subscription_Tier_Immunity_Level__c</fields>
+    <label>Loyalty Member Compact Layout</label>
+</CompactLayout>

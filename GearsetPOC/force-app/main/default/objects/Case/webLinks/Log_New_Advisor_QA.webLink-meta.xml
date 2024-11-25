@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Log_New_Advisor_QA</fullName>
+    <availability>online</availability>
+    <displayType>link</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Log New Advisor QA</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>https://eurostar.my.salesforce.com/a7m/e?
+CF00Nb000000AA8Sh={!Case.CaseNumber}&amp;
+retURL=%2Fa7m%2Fo</url>
+</WebLink>

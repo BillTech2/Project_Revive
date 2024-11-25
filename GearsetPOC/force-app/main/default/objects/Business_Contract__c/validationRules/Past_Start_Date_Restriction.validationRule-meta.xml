@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Past_Start_Date_Restriction</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+NOT($User.B2b_Bypass_Validation_Rules__c),
+OR(AND( OR(ISCHANGED(StartDate__c), ISNEW()) , NOT(ISBLANK(StartDate__c)),
+StartDate__c &lt; TODAY()),AND(OR(ISCHANGED(StartDate__c), ISNEW()) ,NOT(ISBLANK(EndDate__c)),
+EndDate__c&lt; TODAY()))
+)</errorConditionFormula>
+    <errorMessage>The contract start and end date should be in the future</errorMessage>
+</ValidationRule>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>E4A_Opt_Out_Reason__c</fullName>
+    <label>E4A Opt Out Reason</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>I receive too many emails</fullName>
+                <default>false</default>
+                <label>I receive too many emails</label>
+            </value>
+            <value>
+                <fullName>The emails are not relevant to me</fullName>
+                <default>false</default>
+                <label>The emails are not relevant to me</label>
+            </value>
+            <value>
+                <fullName>Uninteresting or repetetive content</fullName>
+                <default>false</default>
+                <label>Uninteresting or repetetive content</label>
+            </value>
+            <value>
+                <fullName>The format is not easy to read</fullName>
+                <default>false</default>
+                <label>The format is not easy to read</label>
+            </value>
+            <value>
+                <fullName>I can&#39;t properly view the emails</fullName>
+                <default>false</default>
+                <label>I can&#39;t properly view the emails</label>
+            </value>
+            <value>
+                <fullName>I don&#39;t remember subscribing</fullName>
+                <default>false</default>
+                <label>I don&#39;t remember subscribing</label>
+            </value>
+            <value>
+                <fullName>Other (please explain)</fullName>
+                <default>false</default>
+                <label>Other (please explain)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

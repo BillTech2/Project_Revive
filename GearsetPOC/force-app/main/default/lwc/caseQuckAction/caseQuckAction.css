@@ -1,0 +1,22 @@
+.draftStyleHeader {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.draftStyleBody {
+    font-size: 1.1 rem;
+    font-weight: bold;
+}
+
+.messageWindow {
+    height: 20%;
+    background-color: red;
+    color: aliceblue;
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+}
+
+.сellStyle {
+    width: 100%;
+}

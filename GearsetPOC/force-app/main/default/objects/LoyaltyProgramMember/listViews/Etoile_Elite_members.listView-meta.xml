@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Etoile_Elite_members</fullName>
+    <columns>Name</columns>
+    <columns>Contact</columns>
+    <columns>Account</columns>
+    <columns>Program</columns>
+    <columns>MemberType</columns>
+    <columns>EnrollmentDate</columns>
+    <columns>LastActivityDate</columns>
+    <columns>MembershipEndDate</columns>
+    <columns>MemberStatus</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Member_Tier__c</field>
+        <operation>contains</operation>
+        <value>Etoile,Elite,élite,étoile</value>
+    </filters>
+    <filters>
+        <field>MemberStatus</field>
+        <operation>equals</operation>
+        <value>Active</value>
+    </filters>
+    <label>Etoile Elite members</label>
+</ListView>

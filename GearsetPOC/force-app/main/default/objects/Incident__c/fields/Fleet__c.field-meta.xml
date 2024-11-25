@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fleet__c</fullName>
+    <inlineHelpText>select the fleet on which the incident is to be raised</inlineHelpText>
+    <label>Fleet</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>TMST</fullName>
+                <color>#A845DC</color>
+                <default>false</default>
+                <label>TMST</label>
+            </value>
+            <value>
+                <fullName>E300</fullName>
+                <color>#F96FB7</color>
+                <default>false</default>
+                <label>E300</label>
+            </value>
+            <value>
+                <fullName>E320</fullName>
+                <color>#0B24BE</color>
+                <default>false</default>
+                <label>E320</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

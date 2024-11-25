@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Scoring_Points__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+ ISPICKVAL(GDPR_compliance_was_met_check__c , &quot;NO - COMPLIANCE BREACH&quot;),
+ ROUND((Tool_Applications_Score__c + Eurostar_Voice_Scoring__c + Compliance_Was_Met_Scoring__c + Wild_Card_Scoring__c +  Right_resolution_score__c) * 0.8,1),
+IF(ISPICKVAL(GDPR_compliance_was_met_check__c , &quot;NO - GDPR BREACH&quot;),0,
+ ROUND(Tool_Applications_Score__c + Eurostar_Voice_Scoring__c + Compliance_Was_Met_Scoring__c + Wild_Card_Scoring__c +  Right_resolution_score__c,1)))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Total Scoring Points</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>1</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

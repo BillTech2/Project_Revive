@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Available_Luggage_space__c</fullName>
+    <description>for Metafour Luggage Booking</description>
+    <externalId>false</externalId>
+    <formula>MAX(Total_Space_EL_Over85__c  , Total_Space_EL_Under85__c ) - ( Unconfirmed_Space_EL_Over85__c  +  Booked_Space_EL_Over85__c  +  Unconfirmed_Space_EL_Under85__c  +  Booked_Space_EL_Under85__c + (3 * Booked_Space_VIP_Booking__c) + (3 * Unconfirmed_Space_VIP_Booking__c) )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Total Available Luggage space</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opera_Roles__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(ISPICKVAL(Agent_Type__c,&quot;Chat&quot;),&quot;Webhelp Chat GBP, Webhelp Chat EUR, Webhelp Chat USD&quot;,&quot;Webhelp CustCare GBP, Webhelp CustCare EUR, Webhelp CustCare USD&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Opera Roles</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

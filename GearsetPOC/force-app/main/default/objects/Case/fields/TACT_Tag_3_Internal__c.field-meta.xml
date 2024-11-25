@@ -1,0 +1,625 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TACT_Tag_3_Internal__c</fullName>
+    <description>Created to support TACT Integration - Expected to be retired soon</description>
+    <label>TACT Tag 3</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Promotional fare</fullName>
+                <default>false</default>
+                <label>Promotional fare</label>
+            </value>
+            <value>
+                <fullName>ThePass fare</fullName>
+                <default>false</default>
+                <label>ThePass fare</label>
+            </value>
+            <value>
+                <fullName>Ticket price</fullName>
+                <default>false</default>
+                <label>Ticket price</label>
+            </value>
+            <value>
+                <fullName>Wheelchair fare</fullName>
+                <default>false</default>
+                <label>Wheelchair fare</label>
+            </value>
+            <value>
+                <fullName>Transporting a pet</fullName>
+                <default>false</default>
+                <label>Transporting a pet</label>
+            </value>
+            <value>
+                <fullName>Bicycles / special luggage</fullName>
+                <default>false</default>
+                <label>Bicycles / special luggage</label>
+            </value>
+            <value>
+                <fullName>Interrail</fullName>
+                <default>false</default>
+                <label>Interrail</label>
+            </value>
+            <value>
+                <fullName>Creditcard rejected</fullName>
+                <default>false</default>
+                <label>Creditcard rejected</label>
+            </value>
+            <value>
+                <fullName>I received an errormessage</fullName>
+                <default>false</default>
+                <label>I received an errormessage</label>
+            </value>
+            <value>
+                <fullName>Using a voucher</fullName>
+                <default>false</default>
+                <label>Using a voucher</label>
+            </value>
+            <value>
+                <fullName>Double payment</fullName>
+                <default>false</default>
+                <label>Double payment</label>
+            </value>
+            <value>
+                <fullName>Ticket not received</fullName>
+                <default>false</default>
+                <label>Ticket not received</label>
+            </value>
+            <value>
+                <fullName>Ticket lost</fullName>
+                <default>false</default>
+                <label>Ticket lost</label>
+            </value>
+            <value>
+                <fullName>Retrieving your ticket at the station</fullName>
+                <default>false</default>
+                <label>Retrieving your ticket at the station</label>
+            </value>
+            <value>
+                <fullName>Barcode</fullName>
+                <default>false</default>
+                <label>Barcode</label>
+            </value>
+            <value>
+                <fullName>Mail delivery</fullName>
+                <default>false</default>
+                <label>Mail delivery</label>
+            </value>
+            <value>
+                <fullName>Confirmation email</fullName>
+                <default>false</default>
+                <label>Confirmation email</label>
+            </value>
+            <value>
+                <fullName>Requesting an invoice</fullName>
+                <default>false</default>
+                <label>Requesting an invoice</label>
+            </value>
+            <value>
+                <fullName>Confirmation SMS</fullName>
+                <default>false</default>
+                <label>Confirmation SMS</label>
+            </value>
+            <value>
+                <fullName>Exchange</fullName>
+                <default>false</default>
+                <label>Exchange</label>
+            </value>
+            <value>
+                <fullName>Cancellation</fullName>
+                <default>false</default>
+                <label>Cancellation</label>
+            </value>
+            <value>
+                <fullName>Changing your seats</fullName>
+                <default>false</default>
+                <label>Changing your seats</label>
+            </value>
+            <value>
+                <fullName>Changing the names on the ticket</fullName>
+                <default>false</default>
+                <label>Changing the names on the ticket</label>
+            </value>
+            <value>
+                <fullName>Changing your comfortclass</fullName>
+                <default>false</default>
+                <label>Changing your comfortclass</label>
+            </value>
+            <value>
+                <fullName>I booked the same ticket twice</fullName>
+                <default>false</default>
+                <label>I booked the same ticket twice</label>
+            </value>
+            <value>
+                <fullName>I didn&#39;t use my ticket</fullName>
+                <default>false</default>
+                <label>I didn&#39;t use my ticket</label>
+            </value>
+            <value>
+                <fullName>Taxi</fullName>
+                <default>false</default>
+                <label>Taxi</label>
+            </value>
+            <value>
+                <fullName>Metrotickets</fullName>
+                <default>false</default>
+                <label>Metrotickets</label>
+            </value>
+            <value>
+                <fullName>Parking</fullName>
+                <default>false</default>
+                <label>Parking</label>
+            </value>
+            <value>
+                <fullName>Waitingroom at the station</fullName>
+                <default>false</default>
+                <label>Waitingroom at the station</label>
+            </value>
+            <value>
+                <fullName>Aachen</fullName>
+                <default>false</default>
+                <label>Aachen</label>
+            </value>
+            <value>
+                <fullName>Cologne</fullName>
+                <default>false</default>
+                <label>Cologne</label>
+            </value>
+            <value>
+                <fullName>Paris</fullName>
+                <default>false</default>
+                <label>Paris</label>
+            </value>
+            <value>
+                <fullName>Brussels</fullName>
+                <default>false</default>
+                <label>Brussels</label>
+            </value>
+            <value>
+                <fullName>In Belgium</fullName>
+                <default>false</default>
+                <label>In Belgium</label>
+            </value>
+            <value>
+                <fullName>In France</fullName>
+                <default>false</default>
+                <label>In France</label>
+            </value>
+            <value>
+                <fullName>In The Netherlands</fullName>
+                <default>false</default>
+                <label>In The Netherlands</label>
+            </value>
+            <value>
+                <fullName>In Germany</fullName>
+                <default>false</default>
+                <label>In Germany</label>
+            </value>
+            <value>
+                <fullName>At the station on the platform</fullName>
+                <default>false</default>
+                <label>At the station on the platform</label>
+            </value>
+            <value>
+                <fullName>On board - the Train Manager</fullName>
+                <default>false</default>
+                <label>On board - the Train Manager</label>
+            </value>
+            <value>
+                <fullName>On board - stewards</fullName>
+                <default>false</default>
+                <label>On board - stewards</label>
+            </value>
+            <value>
+                <fullName>On board - cleaning staff</fullName>
+                <default>false</default>
+                <label>On board - cleaning staff</label>
+            </value>
+            <value>
+                <fullName>Fine / regularization</fullName>
+                <default>false</default>
+                <label>Fine / regularization</label>
+            </value>
+            <value>
+                <fullName>My ticket wasn&#39;t validated</fullName>
+                <default>false</default>
+                <label>My ticket wasn&#39;t validated</label>
+            </value>
+            <value>
+                <fullName>Availability</fullName>
+                <default>false</default>
+                <label>Availability</label>
+            </value>
+            <value>
+                <fullName>Quality</fullName>
+                <default>false</default>
+                <label>Quality</label>
+            </value>
+            <value>
+                <fullName>Quantity</fullName>
+                <default>false</default>
+                <label>Quantity</label>
+            </value>
+            <value>
+                <fullName>Specifial Requests</fullName>
+                <default>false</default>
+                <label>Specifial Requests</label>
+            </value>
+            <value>
+                <fullName>Prebooking</fullName>
+                <default>false</default>
+                <label>Prebooking</label>
+            </value>
+            <value>
+                <fullName>Wifi Dysfunction</fullName>
+                <default>false</default>
+                <label>Wifi Dysfunction</label>
+            </value>
+            <value>
+                <fullName>Account management</fullName>
+                <default>false</default>
+                <label>Account management</label>
+            </value>
+            <value>
+                <fullName>Offer quality</fullName>
+                <default>false</default>
+                <label>Offer quality</label>
+            </value>
+            <value>
+                <fullName>E-press</fullName>
+                <default>false</default>
+                <label>E-press</label>
+            </value>
+            <value>
+                <fullName>Noise</fullName>
+                <default>false</default>
+                <label>Noise</label>
+            </value>
+            <value>
+                <fullName>Behavior of another passenger</fullName>
+                <default>false</default>
+                <label>Behavior of another passenger</label>
+            </value>
+            <value>
+                <fullName>Taken seat</fullName>
+                <default>false</default>
+                <label>Taken seat</label>
+            </value>
+            <value>
+                <fullName>Smoker</fullName>
+                <default>false</default>
+                <label>Smoker</label>
+            </value>
+            <value>
+                <fullName>Carriage&#39;s cleanliness</fullName>
+                <default>false</default>
+                <label>Carriage&#39;s cleanliness</label>
+            </value>
+            <value>
+                <fullName>Toilets&#39; cleanliness</fullName>
+                <default>false</default>
+                <label>Toilets&#39; cleanliness</label>
+            </value>
+            <value>
+                <fullName>Security</fullName>
+                <default>false</default>
+                <label>Security</label>
+            </value>
+            <value>
+                <fullName>Temperature/Air conditioning</fullName>
+                <default>false</default>
+                <label>Temperature/Air conditioning</label>
+            </value>
+            <value>
+                <fullName>Accessibility for disabled travelers</fullName>
+                <default>false</default>
+                <label>Accessibility for disabled travelers</label>
+            </value>
+            <value>
+                <fullName>Power outlets</fullName>
+                <default>false</default>
+                <label>Power outlets</label>
+            </value>
+            <value>
+                <fullName>Trash can</fullName>
+                <default>false</default>
+                <label>Trash can</label>
+            </value>
+            <value>
+                <fullName>Toilets</fullName>
+                <default>false</default>
+                <label>Toilets</label>
+            </value>
+            <value>
+                <fullName>Luggagespace</fullName>
+                <default>false</default>
+                <label>Luggagespace</label>
+            </value>
+            <value>
+                <fullName>Wrong or obsolete information</fullName>
+                <default>false</default>
+                <label>Wrong or obsolete information</label>
+            </value>
+            <value>
+                <fullName>Received too late</fullName>
+                <default>false</default>
+                <label>Received too late</label>
+            </value>
+            <value>
+                <fullName>SMS not received</fullName>
+                <default>false</default>
+                <label>SMS not received</label>
+            </value>
+            <value>
+                <fullName>Email not received</fullName>
+                <default>false</default>
+                <label>Email not received</label>
+            </value>
+            <value>
+                <fullName>At the station</fullName>
+                <default>false</default>
+                <label>At the station</label>
+            </value>
+            <value>
+                <fullName>On board</fullName>
+                <default>false</default>
+                <label>On board</label>
+            </value>
+            <value>
+                <fullName>thalys.com</fullName>
+                <default>false</default>
+                <label>thalys.com</label>
+            </value>
+            <value>
+                <fullName>voyages-sncf.com</fullName>
+                <default>false</default>
+                <label>voyages-sncf.com</label>
+            </value>
+            <value>
+                <fullName>sncb.be</fullName>
+                <default>false</default>
+                <label>sncb.be</label>
+            </value>
+            <value>
+                <fullName>Inappropriate content</fullName>
+                <default>false</default>
+                <label>Inappropriate content</label>
+            </value>
+            <value>
+                <fullName>Unsuscribe</fullName>
+                <default>false</default>
+                <label>Unsuscribe</label>
+            </value>
+            <value>
+                <fullName>Help / Advise</fullName>
+                <default>false</default>
+                <label>Help / Advise</label>
+            </value>
+            <value>
+                <fullName>Dysfunction</fullName>
+                <default>false</default>
+                <label>Dysfunction</label>
+            </value>
+            <value>
+                <fullName>Card not received, lost, stolen</fullName>
+                <default>false</default>
+                <label>Card not received, lost, stolen</label>
+            </value>
+            <value>
+                <fullName>Problems registering or logging in</fullName>
+                <default>false</default>
+                <label>Problems registering or logging in</label>
+            </value>
+            <value>
+                <fullName>Proof of use</fullName>
+                <default>false</default>
+                <label>Proof of use</label>
+            </value>
+            <value>
+                <fullName>Upgrade / downgrade</fullName>
+                <default>false</default>
+                <label>Upgrade / downgrade</label>
+            </value>
+            <value>
+                <fullName>My ticket is not registered in my account</fullName>
+                <default>false</default>
+                <label>My ticket is not registered in my account</label>
+            </value>
+            <value>
+                <fullName>Due Miles</fullName>
+                <default>false</default>
+                <label>Due Miles</label>
+            </value>
+            <value>
+                <fullName>Orders on our onlineshop</fullName>
+                <default>false</default>
+                <label>Orders on our onlineshop</label>
+            </value>
+            <value>
+                <fullName>Lack of availability</fullName>
+                <default>false</default>
+                <label>Lack of availability</label>
+            </value>
+            <value>
+                <fullName>Exchange or cancellation</fullName>
+                <default>false</default>
+                <label>Exchange or cancellation</label>
+            </value>
+            <value>
+                <fullName>Taxi, meeting room and parking reservation</fullName>
+                <default>false</default>
+                <label>Taxi, meeting room and parking reservation</label>
+            </value>
+            <value>
+                <fullName>Access flexibility</fullName>
+                <default>false</default>
+                <label>Access flexibility</label>
+            </value>
+            <value>
+                <fullName>Promotion</fullName>
+                <default>false</default>
+                <label>Promotion</label>
+            </value>
+            <value>
+                <fullName>Conciergerie</fullName>
+                <default>false</default>
+                <label>Conciergerie</label>
+            </value>
+            <value>
+                <fullName>Picture Upload</fullName>
+                <default>false</default>
+                <label>Picture Upload</label>
+            </value>
+            <value>
+                <fullName>VAT specificities</fullName>
+                <default>false</default>
+                <label>VAT specificities</label>
+            </value>
+            <value>
+                <fullName>Customer account</fullName>
+                <default>false</default>
+                <label>Customer account</label>
+            </value>
+            <value>
+                <fullName>Call Center</fullName>
+                <default>false</default>
+                <label>Call Center</label>
+            </value>
+            <value>
+                <fullName>Izy.com</fullName>
+                <default>false</default>
+                <label>Izy.com</label>
+            </value>
+            <value>
+                <fullName>CF1/CF2</fullName>
+                <default>false</default>
+                <label>CF1/CF2</label>
+            </value>
+            <value>
+                <fullName>Validity</fullName>
+                <default>false</default>
+                <label>Validity</label>
+            </value>
+            <value>
+                <fullName>Flexibility</fullName>
+                <default>false</default>
+                <label>Flexibility</label>
+            </value>
+            <value>
+                <fullName>Düsseldorf</fullName>
+                <default>false</default>
+                <label>Düsseldorf</label>
+            </value>
+            <value>
+                <fullName>No seat available</fullName>
+                <default>false</default>
+                <label>No seat available</label>
+            </value>
+            <value>
+                <fullName>Buy a ticket</fullName>
+                <default>false</default>
+                <label>Buy a ticket</label>
+            </value>
+            <value>
+                <fullName>Groups</fullName>
+                <default>false</default>
+                <label>Groups</label>
+            </value>
+            <value>
+                <fullName>New request</fullName>
+                <default>false</default>
+                <label>New request</label>
+            </value>
+            <value>
+                <fullName>Renewal</fullName>
+                <default>false</default>
+                <label>Renewal</label>
+            </value>
+            <value>
+                <fullName>Reservation</fullName>
+                <default>false</default>
+                <label>Reservation</label>
+            </value>
+            <value>
+                <fullName>I made a mistake</fullName>
+                <default>false</default>
+                <label>I made a mistake</label>
+            </value>
+            <value>
+                <fullName>Change of name</fullName>
+                <default>false</default>
+                <label>Change of name</label>
+            </value>
+            <value>
+                <fullName>Change of address</fullName>
+                <default>false</default>
+                <label>Change of address</label>
+            </value>
+            <value>
+                <fullName>Change of email</fullName>
+                <default>false</default>
+                <label>Change of email</label>
+            </value>
+            <value>
+                <fullName>Change of sex</fullName>
+                <default>false</default>
+                <label>Change of sex</label>
+            </value>
+            <value>
+                <fullName>Change of language</fullName>
+                <default>false</default>
+                <label>Change of language</label>
+            </value>
+            <value>
+                <fullName>On-board lighting</fullName>
+                <default>false</default>
+                <label>On-board lighting</label>
+            </value>
+            <value>
+                <fullName>Seat Comfort</fullName>
+                <default>false</default>
+                <label>Seat Comfort</label>
+            </value>
+            <value>
+                <fullName>COVID Measures</fullName>
+                <default>false</default>
+                <label>COVID Measures</label>
+            </value>
+            <value>
+                <fullName>e-Voucher Promo</fullName>
+                <default>false</default>
+                <label>e-Voucher Promo</label>
+            </value>
+            <value>
+                <fullName>Adyen</fullName>
+                <default>false</default>
+                <label>Adyen</label>
+            </value>
+            <value>
+                <fullName>Bicylces / special luggage</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Bicylces / special luggage</label>
+            </value>
+            <value>
+                <fullName>Construction work in Paris-Nord</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Construction work in Paris-Nord</label>
+            </value>
+            <value>
+                <fullName>……</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>……</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

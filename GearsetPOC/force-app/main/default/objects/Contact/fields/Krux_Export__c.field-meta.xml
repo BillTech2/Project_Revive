@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Krux_Export__c</fullName>
+    <formula>NOT(ISNULL (Latest_Booking_Date__c ))
+&amp;&amp;
+NOT(ISBLANK (Hashed_email__c))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>If true, will be selected in the daily process sending data to our DMP Platform (Krux)</inlineHelpText>
+    <label>Krux Export</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

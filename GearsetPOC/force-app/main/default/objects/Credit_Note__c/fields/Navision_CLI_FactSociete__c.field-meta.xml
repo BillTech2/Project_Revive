@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Navision_CLI_FactSociete__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF (Invoice_Account__c = NULL, Invoice__r.Invoice_Last_Name__c &amp;&quot; &quot;&amp; Invoice__r.Invoice_First_Name__c , Invoice_Account__r.Name)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>CLI_FactSociete</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

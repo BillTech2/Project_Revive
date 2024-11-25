@@ -1,0 +1,73 @@
+<apex:page showHeader="false" standardController="Hazard__c" extensions="HazardController" language="en">
+<apex:pageMessages />
+<apex:form id="hazardForm">
+<apex:image value="{!$Label.Hazard_eurostar_Logo}" width="25%" height="25%"/>
+
+ 
+    <apex:pageBlock title="{!$Label.Hazard_near_miss_report_form}">
+       <apex:pageBlockButtons >
+            <apex:commandButton value="{!$Label.Submit}" action="{!save}"/>
+        </apex:pageBlockButtons> 
+        <apex:pageBlockSection title="{!$Label.Help_stop_accidents_at_work}" columns="1">
+                <apex:inputField value="{!Hazard__c.Hazard_Date_of_Occurance__c}" required="true"/>
+                <apex:inputField value="{!Hazard__c.Location__c}" required="true"/>
+                
+                <apex:pageBlockSectionItem >
+                {!$ObjectType.Hazard__c.fields.Exact_Location__c.label}
+                <apex:inputField value="{!Hazard__c.Exact_Location__c}" required="true"/>
+                </apex:pageBlockSectionItem>
+                
+        </apex:pageBlockSection>  
+        <apex:pageBlockSection title="{!$Label.Please_give_details_of_concern_occurance_below}" columns="1">
+                <apex:inputField value="{!Hazard__c.Hazard_Subject__c}" required="true"/>
+                 <!--  <apex:inputField value="{!Hazard__c.Hazard_Description__c}" required="true"/>  -->
+                
+                <apex:pageBlockSectionItem >
+                {!$ObjectType.Hazard__c.fields.Hazard_Description__c.label}
+
+                 <span class="Custom ToolTip text">
+                    <img src="/s.gif" alt="Help" class="helpIcon" title="{!$Label.Hazard_description_help_text}"/>
+                </span>
+                <apex:inputField value="{!Hazard__c.Hazard_Description__c}" required="true"/>
+                </apex:pageBlockSectionItem>
+        </apex:pageBlockSection>    
+
+         <apex:pageBlockSection title="{!$Label.Hazard_Immediate_corrective_Action}" columns="1">
+         
+                <apex:pageBlockSectionItem >
+                    {!$ObjectType.Hazard__c.fields.Hazard_Corrective_Action__c.label}
+                    <apex:inputField value="{!Hazard__c.Hazard_Corrective_Action__c}" required="true"/>
+                </apex:pageBlockSectionItem>
+                
+              <!--  <apex:inputField value="{!Hazard__c.Hazard_Corrective_Action__c}"/>  -->
+              
+            <!--  <apex:pageBlockSectionItem >
+                {!$ObjectType.Hazard__c.fields.Hazard_on_closure_notify__c.label}
+                <apex:inputField value="{!Hazard__c.Hazard_on_closure_notify__c}" />
+            </apex:pageBlockSectionItem>  -->
+            
+                <!-- <apex:inputField value="{!Hazard__c.Hazard_on_closure_notify__c}"/>  -->
+                <apex:inputField value="{!Hazard__c.Hazard_Action_Implemented_On__c}"/>
+        </apex:pageBlockSection> 
+        
+         <apex:pageBlockSection title="{!$Label.Improvement_Ideas_on_how_to_reduce_or_prevent_the_risk}" columns="1">
+                <!--   <apex:inputField value="{!Hazard__c.Hazard_Suggested_Improvement__c}"/>  -->
+                <apex:pageBlockSectionItem >
+                {!$ObjectType.Hazard__c.fields.Hazard_Suggested_Improvement__c.label}
+
+                <span class="Custom ToolTip text">
+                    <img src="/s.gif" alt="Help" class="helpIcon" title="{!$Label.Hazard_Suggested_Improvement_Helptext}"/>
+                </span>
+                <apex:inputField value="{!Hazard__c.Hazard_Suggested_Improvement__c}" required="true"/>
+                </apex:pageBlockSectionItem> 
+        </apex:pageBlockSection>   
+
+        <apex:pageBlockSection title="{!$Label.Hazard_Key_responsible_manager}" columns="1">
+                <apex:inputField value="{!Hazard__c.Hazard_Key_Manager_EIL__c}"/>
+                <apex:inputHidden value="{!language}" id="theHiddenInput"/>
+
+        </apex:pageBlockSection>        
+        
+    </apex:pageBlock>
+</apex:form>
+</apex:page>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Adds_required_information_in_Salesforce__c</fullName>
+    <inlineHelpText>Feeds information into Salesforce  during contact, including logging a call where appropriate and making note of useful or relevant information</inlineHelpText>
+    <label>Adds required information in Salesforce</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Yes_or_No</valueSetName>
+    </valueSet>
+</CustomField>

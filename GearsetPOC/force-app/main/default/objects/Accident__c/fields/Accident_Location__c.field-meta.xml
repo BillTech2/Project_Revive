@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Accident_Location__c</fullName>
+    <label>Location of Incident</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Amsterdam</fullName>
+                <default>false</default>
+                <label>Amsterdam</label>
+            </value>
+            <value>
+                <fullName>Ashford</fullName>
+                <default>false</default>
+                <label>Ashford</label>
+            </value>
+            <value>
+                <fullName>Avignon</fullName>
+                <default>false</default>
+                <label>Avignon</label>
+            </value>
+            <value>
+                <fullName>Bourg St Maurice</fullName>
+                <default>false</default>
+                <label>Bourg St Maurice</label>
+            </value>
+            <value>
+                <fullName>Brussels Midi</fullName>
+                <default>false</default>
+                <label>Brussels Midi</label>
+            </value>
+            <value>
+                <fullName>Brussels Place Marcel Broodthaers</fullName>
+                <default>false</default>
+                <label>Brussels Place Marcel Broodthaers</label>
+            </value>
+            <value>
+                <fullName>Calais</fullName>
+                <default>false</default>
+                <label>Calais</label>
+            </value>
+            <value>
+                <fullName>Ebbsfleet</fullName>
+                <default>false</default>
+                <label>Ebbsfleet</label>
+            </value>
+            <value>
+                <fullName>Eurostar Contact Centre</fullName>
+                <default>false</default>
+                <label>Eurostar Contact Centre</label>
+            </value>
+            <value>
+                <fullName>Eurostar UK Training Centre</fullName>
+                <default>false</default>
+                <label>Eurostar UK Training Centre</label>
+            </value>
+            <value>
+                <fullName>Kings Place</fullName>
+                <default>false</default>
+                <label>Kings Place</label>
+            </value>
+            <value>
+                <fullName>Lille Eurocentre (CRE)</fullName>
+                <default>false</default>
+                <label>Lille Eurocentre (CRE)</label>
+            </value>
+            <value>
+                <fullName>Lille Europe</fullName>
+                <default>false</default>
+                <label>Lille Europe</label>
+            </value>
+            <value>
+                <fullName>Lille rue de Luxembourg</fullName>
+                <default>false</default>
+                <label>Lille rue de Luxembourg</label>
+            </value>
+            <value>
+                <fullName>Lyon Part Dieu</fullName>
+                <default>false</default>
+                <label>Lyon Part Dieu</label>
+            </value>
+            <value>
+                <fullName>Marne La Vallee</fullName>
+                <default>false</default>
+                <label>Marne La Vallee</label>
+            </value>
+            <value>
+                <fullName>Marseille St Charles</fullName>
+                <default>false</default>
+                <label>Marseille St Charles</label>
+            </value>
+            <value>
+                <fullName>On train</fullName>
+                <default>false</default>
+                <label>On train</label>
+            </value>
+            <value>
+                <fullName>Paris Dunkerque</fullName>
+                <default>false</default>
+                <label>Paris Dunkerque</label>
+            </value>
+            <value>
+                <fullName>Paris Gare du Nord</fullName>
+                <default>false</default>
+                <label>Paris Gare du Nord</label>
+            </value>
+            <value>
+                <fullName>Paris Rue du Delta</fullName>
+                <default>false</default>
+                <label>Paris Rue du Delta</label>
+            </value>
+            <value>
+                <fullName>Rotterdam</fullName>
+                <default>false</default>
+                <label>Rotterdam</label>
+            </value>
+            <value>
+                <fullName>St Pancras</fullName>
+                <default>false</default>
+                <label>St Pancras</label>
+            </value>
+            <value>
+                <fullName>TMI</fullName>
+                <default>false</default>
+                <label>TMI</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

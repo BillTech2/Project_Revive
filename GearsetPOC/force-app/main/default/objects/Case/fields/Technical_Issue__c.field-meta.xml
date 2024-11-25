@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Technical_Issue__c</fullName>
+    <label>Technical Issue</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>AOP Not Working</fullName>
+                <default>false</default>
+                <label>AOP Not Working</label>
+            </value>
+            <value>
+                <fullName>Compensation Voucher Not Received</fullName>
+                <default>false</default>
+                <label>Compensation Voucher Not Received</label>
+            </value>
+            <value>
+                <fullName>Data input error (dob/phone number/membership number etc)</fullName>
+                <default>false</default>
+                <label>Data input error (dob/phone number/membership number etc)</label>
+            </value>
+            <value>
+                <fullName>Data Input Error (DOB or Phone Number etc.)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Data Input Error (DOB or Phone Number etc.)</label>
+            </value>
+            <value>
+                <fullName>Error Message - Not Eligible For Compensation</fullName>
+                <default>false</default>
+                <label>Error Message - Not Eligible For Compensation</label>
+            </value>
+            <value>
+                <fullName>Error message unclear</fullName>
+                <default>false</default>
+                <label>Error message unclear</label>
+            </value>
+            <value>
+                <fullName>Evoucher not accepted</fullName>
+                <default>false</default>
+                <label>Evoucher not accepted</label>
+            </value>
+            <value>
+                <fullName>EVoucher Not Received</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>EVoucher Not Received</label>
+            </value>
+            <value>
+                <fullName>Incorrect Or Missing Information</fullName>
+                <default>false</default>
+                <label>Incorrect Or Missing Information</label>
+            </value>
+            <value>
+                <fullName>Loyalty number not recognised</fullName>
+                <default>false</default>
+                <label>Loyalty number not recognised</label>
+            </value>
+            <value>
+                <fullName>MYB Down</fullName>
+                <default>false</default>
+                <label>MYB Down</label>
+            </value>
+            <value>
+                <fullName>MYB Ticket Collection</fullName>
+                <default>false</default>
+                <label>MYB Ticket Collection</label>
+            </value>
+            <value>
+                <fullName>MYB voucher claim not working</fullName>
+                <default>false</default>
+                <label>MYB voucher claim not working</label>
+            </value>
+            <value>
+                <fullName>No availability</fullName>
+                <default>false</default>
+                <label>No availability</label>
+            </value>
+            <value>
+                <fullName>No points availability</fullName>
+                <default>false</default>
+                <label>No points availability</label>
+            </value>
+            <value>
+                <fullName>Not offering points</fullName>
+                <default>false</default>
+                <label>Not offering points</label>
+            </value>
+            <value>
+                <fullName>OFE Not Working</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>OFE Not Working</label>
+            </value>
+            <value>
+                <fullName>Part points payment issue</fullName>
+                <default>false</default>
+                <label>Part points payment issue</label>
+            </value>
+            <value>
+                <fullName>Points claimed - not credited</fullName>
+                <default>false</default>
+                <label>Points claimed - not credited</label>
+            </value>
+            <value>
+                <fullName>Points value not correct</fullName>
+                <default>false</default>
+                <label>Points value not correct</label>
+            </value>
+            <value>
+                <fullName>Price/availability changed during booking</fullName>
+                <default>false</default>
+                <label>Price/availability changed during booking</label>
+            </value>
+            <value>
+                <fullName>Price Change</fullName>
+                <default>false</default>
+                <label>Price Change</label>
+            </value>
+            <value>
+                <fullName>Price Changed During Booking</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Price Changed During Booking</label>
+            </value>
+            <value>
+                <fullName>Price Changed During Exchange</fullName>
+                <default>false</default>
+                <label>Price Changed During Exchange</label>
+            </value>
+            <value>
+                <fullName>Problems accessing loyalty account</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Problems accessing loyalty account</label>
+            </value>
+            <value>
+                <fullName>Problems accessing online account</fullName>
+                <default>false</default>
+                <label>Problems accessing online account</label>
+            </value>
+            <value>
+                <fullName>Problems with points balance</fullName>
+                <default>false</default>
+                <label>Problems with points balance</label>
+            </value>
+            <value>
+                <fullName>Problems with the app</fullName>
+                <default>false</default>
+                <label>Problems with the app</label>
+            </value>
+            <value>
+                <fullName>Refund Option Not Offered When It Should Have Been (IN Needed)</fullName>
+                <default>false</default>
+                <label>Refund Option Not Offered When It Should Have Been (IN Needed)</label>
+            </value>
+            <value>
+                <fullName>Split booking</fullName>
+                <default>false</default>
+                <label>Split booking</label>
+            </value>
+            <value>
+                <fullName>Ticket Details Not Recognised</fullName>
+                <default>false</default>
+                <label>Ticket Details Not Recognised</label>
+            </value>
+            <value>
+                <fullName>Voucher Not Received</fullName>
+                <default>false</default>
+                <label>Voucher Not Received</label>
+            </value>
+            <value>
+                <fullName>Web error</fullName>
+                <default>false</default>
+                <label>Web error</label>
+            </value>
+            <value>
+                <fullName>Web Error At Payment Stage (IN Needed)</fullName>
+                <default>false</default>
+                <label>Web Error At Payment Stage (IN Needed)</label>
+            </value>
+            <value>
+                <fullName>Web Error During Booking Path (IN Needed)</fullName>
+                <default>false</default>
+                <label>Web Error During Booking Path (IN Needed)</label>
+            </value>
+            <value>
+                <fullName>Web Error During Exchange Path (IN Needed)</fullName>
+                <default>false</default>
+                <label>Web Error During Exchange Path (IN Needed)</label>
+            </value>
+            <value>
+                <fullName>Web Error During Refund (IN Needed)</fullName>
+                <default>false</default>
+                <label>Web Error During Refund (IN Needed)</label>
+            </value>
+            <value>
+                <fullName>Web Error When Trying To Claim (IN Needed)</fullName>
+                <default>false</default>
+                <label>Web Error When Trying To Claim (IN Needed)</label>
+            </value>
+            <value>
+                <fullName>Website Down Completely</fullName>
+                <default>false</default>
+                <label>Website Down Completely</label>
+            </value>
+            <value>
+                <fullName>Website Down Completely (IN Needed)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Website Down Completely (IN Needed)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>MembershipNumber__c</columns>
+    <columns>MemberSalesforceId__c</columns>
+    <columns>RegistrationDate__c</columns>
+    <columns>RegistrationYear__c</columns>
+    <columns>Tier__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>SubscriptionTierImmunityLevel__c</columns>
+    <columns>SubscriptionImmunity__c</columns>
+    <columns>TierImmunity__c</columns>
+    <columns>ManualTierImmunityLevel__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>

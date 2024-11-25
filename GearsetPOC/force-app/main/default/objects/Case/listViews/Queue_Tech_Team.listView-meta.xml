@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Queue_Tech_Team</fullName>
+    <booleanFilter>1 OR 2</booleanFilter>
+    <columns>Date_Queued__c</columns>
+    <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
+    <columns>CASES.LAST_UPDATE_DATE_ONLY</columns>
+    <columns>CASES.CASE_NUMBER</columns>
+    <columns>Days_Since_Last_Contact__c</columns>
+    <columns>SLA__c</columns>
+    <columns>CASES.SUBJECT</columns>
+    <columns>CASES.STATUS</columns>
+    <columns>UPDATEDBY_USER.ALIAS</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <filterScope>Queue</filterScope>
+    <filters>
+        <field>UPDATEDBY_USER.ALIAS</field>
+        <operation>notEqual</operation>
+        <value>DKusk,ddunn,dhawkes,tvan</value>
+    </filters>
+    <filters>
+        <field>CASES.STATUS</field>
+        <operation>notEqual</operation>
+        <value>Closed</value>
+    </filters>
+    <label>Online Accounts Helpdesk - Queue</label>
+    <queue>Online_Accounts_Helpdesk</queue>
+    <sharedTo>
+        <group>EBSC_Helpdesk</group>
+        <group>EBSC_The_Hub</group>
+    </sharedTo>
+</ListView>

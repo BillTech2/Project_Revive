@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Compensation_Check__c</fullName>
+    <externalId>false</externalId>
+    <formula>IMAGE( 
+CASE( 
+ Number_of_Compensations__c , 
+0 ,&quot;/img/msg_icons/confirm16.png&quot;,
+&quot;/img/msg_icons/error16.png&quot; 
+),&quot;TCN Check&quot; 
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Are there already any compensations attached to this ticket? If yes, it will display a red &quot;!&quot;.</inlineHelpText>
+    <label>Compensation - TCN Check</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

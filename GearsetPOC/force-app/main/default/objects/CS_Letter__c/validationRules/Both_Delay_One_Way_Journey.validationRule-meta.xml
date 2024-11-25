@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Both_Delay_One_Way_Journey</fullName>
+    <active>true</active>
+    <description>&quot;Both&quot; cannot be selected from the &quot;Which Leg Of The Journey Was Delayed?&quot; field when there is no return leg on the form</description>
+    <errorConditionFormula>ISBLANK(Return_Ticket__c)
+&amp;&amp;
+(ISPICKVAL( Which_Leg_Of_The_Journey_Was_Delayed__c ,&quot;Both&quot;)
+||
+ISPICKVAL( Which_Leg_Of_The_Journey_Was_Delayed__c ,&quot;Return&quot;))</errorConditionFormula>
+    <errorDisplayField>Which_Leg_Of_The_Journey_Was_Delayed__c</errorDisplayField>
+    <errorMessage>Please select &quot;Outward&quot; to proceed</errorMessage>
+</ValidationRule>

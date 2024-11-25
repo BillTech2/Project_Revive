@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Via_point_outbound__c</fullName>
+    <label>Via point outbound</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Paris</fullName>
+                <default>false</default>
+                <label>Paris</label>
+            </value>
+            <value>
+                <fullName>Lille</fullName>
+                <default>false</default>
+                <label>Lille</label>
+            </value>
+            <value>
+                <fullName>Marne-la-Vallée</fullName>
+                <default>false</default>
+                <label>Marne-la-Vallée</label>
+            </value>
+            <value>
+                <fullName>Lyon Part-Dieu</fullName>
+                <default>false</default>
+                <label>Lyon Part-Dieu</label>
+            </value>
+            <value>
+                <fullName>Avignon TGV</fullName>
+                <default>false</default>
+                <label>Avignon TGV</label>
+            </value>
+            <value>
+                <fullName>Marseille</fullName>
+                <default>false</default>
+                <label>Marseille</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

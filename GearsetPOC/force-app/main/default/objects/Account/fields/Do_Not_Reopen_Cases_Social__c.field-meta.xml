@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Do_Not_Reopen_Cases_Social__c</fullName>
+    <formula>Facebook_Account__r.Do_Not_Reopen_Cases__c = TRUE
+||
+ Twitter_Handle_Search__r.Do_Not_Reopen_Cases__c = TRUE</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Do Not Reopen Cases (Social)</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

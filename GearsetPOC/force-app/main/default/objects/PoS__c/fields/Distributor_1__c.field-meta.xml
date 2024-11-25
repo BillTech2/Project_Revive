@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Distributor_1__c</fullName>
+    <label>Distributor 1</label>
+    <required>true</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>EIL</fullName>
+                <default>false</default>
+                <label>EIL</label>
+            </value>
+            <value>
+                <fullName>THALYS</fullName>
+                <default>false</default>
+                <label>THALYS</label>
+            </value>
+            <value>
+                <fullName>SNCF</fullName>
+                <default>false</default>
+                <label>SNCF</label>
+            </value>
+            <value>
+                <fullName>SNCB</fullName>
+                <default>false</default>
+                <label>SNCB</label>
+            </value>
+            <value>
+                <fullName>NS</fullName>
+                <default>false</default>
+                <label>NS</label>
+            </value>
+            <value>
+                <fullName>DB</fullName>
+                <default>false</default>
+                <label>DB</label>
+            </value>
+            <value>
+                <fullName>RAIL EUROPE</fullName>
+                <default>false</default>
+                <label>RAIL EUROPE</label>
+            </value>
+            <value>
+                <fullName>OTHER SELLING RAILWAYS</fullName>
+                <default>false</default>
+                <label>OTHER SELLING RAILWAYS</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

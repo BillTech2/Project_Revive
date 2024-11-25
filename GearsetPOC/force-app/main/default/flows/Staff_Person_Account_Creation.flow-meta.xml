@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>57.0</apiVersion>
+    <constants>
+        <name>Staff_Person_Account</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Staff_Person_Account</stringValue>
+        </value>
+    </constants>
+    <decisions>
+        <name>p1</name>
+        <label>p1</label>
+        <locationX>669</locationX>
+        <locationY>503</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Person_Account</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.RecordType.Id</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Get_record.Id</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Non_Uk_Employee</targetReference>
+            </connector>
+            <label>Person Account</label>
+        </rules>
+    </decisions>
+    <description>This Flow set the Non UK Employee to true when creating Staff Person Account</description>
+    <environments>Default</environments>
+    <interviewLabel>Staff Person Account Creation {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Staff Person Account Creation</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_record</name>
+        <label>Get record</label>
+        <locationX>669</locationX>
+        <locationY>383</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>p1</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Staff_Person_Account</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>SobjectType</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Account</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>RecordType</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <description>This update the Non-Uk Employee when a new Staff Person Account is created</description>
+        <name>Update_Non_Uk_Employee</name>
+        <label>Update Non Uk Employee</label>
+        <locationX>537</locationX>
+        <locationY>623</locationY>
+        <inputAssignments>
+            <field>Non_UK_Employees__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>513</locationX>
+        <locationY>147</locationY>
+        <connector>
+            <targetReference>Get_record</targetReference>
+        </connector>
+        <object>Account</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

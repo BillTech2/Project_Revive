@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Category__c</fullName>
+    <label>Category</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Redemption Partner</fullName>
+                <default>false</default>
+                <label>Redemption Partner</label>
+            </value>
+            <value>
+                <fullName>Event Management</fullName>
+                <default>false</default>
+                <label>Event Management</label>
+            </value>
+            <value>
+                <fullName>Distributor</fullName>
+                <default>false</default>
+                <label>Distributor</label>
+            </value>
+            <value>
+                <fullName>Chamber of Commerce</fullName>
+                <default>false</default>
+                <label>Chamber of Commerce</label>
+            </value>
+            <value>
+                <fullName>Hotel</fullName>
+                <default>false</default>
+                <label>Hotel</label>
+            </value>
+            <value>
+                <fullName>Publication</fullName>
+                <default>false</default>
+                <label>Publication</label>
+            </value>
+            <value>
+                <fullName>Industry Body / Association</fullName>
+                <default>false</default>
+                <label>Industry Body / Association</label>
+            </value>
+            <value>
+                <fullName>GDS</fullName>
+                <default>false</default>
+                <label>GDS</label>
+            </value>
+            <value>
+                <fullName>Tourist Board</fullName>
+                <default>false</default>
+                <label>Tourist Board</label>
+            </value>
+            <value>
+                <fullName>Marketing Service</fullName>
+                <default>false</default>
+                <label>Marketing Service</label>
+            </value>
+            <value>
+                <fullName>SBT</fullName>
+                <default>false</default>
+                <label>SBT</label>
+            </value>
+            <value>
+                <fullName>Memberships</fullName>
+                <default>false</default>
+                <label>Memberships</label>
+            </value>
+            <value>
+                <fullName>Supplier</fullName>
+                <default>false</default>
+                <label>Supplier</label>
+            </value>
+            <value>
+                <fullName>Social Media Agency</fullName>
+                <default>false</default>
+                <label>Social Media Agency</label>
+            </value>
+            <value>
+                <fullName>Partner Other</fullName>
+                <default>false</default>
+                <label>Partner Other</label>
+            </value>
+            <value>
+                <fullName>Agency</fullName>
+                <default>false</default>
+                <label>Agency</label>
+            </value>
+            <value>
+                <fullName>Group Operator</fullName>
+                <default>false</default>
+                <label>Group Operator</label>
+            </value>
+            <value>
+                <fullName>Inbounder</fullName>
+                <default>false</default>
+                <label>Inbounder</label>
+            </value>
+            <value>
+                <fullName>On-Line Portal</fullName>
+                <default>false</default>
+                <label>On-Line Portal</label>
+            </value>
+            <value>
+                <fullName>Tour Operator</fullName>
+                <default>false</default>
+                <label>Tour Operator</label>
+            </value>
+            <value>
+                <fullName>Ski</fullName>
+                <default>false</default>
+                <label>Ski</label>
+            </value>
+            <value>
+                <fullName>Student Operator</fullName>
+                <default>false</default>
+                <label>Student Operator</label>
+            </value>
+            <value>
+                <fullName>Railway/TOC</fullName>
+                <default>false</default>
+                <label>Railway/TOC</label>
+            </value>
+            <value>
+                <fullName>Representative</fullName>
+                <default>false</default>
+                <label>Representative</label>
+            </value>
+            <value>
+                <fullName>International Managed Accounts</fullName>
+                <default>false</default>
+                <label>International Managed Accounts</label>
+            </value>
+            <value>
+                <fullName>Sub Agent</fullName>
+                <default>false</default>
+                <label>Sub Agent</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

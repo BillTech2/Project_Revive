@@ -1,0 +1,6 @@
+.slds-popover.slds-nubbin_left{
+    position: absolute;
+    left:0rem;
+    top:-1.3rem;
+    pointer-events: none;
+}

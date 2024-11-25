@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Eurostar_Market__c</fullName>
+    <label>Eurostar Market</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>UK</fullName>
+                <default>false</default>
+                <label>UK</label>
+            </value>
+            <value>
+                <fullName>FR</fullName>
+                <default>false</default>
+                <label>FR</label>
+            </value>
+            <value>
+                <fullName>BE</fullName>
+                <default>false</default>
+                <label>BE</label>
+            </value>
+            <value>
+                <fullName>RW</fullName>
+                <default>false</default>
+                <label>RW</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

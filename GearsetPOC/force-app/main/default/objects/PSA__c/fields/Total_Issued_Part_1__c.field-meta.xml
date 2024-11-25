@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Issued_Part_1__c</fullName>
+    <externalId>false</externalId>
+    <formula>Value_of_CB_Membership_Sold__c +
+Value_of_Educ_Account_Manag_BP_Core_Sold__c +
+Value_of_Educ_Account_Manag_SP_CORE_Sold__c +
+Value_of_Educ_Account_Manag_SP_LYON_Sold__c +
+Value_of_Educ_Account_Manag_ST_CORE_Sold__c +
+Value_of_Educ_Account_Manag_ST_LYON_Sold__c +
+Value_of_Educ_Client_BP_CORE_Sold__c +
+Value_of_Educ_Client_Fam_SP_ABS_Sold__c	+
+Value_of_Educ_Client_Fam_SP_CORE_Sold__c +
+Value_of_Educ_Client_Fam_SP_LYON_Sold__c +
+Value_of_Educ_Client_Fam_ST_ABS_Sold__c	+
+Value_of_Educ_Client_Fam_ST_CORE_Sold__c +
+Value_of_Educ_Client_Fam_ST_LYON_Sold__c +
+Value_of_Educ_Client_LYON_ST_Sold__c +
+Value_of_Educ_Client_SP_CORE_Sold__c +
+Value_of_Educ_Client_SP_LYON_Sold__c +
+Value_of_Educ_Client_ST_Core_Sold__c +
+Value_of_Educ_Consultant_BP_CORE_Sold__c +
+Value_of_Educ_Consultant_SP_CORE_Sold__c +
+Value_of_Educ_Consultant_SP_LYON_Sold__c +
+Value_of_Educ_Consultant_ST_CORE_Sold__c +
+Value_of_Educ_Consultant_ST_LYON_Sold__c +
+Value_of_Educ_Exp_Day_BP_CORE_Sold__c +
+Value_of_Educ_Exp_Day_SP_ABS_Sold__c +
+Value_of_Educ_Exp_Day_SP_CORE_Sold__c +
+Value_of_Educ_Exp_Day_SP_LYON_Sold__c +
+Value_of_Educ_Exp_Day_ST_ABS_Sold__c +
+Value_of_Educ_Exp_Day_ST_CORE_Sold__c +
+Value_of_Educ_Exp_Day_ST_LYON_Sold__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Total Issued (Part 1)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

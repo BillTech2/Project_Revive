@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Partner_Name__c</fullName>
+    <description>Name of the Partner which appears in the eVoucher records and in the web form picklist on partner.eurostar.com</description>
+    <label>Partner Name</label>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>American Express Rewards</fullName>
+                <default>false</default>
+                <label>American Express Rewards</label>
+            </value>
+            <value>
+                <fullName>Deloitte</fullName>
+                <default>false</default>
+                <label>Deloitte</label>
+            </value>
+            <value>
+                <fullName>Eurostar For Business</fullName>
+                <default>false</default>
+                <label>Eurostar For Business</label>
+            </value>
+            <value>
+                <fullName>Feeling</fullName>
+                <default>false</default>
+                <label>Feeling</label>
+            </value>
+            <value>
+                <fullName>Japan Airlines</fullName>
+                <default>false</default>
+                <label>Japan Airlines</label>
+            </value>
+            <value>
+                <fullName>l’Etudiant</fullName>
+                <default>false</default>
+                <label>l’Etudiant</label>
+            </value>
+            <value>
+                <fullName>National Railcards</fullName>
+                <default>false</default>
+                <label>National Railcards</label>
+            </value>
+            <value>
+                <fullName>Nectar</fullName>
+                <default>false</default>
+                <label>Nectar</label>
+            </value>
+            <value>
+                <fullName>Secret Cinema</fullName>
+                <default>false</default>
+                <label>Secret Cinema</label>
+            </value>
+            <value>
+                <fullName>Stylist</fullName>
+                <default>false</default>
+                <label>Stylist</label>
+            </value>
+            <value>
+                <fullName>The Times</fullName>
+                <default>false</default>
+                <label>The Times</label>
+            </value>
+            <value>
+                <fullName>Travelzoo</fullName>
+                <default>false</default>
+                <label>Travelzoo</label>
+            </value>
+            <value>
+                <fullName>Virgin Flying Club</fullName>
+                <default>false</default>
+                <label>Virgin Flying Club</label>
+            </value>
+            <value>
+                <fullName>Wedoogift</fullName>
+                <default>false</default>
+                <label>Wedoogift</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

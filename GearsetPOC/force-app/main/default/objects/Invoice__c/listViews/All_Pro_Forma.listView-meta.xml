@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Pro_Forma</fullName>
+    <columns>NAME</columns>
+    <columns>Invoice_Number__c</columns>
+    <columns>Request_Date__c</columns>
+    <columns>Invoice_Date__c</columns>
+    <columns>Subscription_Type_Name__c</columns>
+    <columns>First_Name__c</columns>
+    <columns>Last_Name__c</columns>
+    <columns>CIN__c</columns>
+    <columns>Status__c</columns>
+    <columns>Payment_Method__c</columns>
+    <columns>Total_Amount_incl_VAT__c</columns>
+    <columns>Start_Date__c</columns>
+    <columns>End_Date__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Pro Forma</value>
+    </filters>
+    <label>All Pro Forma</label>
+    <language>en_US</language>
+</ListView>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ticket_Type_Inbound__c</fullName>
+    <label>Ticket Type Inbound</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Ticket_Type_Outbound__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Educational Independant Fam</fullName>
+                <default>false</default>
+                <label>Educational Independant Fam</label>
+            </value>
+            <value>
+                <fullName>Educational Client Fam</fullName>
+                <default>false</default>
+                <label>Educational Client Fam</label>
+            </value>
+            <value>
+                <fullName>Educational Experience Day</fullName>
+                <default>false</default>
+                <label>Educational Experience Day</label>
+            </value>
+            <value>
+                <fullName>VIP</fullName>
+                <default>false</default>
+                <label>VIP</label>
+            </value>
+            <value>
+                <fullName>Prize Winner</fullName>
+                <default>false</default>
+                <label>Prize Winner</label>
+            </value>
+            <value>
+                <fullName>Press</fullName>
+                <default>false</default>
+                <label>Press</label>
+            </value>
+            <value>
+                <fullName>Exclusive SP Carriage</fullName>
+                <default>false</default>
+                <label>Exclusive SP Carriage</label>
+            </value>
+            <value>
+                <fullName>Educational Account Management</fullName>
+                <default>false</default>
+                <label>Educational Account Management</label>
+            </value>
+            <value>
+                <fullName>Educational Client</fullName>
+                <default>false</default>
+                <label>Educational Client</label>
+            </value>
+            <value>
+                <fullName>Educational Consultant</fullName>
+                <default>false</default>
+                <label>Educational Consultant</label>
+            </value>
+            <value>
+                <fullName>Invitation</fullName>
+                <default>false</default>
+                <label>Invitation</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Invitation</controllingFieldValue>
+            <valueName>Invitation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Educational Independent Fam</controllingFieldValue>
+            <valueName>Educational Independant Fam</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Educational Client Fam</controllingFieldValue>
+            <valueName>Educational Client Fam</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Educational Experience Day</controllingFieldValue>
+            <valueName>Educational Experience Day</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VIP</controllingFieldValue>
+            <valueName>VIP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Prize Winner</controllingFieldValue>
+            <valueName>Prize Winner</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Press</controllingFieldValue>
+            <valueName>Press</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Exclusive SP Carriage</controllingFieldValue>
+            <valueName>Exclusive SP Carriage</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Educational Account Management</controllingFieldValue>
+            <valueName>Educational Account Management</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Educational Client</controllingFieldValue>
+            <valueName>Educational Client</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Educational Consultant</controllingFieldValue>
+            <valueName>Educational Consultant</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

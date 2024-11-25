@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Trading_Name__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>Trading Name</label>
+    <referenceTo>Trade_Contracts_Company__c</referenceTo>
+    <relationshipLabel>Recontractings / Account Closures</relationshipLabel>
+    <relationshipName>Recontractings_Account_Closures</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Merge_Accounts__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+$Setup.Merge_Account_Permission__c.Access__c, 
+HYPERLINK($Setup.Reference_Links__c.MergeAccountURL__c,IMAGE( $Setup.Reference_Links__c.MergeCustImage__c , &#39;Merge Account&#39;)),&quot; &quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Merge Accounts</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

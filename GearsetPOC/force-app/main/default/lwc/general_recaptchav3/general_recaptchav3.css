@@ -1,0 +1,6 @@
+.captcha-frame {
+    width: 320px;
+    height: 200px;
+    border: none;
+    max-width: 100%;
+}

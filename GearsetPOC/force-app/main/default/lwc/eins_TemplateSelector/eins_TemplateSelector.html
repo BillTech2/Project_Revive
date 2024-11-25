@@ -1,0 +1,121 @@
+<template>
+    <lightning-card title="Classification suggestion">
+        <div>
+            <p style="margin-left: 2%"> {currentTagValue}</p>
+        </div>
+        <div slot="footer" style="text-align: justify; height: 90px;">
+            
+            <template if:true={showEditTag}>
+                    <lightning-combobox
+                    name="tag"
+                    
+                    value=""
+                    placeholder="Select Tag"
+                    options={optionsTag}
+                    onchange={handleChange}
+            ></lightning-combobox>                    
+            </template>
+            <div style="text-align: right; padding-top: 10px;">
+                <template if:true={showTagSelector}>
+                    <lightning-button label="Change Tag" slot="actions"
+                    variant="brand"
+                    onclick={handleUpdateClick}
+                    class="slds-m-left_x-small slds-m-bottom_x-small"
+                    ></lightning-button>
+                </template>
+                <template if:true={showSaveButton}>
+                    <lightning-button label="Save Tag" slot="actions"
+                    variant="brand"
+                    onclick={handleSaveClick}
+                    class="slds-m-left_x-small slds-m-bottom_x-small"
+                    ></lightning-button>
+                </template>
+        </div>
+        </div>
+        <template if:true={showSpinnerAdviser}>
+            <div class="slds-spinner_container slds-is-relative slds-p-around_medium">
+                <lightning-spinner alternative-text="Loading ..." size="small"></lightning-spinner>
+            </div>
+        </template>
+    </lightning-card>
+    <template if:true={showLanguage}>
+        <lightning-card title="Case Preferred Language">
+            <div slot="footer" style="text-align: justify; height: 90px;">
+                <template if:true={languageOptions}>
+                    <lightning-combobox
+                            value={selectedLanguage}
+                            placeholder="Select Language"
+                            options={languageOptions}
+                            onchange={handleLanguageSelect} ></lightning-combobox>
+                </template>
+            </div>
+        </lightning-card>
+    </template>   
+    <lightning-card  title="Select Suggested Template">
+        <template if:true={showSpinner}>
+            <div class="slds-spinner_container slds-is-relative slds-p-around_medium">
+                <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+            </div>
+        </template>
+
+        <div class="slds-p-horizontal_small slds-is-relative">
+            <template for:each={options} for:item="option">
+                <div class = "template-option slds-grid" key={option.emailId}>
+                    <div class = "tooltip-wrapper slds-align_absolute-center">
+                        <div if:true={option.showTooltip} >
+                            <div class = "slds-popover slds-popover_large tooltip slds-align_absolute-center"
+                                 role="tooltip" id="tooltip">
+                                <lightning-formatted-rich-text  value={option.htmlText}></lightning-formatted-rich-text>
+                            </div>
+                        </div>
+                    </div>
+
+                    <input type="radio" class="slds-m-right_xx-small" id={option.emailId} value={option.emailId} name="default" checked={option.selected} onchange={setTemplate}/>
+                    <!--<div id={option.emailId} onmouseover={showEmailTemplate} onmouseout={hideEmailTemplate}> -->
+                    <label class="slds-radio__label slds-size_1-of-1" for={option.emailId}>
+                        <span class="slds-radio_faux" ></span>
+                        <span class="slds-form-element__label slds-size_1-of-1 slds-has-flexi-truncate">
+                                <p class="slds-hyphenate " title={option.plainText} onmouseover={onMouseOver} onmouseout={onMouseOut} data-emailid={option.emailId}>
+                                    <b>{option.name}</b> <br/> {option.plainText}
+                                </p>
+                            </span>
+                    </label>
+                    <!--</div>-->
+                </div>
+            </template>
+
+
+        </div>
+        <!--<c-eins_email-template-popover show-template={showTemplate} html-text={htmlText}></c-eins_email-template-popover>-->
+
+        <p slot="footer" style="height:70px">
+            <lightning-button
+                variant="brand"
+                label="Send and close the case"
+                title="Send and close the case"
+                onclick={handleSendAndCloseCase}
+                class="slds-m-left_x-small slds-m-bottom_x-small slds-float_right"
+            ></lightning-button>
+            <lightning-button
+                variant="brand"
+                label="Quick send"
+                title="Quick send"
+                onclick={handleQuickSend}
+                class="slds-m-left_x-small slds-m-bottom_x-small slds-float_right"
+            ></lightning-button>
+            <lightning-button
+                variant="brand"
+                label="Discard selected template"
+                title="Discard selected template"
+                disabled={isDiscardButtonDisabled}
+                onclick={handleDiscardTemplate}
+                class="slds-m-left_x-small slds-float_right"
+            ></lightning-button>
+        </p>
+        <template if:true={showSpinner}>
+            <div class="slds-spinner_container slds-is-relative slds-p-around_medium">
+                <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+            </div>
+        </template>
+    </lightning-card>
+</template>

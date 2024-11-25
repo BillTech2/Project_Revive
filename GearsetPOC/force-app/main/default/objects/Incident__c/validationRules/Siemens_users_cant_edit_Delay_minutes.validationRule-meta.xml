@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Siemens_users_cant_edit_Delay_minutes</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND (ISCHANGED( Delay_Minutes__c ), 
+( $User.CompanyName = &#39;Siemens&#39;) )</errorConditionFormula>
+    <errorMessage>Siemens users can&#39;t edit  Delay Minutes feild</errorMessage>
+</ValidationRule>

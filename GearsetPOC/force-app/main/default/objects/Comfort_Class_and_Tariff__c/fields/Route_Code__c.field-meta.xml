@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Route_Code__c</fullName>
+    <label>Route Code</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>FRBE</fullName>
+                <default>false</default>
+                <label>FRBE</label>
+            </value>
+            <value>
+                <fullName>FRDE</fullName>
+                <default>false</default>
+                <label>FRDE</label>
+            </value>
+            <value>
+                <fullName>FRNL</fullName>
+                <default>false</default>
+                <label>FRNL</label>
+            </value>
+            <value>
+                <fullName>BEDE</fullName>
+                <default>false</default>
+                <label>BEDE</label>
+            </value>
+            <value>
+                <fullName>BENL</fullName>
+                <default>false</default>
+                <label>BENL</label>
+            </value>
+            <value>
+                <fullName>DBNL</fullName>
+                <default>false</default>
+                <label>DBNL</label>
+            </value>
+            <value>
+                <fullName>UKBE</fullName>
+                <default>false</default>
+                <label>UKBE</label>
+            </value>
+            <value>
+                <fullName>UKFR</fullName>
+                <default>false</default>
+                <label>UKFR</label>
+            </value>
+            <value>
+                <fullName>UKNL</fullName>
+                <default>false</default>
+                <label>UKNL</label>
+            </value>
+            <value>
+                <fullName>Deutscher Bund</fullName>
+                <default>false</default>
+                <label>Deutscher Bund</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

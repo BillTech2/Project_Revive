@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fare_range_Concession_Fares</fullName>
+    <columns>NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Fare_Range__c</field>
+        <operation>includes</operation>
+        <value>Concession Fares</value>
+    </filters>
+    <label>Fare range ~ Concession Fares</label>
+    <sharedTo>
+        <role>Trade_Team</role>
+    </sharedTo>
+</ListView>

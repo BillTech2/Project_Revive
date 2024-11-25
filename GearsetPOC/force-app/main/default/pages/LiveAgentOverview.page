@@ -1,0 +1,71 @@
+<apex:page showHeader="false" standardStylesheets="false" sidebar="false">
+	<apex:includeScript value="/support/console/37.0/integration.js"/>
+	<h1>This is test</h1>
+	<div id="chats_list">
+	</div>
+	<script>
+		var chat = sforce.console.chat;
+		var chatLog = {};
+		
+		function openChat(chatId){
+			var logger = chatLog[chatId];
+			if(logger){
+				logger.openChat();
+			}
+		}
+
+		function renderLog(){
+			var element = document.getElementById('chats_list');
+			var html = '<ul>';
+			var lastMsgs = [];
+			for(var msgLog in chatLog){
+				var log = chatLog[msgLog];
+				if(log.message){
+					var lihtml = '<li>' + '<a href="#" onclick="openChat(\'' + log.chatId + '\');">' + log.message.content + '</a>' + '</li>';
+				}
+				lastMsgs.push(lihtml);
+			}
+			html += lastMsgs.join('');
+			html+='</ul>';
+			element.innerHTML = html;
+		}
+
+		function ChatLogger (chatId){
+			var self = this;
+			self.chatId = chatId;
+			self.setLastMessage = function(msg){
+				console.log(msg);
+				self.message = msg;
+				chat.getDetailsByChatKey(self.chatId, self.setChatDetails);
+				renderLog();
+			}
+			self.setChatDetails = function(details){
+				console.log(details.primaryTabId);
+				self.details = details;
+			}
+
+			self.openChat = function() {
+				if(self.details) {
+					//debugger;
+					sforce.console.focusPrimaryTabById(self.details.primaryTabId);					
+				}
+			}
+
+			chatLog[chatId] = self;
+		}
+
+		chat.onChatStarted(function(args){
+			var logger = new ChatLogger(args.chatKey);
+
+			
+			
+			//..console.log(details);
+			//chat.onAgentSend(args.chatKey, logger.setLastMessage)
+			chat.onNewMessage(args.chatKey, logger.setLastMessage)
+			
+		});
+
+		
+
+	</script>
+</apex:page>

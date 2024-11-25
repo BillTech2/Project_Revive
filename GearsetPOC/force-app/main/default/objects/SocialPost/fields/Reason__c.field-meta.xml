@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason__c</fullName>
+    <label>Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>GENERAL - No Reply Needed</fullName>
+                <default>false</default>
+                <label>GENERAL - No Reply Needed</label>
+            </value>
+            <value>
+                <fullName>GENERAL - Enthusiasm</fullName>
+                <default>false</default>
+                <label>GENERAL - Enthusiasm</label>
+            </value>
+            <value>
+                <fullName>--</fullName>
+                <default>false</default>
+                <label>--</label>
+            </value>
+            <value>
+                <fullName>QUESTION - SNAP</fullName>
+                <default>false</default>
+                <label>QUESTION - SNAP</label>
+            </value>
+            <value>
+                <fullName>QUESTION - Ticket Conditions</fullName>
+                <default>false</default>
+                <label>QUESTION - Ticket Conditions</label>
+            </value>
+            <value>
+                <fullName>QUESTION - Current Disruption</fullName>
+                <default>false</default>
+                <label>QUESTION - Current Disruption</label>
+            </value>
+            <value>
+                <fullName>QUESTION - Timetable &amp; Availability</fullName>
+                <default>false</default>
+                <label>QUESTION - Timetable &amp; Availability</label>
+            </value>
+            <value>
+                <fullName>QUESTION - Luggage</fullName>
+                <default>false</default>
+                <label>QUESTION - Luggage</label>
+            </value>
+            <value>
+                <fullName>QUESTION - Connections</fullName>
+                <default>false</default>
+                <label>QUESTION - Connections</label>
+            </value>
+            <value>
+                <fullName>QUESTION - General</fullName>
+                <default>false</default>
+                <label>QUESTION - General</label>
+            </value>
+            <value>
+                <fullName>QUESTION - Ticket Collection</fullName>
+                <default>false</default>
+                <label>QUESTION - Ticket Collection</label>
+            </value>
+            <value>
+                <fullName>QUESTION - Seating</fullName>
+                <default>false</default>
+                <label>QUESTION - Seating</label>
+            </value>
+            <value>
+                <fullName>QUESTION - Booking Horizon</fullName>
+                <default>false</default>
+                <label>QUESTION - Booking Horizon</label>
+            </value>
+            <value>
+                <fullName>QUESTION - Loyalty or Online Account Related</fullName>
+                <default>false</default>
+                <label>QUESTION - Loyalty or Online Account Related</label>
+            </value>
+            <value>
+                <fullName>---</fullName>
+                <default>false</default>
+                <label>---</label>
+            </value>
+            <value>
+                <fullName>REQUEST - Letter or Confirmation</fullName>
+                <default>false</default>
+                <label>REQUEST - Letter or Confirmation</label>
+            </value>
+            <value>
+                <fullName>REQUEST - Override Ticket Conditions</fullName>
+                <default>false</default>
+                <label>REQUEST - Override Ticket Conditions</label>
+            </value>
+            <value>
+                <fullName>----</fullName>
+                <default>false</default>
+                <label>----</label>
+            </value>
+            <value>
+                <fullName>ISSUE - Customer Booked Wrong Dates or Times</fullName>
+                <default>false</default>
+                <label>ISSUE - Customer Booked Wrong Dates or Times</label>
+            </value>
+            <value>
+                <fullName>ISSUE - Spelling Error on Booking</fullName>
+                <default>false</default>
+                <label>ISSUE - Spelling Error on Booking</label>
+            </value>
+            <value>
+                <fullName>ISSUE - Website Related</fullName>
+                <default>false</default>
+                <label>ISSUE - Website Related</label>
+            </value>
+            <value>
+                <fullName>-----</fullName>
+                <default>false</default>
+                <label>-----</label>
+            </value>
+            <value>
+                <fullName>FEEDBACK - Check-In</fullName>
+                <default>false</default>
+                <label>FEEDBACK - Check-In</label>
+            </value>
+            <value>
+                <fullName>FEEDBACK - Failed Payment Online</fullName>
+                <default>false</default>
+                <label>FEEDBACK - Failed Payment Online</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

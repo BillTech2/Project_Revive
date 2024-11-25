@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DPax_Status__c</fullName>
+    <label>DPax Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Award Failed</fullName>
+                <default>false</default>
+                <label>Award Failed</label>
+            </value>
+            <value>
+                <fullName>Award Link Sent</fullName>
+                <default>false</default>
+                <label>Award Link Sent</label>
+            </value>
+            <value>
+                <fullName>Award Link Accepted</fullName>
+                <default>false</default>
+                <label>Award Link Accepted</label>
+            </value>
+            <value>
+                <fullName>Award Link Declined</fullName>
+                <default>false</default>
+                <label>Award Link Declined</label>
+            </value>
+            <value>
+                <fullName>Hotel Booking Processing</fullName>
+                <default>false</default>
+                <label>Hotel Booking Processing</label>
+            </value>
+            <value>
+                <fullName>Hotel Booking Booked</fullName>
+                <default>false</default>
+                <label>Hotel Booking Booked</label>
+            </value>
+            <value>
+                <fullName>Hotel Booking Pending</fullName>
+                <default>false</default>
+                <label>Hotel Booking Pending</label>
+            </value>
+            <value>
+                <fullName>Hotel Booking Cancelled</fullName>
+                <default>false</default>
+                <label>Hotel Booking Cancelled</label>
+            </value>
+            <value>
+                <fullName>Ground Transport Booked</fullName>
+                <default>false</default>
+                <label>Ground Transport Booked</label>
+            </value>
+            <value>
+                <fullName>Ground Transport Passenger On Board</fullName>
+                <default>false</default>
+                <label>Ground Transport Passenger On Board</label>
+            </value>
+            <value>
+                <fullName>Ground Transport Passenger Dropped Off</fullName>
+                <default>false</default>
+                <label>Ground Transport Passenger Dropped Off</label>
+            </value>
+            <value>
+                <fullName>Ground Transport Dispatched</fullName>
+                <default>false</default>
+                <label>Ground Transport Dispatched</label>
+            </value>
+            <value>
+                <fullName>Ground Transport Arrived</fullName>
+                <default>false</default>
+                <label>Ground Transport Arrived</label>
+            </value>
+            <value>
+                <fullName>Ground Transport No Show</fullName>
+                <default>false</default>
+                <label>Ground Transport No Show</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Loyalty__c</fullName>
+    <externalId>false</externalId>
+    <formula>Case(Loyalty_Status__c , 
+&quot;Carte Classique&quot; ,Image(&quot;/servlet/servlet.FileDownload?file=015b0000000IY60&quot;,&quot;Carte Classique&quot; ,30,80), 
+&quot;Carte Classique (Corporate)&quot; ,Image(&quot;/servlet/servlet.FileDownload?file=015b0000000IY60&quot;,&quot;Carte Classique&quot; ,30,80), 
+&quot;Carte Classique (Eurostar Staff)&quot; ,Image(&quot;/servlet/servlet.FileDownload?file=015b0000000IY60&quot;,&quot;Carte Classique&quot; ,30,80), 
+&quot;Carte Blanche&quot; ,Image(&quot;/servlet/servlet.FileDownload?file=015b0000000IY5z&quot;,&quot;Carte Blanche&quot; ,30,80), 
+&quot;Carte Blanche (Eurostar Staff)&quot; ,Image(&quot;/servlet/servlet.FileDownload?file=015b0000000IY5z&quot;,&quot;Carte Blanche&quot; ,30,80), 
+&quot;Carte Blanche (Corporate)&quot; ,Image(&quot;/servlet/servlet.FileDownload?file=015b0000000IY5z&quot;,&quot;Carte Blanche&quot; ,30,80), 
+&quot;Carte Blanche (VIP)&quot; ,Image(&quot;/servlet/servlet.FileDownload?file=015b0000000IY5z&quot;,&quot;Carte Blanche&quot; ,30,80), 
+&quot;Carte Blanche (Elite)&quot; ,Image(&quot;/servlet/servlet.FileDownload?file=015b0000000IY61&quot;,&quot;Carte Blanche Elite&quot;,30,80), 
+&quot;EPP Default Tier&quot;,Image(&quot;/servlet/servlet.FileDownload?file=015b0000000Imtk&quot;,&quot;EPP&quot; ,30,80), 
+null)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Loyalty</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

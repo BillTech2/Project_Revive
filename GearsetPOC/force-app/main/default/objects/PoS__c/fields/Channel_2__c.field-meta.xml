@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Channel_2__c</fullName>
+    <label>Channel 2</label>
+    <required>true</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Channel_1__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Agencies</fullName>
+                <default>false</default>
+                <label>Agencies</label>
+            </value>
+            <value>
+                <fullName>Call Centres</fullName>
+                <default>false</default>
+                <label>Call Centres</label>
+            </value>
+            <value>
+                <fullName>Distributor Websites</fullName>
+                <default>false</default>
+                <label>Distributor Websites</label>
+            </value>
+            <value>
+                <fullName>Eurostar Digital</fullName>
+                <default>false</default>
+                <label>Eurostar Digital</label>
+            </value>
+            <value>
+                <fullName>Eurostar Snap</fullName>
+                <default>false</default>
+                <label>Eurostar Snap</label>
+            </value>
+            <value>
+                <fullName>HQ</fullName>
+                <default>false</default>
+                <label>HQ</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Refund</fullName>
+                <default>false</default>
+                <label>Refund</label>
+            </value>
+            <value>
+                <fullName>Stations</fullName>
+                <default>false</default>
+                <label>Stations</label>
+            </value>
+            <value>
+                <fullName>Thalys Digital</fullName>
+                <default>false</default>
+                <label>Thalys Digital</label>
+            </value>
+            <value>
+                <fullName>Unknown</fullName>
+                <default>false</default>
+                <label>Unknown</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Agencies</controllingFieldValue>
+            <valueName>Agencies</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Agencies</controllingFieldValue>
+            <controllingFieldValue>Call Centres/HQ</controllingFieldValue>
+            <controllingFieldValue>Digital</controllingFieldValue>
+            <controllingFieldValue>Distributor Websites</controllingFieldValue>
+            <controllingFieldValue>Stations</controllingFieldValue>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <controllingFieldValue>Unknown</controllingFieldValue>
+            <controllingFieldValue>Refund</controllingFieldValue>
+            <valueName>Unknown</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Call Centres/HQ</controllingFieldValue>
+            <valueName>Call Centres</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Call Centres/HQ</controllingFieldValue>
+            <valueName>HQ</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Digital</controllingFieldValue>
+            <valueName>Eurostar Digital</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Digital</controllingFieldValue>
+            <valueName>Eurostar Snap</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Digital</controllingFieldValue>
+            <valueName>Thalys Digital</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Distributor Websites</controllingFieldValue>
+            <valueName>Distributor Websites</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Stations</controllingFieldValue>
+            <valueName>Stations</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Other</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Refund</controllingFieldValue>
+            <valueName>Refund</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

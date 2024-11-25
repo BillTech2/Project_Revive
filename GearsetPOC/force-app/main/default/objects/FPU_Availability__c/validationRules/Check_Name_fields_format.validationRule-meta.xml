@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_Name_fields_format</fullName>
+    <active>false</active>
+    <errorConditionFormula>Train_Unique_Id__c != TEXT(FPU_Avail_Train_Number__c)&amp;&quot;,&quot;&amp; LEFT(TEXT(FPU_Avail_Departure_Date__c),10)&amp;&quot; &quot;&amp;LEFT( FPU_Avail_Departure_Time__c, 8)</errorConditionFormula>
+    <errorDisplayField>Train_Unique_Id__c</errorDisplayField>
+    <errorMessage>Please check the format, It should be &quot;Train number,Departure date&quot;</errorMessage>
+</ValidationRule>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Days_Unpaid__c</fullName>
+    <inlineHelpText>Submitted days, pending payment</inlineHelpText>
+    <label>Days Unpaid</label>
+    <summaryFilterItems>
+        <field>Timesheet_Entry__c.Type_of_Day__c</field>
+        <operation>equals</operation>
+        <value>Horaires décalés</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Timesheet_Entry__c.Status__c</field>
+        <operation>equals</operation>
+        <value>Unpaid</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Timesheet_Entry__c.Timesheet__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

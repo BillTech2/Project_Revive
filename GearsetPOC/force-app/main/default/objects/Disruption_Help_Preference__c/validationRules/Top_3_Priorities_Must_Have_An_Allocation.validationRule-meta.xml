@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Top_3_Priorities_Must_Have_An_Allocation</fullName>
+    <active>true</active>
+    <errorConditionFormula>(Priority__c = 1
+||
+Priority__c = 2
+||
+Priority__c = 3)
+&amp;&amp;
+ISBLANK(Number_of_Slots_Available__c)</errorConditionFormula>
+    <errorDisplayField>Number_of_Slots_Available__c</errorDisplayField>
+    <errorMessage>Please add the number of spaces we have available</errorMessage>
+</ValidationRule>

@@ -1,0 +1,24 @@
+.header {
+    font-size: 22px;
+    font-weight: 600;
+    margin: auto;
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: solid 1px rgb(59, 94, 131);
+}
+
+.modal {
+    height: 268px;
+    color: rgb(59, 94, 131);
+}
+
+.body {
+    padding: 20px 0 40px 0;
+}
+
+.buttons {
+    position: absolute;
+    justify-content: flex-end;
+    bottom: 10px;
+    right: 0;
+}

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Final_Chasing_Email_Has_Been_Sent__c</fullName>
+    <formula>IF( NOT(ISPICKVAL(Status__c ,&quot;Vouchers Not Received&quot;)),FALSE, 
+IF( (TODAY() &gt;= Date_of_Booking__c + 56),TRUE,FALSE))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Final Chasing Email Has Been Sent</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,33 @@
+<apex:page id="newSalesforceMember"
+			docType="html-5.0"
+			showHeader="true"
+			sidebar="true"
+			tabStyle="SalesforceMember__x"
+			standardController="SalesforceMember__x"
+			extensions="newSalesforceMemberController">
+
+	<apex:sectionHeader title="{!$ObjectType.SalesforceMember__x.Label}" subtitle="New {!$ObjectType.SalesforceMember__x.Label}" />
+	<apex:form >
+		<apex:pageBlock id="mainForm" title="{!$ObjectType.SalesforceMember__x.Label}" mode="edit">
+			<apex:pageMessages />
+			<apex:pageBlockSection columns="1" >
+				<apex:pageBlockSectionItem id="BoD" rendered="{!birthDateRequired}">
+					<apex:outputLabel value="{!$ObjectType.Account.fields.PersonBirthdate.label}"/>
+					<apex:input type="date" value="{!personBirthdate}"/>
+				</apex:pageBlockSectionItem>
+				<apex:inputField value="{!member.SalesforceId__c}" required="true" onchange="checkMember();"/>
+				<apex:selectList value="{!selectedTier}" label="Tier" size="1" required="true">
+					<apex:selectOptions value="{!tiers}"/>
+				</apex:selectList>
+			</apex:pageBlockSection>
+			<apex:pageBlockButtons >
+				<apex:commandButton action="{!save}" value=" Save " reRender="mainForm"/>
+				<apex:commandButton action="{!SaveAndNew}" value="Save & New"/>
+				<apex:commandButton action="{!cancel}" immediate="true" html-formnovalidate="formnovalidate" value="Cancel"/>
+			</apex:pageBlockButtons>
+		</apex:pageBlock>
+		<apex:actionFunction name="checkMember"
+							 action="{!checkMember}"
+							 reRender="mainForm"/>
+	</apex:form>
+</apex:page>

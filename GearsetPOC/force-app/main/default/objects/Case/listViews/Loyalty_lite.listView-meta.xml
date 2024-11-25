@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Loyalty_lite</fullName>
+    <booleanFilter>(2 AND 3 AND 4) OR (1 AND 2 AND 3) OR (5 AND 2 AND 3)</booleanFilter>
+    <columns>CASES.CASE_NUMBER</columns>
+    <columns>NAME</columns>
+    <columns>CASES.SUBJECT</columns>
+    <columns>CASES.STATUS</columns>
+    <columns>CASES.PRIORITY</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
+    <columns>Customer_Loyalty_Tier__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Customer_Loyalty_Tier__c</field>
+        <operation>equals</operation>
+        <value>Élite,Elite,Elíte</value>
+    </filters>
+    <filters>
+        <field>CASES.STATUS</field>
+        <operation>notEqual</operation>
+        <value>Closed,Merged</value>
+    </filters>
+    <filters>
+        <field>Owner_Id_ListView__c</field>
+        <operation>startsWith</operation>
+        <value>00G</value>
+    </filters>
+    <filters>
+        <field>OWNER_NAME</field>
+        <operation>equals</operation>
+        <value>Elite queue</value>
+    </filters>
+    <filters>
+        <field>CASES.ORIGIN</field>
+        <operation>equals</operation>
+        <value>Email Elite</value>
+    </filters>
+    <label>Loyalty Elite - View</label>
+    <sharedTo>
+        <role>CRM</role>
+        <role>Customer_Service</role>
+    </sharedTo>
+</ListView>

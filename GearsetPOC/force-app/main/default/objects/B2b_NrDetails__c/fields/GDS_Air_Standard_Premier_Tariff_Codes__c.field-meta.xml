@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>GDS_Air_Standard_Premier_Tariff_Codes__c</fullName>
+    <label>GDS Air Standard Premier Tariff Codes</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>S3_BeNe_Standard_Premier_Tariff_Codes__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>ZNRT03 - ZNOW03 - WNRT03 - WNOW03</fullName>
+                <default>false</default>
+                <label>ZNRT03 - ZNOW03 - WNRT03 - WNOW03</label>
+            </value>
+            <value>
+                <fullName>ZNRT04 - ZNOW04 - WNRT04 - WNOW04</fullName>
+                <default>false</default>
+                <label>ZNRT04 - ZNOW04 - WNRT04 - WNOW04</label>
+            </value>
+            <value>
+                <fullName>ZNRT05 - ZNOW05 - WNRT05 - WNOW05</fullName>
+                <default>false</default>
+                <label>ZNRT05 - ZNOW05 - WNRT05 - WNOW05</label>
+            </value>
+            <value>
+                <fullName>ZN03NLRT - ZN03NLOW - WN03NLRT - WN03NLOW</fullName>
+                <default>false</default>
+                <label>ZN03NLRT - ZN03NLOW - WN03NLRT - WN03NLOW</label>
+            </value>
+            <value>
+                <fullName>ZN04NLRT - ZN04NLOW - WN04NLRT - WN04NLOW</fullName>
+                <default>false</default>
+                <label>ZN04NLRT - ZN04NLOW - WN04NLRT - WN04NLOW</label>
+            </value>
+            <value>
+                <fullName>ZN05NLRT - ZN05NLOW - WN05NLRT - WN05NLOW</fullName>
+                <default>false</default>
+                <label>ZN05NLRT - ZN05NLOW - WN05NLRT - WN05NLOW</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>H01C03ARBE - H01C03ARBG - H01C03ASBE - H01C03ASBG - H03C03ARBE - H03C03ARBG - H03C03ASBE - H03C03ASBG</controllingFieldValue>
+            <valueName>ZNRT03 - ZNOW03 - WNRT03 - WNOW03</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>H01C04ARBE - H01C04ARBG - H01C04ASBE - H01C04ASBG - H03C04ARBE - H03C04ARBG - H03C04ASBE - H03C04ASBG</controllingFieldValue>
+            <valueName>ZNRT04 - ZNOW04 - WNRT04 - WNOW04</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>H01C05ARBE - H01C05ARBG - H01C05ASBE - H01C05ASBG - H03C05ARBE - H03C05ARBG - H03C05ASBE - H03C05ASBG</controllingFieldValue>
+            <valueName>ZNRT05 - ZNOW05 - WNRT05 - WNOW05</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>H01C03ARAE - H01C03ARAG - H01C03ASAE - H01C03ASAG - H03C03ARAE - H03C03ARAG - H03C03ASAE - H03C03ASAG</controllingFieldValue>
+            <valueName>ZN03NLRT - ZN03NLOW - WN03NLRT - WN03NLOW</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>H01C04ARAE - H01C04ARAG - H01C04ASAE - H01C04ASAG - H03C04ARAE - H03C04ARAG - H03C04ASAE - H03C04ASAG</controllingFieldValue>
+            <valueName>ZN04NLRT - ZN04NLOW - WN04NLRT - WN04NLOW</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>H01C05ARAE - H01C05ARAG - H01C05ASAE - H01C05ASAG - H03C05ARAE - H03C05ARAG - H03C05ASAE - H03C05ASAG</controllingFieldValue>
+            <valueName>ZN05NLRT - ZN05NLOW - WN05NLRT - WN05NLOW</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

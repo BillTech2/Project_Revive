@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Nature_of_Complaint__c</fullName>
+    <label>Nature of Complaint</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Reason_For_Contact_Dynamic_Package__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Quality of Room</fullName>
+                <default>false</default>
+                <label>Quality of Room</label>
+            </value>
+            <value>
+                <fullName>Cleanliness of Room</fullName>
+                <default>false</default>
+                <label>Cleanliness of Room</label>
+            </value>
+            <value>
+                <fullName>Hotel Staff Service</fullName>
+                <default>false</default>
+                <label>Hotel Staff Service</label>
+            </value>
+            <value>
+                <fullName>No Booking Confirmed</fullName>
+                <default>false</default>
+                <label>No Booking Confirmed</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Hotel Complaint</controllingFieldValue>
+            <controllingFieldValue>On-The-Spot Hotel Complaints</controllingFieldValue>
+            <valueName>Quality of Room</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hotel Complaint</controllingFieldValue>
+            <controllingFieldValue>On-The-Spot Hotel Complaints</controllingFieldValue>
+            <valueName>Cleanliness of Room</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hotel Complaint</controllingFieldValue>
+            <controllingFieldValue>On-The-Spot Hotel Complaints</controllingFieldValue>
+            <valueName>Hotel Staff Service</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hotel Complaint</controllingFieldValue>
+            <controllingFieldValue>On-The-Spot Hotel Complaints</controllingFieldValue>
+            <valueName>No Booking Confirmed</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

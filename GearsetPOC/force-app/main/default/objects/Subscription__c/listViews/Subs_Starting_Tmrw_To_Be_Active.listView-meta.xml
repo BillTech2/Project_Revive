@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Subs_Starting_Tmrw_To_Be_Active</fullName>
+    <columns>NAME</columns>
+    <columns>Subscription_Confirm_Date__c</columns>
+    <columns>Product_Name__c</columns>
+    <columns>Start_Date__c</columns>
+    <columns>End_Date__c</columns>
+    <columns>CIN_V2__c</columns>
+    <columns>Status__c</columns>
+    <columns>Invoice__c</columns>
+    <columns>Member__c</columns>
+    <columns>Subscription_Type__c</columns>
+    <columns>Subscription_Type_Name__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Not Started</value>
+    </filters>
+    <filters>
+        <field>Start_Date__c</field>
+        <operation>lessOrEqual</operation>
+        <value>TODAY</value>
+    </filters>
+    <label>Subs Starting &lt;= Tmrw - To Be Active</label>
+</ListView>

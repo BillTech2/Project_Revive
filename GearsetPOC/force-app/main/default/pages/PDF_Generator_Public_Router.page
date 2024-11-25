@@ -1,0 +1,2 @@
+<apex:page controller="PDF_Generator_Public_Router_Ctrl" action="{!redirect}">
+</apex:page>

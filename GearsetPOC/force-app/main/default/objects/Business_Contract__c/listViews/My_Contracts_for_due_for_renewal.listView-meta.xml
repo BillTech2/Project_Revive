@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Contracts_for_due_for_renewal</fullName>
+    <columns>AccountId__c</columns>
+    <columns>RECORDTYPE</columns>
+    <columns>Review_Date__c</columns>
+    <columns>End_of_Contract__c</columns>
+    <columns>Contract_Review_Due__c</columns>
+    <columns>OWNER.FIRST_NAME</columns>
+    <columns>OWNER.LAST_NAME</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>Business_Account_Status__c</field>
+        <operation>notEqual</operation>
+        <value>Abandoned</value>
+    </filters>
+    <filters>
+        <field>EndDate__c</field>
+        <operation>equals</operation>
+        <value>NEXT_N_DAYS:30</value>
+    </filters>
+    <filters>
+        <field>Business_Account_Status__c</field>
+        <operation>notEqual</operation>
+        <value>Declined</value>
+    </filters>
+    <label>My Contracts for due for renewal</label>
+</ListView>

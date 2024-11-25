@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Departure_Time_Range__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+	Departure_Time__c &lt; 1340,
+	&quot;06h00-13h35&quot;,
+	
+IF(
+	Departure_Time__c &gt;= 1340 &amp;&amp; Departure_Time__c &lt; 2359,
+	&quot;13h40-21h30&quot;,
+
+&quot;???&quot;
+
+)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Departure Time Range</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

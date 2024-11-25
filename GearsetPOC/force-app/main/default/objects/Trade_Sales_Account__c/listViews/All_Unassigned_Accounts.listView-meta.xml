@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Unassigned_Accounts</fullName>
+    <columns>NAME</columns>
+    <columns>Managed__c</columns>
+    <columns>Category__c</columns>
+    <columns>HQ__c</columns>
+    <columns>Owner__c</columns>
+    <columns>RECORDTYPE</columns>
+    <filterScope>Queue</filterScope>
+    <label>All Unassigned Accounts</label>
+    <language>en_US</language>
+    <queue>Unassigned_Accounts</queue>
+    <sharedTo />
+</ListView>

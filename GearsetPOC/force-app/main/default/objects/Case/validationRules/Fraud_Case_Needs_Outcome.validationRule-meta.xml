@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fraud_Case_Needs_Outcome</fullName>
+    <active>true</active>
+    <description>A fraud audit case cannot be closed when the outcome of the case is blank</description>
+    <errorConditionFormula>ISPICKVAL(Status,&quot;Closed&quot;)
+&amp;&amp;
+RecordTypeId=&quot;0126E000000F5m3&quot;
+&amp;&amp;
+ISBLANK(TEXT(Outcome_Of_Investigation__c))</errorConditionFormula>
+    <errorMessage>Fraud Audit case cannot be closed with an outcome</errorMessage>
+</ValidationRule>

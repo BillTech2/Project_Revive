@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Answer__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(OR(ISBLANK(Number__c), Number__c == 0), &#39;&#39;, TEXT(Number__c) + &#39; &#39;) + IF(ISNULL(Date__c), &#39;&#39;, TEXT(Date__c) + &#39; &#39;) + IF(ISNULL(Date_Time__c), &#39;&#39;, TEXT(Date_Time__c) + &#39; &#39;) + IF(ISBLANK(Text__c), &#39;&#39;, Text__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Answer</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,20 @@
+<template>
+    <template if:true={hasBtnList}>
+        <template if:true={btnListLabelTranslated}>
+            <div class="btn-list-label slds-m-bottom_small">{btnListLabelTranslated}</div>
+        </template>
+        <div class="slds-grid slds-wrap slds-grid_align-center slds-grid_vertical-stretch">
+            <template for:each={btnList} for:item="btn">
+                <div class={sldsGrigClass} key={btn.label}>
+                    <div class="button-wrapper slds-p-around_small">
+                        <c-generic_button
+                            button-label-name={btn.label}
+                            event-details={btn.eventDetails}
+                            lang-code={langCode}
+                        ></c-generic_button>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </template>
+</template>

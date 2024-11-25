@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Blue_Voucher_Bookings</fullName>
+    <booleanFilter>(1 AND 2) OR (3 AND 4)</booleanFilter>
+    <columns>NAME</columns>
+    <columns>Associated_account__c</columns>
+    <columns>Vouchers_Received_Date__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>PNR__c</columns>
+    <columns>Blue_Voucher_Status__c</columns>
+    <columns>Blue_vouchers_received__c</columns>
+    <columns>From_Outward_Aria__c</columns>
+    <columns>To_Outward_Aria__c</columns>
+    <columns>Departure_Date_Outward__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Staff_and_duty_travel__c.Aria_travel</value>
+    </filters>
+    <filters>
+        <field>Type_of_booking__c</field>
+        <operation>equals</operation>
+        <value>Eurostar Staff Voucher</value>
+    </filters>
+    <filters>
+        <field>Type_of_booking__c</field>
+        <operation>equals</operation>
+        <value>Pals</value>
+    </filters>
+    <filters>
+        <field>Number_of_Vouchers__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <label>Blue Voucher Bookings</label>
+    <language>en_US</language>
+</ListView>

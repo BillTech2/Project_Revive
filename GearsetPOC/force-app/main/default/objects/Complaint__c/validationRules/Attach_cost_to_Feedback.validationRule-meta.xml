@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Attach_cost_to_Feedback</fullName>
+    <active>true</active>
+    <description>Rule triggers if feedback has a cost attached but the cost fields are blank</description>
+    <errorConditionFormula>(ISPICKVAL(Cost_Attached_to_Feedback__c,&quot;Yes&quot;)
+&amp;&amp;
+NOT(ISPICKVAL( Type_of__c ,&quot;Points&quot;)))
+&amp;&amp;
+(ISBLANK( Text(Currency__c ))
+||
+( ISNULL(Feedback_Cost__c))
+||
+( ISNULL( Text( Type_of__c  ))))</errorConditionFormula>
+    <errorMessage>Please enter the full cost details to the relevant fields (Currency &amp; Value)</errorMessage>
+</ValidationRule>

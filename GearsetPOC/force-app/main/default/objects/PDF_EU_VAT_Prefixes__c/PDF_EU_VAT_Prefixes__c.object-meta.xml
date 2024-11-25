@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>To check whether company is a European Registered Company and subject to VAT</description>
+    <enableFeeds>false</enableFeeds>
+    <label>PDF EU VAT Prefixes</label>
+    <visibility>Public</visibility>
+</CustomObject>

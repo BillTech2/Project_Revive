@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>WO_approvals_TL_s</fullName>
+    <columns>NAME</columns>
+    <columns>Case__c</columns>
+    <columns>Currency__c</columns>
+    <columns>Write_Off_Amount__c</columns>
+    <columns>Who_Gave_Vocal_Authorisation__c</columns>
+    <columns>Created_Date_Time__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Write_Off_Amount__c</field>
+        <operation>lessThan</operation>
+        <value>100</value>
+    </filters>
+    <filters>
+        <field>Write_Off_Amount__c</field>
+        <operation>greaterThan</operation>
+        <value>49</value>
+    </filters>
+    <filters>
+        <field>Created_Date_Time__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>5/1/2019 12:00 AM</value>
+    </filters>
+    <filters>
+        <field>Approval_Status__c</field>
+        <operation>notEqual</operation>
+        <value>approved,rejected,recalled</value>
+    </filters>
+    <filters>
+        <field>Advisor_Department__c</field>
+        <operation>equals</operation>
+        <value>webhelp</value>
+    </filters>
+    <filters>
+        <field>Who_Gave_Vocal_Authorisation__c</field>
+        <operation>notEqual</operation>
+        <value>Disruption</value>
+    </filters>
+    <label>WO approvals 50 - 100</label>
+    <sharedTo>
+        <group>Advisor_QA_Bucharest</group>
+        <group>Advisor_QA_Derby</group>
+        <group>Advisor_QA_ECC</group>
+        <group>Advisor_QA_QA_Team</group>
+        <group>EBSC_Approvers</group>
+        <group>Supervisor_QA_Feedback_Bucharest</group>
+        <group>Supervisor_QA_Feedback_Derby</group>
+        <group>Supervisor_QA_Feedback_ECC</group>
+        <group>Write_Off_Approvers_Derby</group>
+    </sharedTo>
+</ListView>

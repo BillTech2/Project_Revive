@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Type__c</fullName>
+    <label>Account Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Direct &amp; Other</fullName>
+                <default>false</default>
+                <label>Direct &amp; Other</label>
+            </value>
+            <value>
+                <fullName>Online Tour Operator / OTA</fullName>
+                <default>false</default>
+                <label>Online Tour Operator / OTA</label>
+            </value>
+            <value>
+                <fullName>Retail</fullName>
+                <default>false</default>
+                <label>Retail</label>
+            </value>
+            <value>
+                <fullName>Groups / Tours / Niche</fullName>
+                <default>false</default>
+                <label>Groups / Tours / Niche</label>
+            </value>
+            <value>
+                <fullName>Inbounders / DMC</fullName>
+                <default>false</default>
+                <label>Inbounders / DMC</label>
+            </value>
+            <value>
+                <fullName>Reward Redemption</fullName>
+                <default>false</default>
+                <label>Reward Redemption</label>
+            </value>
+            <value>
+                <fullName>TMC</fullName>
+                <default>false</default>
+                <label>TMC</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

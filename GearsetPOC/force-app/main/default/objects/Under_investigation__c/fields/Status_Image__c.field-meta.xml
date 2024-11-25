@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status_Image__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(ISPICKVAL( Status__c,&quot;Rejected&quot;), IMAGE(&quot;https://eurostar--c.eu2.content.force.com/servlet/servlet.ImageServer?id=015b0000003mmMu&amp;oid=00DS90000046Mzw&amp;lastMod=1493893595000&quot;, &quot;Rejected&quot; , 25, 100),
+IF(ISPICKVAL( Status__c,&quot;Authorised&quot;), IMAGE(&quot;https://eurostar--c.eu2.content.force.com/servlet/servlet.ImageServer?id=015b0000003mmMz&amp;oid=00DS90000046Mzw&amp;lastMod=1493893617000&quot;, &quot;Authorised&quot; , 25, 100),
+IF(ISPICKVAL( Status__c,&quot;Pending&quot;), IMAGE(&quot;https://eurostar--c.eu2.content.force.com/servlet/servlet.ImageServer?id=015b0000003mmN4&amp;oid=00DS90000046Mzw&amp;lastMod=1493893641000&quot;, &quot;Pending&quot; , 25, 100),
+IF(ISPICKVAL( Status__c,&quot;In Progress&quot;), IMAGE(&quot;https://eurostar--c.eu2.content.force.com/servlet/servlet.ImageServer?id=015b0000003mmNE&amp;oid=00DS90000046Mzw&amp;lastMod=1493893656000&quot;, &quot;In Progress&quot; , 25, 100),
+NULL
+)
+)
+)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

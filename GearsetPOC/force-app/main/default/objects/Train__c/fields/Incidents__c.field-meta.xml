@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Incidents__c</fullName>
+    <description>Count of the number of incidents related to the train.</description>
+    <inlineHelpText>Count of the number of incidents related to the train.</inlineHelpText>
+    <label>Incidents</label>
+    <summaryForeignKey>Incidents__c.Train__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

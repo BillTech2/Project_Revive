@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Booking_Is_Not_On_Salesforce</fullName>
+    <active>true</active>
+    <description>If booking is not on Salesforce then manual PNR needs to be entered</description>
+    <errorConditionFormula>ISPICKVAL(Booking_is_on_Salesforce__c,&quot;No&quot;)
+&amp;&amp;
+ISBLANK( PNR_If_Booking_Is_Not_On_Salesforce__c )</errorConditionFormula>
+    <errorDisplayField>PNR_If_Booking_Is_Not_On_Salesforce__c</errorDisplayField>
+    <errorMessage>Please enter the PNR of the booking</errorMessage>
+</ValidationRule>

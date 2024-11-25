@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>The_task_s__c</fullName>
+    <inlineHelpText>Please identify the task(s) that the Assistance Dog has been trained to perform to assist you to alleviate the effects of your disability:</inlineHelpText>
+    <label>The task(s) the Dog has been trained</label>
+    <length>1000</length>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

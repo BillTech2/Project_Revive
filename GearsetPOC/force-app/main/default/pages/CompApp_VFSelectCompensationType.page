@@ -1,0 +1,83 @@
+<apex:page showHeader="false" sidebar="false" language="{!selectedLanguageCode}" controller="CompApp_CtrlApp"
+           standardStylesheets="false" applyHtmlTag="false" applyBodyTag="false" showChat="false">
+    <apex:variable value="{!conditionsOfCarriageURL}" var="websiteConditionsOfCarriage"/>
+    <div>
+        <h2 class="row">{!$Label.CompApp_Eligible_evoucher_points}</h2>
+        <div class="row"> <!-- compensationReason -->
+            <!-- Train Only-->
+            <div class="p1 ng-cloak" ng-show="$angularState.compensation.compensationReason === 'Train' ">
+                {!$Label.CompApp_Train_P1} {{ $angularState.travel.dateOfTravel }}
+                {!$label.CompApp_Train_P2} {!$label.CompApp_Train_P3}
+            </div>
+            <!-- Delay and Train -->
+            <div class="p1 ng-cloak" ng-show="$angularState.compensation.compensationReason === 'DelayAndTrain' ">
+                {!$Label.CompApp_Delay_Train_PartOne} {{ $angularState.travel.dateOfTravel }}
+                {!$label.CompApp_Delay_Train_PartTwo} {!$label.CompApp_Delay_Train_PartThree}
+            </div>
+            <!-- Delay and Train And Incident -->
+            <div class="p1 ng-cloak"
+                 ng-show="$angularState.compensation.compensationReason === 'DelayAndTrainAndIncident' ">
+                {!$Label.CompApp_TrainDelayIncident_P1} {{ $angularState.travel.dateOfTravel }}
+                {!$label.CompApp_TrainDelayIncident_P2} {!$label.CompApp_TrainDelayIncident_P3}
+            </div>
+            <!-- Incident Only-->
+            <div class="p1 ng-cloak" ng-show="$angularState.compensation.compensationReason === 'Incident' ">
+                {!$Label.CompApp_Incident_Apology_PartOne} {{ $angularState.travel.dateOfTravel }}
+                {!$label.CompApp_Incident_Apology_PartTwo}
+            </div>
+            <!-- Delay and Incident -->
+            <div class="p1 ng-cloak" ng-show="$angularState.compensation.compensationReason === 'DelayAndIncident' ">
+                {!$Label.CompApp_Delay_Incident_Apology_PartOne} {{ $angularState.travel.dateOfTravel }}
+                {!$label.CompApp_Delay_Incident_Apology_PartTwo}
+            </div>
+            <!-- Delay Only -->
+            <div ng-show="$angularState.compensation.compensationReason === 'Delay' ">
+                <div class="p1 ng-cloak" ng-show="$angularState.isMultipleCOmpensationTypeAvailable() ">
+                    {!$Label.CompApp_Delay_Apology_PartOne} {{ $angularState.travel.dateOfTravel }}
+                    {!$label.CompApp_Delay_Apology_PartTwo}
+                </div>
+
+                <div class="p1 ng-cloak" ng-hide="$angularState.isMultipleCOmpensationTypeAvailable()">
+                    {!$Label.CompApp_Delay_Apology_PartOne} {{ $angularState.travel.dateOfTravel }}
+                    {!$label.CompApp_Delay_Apology_PartTwo}
+                </div>
+            </div>
+        </div>
+        <section>
+            <div class="radiogroup section grid-group">
+                <div class="grid-col grid-col-span_1_of_12"></div>
+                <div class="grid-col grid-col-span_4_of_12"
+                     ng-show="$angularState.isMultipleCOmpensationTypeAvailable()">
+                    <input type="radio" name="compensationType" id="compensation-type-e-voucher" value="voucher"
+                           ng-model="$angularState.selectedCompensation"/>
+                    <label for="compensation-type-e-voucher" class="radio-panel">
+                        <h2>{!$label.CompApp_evoucher}</h2>
+                        <p>{!$label.CompApp_Eligble_evoucher_amount }</p>
+                        <div class="points ng-cloak">
+                            {{$angularState.compensation.sumVoucher | userCurrency:$angularState.compensation.currency}}
+                        </div>
+                    </label>
+                </div>
+                <div class="grid-col grid-col-span_1_of_12 radiogroup-delimeter"
+                     ng-show="$angularState.isMultipleCOmpensationTypeAvailable()">OR
+                </div>
+                <div class="grid-col grid-col-span_4_of_12">
+                    <input type="radio" name="compensationType" id="compensation-type-points" value="points"
+                           ng-model="$angularState.selectedCompensation" checked="checked"/>
+                    <label for="compensation-type-points" class="radio-panel">
+                        <h2>{!$label.CompApp_points}</h2>
+                        <p>{!$label.CompApp_Memebership_number} <span id="membership-number-encripted" class="ng-cloak">****{{$angularState.personalInfo.membershipNumber}}</span>
+                        </p>
+                        <p>{!$label.CompApp_Eligble_points}</p>
+                        <div class="points "><span id="compensation-points" class="ng-cloak">{{$angularState.compensation.sumPoints}}</span> {!$label.CompApp_points}
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </section>
+        <div class="row commands-section">
+            <a class="btn primary" ng-click="applyChosenCompensationType()">{!$label.CompApp_Continue}</a>
+            <a class="btn secondary" ng-click="restartProcess()">{!$label.CompApp_Cancel}</a>
+        </div>
+    </div>
+</apex:page>

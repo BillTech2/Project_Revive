@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Transcripts_from_Today</fullName>
+    <columns>Owner</columns>
+    <columns>CreatedDate</columns>
+    <columns>Name</columns>
+    <columns>Case</columns>
+    <columns>Account</columns>
+    <columns>StartTime</columns>
+    <columns>EndTime</columns>
+    <columns>WaitTime</columns>
+    <columns>ChatDuration</columns>
+    <columns>OperatorMessageCount</columns>
+    <columns>VisitorMessageCount</columns>
+    <columns>EndedBy</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CreatedDate</field>
+        <operation>equals</operation>
+        <value>TODAY</value>
+    </filters>
+    <label>Transcripts from Today</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>ECC_Webhelp_Escalation_Queue_Management</group>
+        <group>Webhelp_TLs</group>
+    </sharedTo>
+</ListView>

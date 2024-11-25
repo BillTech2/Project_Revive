@@ -1,0 +1,17 @@
+<template>
+    <div class="slds-is-relative modal" >
+        <h2 class="header">Delete Files</h2>
+        <div class="body" id="modal-content-id-1">
+            <lightning-spinner alternative-text="Loading" size="medium" if:true={isLoading}></lightning-spinner>
+            <h1 style="font-size: 18px; padding-bottom: 12px; color:black">Select files for delete:</h1>
+            <lightning-checkbox-group
+                    options={relatedFiles}
+                    value={selectedFiles}
+                    onchange={handleChange}></lightning-checkbox-group>
+        </div>
+        <div class="buttons slds-grid">
+            <button class="slds-button slds-button_neutral" onclick={closeModal}>Cancel</button>
+            <button class="slds-button slds-button_brand" onclick={handleDelete}>Delete</button>
+        </div>
+    </div>
+</template>

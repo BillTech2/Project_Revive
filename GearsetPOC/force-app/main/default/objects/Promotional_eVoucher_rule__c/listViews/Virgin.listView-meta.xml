@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Virgin</fullName>
+    <columns>CREATED_DATE</columns>
+    <columns>NAME</columns>
+    <columns>Expired__c</columns>
+    <columns>Evoucher_Value__c</columns>
+    <columns>Currency__c</columns>
+    <columns>Expiry_Date__c</columns>
+    <columns>Description__c</columns>
+    <columns>Last_Failure_Notification_Sent__c</columns>
+    <columns>Partner__c</columns>
+    <columns>Start_Date__c</columns>
+    <columns>Status__c</columns>
+    <columns>Recorded_Money_Amount__c</columns>
+    <columns>Recorded_Number_of_Vouchers__c</columns>
+    <columns>Total_Money_Amount__c</columns>
+    <columns>Total_Number_of_Vouchers__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>NAME</field>
+        <operation>contains</operation>
+        <value>Virgin</value>
+    </filters>
+    <label>Virgin</label>
+    <language>en_US</language>
+</ListView>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Batch_ID__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Once the Kyriba job runs from EIF, the Batch ID will be filled here with the date/time when the job ran (yyyymmddhhmmss). Specifications can be found here: https://eurostarwiki.atlassian.net/wiki/display/EIP/Salesforce+-+TMS++Compensation+Services</inlineHelpText>
+    <label>Kyriba Batch ID</label>
+    <length>35</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

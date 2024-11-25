@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>OWNER.FIRST_NAME</columns>
+    <columns>OWNER.LAST_NAME</columns>
+    <columns>OWNER.ALIAS</columns>
+    <columns>Employee_Type__c</columns>
+    <columns>Manager__c</columns>
+    <columns>Pay_Period_Month__c</columns>
+    <columns>Status__c</columns>
+    <columns>Eligible_days__c</columns>
+    <columns>Total_Amount_Due__c</columns>
+    <columns>Days_Paid__c</columns>
+    <columns>Amount_Paid__c</columns>
+    <columns>Days_Unpaid__c</columns>
+    <columns>Amount_Pending__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>Timesheet_Finance_team</group>
+        <group>Timesheet_Manager</group>
+    </sharedTo>
+</ListView>

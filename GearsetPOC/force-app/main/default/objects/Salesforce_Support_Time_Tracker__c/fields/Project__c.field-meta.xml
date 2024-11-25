@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Project__c</fullName>
+    <label>Project</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Blue/Overseas Vouchers - Aria</fullName>
+                <default>false</default>
+                <label>Blue/Overseas Vouchers - Aria</label>
+            </value>
+            <value>
+                <fullName>Club Eurostar</fullName>
+                <default>false</default>
+                <label>Club Eurostar</label>
+            </value>
+            <value>
+                <fullName>Digital Genius</fullName>
+                <default>false</default>
+                <label>Digital Genius</label>
+            </value>
+            <value>
+                <fullName>Dynamic Packaging</fullName>
+                <default>false</default>
+                <label>Dynamic Packaging</label>
+            </value>
+            <value>
+                <fullName>Eureka to Salesforce</fullName>
+                <default>false</default>
+                <label>Eureka to Salesforce</label>
+            </value>
+            <value>
+                <fullName>Eurostar Signature Service</fullName>
+                <default>false</default>
+                <label>Eurostar Signature Service</label>
+            </value>
+            <value>
+                <fullName>GDPR</fullName>
+                <default>false</default>
+                <label>GDPR</label>
+            </value>
+            <value>
+                <fullName>StellaConnect Integration</fullName>
+                <default>false</default>
+                <label>StellaConnect Integration</label>
+            </value>
+            <value>
+                <fullName>Webhelp Reporting</fullName>
+                <default>false</default>
+                <label>Webhelp Reporting</label>
+            </value>
+            <value>
+                <fullName>West Phone Integration</fullName>
+                <default>false</default>
+                <label>West Phone Integration</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

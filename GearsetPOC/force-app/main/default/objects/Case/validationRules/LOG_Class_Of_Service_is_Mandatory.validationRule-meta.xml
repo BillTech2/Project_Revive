@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LOG_Class_Of_Service_is_Mandatory</fullName>
+    <active>false</active>
+    <description>If initial reason for contact is not Disruption related then the class of service must be added</description>
+    <errorConditionFormula>OR( 
+ISPICKVAL(Initial_Reason_For_Contact__c,&quot;Buy or Book&quot;), 
+ISPICKVAL(Initial_Reason_For_Contact__c,&quot;Change&quot;), 
+ISPICKVAL(Initial_Reason_For_Contact__c,&quot;Cancel or Refund&quot;), 
+ISPICKVAL(Initial_Reason_For_Contact__c,&quot;Info or Advice or Confirmation&quot;)) 
+&amp;&amp; 
+NOT(ISBLANK(PNR__c)) 
+&amp;&amp; 
+ISNULL(TEXT( Class_of_Service__c ))</errorConditionFormula>
+    <errorMessage>Please enter the class of service of the related booking</errorMessage>
+</ValidationRule>

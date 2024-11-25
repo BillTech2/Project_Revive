@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Hotel_Complaint__c</fullName>
+    <description>Type of complaint</description>
+    <inlineHelpText>Type of complaint regarding the booking process or Hotel stay</inlineHelpText>
+    <label>Hotel Feedback</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Type_of_Complaint__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Staff</fullName>
+                <default>false</default>
+                <label>Staff</label>
+            </value>
+            <value>
+                <fullName>Booking Process</fullName>
+                <default>false</default>
+                <label>Booking Process</label>
+            </value>
+            <value>
+                <fullName>Cleanliness</fullName>
+                <default>false</default>
+                <label>Cleanliness</label>
+            </value>
+            <value>
+                <fullName>General</fullName>
+                <default>false</default>
+                <label>General</label>
+            </value>
+            <value>
+                <fullName>Room Type</fullName>
+                <default>false</default>
+                <label>Room Type</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Hotels</controllingFieldValue>
+            <valueName>Staff</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hotels</controllingFieldValue>
+            <valueName>Booking Process</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hotels</controllingFieldValue>
+            <valueName>Cleanliness</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hotels</controllingFieldValue>
+            <valueName>General</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hotels</controllingFieldValue>
+            <valueName>Room Type</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

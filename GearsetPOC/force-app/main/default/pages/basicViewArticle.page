@@ -1,0 +1,250 @@
+<apex:page standardController="Knowledge__kav" language="{!chosenLanguageISO}" extensions="basicViewArticleController"  sidebar="false" showheader="false" standardStylesheets="false" docType="html-5.0">
+
+
+<html>
+  <head>
+      <meta charset="utf-8"/>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1"/>
+      <meta name="description" content=""/>
+      <meta name="author" content=""/>
+
+
+    <title>Eurostar FAQ Test</title>
+
+    <!-- Bootstrap core CSS -->
+    <apex:stylesheet value="{!URLFOR($Resource.bootstrap, 'dist/css/bootstrap.min.css')}" />
+      
+    <link href="http://getbootstrap.com/examples/offcanvas/offcanvas.css" rel="stylesheet"/>
+
+  </head>
+  
+  
+  
+  <body>
+  <script type="text/javascript">
+    function registerUserFeedback() {
+        var wasArticleUseful = document.getElementById("useful_yes").checked;
+        var userFeedbackText = document.getElementById("userComments").value;
+        var ArticleID = "{!theArticle.id}";
+        //to-do
+        var market = "UK";
+
+   
+        //alert ('wiring...');
+        console.log('wiring...');
+        console.log(wasArticleUseful);
+        console.log (userFeedbackText);
+        console.log (market);
+        
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.basicViewArticleController.registerUserFeedback}',
+            wasArticleUseful, 
+            userFeedbackText,
+            ArticleID,
+            market,
+            
+            function(result, event){
+                if (event.status) {
+                    // Get DOM IDs for HTML and Visualforce elements like this
+                    document.getElementById("WasArticleUsefulStart").style.visibility = "hidden";
+                    alert ("Thank you for your Feedback");
+                    
+                    
+                } else if (event.type === 'exception') {
+                    //to-do
+                    console.log ('error');
+                    
+                } else {
+                    //to-do
+                    console.log ( event.message);
+                    alert (event.message);
+                }
+            } 
+            
+        );
+        
+        
+        
+    }
+    </script>
+  
+  
+  <apex:form > 
+    
+   <div id="header" align="center">
+       <img src = "{!URLFOR($Resource.FAQ_Mockup, 'FAQ_Header.PNG')}" /> 
+      </div>
+
+    <div class="container">
+        <ol class="breadcrumb">
+          <li><a href="{!$Page.basicResponsive}?language={!language}">Home</a></li>
+          <li class="active">{!theArticle.title} - {!$Label.FAQ_HOME_SEARCH_RESULT}</li>
+          
+        </ol>
+        
+      <div class="row row-offcanvas row-offcanvas-right">
+
+        <div class="col-xs-12 col-sm-9">
+          <p class="pull-right visible-xs">
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Quick Links</button>
+          </p>
+          
+          <!-- <div class="alert alert-danger" role="alert">
+            <h4><b>{!$Label.FAQ_Disruption_Title}</b></h4>
+                <p>{!$Label.FAQ_Disruption_Message}</p>
+          </div> -->
+          
+          <!-- THE SEARCH RESULTS -->
+          <apex:outputpanel id="theSearchResults">
+          <apex:outputpanel rendered="{!Len(searchTerm)>1}">
+          
+          <div class="row">
+          
+              <!-- SEARCH RESULT  QUESTIONS  -->
+              <apex:outputPanel rendered="{!LEN(searchTerm)>1}">
+              
+                <h3 class="list-group-item-heading">{!$Label.FAQ_HOME_SEARCH_RESULT}</h3>
+              </apex:outputPanel>
+              
+              <div class="list-group">
+              
+                <apex:repeat value="{!theArticles}" var="theQuestion">
+                <apex:variable value="" var="friendlyURL"/>
+                <apex:outputpanel rendered="{! (language!=null && CONTAINS(language,'-en')) || language==null}">
+                    <apex:variable value="/faq/question/{!theQuestion.urlname}" var="friendlyURL"/>
+                </apex:outputpanel>
+                <apex:outputpanel rendered="{!language!=null && CONTAINS(language,'-fr')}">
+                    <apex:variable value="/faq/demand/{!theQuestion.urlname}" var="friendlyURL"/>
+                </apex:outputpanel>
+                <apex:outputpanel rendered="{!language!=null && CONTAINS(language,'-nl')}">
+                    <apex:variable value="/faq/vraag/{!theQuestion.urlname}" var="friendlyURL"/>
+                </apex:outputpanel>
+                
+                <a href="{!friendlyURL}" class="list-group-item">
+                  
+                    <h4 class="list-group-item-heading">{!theQuestion.Title}</h4>
+                    
+                    <p class="list-group-item-text">
+                      <!--<apex:outputText escape="false" style="font-style:italic" value="{!HTMLENCODE(LEFT(theQuestion.The_Knowledge_Answer__c,200))}..."></apex:outputText>
+                      <!-- <apex:outputText escape="false" style="font-style:italic" value="{!LEFT(theQuestion.The_Knowledge_Answer__c,200)}..."></apex:outputText>-->
+                        {!LEFT(theQuestion.The_Knowledge_Answer__c,100)}
+                    </p>
+                    
+                </a>
+                </apex:repeat>
+              </div>
+               <!--END OF SEARCH RESULT  QUESTIONS  --> 
+          </div><!--/row-->
+          </apex:outputpanel>
+          </apex:outputpanel>
+          <!-- END OF SEARCH RESULTS -->
+          
+          
+          
+          <!-- THE ANSWER -->
+          <div class="row">
+              <h3 class="list-group-item-heading">{!theArticle.title}</h3>
+              <p> {!theArticle.The_Knowledge_Answer__c} </p>
+          </div><!--/row-->
+          <!-- END OF THE ANSWER -->
+          
+          <!-- WAS THIS ARTICLE USEFUL -->
+          <div id="WasArticleUsefulStart">
+          <apex:outputPanel rendered="{!NOT(hasUserRatedThisQuestion)}" layout="none"> 
+          <div class="row">
+              <div class="form-group col-xs-12">
+                <label class="control-label col-xs-12">Was this Article Useful?:</label>
+                <div class="col-xs-12">
+                    <label class="radio-inline">
+                        <input type="radio" id="useful_yes" name="useful" value="Yes"> Yes </input>
+                    </label>
+                </div>
+                <div class="col-xs-12">
+                    <label class="radio-inline">
+                        <input type="radio" id="useful_no" name="useful" value="No"> No </input>
+                    </label>
+                </div>
+                <label class="control-label col-xs-12">Your Comments:</label>
+                <div class="col-xs-12">
+                    <textarea rows="3" class="form-control" id="userComments" placeholder="Your Comments"></textarea>
+                </div>
+                <div class="col-xs-12">
+                    <input type="button" onClick="registerUserFeedback()"  class="btn btn-primary" value="Send"/>
+                </div>
+                
+              </div>  
+          </div><!--/row-->
+          </apex:outputPanel>
+          </div>
+          <!-- END OF WAS THIS ARTICLE USEFUL-->
+          
+          
+        </div><!--/.col-xs-12.col-sm-9-->
+        
+        <!-- START OF THE SIDEBAR -->
+        
+        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
+               <div class="well">
+                   <h4>{!$Label.FAQ_HOME_SEARCH}:</h4>
+                   <!-- <form role="search"> -->
+                          <div class="form-group">
+                              
+                              <apex:inputText styleClass="form-control" value="{!searchTerm}" />
+                          </div>
+                   
+                    <!--  <apex:commandButton styleClass="btn btn-default" action="{!search}" value="{!$Label.FAQ_HOME_SEARCH}" rerender="theSearchResults"/>
+                   -->
+                   <!-- </form> -->
+                   
+               </div><!--/Well-->
+           
+               <div class="well">
+                  <h4>Quick Links:</h4>
+                  <apex:repeat value="{!FAQQuickLinks}" var="faqLink">
+                    <a href="{!faqLink.url__c}" class="list-group-item">{!faqLink.English_Text__c} </a> 
+                  </apex:repeat>
+                </div><!--/Well-->
+             <div class="well">
+                <h4>Contact Us:</h4>
+                
+                 <a href="#myModal" role="button" class="btn btn-info" data-toggle="modal">Email</a><br/><i>Estimated wait 48 hours</i><br/><br/>
+                 <a href="#myModal" role="button" class="btn btn-info" data-toggle="modal">Phone</a><br/><i>Estimated wait 2 minutes</i><br/><br/>
+                 <a href="#myModal" role="button" class="btn btn-danger" data-toggle="modal">Live Chat</a><br/><i>No agents available</i>
+             </div><!--/Well-->
+
+        </div><!--/.sidebar-offcanvas-->
+        
+        <!-- END OF THE SIDEBAR -->
+        
+      </div><!--/row-->
+
+      <hr/>
+
+       
+
+    </div><!--/.container-->
+    
+    <div id="footer" align="center">
+       <img src = "{!URLFOR($Resource.FAQ_Mockup, 'FAQ_Footer.PNG')}" /> 
+    </div>
+  
+  
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="{!URLFOR($Resource.CompApp_Res, '/vendor/bootstrap.min.js')}"> </script>   
+    
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="http://getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js"></script>
+
+    <script src="http://getbootstrap.com/examples/offcanvas/offcanvas.js"></script>
+    
+    <!-- GA Tracking -->
+    <site:googleAnalyticsTracking />
+    
+    </apex:form> 
+  </body>
+</html>  
+
+</apex:page>

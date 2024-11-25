@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Source_Ticket__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Ticket that led to the creation of compensation record</description>
+    <inlineHelpText>Ticket that led to the creation of compensation record</inlineHelpText>
+    <label>Source Ticket</label>
+    <referenceTo>Ticket__c</referenceTo>
+    <relationshipLabel>Compensations (Source Ticket)</relationshipLabel>
+    <relationshipName>Compensation</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

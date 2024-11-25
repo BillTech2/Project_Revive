@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Archived_Member_of_Staff</fullName>
+    <active>true</active>
+    <description>bookings cannot be made for employees who have been archived</description>
+    <errorConditionFormula>ISPICKVAL(Staff_Member_Name__r.Type_of_Staff__c ,&quot;Archive&quot;)</errorConditionFormula>
+    <errorMessage>Bookings cannot be made for Archived members of staff</errorMessage>
+</ValidationRule>

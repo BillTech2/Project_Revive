@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Date_Membership_Card_Was_Disposed_Of__c</fullName>
+    <inlineHelpText>The Members Club Eurostar card was returned to us and we were not able to make contact with them to rectify the issue so this is the date that the card was disposed of (the member would have been informed of this on the day it happened)</inlineHelpText>
+    <label>Date Membership Card Was Disposed Of</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Date</type>
+</CustomField>

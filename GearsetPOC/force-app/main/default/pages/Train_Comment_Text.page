@@ -1,0 +1,24 @@
+<apex:page >
+
+<table style="text-align:center;width:100%;">
+
+<tr>
+
+<td>
+
+<div style="width:100%">
+
+<apex:image id="logo" url="https://eurostar.lightning.force.com//servlet/servlet.FileDownload?file=015Rz000001IzcM" width="850" height="50" style="float:centre" />
+
+
+</div>
+
+</td>
+
+</tr>
+
+</table>
+  
+  
+  
+</apex:page>

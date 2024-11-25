@@ -1,0 +1,15 @@
+<template>
+    <div class="slds-card_boundary">
+        <lightning-card title={title} icon-name="standard:delegated_account" class="slds-table slds-table_cell-buffer">
+            <div class="slds-p-around_small" if:true={tableVisible}>
+                <lightning-datatable
+                    data={data}
+                    columns={columns}
+                    hide-checkbox-column="true"
+                    resize-column-disabled="true"
+                    key-field="Id">
+                </lightning-datatable>
+            </div>
+        </lightning-card>
+    </div>
+</template>

@@ -1,0 +1,40 @@
+<apex:component >
+<footer class="bs-docs-footer" role="contentinfo">
+  <div class="container" style="padding-top:0;">
+      <hr/>
+      
+    <div class ="footer-block">
+      <ul class="bs-docs-footer-links text-muted">
+          <h4>Website Information</h4>
+        <li><a href="http://www.eurostar.com/uk-en/website-terms-and-conditions">Website T&amp;C's</a></li>
+        <li><a href="http://www.eurostar.com/uk-en/conditions-carriage">Conditions of carriage</a></li>
+        <li><a href="http://www.eurostar.com/uk-en/privacy-policy">Privacy policy</a></li>
+        <li><a href="http://www.eurostar.com/uk-en/cookies-and-personal-data">Cookies &amp; personal data</a></li>
+        <li><a href="http://www.eurostar.com/uk-en/accessibility">Accessibility</a></li>
+      </ul>
+      </div>
+      <div class ="footer-block">
+      <ul class="bs-docs-footer-links text-muted">
+        <h4>Company Information</h4>
+        <li><a  href="http://flockler.com/eurostar4agents/contact-us">Contact Us</a></li>
+        <li><a  href="http://www.eurostar.com/uk-en/about-eurostar">About Eurostar</a></li>
+        <li><a  href="http://www.eurostar.com/uk-en/about-eurostar/press-office">Press Office</a></li>
+        <li><a  href="http://www.eurostar.com/uk-en/about-eurostar/eurostar-careers">Careers</a></li>
+        <li><a  href="http://www.eurostar.com/uk-en/customer-charter">Customer Charter</a></li>
+      </ul>
+</div>
+      <div class ="footer-block">
+      <ul class="bs-docs-footer-links text-muted">
+        <h4>Stay Connected</h4>
+        <li><a href="http://eurostar.com">Eurostar.com</a></li>
+        <li><a  href="http://facebook.com/Eurostar">Facebook.com/Eurostar</a></li>
+        <li><a href="http://twitter.com/eurostar">Twitter.com/Eurostar</a></li>
+        <li><a  href="http://eurostar4agents.us1.list-manage.com/subscribe?u=5e69c180d16d4ffd52af4ea88&id=5d6a720903">Sign up to our newsletter </a></li>
+      </ul>
+      </div>
+       <div class ="footer-block">
+      	<img src="{!URLFOR($Resource.Eurostar_Logo, 'eurostar_logo_black.png')}"/>
+      </div>
+    </div>
+</footer>    
+</apex:component>

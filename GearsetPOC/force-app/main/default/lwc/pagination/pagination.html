@@ -1,0 +1,8 @@
+<template>
+    <lightning-button disabled={isFirstPage} label="Previous" onclick={handlePrevPage} class="slds-p-around_x-small"></lightning-button>
+    <template if:true={isNeedPageInfo}>
+        <span class="vcenter currentpage">{currentPage}</span>
+        <span class="vcenter" style="font-weight: 500;">&nbsp;/&nbsp;{totalPages}</span>
+    </template>
+    <lightning-button disabled={isLastPage} label="Next" onclick={handleNextPage} class="slds-p-around_x-small"></lightning-button>
+</template>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Chats_Taken_Per_Hours_Average__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( Hours_Logged_In__c   &gt;=  1,ChatReqEngaged/  Hours_Logged_In__c,NULL)</formula>
+    <inlineHelpText>Chats taken / Time spent online (in hours)</inlineHelpText>
+    <label>Chats Taken Per Hour (Average)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

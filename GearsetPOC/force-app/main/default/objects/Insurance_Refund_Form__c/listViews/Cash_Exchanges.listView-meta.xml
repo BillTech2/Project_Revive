@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cash_Exchanges</fullName>
+    <columns>CREATED_DATE</columns>
+    <columns>NAME</columns>
+    <columns>Customer__c</columns>
+    <columns>Date_of_Purchase__c</columns>
+    <columns>Action__c</columns>
+    <columns>Reason_For_Refund__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Action__c</field>
+        <operation>equals</operation>
+        <value>Cash Exchange</value>
+    </filters>
+    <label>Cash Exchanges</label>
+    <language>en_US</language>
+</ListView>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Voucher_Type__c</fullName>
+    <description>Used only if old face value voucher (voucher issued before Service Recovery eVouchers)</description>
+    <inlineHelpText>Used only if old face value voucher (voucher issued before Service Recovery eVouchers)</inlineHelpText>
+    <label>Voucher Type (old face value voucher)</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Business Premier Voucher (£32)</fullName>
+                <default>false</default>
+                <label>Business Premier Voucher (£32)</label>
+            </value>
+            <value>
+                <fullName>GBP Face Value Voucher (£1)</fullName>
+                <default>false</default>
+                <label>GBP Face Value Voucher (£1)</label>
+            </value>
+            <value>
+                <fullName>Standard Premier Voucher (£27)</fullName>
+                <default>false</default>
+                <label>Standard Premier Voucher (£27)</label>
+            </value>
+            <value>
+                <fullName>Standard Voucher (£20)</fullName>
+                <default>false</default>
+                <label>Standard Voucher (£20)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

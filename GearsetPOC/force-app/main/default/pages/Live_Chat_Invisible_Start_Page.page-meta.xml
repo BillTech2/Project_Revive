@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>33.0</apiVersion>
+    <availableInTouch>false</availableInTouch>
+    <confirmationTokenRequired>false</confirmationTokenRequired>
+    <description>Live Agent page with a button. Used for testing purpose, invisible to the customers (unless he knows the exact URL)</description>
+    <label>Live Chat Invisible Start Page</label>
+</ApexPage>

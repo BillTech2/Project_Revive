@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Train_Compact_Layout</fullName>
+    <fields>Name</fields>
+    <fields>Carrier__c</fields>
+    <fields>On_Time__c</fields>
+    <fields>Delay_in_Minutes__c</fields>
+    <fields>Delay_Actor__c</fields>
+    <fields>Cancelled__c</fields>
+    <fields>Delay_Compensation_Increase_Flag__c</fields>
+    <fields>Commercial_Gesture_Eligible_Flag__c</fields>
+    <label>Train Compact Layout</label>
+</CompactLayout>

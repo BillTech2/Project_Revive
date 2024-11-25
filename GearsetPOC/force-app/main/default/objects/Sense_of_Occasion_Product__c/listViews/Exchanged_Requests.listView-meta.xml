@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Exchanged_Requests</fullName>
+    <columns>NAME</columns>
+    <columns>Status__c</columns>
+    <columns>Departure_Date_Time_Formula__c</columns>
+    <columns>Departure_Date_Time_SOA__c</columns>
+    <columns>RECORDTYPE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Exchanged</value>
+    </filters>
+    <label>Exchanged Requests</label>
+    <language>en_US</language>
+</ListView>

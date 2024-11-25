@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Staff__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Not used anymore since Staff Travel implemented March 2015
+Customer is also a Eurostar employee. 
+UPDATE: 04/12/18 this field is still used in the Boomi process. It must be true on active Aria accounts in order for users to login</description>
+    <label>Staff (Not used anymore)</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

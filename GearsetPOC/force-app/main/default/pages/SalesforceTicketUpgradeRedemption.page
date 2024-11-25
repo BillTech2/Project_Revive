@@ -1,0 +1,92 @@
+<apex:page id="SalesforceTicketUpgradeRedemption"
+			docType="html-5.0"
+			showHeader="true"
+			sidebar="true"
+			tabStyle="SalesforceTicketUpgradeRedemption__x"
+			standardController="SalesforceTicketUpgradeRedemption__x"
+			extensions="SFTicketUpgradeRedemptionController">
+
+	<apex:sectionHeader title="{!$ObjectType.SalesforceTicketUpgradeRedemption__x.Label} Edit"
+						subtitle="New {!$ObjectType.SalesforceTicketUpgradeRedemption__x.Label}" />
+	<c:LoyaltyTierAccessCheck accessedButtonName="Upgrade_with_points">
+		<apex:form >
+			<apex:pageBlock title="{!$ObjectType.SalesforceTicketUpgradeRedemption__x.Label} Edit" mode="edit">
+				<apex:pageMessages id="messages"/>
+				<apex:pageBlockSection columns="1" id="dataTable">
+					<apex:selectList value="{!selectedOrigin}" label="Origin" size="1">
+						<apex:selectOptions value="{!partnerLocation}"/>
+					</apex:selectList>
+					<apex:selectList value="{!selectedDestination}" label="Destination" size="1">
+						<apex:selectOptions value="{!partnerLocation}"/>
+					</apex:selectList>
+					<apex:inputText value="{!quantity}" label="Number of passengers" onchange="valueWasChanged('quantity');"/>
+					<apex:inputField value="{!member.DepartureDateTime__c}"/>
+					<apex:inputText value="{!member.Pnr__c}"/>
+					<apex:selectList value="{!selectedJourney}" label="Journey type" size="1" onchange="valueWasChanged('selectedJourney');">
+						<apex:selectOptions value="{!journeys}"/>
+					</apex:selectList>
+					<apex:selectList value="{!selectedFromTrClass}" label="From travel class" size="1" disabled="true">
+						<apex:selectOption itemValue="{!selectedFromTrClass}" itemLabel="Standard"/>
+					</apex:selectList>
+					<apex:selectList value="{!selectedToTrClass}" label="To travel class" size="1" disabled="true">
+						<apex:selectOption itemValue="{!selectedToTrClass}" itemLabel="Standard Premier"/>
+					</apex:selectList>
+					<apex:pageBlockSectionItem id="pointsBlock">
+						<apex:outputLabel value="Points to deduct:"/>
+						<apex:outputText id="pointsValue" value="{!pointsCost}"/>
+					</apex:pageBlockSectionItem>
+					<apex:actionStatus startText="calculating..." id="counterStatus"/>
+				</apex:pageBlockSection>
+				<apex:pageBlockButtons >
+					<apex:commandButton action="{!save}" value=" Save "/>
+					<apex:commandButton action="{!SaveAndNew}" value="Save & New"/>
+					<apex:commandButton action="{!cancel}" immediate="true" html-formnovalidate="formnovalidate" value="Cancel"/>
+				</apex:pageBlockButtons>
+				<apex:outputPanel id="redirectPanel" >
+					<apex:outputText rendered="{!shouldRedirect}">
+						<script type="text/javascript">
+							window.top.location.href = '{!redirectUrl}';
+						</script>
+					</apex:outputText>
+				</apex:outputPanel>
+			</apex:pageBlock>
+
+			<apex:actionFunction name="valueWasChanged" action="{!valueWasChanged}" reRender="dataTable,jsFunction" oncomplete="getPoints();">
+				<apex:param name="source" assignTo="{!triggeredSource}" value=""/>
+			</apex:actionFunction>
+
+			<apex:actionFunction name="setPointsCost" reRender="dataTable" status="counterStatus">
+				<apex:param name="points" assignTo="{!pointsCost}" value=""/>
+			</apex:actionFunction>
+		</apex:form>
+
+		<apex:outputPanel id="jsFunction">
+			<script>
+				function getPoints() {
+					var selectedJourney = '{!selectedJourney}';
+					var selectedFromTrClass = '{!selectedFromTrClass}';
+					var selectedToTrClass = '{!selectedToTrClass}';
+					var quantity = '{!quantity}';
+
+					if (selectedJourney.length > 0 && selectedFromTrClass.length > 0 && selectedToTrClass.length > 0 && quantity >= 0) {
+						var pointsSource = JSON.parse('{!ticketDataSource}');
+						var obj;
+						var pointsCost = 0;
+
+						for (var i = 0; pointsSource.value.length > i; i++) {
+							obj = pointsSource.value[i];
+							// OUTBOUND
+							if (obj.FromTravelClassCode == selectedFromTrClass && obj.ToTravelClassCode == selectedToTrClass
+								&& obj.JourneyTypeCode == selectedJourney) {
+								if (obj.hasOwnProperty('PointsCost')) {
+									pointsCost += obj.PointsCost * parseInt(quantity);
+								}
+							}
+						}
+						setPointsCost(pointsCost);
+					}
+				}
+			</script>
+		</apex:outputPanel>
+	</c:LoyaltyTierAccessCheck>
+</apex:page>

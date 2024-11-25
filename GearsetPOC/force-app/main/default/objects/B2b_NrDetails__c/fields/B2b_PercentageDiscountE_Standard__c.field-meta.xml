@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>B2b_PercentageDiscountE_Standard__c</fullName>
+    <label>Percentage Discount Eurostar Standard</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>AccountType__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>0%</fullName>
+                <default>true</default>
+                <label>0%</label>
+            </value>
+            <value>
+                <fullName>3%</fullName>
+                <default>false</default>
+                <label>3%</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Business</controllingFieldValue>
+            <valueName>0%</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Agency</controllingFieldValue>
+            <valueName>3%</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

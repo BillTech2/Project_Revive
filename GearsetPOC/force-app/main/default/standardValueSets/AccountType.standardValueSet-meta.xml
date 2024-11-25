@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Analyst</fullName>
+        <default>false</default>
+        <label>Analyst</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Competitor</fullName>
+        <default>false</default>
+        <label>Competitor</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Customer</fullName>
+        <default>false</default>
+        <label>Customer</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Integrator</fullName>
+        <default>false</default>
+        <label>Integrator</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Investor</fullName>
+        <default>false</default>
+        <label>Investor</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Partner</fullName>
+        <default>false</default>
+        <label>Partner</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Press</fullName>
+        <default>false</default>
+        <label>Press</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Prospect</fullName>
+        <default>false</default>
+        <label>Prospect</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Reseller</fullName>
+        <default>false</default>
+        <label>Reseller</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Other</fullName>
+        <default>false</default>
+        <label>Other</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Airline</fullName>
+        <default>false</default>
+        <label>Airline</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Tour Operator</fullName>
+        <default>false</default>
+        <label>Tour Operator</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Leisure Agent</fullName>
+        <default>false</default>
+        <label>Leisure Agent</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Distributor</fullName>
+        <default>false</default>
+        <label>Distributor</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Retail</fullName>
+        <default>false</default>
+        <label>Retail</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Groups / Tours / Niche</fullName>
+        <default>false</default>
+        <label>Groups / Tours / Niche</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Inbounders / DMC</fullName>
+        <default>false</default>
+        <label>Inbounders / DMC</label>
+    </standardValue>
+    <standardValue>
+        <fullName>TMC</fullName>
+        <default>false</default>
+        <label>TMC</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Reward Redemption</fullName>
+        <default>false</default>
+        <label>Reward Redemption</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Prof. Association</fullName>
+        <default>false</default>
+        <label>Prof. Association</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Tourist Office</fullName>
+        <default>false</default>
+        <label>Tourist Office</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Techno Providers</fullName>
+        <default>false</default>
+        <label>Techno Providers</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Institutional Partners</fullName>
+        <default>false</default>
+        <label>Institutional Partners</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Suppliers</fullName>
+        <default>false</default>
+        <label>Suppliers</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Travel Trade Press</fullName>
+        <default>false</default>
+        <label>Travel Trade Press</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Influencers</fullName>
+        <default>false</default>
+        <label>Influencers</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Corporate</fullName>
+        <default>false</default>
+        <label>Corporate</label>
+    </standardValue>
+    <standardValue>
+        <fullName>OTA</fullName>
+        <default>false</default>
+        <label>OTA</label>
+    </standardValue>
+</StandardValueSet>

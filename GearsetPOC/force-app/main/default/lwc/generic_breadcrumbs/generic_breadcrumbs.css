@@ -1,0 +1,21 @@
+.slds-breadcrumb__item {
+    width: auto;
+    max-width: 150px;
+    font-family: ABCSocial-Regular;
+    font-size: 16px;
+}
+
+.slds-breadcrumb .slds-breadcrumb__item:last-child{
+    width: auto;
+    max-width: 1000px;
+}
+
+@media screen and (max-width: 767px) {
+    .slds-breadcrumb__item {
+        width: auto;
+        max-width: 100px;
+    }
+    .slds-breadcrumb .slds-breadcrumb__item:last-child{
+        max-width: 100%;
+    }
+}

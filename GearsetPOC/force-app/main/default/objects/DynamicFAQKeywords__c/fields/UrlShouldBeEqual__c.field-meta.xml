@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>UrlShouldBeEqual__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Represents in the search would be taken using equals expression, not contains</description>
+    <inlineHelpText>&quot;Equals&quot; expression is used for search if checked. &quot;Contains&quot; expression used if unchecked</inlineHelpText>
+    <label>URL should be equal</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

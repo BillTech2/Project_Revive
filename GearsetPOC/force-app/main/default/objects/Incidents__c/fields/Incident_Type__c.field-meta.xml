@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Incident_Type__c</fullName>
+    <label>Incident Type</label>
+    <required>true</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Air Conditioning</fullName>
+                <default>false</default>
+                <label>Air Conditioning</label>
+            </value>
+            <value>
+                <fullName>Detrainment/Transbordement</fullName>
+                <default>false</default>
+                <label>Detrainment/Transbordement</label>
+            </value>
+            <value>
+                <fullName>No Meal BP</fullName>
+                <default>false</default>
+                <label>No Meal BP</label>
+            </value>
+            <value>
+                <fullName>No Meal SP</fullName>
+                <default>false</default>
+                <label>No Meal SP</label>
+            </value>
+            <value>
+                <fullName>Not full Service BP</fullName>
+                <default>false</default>
+                <label>Not full Service BP</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

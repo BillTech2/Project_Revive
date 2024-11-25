@@ -1,0 +1,233 @@
+<apex:page id="CompApp_MICE_SpecRateForm" language="{!selectedLanguageCode}" controller="CompApp_MICE_SpecRateFormController"  showHeader="false" sidebar="false"  standardStylesheets="false" applyHtmlTag="false" applyBodyTag="false">
+
+    <h1 style="margin-top: 20px; margin-bottom: 40px;">{!$label.CompApp_MICE_Special_Rate_Application_Form_header}</h1>
+
+    <div class="row {{formManager.companyNameValidity | validityClass}}">
+        <label for="company-name" class="cell-label">{!$label.CompApp_MICE_Company_name} *</label>
+        <div class="input-wrapper validity-sign cell-input">
+            <input
+                    maxlength="30"
+                    placeholder="{!$label.CompApp_MICE_Company_name}"
+                    id="company-name"
+                    ng-model="$angularState.miceSpecRateInfo.companyName"
+                    ng-change="formManager.companyNameValidity = !! $angularState.miceSpecRateInfo.companyName || !! $angularState.miceSpecRateInfo.eventName"
+            />
+            <div class="error-message">{!$label.CompApp_MICE_Company_Name_Error}</div>
+        </div>
+    </div>
+
+    <div class="row {{formManager.companyNameValidity | validityClass}}">
+        <label for="conf-or-event-name" class="cell-label">{!$label.CompApp_MICE_Conference_or_Event_Name} *</label>
+        <div class="input-wrapper validity-sign cell-input">
+            <input
+                    maxlength="30"
+                    placeholder="{!$label.CompApp_MICE_Conference_or_Event_Name}"
+                    id="conf-or-event-name"
+                    ng-model="$angularState.miceSpecRateInfo.eventName"
+                    ng-change="formManager.companyNameValidity = !! $angularState.miceSpecRateInfo.companyName || !! $angularState.miceSpecRateInfo.eventName"
+            />
+            <div class="error-message">{!$label.CompApp_MICE_Conference_or_Event_Name_Error}</div>
+        </div>
+    </div>
+
+    <div class="row {{formManager.conferenceOrDateValidity | validityClass}}">
+        <label for="conf-or-event-date" class="cell-label">{!$label.CompApp_MICE_Conference_or_Event_Start_Date} *</label>
+        <div class="input-wrapper validity-sign cell-input">
+            <datepicker
+                    date-format="dd/MM/yyyy" date-min-limit="{{ $root.DateObj | date:'MM/dd/yyyy' }}"
+                    button-prev="<span class='datepicker-month-arrow'>&lt;</span>"
+                    button-next="<span class='datepicker-month-arrow'>&gt;</span>"
+            >
+                <input
+                        type="text"
+                        placeholder="{!$label.CompApp_MICE_Conference_or_Event_Start_Date}"
+                        id="conf-or-event-date"
+                        name="myVariable"
+                        ng-model="$angularState.miceSpecRateInfo.eventDate"
+                        ng-change="validateDates()"
+                        readonly="readonly"
+                />
+            </datepicker>
+            <div class="error-message">{!$label.CompApp_MICE_Conference_or_Event_Start_Date_Error}</div>
+        </div>
+    </div>
+
+    <div class="row {{formManager.conferenceEndDateValidity | validityClass}}">
+        <label for="conf-or-event-date" class="cell-label">{!$label.CompApp_MICE_Conference_or_Event_End_Date} *</label>
+        <div class="input-wrapper validity-sign cell-input">
+            <datepicker
+                    date-format="dd/MM/yyyy" date-min-limit="{{ $root.DateObj | date:'MM/dd/yyyy' }}"
+                    button-prev="<span class='datepicker-month-arrow'>&lt;</span>"
+                    button-next="<span class='datepicker-month-arrow'>&gt;</span>"
+            >
+                <input
+                        type="text"
+                        placeholder="{!$label.CompApp_MICE_Conference_or_Event_End_Date}"
+                        id="conf-or-event-date"
+                        name="myVariable"
+                        ng-model="$angularState.miceSpecRateInfo.eventEndDate"
+                        ng-change="validateDates()"
+                        readonly="readonly"
+                />
+            </datepicker>
+            <div class="error-message">{!$label.CompApp_MICE_Conference_or_Event_End_Date_Error}</div>
+            <div class="non-valid-dates-error-message" id="dates-error-message">End date can not be before start date</div>
+        </div>
+    </div>
+
+    <div class="row " style="margin-bottom: 2rem">
+        <label for="briefDescription" class="cell-label">{!$label.CompApp_MICE_Brief_Description}</label>
+        <div class="input-wrapper validity-sign cell-input">
+            <textarea
+                    id="briefDescription"
+                    ng-model="$angularState.miceSpecRateInfo.briefDescription"
+                    style="height: 4rem;"
+            ></textarea>
+        </div>
+    </div>
+
+    <div class="row {{formManager.eventTypeValidity | validityClass}}">
+        <label for="type" class="cell-label">{!$label.CompApp_MICE_Type} *</label>
+        <div class="input-wrapper validity-sign cell-input">
+            <select ng-model="$angularState.miceSpecRateInfo.eventType"
+                    ng-change="formManager.eventTypeValidity = !! $angularState.miceSpecRateInfo.eventType"
+                    ng-options="o as o for o in {!typeList}"></select>
+            <div class="error-message">{!$label.CompApp_MICE_Brief_Description_Error}</div>
+        </div>
+    </div>
+
+    <div class="row ">
+        <label for="salutation" class="cell-label">{!$label.CompApp_MICE_Key_Contact_Salutation}</label>
+        <div class="input-wrapper validity-sign cell-input" style="margin-bottom: 1.4rem;">
+            <select ng-model="$angularState.miceSpecRateInfo.salutation" ng-options="o as o for o in {!salutationList}"></select>
+        </div>
+    </div>
+
+    <div class="row {{formManager.firstNameValdity | validityClass}}">
+        <label for="first-name" class="cell-label">{!$label.CompApp_MICE_Key_Contact_First_Name} *</label>
+        <div class="input-wrapper validity-sign cell-input">
+            <input
+                    maxlength="30"
+                    placeholder="{!$label.CompApp_MICE_Key_Contact_First_Name}"
+                    id="first-name"
+                    ng-pattern="USER_NAME_REGEX"
+                    ng-change="formManager.firstNameValdity = !! $angularState.miceSpecRateInfo.firstName"
+                    ng-model="$angularState.miceSpecRateInfo.firstName"
+            />
+            <div class="error-message">{!$label.CompApp_enterFirstNamePRR}</div>
+        </div>
+    </div>
+
+    <div class="row {{formManager.lastNameValdity | validityClass}}">
+        <label for="surname" class="cell-label">{!$label.CompApp_MICE_Key_Contact_Last_Name} *</label>
+        <div class="input-wrapper validity-sign cell-input">
+            <input
+                    maxlength="30"
+                    placeholder="{!$label.CompApp_MICE_Key_Contact_Last_Name}"
+                    id="surname"
+                    ng-pattern="USER_30_NAME_REGEX"
+                    ng-change="formManager.lastNameValdity = !! $angularState.miceSpecRateInfo.lastName"
+                    ng-model="$angularState.miceSpecRateInfo.lastName"
+            />
+            <div class="error-message">{!$label.CompApp_enterLastNamePRR}</div>
+        </div>
+    </div>
+
+    <div class="row {{formManager.emailValidity | validityClass}} ">
+        <label for="email" class="cell-label">{!$label.CompApp_MICE_Email} *</label>
+        <div class="input-wrapper validity-sign cell-input">
+            <input type="email"
+                   placeholder="{!$label.CompApp_MICE_Email}"
+                   id="email"
+                   ng-change="formManager.emailValidity = isPrimaryEmailValid()"
+                   ng-model="$angularState.miceSpecRateInfo.email"
+            />
+            <div class="error-message" id="emailAddressError">{!$label.CompApp_enterEmailPRR}</div>
+            <!--<div class="error-message-email">{!$Label.CompApp_TFL_Duplicate_Email_Error} <a href="mailto:{!$Label.CompApp_TFL_CallCentre_Email}" target="_top">{!$Label.CompApp_TFL_CallCentre_Email}</a></div>-->
+        </div>
+    </div>
+
+    <div class="row {{formManager.businessSectorValidity | validityClass}}" ng-init="industryList={!industryList}">
+        <label for="industry" class="cell-label">{!$label.CompApp_MICE_Business_Sector} *</label>
+        <div class="input-wrapper validity-sign cell-input">
+            <ui-select
+                    ng-model="$angularState.miceSpecRateInfo.businessSector"
+                    ng-change="formManager.businessSectorValidity = !!$angularState.miceSpecRateInfo.businessSector"
+                    open="true"
+                    theme="select2"
+                    ng-disabled="disabled"
+                    title="Business Sector"
+                    search-enabled="searchEnabled"
+                    style="min-width: 100%;"
+            >
+                <ui-select-match placeholder="{!$label.CompApp_MICE_Business_Sector}" style=" padding-top: 10px; padding-bottom: 10px">{{ $select.selected }}</ui-select-match>
+                <ui-select-choices repeat="industry in industryList | filter: $select.search">
+                    <div ng-bind-html="industry"></div>
+                </ui-select-choices>
+            </ui-select>
+
+            <div class="error-message">{!$label.CompApp_MICE_Business_Sector_Error}</div>
+        </div>
+    </div>
+
+    <!--<div class="row {{formManager.businessStructureValidity | validityClass}}" ng-init="businessStructureList={!businessStructureList}">-->
+        <!--<label for="industry" class="cell-label">Business Structure</label>-->
+        <!--<div class="input-wrapper validity-sign cell-input">-->
+            <!--<ui-select-->
+                    <!--ng-model="$angularState.miceSpecRateInfo.businessStructure"-->
+                    <!--ng-change="formManager.businessStructureValidity = !! $angularState.miceSpecRateInfo.businessStructure"-->
+                    <!--open="true"-->
+                    <!--theme="select2"-->
+                    <!--ng-disabled="disabled"-->
+                    <!--title="Business Structure"-->
+                    <!--search-enabled="searchDisabled"-->
+                    <!--style="min-width: 100%;"-->
+            <!--&gt;-->
+                <!--<ui-select-match placeholder="Business Structure" style=" padding-top: 10px; padding-bottom: 10px">{{ $select.selected }}</ui-select-match>-->
+                <!--<ui-select-choices repeat="bStructure in businessStructureList | filter: $select.search">-->
+                    <!--<div ng-bind-html="bStructure"></div>-->
+                <!--</ui-select-choices>-->
+            <!--</ui-select>-->
+
+            <!--<div class="error-message">Please select business sector</div>-->
+        <!--</div>-->
+    <!--</div>-->
+
+    <!--<div class="row {{formManager.numberOfEmployeesValidity | validityClass}}">-->
+        <!--<label for="NumberOfEmployees" class="cell-label">Number Of Employees</label>-->
+        <!--<div class="input-wrapper validity-sign cell-input">-->
+            <!--<input-->
+                    <!--type="number"-->
+                    <!--placeholder="Number Of Employees"-->
+                    <!--id="NumberOfEmployees"-->
+                    <!--onkeyup="console.log.bind(console);angular.element(this).scope().applyNumberOfEmployeesChange($(this).val());"-->
+            <!--/>-->
+            <!--<div class="error-message">Please enter number of employees</div>-->
+        <!--</div>-->
+    <!--</div>-->
+
+    <div class="row {{formManager.numberOfDelegatesValidity | validityClass}}">
+        <label for="NumberOfDelegates" class="cell-label">{!$label.CompApp_MICE_Number_of_Delegates} *</label>
+        <div class="input-wrapper validity-sign cell-input">
+            <input
+                    type="number"
+                    placeholder="{!$label.CompApp_MICE_Number_of_Delegates}"
+                    id="NumberOfDelegates"
+                    onkeyup="console.log.bind(console);angular.element(this).scope().applyNumberOfDelegatesChange($(this).val());"
+            />
+            <div class="error-message">{!$label.CompApp_MICE_Number_of_Delegates_Error}</div>
+        </div>
+    </div>
+
+    <div class="row commands-section">
+        <a href="" class="btn primary" ng-click="submitForm();" id="register-button">
+            {!$label.CompApp_Submit}</a>
+        <p class="error-message-main" ng-hide="formManager.noErrors">{!$label.CompApp_incorrectDataPrr}</p>
+        <div class="lds-spinner" hidden="hidden"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    </div>
+
+    <script>
+        var GLOBAL_REMOTE_USER_IP = '{!USER_IP}';
+        //$('#top-section-lang-select-box').css('display', 'none');
+    </script>
+</apex:page>

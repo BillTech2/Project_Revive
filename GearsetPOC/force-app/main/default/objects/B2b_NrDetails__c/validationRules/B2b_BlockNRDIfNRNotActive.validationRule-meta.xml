@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>B2b_BlockNRDIfNRNotActive</fullName>
+    <active>true</active>
+    <description>Can&#39;t create Negotiated Rate on inactive Contract.</description>
+    <errorConditionFormula>AND(
+NOT($User.B2b_Bypass_Validation_Rules__c),
+NOT($Permission.Sales_Admin),
+ISNEW(),
+ISPICKVAL(ContractID__r.Status__c, &#39;Inactive&#39;)
+)</errorConditionFormula>
+    <errorMessage>Can&#39;t create Negotiated Rate on inactive Contract.</errorMessage>
+</ValidationRule>

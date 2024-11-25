@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Who_Gave_Vocal_Authorisation__c</fullName>
+    <inlineHelpText>Please ONLY select a name if your write-off is over £50 and you have called through and received vocal authorisation of the write off</inlineHelpText>
+    <label>Who Gave Vocal Authorisation?</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Disruption</fullName>
+                <default>false</default>
+                <label>Disruption</label>
+            </value>
+            <value>
+                <fullName>Chanel Claringbold</fullName>
+                <default>false</default>
+                <label>Chanel Claringbold</label>
+            </value>
+            <value>
+                <fullName>Karen Edwards</fullName>
+                <default>false</default>
+                <label>Karen Edwards</label>
+            </value>
+            <value>
+                <fullName>Katie Constantine</fullName>
+                <default>false</default>
+                <label>Katie Constantine</label>
+            </value>
+            <value>
+                <fullName>Kelly Butcher</fullName>
+                <default>false</default>
+                <label>Kelly Butcher</label>
+            </value>
+            <value>
+                <fullName>Laurence Brocard</fullName>
+                <default>false</default>
+                <label>Laurence Brocard</label>
+            </value>
+            <value>
+                <fullName>Sarah Jones</fullName>
+                <default>false</default>
+                <label>Sarah Jones</label>
+            </value>
+            <value>
+                <fullName>Tracie Graham</fullName>
+                <default>false</default>
+                <label>Tracie Graham</label>
+            </value>
+            <value>
+                <fullName>Natalie Hutton</fullName>
+                <default>false</default>
+                <label>Natalie Hutton</label>
+            </value>
+            <value>
+                <fullName>Peter Broom</fullName>
+                <default>false</default>
+                <label>Peter Broom</label>
+            </value>
+            <value>
+                <fullName>Stephanie Ribeiro</fullName>
+                <default>false</default>
+                <label>Stephanie Ribeiro</label>
+            </value>
+            <value>
+                <fullName>Natasha Payne</fullName>
+                <default>false</default>
+                <label>Natasha Payne</label>
+            </value>
+            <value>
+                <fullName>Adrian Hobjila</fullName>
+                <default>false</default>
+                <label>Adrian Hobjila</label>
+            </value>
+            <value>
+                <fullName>Phil Oxley</fullName>
+                <default>false</default>
+                <label>Phil Oxley</label>
+            </value>
+            <value>
+                <fullName>Joshua Milner</fullName>
+                <default>false</default>
+                <label>Joshua Milner</label>
+            </value>
+            <value>
+                <fullName>Usmaan Ayub</fullName>
+                <default>false</default>
+                <label>Usmaan Ayub</label>
+            </value>
+            <value>
+                <fullName>Carl Smith</fullName>
+                <default>false</default>
+                <label>Carl Smith</label>
+            </value>
+            <value>
+                <fullName>Matthew Carney</fullName>
+                <default>false</default>
+                <label>Matthew Carney</label>
+            </value>
+            <value>
+                <fullName>Andreea Voinea</fullName>
+                <default>false</default>
+                <label>Andreea Voinea</label>
+            </value>
+            <value>
+                <fullName>Mickael Pierre</fullName>
+                <default>false</default>
+                <label>Mickael Pierre</label>
+            </value>
+            <value>
+                <fullName>Sebastian Stan</fullName>
+                <default>false</default>
+                <label>Sebastian Stan</label>
+            </value>
+            <value>
+                <fullName>Taoufik Rai</fullName>
+                <default>false</default>
+                <label>Taoufik Rai</label>
+            </value>
+            <value>
+                <fullName>Ahmed Ferchichi</fullName>
+                <default>false</default>
+                <label>Ahmed Ferchichi</label>
+            </value>
+            <value>
+                <fullName>Nikki Cooke</fullName>
+                <default>false</default>
+                <label>Nikki Cooke</label>
+            </value>
+            <value>
+                <fullName>Aaron Gourlay</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Aaron Gourlay</label>
+            </value>
+            <value>
+                <fullName>Dru Harisson</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Dru Harisson</label>
+            </value>
+            <value>
+                <fullName>Josh Bolsover</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Josh Bolsover</label>
+            </value>
+            <value>
+                <fullName>Mirjam Bons</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Mirjam Bons</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

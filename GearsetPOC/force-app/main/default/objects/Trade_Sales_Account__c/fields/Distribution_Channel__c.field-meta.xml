@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Distribution_Channel__c</fullName>
+    <label>Distribution Channel</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Call Centre</fullName>
+                <default>false</default>
+                <label>Call Centre</label>
+            </value>
+            <value>
+                <fullName>Appointed Travel Agents</fullName>
+                <default>false</default>
+                <label>Appointed Travel Agents</label>
+            </value>
+            <value>
+                <fullName>Raileurope.com</fullName>
+                <default>false</default>
+                <label>Raileurope.com</label>
+            </value>
+            <value>
+                <fullName>REI Groups</fullName>
+                <default>false</default>
+                <label>REI Groups</label>
+            </value>
+            <value>
+                <fullName>Agent.raileurope.com</fullName>
+                <default>false</default>
+                <label>Agent.raileurope.com</label>
+            </value>
+            <value>
+                <fullName>Rail Europe Shops</fullName>
+                <default>false</default>
+                <label>Rail Europe Shops</label>
+            </value>
+            <value>
+                <fullName>General Sales Agents</fullName>
+                <default>false</default>
+                <label>General Sales Agents</label>
+            </value>
+            <value>
+                <fullName>Ticket Offices</fullName>
+                <default>false</default>
+                <label>Ticket Offices</label>
+            </value>
+            <value>
+                <fullName>Internet Consumer Sales</fullName>
+                <default>false</default>
+                <label>Internet Consumer Sales</label>
+            </value>
+            <value>
+                <fullName>Internet Trade Sales</fullName>
+                <default>false</default>
+                <label>Internet Trade Sales</label>
+            </value>
+            <value>
+                <fullName>Group Department</fullName>
+                <default>false</default>
+                <label>Group Department</label>
+            </value>
+            <value>
+                <fullName>TMC</fullName>
+                <default>false</default>
+                <label>TMC</label>
+            </value>
+            <value>
+                <fullName>Stations</fullName>
+                <default>false</default>
+                <label>Stations</label>
+            </value>
+            <value>
+                <fullName>SNCB</fullName>
+                <default>false</default>
+                <label>SNCB</label>
+            </value>
+            <value>
+                <fullName>SNCF</fullName>
+                <default>false</default>
+                <label>SNCF</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

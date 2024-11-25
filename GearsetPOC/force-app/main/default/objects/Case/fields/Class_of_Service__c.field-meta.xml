@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Class_of_Service__c</fullName>
+    <label>Class of Service</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Standard</fullName>
+                <default>false</default>
+                <label>Standard</label>
+            </value>
+            <value>
+                <fullName>Standard Premier</fullName>
+                <default>false</default>
+                <label>Standard Premier</label>
+            </value>
+            <value>
+                <fullName>Comfort</fullName>
+                <default>false</default>
+                <label>Comfort</label>
+            </value>
+            <value>
+                <fullName>Business Premier</fullName>
+                <default>false</default>
+                <label>Business Premier</label>
+            </value>
+            <value>
+                <fullName>Premium</fullName>
+                <default>false</default>
+                <label>Premium</label>
+            </value>
+            <value>
+                <fullName>Eurostar Standard</fullName>
+                <default>false</default>
+                <label>Eurostar Standard</label>
+            </value>
+            <value>
+                <fullName>Eurostar Plus</fullName>
+                <default>false</default>
+                <label>Eurostar Plus</label>
+            </value>
+            <value>
+                <fullName>Eurostar Premier</fullName>
+                <default>false</default>
+                <label>Eurostar Premier</label>
+            </value>
+            <value>
+                <fullName>Combination</fullName>
+                <default>false</default>
+                <label>Combination</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

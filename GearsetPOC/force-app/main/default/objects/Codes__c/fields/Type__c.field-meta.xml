@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type__c</fullName>
+    <label>Type</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>BAF</fullName>
+                <default>false</default>
+                <label>BAF</label>
+            </value>
+            <value>
+                <fullName>IATA Nbr</fullName>
+                <default>false</default>
+                <label>IATA Nbr</label>
+            </value>
+            <value>
+                <fullName>Oracle Code</fullName>
+                <default>false</default>
+                <label>Oracle Code</label>
+            </value>
+            <value>
+                <fullName>Voyager Office</fullName>
+                <default>false</default>
+                <label>Voyager Office</label>
+            </value>
+            <value>
+                <fullName>API Office Code</fullName>
+                <default>false</default>
+                <label>API Office Code</label>
+            </value>
+            <value>
+                <fullName>UNI code</fullName>
+                <default>false</default>
+                <label>UNI code</label>
+            </value>
+            <value>
+                <fullName>Account Number</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Account Number</label>
+            </value>
+            <value>
+                <fullName>EMIS Name</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>EMIS Name</label>
+            </value>
+            <value>
+                <fullName>MIC</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>MIC</label>
+            </value>
+            <value>
+                <fullName>Old TO Acct Nbr</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Old TO Acct Nbr</label>
+            </value>
+            <value>
+                <fullName>PCC / Office ID</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>PCC / Office ID</label>
+            </value>
+            <value>
+                <fullName>TJR</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>TJR</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

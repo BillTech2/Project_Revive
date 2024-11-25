@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>Accelerator Points</description>
+        <name>Credit_Reward_Points_Accelerator</name>
+        <label>Credit Reward Points Accelerator</label>
+        <locationX>270</locationX>
+        <locationY>1079</locationY>
+        <actionName>creditPoints</actionName>
+        <actionType>creditPoints</actionType>
+        <connector>
+            <targetReference>Loyalty_Subflow_Tier_Upgrade</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>AdditionalNotes</name>
+            <value>
+                <stringValue>Purchase Accelerator Points</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>JournalId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>LoyaltyProgramMemberId</name>
+            <value>
+                <elementReference>$Record.MemberId</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>Points</name>
+            <value>
+                <elementReference>fTJAmountRewardPointsAcceletatorPoints</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>PointsExpirationDate</name>
+        </inputParameters>
+        <inputParameters>
+            <name>ProgramCurrencyName</name>
+            <value>
+                <stringValue>Reward Points</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>ProgramName</name>
+            <value>
+                <stringValue>Club Eurostar</stringValue>
+            </value>
+        </inputParameters>
+        <nameSegment>creditPoints</nameSegment>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <actionCalls>
+        <description>Points + Conversion Factor</description>
+        <name>Credit_Reward_Points_Package_Points</name>
+        <label>Credit Reward Points Base Points</label>
+        <locationX>182</locationX>
+        <locationY>863</locationY>
+        <actionName>creditPoints</actionName>
+        <actionType>creditPoints</actionType>
+        <connector>
+            <targetReference>Is_Tier_Accelerator_Null</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>AdditionalNotes</name>
+            <value>
+                <stringValue>Purchase Base Points</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>JournalId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>LoyaltyProgramMemberId</name>
+            <value>
+                <elementReference>$Record.Member.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>Points</name>
+            <value>
+                <elementReference>fTJAmountRewardPointsBasePoints</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>PointsExpirationDate</name>
+        </inputParameters>
+        <inputParameters>
+            <name>ProgramCurrencyName</name>
+            <value>
+                <stringValue>Reward Points</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>ProgramName</name>
+            <value>
+                <stringValue>Club Eurostar</stringValue>
+            </value>
+        </inputParameters>
+        <nameSegment>creditPoints</nameSegment>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>Credit_Status_Points2</name>
+        <label>Credit Status Points</label>
+        <locationX>50</locationX>
+        <locationY>647</locationY>
+        <actionName>creditPoints</actionName>
+        <actionType>creditPoints</actionType>
+        <connector>
+            <targetReference>Member_Opt_Out_from_Reward_Points</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>AdditionalNotes</name>
+            <value>
+                <stringValue>Purchase Status Points</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>JournalId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>LoyaltyProgramMemberId</name>
+            <value>
+                <elementReference>$Record.MemberId</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>Points</name>
+            <value>
+                <elementReference>fTJAmountStatusPoints</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>PointsExpirationDate</name>
+        </inputParameters>
+        <inputParameters>
+            <name>ProgramCurrencyName</name>
+            <value>
+                <stringValue>Status Points</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>ProgramName</name>
+            <value>
+                <stringValue>Club Eurostar</stringValue>
+            </value>
+        </inputParameters>
+        <nameSegment>creditPoints</nameSegment>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <apiVersion>57.0</apiVersion>
+    <decisions>
+        <name>Is_LPM_Inactive</name>
+        <label>Is LPM Inactive ?</label>
+        <locationX>292</locationX>
+        <locationY>323</locationY>
+        <defaultConnector>
+            <targetReference>Update_TJ_for_Inactive_LPM</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Yes</defaultConnectorLabel>
+        <rules>
+            <name>Yes4</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Member.MemberStatus</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Active</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Loyalty_Member_Tier</targetReference>
+            </connector>
+            <label>No</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_Tier_Accelerator_Null</name>
+        <label>Is Tier Accelerator Null ?</label>
+        <locationX>182</locationX>
+        <locationY>971</locationY>
+        <defaultConnector>
+            <targetReference>Credit_Reward_Points_Accelerator</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Loyalty_Member_Tier.LoyaltyTier.Tier_Accelerator__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Loyalty_Subflow_Tier_Upgrade</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Member_Opt_Out_from_Reward_Points</name>
+        <label>Member Opt Out from Reward Points ?</label>
+        <locationX>50</locationX>
+        <locationY>755</locationY>
+        <defaultConnector>
+            <targetReference>Credit_Reward_Points_Package_Points</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes2</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Opt_Out_From_Reward_Points__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Loyalty_Subflow_Tier_Upgrade</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>fTierAccelerator</name>
+        <dataType>Number</dataType>
+        <expression>IF(ISNULL({!Get_Loyalty_Member_Tier.LoyaltyTier.Tier_Accelerator__c}), 1,{!Get_Loyalty_Member_Tier.LoyaltyTier.Tier_Accelerator__c} )</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>fTJAmountRewardPointsAcceletatorPoints</name>
+        <dataType>Number</dataType>
+        <expression>IF({!$Record.Package__c}= TRUE, 
+ROUND(
+((({!$Record.TransactionAmount} *{!Get_Points_Currency_Record.Package_Ticket_Points_Value__c})/{!Get_Points_Currency_Record.Currency_Package_Value__c}) *
+ {!fTierAccelerator})
+,0), 
+ROUND(
+(({!$Record.TransactionAmount} * {!Get_Points_Currency_Record.Single_Ticket_Points_Value__c}) *
+ {!fTierAccelerator})
+,0))</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>fTJAmountRewardPointsBasePoints</name>
+        <dataType>Number</dataType>
+        <expression>IF({!$Record.Package__c}=TRUE, 
+ROUND(
+(({!$Record.TransactionAmount} *{!Get_Points_Currency_Record.Package_Ticket_Points_Value__c})/{!Get_Points_Currency_Record.Currency_Package_Value__c}),0), 
+ROUND(
+(({!$Record.TransactionAmount} *{!Get_Points_Currency_Record.Single_Ticket_Points_Value__c})/{!Get_Points_Currency_Record.Currency_Single_Value__c}),0))</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>fTJAmountStatusPoints</name>
+        <dataType>Number</dataType>
+        <expression>IF({!$Record.Package__c}= TRUE, 
+ROUND(
+(({!$Record.TransactionAmount} * {!Get_Points_Currency_Record.Package_Ticket_Points_Value__c})/{!Get_Points_Currency_Record.Currency_Package_Value__c})
+,0), 
+ROUND(
+({!$Record.TransactionAmount} * {!Get_Points_Currency_Record.Single_Ticket_Points_Value__c})
+,0))</expression>
+        <scale>2</scale>
+    </formulas>
+    <interviewLabel>Loyalty - {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Loyalty - Purchase a Ticket</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Loyalty_Member_Tier</name>
+        <label>Get Loyalty Member Tier</label>
+        <locationX>50</locationX>
+        <locationY>431</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Points_Currency_Record</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>LoyaltyMemberId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.MemberId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>LoyaltyMemberTier</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Points_Currency_Record</name>
+        <label>Get Points Currency Record</label>
+        <locationX>50</locationX>
+        <locationY>539</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Credit_Status_Points2</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Currency__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Points_Currency__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_TJ_for_Inactive_LPM</name>
+        <label>Update TJ for Inactive LPM</label>
+        <locationX>534</locationX>
+        <locationY>431</locationY>
+        <inputAssignments>
+            <field>ErrorDescription</field>
+            <value>
+                <stringValue>Inactive Member</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Cancelled</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>166</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Is_LPM_Inactive</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Status</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Pending</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Journal_SubType_ExternalId__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>PurchaseTicket</stringValue>
+            </value>
+        </filters>
+        <object>TransactionJournal</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <name>Loyalty_Subflow_Tier_Upgrade</name>
+        <label>Loyalty - Subflow Tier Upgrade</label>
+        <locationX>50</locationX>
+        <locationY>1355</locationY>
+        <flowName>Loyalty_Subflow_Tier_Upgrade</flowName>
+        <inputAssignments>
+            <name>vLPMId</name>
+            <value>
+                <elementReference>$Record.Member.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>vOldMemberTierNumber</name>
+            <value>
+                <elementReference>Get_Loyalty_Member_Tier.LoyaltyTier.SequenceNumber</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>vOldTierName</name>
+            <value>
+                <elementReference>Get_Loyalty_Member_Tier.LoyaltyTier.Name</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>vTicket</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+</Flow>

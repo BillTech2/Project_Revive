@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Meal_Preference__c</fullName>
+    <label>Meal Preference</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>CHILD MEAL TYPE</fullName>
+                <default>false</default>
+                <label>CHILD MEAL TYPE</label>
+            </value>
+            <value>
+                <fullName>DIABETIC MEAL TYPE</fullName>
+                <default>false</default>
+                <label>DIABETIC MEAL TYPE</label>
+            </value>
+            <value>
+                <fullName>GLUTEN MEAL TYPE</fullName>
+                <default>false</default>
+                <label>GLUTEN MEAL TYPE</label>
+            </value>
+            <value>
+                <fullName>KOSHER MEAL TYPE</fullName>
+                <default>false</default>
+                <label>KOSHER MEAL TYPE</label>
+            </value>
+            <value>
+                <fullName>LOWFAT MEAL TYPE</fullName>
+                <default>false</default>
+                <label>LOWFAT MEAL TYPE</label>
+            </value>
+            <value>
+                <fullName>LOWSALT MEAL TYPE</fullName>
+                <default>false</default>
+                <label>LOWSALT MEAL TYPE</label>
+            </value>
+            <value>
+                <fullName>MUSLIM MEAL TYPE</fullName>
+                <default>false</default>
+                <label>MUSLIM MEAL TYPE</label>
+            </value>
+            <value>
+                <fullName>NO MEAL TYPE</fullName>
+                <default>false</default>
+                <label>NO MEAL TYPE</label>
+            </value>
+            <value>
+                <fullName>VEGAN MEAL TYPE</fullName>
+                <default>false</default>
+                <label>VEGAN MEAL TYPE</label>
+            </value>
+            <value>
+                <fullName>VEGETARIAN MEAL TYPE</fullName>
+                <default>false</default>
+                <label>VEGETARIAN MEAL TYPE</label>
+            </value>
+            <value>
+                <fullName>DAIRY FREE</fullName>
+                <default>false</default>
+                <label>DAIRY FREE</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

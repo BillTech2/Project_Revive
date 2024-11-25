@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>To_Be_Invoiced_Mr_Mrs_Smith_GBP</fullName>
+    <columns>NAME</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>Customer_Name__c</columns>
+    <columns>Reward_Description__c</columns>
+    <columns>Value_of_Reward__c</columns>
+    <columns>Date_Receipted__c</columns>
+    <columns>Postage_packing__c</columns>
+    <columns>Invoice_Number__c</columns>
+    <columns>Receipt_Number__c</columns>
+    <columns>Status__c</columns>
+    <columns>Date_Sent_to_Supplier__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>To Be Invoiced</value>
+    </filters>
+    <filters>
+        <field>Supplier__c</field>
+        <operation>equals</operation>
+        <value>Mr &amp; Mrs Smith - Pound</value>
+    </filters>
+    <label>To Be Invoiced - Mr &amp; Mrs Smith (£)</label>
+    <language>en_US</language>
+</ListView>

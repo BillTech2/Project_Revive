@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>59.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>relatedList_Subscription</masterLabel>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__HomePage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__RecordPage">
+            <property label="Enter amount of record in Related List" description="Example: 6" name="numberOfRecords" type="Integer" default="6"/>
+            <property label="Enter field for sorting default" description="Example: Commercial__c or Name" name="sortedBy" type="String" default="Start_Date__c"/>
+            <property label="Enter sorting rule like ASC or DESC" description="Example: asc or desc" name="sortedDirection" type="String" default="DESC"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

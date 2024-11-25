@@ -1,0 +1,10 @@
+<template>
+    <div class="content" align="center">
+        <template if:true={isLoading}>
+            <lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
+        </template>
+        <template if:false={isLoading}>
+            <p>The Phone Case Successfully Created!</p>
+        </template>
+    </div>
+</template>

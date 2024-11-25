@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason__c</fullName>
+    <description>The reason of the signup.</description>
+    <label>Reason</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Newsletter</fullName>
+                <default>false</default>
+                <label>Newsletter</label>
+            </value>
+            <value>
+                <fullName>Preference center update</fullName>
+                <default>false</default>
+                <label>Preference center update</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,90 @@
+<apex:component >
+  <footer class="bs-docs-footer" role="contentinfo">
+  <div class="container" style="padding-top:0;">
+      <hr/>
+    <div class ="footer-block"> 
+        <ul class="bs-docs-footer-links text-muted">
+        <h4>Zugangebote</h4>
+        <li><a href="http://www.eurostar.com/de-de/zug/koeln-london">Züge nach London</a></li>
+        </ul>
+    </div>
+    <div class ="footer-block">
+            <ul class="bs-docs-footer-links text-muted">
+        <h4>Städtereisen</h4>
+        <li><a href="http://www.eurostar.com/de-de/reiseziel/london">Städtereisen nach London</a></li>
+        </ul>
+    </div>
+    <div class ="footer-block">
+        <ul class="bs-docs-footer-links text-muted">
+        <h4>Website-Informationen</h4>
+        <li><a href="http://www.eurostar.com/uk-en/sitemap">Sitemap</a></li>
+        <li><a href="http://www.eurostar.com/de-de/website-agb">Website-AGB</a></li>
+        <li><a href="http://www.eurostar.com/de-de/befoerderungsbedingungen">Beförderungsbedingungen</a></li>
+        <li><a href="http://www.eurostar.com/de-de/datenschutzpolitik">Datenschutzerklärung</a></li>
+        <li><a href="http://www.eurostar.com/de-de/cookies-personenbezogene-daten">Cookies und personenbezogene Daten</a></li>
+        <li><a href="http://www.eurostar.com/de-de/barrierefreiheit">Zugang</a></li>
+        <li><a href="http://www.eurostar.com/de-de/reise-info/ihre-fahrt/eurostar-app">Eurostar-App</a></li>
+        <li><a href="http://www.eurostar.com/mobile">Mobile Website</a></li>
+        </ul>
+        </div>
+        <div class ="footer-block">
+        <ul class="bs-docs-footer-links text-muted">
+        <h4>Informationen zum Unternehmen</h4>
+        <li><a href="http://www.eurostar.com/de-de/uns-kontaktieren/eurostar-kontaktinformationen">Kontaktieren Sie uns</a></li>
+        <li><a href="http://www.eurostar.com/de-de/ueber-eurostar">Über uns</a></li>
+        <li><a href="http://www.eurostar.com/de-de/ueber-eurostar">Pressestelle</a></li>
+        <li><a href="http://www.eurostar.com/de-de/ueber-eurostar/karriere">Stellenangebote</a></li>
+        <li><a href="http://www.eurostar.com/de-de/kundencharta">Kundencharta</a></li>
+            <h4 style="margin-top: 30px;">Bleiben Sie auf dem Laufenden</h4>
+            <li class= "socnet"><a href="http://facebook.com/eurostar" target="_blank"><i class="fa fa-facebook-square fa-2x" style="margin-right:5px;"></i> Facebook</a></li>
+            <li class= "socnet"><a href="http://twitter.com/eurostar" target="_blank"><i class="fa fa-twitter-square fa-2x"  style="margin-right:5px;"></i> Twitter</a></li>
+              <li class= "socnetmob"><a href="http://facebook.com/eurostar" target="_blank"><i class="fa fa-facebook-square fa-4x" style="margin-right:10px;"></i></a><a href="http://twitter.com/eurostar"  target="_blank"><i class="fa fa-twitter-square fa-4x"></i></a></li>
+            <br/><li> <a href="http://www.eurostar.com/de-de/newsletters/signup">Unseren Newsletter bestellen</a></li>
+        </ul>
+        </div>
+      
+          <!-- <div class ="footer-signup" style="margin-top: 50px; float: left; border-top: 1px solid #eee; padding-top: 20px; width: 100%;">
+        <h4>Sign up to our newsletter</h4>
+              <form role="search">
+        <div class="form-group">
+        <input type="text" class="form-control" placeholder="Enter your email address here" style="width: 33.33333%;
+height: 40px; margin-bottom: 5px; font-size: 85%; border-right: 1px solid #ccc; border-top-right-radius: 4px;
+border-bottom-right-radius: 4px; padding: 0 3px; font-size:1.2em;"/>s
+  <div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true" style="background-image: -webkit-gradient(linear,left top,left 100%,from(#66CBD9),to(#1B808E)); */
+background-image: -webkit-linear-gradient(top,#66CBD9 0,#1B808E 100%); height:40px; width:33.3333%;float: left;
+clear: none; padding:0;">
+    Choose Language
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1" style="position: relative; width: 33.33333%;">
+      <li role="presentation"><a role="menuitem" tabindex="-1" href="#" style="background-color: transparent;">English</a></li><br/>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#" style="background-color: transparent;">Francais</a></li><br/>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#" style="background-color: transparent;">Francias Belgique</a></li><br/>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#" style="background-color: transparent;">Francais Nederland</a></li>
+  </ul>
+</div>
+                    <button type="submit" class="btn btn-signup" style=" float:left; padding: 0; border-left:0; margin-left:0; clear:none; width:20%; border-top-left-radius:0; border-radius:4px; height:40px;/* background-image: -webkit-gradient(linear,left top,left 100%,from(#66CBD9),to(#1B808E)); */
+background-image: -webkit-linear-gradient(top,#66CBD9 0,#1B808E 100%); color:#FFF;">Sign Up</button>
+            </div>
+            </form>
+        </div> -->
+      
+          <div id="footer-bottom" style="margin-top: 30px; float: left; border-top: 1px solid #eee; padding-top: 50px;">
+            <div id="footer-bottom-inner">
+                <div class="region region-footer-bottom">
+    <div id="block-eurostar-gateway-legal-footer" class="block block-eurostar-gateway">
+
+    
+  <div class="content">
+<p>© {!year(today())} Eurostar International Ltd. Alle Rechte vorbehalten.</p>   </div>
+</div>
+  </div>
+            </div>
+          </div> <!-- /#footer-bottom -->
+      
+  </div>
+
+</footer>
+             
+</apex:component>

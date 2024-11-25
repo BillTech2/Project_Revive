@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Unconfirmed_Space_EL_Under85__c</fullName>
+    <description>for Metafour Luggage Booking</description>
+    <externalId>false</externalId>
+    <label>Unconfirmed Space EL Under85</label>
+    <precision>8</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,195 @@
+<apex:page sidebar="false"  standardStyleSheets="false"  controller="Vendor_RequestViewController" >
+   <style type="text/css">
+      .detailList {
+      table-layout: fixed;
+      }
+      .labelCol {
+      text-align: right!important;
+      width: 30% !important;
+      max-width: 30% !important;
+      font-weight: normal !important;
+      }       
+      .accordionPanel .ui-accordion .ui-accordion-content{padding:0 0 ;border:0}
+      .odd {background-color: #FCF7F7;}
+      .even {background-color: #E3DCDB;}
+      
+      .headerStyle {
+           font-family: "Calibri", Georgia, Serif;
+           font-size:15px;
+           color:white;
+           background-color:#1975A3;
+       }
+       .form-panel dl dd {
+    		width: 100%;
+		}
+   </style>
+   <apex:form id="form" >
+      <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+      <script type="text/javascript">
+         function clearValue()
+            {
+                alert( "entered function");
+            document.getElementById('{!$Component.form.Block1.Section2.item2_1.prevcompnoVal}').value = '';
+            
+           
+            alert();
+                return false;
+            }
+                
+         
+         
+         
+      </script>
+      <html>
+         <head>
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+            <title>EUROSTAR</title>
+            <apex:stylesheet value="{!URLFOR($Resource.customCSS, 'customCSS/css/jquery-ui.css')}"/>
+            <apex:stylesheet value="{!URLFOR($Resource.customCSS, 'customCSS/css/reset.css')}"/>
+            <apex:stylesheet value="{!URLFOR($Resource.customCSS, 'customCSS/css/style.css')}"/>
+         </head>
+         <body>
+            <div class="container">
+               <div class="mid-panel">
+                  
+                  <div class="bread-crums"><a href="#">List View</a> <i>&gt;</i> <a href="#" class="underline">View Request</a></div>
+                  <div class="form-panel">
+                     <dl>
+                        <apex:pageMessages />
+                     </dl>
+                     <div class="accordionPanel row margin-top0">
+                          <apex:repeat value="{!Request}" var="req" >
+                        <div id="accordion" class="ui-accordion ui-widget ui-helper-reset">
+                           <h3 class="ui-accordion-header ui-helper-reset ui-state-default ui-accordion-icons ui-corner-top ui-accordion-header-active ui-state-active">
+                              <span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-s"></span>
+                              General Details
+                           </h3>
+                           <div class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom ui-accordion-content-active">
+                              
+                                 <apex:pageBlock id="Block1">
+                                     <apex:pageBlockSection id="Section0" columns="2">
+                                       <apex:pageBlockSectionItem id="item0_1" >
+                                          <apex:outputLabel value="Request Type : " id="reqtypeLbl" />
+                                          <apex:outputText value="{!req.reqtype__c}"  id="reqtypeVal" style="width:200px" />
+                                       </apex:pageBlockSectionItem>
+                                       <apex:pageBlockSectionItem id="item0_2" >
+                                         
+                                             <apex:outputLabel value="Submitter : " id="submitterLbl" />
+                                             <apex:outputText value="{!submitter}"  id="submitterVal" style="width:250px" />
+                                          
+                                       </apex:pageBlockSectionItem>
+                                    </apex:pageBlockSection>
+                                    <apex:pageBlockSection id="Section1" columns="2">
+                                       <apex:pageBlockSectionItem id="item1_1" >
+                                          <apex:outputLabel value="Supplier Name : " id="supLbl" />
+                                          <apex:outputText value="{!req.suppname__c}"  id="supVal"  style="width:200px"/>
+                                       </apex:pageBlockSectionItem>
+                                       <apex:pageBlockSectionItem id="item1_2" >
+                                          <apex:outputLabel value="Site Name : " id="sitenameLbl" />
+                                          <apex:outputText value="{!req.sitename__c}" id="sitenameVal"  style="width:200px"/>
+                                       </apex:pageBlockSectionItem>
+                                    </apex:pageBlockSection>
+                                    <apex:pageBlockSection id="Section2" columns="2">
+                                        <apex:pageBlockSectionItem id="item2_1" >
+                                          <apex:outputLabel value="Effective Date : " id="effdateLbl" />
+                                          <apex:outputText value="{!effectivedate}" id="effdateVal" style="width:200px"/>
+                                       </apex:pageBlockSectionItem>
+                                        <apex:pageBlockSectionItem id="item2_2" >
+                                       <apex:outputLabel value="Comments : " id="commentsLbl" />
+                                       <apex:outputText value="{!req.comments__c}"  id="commentsVal" style="width:200px"/>
+                                    </apex:pageBlockSectionItem>
+                                     </apex:pageBlockSection>
+                                    <apex:pageBlockSection id="Section3" columns="2">
+                                       <apex:pageBlockSectionItem id="item3_1" >
+                                          <apex:outputLabel value="Category : " id="categoryLbl" />
+                                           <apex:outputText value="{!req.category__c}" id="categoryVal"/>
+                                       </apex:pageBlockSectionItem>
+                                        </apex:pageBlockSection>
+                                    
+                                     </apex:pageBlock>
+                                        
+                           </div>
+                             <h3 class="ui-accordion-header ui-helper-reset ui-state-default ui-accordion-icons ui-corner-top ui-accordion-header-active ui-state-active">
+
+                            <span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-s"></span>
+
+                           Status </h3>
+
+                            <div class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom ui-accordion-content-active">
+
+                                <div class="row">
+
+                                <apex:pageBlock id="Block6">
+ <apex:pageBlockSection id="Section19" columns="2">                                                            
+                                        <apex:pageBlockSectionItem id="item19_1" >
+                                        <apex:outputLabel value=" Status : " />
+                                        <apex:selectList disabled="{!isButtonDisabled}" multiselect="false"  size="1" id="apprstatus" value="{!selectedValue}" > 
+                                        <apex:selectOptions value="{!StatusOptions}" />    
+                                         </apex:selectList>                                        
+                                        </apex:pageBlockSectionItem>
+                                         <apex:pageBlockSectionItem id="item19_2" rendered="{!isSupplierNumVisible}"  >
+                                        <apex:outputLabel value=" Oracle Supplier No : " id="oraclesuppLbl" />
+                                       <apex:inputText disabled="{!isButtonDisabled}" value="{!oraclesuppno}"  id="oraclesuppVal"/>                                     
+                                       </apex:pageBlockSectionItem>
+                                        </apex:pageBlockSection>
+                                        <apex:pageBlockSection id="Section20" columns="2"> 
+                                        <apex:pageBlockSectionItem id="item20_1" >
+                                        <apex:outputLabel value=" Approver Comments : " id="apprcommentsLbl" />
+                                        <apex:inputTextarea disabled="{!isButtonDisabled}"  style="width:300px" rows="5" value="{!approverComments}"  id="apprcommentsVal" required="true" />  
+                                       </apex:pageBlockSectionItem> 
+                                        </apex:pageBlockSection>
+
+                                </apex:pageblock> 
+
+ 
+  </div>
+                            </div>
+<h3 class="ui-accordion-header ui-helper-reset ui-state-default ui-accordion-icons ui-corner-top ui-accordion-header-active ui-state-active">
+                                <span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-s"></span>
+                                Approval History</h3>                          
+                          <!-- <div class="bottomMsg"> -->
+                                    
+                                  <apex:dataTable value="{!Trial}" var="audittrial"  border="2" rendered="{!Trial.size>0}" style="table-layout:fixed;width:830px;" columns="4" columnsWidth="15%,15%,15%,55%" rowClasses="odd,even">
+                                    <!-- <apex:column value="{!audittrial.name}" headerValue="Audit Id" headerClass="headerStyle" id="AuditTrialIdLbl" style="word-wrap:break-word" styleClas="cell" /> -->
+                                    <apex:column value="{!audittrial.Actioned_Date__c}" headerValue="Date" headerClass="headerStyle" style="word-wrap:break-word" styleClass="cell" width="8%"/>
+                                    <apex:column value="{!audittrial.Action__c}" headerValue="Action"  headerClass="headerStyle" style="word-wrap:break-word" styleClass="cell" /> 
+                                    <apex:column value="{!audittrial.Actioned_By_User__r.Firstname} {!audittrial.Actioned_By_User__r.Lastname}" headerValue="Actioned By" headerClass="headerStyle" style="word-wrap:break-word" styleClass="cell"/>
+                                    
+                                    <apex:column value="{!audittrial.Long_Comment__c }" headerValue="Comments" headerClass="headerStyle" style="word-wrap:break-word" width="10%" styleClass="cell"/>
+                                    </apex:dataTable>  
+                              <!-- </div> -->
+                        </div>
+                        
+                     </apex:repeat>
+                     </div>
+                  </div>
+               </div>
+            </div>
+           
+            <div class="bottom-button text-align-center">
+             
+                
+      <apex:actionStatus id="SaveButtonStatus">
+      <apex:facet name="stop">
+       <apex:outputPanel >
+               <apex:commandButton disabled="{!submitDisabled}"  onclick="if(!confirm('Are you sure?')){return false;}"  action="{!saveOrUpdate}" value="Submit"  status="SaveButtonStatus" rerender="form"/>
+
+       </apex:outputPanel>
+      </apex:facet>
+      <apex:facet name="start">
+       <apex:outputPanel >
+        <apex:commandButton value="Saving..." disabled="true" />
+       </apex:outputPanel>
+      </apex:facet>
+     </apex:actionStatus>
+                
+                
+                <apex:commandButton action="{!formselection}" immediate="true" value="Cancel" html-formnovalidate="formnovalidate"/>
+            </div>
+            <apex:includeScript value="{!URLFOR($Resource.customCSS, 'customCSS/js/jquery-1.10.2.js')}"/>
+            <apex:includeScript value="{!URLFOR($Resource.customCSS, 'customCSS/js/jquery-ui.js')}"/>
+            <apex:includeScript value="{!URLFOR($Resource.customCSS, 'customCSS/js/custom.js')}"/>
+         </body>
+      </html>
+   </apex:form>
+</apex:page>

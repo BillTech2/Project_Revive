@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Opened_cases</fullName>
+    <columns>CASES.CASE_NUMBER</columns>
+    <columns>CASES.SUBJECT</columns>
+    <columns>PNR__c</columns>
+    <columns>CASES.STATUS</columns>
+    <columns>Sub_Status__c</columns>
+    <columns>Origin__c</columns>
+    <columns>CASES.ORIGIN</columns>
+    <columns>CASES.PRIORITY</columns>
+    <columns>NAME</columns>
+    <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
+    <columns>SLA__c</columns>
+    <columns>Days_Since_Last_Contact__c</columns>
+    <columns>CASES.LAST_UPDATE_DATE_ONLY</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>CASES.STATUS</field>
+        <operation>notEqual</operation>
+        <value>Closed</value>
+    </filters>
+    <label>My Open Cases - View</label>
+</ListView>

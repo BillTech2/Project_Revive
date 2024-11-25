@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AccountId</fullName>
+    <description>NOT used on this page. The ID of the account with which the loyalty program member is associated.  This is a relationship field, from Loyalty Program Member to Account.</description>
+    <inlineHelpText>NOT used on this page. The ID of the account with which the loyalty program member is associated.  This is a relationship field, from Loyalty Program Member to Account. This field is optional for the Group member type.</inlineHelpText>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

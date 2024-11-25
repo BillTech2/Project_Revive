@@ -1,0 +1,161 @@
+<!--
+ - Created by JU on 08.12.2022.
+ -->
+
+<!-- Dog Approval -->
+<template>
+    <div class="form-box" if:true={showFormBox}>
+        <h1 class = "slds-align_absolute-center slds-text-heading_large">{labels.Eins_DogApproval}</h1>
+
+        <div if:true={isUnderReview}>
+            <div class="parkingPage slds-m-top_large">{labels.Eins_DogApprovalUnderReview}</div>
+        </div>
+
+        <div if:true={isParkingPage}>
+            <div class="parkingPage slds-m-top_large">{labels.Eins_DogApprovalEmailResponse}</div>
+        </div>
+
+        <div if:true={isCorrectionStep}>
+            <div class="commentModal">
+                <div class="commentText-header">{labels.Eins_DogApprovalReviewComments}</div>
+                <div class="commentText-body">{advisorComments}</div>
+
+            </div>
+        </div>
+
+
+
+        <template if:true={showFields}>
+            <template for:each={fieldsBlocks} for:item="block">
+                <p class="slds-text-heading_medium slds-m-top_x-large slds-m-bottom_medium" key={block.BlockName}>{block.BlockName}</p>
+                <template for:each={block.fields} for:item="field">
+                    <div if:true={field.CorrectionField__c} class="slds-grid slds-wrap slds-size_full fieldError" key={field.FieldApiName__c}>
+                        <label class={field.CssLabelClass_c__c}>{field.FieldLabelEn__c}</label>
+                        <lightning-input class={field.CssClass__c} onchange={fieldChange} data-apiname={field.FieldApiName__c} data-fieldtype = {field.Type__c}
+                                         key={field.FieldApiName__c}
+                                         type={field.Type__c}
+                                         value={field.FieldValue__c}
+                                         checked={field.FieldCheckboxValue__c}
+                                         message-toggle-active={field.ToggleActive__c}
+                                         message-toggle-inactive={field.ToggleInactive__c}
+                                         variant="label-hidden"
+                                         disabled={disabledInputs}
+                                         required
+                        >
+                        </lightning-input>
+                    </div>
+                    <div if:false={field.CorrectionField__c} class="slds-grid slds-wrap slds-size_full" key={field.FieldApiName__c}>
+                        <label class={field.CssLabelClass_c__c}>{field.FieldLabelEn__c}*</label>
+                        <template if:false={field.CheckboxGroupField__c}>
+                                <lightning-input class={field.CssClass__c} onchange={fieldChange} data-apiname={field.FieldApiName__c} data-fieldtype = {field.Type__c}
+                                                 key={field.FieldApiName__c}
+                                                 type={field.Type__c}
+                                                 value={field.FieldValue__c}
+                                                 checked={field.FieldCheckboxValue__c}
+                                                 message-toggle-active={field.ToggleActive__c}
+                                                 message-toggle-inactive={field.ToggleInactive__c}
+                                                 variant="label-hidden"
+                                                 disabled={disabledInputs}
+                                                 required
+                                >
+                                </lightning-input>
+                            <!-- </template> -->
+                        </template>
+                        <template if:true={field.CheckboxGroupField__c}>
+                            <lightning-input class={field.CssClass__c} onchange={fieldChange} data-apiname={field.FieldApiName__c} data-fieldtype = "CheckboxGroupField__c"
+                                             placeholder="CheckboxGroupField__c"
+                                             name={field.FieldApiName__c}
+                                             key={field.FieldApiName__c}
+                                             type="checkbox"
+                                             value={field.CheckboxGroupValueOne__c}
+                                             label={field.CheckboxGroupLabelOne__c}
+                                             disabled={disabledInputs}
+                            >
+                            </lightning-input>
+                            <lightning-input class={field.CssClass__c} onchange={fieldChange} data-apiname={field.FieldApiName__c} data-fieldtype = "CheckboxGroupField__c"
+                                             placeholder="CheckboxGroupField__c"
+                                             name={field.FieldApiName__c}
+                                             key={field.FieldApiName__c}
+                                             type="checkbox"
+                                             value={field.CheckboxGroupValueTwo__c}
+                                             label={field.CheckboxGroupLabelTwo__c}
+                                             disabled={disabledInputs}
+                            >
+                            </lightning-input>
+                        </template>
+                    </div>
+                </template>
+            </template>
+        </template>
+
+        <div>
+            <lightning-input label="" name="file uploader" onchange={handleFilesChange} type="file" multiple></lightning-input>
+            <div class="slds-text-body_small slds-text-color_error">{fileNames}
+                <template if:true={showLoadingSpinner} class="slds-is-relative" style="min-height: 50vh;">
+                    <lightning-spinner class="slds-is-fixed" alternative-text="loading......" size="medium"></lightning-spinner>
+                </template>
+            </div>
+
+            <div class="slds-m-top_medium">
+                <div class="slds-form-element">
+                    <div class="slds-form-element__control">
+                        <div class="slds-checkbox">
+                            <abbr class="slds-required" title="required">*</abbr>
+                            <input type="checkbox" name="options" id="checkbox-unique-id-83" onchange={handlePersonalDataChange}/>
+                            <label class="slds-checkbox__label" for="checkbox-unique-id-83">
+                            <span class="slds-checkbox_faux"></span>
+                            <span class="slds-form-element__label">I agree to my personal data being processed in accordance with Eurostar's <a href="https://www.eurostar.com/uk-en/privacy-policy">privacy policy</a>.</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-m-top_medium">
+                <div class="slds-form-element">
+                    <div class="slds-form-element__control">
+                        <div class="slds-checkbox">
+                            <abbr class="slds-required" title="required">*</abbr>
+                            <input type="checkbox" name="options" id="checkbox-unique-id-84" onchange={handleResponsibilityChange}/>
+                            <label class="slds-checkbox__label" for="checkbox-unique-id-84">
+                            <span class="slds-checkbox_faux"></span>
+                            <span class="slds-form-element__label">I, the named applicant, agree that the above information is accurate at the time of submission. Should any information on my animal or myself change, I agree it is my responsibility to update Eurostar as soon as possible and, in any event, at least 48 hours in advance of travel.</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-m-top_medium">
+                <div class="slds-form-element">
+                    <div class="slds-form-element__control">
+                        <div class="slds-checkbox">
+                            <abbr class="slds-required" title="required">*</abbr>
+                            <input type="checkbox" name="options" id="checkbox-unique-id-85" onchange={handleAnimalResponsibilityChange}/>
+                            <label class="slds-checkbox__label" for="checkbox-unique-id-85">
+                            <span class="slds-checkbox_faux"></span>
+                            <span class="slds-form-element__label">I agree to be responsible for the named animal and will be travelling with said animal on Eurostar journeys. I have read and understood Eurostar's expectations and conditions for <a href="https://www.eurostar.com/uk-en/travel-info/travel-planning/assistance-dogs">assistance animal travel</a>.</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button class="slds-button slds-button_full-width slds-align_absolute-center confirm-button slds-m-top_x-large"
+                        onclick={firstSubmit} disabled={showSpinner}>Submit</button>
+            <div if:true={showError} class="slds-col slds-size_12-of-12 slds-text-color_destructive slds-align_absolute-center">
+                {labels.Eins_DogApprovalCheckFields}
+            </div>
+            <br/>
+            <button class="slds-button slds-button_full-width slds-align_absolute-center confirm-button slds-m-top_x-large"
+                        onclick={handleDownloadForm}>{labels.Eins_DogApprovalDownloadPrintVersion}</button>
+        </div>
+
+
+    </div>
+    <template if:true={showThankYou}>
+        <h1 class = "slds-align_absolute-center slds-text-heading_medium slds-m-horizontal_xx-large slds-text-align_center">Thank-you! You will be contacted once we have reviewed your form.</h1>
+    </template>
+
+    <template if:true={showDownload}>
+        <h1 class = "slds-align_absolute-center slds-text-heading_medium slds-m-horizontal_xx-large slds-text-align_center">Guide dog form has now been downloaded.</h1>
+    </template>
+</template>

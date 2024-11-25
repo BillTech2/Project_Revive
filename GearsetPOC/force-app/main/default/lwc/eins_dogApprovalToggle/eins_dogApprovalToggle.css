@@ -1,0 +1,47 @@
+.slds-button.confirm-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: inline-block;
+    border-radius: 4px;
+    background-clip: padding-box;
+    font-style: normal;
+    -webkit-text-decoration: none;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    width: 350px;
+    position: relative;
+    left:50%;
+    transform: translate(-50%);
+    -webkit-transition: background-color 0.2s ease-out;
+    transition: background-color 0.2s ease-out;
+    cursor: pointer;
+    font-family: Pembroke,Arial,sans-serif;
+    font-size: 18px;
+    line-height: 22px;
+    padding: 16px 30px;
+    font-weight: 500;
+    border: none;
+    color: #55565A;
+    background-color: #FBDD0F;
+    box-shadow: 0 2px 0 0 #d2b82b, 0 3px 2px 0 rgb(0 0 0 / 20%);
+    height: 100%;
+}
+
+.slds-button.confirm-button:hover {
+    color:inherit;
+    background-color:#ffea6a;
+}
+
+.slds-button.confirm-button:focus {
+    box-shadow:none;
+}
+
+.slds-button.confirm-button:disabled {
+    background-color:#E6E6E7;
+    box-shadow:none;
+    cursor:default;
+    color:#55565A;
+    border-color:#E6E6E7;
+}

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Distribution_System__c</fullName>
+    <label>Distribution System</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Amadeus</fullName>
+                <default>false</default>
+                <label>Amadeus</label>
+            </value>
+            <value>
+                <fullName>Galileo</fullName>
+                <default>false</default>
+                <label>Galileo</label>
+            </value>
+            <value>
+                <fullName>Axess</fullName>
+                <default>false</default>
+                <label>Axess</label>
+            </value>
+            <value>
+                <fullName>Hermes</fullName>
+                <default>false</default>
+                <label>Hermes</label>
+            </value>
+            <value>
+                <fullName>Sabre</fullName>
+                <default>false</default>
+                <label>Sabre</label>
+            </value>
+            <value>
+                <fullName>Apollo</fullName>
+                <default>false</default>
+                <label>Apollo</label>
+            </value>
+            <value>
+                <fullName>Worldspan</fullName>
+                <default>false</default>
+                <label>Worldspan</label>
+            </value>
+            <value>
+                <fullName>Elgar Direct</fullName>
+                <default>false</default>
+                <label>Elgar Direct</label>
+            </value>
+            <value>
+                <fullName>White Label</fullName>
+                <default>false</default>
+                <label>White Label</label>
+            </value>
+            <value>
+                <fullName>Mosaique</fullName>
+                <default>false</default>
+                <label>Mosaique</label>
+            </value>
+            <value>
+                <fullName>Atlantis</fullName>
+                <default>false</default>
+                <label>Atlantis</label>
+            </value>
+            <value>
+                <fullName>Ravel</fullName>
+                <default>false</default>
+                <label>Ravel</label>
+            </value>
+            <value>
+                <fullName>TPV</fullName>
+                <default>false</default>
+                <label>TPV</label>
+            </value>
+            <value>
+                <fullName>Web Resarail</fullName>
+                <default>false</default>
+                <label>Web Resarail</label>
+            </value>
+            <value>
+                <fullName>Euronet</fullName>
+                <default>false</default>
+                <label>Euronet</label>
+            </value>
+            <value>
+                <fullName>Infini</fullName>
+                <default>false</default>
+                <label>Infini</label>
+            </value>
+            <value>
+                <fullName>Abacus</fullName>
+                <default>false</default>
+                <label>Abacus</label>
+            </value>
+            <value>
+                <fullName>Multicom Pharos</fullName>
+                <default>false</default>
+                <label>Multicom Pharos</label>
+            </value>
+            <value>
+                <fullName>EDI Pharos</fullName>
+                <default>false</default>
+                <label>EDI Pharos</label>
+            </value>
+            <value>
+                <fullName>Carina</fullName>
+                <default>false</default>
+                <label>Carina</label>
+            </value>
+            <value>
+                <fullName>Shares</fullName>
+                <default>false</default>
+                <label>Shares</label>
+            </value>
+            <value>
+                <fullName>EDI Anite</fullName>
+                <default>false</default>
+                <label>EDI Anite</label>
+            </value>
+            <value>
+                <fullName>Socrate</fullName>
+                <default>false</default>
+                <label>Socrate</label>
+            </value>
+            <value>
+                <fullName>Amadeus Elgar</fullName>
+                <default>false</default>
+                <label>Amadeus Elgar</label>
+            </value>
+            <value>
+                <fullName>Sabre Elgar</fullName>
+                <default>false</default>
+                <label>Sabre Elgar</label>
+            </value>
+            <value>
+                <fullName>Worldspan Elgar</fullName>
+                <default>false</default>
+                <label>Worldspan Elgar</label>
+            </value>
+            <value>
+                <fullName>SITA</fullName>
+                <default>false</default>
+                <label>SITA</label>
+            </value>
+            <value>
+                <fullName>XML Link</fullName>
+                <default>false</default>
+                <label>XML Link</label>
+            </value>
+            <value>
+                <fullName>Direct Mode</fullName>
+                <default>false</default>
+                <label>Direct Mode</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

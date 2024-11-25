@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Case_reopen_field_needs_a_reason</fullName>
+    <active>true</active>
+    <errorConditionFormula>NOT(ISBLANK(Date_to_be_Reopened__c ))
+&amp;&amp;
+ISBLANK(TEXT(Reason_that_case_is_being_reopened__c))</errorConditionFormula>
+    <errorDisplayField>Reason_that_case_is_being_reopened__c</errorDisplayField>
+    <errorMessage>Please select the reason for reopening the case</errorMessage>
+</ValidationRule>

@@ -1,0 +1,437 @@
+<apex:page showHeader="false" sidebar="false" language="{!selectedLanguageCode}" controller="CompApp_CtrlGroupBooking" standardStylesheets="false" applyHtmlTag="false" applyBodyTag="false">
+        
+    <apex:remoteObjects >
+        <apex:remoteObjectModel name="Stations__c" 
+            jsShorthand="stationSFDC" 
+            fields="Id,Name,Active__c,Group_Active__c,Popular_Destination__c,nl_Station_Name__c,en_Station_Name__c,fr_Station_Name__c,en_country_name__c,fr_country_name__c,nl_country_name__c" 
+        />
+    </apex:remoteObjects>
+    
+    <style>
+        #app-root .ui-select {
+            color: #007AFF;
+            border: 1px solid #007AFF;
+            border-radius: 4px;
+            display: inline-block;
+            /*font-family: 'Lato', Georgia, Serif;*/
+        }
+
+        #app-root .ui-select span.option {
+            font-size: 13px;
+            padding-left: 23px;
+            padding-right: 23px;
+            /*height: 25px;*/
+            text-align: center;
+            display: inline-block;
+            line-height: 25px;
+            margin: 0px;
+            float: left;
+            cursor: pointer;
+            border-right: 1px solid #007AFF;
+        }
+        #app-root .ui-select span.option.active {
+            background-color: #007AFF;
+            color: white;
+        }
+        #app-root .ui-select span.option:last-child {
+            border-right: none;
+        }
+        #app-root .ui-select span.option sub {
+            display: block;
+            color: #A7A9AC;
+            line-height: 25px;
+        }
+
+        #app-root .ui-select.ui-select-multy {
+            border: 0;
+        }
+        #app-root .ui-select.ui-select-multy span.option {
+            border: 1px solid #A7A9AC;
+            border-radius: 4px;
+            margin-right: 8px;
+            color: #1A1A1A;
+            width: 104px;
+        }
+        #app-root .framebox {
+            border: 1px solid #A7A9AC;
+            border-radius: 4px;
+            text-align: center;
+            padding-top:0.75em;
+            padding-bottom:1em;
+        }
+        #app-root .ui-select.ui-select-multy span.option:last-child {
+            margin-right: 0;
+        }
+        #app-root .ui-select.ui-select-multy span.option.active {
+            border-color: #0096b2;
+            background-color: #e6efef;
+        }
+    </style>
+    <style>
+        #app-root .input-wrapper > * {
+            display: block;
+        }
+    </style>
+    <style>
+        #app-root .number-input > * {
+            display: inline-block;
+            margin: 4px;
+            border: solid #007AFF 1px;
+            border-radius: 5px;
+            height: 44px;
+            line-height: 44px;
+            text-align: center;
+        }
+
+        #app-root .number-total {
+            display: inline-block;
+            margin: 4px;
+            padding-left: 1.5em;
+            padding-right: 1.5em;
+            border: solid #007AFF 1px;
+            border-radius: 5px;
+            height: 44px;
+            line-height: 44px;
+            text-align: center;
+        }
+        #app-root .number-input-button { width: 44px; cursor: pointer; background-color: white;}
+        //#app-root .number-input-value  { width: 60px; }
+        #app-root .number-input-value  { width: 70px; }
+        //#app-root .number-input-value { padding-top: 0em; padding-bottom: 0em; padding-left: 1.5em;  margin: 0; text-align: right; width: 30px;}
+        #app-root .number-input-value > input {border: 0; padding: 0; margin: 0; text-align: right; }
+        
+        @media only screen and (max-width: 59.93em) {
+            #app-root .number-input-value > input { text-align: center; }
+        }
+
+        select {
+            overflow-y: auto;
+        }
+    </style>
+
+    <div id="group-booking-wrapper">
+
+        <h1 class="row">{!$label.CompApp_Groups_Booking_Enquiry}</h1>
+        <div class="row p1">{!$label.CompApp_Group_Details_TopParagraph}</div>
+
+        <div class="row p1">{!$label.CompApp_required_fields}</div>
+
+        <h2 class="row">{!$label.CompApp_Journey_Details}</h2>
+
+
+        <div class="row {{formManager.originValidity | validityClass}}">
+            <label for="origin" class="cell-label">{!$label.CompApp_Origin}</label>
+
+            <div class="input-wrapper validity-sign cell-input">
+                <ui-select ng-model="$angularState.groupBookingInfo.origin" open="true" theme="select2" ng-disabled="disabled" title="Choose an Origin">
+                    <ui-select-match placeholder="{!$Label.CompApp_SelectAstationByName}">{{ $select.selected.label }}</ui-select-match>
+                    <ui-select-choices group-by="stationsGroupsFilter" repeat="station in stationList | filter: {label: $select.search}">
+                        <div ng-bind-html="station.label"></div>
+                    </ui-select-choices>
+                </ui-select>
+
+                <div class="error-message">{!$label.CompApp_selectOrigin}</div>
+            </div>
+        </div>
+
+        <div class="row {{formManager.destinationValidity | validityClass}}">
+            <label for="destination" class="cell-label">{!$label.CompApp_Destination}</label>
+            <div class="input-wrapper validity-sign cell-input">
+                <ui-select
+                        ng-model="$angularState.groupBookingInfo.destination"
+                        ng-change="formManager.destinationValidity = $angularState.personalInfo.firstName !== $angularState.groupBookingInfo.origin"
+                        open="true"
+                        theme="select2"
+                        ng-disabled="disabled"
+                        title="Choose an Destination">
+                    <ui-select-match placeholder="{!$Label.CompApp_SelectAstationByName}">{{ $select.selected.label }}</ui-select-match>
+                    <ui-select-choices group-by="stationsGroupsFilter" repeat="station in stationList | filter: {label: $select.search}">
+                        <div ng-bind-html="station.label"></div>
+                    </ui-select-choices>
+                </ui-select>
+
+                <div>
+                    <div class="ui-select">
+                        <span
+                                class="option {{$angularState.groupBookingInfo.returnOrSingle==='Return'?'active':''}}"
+                                ng-click="$angularState.groupBookingInfo.returnOrSingle = 'Return'"
+                        >
+                                {!$label.CompApp_Return}
+                        </span>
+                        <span
+                                class="option {{$angularState.groupBookingInfo.returnOrSingle==='Single'?'active':''}}"
+                                ng-click="$angularState.groupBookingInfo.returnOrSingle = 'Single'"
+                        >
+                                {!$label.CompApp_Single}
+                        </span>
+                    </div>
+                </div>
+
+                <div class="error-message">{!$label.CompApp_selectDestination}</div>
+            </div>
+        </div>
+
+        <div class="row {{formManager.departureDateValidity | validityClass}}">
+            <label for="departure-date" class="cell-label">{!$label.CompApp_Departure_Date}</label>
+
+            <div class="input-wrapper validity-sign cell-input">
+                <datepicker
+                    date-format="dd/MM/yyyy" date-min-limit="{{ $root.DateObj | date:'MM/dd/yyyy' }}"
+                    button-prev="<span class='datepicker-month-arrow'>&lt;</span>"
+                    button-next="<span class='datepicker-month-arrow'>&gt;</span>"
+                    style="z-index: 2"
+                >
+                    <input 
+                        type="text" 
+                        placeholder="{!$label.CompApp_Date}" 
+                        id="dateInput"  
+                        ng-model="$angularState.groupBookingInfo.departureDate"
+                        readonly="readonly"
+                    />
+                </datepicker>
+
+                <div class="row {{formManager.departureTimeValidity | validityClass}}">
+                    <div>
+                        <select id="departure-time" ng-model="$angularState.groupBookingInfo.departureTime"
+                                ng-change="formManager.departureTimeValidity = !!$angularState.groupBookingInfo.departureTime">
+                            <apex:repeat value="{!departureTimeValues}" var="departureTimeValue">
+                                <option value="{!departureTimeValue}">
+                                    {!departureTimeValue}
+                                    <!--apex:outputField value="{!departureTimeValue.Departure_Time__c}" /-->
+                                </option>
+                            </apex:repeat>
+                        </select>
+                    </div>
+                    <div class="error-message">{!$label.CompApp_enterDepartureTime}</div>
+                </div>
+            </div>
+        </div>
+ 
+        <div class="row {{formManager.returnDateValidity | validityClass}}" ng-show="$angularState.groupBookingInfo.returnOrSingle === 'Return'">
+            <label for="return-date" class="cell-label">{!$label.CompApp_Return_Date}</label>
+
+            <div class="input-wrapper validity-sign cell-input">
+                <datepicker
+                    date-format="dd/MM/yyyy" date-min-limit="{{ $root.DateObj | date:'MM/dd/yyyy' }}"
+                    button-prev="<span class='datepicker-month-arrow'>&lt;</span>"
+                    button-next="<span class='datepicker-month-arrow'>&gt;</span>"
+                    style="z-index: 1"
+                >
+                    <input 
+                        type="text" 
+                        placeholder="{!$label.CompApp_Traveller_Return_Date}" 
+                        id="return-date"
+                        readonly="readonly" 
+                        ng-model="$angularState.groupBookingInfo.returnDate"
+                    />
+                </datepicker>
+
+                <div class="row {{formManager.returnTimeValidity | validityClass}}">
+                    <div>
+                        <select id="arrival-time" ng-model="$angularState.groupBookingInfo.returnTime"
+                                ng-change="formManager.returnTimeValidity = !!$angularState.groupBookingInfo.returnTime">
+                            <apex:repeat value="{!departureTimeValues}" var="departureTimeValue">
+                                <option value="{!departureTimeValue}">
+                                    {!departureTimeValue}
+                                    <!--apex:outputField value="{!departureTimeValue.Departure_Time__c}" /-->
+                                </option>
+                            </apex:repeat>
+                        </select>
+                    </div>
+                    <div class="error-message">{!$label.CompApp_enterReturnTime}</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <label for="class-of-service" class="cell-label">{!$label.CompApp_Class_of_Service} *</label>
+            <div class="input-wrapper cell-input">
+                <select id="class-of-service" ng-model="$angularState.groupBookingInfo.classOfService">
+                    <option value="Standard">Standard</option>
+                    <option value="Standard Premier">Standard Premier</option>
+                    <option value="Business Premier">Business Premier</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row {{formManager.numberOfGuestsValidity | validityClass}}">
+            <label for="number-of-guests" class="cell-label">{!$label.CompApp_Number_of_Guests} *</label>
+            <div class="input-wrapper cell-input">
+                <div id="number-of-guests" class="input-wrapper cell-input framebox" > <!--style="display: flex; justify-content: space-between;"-->
+                    <div class="number-input-value" style="display:inline-block; text-align: center;">
+                        <div style=" width: 150%; margin-left: 50%; transform: translateX(-50%); ">
+                            <label>
+                                {!$label.CompApp_Adults}<br></br>
+                                12+ {!$label.CompApp_years}
+                            </label>
+                        </div>
+                        <div>
+                            <select id="number-of-adults" ng-model="$angularState.groupBookingInfo.numberOfAdults" ng-change="recalculateNumOfGuests();">
+                                <apex:repeat value="{!numberOfAdultsValues}" var="numberOfAdultsValue">
+                                    <option value="{!numberOfAdultsValue}">{!numberOfAdultsValue}</option>
+                                </apex:repeat>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="number-input-value" style="display:inline-block; text-align: center;">
+                        <label>
+                            {!$label.CompApp_Children}<br></br>
+                            <label>4-11 {!$label.CompApp_years}</label>
+                        </label>
+                        <select id="number-of-children" ng-model="$angularState.groupBookingInfo.numberOfChildren" ng-change="recalculateNumOfGuests();">
+                            <apex:repeat value="{!numberOfPassengersValues}" var="numberOfPassengersValue">
+                                <option value="{!numberOfPassengersValue}">{!numberOfPassengersValue}</option>
+                            </apex:repeat>
+                        </select>
+                    </div>
+                    <div class="number-input-value" style="display:inline-block; text-align: center;">
+                        <label>
+                            {!$label.CompApp_Infants}<br></br>
+                            <label>0-3 {!$label.CompApp_years}</label>
+                        </label>
+                        <select id="number-of-infants" ng-model="$angularState.groupBookingInfo.numberOfInfants" ng-change="recalculateNumOfGuests();">
+                            <apex:repeat value="{!numberOfPassengersValues}" var="numberOfPassengersValue">
+                                <option value="{!numberOfPassengersValue}">{!numberOfPassengersValue}</option>
+                            </apex:repeat>
+                        </select>
+                    </div>
+                    <div style="display:inline-block; text-align: center; margin-left:0.5em">
+                        <label>
+                            <br></br>
+                            {!$label.CompApp_Guests_Total}<br></br>
+                            <label class="number-total">{{$angularState.groupBookingInfo.numberOfGuests}}</label>
+                        </label>
+                    </div>
+                </div>
+                <div class="error-message">{!$label.CompApp_selectNumberOfGuests}</div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <label for="special-requirements" class="cell-label">{!$label.CompApp_Special_Requirements}</label>
+            <div class="input-wrapper cell-input">
+                <textarea 
+                    maxlength="500"
+                    placeholder="{!$label.CompApp_No_Credit_Card}" 
+                    id="special-requirements"
+                    ng-model="$angularState.groupBookingInfo.specialRequirements"
+                ></textarea>
+            </div>
+        </div>
+
+        <div class="row {{formManager.groupTypeValidity | validityClass}}">
+            <label for="group-type" class="cell-label">{!$label.CompApp_Group_Type} *</label>
+            <div class="input-wrapper cell-input">
+                <select id="group-type" ng-model="$angularState.groupBookingInfo.groupType"
+                        ng-change="formManager.groupTypeValidity = !! $angularState.groupBookingInfo.groupType;
+                                   formManager.bookerDepartmentNameValidity = 'undefined';
+                                   formManager.bookerCompanyOrSchoolNameValidity = 'undefined'">
+                    <apex:repeat value="{!groupTypeValues}" var="groupTypeValue">
+                        <option value="{!groupTypeValue.Group_Type__c}">
+                            <apex:outputField value="{!groupTypeValue.Group_Type__c}" />
+                        </option>
+                    </apex:repeat>
+                </select>
+                <div class="error-message" >{!$label.CompApp_Select_Group_Type}</div>
+            </div>
+        </div>
+
+        <div class="row {{formManager.bookerCompanyOrSchoolNameValidity | validityClass}}" ng-show="$angularState.groupBookingInfo.groupType === 'Corporate client'
+                                                                                                    || $angularState.groupBookingInfo.groupType === 'Leisure Agency'
+                                                                                                    || $angularState.groupBookingInfo.groupType.indexOf('School') > -1
+                                                                                                    || $angularState.groupBookingInfo.groupType.indexOf('TMC') > -1
+                                                                                                    || $angularState.groupBookingInfo.groupType === 'Charity'">
+            <label for="booker-company-name" class="cell-label" ng-show="$angularState.groupBookingInfo.groupType === 'Corporate client'
+                                                                         || $angularState.groupBookingInfo.groupType === 'Leisure Agency'
+                                                                         || $angularState.groupBookingInfo.groupType.indexOf('TMC') > -1">{!$label.CompApp_Booker_Company_Name} *</label>
+            <label for="booker-company-name" class="cell-label" ng-show="$angularState.groupBookingInfo.groupType.indexOf('School') > -1">{!$label.CompApp_Booker_School_Name} *</label>
+            <label for="booker-company-name" class="cell-label" ng-show="$angularState.groupBookingInfo.groupType.indexOf('Charity') > -1">{!$label.CompApp_Booker_Organisation_Name} *</label>
+            <div class="input-wrapper validity-sign cell-input">
+                <!--ng-pattern="/^[a-zA-Z0-9\s\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]{1,80}$/"  FOR Company, Org, School, Department names OLD-->
+                <input ng-show="$angularState.groupBookingInfo.groupType === 'Corporate client'
+                                || $angularState.groupBookingInfo.groupType === 'Leisure Agency'
+                                || $angularState.groupBookingInfo.groupType.indexOf('TMC') > -1"
+                       placeholder="{!$label.CompApp_Booker_Company_Name}"
+                       id="booker-company-name"
+                       ng-keyup="formManager.bookerCompanyOrSchoolNameValidity = !! $angularState.groupBookingInfo.bookerCompanyOrSchoolName"
+                       ng-model="$angularState.groupBookingInfo.bookerCompanyOrSchoolName"
+                />
+                <input ng-show="$angularState.groupBookingInfo.groupType.indexOf('School') > -1"
+                       placeholder="{!$label.CompApp_Booker_School_Name}"
+                       id="booker-company-name"
+                       ng-keyup="formManager.bookerCompanyOrSchoolNameValidity = !! $angularState.groupBookingInfo.bookerCompanyOrSchoolName"
+                       ng-model="$angularState.groupBookingInfo.bookerCompanyOrSchoolName"
+                />
+                <input ng-show="$angularState.groupBookingInfo.groupType.indexOf('Charity') > -1"
+                       placeholder="{!$label.CompApp_Booker_Organisation_Name}"
+                       id="booker-company-name"
+                       ng-keyup="formManager.bookerCompanyOrSchoolNameValidity = !! $angularState.groupBookingInfo.bookerCompanyOrSchoolName"
+                       ng-model="$angularState.groupBookingInfo.bookerCompanyOrSchoolName"
+                />
+                <div class="error-message" ng-show="$angularState.groupBookingInfo.groupType === 'Corporate client'
+                                                    || $angularState.groupBookingInfo.groupType === 'Leisure Agency'
+                                                    || $angularState.groupBookingInfo.groupType.indexOf('TMC') > -1">{!$label.CompApp_Enter_Booker_Company_Name}</div>
+                <div class="error-message" ng-show="$angularState.groupBookingInfo.groupType.indexOf('School') > -1">{!$label.CompApp_Enter_Booker_School_Name}</div>
+                <div class="error-message" ng-show="$angularState.groupBookingInfo.groupType.indexOf('Charity') > -1">{!$label.CompApp_Enter_Booker_Organisation_Name}</div>
+            </div>
+        </div>
+
+        <div class="row {{formManager.bookerDepartmentNameValidity | validityClass}}" ng-show="$angularState.groupBookingInfo.groupType === 'Leisure Agency'
+                                                                                               || $angularState.groupBookingInfo.groupType.indexOf('TMC') > -1">
+            <label for="booker-department-name" class="cell-label">{!$label.CompApp_Booker_Department_Name} *</label>
+            <div class="input-wrapper validity-sign cell-input">
+                <input
+                       placeholder="{!$label.CompApp_Booker_Department_Name}"
+                       id="booker-department-name"
+                       ng-keyup="formManager.bookerDepartmentNameValidity = !! $angularState.groupBookingInfo.bookerDepartmentName"
+                       ng-model="$angularState.groupBookingInfo.bookerDepartmentName"
+                />
+                <div class="error-message">{!$label.CompApp_Enter_Booker_Department_Name}</div>
+            </div>
+        </div>
+
+        <div class="row">
+            <label for="booker-interests" class="cell-label" style="margin-top:0px;">{!$label.CompApp_Booker_Interests}</label>
+            <div id="booker-interests" class="input-wrapper cell-input">
+                <label>
+                    <input type="checkbox"
+                           ng-model="$angularState.groupBookingInfo.isExclusiveCoachRequired"
+                    />
+                        {!$label.CompApp_CoachRequired}
+                </label>
+                <select id="booker-interests" size="3" multiple="multiple" ng-model="$angularState.groupBookingInfo.bookerInterests" ng-show="$angularState.groupBookingInfo.isExclusiveCoachRequired" >
+                    <apex:repeat value="{!bookerInterestsValues}" var="bookerInterestsValue">
+                        <option value="{!bookerInterestsValue.Booker_Interests__c}">
+                            <apex:outputField value="{!bookerInterestsValue.Booker_Interests__c}" />
+                        </option>
+                    </apex:repeat>
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <label for="primary-travel-purpose" class="cell-label">{!$label.CompApp_Primary_Travel_Purpose}</label>
+            <div class="input-wrapper cell-input">
+                <select id="primary-travel-purpose" ng-model="$angularState.groupBookingInfo.primaryTravelPurpose" >
+                    <apex:repeat value="{!primaryTravelPurposeValues}" var="primaryTravelPurposeValue">
+                        <option value="{!primaryTravelPurposeValue.Primary_Travel_Purpose__c}">
+                            <apex:outputField value="{!primaryTravelPurposeValue.Primary_Travel_Purpose__c}" />
+                        </option>
+                    </apex:repeat>
+                </select>
+            </div>
+        </div>
+
+        <div class="row commands-section">
+            <a href="" class="btn primary" ng-click="submitJourneyDetailsRequest();">{!$label.CompApp_Next}</a>
+            <p style="color: red !important;" ng-hide="formManager.noErrors">{!$label.CompApp_incorrectData}</p>
+        </div>
+
+        <script>
+            var GLOBAL_REMOTE_USER_IP = '{!USER_IP}';
+        </script>
+
+    </div>
+        
+</apex:page>

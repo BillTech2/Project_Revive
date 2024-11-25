@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Advisor_Location__c</fullName>
+    <label>Advisor Location</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>EBSC</fullName>
+                <default>false</default>
+                <label>EBSC</label>
+            </value>
+            <value>
+                <fullName>Webhelp Derby</fullName>
+                <default>false</default>
+                <label>Webhelp Derby</label>
+            </value>
+            <value>
+                <fullName>Webhelp Bucharest</fullName>
+                <default>false</default>
+                <label>Webhelp Bucharest</label>
+            </value>
+            <value>
+                <fullName>Webhelp Live Chat</fullName>
+                <default>false</default>
+                <label>Webhelp Live Chat</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

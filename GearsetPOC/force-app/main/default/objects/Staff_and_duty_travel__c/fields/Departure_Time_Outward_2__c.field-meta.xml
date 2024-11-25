@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Departure_Time_Outward_2__c</fullName>
+    <description>This field will be used for the departure time of the outward journey of the second choice of travel.</description>
+    <inlineHelpText>Please choose a time slot. You can add more precision in Preferences if needed.</inlineHelpText>
+    <label>Departure Time (Outward) 2</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>7am-9am</fullName>
+                <default>false</default>
+                <label>7am-9am</label>
+            </value>
+            <value>
+                <fullName>9am-11am</fullName>
+                <default>false</default>
+                <label>9am-11am</label>
+            </value>
+            <value>
+                <fullName>11am-1pm</fullName>
+                <default>false</default>
+                <label>11am-1pm</label>
+            </value>
+            <value>
+                <fullName>1pm-3pm</fullName>
+                <default>false</default>
+                <label>1pm-3pm</label>
+            </value>
+            <value>
+                <fullName>3pm-5pm</fullName>
+                <default>false</default>
+                <label>3pm-5pm</label>
+            </value>
+            <value>
+                <fullName>5pm-7pm</fullName>
+                <default>false</default>
+                <label>5pm-7pm</label>
+            </value>
+            <value>
+                <fullName>7pm-9pm</fullName>
+                <default>false</default>
+                <label>7pm-9pm</label>
+            </value>
+            <value>
+                <fullName>9pm-11pm</fullName>
+                <default>false</default>
+                <label>9pm-11pm</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

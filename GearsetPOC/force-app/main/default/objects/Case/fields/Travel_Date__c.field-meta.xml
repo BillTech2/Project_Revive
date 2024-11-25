@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Travel_Date__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(AND(
+    NOT(ISBLANK(Departure_Date__c)) 
+    ,NOT(ISBLANK(Date_selected_Web__c))
+    )
+        ,IF((Departure_Date__c - TODAY()) &lt; (Date_selected_Web__c - TODAY())
+            ,IF(Departure_Date__c &gt;= TODAY()
+                ,(CASE((Departure_Date__c - TODAY())
+                    ,0, 150
+                    ,1, 100
+                    ,2, 90
+                    ,3, 80
+                    ,4, 70
+                    ,5, 60
+                    ,6, 50
+                    ,40))
+                ,IF(Departure_Date__c &gt; DATEVALUE(CreatedDate)
+                    ,20
+                    ,0))
+            ,IF(Date_selected_Web__c &gt;= TODAY()
+                ,(CASE((Date_selected_Web__c - TODAY())
+                    ,0, 150
+                    ,1, 100
+                    ,2, 90
+                    ,3, 80
+                    ,4, 70
+                    ,5, 60
+                    ,6, 50
+                    ,40))
+                , IF(Date_selected_Web__c &gt; DATEVALUE(CreatedDate)
+                    ,20
+                    ,0)))
+        ,IF(NOT(ISBLANK(Departure_Date__c))
+            ,IF(Departure_Date__c &gt;= TODAY()
+                ,(CASE((Departure_Date__c - TODAY())
+                    ,0, 150
+                    ,1, 100
+                    ,2, 90
+                    ,3, 80
+                    ,4, 70
+                    ,5, 60
+                    ,6, 50
+                    ,40))
+                ,IF(Departure_Date__c &gt; DATEVALUE(CreatedDate)
+                    ,20
+                    ,0))
+            ,IF(NOT(ISBLANK(Date_selected_Web__c))
+                ,IF(Date_selected_Web__c &gt;= TODAY()
+                    ,(CASE((Date_selected_Web__c - TODAY())
+                        ,0, 150
+                        ,1, 100
+                        ,2, 90
+                        ,3, 80
+                        ,4, 70
+                        ,5, 60
+                        ,6, 50
+                        ,40))
+                    ,IF(Date_selected_Web__c &gt; DATEVALUE(CreatedDate)
+                        ,20
+                        ,0))
+                ,40))
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Travel date</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

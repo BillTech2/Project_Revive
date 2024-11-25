@@ -1,0 +1,20 @@
+.componentStype {
+    width: 100%;
+    border: 1px solid lightgrey;
+    border-radius: 0.2rem;
+}
+
+.styleHeaderFooter {
+    margin: 0;
+}
+
+.lineElement {
+    height: 1px;
+    background: #beb9b9b4;
+}
+
+.buttonStyle {
+    position: relative;
+    bottom: 1.5px;
+    --slds-c-button-color-background: white;
+}

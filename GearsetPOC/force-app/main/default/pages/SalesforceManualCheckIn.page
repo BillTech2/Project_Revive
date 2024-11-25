@@ -1,0 +1,37 @@
+<apex:page id="SalesforceManualCheckIn"
+			showHeader="true"
+			sidebar="true"
+			tabStyle="SalesforceManualCheckIn__x"
+			standardController="SalesforceManualCheckIn__x"
+			extensions="SalesforceManualCheckInController">
+
+	<apex:sectionHeader title="{!$ObjectType.SalesforceManualCheckIn__x.Label}"
+						subtitle="New {!$ObjectType.SalesforceManualCheckIn__x.Label}" />
+	<c:LoyaltyTierAccessCheck accessedButtonName="Manual_check_in">
+		<apex:form >
+			<apex:pageBlock title="{!$ObjectType.SalesforceManualCheckIn__x.Label}" mode="edit">
+				<apex:pageMessages id="messages"/>
+				<apex:pageBlockSection columns="1" >
+					<apex:inputtext value="{!ticket.Name}" required="true"/>
+					<apex:inputfield value="{!member.Travel_DateTime__c}" required="true"/>
+					<apex:selectList value="{!selectedReason}" label="Reason" size="1" required="true">
+						<apex:selectOptions value="{!reasons}"/>
+					</apex:selectList>
+					<apex:inputField value="{!member.ReasonText__c}"/>
+				</apex:pageBlockSection>
+				<apex:pageBlockButtons >
+					<apex:commandButton action="{!save}" value=" Save "/>
+					<apex:commandButton action="{!SaveAndNew}" value="Save & New"/>
+					<apex:commandButton action="{!cancel}" value="Cancel"/>
+				</apex:pageBlockButtons>
+				<apex:outputPanel id="redirectPanel" >
+					<apex:outputText rendered="{!shouldRedirect}">
+						<script type="text/javascript">
+							window.top.location.href = '{!redirectUrl}';
+						</script>
+					</apex:outputText>
+				</apex:outputPanel>
+			</apex:pageBlock>
+		</apex:form>
+	</c:LoyaltyTierAccessCheck>
+</apex:page>

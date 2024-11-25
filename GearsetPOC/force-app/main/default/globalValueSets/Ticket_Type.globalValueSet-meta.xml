@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Flex</fullName>
+        <default>false</default>
+        <label>Flex</label>
+    </customValue>
+    <customValue>
+        <fullName>Value</fullName>
+        <default>false</default>
+        <label>Value</label>
+    </customValue>
+    <masterLabel>Ticket Type</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

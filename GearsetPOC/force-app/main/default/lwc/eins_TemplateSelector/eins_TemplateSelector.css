@@ -1,0 +1,21 @@
+/**
+ * Created by JU on 06.12.2022.
+ */
+
+:host {
+    --tooltip-left: inherit;
+}
+
+
+
+.tooltip-wrapper{
+    border-box: 1px solid #2A2A2A;
+    position:fixed;
+    top:20%;
+    left:var(--tooltip-left);
+    z-index: 3;
+}
+
+.tooltip{
+    position:fixed;
+}

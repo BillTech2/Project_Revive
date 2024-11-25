@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>59.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__Tab</target>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <targetConfigs>
+      <targetConfig targets="lightning__FlowScreen">
+        <property name="codesInput" label="Corporate Tracking Codes Input" type="@salesforce/schema/Corp_Tracking_Type_and_Code__c[]" role="inputOnly"/>
+        <property name="codesOutput" label="Corporate Tracking Codes Output" type="@salesforce/schema/Corp_Tracking_Type_and_Code__c[]" role="outputOnly"/>
+      </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

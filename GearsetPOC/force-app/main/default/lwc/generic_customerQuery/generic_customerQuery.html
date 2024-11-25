@@ -1,0 +1,130 @@
+<template>
+    <div class="container">
+        <lightning-messages></lightning-messages>
+        <template if:true={showForm}>
+            <div class="slds-grid slds-wrap">
+
+                <template if:false={b2bForm}>
+                    <div class="slds-col slds-size_12-of-12 slds-medium-size_1-of-12 slds-large-size_2-of-12"></div>
+                    <div class="slds-col col-label slds-size_4-of-12 slds-medium-size_3-of-12 slds-large-size_3-of-12">
+                        <div class="input-label"><abbr class="slds-required" title="required">* </abbr>{commentLabel}</div>
+                    </div>
+                    <div class="slds-col col-input slds-size_8-of-12 slds-medium-size_7-of-12 slds-large-size_5-of-12">
+                        <lightning-textarea class="input-label" placeholder={commentPlaceholder} variant="label-hidden" onchange={handleChangeComment}></lightning-textarea>
+                    </div>
+
+                    <div class="slds-col slds-size_12-of-12 slds-medium-size_1-of-12 slds-large-size_2-of-12"></div>
+                    <div class="slds-col slds-size_12-of-12 slds-medium-size_1-of-12 slds-large-size_2-of-12"></div>
+                    <div class="slds-col col-label slds-size_4-of-12 slds-medium-size_3-of-12 slds-large-size_3-of-12">
+                        <div class="input-label"><abbr class="slds-required" title="required">* </abbr>{toneOfContactLabel}</div>
+                    </div>
+                    <div class="slds-col col-input slds-size_8-of-12 slds-medium-size_7-of-12 slds-large-size_5-of-12">
+                        <lightning-combobox
+                            class="input-label"
+                            variant="label-hidden"
+                            label={toneOfContactLabel}
+                            value={toneOfContact}
+                            placeholder={toneOfContactPlaceholder}
+                            options={toneOfContactOptions}
+                            onchange={handleChangeToneOfContact}
+                            required>
+                        </lightning-combobox>
+                    </div>
+                    <div class="slds-col slds-size_12-of-12 slds-medium-size_1-of-12 slds-large-size_2-of-12"></div>
+                </template>
+
+                <div class="slds-col slds-size_12-of-12 slds-medium-size_1-of-12 slds-large-size_2-of-12"></div>
+                <div class="slds-col col-label slds-size_4-of-12 slds-medium-size_3-of-12 slds-large-size_3-of-12">
+                    <div class="input-label"><abbr class="slds-required" title="required">* </abbr>{firstNameLabel}</div>
+                </div>
+                <div class="slds-col col-input slds-size_8-of-12 slds-medium-size_7-of-12 slds-large-size_5-of-12">
+                    <input class="slds-input input-label" type="text" variant="label-hidden" placeholder={firstNameLabel} onchange={handleChangeFirstName}></input>
+                </div>
+
+                <div class="slds-col slds-size_12-of-12 slds-medium-size_1-of-12 slds-large-size_2-of-12"></div>
+                <div class="slds-col slds-size_12-of-12 slds-medium-size_1-of-12 slds-large-size_2-of-12"></div>
+                <div class="slds-col col-label slds-size_4-of-12 slds-medium-size_3-of-12 slds-large-size_3-of-12">
+                    <div class="input-label"><abbr class="slds-required" title="required">* </abbr>{lastNameLabel}</div>
+                </div>
+                <div class="slds-col col-input slds-size_8-of-12 slds-medium-size_7-of-12 slds-large-size_5-of-12">
+                    <input class="slds-input input-label" type="text" variant="label-hidden" placeholder={lastNameLabel} onchange={handleChangeLastName}></input>
+                </div>
+
+                <div class="slds-col slds-size_12-of-12 slds-medium-size_1-of-12 slds-large-size_2-of-12"></div>
+                <div class="slds-col slds-size_12-of-12 slds-medium-size_1-of-12 slds-large-size_2-of-12"></div>
+                <div class="slds-col col-label slds-size_4-of-12 slds-medium-size_3-of-12 slds-large-size_3-of-12">
+                    <div class="input-label"><abbr class="slds-required" title="required">* </abbr>{emailLabel}</div>
+                </div>
+                <div class="slds-col col-input slds-size_8-of-12 slds-medium-size_7-of-12 slds-large-size_5-of-12">
+                    <input class="slds-input input-label" name="email" type="email" variant="label-hidden" placeholder={emailPlaceholder} onchange={handleChangeEmail}></input>
+                </div>
+
+                <div class="slds-col slds-size_12-of-12 slds-medium-size_1-of-12 slds-large-size_2-of-12"></div>
+                <div class="slds-col slds-size_12-of-12 slds-medium-size_1-of-12 slds-large-size_2-of-12"></div>
+                <div class="slds-col col-label slds-size_4-of-12 slds-medium-size_3-of-12 slds-large-size_3-of-12">
+                    <div class="input-label"><abbr class="slds-required" title="required">* </abbr>{confirmEmailLabel}</div>
+                </div>
+                <div class="slds-col col-input slds-size_8-of-12 slds-medium-size_7-of-12 slds-large-size_5-of-12">
+                    <input class="slds-input input-label" type="email" name="confirmEmail" variant="label-hidden" placeholder={emailConfirmPlaceholder} onchange={handleChangeEmailConfirm}></input>
+                </div>
+
+                <div class="slds-col slds-size_12-of-12 slds-medium-size_1-of-12 slds-large-size_2-of-12"></div>
+                <div class="slds-col slds-size_12-of-12 slds-medium-size_1-of-12 slds-large-size_2-of-12"></div>
+                <div class="slds-col col-label slds-size_4-of-12 slds-medium-size_3-of-12 slds-large-size_3-of-12">
+                    <div class="input-label"><abbr class="slds-required" title="required">* </abbr>{phoneNumberLabel}</div>
+                </div>
+                <div class="slds-col col-input slds-size_8-of-12 slds-medium-size_7-of-12 slds-large-size_5-of-12 input-label">
+                    <c-generic_phone-number-input lang-code={langCode}></c-generic_phone-number-input>
+                </div>
+
+                <template if:true={b2bForm}>
+                    <div class="slds-col slds-size_12-of-12 slds-medium-size_1-of-12 slds-large-size_2-of-12"></div>
+                    <div class="slds-col slds-size_12-of-12 slds-medium-size_1-of-12 slds-large-size_2-of-12"></div>
+                    <div class="slds-col col-label slds-size_4-of-12 slds-medium-size_3-of-12 slds-large-size_3-of-12">
+                        <div class="input-label"><abbr class="slds-required" title="required">* </abbr>{commentLabel}</div>
+                    </div>
+
+                    <div class="slds-col col-input slds-size_8-of-12 slds-medium-size_7-of-12 slds-large-size_5-of-12 input-label">
+                        <lightning-textarea placeholder={commentPlaceholder} variant="label-hidden" onchange={handleChangeComment}></lightning-textarea>
+                    </div>
+                </template>
+
+                <div class="slds-col slds-size_12-of-12 slds-medium-size_1-of-12 slds-large-size_2-of-12"></div>
+            </div>
+
+            <div class="slds-text-align_center">
+                <!-- * MULTIPLE-FILE Attachment goes here -->
+                <template if:true={showUploader}>
+                    <c-generic_fileuploader lang-code={langCode} onuploadfileids={handleUploadFilesIds}></c-generic_fileuploader>
+                </template>
+            </div>
+
+            <div class="slds-text-align_center">
+                <c-general_recaptchav3 oncaptchareceived={handleCaptchaReceived}></c-general_recaptchav3>
+            </div>
+
+            <div class="slds-text-align_center">
+                <button class="slds-button button-submit slds-m-bottom_medium" onclick={handleSubmit}>{submitLabel}</button>
+            </div>
+
+        </template>
+
+        <template if:true={showBtnList}>
+            <c-dynamic-text-component lang-code={langCode} dynamic-text-dev-name="cu_CreateNewCaseQuestion"></c-dynamic-text-component>
+            <c-generic_button-list lang-code={langCode} onbtnclick={handleListButtonClick} btn-list-type="existingCaseQuestion"></c-generic_button-list>
+        </template>
+
+        <template if:true={showMessage}>
+            <div class={messageTypeClass}>
+               <div lwc:dom="manual" class="text-container"></div> 
+            </div>
+        </template>
+
+        <template if:true={showSpinner}>
+            <div class="slds-spinner_container slds-is-relative slds-p-around_medium">
+                <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+            </div>
+        </template>
+
+    </div>
+</template>

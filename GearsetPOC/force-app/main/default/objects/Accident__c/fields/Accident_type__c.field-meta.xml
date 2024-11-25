@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Accident_type__c</fullName>
+    <label>Accident type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Contact: moving vehicles or machinery</fullName>
+                <default>false</default>
+                <label>Contact: moving vehicles or machinery</label>
+            </value>
+            <value>
+                <fullName>Hit by moving, flying or falling object</fullName>
+                <default>false</default>
+                <label>Hit by moving, flying or falling object</label>
+            </value>
+            <value>
+                <fullName>Contact: something fixed or stationary</fullName>
+                <default>false</default>
+                <label>Contact: something fixed or stationary</label>
+            </value>
+            <value>
+                <fullName>Injured handling, lifting or carrying</fullName>
+                <default>false</default>
+                <label>Injured handling, lifting or carrying</label>
+            </value>
+            <value>
+                <fullName>Contact: electricity/elec discharge</fullName>
+                <default>false</default>
+                <label>Contact: electricity/elec discharge</label>
+            </value>
+            <value>
+                <fullName>Contact: sharp object or material</fullName>
+                <default>false</default>
+                <label>Contact: sharp object or material</label>
+            </value>
+            <value>
+                <fullName>Contact/Exposure: Harmful substance</fullName>
+                <default>false</default>
+                <label>Contact/Exposure: Harmful substance</label>
+            </value>
+            <value>
+                <fullName>Exposure:  fire/smoke/hot surface</fullName>
+                <default>false</default>
+                <label>Exposure:  fire/smoke/hot surface</label>
+            </value>
+            <value>
+                <fullName>Slip/trip/fall: on the same level</fullName>
+                <default>false</default>
+                <label>Slip/trip/fall: on the same level</label>
+            </value>
+            <value>
+                <fullName>Slip/ trip/fall: from a height</fullName>
+                <default>false</default>
+                <label>Slip/ trip/fall: from a height</label>
+            </value>
+            <value>
+                <fullName>Slip/trip/fall: boarding/alighting</fullName>
+                <default>false</default>
+                <label>Slip/trip/fall: boarding/alighting</label>
+            </value>
+            <value>
+                <fullName>Trapped by equipment or collapsed thing</fullName>
+                <default>false</default>
+                <label>Trapped by equipment or collapsed thing</label>
+            </value>
+            <value>
+                <fullName>Another kind of accident</fullName>
+                <default>false</default>
+                <label>Another kind of accident</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>6</visibleLines>
+</CustomField>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Blue_voucher_bookings_requests</fullName>
+    <columns>OBJECT_ID</columns>
+    <columns>NAME</columns>
+    <columns>Associated_account__c</columns>
+    <columns>Type_of_booking__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>CREATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Staff_and_duty_travel__c.Staff_travel</value>
+    </filters>
+    <label>Blue voucher bookings requests</label>
+    <language>en_US</language>
+</ListView>

@@ -1,0 +1,113 @@
+<apex:page showHeader="false" sidebar="false" controller="CompApp_CtrlLanguage" language="{!JSENCODE(selectedLanguageCode)}" standardStylesheets="false" applyHtmlTag="false" applyBodyTag="false" docType="html-5.0">
+
+<apex:variable var="mobileToScreenSize"  value="{! '42.983em' }" />
+
+<apex:variable var="tabletFromScreenSize" value="{! '43em' }" />
+<apex:variable var="tabletToScreenSize"   value="{! '59.93em' }" />
+
+<html data-ieuglyhack="en">
+    <head>
+
+        <meta name="viewport" content="width=device-width" />
+
+        <title>{!$Label.CompApp_BrowserTabTitle}</title>
+        <link rel="shortcut icon" href="{!URLFOR($Resource.EurostarFavIcon)}"/>
+        <!-- Styles -->
+        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.CompApp_Res, '/res/all-prembrokeWeb.css')}"/>
+
+        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.CompApp_Res, '/css/12-cols-grid.css')}"/>
+        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.CompApp_Res, '/css/no-grid.css')}" />
+        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.CompApp_Res, '/css/angular-date-picker.css')}"/>
+        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.CompApp_Res, '/css/select2-3.4.5.css')}"/>
+
+        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.CompApp_Res, '/css/elements.css')}"/>
+        <link rel="stylesheet" type="text/css" media="only screen and (max-width: {! mobileToScreenSize })" href="{!URLFOR($Resource.CompApp_Res, '/css/elements-mobile.css')}"/>
+        <link rel="stylesheet" type="text/css" media="only screen and (min-width: {! tabletFromScreenSize }) and (max-width: {! tabletToScreenSize })" href="{!URLFOR($Resource.CompApp_Res, '/css/elements-tablet.css')}"/>
+        
+        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.CompApp_Res, '/css/template-base.css')}"/>
+        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.CompApp_Eurostar_Ticket_Examples, '/ticket-examples.css')}"/>
+        
+
+        <!-- The images are too big to zip with other resources -->
+        <style>
+            .ng-cloak, .x-ng-cloak {
+              display: none !important;
+            }
+
+            a:hover {
+                    cursor: pointer;
+                }
+
+            #app-footer-template-image {
+                background-image: url("{!URLFOR($Resource.CompApp_Res_big_images, '/big-images/extralarge_1600w.png')}");
+            }
+
+            #app-root .valid .input-wrapper::before   { background-image: url("{!URLFOR($Resource.CompApp_Res, '/res/SVGS/tick_correct.svg')}"); }
+            #app-root .invalid .input-wrapper::before { background-image: url("{!URLFOR($Resource.CompApp_Res, '/res/SVGS/exclaimation_mark.svg')}"); }
+            #app-root .tooltip-sign  { background-image: url("{!URLFOR($Resource.CompApp_Res, '/res/SVGS/tool_tip.svg')}"); }
+
+
+            @media only screen and (min-width: {! tabletFromScreenSize } and max-width: {! tabletToScreenSize }) {
+                #app-footer-template-image {
+                    background-image: url("{!URLFOR($Resource.CompApp_Res_big_images, '/big-images/medium_800w.png')}");
+                }
+            }
+
+            @media only screen and (max-width: {! mobileToScreenSize }) {
+                #app-footer-template-image {
+                    background-image: url("{!URLFOR($Resource.CompApp_Res_big_images, '/big-images/medium_800w.png')}");
+                }
+            }
+
+            .center {
+                margin: auto;
+                width: 50%;
+                padding: 10px;
+                font-size: 16px;
+                text-align: center;
+                font-weight: bold;
+            }
+        </style>
+
+        <header id="app-header-template">
+            <div id="app-header-template-top-section">
+                <!-- <img id="top-section-logo" src="{!URLFOR($Resource.CompApp_Res, '/res/SVGS/eurostar_logo.svg')}" alt="logo" height="30" width="100"/> -->
+                <div id="top-section-logo"></div>
+            </div>
+        </header>
+
+    </head>
+    
+    <body>
+
+        <div id="app-root" ng-app="compApp">
+            <div class="ng-view" id="ng-view"></div>
+            <div class="dialog" id="dialog">
+            </div>
+        </div>
+
+        <div class="center">Sorry, you may not be able to view this page today. This is because we’re launching our new website this weekend. This page will be available again on Monday 02 October.<br/><br/>
+
+            Cette page est momentanément indisponible car nous mettons notre nouveau site en ligne ce week-end. Retour à la normale prévu le lundi 2 octobre. Toutes nos excuses pour ce désagrément.<br/><br/>
+            
+            Sorrie, het kan zijn dat u deze pagina vandaag niet kunt bekijken. Dit komt omdat wij dit weekend onze nieuwe website introduceren. Deze pagina zal op maandag 02 oktober weer beschikbaar zijn.<br/><br/>
+            
+            Es tut uns leid, dass Sie diese Seite heute möglicherweise nicht sehen können. Das liegt daran, dass wir an diesem Wochenende unsere neue Website online stellen. Diese Seite wird am Montag, den 02. Oktober wieder verfügbar sein.</div>
+        
+
+        <footer id="app-footer-template">
+            <div id="app-footer-template-image">
+                <div id="app-footer-template-content">
+                    <p id="app-footer-template-image-description" >Visit our Help Centre for <br/> more information on compensation</p>
+                    <a class="primary" href="http://www.eurostar.com">Help Centre</a>
+                </div>
+            </div>
+            <p id="app-footer-template-copyright">© {!YEAR(TODAY())} Eurostar International Ltd. All Rights Reserved. <a id="app-footer-template-link" href="http://www.eurostar.com">www.eurostar.com</a></p>
+        </footer>
+
+    </body>
+    
+    <site:googleAnalyticsTracking />
+
+</html>
+</apex:page>

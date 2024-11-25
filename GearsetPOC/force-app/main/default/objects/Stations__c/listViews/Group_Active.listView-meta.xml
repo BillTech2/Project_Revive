@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Group_Active</fullName>
+    <columns>NAME</columns>
+    <columns>Full_Station_s_name__c</columns>
+    <columns>Active__c</columns>
+    <columns>Group_Active__c</columns>
+    <columns>Popular_Destination__c</columns>
+    <columns>Station_Code_3_Letter__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Group_Active__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>Group Active</label>
+    <language>en_US</language>
+</ListView>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Covid_Cancelled_check__c</fullName>
+    <description>S3 cancelled = true and Cancelled = true --&gt; Covid Cancelled check = false
+S3 cancelled = true and Cancelled = false --&gt; Covid Cancelled check = false
+S3 cancelled = false and Cancelled = true --&gt; Covid Cancelled check = true
+S3 cancelled = false and Cancelled = false --&gt; Covid Cancelled check = false</description>
+    <formula>IF((S3_Cancel__c = false  &amp;&amp;  Cancelled_By_Customer__c = true),true,false)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Covid Cancelled check</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

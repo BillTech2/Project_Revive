@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Hotel__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>Hotel</label>
+    <referenceTo>Hotel__c</referenceTo>
+    <relationshipLabel>Public Site Case Holders</relationshipLabel>
+    <relationshipName>Public_Site_Case_Holders</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

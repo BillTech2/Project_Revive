@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Associated_account__c</fullName>
+    <description>This field will be used to link the travel to a customer or staff account (if it doesn&#39;t exist whn the travel is created, the account will be created as well).</description>
+    <label>Associated account</label>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Staff and duty travels</relationshipLabel>
+    <relationshipName>Staff_and_duty_travels</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>true</reparentableMasterDetail>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

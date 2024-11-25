@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Payment_Currency_not_blank</fullName>
+    <active>true</active>
+    <description>Payment currency could not be empty</description>
+    <errorConditionFormula>ISBLANK(TEXT(Payment_Currency__c)) 
+&amp;&amp; RecordType.Name = &#39;Voucher&#39; 
+&amp;&amp; NOT(ISPICKVAL(Comp_Approval_Status__c, &#39;Draft&#39;))
+&amp;&amp; OR (ISNEW(),  
+						ISPICKVAL(PRIORVALUE(Comp_Approval_Status__c), &#39;Draft&#39;)
+)
+&amp;&amp; NOT(ISPICKVAL(Claim_Status__c, &#39;Draft&#39;))
+&amp;&amp; NOT(ISPICKVAL(Claim_Status__c, &#39;Cancelled&#39;))</errorConditionFormula>
+    <errorDisplayField>Payment_Currency__c</errorDisplayField>
+    <errorMessage>Payment currency could not be empty</errorMessage>
+</ValidationRule>

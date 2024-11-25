@@ -1,0 +1,161 @@
+<template>
+    <div class="slds-grid slds-gutters">
+        <template if:true={showLoader}>
+            <lightning-spinner alternative-text="Loading"></lightning-spinner>
+        </template>
+        <div class="slds-col slds-size_1-of-2">
+            <lightning-card title="Customers" icon-name="standard:account">
+                <lightning-combobox
+                    name="progress"
+                    label="Preferred Language"
+                    slot="actions"
+                    options ={preferredLanguages}
+                    value={preferredLanguage}
+                    onchange={handleLanguageChange}
+                    required
+                ></lightning-combobox>
+                <div class="slds-m-around_medium">
+                    <lightning-layout multiple-rows>
+                        <lightning-layout-item size="5">
+                            <lightning-button variant="brand-outline" label="New Customer" onclick={handleNewAccount} class="slds-float_left slds-p-top_large"></lightning-button>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="5" class="slds-p-bottom_small">
+                            <lightning-input type="search" label="Search by Name, Email or Phone" onchange={handleAccountSearchString}></lightning-input>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="1"></lightning-layout-item>
+                        <lightning-layout-item size="1">
+                            <lightning-button variant="brand" label="Search" onclick={handleAccountSearch} class="slds-float_right slds-p-top_large"></lightning-button>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                    <div if:true={createNewAccount}>
+                        <lightning-layout multiple-rows>
+                            <lightning-layout-item size="4">
+                                <lightning-input
+                                    type="text"
+                                    label="Name"
+                                    onchange={handleAccountNameChange}
+                                    class="slds-p-right_small"
+                                    required
+                                ></lightning-input>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="4" class="slds-p-bottom_small">
+                                <lightning-input
+                                    type="email"
+                                    label="Email"
+                                    onchange={handleAccountEmailChange}
+                                    class="slds-p-right_small"
+                                    required
+                                ></lightning-input>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="4" class="slds-p-bottom_small">
+                                <lightning-input
+                                    type="tel"
+                                    label="Phone"
+                                    onchange={handleAccountPhoneChange}
+                                    required
+                                ></lightning-input>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="3" class="slds-p-bottom_small slds-float_right">
+                                <lightning-button variant="brand" label="Create Customer" onclick={createNewCustomerApex} class="slds-p-top_large"></lightning-button>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                    </div>
+                    <div if:true={accountRecords} class="account_datatable">
+                        <c-eins_-lightning-data-table key-field="Id"
+                                  data={accounts}
+                                  columns={accountColumns}
+                                  hide-checkbox-column
+                                  onselectthisrecordevent={handleSelectAccountRecord}>
+                        </c-eins_-lightning-data-table>
+                    </div>
+                    <div class="slds-float_right slds-size_1-of-1 slds-p-top_small">
+                        <div if:true={totalAccounts}>
+                            <c-eins_pagination totalrecords={totalAccounts} page-size={pageSize} onpagination={handleAccountPagination}></c-eins_pagination>
+                        </div>
+                    </div>
+                    <div if:true={error}>
+                        {error}>
+                    </div>
+                </div>
+            </lightning-card>
+        </div>
+
+        <div class="slds-col slds-size_1-of-2">
+            <lightning-card title="Cases" icon-name="standard:case">
+                <div class="slds-m-around_medium">
+                    <lightning-layout multiple-rows>
+                        <lightning-layout-item size="5">
+                            <lightning-button variant="brand-outline" label="New Case" onclick={handleNewCase} class="slds-float_left slds-p-top_large"></lightning-button>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="5" class="slds-p-bottom_small">
+                            <lightning-input type="search" label="Search by PNR" onchange={handleCaseSearchString}></lightning-input>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="1"></lightning-layout-item>
+                        <lightning-layout-item size="1">
+                            <lightning-button variant="brand" label="Search" onclick={handleCaseSearch} class="slds-float_right slds-p-top_large"></lightning-button>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                    <div if:true={createNewCase}>
+                        <lightning-layout multiple-rows>
+                            <lightning-layout-item size="4">
+                                <lightning-input
+                                    type="text"
+                                    label="PNR"
+                                    onchange={handleCasePNRChange}
+                                    class="slds-p-right_small"
+                                ></lightning-input>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="4" class="slds-p-bottom_small">
+                                <lightning-input
+                                    type="text" 
+                                    label="Additional PNR(s)"
+                                    onchange={handleCaseMultiplePNRChange}
+                                    class="slds-p-right_small"
+                                ></lightning-input>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="4" class="slds-p-bottom_small">
+                                <lightning-combobox
+                                    name="toneOfContact"
+                                    label="Tone of Contact"
+                                    value={selectedTone}
+                                    options={tonesOfContact}
+                                    onchange={handleCaseToneChange}
+                                ></lightning-combobox>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="9" class="slds-p-bottom_small">
+                                <lightning-input
+                                    type="text"
+                                    label="Comment"
+                                    onchange={handleCaseCommentChange}
+                                    class="slds-p-right_small"
+                                ></lightning-input>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="3" class="slds-p-bottom_small slds-m-top_large">
+                                <lightning-button variant="brand" label="Create Case" onclick={createNewCaseApex} class="slds-p-top_large"></lightning-button>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                    </div>
+                    <div if:true={caseRecords}>
+                        <c-eins_-lightning-data-table key-field="Id"
+                                  data={cases}
+                                  columns={caseColumns}
+                                  hide-checkbox-column
+                                  onselectthisrecordevent={handleOpenCaseRecord}>
+                        </c-eins_-lightning-data-table>
+                        <!-- <lightning-datatable key-field="Id" data={caseRecords} columns={caseColumns}
+                            hide-checkbox-column="true" onrowaction={handleCaseRowAction}>
+                        </lightning-datatable> -->
+                    </div>
+                    <div class="slds-float_right slds-size_1-of-1 slds-p-top_small">
+                        <div if:true={totalCases}>
+                            <c-eins_pagination totalrecords={totalCases} page-size={pageSize} onpagination={handleCasePagination}></c-eins_pagination>
+                        </div>
+                    </div>
+                    <div if:true={error}>
+                        {error}>
+                    </div>
+                </div>
+            </lightning-card>
+        </div>
+    </div>
+</template>

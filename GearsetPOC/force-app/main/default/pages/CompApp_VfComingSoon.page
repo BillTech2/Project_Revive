@@ -1,0 +1,19 @@
+<apex:page showHeader="false" sidebar="false" language="{!selectedLanguageCode}" controller="CompApp_CtrlLanguage" standardStylesheets="false" applyHtmlTag="false" applyBodyTag="false" showChat="false">
+	
+	<style>
+		#app-footer-template{
+			position: absolute !important;
+		}
+	</style>
+
+    <div>
+        <h1 class="row">{!$label.CompApp_OnlineCompensation}</h1>
+
+        <div class="row p1" style="font-size: 22px;">{!$label.CompApp_ComingSoonMessage}</div>
+
+        <div class="row commands-section">
+            <a href="http://www.eurostar.com/" target="_blank" class="btn secondary" ng-click="">{!$label.CompApp_visit_eurostar}</a>
+        </div>
+    </div>
+
+</apex:page>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Booker_Interests__c</fullName>
+    <label>I&#39;m interested in</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Experience</fullName>
+                <default>false</default>
+                <label>Experience</label>
+            </value>
+            <value>
+                <fullName>Branding</fullName>
+                <default>false</default>
+                <label>Branding</label>
+            </value>
+            <value>
+                <fullName>Catering</fullName>
+                <default>false</default>
+                <label>Catering</label>
+            </value>
+            <value>
+                <fullName>Assistance</fullName>
+                <default>false</default>
+                <label>Assistance</label>
+            </value>
+            <value>
+                <fullName>Luggage</fullName>
+                <default>false</default>
+                <label>Luggage</label>
+            </value>
+            <value>
+                <fullName>Exclusive Carriage</fullName>
+                <default>false</default>
+                <label>Exclusive Carriage</label>
+            </value>
+            <value>
+                <fullName>Charter</fullName>
+                <default>false</default>
+                <label>Charter</label>
+            </value>
+            <value>
+                <fullName>Half Charter</fullName>
+                <default>false</default>
+                <label>Half Charter</label>
+            </value>
+            <value>
+                <fullName>Exclusive coach</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Exclusive coach</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>3</visibleLines>
+</CustomField>

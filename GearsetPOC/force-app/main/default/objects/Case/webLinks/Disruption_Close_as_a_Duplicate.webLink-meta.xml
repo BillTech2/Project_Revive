@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Disruption_Close_as_a_Duplicate</fullName>
+    <availability>online</availability>
+    <description>Close the case when it is a duplicate</description>
+    <displayType>link</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Disruption - Close as a Duplicate</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/33.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/33.0/apex.js&quot;)}
+
+
+
+try{ 
+	/* Get the record details */
+	var updateRecord = new Array(); 
+	var myquery = &quot;SELECT Id FROM Disruption_Case__c WHERE Name = &#39;{!Case.CaseNumber}&#39; limit 1&quot;; 
+	result = sforce.connection.query(myquery); 
+	records = result.getArray(&quot;records&quot;); 
+	if(records[0]) 
+	{
+		var update_Case = records[0];
+		
+		/* Update the Disruption Case  */
+		update_Case.Status__c= &quot;Duplicate&quot;;
+		updateRecord.push(update_Case); 
+		result = sforce.connection.update(updateRecord); 
+		sforce.apex.execute
+		(
+			&quot;Create_Case_Comment&quot;,
+			&quot;Create_A_CaseComment&quot;,
+			{
+				Parent_Id:&quot;{!Case.Id}&quot;,
+				content:&quot;---------- Closed as a Duplicate ----------&quot; 
+			}
+		);
+		parent.location.href = parent.location.href;
+					
+	}
+}
+catch(e){
+alert(&#39;An Error has Occured. Error: &#39; + e);
+}</url>
+</WebLink>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LOG_Incident_Number_Is_Mandatory</fullName>
+    <active>false</active>
+    <description>Makes the incident number field mandatory if certain items are selected from the Technical Issue picklist</description>
+    <errorConditionFormula>OR( 
+ISPICKVAL(Technical_Issue__c,&quot;Web Error At Payment Stage (IN Needed)&quot;), 
+ISPICKVAL(Technical_Issue__c,&quot;Refund Option Not Offered When It Should Have Been (IN Needed)&quot;), 
+ISPICKVAL(Technical_Issue__c,&quot;Web Error During Booking Path (IN Needed)&quot;), 
+ISPICKVAL(Technical_Issue__c,&quot;Web Error During Exchange Path (IN Needed)&quot;), 
+ISPICKVAL(Technical_Issue__c,&quot;Web Error During Refund (IN Needed)&quot;), 
+ISPICKVAL(Technical_Issue__c,&quot;Web Error When Trying To Claim (IN Needed)&quot;), 
+ISPICKVAL(Technical_Issue__c,&quot;Website Down Completely (IN Needed)&quot;)
+) 
+&amp;&amp; 
+ISBLANK(Error_Message_Incident_Number__c )</errorConditionFormula>
+    <errorMessage>Please add an incident number to the &quot;Incident Number&quot; field to proceed. If there is no Incident Number available then please enter the error message instead</errorMessage>
+</ValidationRule>

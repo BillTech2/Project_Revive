@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FieldSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TACTUpdateFields</fullName>
+    <description>Sets Loyalty_Integration__c field to true if any changes are made to the following fields (BUT NOT IF THE THAPASS INTEGRATION USER MAKES ANY CHANGES).</description>
+    <displayedFields>
+        <field>DELTA_Loyalty_Member__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <displayedFields>
+        <field>Delta_Loyalty_Tier__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <label>TACT Update Fields</label>
+</FieldSet>

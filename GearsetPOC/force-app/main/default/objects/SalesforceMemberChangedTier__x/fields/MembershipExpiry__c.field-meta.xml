@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MembershipExpiry__c</fullName>
+    <description>MembershipExpiry__c field is created only on SF side for parsing reasons</description>
+    <inlineHelpText>MembershipExpiry__c field is created only on SF side for parsing reasons</inlineHelpText>
+    <isFilteringDisabled>false</isFilteringDisabled>
+    <isNameField>false</isNameField>
+    <isSortingDisabled>false</isSortingDisabled>
+    <label>MembershipExpiry</label>
+    <required>false</required>
+    <type>DateTime</type>
+</CustomField>

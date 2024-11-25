@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Leisure_and_Tour_Ops</fullName>
+    <columns>NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Trade_Sales_Account__c.Leisure_Agent</value>
+    </filters>
+    <label>Leisure and Tour Ops</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>Eurostar_Sales_Team</group>
+    </sharedTo>
+</ListView>

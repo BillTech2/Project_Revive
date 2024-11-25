@@ -1,0 +1,1649 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>49.0</apiVersion>
+    <assignments>
+        <name>myVariable_waitStartTimeAssignment</name>
+        <label>myVariable_waitStartTimeAssignment</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>myVariable_waitStartTimeVariable</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>myDecision</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision</name>
+        <label>myDecision</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision4</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_1</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_1_A1</targetReference>
+            </connector>
+            <label>Core - OW</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>3.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision12</name>
+        <label>myDecision12</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision16</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_13</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_13</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_13_A1</targetReference>
+            </connector>
+            <label>Lyon - RT</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>4.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision16</name>
+        <label>myDecision16</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision20</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_17</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_17</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_17_A1</targetReference>
+            </connector>
+            <label>AMS - OW</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>5.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision20</name>
+        <label>myDecision20</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision24</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_21</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_21</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_21_A1</targetReference>
+            </connector>
+            <label>AMS - RT</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>6.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision24</name>
+        <label>myDecision24</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision28</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_25</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_25</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_25_A1</targetReference>
+            </connector>
+            <label>ROT - OW</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>7.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision28</name>
+        <label>myDecision28</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_29</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_29</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_29_A1</targetReference>
+            </connector>
+            <label>ROT - RT</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision4</name>
+        <label>myDecision4</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision8</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_5</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_5</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_5_A1</targetReference>
+            </connector>
+            <label>Core - RT</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>2.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision8</name>
+        <label>myDecision8</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision12</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_9</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_9</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_9_A1</targetReference>
+            </connector>
+            <label>Lyon - OW</label>
+        </rules>
+    </decisions>
+    <description>Adds allocation back to the correct section when a booking is cancelled</description>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>[Allocation_Booking__c].PSA__c.A_Exclusive_SP_Carriage_Lyon__c + 
+[Allocation_Booking__c].Number_of_Travellers_PW_Cert__c </stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_10_myRule_9_A1_6954915069</name>
+        <dataType>Number</dataType>
+        <expression>{!myVariable_current.PSA__r.A_Exclusive_SP_Carriage_Lyon__c} + 
+{!myVariable_current.Number_of_Travellers_PW_Cert__c}</expression>
+        <scale>18</scale>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>[Allocation_Booking__c].PSA__c.Booking_Item__c - 1</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_11_myRule_9_A1_5432318993</name>
+        <dataType>Number</dataType>
+        <expression>{!myVariable_current.PSA__r.Booking_Item__c} - 1</expression>
+        <scale>18</scale>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>[Allocation_Booking__c].PSA__c.A_Exclusive_SP_Carriage_Lyon__c + 
+([Allocation_Booking__c].Number_of_Travellers_PW_Cert__c *2)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_14_myRule_13_A1_9582768304</name>
+        <dataType>Number</dataType>
+        <expression>{!myVariable_current.PSA__r.A_Exclusive_SP_Carriage_Lyon__c} + 
+({!myVariable_current.Number_of_Travellers_PW_Cert__c} *2)</expression>
+        <scale>18</scale>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>[Allocation_Booking__c].PSA__c.Booking_Item__c - 1</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_15_myRule_13_A1_4131277864</name>
+        <dataType>Number</dataType>
+        <expression>{!myVariable_current.PSA__r.Booking_Item__c} - 1</expression>
+        <scale>18</scale>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>[Allocation_Booking__c].PSA__c.A_Exclusive_SP_Carriage_AMS__c + 
+[Allocation_Booking__c].Number_of_Travellers_PW_Cert__c </stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_18_myRule_17_A1_7167616840</name>
+        <dataType>Number</dataType>
+        <expression>{!myVariable_current.PSA__r.A_Exclusive_SP_Carriage_AMS__c} + 
+{!myVariable_current.Number_of_Travellers_PW_Cert__c}</expression>
+        <scale>18</scale>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>[Allocation_Booking__c].PSA__c.Booking_Item__c - 1</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_19_myRule_17_A1_0332303514</name>
+        <dataType>Number</dataType>
+        <expression>{!myVariable_current.PSA__r.Booking_Item__c} - 1</expression>
+        <scale>18</scale>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>[Allocation_Booking__c].PSA__c.A_Exclusive_SP_Carriage_AMS__c + 
+([Allocation_Booking__c].Number_of_Travellers_PW_Cert__c *2)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_22_myRule_21_A1_5655097887</name>
+        <dataType>Number</dataType>
+        <expression>{!myVariable_current.PSA__r.A_Exclusive_SP_Carriage_AMS__c} + 
+({!myVariable_current.Number_of_Travellers_PW_Cert__c} *2)</expression>
+        <scale>18</scale>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>[Allocation_Booking__c].PSA__c.Booking_Item__c - 1</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_23_myRule_21_A1_2039398060</name>
+        <dataType>Number</dataType>
+        <expression>{!myVariable_current.PSA__r.Booking_Item__c} - 1</expression>
+        <scale>18</scale>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>[Allocation_Booking__c].PSA__c.A_Exclusive_SP_Carriage_ROT__c + 
+[Allocation_Booking__c].Number_of_Travellers_PW_Cert__c </stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_26_myRule_25_A1_2997435128</name>
+        <dataType>Number</dataType>
+        <expression>{!myVariable_current.PSA__r.A_Exclusive_SP_Carriage_ROT__c} + 
+{!myVariable_current.Number_of_Travellers_PW_Cert__c}</expression>
+        <scale>18</scale>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>[Allocation_Booking__c].PSA__c.Booking_Item__c - 1</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_27_myRule_25_A1_1547079520</name>
+        <dataType>Number</dataType>
+        <expression>{!myVariable_current.PSA__r.Booking_Item__c} - 1</expression>
+        <scale>18</scale>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>[Allocation_Booking__c].PSA__c.A_Exclusive_SP_Carriage__c + 
+[Allocation_Booking__c].Number_of_Travellers_PW_Cert__c </stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_2_myRule_1_A1_6157906981</name>
+        <dataType>Number</dataType>
+        <expression>{!myVariable_current.PSA__r.A_Exclusive_SP_Carriage__c} + 
+{!myVariable_current.Number_of_Travellers_PW_Cert__c}</expression>
+        <scale>18</scale>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>[Allocation_Booking__c].PSA__c.A_Exclusive_SP_Carriage_ROT__c + 
+([Allocation_Booking__c].Number_of_Travellers_PW_Cert__c *2)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_30_myRule_29_A1_5639423267</name>
+        <dataType>Number</dataType>
+        <expression>{!myVariable_current.PSA__r.A_Exclusive_SP_Carriage_ROT__c} + 
+({!myVariable_current.Number_of_Travellers_PW_Cert__c} *2)</expression>
+        <scale>18</scale>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>[Allocation_Booking__c].PSA__c.Booking_Item__c - 1</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_31_myRule_29_A1_3693011440</name>
+        <dataType>Number</dataType>
+        <expression>{!myVariable_current.PSA__r.Booking_Item__c} - 1</expression>
+        <scale>18</scale>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>[Allocation_Booking__c].PSA__c.Booking_Item__c - 1</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_3_myRule_1_A1_8138380011</name>
+        <dataType>Number</dataType>
+        <expression>{!myVariable_current.PSA__r.Booking_Item__c} - 1</expression>
+        <scale>18</scale>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>[Allocation_Booking__c].PSA__c.A_Exclusive_SP_Carriage__c + 
+([Allocation_Booking__c].Number_of_Travellers_PW_Cert__c *2)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_6_myRule_5_A1_6253630082</name>
+        <dataType>Number</dataType>
+        <expression>{!myVariable_current.PSA__r.A_Exclusive_SP_Carriage__c} + 
+({!myVariable_current.Number_of_Travellers_PW_Cert__c} *2)</expression>
+        <scale>18</scale>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>[Allocation_Booking__c].PSA__c.Booking_Item__c - 1</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_7_myRule_5_A1_8586631569</name>
+        <dataType>Number</dataType>
+        <expression>{!myVariable_current.PSA__r.Booking_Item__c} - 1</expression>
+        <scale>18</scale>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>ISPICKVAL([Allocation_Booking__c].Destination__c ,&quot;Core&quot;)
+&amp;&amp;
+ISPICKVAL([Allocation_Booking__c].One_Way_Return__c ,&quot;One Way&quot;)
+&amp;&amp;
+ISPICKVAL([Allocation_Booking__c].Ticket_Type_Outbound__c,&quot;Exclusive SP Carriage&quot;)
+&amp;&amp;
+[Allocation_Booking__c].Cancelled_Booking__c = TRUE
+&amp;&amp;
+ISPICKVAL([Allocation_Booking__c].Class_Outbound__c , &quot;Standard Premier&quot;)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_1</name>
+        <dataType>Boolean</dataType>
+        <expression>ISPICKVAL({!myVariable_current.Destination__c} ,&quot;Core&quot;)
+&amp;&amp;
+ISPICKVAL({!myVariable_current.One_Way_Return__c} ,&quot;One Way&quot;)
+&amp;&amp;
+ISPICKVAL({!myVariable_current.Ticket_Type_Outbound__c},&quot;Exclusive SP Carriage&quot;)
+&amp;&amp;
+{!myVariable_current.Cancelled_Booking__c} = TRUE
+&amp;&amp;
+ISPICKVAL({!myVariable_current.Class_Outbound__c} , &quot;Standard Premier&quot;)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>ISPICKVAL([Allocation_Booking__c].Destination__c ,&quot;Lyon&quot;)
+&amp;&amp;
+ISPICKVAL([Allocation_Booking__c].One_Way_Return__c ,&quot;Return&quot;)
+&amp;&amp;
+ISPICKVAL([Allocation_Booking__c].Ticket_Type_Outbound__c,&quot;Exclusive SP Carriage&quot;)
+&amp;&amp;
+[Allocation_Booking__c].Cancelled_Booking__c = TRUE
+&amp;&amp;
+ISPICKVAL([Allocation_Booking__c].Class_Outbound__c , &quot;Standard Premier&quot;)
+&amp;&amp;
+ISPICKVAL([Allocation_Booking__c].Class_Inbound__c , &quot;Standard Premier&quot;)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_13</name>
+        <dataType>Boolean</dataType>
+        <expression>ISPICKVAL({!myVariable_current.Destination__c} ,&quot;Lyon&quot;)
+&amp;&amp;
+ISPICKVAL({!myVariable_current.One_Way_Return__c} ,&quot;Return&quot;)
+&amp;&amp;
+ISPICKVAL({!myVariable_current.Ticket_Type_Outbound__c},&quot;Exclusive SP Carriage&quot;)
+&amp;&amp;
+{!myVariable_current.Cancelled_Booking__c} = TRUE
+&amp;&amp;
+ISPICKVAL({!myVariable_current.Class_Outbound__c} , &quot;Standard Premier&quot;)
+&amp;&amp;
+ISPICKVAL({!myVariable_current.Class_Inbound__c} , &quot;Standard Premier&quot;)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>ISPICKVAL([Allocation_Booking__c].Destination__c ,&quot;AMS&quot;)
+&amp;&amp;
+ISPICKVAL([Allocation_Booking__c].One_Way_Return__c ,&quot;One Way&quot;)
+&amp;&amp;
+ISPICKVAL([Allocation_Booking__c].Ticket_Type_Outbound__c,&quot;Exclusive SP Carriage&quot;)
+&amp;&amp;
+[Allocation_Booking__c].Cancelled_Booking__c = TRUE
+&amp;&amp;
+ISPICKVAL([Allocation_Booking__c].Class_Outbound__c , &quot;Standard Premier&quot;)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_17</name>
+        <dataType>Boolean</dataType>
+        <expression>ISPICKVAL({!myVariable_current.Destination__c} ,&quot;AMS&quot;)
+&amp;&amp;
+ISPICKVAL({!myVariable_current.One_Way_Return__c} ,&quot;One Way&quot;)
+&amp;&amp;
+ISPICKVAL({!myVariable_current.Ticket_Type_Outbound__c},&quot;Exclusive SP Carriage&quot;)
+&amp;&amp;
+{!myVariable_current.Cancelled_Booking__c} = TRUE
+&amp;&amp;
+ISPICKVAL({!myVariable_current.Class_Outbound__c} , &quot;Standard Premier&quot;)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>ISPICKVAL([Allocation_Booking__c].Destination__c ,&quot;AMS&quot;)
+&amp;&amp;
+ISPICKVAL([Allocation_Booking__c].One_Way_Return__c ,&quot;Return&quot;)
+&amp;&amp;
+ISPICKVAL([Allocation_Booking__c].Ticket_Type_Outbound__c,&quot;Exclusive SP Carriage&quot;)
+&amp;&amp;
+[Allocation_Booking__c].Cancelled_Booking__c = TRUE
+&amp;&amp;
+ISPICKVAL([Allocation_Booking__c].Class_Outbound__c , &quot;Standard Premier&quot;)
+&amp;&amp;
+ISPICKVAL([Allocation_Booking__c].Class_Inbound__c , &quot;Standard Premier&quot;)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_21</name>
+        <dataType>Boolean</dataType>
+        <expression>ISPICKVAL({!myVariable_current.Destination__c} ,&quot;AMS&quot;)
+&amp;&amp;
+ISPICKVAL({!myVariable_current.One_Way_Return__c} ,&quot;Return&quot;)
+&amp;&amp;
+ISPICKVAL({!myVariable_current.Ticket_Type_Outbound__c},&quot;Exclusive SP Carriage&quot;)
+&amp;&amp;
+{!myVariable_current.Cancelled_Booking__c} = TRUE
+&amp;&amp;
+ISPICKVAL({!myVariable_current.Class_Outbound__c} , &quot;Standard Premier&quot;)
+&amp;&amp;
+ISPICKVAL({!myVariable_current.Class_Inbound__c} , &quot;Standard Premier&quot;)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>ISPICKVAL([Allocation_Booking__c].Destination__c ,&quot;ROT&quot;)
+&amp;&amp;
+ISPICKVAL([Allocation_Booking__c].One_Way_Return__c ,&quot;One Way&quot;)
+&amp;&amp;
+ISPICKVAL([Allocation_Booking__c].Ticket_Type_Outbound__c,&quot;Exclusive SP Carriage&quot;)
+&amp;&amp;
+[Allocation_Booking__c].Cancelled_Booking__c = TRUE
+&amp;&amp;
+ISPICKVAL([Allocation_Booking__c].Class_Outbound__c , &quot;Standard Premier&quot;)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_25</name>
+        <dataType>Boolean</dataType>
+        <expression>ISPICKVAL({!myVariable_current.Destination__c} ,&quot;ROT&quot;)
+&amp;&amp;
+ISPICKVAL({!myVariable_current.One_Way_Return__c} ,&quot;One Way&quot;)
+&amp;&amp;
+ISPICKVAL({!myVariable_current.Ticket_Type_Outbound__c},&quot;Exclusive SP Carriage&quot;)
+&amp;&amp;
+{!myVariable_current.Cancelled_Booking__c} = TRUE
+&amp;&amp;
+ISPICKVAL({!myVariable_current.Class_Outbound__c} , &quot;Standard Premier&quot;)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>ISPICKVAL([Allocation_Booking__c].Destination__c ,&quot;ROT&quot;)
+&amp;&amp;
+ISPICKVAL([Allocation_Booking__c].One_Way_Return__c ,&quot;Return&quot;)
+&amp;&amp;
+ISPICKVAL([Allocation_Booking__c].Ticket_Type_Outbound__c,&quot;Exclusive SP Carriage&quot;)
+&amp;&amp;
+[Allocation_Booking__c].Cancelled_Booking__c = TRUE
+&amp;&amp;
+ISPICKVAL([Allocation_Booking__c].Class_Outbound__c , &quot;Standard Premier&quot;)
+&amp;&amp;
+ISPICKVAL([Allocation_Booking__c].Class_Inbound__c , &quot;Standard Premier&quot;)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_29</name>
+        <dataType>Boolean</dataType>
+        <expression>ISPICKVAL({!myVariable_current.Destination__c} ,&quot;ROT&quot;)
+&amp;&amp;
+ISPICKVAL({!myVariable_current.One_Way_Return__c} ,&quot;Return&quot;)
+&amp;&amp;
+ISPICKVAL({!myVariable_current.Ticket_Type_Outbound__c},&quot;Exclusive SP Carriage&quot;)
+&amp;&amp;
+{!myVariable_current.Cancelled_Booking__c} = TRUE
+&amp;&amp;
+ISPICKVAL({!myVariable_current.Class_Outbound__c} , &quot;Standard Premier&quot;)
+&amp;&amp;
+ISPICKVAL({!myVariable_current.Class_Inbound__c} , &quot;Standard Premier&quot;)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>ISPICKVAL([Allocation_Booking__c].Destination__c ,&quot;Core&quot;)
+&amp;&amp;
+ISPICKVAL([Allocation_Booking__c].One_Way_Return__c ,&quot;Return&quot;)
+&amp;&amp;
+ISPICKVAL([Allocation_Booking__c].Ticket_Type_Outbound__c,&quot;Exclusive SP Carriage&quot;)
+&amp;&amp;
+[Allocation_Booking__c].Cancelled_Booking__c = TRUE
+&amp;&amp;
+ISPICKVAL([Allocation_Booking__c].Class_Outbound__c , &quot;Standard Premier&quot;)
+&amp;&amp;
+ISPICKVAL([Allocation_Booking__c].Class_Inbound__c , &quot;Standard Premier&quot;)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_5</name>
+        <dataType>Boolean</dataType>
+        <expression>ISPICKVAL({!myVariable_current.Destination__c} ,&quot;Core&quot;)
+&amp;&amp;
+ISPICKVAL({!myVariable_current.One_Way_Return__c} ,&quot;Return&quot;)
+&amp;&amp;
+ISPICKVAL({!myVariable_current.Ticket_Type_Outbound__c},&quot;Exclusive SP Carriage&quot;)
+&amp;&amp;
+{!myVariable_current.Cancelled_Booking__c} = TRUE
+&amp;&amp;
+ISPICKVAL({!myVariable_current.Class_Outbound__c} , &quot;Standard Premier&quot;)
+&amp;&amp;
+ISPICKVAL({!myVariable_current.Class_Inbound__c} , &quot;Standard Premier&quot;)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>ISPICKVAL([Allocation_Booking__c].Destination__c ,&quot;Lyon&quot;)
+&amp;&amp;
+ISPICKVAL([Allocation_Booking__c].One_Way_Return__c ,&quot;One Way&quot;)
+&amp;&amp;
+ISPICKVAL([Allocation_Booking__c].Ticket_Type_Outbound__c,&quot;Exclusive SP Carriage&quot;)
+&amp;&amp;
+[Allocation_Booking__c].Cancelled_Booking__c = TRUE
+&amp;&amp;
+ISPICKVAL([Allocation_Booking__c].Class_Outbound__c , &quot;Standard Premier&quot;)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_9</name>
+        <dataType>Boolean</dataType>
+        <expression>ISPICKVAL({!myVariable_current.Destination__c} ,&quot;Lyon&quot;)
+&amp;&amp;
+ISPICKVAL({!myVariable_current.One_Way_Return__c} ,&quot;One Way&quot;)
+&amp;&amp;
+ISPICKVAL({!myVariable_current.Ticket_Type_Outbound__c},&quot;Exclusive SP Carriage&quot;)
+&amp;&amp;
+{!myVariable_current.Cancelled_Booking__c} = TRUE
+&amp;&amp;
+ISPICKVAL({!myVariable_current.Class_Outbound__c} , &quot;Standard Premier&quot;)</expression>
+    </formulas>
+    <interviewLabel>Cancelled_Allocation_Exclusive_SP_Carriage_Adds_Allocation_to_correct_sec-3_InterviewLabel</interviewLabel>
+    <label>Cancelled Allocation (Exclusive SP Carriage) - Adds Allocation to correct section</label>
+    <processMetadataValues>
+        <name>ObjectType</name>
+        <value>
+            <stringValue>Allocation_Booking__c</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>ObjectVariable</name>
+        <value>
+            <elementReference>myVariable_current</elementReference>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OldObjectVariable</name>
+        <value>
+            <elementReference>myVariable_old</elementReference>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>TriggerType</name>
+        <value>
+            <stringValue>onAllChanges</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Workflow</processType>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Allocation_Booking__c].PSA</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>myRule_13_A1</name>
+        <label>Update Allocation</label>
+        <locationX>1300</locationX>
+        <locationY>200</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.PSA__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Number</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Exclusive SP Carriage</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>A_Exclusive_SP_Carriage_Lyon__c</field>
+            <value>
+                <elementReference>formula_14_myRule_13_A1_9582768304</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Number</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Booking Item</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Booking_Item__c</field>
+            <value>
+                <elementReference>formula_15_myRule_13_A1_4131277864</elementReference>
+            </value>
+        </inputAssignments>
+        <object>PSA__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Allocation_Booking__c].PSA</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>myRule_17_A1</name>
+        <label>Update Allocation</label>
+        <locationX>1700</locationX>
+        <locationY>200</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.PSA__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Number</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Exclusive SP Carriage</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>A_Exclusive_SP_Carriage_AMS__c</field>
+            <value>
+                <elementReference>formula_18_myRule_17_A1_7167616840</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Number</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Booking Item</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Booking_Item__c</field>
+            <value>
+                <elementReference>formula_19_myRule_17_A1_0332303514</elementReference>
+            </value>
+        </inputAssignments>
+        <object>PSA__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Allocation_Booking__c].PSA</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>myRule_1_A1</name>
+        <label>Update Allocation</label>
+        <locationX>100</locationX>
+        <locationY>200</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.PSA__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Number</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Exclusive SP Carriage</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>A_Exclusive_SP_Carriage__c</field>
+            <value>
+                <elementReference>formula_2_myRule_1_A1_6157906981</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Number</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Booking Item</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Booking_Item__c</field>
+            <value>
+                <elementReference>formula_3_myRule_1_A1_8138380011</elementReference>
+            </value>
+        </inputAssignments>
+        <object>PSA__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Allocation_Booking__c].PSA</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>myRule_21_A1</name>
+        <label>Update Allocation</label>
+        <locationX>2100</locationX>
+        <locationY>200</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.PSA__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Number</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Exclusive SP Carriage</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>A_Exclusive_SP_Carriage_AMS__c</field>
+            <value>
+                <elementReference>formula_22_myRule_21_A1_5655097887</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Number</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Booking Item</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Booking_Item__c</field>
+            <value>
+                <elementReference>formula_23_myRule_21_A1_2039398060</elementReference>
+            </value>
+        </inputAssignments>
+        <object>PSA__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Allocation_Booking__c].PSA</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>myRule_25_A1</name>
+        <label>Update Allocation</label>
+        <locationX>2500</locationX>
+        <locationY>200</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.PSA__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Number</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Exclusive SP Carriage</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>A_Exclusive_SP_Carriage_ROT__c</field>
+            <value>
+                <elementReference>formula_26_myRule_25_A1_2997435128</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Number</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Booking Item</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Booking_Item__c</field>
+            <value>
+                <elementReference>formula_27_myRule_25_A1_1547079520</elementReference>
+            </value>
+        </inputAssignments>
+        <object>PSA__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Allocation_Booking__c].PSA</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>myRule_29_A1</name>
+        <label>Update Allocation</label>
+        <locationX>2900</locationX>
+        <locationY>200</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.PSA__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Number</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Exclusive SP Carriage</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>A_Exclusive_SP_Carriage_ROT__c</field>
+            <value>
+                <elementReference>formula_30_myRule_29_A1_5639423267</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Number</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Booking Item</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Booking_Item__c</field>
+            <value>
+                <elementReference>formula_31_myRule_29_A1_3693011440</elementReference>
+            </value>
+        </inputAssignments>
+        <object>PSA__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Allocation_Booking__c].PSA</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>myRule_5_A1</name>
+        <label>Update Allocation</label>
+        <locationX>500</locationX>
+        <locationY>200</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.PSA__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Number</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Exclusive SP Carriage</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>A_Exclusive_SP_Carriage__c</field>
+            <value>
+                <elementReference>formula_6_myRule_5_A1_6253630082</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Number</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Booking Item</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Booking_Item__c</field>
+            <value>
+                <elementReference>formula_7_myRule_5_A1_8586631569</elementReference>
+            </value>
+        </inputAssignments>
+        <object>PSA__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Allocation_Booking__c].PSA</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>myRule_9_A1</name>
+        <label>Update Allocation</label>
+        <locationX>900</locationX>
+        <locationY>200</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.PSA__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Number</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Exclusive SP Carriage</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>A_Exclusive_SP_Carriage_Lyon__c</field>
+            <value>
+                <elementReference>formula_10_myRule_9_A1_6954915069</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Number</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Booking Item</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Booking_Item__c</field>
+            <value>
+                <elementReference>formula_11_myRule_9_A1_5432318993</elementReference>
+            </value>
+        </inputAssignments>
+        <object>PSA__c</object>
+    </recordUpdates>
+    <startElementReference>myVariable_waitStartTimeAssignment</startElementReference>
+    <status>Active</status>
+    <variables>
+        <name>myVariable_current</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Allocation_Booking__c</objectType>
+    </variables>
+    <variables>
+        <name>myVariable_old</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Allocation_Booking__c</objectType>
+    </variables>
+    <variables>
+        <name>myVariable_waitStartTimeVariable</name>
+        <dataType>DateTime</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <elementReference>$Flow.CurrentDateTime</elementReference>
+        </value>
+    </variables>
+</Flow>

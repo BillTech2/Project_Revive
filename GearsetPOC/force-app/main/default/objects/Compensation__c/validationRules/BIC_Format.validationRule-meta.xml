@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BIC_Format</fullName>
+    <active>true</active>
+    <errorConditionFormula>NOT(
+ISBLANK(Swift_Sort_Code__c) ||
+REGEX(LEFT(Swift_Sort_Code__c,6),&quot;[A-Z]+&quot;) &amp;&amp;
+REGEX(MID(Swift_Sort_Code__c,7,5),&quot;[A-Z0-9]+&quot;) &amp;&amp;
+(LEN(Swift_Sort_Code__c)=8 || LEN(Swift_Sort_Code__c)=11) 
+)
+&amp;&amp; NOT(ISPICKVAL(Claim_Status__c, &#39;Draft&#39;))
+&amp;&amp; NOT(ISPICKVAL(Claim_Status__c, &#39;Cancelled&#39;))</errorConditionFormula>
+    <errorDisplayField>Swift_Sort_Code__c</errorDisplayField>
+    <errorMessage>BIC must start with 6 letters and end with 2 or 5 letters/digits. All letters must be capitals.</errorMessage>
+</ValidationRule>

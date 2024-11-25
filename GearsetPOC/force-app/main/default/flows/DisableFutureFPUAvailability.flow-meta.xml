@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>49.0</apiVersion>
+    <interviewLabel>DisableFutureFPUAvailability {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>DisableFutureFPUAvailability</label>
+    <processType>Flow</processType>
+    <recordUpdates>
+        <name>DisableFutureFPUAvailability</name>
+        <label>DisableFutureFPUAvailability</label>
+        <locationX>74</locationX>
+        <locationY>33</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>FPU_Avail_Departure_Date__c</field>
+            <operator>GreaterThan</operator>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>FPU_Avail_Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>FPU_Avail_Status__c</field>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <object>FPU_Availability__c</object>
+    </recordUpdates>
+    <startElementReference>DisableFutureFPUAvailability</startElementReference>
+    <status>Draft</status>
+</Flow>

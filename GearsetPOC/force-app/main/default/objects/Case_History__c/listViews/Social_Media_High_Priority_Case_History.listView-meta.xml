@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Social_Media_High_Priority_Case_History</fullName>
+    <filterScope>Queue</filterScope>
+    <label>Social Media (High Priority)</label>
+    <queue>Social_Media_High_Priority</queue>
+    <sharedTo>
+        <allInternalUsers />
+    </sharedTo>
+</ListView>

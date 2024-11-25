@@ -1,0 +1,363 @@
+<apex:page controller="Disruption_Webform_Con" sidebar="false" showheader="false" standardStylesheets="false" docType="html-5.0" language="{!languageSF}"  action="{!BackToBasis}" cache="true" expires="60" >
+ 
+    <apex:variable var="mobileToScreenSize"  value="{! '42.983em' }" />
+
+    <apex:variable var="tabletFromScreenSize" value="{! '43em' }" />
+    <apex:variable var="tabletToScreenSize"   value="{! '59.93em' }" />
+
+    <html data-ieuglyhack="en">
+
+<apex:outputpanel rendered="{!IF(CONTAINS(userAgent, 'MSIE 8.0'),false,true)}">
+        <apex:stylesheet value="{!URLFOR($Resource.styles, 'css/cssoveride.css')}" />
+        <c:cssdwm ></c:cssdwm>
+    </apex:outputpanel>
+    
+    <apex:outputpanel rendered="{!IF(CONTAINS(userAgent, 'MSIE 8.0'),true,false)}">
+        <c:cssiedwm ></c:cssiedwm>
+    </apex:outputpanel>
+    
+        <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="description" content=""/>
+        <meta name="author" content="Eurostar Ltd"/>
+        <!-- Styles -->
+        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.CompApp_Res, '/res/all-prembrokeWeb.css')}"/>
+        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.CompApp_Res, '/css/12-cols-grid.css')}"/>
+        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.CompApp_Res, '/css/no-grid.css')}" />
+        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.CompApp_Res, '/css/angular-date-picker.css')}"/>
+        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.CompApp_Res, '/css/select2-3.4.5.css')}"/>
+        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.CompApp_Res, '/css/elements.css')}"/>
+        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.CompApp_Res, '/css/template-base.css')}"/>
+        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.CompApp_Eurostar_Ticket_Examples, '/ticket-examples.css')}"/>
+
+        <!-- Loading jQuery, angular -->
+        <script src="{!URLFOR($Resource.CompApp_Res, '/vendor/jquery2.1.3.js')}"></script>
+        <script src="{!URLFOR($Resource.CompApp_Res, '/vendor/jquery.query-object.js')}"></script>
+        <script src="{!URLFOR($Resource.CompApp_Res, '/vendor/angular1.3.15.js')}"></script>
+        <script src="{!URLFOR($Resource.CompApp_Res, '/vendor/angular-route.1.4.4.js')}"></script>
+        <script src="{!URLFOR($Resource.CompApp_Res, '/vendor/angular-sanitize.1.4.4.js')}"></script>
+        <script src="{!URLFOR($Resource.CompApp_Res, '/vendor/nocaptchRecaptcha.angular.js')}"></script>
+        <script src="{!URLFOR($Resource.CompApp_Res, '/vendor/angularjs-autocomplete.min.js')}"></script>
+        <script src="{!URLFOR($Resource.CompApp_Res, '/js/angular-date-picker.js')}"></script>
+
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-select/0.13.1/select.min.css"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-select/0.13.1/select.min.js"></script>
+        
+
+                <!-- The images are too big to zip with other resources -->
+                <style>
+
+                    #app-footer-template-image {
+                        background-color: #00286A;
+                    }
+
+                    #app-footer-template{
+                        padding: 0px;
+                    }
+
+                    #app-root h2{
+                        margin: 25px 0px;
+                    }
+
+                    #app-root label{
+                        color: #1C1C1A !important;
+                        margin: 0px;
+                        padding-left: 10px;
+                    }
+
+                    #app-root input[type="radio"]{
+                        appearance:auto;
+                    }
+
+                    input[type=submit], input[type=submit]:hover, input[type=submit]:active{
+                        background: 0;
+                        color:#000000 !important;
+                        text-shadow:none;
+                        position: relative;
+                        margin-right: 20px;
+                        display: block;
+                    }
+
+                    .errorM3 h4, .error, .errorMsg, .messageTable{
+                        font-weight: 100;
+                    }
+
+                    #app-root h4{
+                        font-family: "ABCSocial-Bold";
+                        font-weight: normal;
+                        font-size: 36px;
+                        line-height: 38px;
+                        text-align: left;
+                        color: #00286A !important;
+                    }
+
+                    body .bPageBlock .pbBody .pbSubheader h3, body .bWizardBlock .bPageBlock .pbBody .pbSubheader label{
+                        font-family: "ABCSocial-Bold" !important;
+                        font-weight: normal !important;
+                        font-size: 28px !important;
+                        line-height: 28px !important;
+                        text-align: left !important;
+                        color: #00286A !important;
+
+                        margin: 25px 0px;
+                    }
+
+                    #app-root input, #app-root textarea{
+                    width: 35%;
+                    }
+
+                    #app-root a{
+                        font-size: 16px;
+                    }
+
+                    body .bEditBlock .pbBody .pbSubheader, body .bWizardBlock .pbBody .pbSubheader, .pbSubheader, .pbSubsection{
+                        padding: 0px;
+                    }
+
+                    .labelCol{
+                        text-align: left;
+                        width: 198px;
+                    }
+
+                    .data2Col{
+                        font-family: ABCSocial-Regular;
+                        font-weight: normal;
+                        font-size: 18px;
+                        line-height: 20px;
+                        text-align: left;
+                        color: #1C1C1A;
+                        padding-left: 10px;
+                    }
+                    
+                    .p3{
+                        font-family: ABCSocial-Regular;
+                        font-weight: normal;
+                        font-size: 16px;
+                        line-height: 20px;
+                        text-align: left;
+                        color: #1C1C1A;
+                    }        
+        
+                    @media only screen and (min-width: {! tabletFromScreenSize } and max-width: {! tabletToScreenSize }) {
+                        #app-footer-template-image {
+                            background-color: #00286A;
+                        }
+                    }
+        
+                    @media only screen and (max-width: {! mobileToScreenSize }) {
+                        #app-footer-template-image {
+                            background-color: #00286A;
+                        }
+                    }
+                </style>
+
+        <title>Eurostar - Disruption Form</title>
+        
+        </head>
+
+        <!-- ============================================================================= -->
+        <!------------------------------------------- BODY ------------------------------- -->
+        <!-- ============================================================================= -->
+        
+        <body>
+            <header id="app-header-template">
+                <div id="app-header-template-top-section">
+                    <!-- <img id="top-section-logo" src="{!URLFOR($Resource.CompApp_Res, '/res/SVGS/eurostar_logo.svg')}" alt="logo" height="30" width="100"/> -->
+                    <div id="top-section-logo"></div>
+                    
+                    <div id="top-section-lang-select-box">
+                        <div id="select-box-selected-lang">{!$Label.CompApp_english}</div>
+                        <img id="select-box-arrow" src="{!URLFOR($Resource.CompApp_Res, '/res/SVGS/arrow_down.svg')}" height="14" width="14" onclick="showLanguageSelectionMenu();"/>
+                    </div>
+                    <div id="top-section-title">
+                        {!$Label.HelpCentreHeader}
+                    </div>
+                </div>
+                <div id="app-header-template-lang-selection-menu">
+                    <h6 id="lang-selection-menu-description" style="margin-bottom: 10px; color: #FCF5D8;">{!$Label.CompApp_selectLang}</h6>
+                    <div id="app-header-template-line"></div>
+                    <div id="app-header-template-options">
+                        <a class="options-button" hreflang="en">{!$Label.CompApp_english}</a>
+                        <br/>
+                        <a class="options-button" hreflang="fr">{!$Label.CompApp_Francias}</a>
+                        <br/>
+                        <a class="options-button" hreflang="nl">{!$Label.CompApp_Nederlands}</a>
+                        <br/>
+                        <a class="options-button" hreflang="de">{!$Label.CompApp_German}</a>
+                    </div>
+                </div>
+            </header>
+
+            <div id='app-root' ng-app='compApp' class="ng-scope">
+     
+            <apex:form >
+                <apex:pageMessages />  <!-- this is where the error messages will appear -->
+
+
+                <h1>
+                    <apex:outputText value="{!$Label.Case_Disruption_Corona_Virus_Error_Message_Header}" rendered="{!IF(OR(isDuplicateRequest, isNoTicketsExist, isNoInScopeTicketsFound, isNoCancelledTrains, isNoActiveOrRecentOnCancelledTrains, isNoActiveOnCancelledTrains, isPossibleValidButInvalidPOS), true, false)}" />
+                </h1>
+
+                <apex:outputText styleClass="error-message" style="visibility: visible" value="{!$Label.Case_Disruption_Corona_Virus_Duplicate_Request_Part1} " rendered="{!isDuplicateRequest}" />
+                <apex:outputLink value="{!$Label.Case_Disruption_Corona_Virus_Duplicate_Request_Link}" rendered="{!isDuplicateRequest}">{!$Label.Case_Disruption_Corona_Virus_Duplicate_Request_Highlighted}</apex:outputLink>
+                <apex:outputText styleClass="error-message" style="visibility: visible" value=" " rendered="{!IF(languageSF == 'fr' && isDuplicateRequest, false, true)}" />
+                <apex:outputText styleClass="error-message" style="visibility: visible" value="{!$Label.Case_Disruption_Corona_Virus_Duplicate_Request_Part2}" rendered="{!isDuplicateRequest}" />
+                <apex:outputText styleClass="error-message" style="visibility: visible" value="{!$Label.Case_Disruption_Corona_Virus_No_Booking_Found}" rendered="{!isNoTicketsExist}" />
+                <apex:outputText styleClass="error-message" style="visibility: visible" value="{!$Label.Case_Disruption_Corona_Virus_Not_Eligible}" rendered="{!isNoCancelledTrains}" />
+                <apex:outputText styleClass="error-message" style="visibility: visible" value="{!$Label.Case_Disruption_Corona_Virus_Not_Eligible_Before_Treshold_Part1} " rendered="{!isNoActiveOrRecentOnCancelledTrains}" />
+                <apex:outputLink value="{!$Label.Case_Disruption_Corona_Virus_Not_Eligible_Before_Treshold_Link}" rendered="{!isNoActiveOrRecentOnCancelledTrains}">{!$Label.Case_Disruption_Corona_Virus_Not_Eligible_Before_Treshold_Highlighted} </apex:outputLink>
+                <apex:outputText styleClass="error-message" style="visibility: visible" value=" {!$Label.Case_Disruption_Corona_Virus_Not_Eligible_Before_Treshold_Part2}" rendered="{!isNoActiveOrRecentOnCancelledTrains}" />
+                <apex:outputText styleClass="error-message" style="visibility: visible" value="{!$Label.Case_Disruption_Corona_Virus_Not_Eligible_After_Treshold}" rendered="{!isNoActiveOnCancelledTrains}" />
+                <apex:outputText styleClass="error-message" style="visibility: visible" value="{!$Label.Case_Disruption_Corona_Virus_Foreign_POS}" rendered="{!isPossibleValidButInvalidPOS}" />
+
+                <apex:pageBlock title="{!$Label.Case_Disruption_FormTitle}" mode="edit"  >
+                
+                    <div escape="false" class="form-para p3" style="white-space: pre-line;"><apex:outputText escape="false" value="{!$Label.Case_Disruption_FormSubtitle}"/><br/><br/>{!$Label.Case_Disruption_FormSubtitle_Part2}</div>
+                    
+                
+                    
+                    <!-- _________________Preference Section ____________________ -->
+                    <div data-role="fieldcontain">
+                        <fieldset data-role="controlgroup">
+                    <apex:pageBlockSection title="{!$Label.Case_Disruption_HelpPreferenceLabel}" columns="1">
+                        <apex:selectRadio value="{!DisruptionCase.Disruption_Preference__c}" label="" id="radio-choice-1" layout="pageDirection" required="True" styleClass="paymentOpt" style="appearance:auto; border-width: 0px; background: auto;">
+                            <apex:selectOptions value="{!Preferences}"/>
+                        </apex:selectRadio>
+                    </apex:pageBlockSection>
+                        </fieldset>
+                    </div>
+                    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"/>
+                    <script>
+                        $('input:radio').click(function() {
+                            $("input:radio").each(function() {
+                                $(this).closest("td").toggleClass("highlight", $(this).is(":checked"));
+                            });
+                        });
+                    </script>            
+                    <!-- _________________/Preference Section _ ___________________ -->
+                
+                    
+                    <!-- _________________ Booking Details Section ____________________ -->
+                    <apex:pageBlockSection title="{!$Label.Case_Disruption_BookingsDetails}" columns="1">
+                        <apex:inputField value="{!DisruptionCase.Passenger_s_Name__c}" label="{!$Label.Case_Disruption_NameLabel}" html-placeholder="{!$Label.Case_Disruption_NamePlaceholder}"/>
+                        <apex:inputField value="{!DisruptionCase.Disruption_Email__c}" label="{!$Label.Case_Disruption_EmailLabel}" html-placeholder="{!$Label.Case_Disruption_EmailPlaceholder}"/>
+                        {!$Label.Case_Disruption_EmailSubLabel}<br/><br/>
+                        <apex:inputField value="{!DisruptionCase.Disruption_Phone__c}" label="{!$Label.Case_Disruption_PhoneLabel}" html-placeholder="{!$Label.Case_Disruption_PhonePlaceholder}"/>
+                        {!$Label.Case_Disruption_PhoneSubLabel}<br/><br/>
+                        <apex:inputField value="{!DisruptionCase.PNR__c}" label="{!$Label.Case_Disruption_PNRLabel}" html-placeholder="{!$Label.Case_Disruption_PNRPlaceholder}"/>
+                        {!$Label.Case_Disruption_PNRSubLabel}
+                    </apex:pageBlockSection>
+                    <!-- _________________ /Booking Details Section ____________________ -->
+                
+                    
+                    
+                    
+
+                    
+                
+                    
+                </apex:pageBlock>
+
+                    <!-- _________________ Button Section ____________________ -->
+                    <div class="row commands-section">
+                        <apex:commandButton action="{!save}" value="{!$Label.Case_Disruption_ButtonSubmitLabel}" id="button-send" styleClass="btn primary a" style="border-width:0px; margin:0; color:#000000 !important; width:87px; cursor: pointer;">
+                        </apex:commandButton>
+                        </div>
+                        <!-- _________________ /Button Section ____________________ -->
+                
+            <!-- </apex:form>-->
+
+            </apex:form>
+        </div>
+        <!-- _________________ Footer Section ____________________ -->
+        <footer id="app-footer-template">
+            <div id="app-footer-template-image">
+                <div id="app-footer-template-content">
+                    <p id="app-footer-template-image-description" >{!$Label.CompApp_HelpCentre}</p>
+                    <a class="primary" style="color: #fff !important;" href="{!$Setup.HelpCentre__c.URL__c}">{!$Label.CompApp_Help_Centre}</a>
+                </div>
+            </div>
+            <p id="app-footer-template-copyright">© {!YEAR(TODAY())} {!$Label.CompApp_EurostarRights} <a id="app-footer-template-link" href="http://www.eurostar.com">{!$Label.CompApp_eurostar_site}</a></p>
+        </footer>
+        <!-- _________________ /Footer Section ____________________ -->
+            <c:js ></c:js> 
+        
+
+
+        </body>
+
+        <script type="text/javascript">
+
+        $(function(){
+            $('#select-box-selected-lang').text($('#app-header-template-options .options-button[hreflang="{!JSENCODE(languageSF)}"]').text());
+        });
+            var APP_HEADER_TEMPLATE_LANG_SELECTION_MENU = {
+            OPEN:  "{! URLFOR($Resource.CompApp_Res, '/res/SVGS/arrow_up.svg') }",
+            CLOSE: "{! URLFOR($Resource.CompApp_Res, '/res/SVGS/arrow_down.svg') }",
+            }
+
+            function showLanguageSelectionMenu() {
+                document.getElementById("app-header-template-lang-selection-menu").classList.add('open');
+                document.getElementById("select-box-arrow").addEventListener('click',hideLanguageSelectionMenu);
+                document.getElementById("select-box-arrow").src = APP_HEADER_TEMPLATE_LANG_SELECTION_MENU.OPEN;
+
+                $(document).bind('scroll', hideLanguageSelectionMenu);
+            }
+
+            function hideLanguageSelectionMenu() {
+                document.getElementById("app-header-template-lang-selection-menu").classList.remove('open');
+                document.getElementById("select-box-arrow").removeEventListener('click',hideLanguageSelectionMenu);
+                document.getElementById("select-box-arrow").addEventListener('click',showLanguageSelectionMenu);
+                document.getElementById("select-box-arrow").src = APP_HEADER_TEMPLATE_LANG_SELECTION_MENU.CLOSE;
+
+                $(document).unbind('scroll', hideLanguageSelectionMenu);
+            }
+
+            $(document).on('click', '#app-header-template-options .options-button', function (e) {
+                if (! e.target.hreflang)
+                    return true;
+                    var urlWrapper = (function searchObj() {
+                    var queryObj = Object.create(null);
+                    window.location.search.replace(/([^?=&]+)(=([^&]*))?/g, function($0, $1, $2, $3) { queryObj[$1] = $3; });
+
+                    return {
+                        queryData: queryObj,
+                        get: function(str){
+                            return queryObj[str];
+                        },
+                        toString: function () {
+                            return Object.keys(queryObj).map(function (k) { return k + '=' + queryObj[k]; }).join('&');
+                        },
+                        set: function(paramName, paramVal){
+                            queryObj[paramName] = paramVal;
+                            return this;
+                        },
+                    };
+                })();
+                sfdc_prevent_message_warning = true;
+                var choseLang = (e.target.hreflang == 'en') ?  'uk-en' : (e.target.hreflang == 'fr') ? 'fr-fr' : (e.target.hreflang == 'nl') ? 'nl-nl' : (e.target.hreflang == 'de') ? 'de-de' : 'uk-en';
+                window.location.search = urlWrapper.set('language', choseLang).toString();
+                window.onbeforeunload = function(){};
+                e.preventDefault();
+                return false;
+            });
+
+            var marketLanguage = "{!if(languageSF = 'en', 'uk-en', if(languageSF = 'fr', 'fr-fr', if(languageSF = 'nl', 'nl-nl', if(languageSF = 'de', 'de-de', 'uk-en'))))}";
+            var utag_data = {
+                "marketLanguage" : marketLanguage
+            };
+        </script>
+
+        <!-- Loading script asynchronously -->
+        <script type="text/javascript">
+            (function(a,b,c,d)
+
+                    { a='{!$Setup.Tealium_Analytics_Settings__c.API__c}'; b=document;c='script';d=b.createElement(c);d.src=a;d.type='text/java'+c;d.async=true; a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a); }
+            )();
+        </script>
+        <script src="https://www.eurostar.com/static/cookie-banner.js?language={!if(or(languageSF = 'en', languageSF = 'fr', languageSF = 'nl', languageSF = 'de'), languageSF, 'en')}"></script>
+
+            </html>
+</apex:page>

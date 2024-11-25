@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>payaddress__c</fullName>
+    <description>Is pay address different from correspondence address</description>
+    <inlineHelpText>payaddress</inlineHelpText>
+    <label>payaddress</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

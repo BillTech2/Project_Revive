@@ -1,0 +1,515 @@
+<apex:page docType="html-5.0" showHeader="false" sidebar="false" cache="false" Standardcontroller="case" >
+	<apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" />
+	<style>
+		body {
+		background-color: #ffffff;
+		color: #FFFFFF;
+		}
+		.MyButton{
+		transition-duration: 0.2s;
+		color:#585858 !important;
+		font-size:16px !important;
+		background:white !important;
+		height: 70px !important;
+		width: 150px !important;
+		border: 3px solid #24b5c9 !important;
+		}
+		.MyButton:hover{
+		color:white !important;
+		font-size:16px !important;
+		background:#24b5c9 !important;
+		height: 70px !important;
+		width: 150px !important;
+		border: 4px solid #24b5c9 !important;
+		}
+		.Text1{
+		height:200px;
+		width:100%;
+		display:inline-block;
+		font-size:0;
+		background-color:#24b5c9;
+		}
+		.TextField{
+		width: 210px;
+		padding: 10px 20px;
+		border: none;
+		border-radius: 3px;
+		background-color: #ffffff;"
+		}
+		.PicklistField{
+		width: 250px;
+		padding: 10px 20px;
+		border: none;
+		border-radius: 3px;
+		background-color: #ffffff;
+		}
+		.title{
+		border: 0px solid #000;
+		text-align:left;
+		}
+	</style>
+	<script type="text/javascript" >
+		jQuery(function(){
+		var counter = 0;
+
+		    // FUNCTION ADD A ROW
+
+
+		jQuery('a.add-author').click(function(event){
+
+		    event.preventDefault();
+		    var newRow = jQuery('<tr id ="row" class="rowClass"><td> First name '
+		        + '</td><td><input class="passengersC" onChange="passengers()" style="width: 210px;padding: 10px 20px;border: none;border-radius: 3px;background-color: #ffffff;" type="text" '
+		        + '"/></td><td style="text-align:center"> Last name '
+		        + '</td><td><input class="passengersC" onChange="passengers()" style="width: 210px;padding: 10px 20px;border: none;border-radius: 3px;background-color: #ffffff;" type="text" '
+		        + '"/></td><tr>');
+
+		    	if (counter < 5){
+		    	$(newRow).insertBefore( "#new" );
+		        }
+		   		 else{
+		        return null
+		        }
+		    counter++;
+		    document.getElementById('{!$Component.theform.NumPax}').value = counter;
+
+		    });
+
+
+		    // FUNCTION DELETE A ROW
+
+		     jQuery('a.delete-line').click(function(event){
+		    	event.preventDefault();
+		     	counter = counter - 1;
+		    	$('.rowClass').last().remove();
+		         document.getElementById('{!$Component.theform.NumPax}').value = counter;
+				passengers();
+		});
+		});
+
+
+
+		 // FUNCTION MERGE PASSENGERS FIELDS
+
+		function isOdd(num) { return (num % 2) == 1;}
+		function passengers()
+		{
+		    var z=" ";
+
+
+		var x = document.getElementsByClassName("passengersC");
+		for(var i = 0; i < x.length; i++) {
+		var y = document.getElementById('{!$Component.theform.departureCase}').value
+		y = x[i].value;
+
+
+		    	if(i == 0){
+
+		    		var z = z + "Wheelchair passenger "  + "    firstname :"  +"  "+ y ;
+		               		}
+		    	if(i == 2){
+
+		    		var z = z + "Companion passenger "  + "    firstname :"  +"  "+ y ;
+		               		}
+		  		if(i == 1 || i == 3){
+
+		        var z = z + "  Lastname : "  + y + "    /   ";
+
+		   		}
+
+		    }
+
+		document.getElementById('{!$Component.theform.departureCase}').value = z;
+		return z;
+		}
+
+		// FUNCTION SET STATIONS
+
+		function departureFT()
+		{
+
+
+		dep = document.getElementById('departureStation').value;
+		var x = document.querySelectorAll('datalist > option');
+		var bool = false;
+
+		    for(var i = 0; i < x.length; i++) {
+
+			if(dep == x[i].value){
+		        bool = true;
+		    					 }
+		    								  }
+
+
+		    if(bool == true){
+		    	document.getElementById('{!$Component.theform.fromOutbound}').value = dep;
+		    	check = document.getElementById('{!$Component.theform.oneWay}').checked;
+
+					if(check == false){
+		    		document.getElementById('{!$Component.theform.toReturn}').value = dep;
+
+
+				 				 	  }
+		    				}
+
+		    if(bool == false){
+		        alert("Please choose a correct sation in the picklist");
+		        document.getElementById('departureStation').value= null;
+		                    }
+
+
+
+		    }
+
+		function returnFT()
+		{
+
+		dep = document.getElementById('returnStation').value;
+		var x = document.querySelectorAll('datalist > option');
+		var bool = false;
+
+		    for(var i = 0; i < x.length; i++) {
+
+			if(dep == x[i].value){
+		        bool = true;
+		    					 }
+		    								  }
+
+
+		    if(bool == true){
+
+		    document.getElementById('{!$Component.theform.toOutbound}').value = dep;
+
+
+		    check = document.getElementById('{!$Component.theform.oneWay}').checked;
+
+			if(check == false){
+
+		    document.getElementById('{!$Component.theform.fromReturn}').value = dep;
+		  	}
+
+		        }
+
+		    if(bool == false){
+		        alert("Please choose a correct sation in the picklist");
+		        document.getElementById('returnStation').value= null;
+		                    }
+		}
+
+
+		// FUNCTION CHECK IF THE DATE IS CORRECT
+
+		function Wrongdate1()
+		{
+		var dateX = new Date();
+		var numberOfDaysToAdd = 3;
+		dateX.setDate(dateX.getDate() + numberOfDaysToAdd);
+		var dd = dateX.getDate();
+		var mm = dateX.getMonth()+1; //January is 0!
+		var yyyy = dateX.getFullYear();
+
+
+
+		if(dd<10) {
+		dd='0'+dd
+		}
+
+		if(mm<10) {
+		mm='0'+mm
+		}
+
+		dateX = yyyy+'-'+mm+'-'+dd;
+
+
+		date1 = document.getElementById('{!$Component.theform.departureDateO}').value;
+
+		date2 = document.getElementById('{!$Component.theform.departureDateR}').value;
+
+		if ( date1 < dateX){
+		alert("Please select a date in at least 72h from now");
+		document.getElementById('{!$Component.theform.departureDateO}').value= null;
+
+		}
+		    return date1;
+		    }
+		function Wrongdate2()
+		{
+		  date1 = document.getElementById('{!$Component.theform.departureDateO}').value;
+		  date2 = document.getElementById('{!$Component.theform.departureDateR}').value;
+		if (date2 < date1 ){
+		    alert("You can't select a return date which is before the departure date");
+		    document.getElementById('{!$Component.theform.departureDateR}').value = null;
+		    }
+		return date2;
+
+		}
+
+
+
+
+
+
+		// FUNCTION HYDE/SHOW RETURN TABLE
+
+		function valueChanged()
+		{
+		check = document.getElementById('{!$Component.theform.oneWay}').checked;
+
+		if(check == true) {
+		    document.getElementById('{!$Component.theform.toReturn}').value = " ";
+
+		    document.getElementById('{!$Component.theform.fromReturn}').value = " ";
+
+		    $(".return").hide();
+
+		    }
+
+		else{
+		    dep1 = document.getElementById('departureStation').value;
+		    dep2 = document.getElementById('returnStation').value;
+
+		    document.getElementById('{!$Component.theform.toReturn}').value = dep1;
+
+		    document.getElementById('{!$Component.theform.fromReturn}').value = dep2;
+
+		    $(".return").show();
+		    ;
+		}
+		}
+
+		// Hyde show payment details regarding the booking type
+
+		function voucherBooking(){
+		var type =document.getElementById('{!$Component.theform.typeOfBooking}').value;
+
+		    if(type == "Voucher booking"){
+
+		       $('.voucher').show();
+		        }
+		    if(type == "PALS"){
+
+		       $('.voucher').hide();
+		        }
+		    if(type == "FIP"){
+
+		       $('.voucher').hide();
+		        }
+		}
+
+	</script>
+	<apex:form id="theform" >
+
+		<div class="Text1">
+			<img style="padding-top:50px;padding-left:15px; width:25%;  display: inline-block;x solid #ddd; border-radius: 4px;" src="{!'https://' + $Label.Domain_Eurostar + '.salesforce.com/servlet/servlet.ImageServer?id=015b00000023s2nAAA&oid=00Db0000000aXu7EAE'}" alt="Home" />
+			<font size="6" style="display :inline-block; padding-left:105px;width:33%">
+				<b>
+					<center>Wheelchair booking</center>
+				</b>
+			</font>
+		</div>
+		<center>
+			<div  style="margin: 50px;background-color:#d3d3d3;line-height: 0.7;border-radius: 5px">
+				<TABLE style="border: 10px  solid #d3d3d3 " WIDTH="95%"  HEIGHT ="400px" CELLPADDING="5" CELLSPACING="5">
+					<TR>
+						<div style="padding:60px;line-height: 20px;text-align:left;font-color:#FFFFFF;">
+							<p align="justify"><font color="#585858"><font size="4">If you need to book for a wheelchair and companion either as a Pals booking or using your free employee e-vouchers then you will need to complete this webform.
+								Once received by the staff travel team it will be processed within 3 days.  You will be contacted to approve the journey and for your payment details / notification of how many vouchers you wish to use.
+								The Pals cost of a wheelchair and companion is £59 return.  If you are using your employee e-vouchers then the cost is the same as for a normal standard class return - £49.
+								</font></font>
+							</p>
+						</div>
+					</TR>
+					<TR>
+						<TH colspan="5" style="color:#000000; text-decoration: underline; font-size:15px">General information</TH>
+					</TR>
+					<TR>
+						<TH colspan="5" style="border: 0px solid #000;height:20px"></TH>
+					</TR>
+					<TR>
+						<td styleClass="title">Staff first name</td>
+						<td style="padding-left:5px;border: 0px solid #000;">
+							<apex:inputField id="FirstName" value="{!case.First_Name__c}" styleClass="TextField" required="true"/>
+						</td>
+						<td styleClass="title"  >Email address</td>
+						<td style="border: 0px solid #000;">
+							<apex:inputField id="LastName"  value="{!case.SuppliedEmail}" styleClass="TextField" required="true"/>
+						</td>
+					</TR>
+					<TR>
+						<td styleClass="title">Staff last name</td>
+						<td style="border: 0px solid #000;">
+							<apex:inputField value="{!case.Last_Name__c}" styleClass="TextField" required="true"/>
+						</td>
+						<td styleClass="title">Phone number</td>
+						<td style="border: 0px solid #000;">
+							<apex:inputField value="{!case.Staff_Phone__c}" styleClass="TextField" required="true"/>
+						</td>
+					</TR>
+					<TR id="ligne">
+
+						<td styleClass="title">Type of booking </td>
+						<td style="border: 0px solid #000;text-align:left">
+							<apex:inputField id="typeOfBooking" onChange="voucherBooking();" styleClass="PicklistField" value="{!case.Type_of_booking__c}" required="true" />
+						</td>
+					</TR>
+					<TR>
+						<td styleClass="title">One-way ticket</td>
+						<td style="border: 0px solid #000;text-align:left">
+							<apex:inputField onChange="valueChanged();"  id="oneWay" value="{!case.One_way__c}" />
+						</td>
+					</TR>
+					<TR>
+						<TH colspan="5" style="border: 0px solid #000;height:20px"></TH>
+					</TR>
+					<TR>
+						<TH colspan="5" style="color:#000000; text-decoration: underline; font-size:15px">Outbound journey</TH>
+					</TR>
+					<TR>
+						<TH colspan="5" style="border: 0px solid #000;height:20px"></TH>
+					</TR>
+					<TR>
+						<td styleClass="title">Departure Station </td>
+						<td>
+							<input href="#" onChange="departureFT();"  id="departureStation" type="text" name="departure" style="width: 210px;padding: 10px 20px;border: none;border-radius: 3px;background-color: #ffffff;" list="exampleList"/>
+							<datalist   id="exampleList">
+								<option value="	Aime la Plagne	"/>
+								<option value="	Ashford	"/>
+								<option value="	Avignon TGV	"/>
+								<option value="	Bourg St Maurice	"/>
+								<option value="	Brussels "/>
+								<option value="	Calais	"/>
+								<option value="	Ebbsfleet	"/>
+								<option value="	Lille	"/>
+								<option value="	London	"/>
+								<option value="	Marne-la-Vallée	"/>
+								<option value="	Marseille	"/>
+								<option value="	Moutiers	"/>
+								<option value="	Lyon Part-Dieu	"/>
+								<option value="	Paris	"/>
+							</datalist>
+						</td>
+						<td styleClass="title">Arrival Station </td>
+						<td>
+						<input href="#" onChange="returnFT();"  id="returnStation" type="text" name="departure" style="width: 210px;padding: 10px 20px;border: none;border-radius: 3px;background-color: #ffffff;" list="exampleList"/>
+						<datalist   id="exampleList">
+						<option value="	Aime la Plagne	"/>
+						<option value="	Ashford	"/>
+						<option value="	Avignon TGV	"/>
+						<option value="	Bourg St Maurice	"/>
+						<option value="	Brussels "/>
+						<option value="	Calais	"/>
+						<option value="	Ebbsfleet	"/>
+						<option value="	Lille	"/>
+						<option value="	London	"/>
+						<option value="	Marne-la-Vallée	"/>
+						<option value="	Marseille	"/>
+						<option value="	Moutiers	"/>
+						<option value="	Lyon Part-Dieu	"/>
+						<option value="	Paris	"/>
+						</datalist>
+						</td>
+					</TR>
+					<TR>
+					<td styleClass="title">Departure date </td>
+					<td style="border: 0px solid #000;">
+					<apex:inputField type="date" showDatePicker="false" onChange="Wrongdate1()" id="departureDateO" value="{!case.Departure_DATE_O__c}" style="width: 210px;padding: 10px 20px;border: none;border-radius: 3px;background-color: #ffffff;" required="true"/>
+					</td>
+					<td styleClass="title">Departure time</td>
+					<td style="border: 0px solid #000;">
+					<apex:inputField value="{!case.Departure_Time_Out__c}" html-min=" {!TODAY()}" styleClass="TextField" html-placeholder="HH:MM" required="true"/>
+					</td>
+					</TR>
+					<TR>
+					<TH colspan="5" style="border: 0px solid #000;height:20px"></TH>
+					</TR>
+				</TABLE>
+			</div>
+			<div  style="margin: 50px;background-color:#d3d3d3;line-height: 0.7;border-radius: 5px">
+			<TABLE id="table2" class="return" style="border: 20px  solid #d3d3d3 " WIDTH="95%"  HEIGHT ="200px" CELLPADDING="5" CELLSPACING="5">
+			<TR>
+			<TH colspan="5" style="color:#000000; text-decoration: underline; font-size:15px">Return journey</TH>
+			</TR>
+			<TR>
+			</TR>
+			<TR>
+			<td styleClass="title" width="170px">Departure date</td>
+			<td style="border: 0px solid #000;">
+			<apex:inputField id="departureDateR" type="date" showDatePicker="false"   onChange="Wrongdate2()" value="{!case.Departure_DATE_R__c}"  style="width: 210px;padding: 10px 20px;border: none;border-radius: 3px;background-color: #ffffff;" />
+			</td>
+			<td styleClass="title">Departure Time </td>
+			<td style="border: 0px solid #000;">
+			<apex:inputField value="{!case.Departure_Time_Ret__c}" styleClass="TextField" html-placeholder="HH:MM" />
+			</td>
+			</TR>
+			</TABLE></div>
+			<div  style="margin: 50px;background-color:#d3d3d3;line-height: 0.7;border-radius: 5px">
+			<TABLE id="table3" style="border: 20px  solid #d3d3d3 " WIDTH="95%"  HEIGHT ="120px" CELLPADDING="5" CELLSPACING="5">
+			<TR>
+			<TH colspan="5" style="color:#000000; text-decoration: underline; font-size:15px"> Travellers names</TH>
+			</TR>
+			<td>
+			</td>
+			<TR>
+			<TH colspan="5" style="color:#000000; "> Wheelchair passenger </TH>
+			</TR>
+			<tr id ="row" class="rowClass"><td  width="170px">First name
+			</td><td><input class="passengersC" onChange="passengers()" style="width: 210px;padding: 10px 20px;border: none;border-radius: 3px;background-color: #ffffff;" type="text" />
+			</td>
+			<td style="text-align:center"> Last name</td>
+			<td><input class="passengersC" onChange="passengers()" style="width: 210px;padding: 10px 20px;border: none;border-radius: 3px;background-color: #ffffff;" type="text"
+				/></td></tr><TR>
+			<TR>
+			<TH colspan="5" style="border: 0px solid #000;height:20px"></TH>
+			</TR>
+			<TH colspan="5" style="color:#000000; "> Companion </TH>
+			</TR>
+			<tr id ="row" class="rowClass"><td> First name
+			</td><td><input class="passengersC" onChange="passengers()" style="width: 210px;padding: 10px 20px;border: none;border-radius: 3px;background-color: #ffffff;" type="text" />
+			</td>
+			<td style="text-align:center"> Last name</td>
+			<td><input class="passengersC" onChange="passengers()" style="width: 210px;padding: 10px 20px;border: none;border-radius: 3px;background-color: #ffffff;" type="text"
+				/></td></tr>
+			<td style="border: 0px solid #000;">
+			<apex:inputHidden id="departureCase"  value="{!case.Passenger_Names__c}"  />
+			</td>
+			<TR>
+			<TH colspan="5" style="border: 0px solid #000;height:20px"></TH>
+			</TR>
+			<TR>
+			<TH colspan="5" style="color:#000000; text-decoration: underline; font-size:15px"> Payment details</TH>
+			</TR>
+			<TR class="voucher" >
+			<td styleClass="title">Number of voucher</td>
+			<td style="border: 0px solid #000;">
+			<apex:inputField html-pattern="24.5*" type="number" id="voucherAmount" html-min="0" html-step="1" value="{!case.Voucher_Amount__c}"  styleClass="TextField" />
+			</td>
+                </TR>
+            <tr>
+			<td style="width:150px" >Credit card amount</td>
+			<td >
+			<apex:inputfield value="{!case.Credit_card_amount__c}" styleClass="TextField" />
+			</td>
+			</tr>
+			<TR>
+			<TH ></TH>
+			<td >
+    		<apex:inputHidden id="toOutbound" value="{!case.Destination_station_outbound__c}" />
+			<apex:inputHidden id="fromOutbound" value="{!case.Departure_station_outbound__c}" />
+			<apex:inputHidden id="toReturn" value="{!case.Destination_station_return__c}" />
+			<apex:inputHidden id="fromReturn" value="{!case.Departure_station_return__c}" />
+			</td>
+			</TR>
+			<TR>
+			<td colspan="4" style="border: 0px solid #000;">
+			<center>
+			<br>
+			<apex:commandButton styleClass="MyButton" action="{!save}" value="Submit"/>
+			</br>
+			</center>
+			</td>
+			</tr>
+			</TABLE>
+			</div>
+		</center>
+	</apex:form>
+</apex:page>

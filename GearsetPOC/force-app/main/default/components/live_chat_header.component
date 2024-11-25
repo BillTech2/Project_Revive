@@ -1,0 +1,22 @@
+<apex:component >
+    <nav class="navbar navbar-default">
+            <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <div class="navbar-brand" style="margin-left: 10px;">
+             <img src="{!URLFOR($Resource.FAQ_Mockup, 'Eurostar_Logo.png')}"/>
+                    </div>
+                </div>
+        
+            <!-- right hand side links-->
+            </div><!-- /.container-fluid -->
+            
+            <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+            <!-- Include all compiled plugins (below), or include individual files as needed -->
+            <script src="{!URLFOR($Resource.bootstrap, 'dist/js/bootstrap.min.js')}"> </script>
+            <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+            <script src="http://getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js"></script>
+        
+        </nav>
+</apex:component>

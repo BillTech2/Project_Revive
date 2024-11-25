@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>isValidRule__c</fullName>
+    <defaultValue>true</defaultValue>
+    <description>Fields that marks the validity of the rule.
+Validity date fields are deprecated.</description>
+    <label>isValidRule</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Recurrent__c</fullName>
+    <inlineHelpText>Sum of all phased savings across life of the contract.
+For example, if £10k/ months for a 3 years contract, it will be £36,000.
+This should NOT include one-off benefits.</inlineHelpText>
+    <label>Total Phased</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

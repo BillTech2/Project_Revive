@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dutch_Country_Name__c</fullName>
+    <description>Dutch translation of country</description>
+    <label>Dutch Country Name</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Nederland</fullName>
+                <default>false</default>
+                <label>Nederland</label>
+            </value>
+            <value>
+                <fullName>Verenigd Koninkrijk</fullName>
+                <default>false</default>
+                <label>Verenigd Koninkrijk</label>
+            </value>
+            <value>
+                <fullName>Frankrijk</fullName>
+                <default>false</default>
+                <label>Frankrijk</label>
+            </value>
+            <value>
+                <fullName>België</fullName>
+                <default>false</default>
+                <label>België</label>
+            </value>
+            <value>
+                <fullName>Duitsland</fullName>
+                <default>false</default>
+                <label>Duitsland</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

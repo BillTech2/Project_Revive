@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IDL_and_BeNe_or_GDS_Air__c</fullName>
+    <label>IDL and BeNe or GDS Air</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>IDL and BeNe</fullName>
+                <default>false</default>
+                <label>IDL and BeNe</label>
+            </value>
+            <value>
+                <fullName>GDS Air</fullName>
+                <default>false</default>
+                <label>GDS Air</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

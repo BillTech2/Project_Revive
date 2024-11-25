@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TMC__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(NOT(ISBLANK(  UK_TMC__c  )),  UK_TMC__r.Name,
+IF(NOT(ISBLANK(  FR_TMC__c  )),  FR_TMC__r.Name,
+IF(NOT(ISBLANK(  BE_TMC__c  )),  BE_TMC__r.Name,
+IF(NOT(ISBLANK(   TMC_Additional__c  )),   TMC_Additional__r.Name , NL_TMC__r.Name
+
+)
+)
+)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>TMC</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

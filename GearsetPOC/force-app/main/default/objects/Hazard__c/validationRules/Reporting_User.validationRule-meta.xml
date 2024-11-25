@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reporting_User</fullName>
+    <active>true</active>
+    <description>There must be an EIL Reporting User, a Contractor reporting user or Anonymous set to TRUE</description>
+    <errorConditionFormula>AND(ISBLANK( Hazard_Reporting_User__c ),ISBLANK( Hazard_Reporting_Contractor__c ),Hazard_Anonymous_User__c  = FALSE)</errorConditionFormula>
+    <errorMessage>You must either tick the Anonymous Userbox, or add a Reporting User (EIL) or a Reporting Contractor)</errorMessage>
+</ValidationRule>

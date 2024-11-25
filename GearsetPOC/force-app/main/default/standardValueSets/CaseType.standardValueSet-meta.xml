@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Customer Care</fullName>
+        <default>true</default>
+        <label>Customer Care</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Traveller Care</fullName>
+        <default>false</default>
+        <label>Traveller Care</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Club Eurostar Carte Blanche</fullName>
+        <default>false</default>
+        <label>Club Eurostar Carte Blanche</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Club Eurostar Elite</fullName>
+        <default>false</default>
+        <label>Club Eurostar Elite</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Social</fullName>
+        <default>false</default>
+        <label>Social</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Executive Contacts</fullName>
+        <default>false</default>
+        <label>Executive Contacts</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Disruptions</fullName>
+        <default>false</default>
+        <label>Disruptions</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Groups</fullName>
+        <default>false</default>
+        <label>Groups</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Trade Admin</fullName>
+        <default>false</default>
+        <label>Trade Admin</label>
+    </standardValue>
+    <standardValue>
+        <fullName>COVID19</fullName>
+        <default>false</default>
+        <label>COVID19</label>
+    </standardValue>
+    <standardValue>
+        <fullName>E4A</fullName>
+        <default>false</default>
+        <label>E4A</label>
+    </standardValue>
+    <standardValue>
+        <fullName>GDS</fullName>
+        <default>false</default>
+        <label>GDS</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Special Services</fullName>
+        <default>false</default>
+        <label>Special Services</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Duty Travel</fullName>
+        <default>false</default>
+        <label>Duty Travel</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Trade Contracts</fullName>
+        <default>false</default>
+        <label>Trade Contracts</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Staff Travel</fullName>
+        <default>false</default>
+        <label>Staff Travel</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Commercial Support</fullName>
+        <default>false</default>
+        <label>Commercial Support</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Tech Team</fullName>
+        <default>false</default>
+        <label>Tech Team</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Assistance</fullName>
+        <default>false</default>
+        <label>Assistance</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Internal Escalation</fullName>
+        <default>false</default>
+        <label>Internal Escalation</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Customer Care (Dutch)</fullName>
+        <default>false</default>
+        <label>Customer Care (Dutch)</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Customer Care (French)</fullName>
+        <default>false</default>
+        <label>Customer Care (French)</label>
+    </standardValue>
+    <standardValue>
+        <fullName>PRR</fullName>
+        <default>false</default>
+        <label>PRR</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Webhelp Escalation</fullName>
+        <default>false</default>
+        <label>Webhelp Escalation</label>
+    </standardValue>
+    <standardValue>
+        <fullName>EuroDespatch Escalation</fullName>
+        <default>false</default>
+        <label>EuroDespatch Escalation</label>
+    </standardValue>
+    <standardValue>
+        <fullName>The Hub</fullName>
+        <default>false</default>
+        <label>The Hub</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Mailroom</fullName>
+        <default>false</default>
+        <label>Mailroom</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Trustpilot</fullName>
+        <default>false</default>
+        <label>Trustpilot</label>
+    </standardValue>
+    <standardValue>
+        <fullName>E-Voucher</fullName>
+        <default>false</default>
+        <label>E-Voucher</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Dynamic Packages</fullName>
+        <default>false</default>
+        <label>Dynamic Packages</label>
+    </standardValue>
+    <standardValue>
+        <fullName>SNCF Query</fullName>
+        <default>false</default>
+        <label>SNCF Query</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Commercial Sales</fullName>
+        <default>false</default>
+        <label>Commercial Sales</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Junior Traveller</fullName>
+        <default>false</default>
+        <label>Junior Traveller</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Trade Refunds</fullName>
+        <default>false</default>
+        <label>Trade Refunds</label>
+    </standardValue>
+    <standardValue>
+        <fullName>GDPR</fullName>
+        <default>false</default>
+        <label>GDPR</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Quality Assurance</fullName>
+        <default>false</default>
+        <label>Quality Assurance</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Trade Competitions</fullName>
+        <default>false</default>
+        <label>Trade Competitions</label>
+    </standardValue>
+    <standardValue>
+        <fullName>VIP Services</fullName>
+        <default>false</default>
+        <label>VIP Services</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Fraud</fullName>
+        <default>false</default>
+        <label>Fraud</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Distributor Queries</fullName>
+        <default>false</default>
+        <label>Distributor Queries</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Voucher to Refund</fullName>
+        <default>false</default>
+        <label>Voucher to Refund</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Red Queue</fullName>
+        <default>false</default>
+        <label>Red Queue</label>
+    </standardValue>
+    <standardValue>
+        <fullName>EVoucher Extension</fullName>
+        <default>false</default>
+        <label>EVoucher Extension</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Amsterdam Route</fullName>
+        <default>false</default>
+        <label>Amsterdam Route</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Lost Property</fullName>
+        <default>false</default>
+        <label>Lost Property</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Eurostar For Business</fullName>
+        <default>false</default>
+        <label>Eurostar For Business</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Disruption Exchange</fullName>
+        <default>false</default>
+        <label>Disruption Exchange</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Disruption Refund</fullName>
+        <default>false</default>
+        <label>Disruption Refund</label>
+    </standardValue>
+</StandardValueSet>

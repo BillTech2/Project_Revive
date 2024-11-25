@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Entry_Time_Within_Work_Hours__c</fullName>
+    <formula>IF( Initiated_Time_of_Day__c &gt; 6 &amp;&amp;  Initiated_Time_of_Day__c &lt;= 20, Entry_Time__c,
+
+
+IF(Initiated_Time_of_Day_for_Exit__c&gt;= 21 &amp;&amp;  Initiated_Time_of_Day_for_Exit__c&lt;= 24,  Entry_Time__c ,
+
+IF(Initiated_Time_of_Day_for_Exit__c&gt;=0 &amp;&amp;  Initiated_Time_of_Day_for_Exit__c&lt;=5 , Entry_Time__c,
+
+
+IF( Initiated_Time_of_Day__c &gt;= 21 &amp;&amp;  Initiated_Time_of_Day__c &lt;= 24, DATETIMEVALUE(TEXT(DATEVALUE(CreatedDate+ 1))&amp;&#39; 6:00:00&#39;) ,
+
+IF(Initiated_Time_of_Day__c &gt;=0 &amp;&amp;  Initiated_Time_of_Day__c &lt;=6 , DATETIMEVALUE(TEXT(DATEVALUE(CreatedDate))&amp;&#39; 6:00:00&#39;), null )))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Entry Time Within Work Hours</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>DateTime</type>
+</CustomField>

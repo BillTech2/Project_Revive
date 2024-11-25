@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_No_Continent_Account_CTC</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+NOT($User.B2b_Bypass_Validation_Rules__c),
+ISNEW(),
+RecordType.Name = &#39;Contract NCO&#39;,
+AccountId__r.No_Continent_Account_CTC__c = 0
+)</errorConditionFormula>
+    <errorMessage>If there’s a new Contract for the New Corporate Offer, there must be at least one active Account CTC for the following Corporate Tracking Codes: Eurostar for Business code, FCE (new), Second FCE, GND BE, GND NL, Corporate code Amadeus, Corporate code Apol</errorMessage>
+</ValidationRule>

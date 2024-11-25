@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NegotiatedRateStartDateEndDate</fullName>
+    <active>true</active>
+    <description>Validation rule to prevent &quot;end date&quot; before &quot;start date&quot;</description>
+    <errorConditionFormula>AND(NOT($User.B2b_Bypass_Validation_Rules__c),
+StartDate__c &gt;=EndDate__c
+)</errorConditionFormula>
+    <errorMessage>Start Date can&#39;t be higher or equal than the End Date.</errorMessage>
+</ValidationRule>

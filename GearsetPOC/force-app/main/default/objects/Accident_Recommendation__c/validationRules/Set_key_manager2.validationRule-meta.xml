@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Set_key_manager2</fullName>
+    <active>true</active>
+    <description>key manager must be set if either email check boxes are ticked</description>
+    <errorConditionFormula>AND(  Accident_Follow_up_email__c   = TRUE , ISBLANK(Recommendation_Key_Manager__c),  ISBLANK(Recommendation_Contractor_Key_Manager__c)
+)</errorConditionFormula>
+    <errorMessage>You must specify the either the  Key Manager or the Contractor Key Manager if you want to send a follow up email</errorMessage>
+</ValidationRule>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>DPE_Reset_NQP</name>
+        <label>DPE - Reset NQP</label>
+        <locationX>176</locationX>
+        <locationY>552</locationY>
+        <actionName>Expire_Activity_Based_Non_Qualifying_Points</actionName>
+        <actionType>dataProcessingEngineAction</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>LoyaltyProgramName</name>
+            <value>
+                <stringValue>Club Eurostar</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>ProcessRunDate</name>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Expire_Activity_Based_Non_Qualifying_Points</nameSegment>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>DPE_Reset_QP</name>
+        <label>DPE- Reset QP</label>
+        <locationX>176</locationX>
+        <locationY>252</locationY>
+        <actionName>Reset_Qualifying_Points</actionName>
+        <actionType>dataProcessingEngineAction</actionType>
+        <connector>
+            <targetReference>Pause_between_QP_and_NPQ_DPE</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>LoyaltyProgramName</name>
+            <value>
+                <stringValue>Club Eurostar</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>QualifyingPointsResetDate</name>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>TierGroupName</name>
+            <value>
+                <stringValue>Club Eurostar Tier Group</stringValue>
+            </value>
+        </inputParameters>
+        <nameSegment>Reset_Qualifying_Points</nameSegment>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <apiVersion>57.0</apiVersion>
+    <environments>Default</environments>
+    <interviewLabel>Loyalty - Reset QP/NQP {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Loyalty - Reset QP/NQP</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>DPE_Reset_QP</targetReference>
+        </connector>
+        <schedule>
+            <frequency>Daily</frequency>
+            <startDate>2023-02-20</startDate>
+            <startTime>10:00:00.000Z</startTime>
+        </schedule>
+        <triggerType>Scheduled</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>vBatchJobEvent</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>BatchJobStatusChangedEvent</objectType>
+    </variables>
+    <waits>
+        <name>Pause_between_QP_and_NPQ_DPE</name>
+        <label>Pause between QP and NPQ DPE</label>
+        <locationX>176</locationX>
+        <locationY>360</locationY>
+        <defaultConnector>
+            <targetReference>DPE_Reset_NQP</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Path</defaultConnectorLabel>
+        <waitEvents>
+            <name>Waiting_for_QP_DPE</name>
+            <conditionLogic>and</conditionLogic>
+            <connector>
+                <targetReference>DPE_Reset_NQP</targetReference>
+            </connector>
+            <eventType>BatchJobStatusChangedEvent</eventType>
+            <inputParameters>
+                <name>BatchJob</name>
+                <value>
+                    <elementReference>DPE_Reset_QP.batchJobId</elementReference>
+                </value>
+            </inputParameters>
+            <label>Waiting for QP DPE</label>
+            <outputParameters>
+                <assignToReference>vBatchJobEvent</assignToReference>
+                <name>BatchJobStatusChangedEvent</name>
+            </outputParameters>
+        </waitEvents>
+    </waits>
+</Flow>

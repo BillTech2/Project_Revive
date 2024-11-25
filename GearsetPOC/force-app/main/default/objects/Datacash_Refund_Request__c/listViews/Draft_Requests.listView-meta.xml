@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Draft_Requests</fullName>
+    <columns>NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Is_Draft_Refund_Request__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Duplicate_Request_No_Longer_Needed__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Draft Requests</label>
+</ListView>

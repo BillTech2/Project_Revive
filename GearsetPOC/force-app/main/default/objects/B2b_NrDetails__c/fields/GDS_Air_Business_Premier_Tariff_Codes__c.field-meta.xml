@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>GDS_Air_Business_Premier_Tariff_Codes__c</fullName>
+    <label>GDS Air Business Premier Tariff Codes</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>S3_BeNe_Business_Premier_Tariff_Codes__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>JNRT06 - JNOW06</fullName>
+                <default>false</default>
+                <label>JNRT06 - JNOW06</label>
+            </value>
+            <value>
+                <fullName>JNRT08 - JNOW08</fullName>
+                <default>false</default>
+                <label>JNRT08 - JNOW08</label>
+            </value>
+            <value>
+                <fullName>JNRT09 - JNOW09</fullName>
+                <default>false</default>
+                <label>JNRT09 - JNOW09</label>
+            </value>
+            <value>
+                <fullName>JNRT10 - JNOW10</fullName>
+                <default>false</default>
+                <label>JNRT10 - JNOW10</label>
+            </value>
+            <value>
+                <fullName>JNRT11 - JNOW11</fullName>
+                <default>false</default>
+                <label>JNRT11 - JNOW11</label>
+            </value>
+            <value>
+                <fullName>JNRT12 - JNOW12</fullName>
+                <default>false</default>
+                <label>JNRT12 - JNOW12</label>
+            </value>
+            <value>
+                <fullName>JNRT13 - JNOW13</fullName>
+                <default>false</default>
+                <label>JNRT13 - JNOW13</label>
+            </value>
+            <value>
+                <fullName>JNRT14 - JNOW14</fullName>
+                <default>false</default>
+                <label>JNRT14 - JNOW14</label>
+            </value>
+            <value>
+                <fullName>JNRT15 - JNOW15</fullName>
+                <default>false</default>
+                <label>JNRT15 - JNOW15</label>
+            </value>
+            <value>
+                <fullName>JNRT16 - JNOW16</fullName>
+                <default>false</default>
+                <label>JNRT16 - JNOW16</label>
+            </value>
+            <value>
+                <fullName>JNRT17 - JNOW17</fullName>
+                <default>false</default>
+                <label>JNRT17 - JNOW17</label>
+            </value>
+            <value>
+                <fullName>JNRT18 - JNOW18</fullName>
+                <default>false</default>
+                <label>JNRT18 - JNOW18</label>
+            </value>
+            <value>
+                <fullName>JNRT19 - JNOW19</fullName>
+                <default>false</default>
+                <label>JNRT19 - JNOW19</label>
+            </value>
+            <value>
+                <fullName>JNRT20 - JNOW20</fullName>
+                <default>false</default>
+                <label>JNRT20 - JNOW20</label>
+            </value>
+            <value>
+                <fullName>JNRT21 - JNOW21</fullName>
+                <default>false</default>
+                <label>JNRT21 - JNOW21</label>
+            </value>
+            <value>
+                <fullName>JNRT22 - JNOW22</fullName>
+                <default>false</default>
+                <label>JNRT22 - JNOW22</label>
+            </value>
+            <value>
+                <fullName>JNRT23 - JNOW23</fullName>
+                <default>false</default>
+                <label>JNRT23 - JNOW23</label>
+            </value>
+            <value>
+                <fullName>JNRT24 - JNOW24</fullName>
+                <default>false</default>
+                <label>JNRT24 - JNOW24</label>
+            </value>
+            <value>
+                <fullName>JNRT25 - JNOW25</fullName>
+                <default>false</default>
+                <label>JNRT25 - JNOW25</label>
+            </value>
+            <value>
+                <fullName>JNRT26 - JNOW26</fullName>
+                <default>false</default>
+                <label>JNRT26 - JNOW26</label>
+            </value>
+            <value>
+                <fullName>JNRT27 - JNOW27</fullName>
+                <default>false</default>
+                <label>JNRT27 - JNOW27</label>
+            </value>
+            <value>
+                <fullName>JNRT28 - JNOW28</fullName>
+                <default>false</default>
+                <label>JNRT28 - JNOW28</label>
+            </value>
+            <value>
+                <fullName>JNRT29 - JNOW29</fullName>
+                <default>false</default>
+                <label>JNRT29 - JNOW29</label>
+            </value>
+            <value>
+                <fullName>JN06NLRT - JN06NLOW</fullName>
+                <default>false</default>
+                <label>JN06NLRT - JN06NLOW</label>
+            </value>
+            <value>
+                <fullName>JN08NLRT - JN08NLOW</fullName>
+                <default>false</default>
+                <label>JN08NLRT - JN08NLOW</label>
+            </value>
+            <value>
+                <fullName>JN09NLRT - JN09NLOW</fullName>
+                <default>false</default>
+                <label>JN09NLRT - JN09NLOW</label>
+            </value>
+            <value>
+                <fullName>JN10NLRT - JN10NLOW</fullName>
+                <default>false</default>
+                <label>JN10NLRT - JN10NLOW</label>
+            </value>
+            <value>
+                <fullName>JN11NLRT - JN11NLOW</fullName>
+                <default>false</default>
+                <label>JN11NLRT - JN11NLOW</label>
+            </value>
+            <value>
+                <fullName>JN12NLRT - JN12NLOW</fullName>
+                <default>false</default>
+                <label>JN12NLRT - JN12NLOW</label>
+            </value>
+            <value>
+                <fullName>JN13NLRT - JN13NLOW</fullName>
+                <default>false</default>
+                <label>JN13NLRT - JN13NLOW</label>
+            </value>
+            <value>
+                <fullName>JN14NLRT - JN14NLOW</fullName>
+                <default>false</default>
+                <label>JN14NLRT - JN14NLOW</label>
+            </value>
+            <value>
+                <fullName>JN15NLRT - JN15NLOW</fullName>
+                <default>false</default>
+                <label>JN15NLRT - JN15NLOW</label>
+            </value>
+            <value>
+                <fullName>JN16NLRT - JN16NLOW</fullName>
+                <default>false</default>
+                <label>JN16NLRT - JN16NLOW</label>
+            </value>
+            <value>
+                <fullName>JN17NLRT - JN17NLOW</fullName>
+                <default>false</default>
+                <label>JN17NLRT - JN17NLOW</label>
+            </value>
+            <value>
+                <fullName>JN18NLRT - JN18NLOW</fullName>
+                <default>false</default>
+                <label>JN18NLRT - JN18NLOW</label>
+            </value>
+            <value>
+                <fullName>JN19NLRT - JN19NLOW</fullName>
+                <default>false</default>
+                <label>JN19NLRT - JN19NLOW</label>
+            </value>
+            <value>
+                <fullName>JN20NLRT - JN20NLOW</fullName>
+                <default>false</default>
+                <label>JN20NLRT - JN20NLOW</label>
+            </value>
+            <value>
+                <fullName>JN21NLRT - JN21NLOW</fullName>
+                <default>false</default>
+                <label>JN21NLRT - JN21NLOW</label>
+            </value>
+            <value>
+                <fullName>JN22NLRT - JN22NLOW</fullName>
+                <default>false</default>
+                <label>JN22NLRT - JN22NLOW</label>
+            </value>
+            <value>
+                <fullName>JN23NLRT - JN23NLOW</fullName>
+                <default>false</default>
+                <label>JN23NLRT - JN23NLOW</label>
+            </value>
+            <value>
+                <fullName>JN24NLRT - JN24NLOW</fullName>
+                <default>false</default>
+                <label>JN24NLRT - JN24NLOW</label>
+            </value>
+            <value>
+                <fullName>JN25NLRT - JN25NLOW</fullName>
+                <default>false</default>
+                <label>JN25NLRT - JN25NLOW</label>
+            </value>
+            <value>
+                <fullName>JN26NLRT - JN26NLOW</fullName>
+                <default>false</default>
+                <label>JN26NLRT - JN26NLOW</label>
+            </value>
+            <value>
+                <fullName>JN27NLRT - JN27NLOW</fullName>
+                <default>false</default>
+                <label>JN27NLRT - JN27NLOW</label>
+            </value>
+            <value>
+                <fullName>JN28NLRT - JN28NLOW</fullName>
+                <default>false</default>
+                <label>JN28NLRT - JN28NLOW</label>
+            </value>
+            <value>
+                <fullName>JN29NLRT - JN29NLOW</fullName>
+                <default>false</default>
+                <label>JN29NLRT - JN29NLOW</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>A01C17ARBE - A01C17ARBG - A01C17ASBE - A01C17ASBG</controllingFieldValue>
+            <valueName>JNRT17 - JNOW17</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>A01C28ARBE - A01C28ARBG - A01C28ASBE - A01C28ASBG</controllingFieldValue>
+            <valueName>JNRT28 - JNOW28</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>A01C18ARAE - A01C18ARAG - A01C18ASAE - A01C18ASAG</controllingFieldValue>
+            <valueName>JN18NLRT - JN18NLOW</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>A01C29ARAE - A01C29ARAG - A01C29ASAE - A01C29ASAG</controllingFieldValue>
+            <valueName>JN29NLRT - JN29NLOW</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>A01C18ARBE - A01C18ARBG - A01C18ASBE - A01C18ASBG</controllingFieldValue>
+            <valueName>JNRT18 - JNOW18</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>A01C29ARBE - A01C29ARBG - A01C29ASBE - A01C29ASBG</controllingFieldValue>
+            <valueName>JNRT29 - JNOW29</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>A01C19ARAE - A01C19ARAG - A01C19ASAE - A01C19ASAG</controllingFieldValue>
+            <valueName>JN19NLRT - JN19NLOW</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>A01C19ARBE - A01C19ARBG - A01C19ASBE - A01C19ASBG</controllingFieldValue>
+            <valueName>JNRT19 - JNOW19</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>A01C20ARAE - A01C20ARAG - A01C20ASAE - A01C20ASAG</controllingFieldValue>
+            <valueName>JN20NLRT - JN20NLOW</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>A01C20ARBE - A01C20ARBG - A01C20ASBE - A01C20ASBG</controllingFieldValue>
+            <valueName>JNRT20 - JNOW20</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>A01C21ARAE - A01C21ARAG - A01C21ASAE - A01C21ASAG</controllingFieldValue>
+            <valueName>JN21NLRT - JN21NLOW</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>A01C21ARBE - A01C21ARBG - A01C21ASBE - A01C21ASBG</controllingFieldValue>
+            <valueName>JNRT21 - JNOW21</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>A01C22ARAE - A01C22ARAG - A01C22ASAE - A01C22ASAG</controllingFieldValue>
+            <valueName>JN22NLRT - JN22NLOW</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>A01C11ARBE - A01C11ARBG - A01C11ASBE - A01C11ASBG</controllingFieldValue>
+            <valueName>JNRT11 - JNOW11</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>A01C22ARBE - A01C22ARBG - A01C22ASBE - A01C22ASBG</controllingFieldValue>
+            <valueName>JNRT22 - JNOW22</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>A01C12ARAE - A01C12ARAG - A01C12ASAE - A01C12ASAG</controllingFieldValue>
+            <valueName>JN12NLRT - JN12NLOW</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>A01C23ARAE - A01C23ARAG - A01C23ASAE - A01C23ASAG</controllingFieldValue>
+            <valueName>JN23NLRT - JN23NLOW</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>A01C12ARBE -  A01C12ARBG -  A01C12ASBE -  A01C12ASBG</controllingFieldValue>
+            <valueName>JNRT12 - JNOW12</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>A01C23ARBE - A01C23ARBG - A01C23ASBE - A01C23ASBG</controllingFieldValue>
+            <valueName>JNRT23 - JNOW23</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>A01C13ARAE - A01C13ARAG - A01C13ASAE - A01C13ASAG</controllingFieldValue>
+            <valueName>JN13NLRT - JN13NLOW</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>A01C24ARAE - A01C24ARAG - A01C24ASAE - A01C24ASAG</controllingFieldValue>
+            <valueName>JN24NLRT - JN24NLOW</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>A01C13ARBE - A01C13ARBG - A01C13ASBE - A01C13ASBG</controllingFieldValue>
+            <valueName>JNRT13 - JNOW13</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>A01C24ARBE - A01C24ARBG - A01C24ASBE - A01C24ASBG</controllingFieldValue>
+            <valueName>JNRT24 - JNOW24</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>A01C14ARAE - A01C14ARAG - A01C14ASAE - A01C14ASAG</controllingFieldValue>
+            <valueName>JN14NLRT - JN14NLOW</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>A01C25ARAE - A01C25ARAG - A01C25ASAE - A01C25ASAG</controllingFieldValue>
+            <valueName>JN25NLRT - JN25NLOW</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>A01C14ARBE - A01C14ARBG - A01C14ASBE - A01C14ASBG</controllingFieldValue>
+            <valueName>JNRT14 - JNOW14</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>A01C25ARBE - A01C25ARBG - A01C25ASBE - A01C25ASBG</controllingFieldValue>
+            <valueName>JNRT25 - JNOW25</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>A01C15ARAE - A01C15ARAG - A01C15ASAE - A01C15ASAG</controllingFieldValue>
+            <valueName>JN15NLRT - JN15NLOW</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>A01C26ARAE - A01C26ARAG - A01C26ASAE - A01C26ASAG</controllingFieldValue>
+            <valueName>JN26NLRT - JN26NLOW</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>A01C15ARBE - A01C15ARBG - A01C15ASBE - A01C15ASBG</controllingFieldValue>
+            <valueName>JNRT15 - JNOW15</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>A01C16ARAE - A01C16ARAG - A01C16ASAE - A01C16ASAG</controllingFieldValue>
+            <valueName>JN16NLRT - JN16NLOW</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>A01C06ARAE - A01C06ARAG - A01C06ASAE - A01C06ASAG</controllingFieldValue>
+            <valueName>JN06NLRT - JN06NLOW</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>A01C06ARBE - A01C06ARBG - A01C06ASBE - A01C06ASBG</controllingFieldValue>
+            <valueName>JNRT06 - JNOW06</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>A01C08ARAE - A01C08ARAG - A01C08ASAE - A01C08ASAG</controllingFieldValue>
+            <valueName>JN08NLRT - JN08NLOW</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>A01C08ARBE - A01C08ARBG - A01C08ASBE - A01C08ASBG</controllingFieldValue>
+            <valueName>JNRT08 - JNOW08</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>A01C09ARAE - A01C09ARAG - A01C09ASAE - A01C09ASAG</controllingFieldValue>
+            <valueName>JN09NLRT - JN09NLOW</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>A01C09ARBE - A01C09ARBG - A01C09ASBE - A01C09ASBG</controllingFieldValue>
+            <valueName>JNRT09 - JNOW09</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>A01C10ARAE - A01C10ARAG - A01C10ASAE - A01C10ASAG</controllingFieldValue>
+            <valueName>JN10NLRT - JN10NLOW</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>A01C10ARBE - A01C10ARBG - A01C10ASBE - A01C10ASBG</controllingFieldValue>
+            <valueName>JNRT10 - JNOW10</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>A01C11ARAE - A01C11ARAG - A01C11ASAE - A01C11ASAG</controllingFieldValue>
+            <valueName>JN11NLRT - JN11NLOW</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>A01C26ARBE - A01C26ARBG - A01C26ASBE - A01C26ASBG</controllingFieldValue>
+            <valueName>JNRT26 - JNOW26</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>A01C27ARAE - A01C27ARAG - A01C27ASAE - A01C27ASAG</controllingFieldValue>
+            <valueName>JN27NLRT - JN27NLOW</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>A01C16ARBE - A01C16ARBG - A01C16ASBE - A01C16ASBG</controllingFieldValue>
+            <valueName>JNRT16 - JNOW16</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>A01C27ARBE - A01C27ARBG - A01C27ASBE - A01C27ASBG</controllingFieldValue>
+            <valueName>JNRT27 - JNOW27</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>A01C17ARAE - A01C17ARAG - A01C17ASAE - A01C17ASAG</controllingFieldValue>
+            <valueName>JN17NLRT - JN17NLOW</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>A01C28ARAE - A01C28ARAG - A01C28ASAE - A01C28ASAG</controllingFieldValue>
+            <valueName>JN28NLRT - JN28NLOW</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

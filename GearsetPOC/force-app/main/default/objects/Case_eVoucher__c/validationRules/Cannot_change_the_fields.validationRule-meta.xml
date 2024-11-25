@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_change_the_fields</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+  $Permission.Case_eVoucher_No_Edit_Permission_Set , 
+  OR(ISPICKVAL(Status__c, &quot;In progress&quot;),
+    ISPICKVAL(Status__c, &quot;Completed - rejected&quot;),
+    ISPICKVAL(Status__c, &quot;Completed - resolved&quot;)
+  )
+)</errorConditionFormula>
+    <errorMessage>The record cannot be modified after it has been actioned.</errorMessage>
+</ValidationRule>

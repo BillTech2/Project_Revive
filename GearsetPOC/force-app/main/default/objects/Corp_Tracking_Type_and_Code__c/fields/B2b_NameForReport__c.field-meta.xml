@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>B2b_NameForReport__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(
+        Corp_Type__c,
+        &#39;N° booking SNCB&#39;,
+        &#39;FCE THI SNCB&#39;,
+        &#39;N° booking GDS&#39;,
+        &#39;FCE THI DE&#39;,
+        &#39;N° booking NS&#39;,
+        &#39;FCE THI NS&#39;,
+        B2b_Account__r.Name
+    )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Name for report</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

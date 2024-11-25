@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Generate_Contract</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <hasMenubar>false</hasMenubar>
+    <hasScrollbars>true</hasScrollbars>
+    <hasToolbar>false</hasToolbar>
+    <height>600</height>
+    <isResizable>true</isResizable>
+    <linkType>url</linkType>
+    <masterLabel>Generate Contract</masterLabel>
+    <openType>newWindow</openType>
+    <position>none</position>
+    <protected>false</protected>
+    <showsLocation>false</showsLocation>
+    <showsStatus>false</showsStatus>
+    <url>https://eurostar--trade.cs89.my.salesforce.com/800/e?
+&amp;RecordType=0120E0000007GUd
+&amp;ctrc7=&quot;Trade Contracts&quot;
+&amp;CF00N0E000001HUaP={!Trade_Contracts_Company__c.Name}
+&amp;00N0E000001IUka={!Trade_Contracts_Company__c.Address_Line_1__c}
+&amp;00N0E000001IUkk={!Trade_Contracts_Company__c.Address_Line_2__c}
+&amp;00N0E000001IUkp={!Trade_Contracts_Company__c.Address_Line_3__c}
+&amp;00N0E000001IUn0={!Trade_Contracts_Company__c.City__c}
+&amp;00N0E000001IUnP={!Trade_Contracts_Company__c.County_State__c}
+&amp;00N0E000001IUnU={!Trade_Contracts_Company__c.Post_Code_Zip_Reg__c}
+&amp;00N0E000001IUnZ={!Trade_Contracts_Company__c.Country__c}
+&amp;00N0E000001IUnt={!Trade_Contracts_Company__c.Notices_Email__c}
+&amp;00N0E000001IUny={!Trade_Contracts_Company__c.Disruption_Email__c}
+&amp;00N0E000001IUo8={!Trade_Contracts_Company__c.Invoice_Email__c}
+&amp;00N0E000001Ihzl={!Trade_Contracts_Company__c.Registered_Company_Number__c}</url>
+</WebLink>

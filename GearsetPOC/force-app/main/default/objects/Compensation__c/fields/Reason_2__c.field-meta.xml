@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_2__c</fullName>
+    <label>Reason 2</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Reason_1__c</controllingField>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Amend a booking</fullName>
+                <default>false</default>
+                <label>Amend a booking</label>
+            </value>
+            <value>
+                <fullName>Assistance</fullName>
+                <default>false</default>
+                <label>Assistance</label>
+            </value>
+            <value>
+                <fullName>Booking tickets</fullName>
+                <default>false</default>
+                <label>Booking tickets</label>
+            </value>
+            <value>
+                <fullName>Complaint Process</fullName>
+                <default>false</default>
+                <label>Complaint Process</label>
+            </value>
+            <value>
+                <fullName>Contact Centre / Station booking</fullName>
+                <default>false</default>
+                <label>Contact Centre / Station booking</label>
+            </value>
+            <value>
+                <fullName>Contact Transfer</fullName>
+                <default>false</default>
+                <label>Contact Transfer</label>
+            </value>
+            <value>
+                <fullName>Deposit</fullName>
+                <default>false</default>
+                <label>Deposit</label>
+            </value>
+            <value>
+                <fullName>Disruption</fullName>
+                <default>false</default>
+                <label>Disruption</label>
+            </value>
+            <value>
+                <fullName>Final Balance</fullName>
+                <default>false</default>
+                <label>Final Balance</label>
+            </value>
+            <value>
+                <fullName>Groups Information</fullName>
+                <default>false</default>
+                <label>Groups Information</label>
+            </value>
+            <value>
+                <fullName>Information</fullName>
+                <default>false</default>
+                <label>Information</label>
+            </value>
+            <value>
+                <fullName>Information enquiry</fullName>
+                <default>false</default>
+                <label>Information enquiry</label>
+            </value>
+            <value>
+                <fullName>Loyalty</fullName>
+                <default>false</default>
+                <label>Loyalty</label>
+            </value>
+            <value>
+                <fullName>Mobile</fullName>
+                <default>false</default>
+                <label>Mobile</label>
+            </value>
+            <value>
+                <fullName>Onboard Catering</fullName>
+                <default>false</default>
+                <label>Onboard Catering</label>
+            </value>
+            <value>
+                <fullName>Onboard Experience</fullName>
+                <default>false</default>
+                <label>Onboard Experience</label>
+            </value>
+            <value>
+                <fullName>Quote</fullName>
+                <default>false</default>
+                <label>Quote</label>
+            </value>
+            <value>
+                <fullName>Special Requests</fullName>
+                <default>false</default>
+                <label>Special Requests</label>
+            </value>
+            <value>
+                <fullName>Station</fullName>
+                <default>false</default>
+                <label>Station</label>
+            </value>
+            <value>
+                <fullName>Travel Agent / 3rd Party Booking</fullName>
+                <default>false</default>
+                <label>Travel Agent / 3rd Party Booking</label>
+            </value>
+            <value>
+                <fullName>Unable to book</fullName>
+                <default>false</default>
+                <label>Unable to book</label>
+            </value>
+            <value>
+                <fullName>Website booking</fullName>
+                <default>false</default>
+                <label>Website booking</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>After booking enquiry</controllingFieldValue>
+            <valueName>Assistance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>After booking enquiry</controllingFieldValue>
+            <valueName>Complaint Process</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>After booking enquiry</controllingFieldValue>
+            <valueName>Contact Centre / Station booking</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>After booking enquiry</controllingFieldValue>
+            <valueName>Disruption</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>After booking enquiry</controllingFieldValue>
+            <valueName>Information</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>After booking enquiry</controllingFieldValue>
+            <controllingFieldValue>Pre-Sale Info and Booking</controllingFieldValue>
+            <valueName>Loyalty</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>After booking enquiry</controllingFieldValue>
+            <valueName>Mobile</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>After booking enquiry</controllingFieldValue>
+            <valueName>Onboard Catering</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>After booking enquiry</controllingFieldValue>
+            <valueName>Onboard Experience</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>After booking enquiry</controllingFieldValue>
+            <valueName>Station</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>After booking enquiry</controllingFieldValue>
+            <valueName>Travel Agent / 3rd Party Booking</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>After booking enquiry</controllingFieldValue>
+            <valueName>Website booking</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pre-Sale Info and Booking</controllingFieldValue>
+            <valueName>Booking tickets</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pre-Sale Info and Booking</controllingFieldValue>
+            <valueName>Contact Transfer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pre-Sale Info and Booking</controllingFieldValue>
+            <valueName>Information enquiry</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pre-Sale Info and Booking</controllingFieldValue>
+            <valueName>Special Requests</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pre-Sale Info and Booking</controllingFieldValue>
+            <valueName>Unable to book</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Groups</controllingFieldValue>
+            <valueName>Amend a booking</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Groups</controllingFieldValue>
+            <valueName>Deposit</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Groups</controllingFieldValue>
+            <valueName>Final Balance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Groups</controllingFieldValue>
+            <valueName>Groups Information</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Groups</controllingFieldValue>
+            <valueName>Quote</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

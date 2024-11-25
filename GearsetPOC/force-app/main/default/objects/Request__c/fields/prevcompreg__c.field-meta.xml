@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>prevcompreg__c</fullName>
+    <description>Previous company reg no</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Previous company reg no</inlineHelpText>
+    <label>prevcompreg</label>
+    <length>50</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

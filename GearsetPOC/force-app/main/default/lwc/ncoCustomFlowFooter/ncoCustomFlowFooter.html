@@ -1,0 +1,14 @@
+<template>
+    <div class="footer-container slds-border_top slds-clearfix">
+        <template for:each={buttons} for:item="button">
+            <lightning-button
+                key={button.label}
+                label={button.label}
+                onclick={handleClick}
+                variant={button.variant}
+                class={button.class}
+                >
+            </lightning-button>
+        </template>
+    </div>
+</template>

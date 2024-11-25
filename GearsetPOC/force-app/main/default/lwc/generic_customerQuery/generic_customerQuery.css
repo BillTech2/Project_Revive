@@ -1,0 +1,83 @@
+.input-label {
+    color: #1c1c1a;
+    font-size: 18px;
+    --slds-g-color-neutral-base-50: #646463;
+    --slds-g-color-neutral-base-10: #646463;
+    --lwc-fontSize2: 18px;
+    font-family: 'ABCSocial-Regular';
+}
+
+input::placeholder {
+    color: #646463;
+}
+
+.slds-button.button-submit {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: inline-block;
+    border-radius: 4px;
+    background-clip: padding-box;
+    font-style: normal;
+    -webkit-text-decoration: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    text-align: center;
+    -webkit-transition: background-color 0.2s ease-out;
+    transition: background-color 0.2s ease-out;
+    cursor: pointer;
+    font-family: 'ABCSocial-Bold';
+    font-size: 18px;
+    line-height: 22px;
+    padding: 0.5rem 2rem;
+    font-weight: 500;
+    width: auto;
+    border: none;
+    color: #000000;
+    background-color: #ffc305;
+    /* box-shadow: 0 2px 0 0 #d2b82b, 0 3px 2px 0 rgb(0 0 0 / 20%); */
+}
+
+.slds-button.button-submit:hover {
+    color: #000000;
+    background-color: #cc9c04;
+}
+
+.slds-button.button-submit:focus {
+    box-shadow: none;
+}
+
+.slds-button.button-submit:disabled {
+    background-color: #e6e6e7;
+    box-shadow: none;
+    cursor: default;
+    color: #55565a;
+    border-color: #e6e6e7;
+}
+
+.container {
+    background-color: white;
+}
+
+.col-label {
+    padding: 23px 10px 13px 10px;
+}
+
+.col-input {
+    padding: 13px 10px;
+}
+
+.slds-input {
+    padding: 13px;
+}
+
+.col-label,
+.col-input {
+    text-align: left;
+}
+
+.result-message {
+    font-size: 16px;
+    color: #1c1c1a;
+    font-family: ABCSocial-Regular;
+}

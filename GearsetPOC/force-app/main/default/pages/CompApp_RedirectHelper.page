@@ -1,0 +1,1 @@
+<apex:page id="CompApp_RedirectHelper" controller="CompApp_Ctrl_RedirectHelper" action="{!redirect}"/>

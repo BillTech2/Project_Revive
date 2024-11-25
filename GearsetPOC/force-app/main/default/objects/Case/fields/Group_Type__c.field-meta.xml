@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Group_Type__c</fullName>
+    <description>Type of the Group which request for the booking</description>
+    <inlineHelpText>Type of the Group which request for the booking</inlineHelpText>
+    <label>Group Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Corporate client</fullName>
+                <default>false</default>
+                <label>Corporate client</label>
+            </value>
+            <value>
+                <fullName>Public</fullName>
+                <default>false</default>
+                <label>Public</label>
+            </value>
+            <value>
+                <fullName>Clubs &amp; Associations</fullName>
+                <default>false</default>
+                <label>Clubs &amp; Associations</label>
+            </value>
+            <value>
+                <fullName>Sports and Hospitality</fullName>
+                <default>false</default>
+                <label>Sports and Hospitality</label>
+            </value>
+            <value>
+                <fullName>School UK</fullName>
+                <default>false</default>
+                <label>School UK</label>
+            </value>
+            <value>
+                <fullName>School BE</fullName>
+                <default>false</default>
+                <label>School BE</label>
+            </value>
+            <value>
+                <fullName>School FR</fullName>
+                <default>false</default>
+                <label>School FR</label>
+            </value>
+            <value>
+                <fullName>School (other)</fullName>
+                <default>false</default>
+                <label>School (other)</label>
+            </value>
+            <value>
+                <fullName>Leisure Agency</fullName>
+                <default>false</default>
+                <label>Leisure Agency</label>
+            </value>
+            <value>
+                <fullName>TMC</fullName>
+                <default>false</default>
+                <label>TMC</label>
+            </value>
+            <value>
+                <fullName>TMC - M&amp;E</fullName>
+                <default>false</default>
+                <label>TMC - M&amp;E</label>
+            </value>
+            <value>
+                <fullName>Charity</fullName>
+                <default>false</default>
+                <label>Charity</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

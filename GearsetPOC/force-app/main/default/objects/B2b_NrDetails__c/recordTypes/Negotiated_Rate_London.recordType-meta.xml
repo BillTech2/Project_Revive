@@ -1,0 +1,4571 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Negotiated_Rate_London</fullName>
+    <active>true</active>
+    <label>Negotiated Rate London</label>
+    <picklistValues>
+        <picklist>AccountType__c</picklist>
+        <values>
+            <fullName>Agency</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Business</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>B2b_GDS_Air_Comfort_Tariff_Code__c</picklist>
+        <values>
+            <fullName>C04BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C04BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C04FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C04FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C04FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C05BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C05BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C05FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C05FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C05FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C06BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C06BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C06FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C06FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C06FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C07BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C07BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C07FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C07FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C07FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C08BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C08BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C08FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C08FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C08FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C09BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C09BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C09FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C09FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C09FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C10BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C10BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C10FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C10FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C10FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C11BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C11BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C11FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C11FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C11FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C12BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C12BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C12FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C12FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C12FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C13BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C13BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C13FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C13FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C13FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C14BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C14BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C14FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C14FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C14FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C15BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C15BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C15FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C15FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C15FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C16BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C16BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C16FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C16FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C16FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C17BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C17BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C17FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C17FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C17FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C18BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C18BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C18FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C18FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C18FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C19BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C19BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C19FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C19FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C19FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C20BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C20BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C20FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C20FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C20FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C21BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C21BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C21FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C21FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C21FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TBUNBEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TBUNBENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TBUNFRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TBUNFRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TBUNFRNL</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>B2b_GDS_Air_Premium_Tariff_Code__c</picklist>
+        <values>
+            <fullName>P05BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P05BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P05FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P05FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P05FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P06BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P06BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P06FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P06FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P06FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P07BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P07BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P07FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P07FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P07FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P08BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P08BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P08FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P08FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P08FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P09BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P09BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P09FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P09FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P09FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P10BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P10BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P10FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P10FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P10FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P11BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P11BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P11FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P11FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P11FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P12BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P12BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P12FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P12FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P12FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P13BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P13BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P13FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P13FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P13FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P14BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P14BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P14FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P14FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P14FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P15BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P15BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P15FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P15FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P15FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P16BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P16BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P16FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P16FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P16FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P17BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P17BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P17FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P17FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P17FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P18BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P18BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P18FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P18FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P18FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P19BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P19BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P19FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P19FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P19FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P20BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P20BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P20FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P20FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P20FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P21BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P21BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P21FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P21FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P21FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P22BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P22BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P22FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P22FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P22FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P23BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P23BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P23FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P23FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P23FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PBUNBEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PBUNBENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PBUNFRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PBUNFRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PBUNFRNL</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>B2b_GDS_Air_Standard_Tariff_Code__c</picklist>
+        <values>
+            <fullName>W02BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W02BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W02FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W02FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W02FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W04BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W04BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W04FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W04FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W04FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W05BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W05BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W05FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W05FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W05FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W06BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W06BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W06FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W06FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W06FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W07BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W07BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W07FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W07FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W07FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W08BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W08BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W08FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W08FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W08FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W09BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W09BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W09FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W09FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W09FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W10BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W10BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W10FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W10FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W10FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W11BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W11BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W11FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W11FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W11FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W12BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W12BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W12FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W12FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W12FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W13BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W13BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W13FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W13FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W13FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W14BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W14BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W14FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W14FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W14FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W15BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W15BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W15FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W15FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W15FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W16BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W16BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W16FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W16FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W16FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W17BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W17BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W17FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W17FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W17FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W18BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W18BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W18FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W18FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W18FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W19BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W19BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W19FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W19FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W19FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W20BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W20BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W20FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W20FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W20FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W21BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W21BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W21FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W21FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W21FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WBUNBEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WBUNBENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WBUNFRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WBUNFRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WBUNFRNL</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>B2b_PercentageDiscountBp__c</picklist>
+        <values>
+            <fullName>10</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>11</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>12</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>13</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>14</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>15</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>16</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>17</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>18</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>19</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>20</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>21</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>22</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>23</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>24</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>26</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>27</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>28</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>9</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>B2b_PercentageDiscountE_Plus__c</picklist>
+        <values>
+            <fullName>3%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>9%25</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>B2b_PercentageDiscountE_Premier__c</picklist>
+        <values>
+            <fullName>10%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>11%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>12%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>13%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>14%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>15%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>16%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>17%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>18%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>19%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>20%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>21%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>22%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>23%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>24%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>25%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>9%25</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>B2b_PercentageDiscountE_Standard__c</picklist>
+        <values>
+            <fullName>0%25</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>B2b_PercentageDiscountSp__c</picklist>
+        <values>
+            <fullName>3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>B2b_PercentageTGN__c</picklist>
+        <values>
+            <fullName>10 %25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>15 %25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>20 %25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5 %25</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>B2b_Percentage_Discount_Comfort__c</picklist>
+        <values>
+            <fullName>10 BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>10 BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>10 FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>10 FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>10 FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>11 BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>11 BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>11 FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>11 FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>11 FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>12 BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>12 BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>12 FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>12 FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>12 FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>13 BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>13 BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>13 FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>13 FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>13 FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>14 BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>14 BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>14 FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>14 FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>14 FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>15 BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>15 BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>15 FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>15 FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>15 FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>16 BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>16 BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>16 FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>16 FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>16 FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>17 BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>17 BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>17 FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>17 FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>17 FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>18 BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>18 BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>18 FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>18 FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>18 FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>19 BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>19 BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>19 FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>19 FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>19 FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>20 BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>20 BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>20 FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>20 FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>20 FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>21 FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4 BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4 BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4 FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4 FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4 FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5 BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5 BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5 FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5 FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5 FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6 BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6 BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6 FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6 FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6 FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7 BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7 BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7 FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7 FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7 FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8 BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8 BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8 FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8 FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8 FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>9 BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>9 BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>9 FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>9 FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>9 FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deutscher Bund BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deutscher Bund BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deutscher Bund FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deutscher Bund FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deutscher Bund FRNL</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>B2b_Percentage_Discount_Premium__c</picklist>
+        <values>
+            <fullName>10 BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>10 BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>10 FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>10 FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>10 FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>11 BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>11 BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>11 FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>11 FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>11 FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>12 BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>12 BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>12 FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>12 FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>12 FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>13 BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>13 BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>13 FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>13 FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>13 FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>14 BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>14 BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>14 FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>14 FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>14 FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>15 BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>15 BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>15 FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>15 FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>15 FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>16 BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>16 BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>16 FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>16 FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>16 FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>17 BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>17 BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>17 FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>17 FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>17 FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>18 BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>18 BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>18 FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>18 FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>18 FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>19 BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>19 BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>19 FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>19 FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>19 FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>20 BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>20 BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>20 FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>20 FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>20 FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>21 BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>21 BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>21 FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>21 FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>21 FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>22 BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>22 BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>22 FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>22 FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>22 FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>23 BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>23 BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>23 FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>23 FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>23 FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5 BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5 BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5 FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5 FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5 FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6 BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6 BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6 FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6 FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6 FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7 BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7 BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7 FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7 FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7 FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8 BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8 BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8 FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8 FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8 FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>9 BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>9 BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>9 FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>9 FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>9 FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deutscher Bund BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deutscher Bund BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deutscher Bund FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deutscher Bund FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deutscher Bund FRNL</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>B2b_Percentage_Discount_Standard__c</picklist>
+        <values>
+            <fullName>10 BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>10 BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>10 FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>10 FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>10 FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>11 BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>11 BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>11 FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>11 FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>11 FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>12 BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>12 BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>12 FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>12 FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>12 FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>13 BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>13 BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>13 FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>13 FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>13 FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>14 BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>14 BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>14 FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>14 FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>14 FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>15 BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>15 BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>15 FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>15 FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>15 FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>16 BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>16 BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>16 FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>16 FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>16 FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>17 BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>17 BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>17 FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>17 FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>17 FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>18 BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>18 BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>18 FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>18 FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>18 FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>19 BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>19 BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>19 FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>19 FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>19 FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2 BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2 BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2 FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2 FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2 FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>20 BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>20 BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>20 FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>20 FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>20 FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>21 FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4 BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4 BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4 FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4 FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4 FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5 BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5 BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5 FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5 FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5 FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6 BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6 BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6 FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6 FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6 FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7 BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7 BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7 FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7 FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7 FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8 BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8 BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8 FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8 FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8 FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>9 BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>9 BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>9 FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>9 FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>9 FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deutscher Bund BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deutscher Bund BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deutscher Bund FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deutscher Bund FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deutscher Bund FRNL</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>B2b_Road__c</picklist>
+        <values>
+            <fullName>Belgium - The Netherlands</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Brussels - Germany</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Liège - Germany</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Paris - Belgium</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Paris - Germany</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Paris - The Netherlands</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>B2b_Route__c</picklist>
+        <values>
+            <fullName>London - Amsterdam</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>London - Brussels</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>London - Lille</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>London - Paris</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>London - Rotterdam</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>B2b_S3_BeNe_Comfort_Tariff_Code__c</picklist>
+        <values>
+            <fullName>TH00C04BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C04BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C04FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C04FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C04FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C05BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C05BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C05FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C05FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C05FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C06BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C06BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C06FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C06FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C06FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C07BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C07BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C07FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C07FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C07FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C08BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C08BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C08FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C08FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C08FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C09BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C09BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C09FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C09FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C09FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C10BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C10BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C10FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C10FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C10FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C11BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C11BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C11FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C11FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C11FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C12BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C12BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C12FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C12FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C12FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C13BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C13BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C13FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C13FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C13FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C14BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C14BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C14FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C14FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C14FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C15BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C15BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C15FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C15FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C15FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C16BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C16BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C16FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C16FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C16FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C17BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C17BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C17FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C17FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C17FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C18BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C18BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C18FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C18FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C18FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C19BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C19BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C19FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C19FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C19FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C20BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C20BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C20FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C20FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C20FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C21BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C21BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C21FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C21FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00C21FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00CBXBEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00CBXBENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00CBXFRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00CBXFRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH00CBXFRNL</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>B2b_S3_BeNe_Premium_Tariff_Code__c</picklist>
+        <values>
+            <fullName>TA00C05BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C05BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C05FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C05FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C05FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C06BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C06BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C06FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C06FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C06FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C07BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C07BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C07FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C07FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C07FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C08BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C08BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C08FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C08FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C08FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C09BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C09BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C09FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C09FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C09FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C10BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C10BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C10FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C10FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C10FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C11BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C11BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C11FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C11FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C11FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C12BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C12BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C12FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C12FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C12FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C13BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C13BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C13FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C13FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C13FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C14BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C14BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C14FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C14FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C14FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C15BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C15BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C15FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C15FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C15FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C16BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C16BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C16FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C16FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C16FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C17BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C17BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C17FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C17FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C17FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C18BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C18BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C18FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C18FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C18FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C19BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C19BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C19FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C19FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C19FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C20BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C20BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C20FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C20FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C20FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C21BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C21BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C21FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C21FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C21FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C22BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C22BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C22FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C22FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C22FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C23BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C23BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C23FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C23FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00C23FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00CBXFBEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00CBXFBENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00CBXFRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00CBXFRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA00CBXFRNL</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>B2b_S3_BeNe_Standard_Tariff_Code__c</picklist>
+        <values>
+            <fullName>TB00C02BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C02BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C02FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C02FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C02FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C04BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C04BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C04FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C04FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C04FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C05BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C05BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C05FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C05FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C05FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C06BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C06BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C06FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C06FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C06FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C07BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C07BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C07FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C07FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C07FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C08BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C08BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C08FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C08FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C08FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C09BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C09BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C09FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C09FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C09FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C10BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C10BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C10FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C10FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C10FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C11BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C11BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C11FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C11FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C11FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C12BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C12BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C12FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C12FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C12FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C13BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C13BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C13FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C13FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C13FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C14BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C14BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C14FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C14FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C14FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C15BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C15BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C15FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C15FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C15FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C16BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C16BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C16FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C16FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C16FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C17BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C17BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C17FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C17FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C17FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C18BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C18BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C18FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C18FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C18FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C19BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C19BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C19FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C19FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C19FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C20BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C20BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C20FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C20FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C20FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C21BEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C21BENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C21FRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C21FRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00C21FRNL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00CBXBEDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00CBXBENL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00CBXFRBE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00CBXFRDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TB00CBXFRNL</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>B2b_Status__c</picklist>
+        <values>
+            <fullName>Extracted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Integrated</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rejected</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>To be Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>To be Extracted</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Discount__c</picklist>
+        <values>
+            <fullName>Higher</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lower</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Same</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>GDS_Air_Business_Premier_Tariff_Codes__c</picklist>
+        <values>
+            <fullName>JN06NLRT - JN06NLOW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JN08NLRT - JN08NLOW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JN09NLRT - JN09NLOW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JN10NLRT - JN10NLOW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JN11NLRT - JN11NLOW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JN12NLRT - JN12NLOW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JN13NLRT - JN13NLOW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JN14NLRT - JN14NLOW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JN15NLRT - JN15NLOW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JN16NLRT - JN16NLOW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JN17NLRT - JN17NLOW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JN18NLRT - JN18NLOW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JN19NLRT - JN19NLOW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JN20NLRT - JN20NLOW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JN21NLRT - JN21NLOW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JN22NLRT - JN22NLOW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JN23NLRT - JN23NLOW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JN24NLRT - JN24NLOW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JN25NLRT - JN25NLOW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JN26NLRT - JN26NLOW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JN27NLRT - JN27NLOW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JN28NLRT - JN28NLOW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JN29NLRT - JN29NLOW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JNRT06 - JNOW06</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JNRT08 - JNOW08</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JNRT09 - JNOW09</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JNRT10 - JNOW10</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JNRT11 - JNOW11</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JNRT12 - JNOW12</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JNRT13 - JNOW13</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JNRT14 - JNOW14</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JNRT15 - JNOW15</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JNRT16 - JNOW16</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JNRT17 - JNOW17</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JNRT18 - JNOW18</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JNRT19 - JNOW19</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JNRT20 - JNOW20</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JNRT21 - JNOW21</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JNRT22 - JNOW22</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JNRT23 - JNOW23</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JNRT24 - JNOW24</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JNRT25 - JNOW25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JNRT26 - JNOW26</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JNRT27 - JNOW27</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JNRT28 - JNOW28</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JNRT29 - JNOW29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>GDS_Air_Standard_Premier_Tariff_Codes__c</picklist>
+        <values>
+            <fullName>ZN03NLRT - ZN03NLOW - WN03NLRT - WN03NLOW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ZN04NLRT - ZN04NLOW - WN04NLRT - WN04NLOW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ZN05NLRT - ZN05NLOW - WN05NLRT - WN05NLOW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ZNRT03 - ZNOW03 - WNRT03 - WNOW03</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ZNRT04 - ZNOW04 - WNRT04 - WNOW04</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ZNRT05 - ZNOW05 - WNRT05 - WNOW05</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>GDS_Used__c</picklist>
+        <values>
+            <fullName>Amadeus</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Apollo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Galileo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sabre</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Percentage_Discount_Business_Premier_PL__c</picklist>
+        <values>
+            <fullName>UK-Amsterdam-Rotterdam 10%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UK-Amsterdam-Rotterdam 11%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UK-Amsterdam-Rotterdam 12%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UK-Amsterdam-Rotterdam 13%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UK-Amsterdam-Rotterdam 14%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UK-Amsterdam-Rotterdam 15%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UK-Amsterdam-Rotterdam 16%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UK-Amsterdam-Rotterdam 17%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UK-Amsterdam-Rotterdam 18%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UK-Amsterdam-Rotterdam 19%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UK-Amsterdam-Rotterdam 20%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UK-Amsterdam-Rotterdam 21%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UK-Amsterdam-Rotterdam 22%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UK-Amsterdam-Rotterdam 23%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UK-Amsterdam-Rotterdam 24%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UK-Amsterdam-Rotterdam 25%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UK-Amsterdam-Rotterdam 26%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UK-Amsterdam-Rotterdam 27%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UK-Amsterdam-Rotterdam 28%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UK-Amsterdam-Rotterdam 29%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UK-Amsterdam-Rotterdam 6%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UK-Amsterdam-Rotterdam 8%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UK-Amsterdam-Rotterdam 9%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UK-Paris-Lille-Brussels 10%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UK-Paris-Lille-Brussels 11%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UK-Paris-Lille-Brussels 12%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UK-Paris-Lille-Brussels 13%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UK-Paris-Lille-Brussels 14%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UK-Paris-Lille-Brussels 15%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UK-Paris-Lille-Brussels 16%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UK-Paris-Lille-Brussels 17%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UK-Paris-Lille-Brussels 18%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UK-Paris-Lille-Brussels 19%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UK-Paris-Lille-Brussels 20%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UK-Paris-Lille-Brussels 21%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UK-Paris-Lille-Brussels 22%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UK-Paris-Lille-Brussels 23%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UK-Paris-Lille-Brussels 24%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UK-Paris-Lille-Brussels 25%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UK-Paris-Lille-Brussels 26%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UK-Paris-Lille-Brussels 27%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UK-Paris-Lille-Brussels 28%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UK-Paris-Lille-Brussels 29%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UK-Paris-Lille-Brussels 6%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UK-Paris-Lille-Brussels 8%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UK-Paris-Lille-Brussels 9%25</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Percentage_Discount_Standard_Premier_PL__c</picklist>
+        <values>
+            <fullName>UK-Amsterdam-Rotterdam 3%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UK-Amsterdam-Rotterdam 4%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UK-Amsterdam-Rotterdam 5%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UK-Paris-Lille-Brussels 3%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UK-Paris-Lille-Brussels 4%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UK-Paris-Lille-Brussels 5%25</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>S3_BeNe_Business_Premier_Tariff_Codes__c</picklist>
+        <values>
+            <fullName>A01C06ARAE - A01C06ARAG - A01C06ASAE - A01C06ASAG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>A01C06ARBE - A01C06ARBG - A01C06ASBE - A01C06ASBG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>A01C08ARAE - A01C08ARAG - A01C08ASAE - A01C08ASAG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>A01C08ARBE - A01C08ARBG - A01C08ASBE - A01C08ASBG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>A01C09ARAE - A01C09ARAG - A01C09ASAE - A01C09ASAG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>A01C09ARBE - A01C09ARBG - A01C09ASBE - A01C09ASBG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>A01C10ARAE - A01C10ARAG - A01C10ASAE - A01C10ASAG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>A01C10ARBE - A01C10ARBG - A01C10ASBE - A01C10ASBG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>A01C11ARAE - A01C11ARAG - A01C11ASAE - A01C11ASAG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>A01C11ARBE - A01C11ARBG - A01C11ASBE - A01C11ASBG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>A01C12ARAE - A01C12ARAG - A01C12ASAE - A01C12ASAG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>A01C12ARBE -  A01C12ARBG -  A01C12ASBE -  A01C12ASBG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>A01C13ARAE - A01C13ARAG - A01C13ASAE - A01C13ASAG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>A01C13ARBE - A01C13ARBG - A01C13ASBE - A01C13ASBG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>A01C14ARAE - A01C14ARAG - A01C14ASAE - A01C14ASAG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>A01C14ARBE - A01C14ARBG - A01C14ASBE - A01C14ASBG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>A01C15ARAE - A01C15ARAG - A01C15ASAE - A01C15ASAG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>A01C15ARBE - A01C15ARBG - A01C15ASBE - A01C15ASBG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>A01C16ARAE - A01C16ARAG - A01C16ASAE - A01C16ASAG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>A01C16ARBE - A01C16ARBG - A01C16ASBE - A01C16ASBG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>A01C17ARAE - A01C17ARAG - A01C17ASAE - A01C17ASAG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>A01C17ARBE - A01C17ARBG - A01C17ASBE - A01C17ASBG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>A01C18ARAE - A01C18ARAG - A01C18ASAE - A01C18ASAG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>A01C18ARBE - A01C18ARBG - A01C18ASBE - A01C18ASBG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>A01C19ARAE - A01C19ARAG - A01C19ASAE - A01C19ASAG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>A01C19ARBE - A01C19ARBG - A01C19ASBE - A01C19ASBG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>A01C20ARAE - A01C20ARAG - A01C20ASAE - A01C20ASAG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>A01C20ARBE - A01C20ARBG - A01C20ASBE - A01C20ASBG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>A01C21ARAE - A01C21ARAG - A01C21ASAE - A01C21ASAG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>A01C21ARBE - A01C21ARBG - A01C21ASBE - A01C21ASBG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>A01C22ARAE - A01C22ARAG - A01C22ASAE - A01C22ASAG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>A01C22ARBE - A01C22ARBG - A01C22ASBE - A01C22ASBG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>A01C23ARAE - A01C23ARAG - A01C23ASAE - A01C23ASAG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>A01C23ARBE - A01C23ARBG - A01C23ASBE - A01C23ASBG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>A01C24ARAE - A01C24ARAG - A01C24ASAE - A01C24ASAG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>A01C24ARBE - A01C24ARBG - A01C24ASBE - A01C24ASBG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>A01C25ARAE - A01C25ARAG - A01C25ASAE - A01C25ASAG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>A01C25ARBE - A01C25ARBG - A01C25ASBE - A01C25ASBG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>A01C26ARAE - A01C26ARAG - A01C26ASAE - A01C26ASAG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>A01C26ARBE - A01C26ARBG - A01C26ASBE - A01C26ASBG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>A01C27ARAE - A01C27ARAG - A01C27ASAE - A01C27ASAG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>A01C27ARBE - A01C27ARBG - A01C27ASBE - A01C27ASBG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>A01C28ARAE - A01C28ARAG - A01C28ASAE - A01C28ASAG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>A01C28ARBE - A01C28ARBG - A01C28ASBE - A01C28ASBG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>A01C29ARAE - A01C29ARAG - A01C29ASAE - A01C29ASAG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>A01C29ARBE - A01C29ARBG - A01C29ASBE - A01C29ASBG</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>S3_BeNe_Standard_Premier_Tariff_Codes__c</picklist>
+        <values>
+            <fullName>H01C03ARAE - H01C03ARAG - H01C03ASAE - H01C03ASAG - H03C03ARAE - H03C03ARAG - H03C03ASAE - H03C03ASAG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>H01C03ARBE - H01C03ARBG - H01C03ASBE - H01C03ASBG - H03C03ARBE - H03C03ARBG - H03C03ASBE - H03C03ASBG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>H01C04ARAE - H01C04ARAG - H01C04ASAE - H01C04ASAG - H03C04ARAE - H03C04ARAG - H03C04ASAE - H03C04ASAG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>H01C04ARBE - H01C04ARBG - H01C04ASBE - H01C04ASBG - H03C04ARBE - H03C04ARBG - H03C04ASBE - H03C04ASBG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>H01C05ARAE - H01C05ARAG - H01C05ASAE - H01C05ASAG - H03C05ARAE - H03C05ARAG - H03C05ASAE - H03C05ASAG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>H01C05ARBE - H01C05ARBG - H01C05ASBE - H01C05ASBG - H03C05ARBE - H03C05ARBG - H03C05ASBE - H03C05ASBG</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

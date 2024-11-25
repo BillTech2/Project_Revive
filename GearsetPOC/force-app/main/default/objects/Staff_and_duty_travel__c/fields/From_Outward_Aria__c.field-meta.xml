@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>From_Outward_Aria__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>This field contains the departure station of a return journey of a staff travel for Aria</description>
+    <label>From (Outward)</label>
+    <referenceTo>Stations__c</referenceTo>
+    <relationshipLabel>Staff and duty travels (From (Outward))</relationshipLabel>
+    <relationshipName>Staff_and_duty_travels_From_Outward</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

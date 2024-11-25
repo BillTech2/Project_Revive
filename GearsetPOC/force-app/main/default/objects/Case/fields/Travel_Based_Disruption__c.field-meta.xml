@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Travel_Based_Disruption__c</fullName>
+    <label>Travel Based Disruption</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Real Time Train Information</fullName>
+                <default>false</default>
+                <label>Real Time Train Information</label>
+            </value>
+            <value>
+                <fullName>Engineering Works</fullName>
+                <default>false</default>
+                <label>Engineering Works</label>
+            </value>
+            <value>
+                <fullName>Schedule Changes</fullName>
+                <default>false</default>
+                <label>Schedule Changes</label>
+            </value>
+            <value>
+                <fullName>Eurostar Strike</fullName>
+                <default>false</default>
+                <label>Eurostar Strike</label>
+            </value>
+            <value>
+                <fullName>Setswap Or Reaccom</fullName>
+                <default>false</default>
+                <label>Setswap Or Reaccom</label>
+            </value>
+            <value>
+                <fullName>Cancellation</fullName>
+                <default>false</default>
+                <label>Cancellation</label>
+            </value>
+            <value>
+                <fullName>Delay</fullName>
+                <default>false</default>
+                <label>Delay</label>
+            </value>
+            <value>
+                <fullName>Issue With Other Rail Provider</fullName>
+                <default>false</default>
+                <label>Issue With Other Rail Provider</label>
+            </value>
+            <value>
+                <fullName>Major Disruption</fullName>
+                <default>false</default>
+                <label>Major Disruption</label>
+            </value>
+            <value>
+                <fullName>Webform case - please review</fullName>
+                <default>false</default>
+                <label>Webform case - please review</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

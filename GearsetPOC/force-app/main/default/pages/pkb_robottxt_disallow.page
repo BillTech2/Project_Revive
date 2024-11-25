@@ -1,0 +1,4 @@
+<apex:page contentType="text/pain">
+User-agent: *
+Disallow: /
+</apex:page>

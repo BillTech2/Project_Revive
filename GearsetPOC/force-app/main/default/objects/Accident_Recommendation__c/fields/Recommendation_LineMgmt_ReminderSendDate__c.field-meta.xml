@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Recommendation_LineMgmt_ReminderSendDate__c</fullName>
+    <description>Indicates the next date when the reminder for closure date has passed, is to be sent to the Line Management</description>
+    <label>Line Management Reminder Send Date</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>DateTime</type>
+</CustomField>

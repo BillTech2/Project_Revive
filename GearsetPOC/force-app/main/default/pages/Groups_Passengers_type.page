@@ -1,0 +1,176 @@
+<apex:page standardcontroller="Case" extensions="Groups_Passengers_Type_Con"  sidebar="true" showheader="true" standardStylesheets="true" docType="html-5.0"  >
+
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="description" content=""/>
+        <meta name="author" content="Eurostar Ltd"/>
+    </head>
+    <style>
+        .requiredInput .requiredBlock, .requiredBlock {background-color: white;} 
+        .custompubblock div {display: inline-block;} 
+        .custompublabel {width:54px;} 
+        .pbHeader{background-color: red;}
+        table.detailList {
+        width: 50% !important;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    </style>
+    <!-- ================================================================================================== -->
+    <!--                                            JAVASCRIPTS                                             -->
+    <!-- ================================================================================================== -->
+    <script type='text/javascript' src='/canvas/sdk/js/publisher.js'/>
+    <apex:includeScript value="{!URLFOR($Resource.jscript, 'js/jquery.min.js')}"/>
+    <apex:includeScript value="/support/console/31.0/integration.js"/>
+
+    <script type='text/javascript'>
+
+        // This function refresh the Page once the Case has been updated with new Passenger types
+        function Refresh()
+        {
+        /*console.log('Is in Console:' + sforce.console.isInConsole() );
+            if (parent.sforce.console.isInConsole()) {
+                top.location.href="../console";
+            }
+            else {
+                top.location.href="../{!Case.Id}";
+            }*/
+        //top.location.href="../console";
+        //console.log('Is in Console:' + top.sforce.console.isInConsole() );
+        //console.log('Is in Console:' + top.location);
+        //top.location.href = top.location.href;
+        top.location.href="../console";
+        }
+    </script>
+    <!-- ================================================================================================== -->
+    <!--                                            /JAVASCRIPTS                                            -->
+    <!-- ================================================================================================== -->
+    <body>
+    <!-- ================================================================================================== -->
+    <!--                                            FORM                                                    -->
+    <!-- ================================================================================================== -->
+    <apex:form style="overflow:auto;height:700px" >
+        <apex:pageMessages />  <!-- this is where the error messages will appear -->
+
+        <!--  ///////////////////////////////////////////////////////////////////////////////////////////////// -->
+        <!--                                        CURRENT PRICE DETAILS                                       -->
+        <!--  ///////////////////////////////////////////////////////////////////////////////////////////////// -->
+        <apex:pageBlock title="Current Price Details" mode="maindetail" id="CurrentPriceDetails" >
+            <apex:pageBlockTable value="{!CurrentCase}" var="CurrCase">
+                <apex:column value="{!CurrCase.Group_Booking_Price_Details__c}" headerValue="Price Details"/>
+                <apex:column value="{!CurrCase.Number_of_Pax__c}" headerValue="Number of Passengers"/>
+                <apex:column value="{!CurrCase.Price_Number__c}" headerValue="Total Price" />
+                <apex:column value="{!CurrCase.Currency__c}" headerValue="Currency" />
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+        <!--  ///////////////////////////////////////////////////////////////////////////////////////////////// -->
+        <!--                                    /CURRENT PRICE DETAILS                                      -->
+        <!--  ///////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+        <!--  ///////////////////////////////////////////////////////////////////////////////////////////////// -->
+        <!--                                        NEW PASSENGERS'TYPE SECTION                                 -->
+        <!--  ///////////////////////////////////////////////////////////////////////////////////////////////// -->
+        <apex:pageBlock title="New Passenger's Types" mode="normal" >
+            <!--  _______________________________________________________________________________ -->
+            <!--                                ADD A NEW PASSENGER TYPE SECTION                  -->
+            <!--  _______________________________________________________________________________ -->
+            <apex:pageBlock title="Add a New Passenger Type" mode="edit" >
+                <apex:pageBlockSection title="Add a New Passenger Type" columns="1" showHeader="false">
+                    <apex:selectList value="{!NewFakeCase.Group_Name__c}" size="1" label="Type of Passenger" required="true" >
+                        <apex:selectOptions value="{!PaxTypes}"/>
+                    </apex:selectList>
+                    <apex:inputField type="number" value="{!NewFakeCase.Number_of_Pax__c}" label="Nb of Pax" html-placeholder="Type a number here..." required="false"/>
+                    <apex:inputText value="{!NewFakeCase.Price_Number__c}" label="Price" html-placeholder="Type a price here..." required="false"/>
+                    <apex:inputField value="{!CurrentCase.Currency__c}" label="Currency" required="true"/>
+                    <apex:commandButton action="{!AddThis}" value="Add" id="button-send" />
+
+                </apex:pageBlockSection>
+            </apex:pageBlock>
+            <!--  _______________________________________________________________________________ -->
+            <!--                            /ADD A NEW PASSENGER TYPE SECTION                     -->
+            <!--  _______________________________________________________________________________ -->
+
+
+            <!--  _______________________________________________________________________________ -->
+            <!--                                    LIST OF PASSENGER TYPES SECTION               -->
+            <!--  _______________________________________________________________________________ -->
+
+            <!-- :::::::::::::::::::::::::::::::::::::::::::: -->
+            <!--                READ VIEW                     -->
+            <!-- :::::::::::::::::::::::::::::::::::::::::::: -->
+            <apex:pageBlock title="List of Passenger types" mode="normal" rendered="{!ModeEdit != true}">
+                <apex:pageblockButtons location="top">
+                    <apex:commandButton action="{!EditRecords}" id="editButton" value="Edit"/>
+                    <apex:commandButton action="{!ClearPassengerTypeDetails}" id="ClearButton" value="Clear the list"/>
+                </apex:pageblockButtons>
+                <apex:pageBlockSection columns="4" >
+                    <apex:repeat value="{!ListOfFakeCases}" var="PaxType">
+                        <apex:outputField value="{!PaxType.Group_Name__c}" label="Type of Passengers"/> <!-- We use the Group Name field because it is a text field and we need to store a text, no need to store it in a Rich Text Area at the moment -->
+                        <apex:outputField value="{!PaxType.Number_of_Pax__c}" label="Number of Passengers"/>
+                        <apex:outputField value="{!PaxType.Price_Number__c}" label="Price per Passenger" />
+                        <apex:outputField value="{!PaxType.Currency__c}" label="Currency" />
+                    </apex:repeat>
+                </apex:pageBlockSection>
+            </apex:pageBlock>
+            <!-- :::::::::::::::::::::::::::::::::::::::::::: -->
+            <!--                /READ VIEW                    -->
+            <!-- :::::::::::::::::::::::::::::::::::::::::::: -->
+
+
+            <!-- :::::::::::::::::::::::::::::::::::::::::::: -->
+            <!--                EDIT VIEW                     -->
+            <!-- :::::::::::::::::::::::::::::::::::::::::::: -->
+            <apex:pageBlock title="Current Passenger types" mode="Edit" rendered="{!ModeEdit}">
+                <apex:pageblockButtons location="top">
+                    <apex:commandButton action="{!SaveInlineChanges}" value="Save" id="saveButton" />
+                    <apex:commandButton action="{!CancelEdition}" id="cancelButton" value="Cancel"/>
+                </apex:pageblockButtons>
+                <apex:pageBlockSection columns="4" >
+
+                    <apex:repeat value="{!ListOfFakeCases}" var="PaxType">
+                        <apex:inputField value="{!PaxType.Group_Name__c}" label="Type of Passengers"/>
+                        <apex:inputField value="{!PaxType.Number_of_Pax__c}" label="Number of Passengers"/>
+                        <apex:inputField value="{!PaxType.Price_Number__c}" label="Price per Passenger" />
+                        <apex:outputField value="{!PaxType.Currency__c}" label="Currency" />
+                    </apex:repeat>
+                </apex:pageBlockSection>
+            </apex:pageBlock>
+            <!-- :::::::::::::::::::::::::::::::::::::::::::: -->
+            <!--                /EDIT VIEW                    -->
+            <!-- :::::::::::::::::::::::::::::::::::::::::::: -->
+
+            <!--  _______________________________________________________________________________ -->
+            <!--                                /LIST OF PASSENGER TYPES SECTION              -->
+            <!--  _______________________________________________________________________________ -->
+
+            <!--  _______________________________________________________________________________ -->
+            <!--                                TOTAL SECTION                                     -->
+            <!--  _______________________________________________________________________________ -->
+            <apex:pageBlock title="Total" mode="normal"  >
+
+                <apex:pageBlockTable value="{!TotalFakeCase}" var="PaxType">
+                    <apex:column value="{!PaxType.Group_Booking_Price_Details__c}" headerValue="Price Details"/>
+                    <apex:column value="{!PaxType.Number_of_Pax__c}" headerValue="Number of Passengers"/>
+                    <apex:column value="{!PaxType.Price_Number__c}" headerValue="Total Price" />
+                    <apex:column value="{!PaxType.Currency__c}" headerValue="Currency" />
+                </apex:pageBlockTable>
+                <apex:pageblockButtons location="bottom">
+                    <apex:commandButton action="{!UpdateCase}" value="Update the Group Booking" id="saveButton" rendered="{!ListofFakeCases.size>0}" />
+                </apex:pageblockButtons>
+            </apex:pageBlock>
+            <!--  _______________________________________________________________________________ -->
+            <!--                                /TOTAL SECTION                                    -->
+            <!--  _______________________________________________________________________________ -->
+        </apex:pageBlock>
+        <!--  ///////////////////////////////////////////////////////////////////////////////////////////////// -->
+        <!--                                        NEW PASSENGERS'TYPE SECTION                                 -->
+        <!--  ///////////////////////////////////////////////////////////////////////////////////////////////// -->
+    </apex:form>
+    <!-- ================================================================================================== -->
+    <!--                                            /FORM                                                   -->
+    <!-- ================================================================================================== -->
+    </body>
+</apex:page>

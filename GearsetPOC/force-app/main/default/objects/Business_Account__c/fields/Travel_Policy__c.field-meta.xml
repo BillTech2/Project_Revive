@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Travel_Policy__c</fullName>
+    <label>Travel Policy</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>First</fullName>
+                <default>false</default>
+                <label>First</label>
+            </value>
+            <value>
+                <fullName>Mixed</fullName>
+                <default>false</default>
+                <label>Mixed</label>
+            </value>
+            <value>
+                <fullName>Second</fullName>
+                <default>false</default>
+                <label>Second</label>
+            </value>
+            <value>
+                <fullName>Best Buy</fullName>
+                <default>false</default>
+                <label>Best Buy</label>
+            </value>
+            <value>
+                <fullName>1st only for board members</fullName>
+                <default>false</default>
+                <label>1st only for board members</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Free/No Travel Policy</fullName>
+                <default>false</default>
+                <label>Free/No Travel Policy</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

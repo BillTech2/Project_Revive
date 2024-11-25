@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Case_Passenger_Name_Required</fullName>
+    <active>true</active>
+    <description>The Name of the passenger is required when the customer submit the disruption webform</description>
+    <errorConditionFormula>AND
+(
+	ISBLANK( Passenger_s_Name__c  ),
+	TEXT(Origin) = &quot;Disruption Web&quot;
+)</errorConditionFormula>
+    <errorDisplayField>Passenger_s_Name__c</errorDisplayField>
+    <errorMessage>Please enter the name of one of the passengers</errorMessage>
+</ValidationRule>

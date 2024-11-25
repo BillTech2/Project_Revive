@@ -1,0 +1,30 @@
+<apex:page id="SalesforceMemberTierAdjustment"
+			showHeader="true"
+			sidebar="true"
+			tabStyle="SalesforceMember__x"
+			standardController="SalesforceMember__x"
+			extensions="SalesforceMemberTierAdjustmentController">
+
+	<apex:sectionHeader title="Member tier Edit"
+						subtitle="New Member tier" />
+	<c:LoyaltyTierAccessCheck accessedButtonName="Tier_adjustment">
+		<apex:form >
+			<apex:pageBlock title="Member tier Edit" mode="edit">
+				<apex:pageMessages />
+				<apex:pageBlockSection columns="1" >
+					<apex:selectList value="{!selectedTier}" label="Tier" size="1" required="true">
+						<apex:selectOptions value="{!tiers}"/>
+					</apex:selectList>
+					<apex:selectList value="{!selectedReason}" label="Reason" size="1" required="true">
+						<apex:selectOptions value="{!reasons}"/>
+					</apex:selectList>
+					<apex:inputText value="{!reasonText}" label="Reason text" />
+				</apex:pageBlockSection>
+				<apex:pageBlockButtons >
+					<apex:commandButton action="{!save}" value=" Save "/>
+					<apex:commandButton action="{!cancel}" value="Cancel"/>
+				</apex:pageBlockButtons>
+			</apex:pageBlock>
+		</apex:form>
+	</c:LoyaltyTierAccessCheck>
+</apex:page>

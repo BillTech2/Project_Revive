@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sales_Team_Flag__c</fullName>
+    <description>Visual indicator of sales team</description>
+    <externalId>false</externalId>
+    <formula>CASE(
+	Sales_Team__c,
+	&quot;Red&quot;, &quot;Red Sales Team&quot; &amp; &quot; &quot; &amp; IMAGE(&quot;/resource/flag_red&quot;, &quot;Red Sales Team&quot;),
+	&quot;Blue&quot;, &quot;Blue Sales Team&quot; &amp; &quot; &quot; &amp; IMAGE(&quot;/resource/flag_Blue&quot;, &quot;Blue Sales Team&quot;),
+	&quot;Purple&quot;, &quot;Purple Sales Team&quot; &amp; &quot; &quot; &amp; IMAGE(&quot;/resource/Flag_purple&quot;, &quot;Purple Sales Team&quot;),
+	&quot;&quot;
+	)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Sales Team Flag</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

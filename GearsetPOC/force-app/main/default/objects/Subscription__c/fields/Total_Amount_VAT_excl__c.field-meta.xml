@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Amount_VAT_excl__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( VAT_Country_Code__c = &quot;BE&quot;, TECH_Total_Amount_Factor__c/1.21,
+
+IF( TECH_isIntraCommunautaire__c = TRUE || VAT_Number__c &lt;&gt; &quot;N/A&quot;, 
+
+TECH_Total_Amount_Factor__c,
+
+TECH_Total_Amount_Factor__c/1.21))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Total Amount (VAT excl)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

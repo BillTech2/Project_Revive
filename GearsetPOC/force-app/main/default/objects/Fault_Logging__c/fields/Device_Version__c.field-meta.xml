@@ -1,0 +1,1862 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Device_Version__c</fullName>
+    <label>Device Version</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Device__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>2</fullName>
+                <default>false</default>
+                <label>2</label>
+            </value>
+            <value>
+                <fullName>3</fullName>
+                <default>false</default>
+                <label>3</label>
+            </value>
+            <value>
+                <fullName>105</fullName>
+                <default>false</default>
+                <label>105</label>
+            </value>
+            <value>
+                <fullName>108</fullName>
+                <default>false</default>
+                <label>108</label>
+            </value>
+            <value>
+                <fullName>130</fullName>
+                <default>false</default>
+                <label>130</label>
+            </value>
+            <value>
+                <fullName>206</fullName>
+                <default>false</default>
+                <label>206</label>
+            </value>
+            <value>
+                <fullName>215</fullName>
+                <default>false</default>
+                <label>215</label>
+            </value>
+            <value>
+                <fullName>220</fullName>
+                <default>false</default>
+                <label>220</label>
+            </value>
+            <value>
+                <fullName>222</fullName>
+                <default>false</default>
+                <label>222</label>
+            </value>
+            <value>
+                <fullName>225</fullName>
+                <default>false</default>
+                <label>225</label>
+            </value>
+            <value>
+                <fullName>230</fullName>
+                <default>false</default>
+                <label>230</label>
+            </value>
+            <value>
+                <fullName>301</fullName>
+                <default>false</default>
+                <label>301</label>
+            </value>
+            <value>
+                <fullName>515</fullName>
+                <default>false</default>
+                <label>515</label>
+            </value>
+            <value>
+                <fullName>808</fullName>
+                <default>false</default>
+                <label>808</label>
+            </value>
+            <value>
+                <fullName>10 Series</fullName>
+                <default>false</default>
+                <label>10 Series</label>
+            </value>
+            <value>
+                <fullName>4G LTE Series</fullName>
+                <default>false</default>
+                <label>4G LTE Series</label>
+            </value>
+            <value>
+                <fullName>858 Smart</fullName>
+                <default>false</default>
+                <label>858 Smart</label>
+            </value>
+            <value>
+                <fullName>9720 Series</fullName>
+                <default>false</default>
+                <label>9720 Series</label>
+            </value>
+            <value>
+                <fullName>A Series</fullName>
+                <default>false</default>
+                <label>A Series</label>
+            </value>
+            <value>
+                <fullName>Ascend Series</fullName>
+                <default>false</default>
+                <label>Ascend Series</label>
+            </value>
+            <value>
+                <fullName>Asha Series</fullName>
+                <default>false</default>
+                <label>Asha Series</label>
+            </value>
+            <value>
+                <fullName>ATRIX Series</fullName>
+                <default>false</default>
+                <label>ATRIX Series</label>
+            </value>
+            <value>
+                <fullName>Bello</fullName>
+                <default>false</default>
+                <label>Bello</label>
+            </value>
+            <value>
+                <fullName>Bold Touch Series</fullName>
+                <default>false</default>
+                <label>Bold Touch Series</label>
+            </value>
+            <value>
+                <fullName>C Series</fullName>
+                <default>false</default>
+                <label>C Series</label>
+            </value>
+            <value>
+                <fullName>Classic Series</fullName>
+                <default>false</default>
+                <label>Classic Series</label>
+            </value>
+            <value>
+                <fullName>Curve Series</fullName>
+                <default>false</default>
+                <label>Curve Series</label>
+            </value>
+            <value>
+                <fullName>Desire 5 Series</fullName>
+                <default>false</default>
+                <label>Desire 5 Series</label>
+            </value>
+            <value>
+                <fullName>Desire 6 Series</fullName>
+                <default>false</default>
+                <label>Desire 6 Series</label>
+            </value>
+            <value>
+                <fullName>Desire 7 Series</fullName>
+                <default>false</default>
+                <label>Desire 7 Series</label>
+            </value>
+            <value>
+                <fullName>Desire 8 Series</fullName>
+                <default>false</default>
+                <label>Desire 8 Series</label>
+            </value>
+            <value>
+                <fullName>Desire Eye Series</fullName>
+                <default>false</default>
+                <label>Desire Eye Series</label>
+            </value>
+            <value>
+                <fullName>DROID Series</fullName>
+                <default>false</default>
+                <label>DROID Series</label>
+            </value>
+            <value>
+                <fullName>DTEK50 Series</fullName>
+                <default>false</default>
+                <label>DTEK50 Series</label>
+            </value>
+            <value>
+                <fullName>Excite 10 Series</fullName>
+                <default>false</default>
+                <label>Excite 10 Series</label>
+            </value>
+            <value>
+                <fullName>Excite 13 Series</fullName>
+                <default>false</default>
+                <label>Excite 13 Series</label>
+            </value>
+            <value>
+                <fullName>Excite 7 Series</fullName>
+                <default>false</default>
+                <label>Excite 7 Series</label>
+            </value>
+            <value>
+                <fullName>Excite AT200 Series</fullName>
+                <default>false</default>
+                <label>Excite AT200 Series</label>
+            </value>
+            <value>
+                <fullName>Excite Go Series</fullName>
+                <default>false</default>
+                <label>Excite Go Series</label>
+            </value>
+            <value>
+                <fullName>Excite Pro Series</fullName>
+                <default>false</default>
+                <label>Excite Pro Series</label>
+            </value>
+            <value>
+                <fullName>Excite Pure Series</fullName>
+                <default>false</default>
+                <label>Excite Pure Series</label>
+            </value>
+            <value>
+                <fullName>Excite Write Series</fullName>
+                <default>false</default>
+                <label>Excite Write Series</label>
+            </value>
+            <value>
+                <fullName>F Series</fullName>
+                <default>false</default>
+                <label>F Series</label>
+            </value>
+            <value>
+                <fullName>Find Series</fullName>
+                <default>false</default>
+                <label>Find Series</label>
+            </value>
+            <value>
+                <fullName>Fonepad 7 Series</fullName>
+                <default>false</default>
+                <label>Fonepad 7 Series</label>
+            </value>
+            <value>
+                <fullName>G Series</fullName>
+                <default>false</default>
+                <label>G Series</label>
+            </value>
+            <value>
+                <fullName>G450 Series</fullName>
+                <default>false</default>
+                <label>G450 Series</label>
+            </value>
+            <value>
+                <fullName>G710 Series</fullName>
+                <default>false</default>
+                <label>G710 Series</label>
+            </value>
+            <value>
+                <fullName>G910 / G920</fullName>
+                <default>false</default>
+                <label>G910 / G920</label>
+            </value>
+            <value>
+                <fullName>Galaxy A Series</fullName>
+                <default>false</default>
+                <label>Galaxy A Series</label>
+            </value>
+            <value>
+                <fullName>Galaxy C Series</fullName>
+                <default>false</default>
+                <label>Galaxy C Series</label>
+            </value>
+            <value>
+                <fullName>Galaxy Core Prime</fullName>
+                <default>false</default>
+                <label>Galaxy Core Prime</label>
+            </value>
+            <value>
+                <fullName>Galaxy E Series</fullName>
+                <default>false</default>
+                <label>Galaxy E Series</label>
+            </value>
+            <value>
+                <fullName>Galaxy Express</fullName>
+                <default>false</default>
+                <label>Galaxy Express</label>
+            </value>
+            <value>
+                <fullName>Galaxy Folder</fullName>
+                <default>false</default>
+                <label>Galaxy Folder</label>
+            </value>
+            <value>
+                <fullName>Galaxy Grand Max</fullName>
+                <default>false</default>
+                <label>Galaxy Grand Max</label>
+            </value>
+            <value>
+                <fullName>Galaxy J Series</fullName>
+                <default>false</default>
+                <label>Galaxy J Series</label>
+            </value>
+            <value>
+                <fullName>Galaxy Note</fullName>
+                <default>false</default>
+                <label>Galaxy Note</label>
+            </value>
+            <value>
+                <fullName>Galaxy On</fullName>
+                <default>false</default>
+                <label>Galaxy On</label>
+            </value>
+            <value>
+                <fullName>Galaxy S Series</fullName>
+                <default>false</default>
+                <label>Galaxy S Series</label>
+            </value>
+            <value>
+                <fullName>Galaxy Tab</fullName>
+                <default>false</default>
+                <label>Galaxy Tab</label>
+            </value>
+            <value>
+                <fullName>Galaxy V Plus</fullName>
+                <default>false</default>
+                <label>Galaxy V Plus</label>
+            </value>
+            <value>
+                <fullName>Galaxy View</fullName>
+                <default>false</default>
+                <label>Galaxy View</label>
+            </value>
+            <value>
+                <fullName>Google Nexus Series</fullName>
+                <default>false</default>
+                <label>Google Nexus Series</label>
+            </value>
+            <value>
+                <fullName>Guru Plus</fullName>
+                <default>false</default>
+                <label>Guru Plus</label>
+            </value>
+            <value>
+                <fullName>Honor Series</fullName>
+                <default>false</default>
+                <label>Honor Series</label>
+            </value>
+            <value>
+                <fullName>Iconia One Series</fullName>
+                <default>false</default>
+                <label>Iconia One Series</label>
+            </value>
+            <value>
+                <fullName>Iconia Series</fullName>
+                <default>false</default>
+                <label>Iconia Series</label>
+            </value>
+            <value>
+                <fullName>Iconia Tab Series</fullName>
+                <default>false</default>
+                <label>Iconia Tab Series</label>
+            </value>
+            <value>
+                <fullName>iPad</fullName>
+                <default>false</default>
+                <label>iPad</label>
+            </value>
+            <value>
+                <fullName>iPad Air tablet Series</fullName>
+                <default>false</default>
+                <label>iPad Air tablet Series</label>
+            </value>
+            <value>
+                <fullName>iPad mini tablet Series</fullName>
+                <default>false</default>
+                <label>iPad mini tablet Series</label>
+            </value>
+            <value>
+                <fullName>iPad Pro</fullName>
+                <default>false</default>
+                <label>iPad Pro</label>
+            </value>
+            <value>
+                <fullName>iPhone 3 Series</fullName>
+                <default>false</default>
+                <label>iPhone 3 Series</label>
+            </value>
+            <value>
+                <fullName>iPhone 4 Series</fullName>
+                <default>false</default>
+                <label>iPhone 4 Series</label>
+            </value>
+            <value>
+                <fullName>iPhone 5 Series</fullName>
+                <default>false</default>
+                <label>iPhone 5 Series</label>
+            </value>
+            <value>
+                <fullName>iPhone 6 Series</fullName>
+                <default>false</default>
+                <label>iPhone 6 Series</label>
+            </value>
+            <value>
+                <fullName>iPhone SE</fullName>
+                <default>false</default>
+                <label>iPhone SE</label>
+            </value>
+            <value>
+                <fullName>Joy Series</fullName>
+                <default>false</default>
+                <label>Joy Series</label>
+            </value>
+            <value>
+                <fullName>K Series</fullName>
+                <default>false</default>
+                <label>K Series</label>
+            </value>
+            <value>
+                <fullName>Kin Series</fullName>
+                <default>false</default>
+                <label>Kin Series</label>
+            </value>
+            <value>
+                <fullName>L Series</fullName>
+                <default>false</default>
+                <label>L Series</label>
+            </value>
+            <value>
+                <fullName>Leap Series</fullName>
+                <default>false</default>
+                <label>Leap Series</label>
+            </value>
+            <value>
+                <fullName>Lemon Series</fullName>
+                <default>false</default>
+                <label>Lemon Series</label>
+            </value>
+            <value>
+                <fullName>Leon Series</fullName>
+                <default>false</default>
+                <label>Leon Series</label>
+            </value>
+            <value>
+                <fullName>Liquid E Series</fullName>
+                <default>false</default>
+                <label>Liquid E Series</label>
+            </value>
+            <value>
+                <fullName>Liquid Jade Series</fullName>
+                <default>false</default>
+                <label>Liquid Jade Series</label>
+            </value>
+            <value>
+                <fullName>Liquid M Series</fullName>
+                <default>false</default>
+                <label>Liquid M Series</label>
+            </value>
+            <value>
+                <fullName>Liquid X Series</fullName>
+                <default>false</default>
+                <label>Liquid X Series</label>
+            </value>
+            <value>
+                <fullName>Liquid Z Series</fullName>
+                <default>false</default>
+                <label>Liquid Z Series</label>
+            </value>
+            <value>
+                <fullName>Liquid Zest Series</fullName>
+                <default>false</default>
+                <label>Liquid Zest Series</label>
+            </value>
+            <value>
+                <fullName>Lumia Series</fullName>
+                <default>false</default>
+                <label>Lumia Series</label>
+            </value>
+            <value>
+                <fullName>m1 Series</fullName>
+                <default>false</default>
+                <label>m1 Series</label>
+            </value>
+            <value>
+                <fullName>m2 series</fullName>
+                <default>false</default>
+                <label>m2 series</label>
+            </value>
+            <value>
+                <fullName>m3 Series</fullName>
+                <default>false</default>
+                <label>m3 Series</label>
+            </value>
+            <value>
+                <fullName>Magna Series</fullName>
+                <default>false</default>
+                <label>Magna Series</label>
+            </value>
+            <value>
+                <fullName>Mate Series</fullName>
+                <default>false</default>
+                <label>Mate Series</label>
+            </value>
+            <value>
+                <fullName>MediaPad Series</fullName>
+                <default>false</default>
+                <label>MediaPad Series</label>
+            </value>
+            <value>
+                <fullName>Metro 360</fullName>
+                <default>false</default>
+                <label>Metro 360</label>
+            </value>
+            <value>
+                <fullName>Mi 1 Series</fullName>
+                <default>false</default>
+                <label>Mi 1 Series</label>
+            </value>
+            <value>
+                <fullName>Mi 2 Series</fullName>
+                <default>false</default>
+                <label>Mi 2 Series</label>
+            </value>
+            <value>
+                <fullName>Mi 3 Series</fullName>
+                <default>false</default>
+                <label>Mi 3 Series</label>
+            </value>
+            <value>
+                <fullName>Mi 4 Series</fullName>
+                <default>false</default>
+                <label>Mi 4 Series</label>
+            </value>
+            <value>
+                <fullName>Mi 5 Series</fullName>
+                <default>false</default>
+                <label>Mi 5 Series</label>
+            </value>
+            <value>
+                <fullName>Mi Max Series</fullName>
+                <default>false</default>
+                <label>Mi Max Series</label>
+            </value>
+            <value>
+                <fullName>Mi Note Series</fullName>
+                <default>false</default>
+                <label>Mi Note Series</label>
+            </value>
+            <value>
+                <fullName>Mi Pad Series</fullName>
+                <default>false</default>
+                <label>Mi Pad Series</label>
+            </value>
+            <value>
+                <fullName>Mirror Series</fullName>
+                <default>false</default>
+                <label>Mirror Series</label>
+            </value>
+            <value>
+                <fullName>Moto 360 Series</fullName>
+                <default>false</default>
+                <label>Moto 360 Series</label>
+            </value>
+            <value>
+                <fullName>Moto E Series</fullName>
+                <default>false</default>
+                <label>Moto E Series</label>
+            </value>
+            <value>
+                <fullName>Moto G Series</fullName>
+                <default>false</default>
+                <label>Moto G Series</label>
+            </value>
+            <value>
+                <fullName>Moto Maxx Series</fullName>
+                <default>false</default>
+                <label>Moto Maxx Series</label>
+            </value>
+            <value>
+                <fullName>Moto X Series</fullName>
+                <default>false</default>
+                <label>Moto X Series</label>
+            </value>
+            <value>
+                <fullName>Moto Z Series</fullName>
+                <default>false</default>
+                <label>Moto Z Series</label>
+            </value>
+            <value>
+                <fullName>MX Series</fullName>
+                <default>false</default>
+                <label>MX Series</label>
+            </value>
+            <value>
+                <fullName>N Series</fullName>
+                <default>false</default>
+                <label>N Series</label>
+            </value>
+            <value>
+                <fullName>Neo Series</fullName>
+                <default>false</default>
+                <label>Neo Series</label>
+            </value>
+            <value>
+                <fullName>Nexus Series</fullName>
+                <default>false</default>
+                <label>Nexus Series</label>
+            </value>
+            <value>
+                <fullName>One</fullName>
+                <default>false</default>
+                <label>One</label>
+            </value>
+            <value>
+                <fullName>One A Series</fullName>
+                <default>false</default>
+                <label>One A Series</label>
+            </value>
+            <value>
+                <fullName>One E Series</fullName>
+                <default>false</default>
+                <label>One E Series</label>
+            </value>
+            <value>
+                <fullName>One M Series</fullName>
+                <default>false</default>
+                <label>One M Series</label>
+            </value>
+            <value>
+                <fullName>One S Series</fullName>
+                <default>false</default>
+                <label>One S Series</label>
+            </value>
+            <value>
+                <fullName>One Series</fullName>
+                <default>false</default>
+                <label>One Series</label>
+            </value>
+            <value>
+                <fullName>One X Series</fullName>
+                <default>false</default>
+                <label>One X Series</label>
+            </value>
+            <value>
+                <fullName>Optimus Series</fullName>
+                <default>false</default>
+                <label>Optimus Series</label>
+            </value>
+            <value>
+                <fullName>P Series</fullName>
+                <default>false</default>
+                <label>P Series</label>
+            </value>
+            <value>
+                <fullName>PadFone S Series</fullName>
+                <default>false</default>
+                <label>PadFone S Series</label>
+            </value>
+            <value>
+                <fullName>Passport Series</fullName>
+                <default>false</default>
+                <label>Passport Series</label>
+            </value>
+            <value>
+                <fullName>Pearl Series</fullName>
+                <default>false</default>
+                <label>Pearl Series</label>
+            </value>
+            <value>
+                <fullName>Phab Series</fullName>
+                <default>false</default>
+                <label>Phab Series</label>
+            </value>
+            <value>
+                <fullName>PlayBook tablet Series</fullName>
+                <default>false</default>
+                <label>PlayBook tablet Series</label>
+            </value>
+            <value>
+                <fullName>Porsche Design Series</fullName>
+                <default>false</default>
+                <label>Porsche Design Series</label>
+            </value>
+            <value>
+                <fullName>Predator Series</fullName>
+                <default>false</default>
+                <label>Predator Series</label>
+            </value>
+            <value>
+                <fullName>Priv Series</fullName>
+                <default>false</default>
+                <label>Priv Series</label>
+            </value>
+            <value>
+                <fullName>Pro Series</fullName>
+                <default>false</default>
+                <label>Pro Series</label>
+            </value>
+            <value>
+                <fullName>Q Series</fullName>
+                <default>false</default>
+                <label>Q Series</label>
+            </value>
+            <value>
+                <fullName>R Series</fullName>
+                <default>false</default>
+                <label>R Series</label>
+            </value>
+            <value>
+                <fullName>RAZR Series</fullName>
+                <default>false</default>
+                <label>RAZR Series</label>
+            </value>
+            <value>
+                <fullName>Redmi</fullName>
+                <default>false</default>
+                <label>Redmi</label>
+            </value>
+            <value>
+                <fullName>Redmi 1 Series</fullName>
+                <default>false</default>
+                <label>Redmi 1 Series</label>
+            </value>
+            <value>
+                <fullName>Redmi 2 Series</fullName>
+                <default>false</default>
+                <label>Redmi 2 Series</label>
+            </value>
+            <value>
+                <fullName>Redmi 3 Series</fullName>
+                <default>false</default>
+                <label>Redmi 3 Series</label>
+            </value>
+            <value>
+                <fullName>Redmi Note Series</fullName>
+                <default>false</default>
+                <label>Redmi Note Series</label>
+            </value>
+            <value>
+                <fullName>Redmi Pro Series</fullName>
+                <default>false</default>
+                <label>Redmi Pro Series</label>
+            </value>
+            <value>
+                <fullName>S Series</fullName>
+                <default>false</default>
+                <label>S Series</label>
+            </value>
+            <value>
+                <fullName>Smart 4 Series</fullName>
+                <default>false</default>
+                <label>Smart 4 Series</label>
+            </value>
+            <value>
+                <fullName>Smart first Series</fullName>
+                <default>false</default>
+                <label>Smart first Series</label>
+            </value>
+            <value>
+                <fullName>Smart Mini Series</fullName>
+                <default>false</default>
+                <label>Smart Mini Series</label>
+            </value>
+            <value>
+                <fullName>Smart Platinum Series</fullName>
+                <default>false</default>
+                <label>Smart Platinum Series</label>
+            </value>
+            <value>
+                <fullName>smart prime Series</fullName>
+                <default>false</default>
+                <label>smart prime Series</label>
+            </value>
+            <value>
+                <fullName>Smart speed Series</fullName>
+                <default>false</default>
+                <label>Smart speed Series</label>
+            </value>
+            <value>
+                <fullName>Smart Tab Series</fullName>
+                <default>false</default>
+                <label>Smart Tab Series</label>
+            </value>
+            <value>
+                <fullName>Smart ultra Series</fullName>
+                <default>false</default>
+                <label>Smart ultra Series</label>
+            </value>
+            <value>
+                <fullName>Spirit Series</fullName>
+                <default>false</default>
+                <label>Spirit Series</label>
+            </value>
+            <value>
+                <fullName>Storm2 Series</fullName>
+                <default>false</default>
+                <label>Storm2 Series</label>
+            </value>
+            <value>
+                <fullName>Style Series</fullName>
+                <default>false</default>
+                <label>Style Series</label>
+            </value>
+            <value>
+                <fullName>Stylo Series</fullName>
+                <default>false</default>
+                <label>Stylo Series</label>
+            </value>
+            <value>
+                <fullName>Stylus Series</fullName>
+                <default>false</default>
+                <label>Stylus Series</label>
+            </value>
+            <value>
+                <fullName>Surface Series</fullName>
+                <default>false</default>
+                <label>Surface Series</label>
+            </value>
+            <value>
+                <fullName>Symbian Series</fullName>
+                <default>false</default>
+                <label>Symbian Series</label>
+            </value>
+            <value>
+                <fullName>Tab Prime Series</fullName>
+                <default>false</default>
+                <label>Tab Prime Series</label>
+            </value>
+            <value>
+                <fullName>Tab Series</fullName>
+                <default>false</default>
+                <label>Tab Series</label>
+            </value>
+            <value>
+                <fullName>TG0 Series</fullName>
+                <default>false</default>
+                <label>TG0 Series</label>
+            </value>
+            <value>
+                <fullName>Thrive Series</fullName>
+                <default>false</default>
+                <label>Thrive Series</label>
+            </value>
+            <value>
+                <fullName>Torch Series</fullName>
+                <default>false</default>
+                <label>Torch Series</label>
+            </value>
+            <value>
+                <fullName>Tour Series</fullName>
+                <default>false</default>
+                <label>Tour Series</label>
+            </value>
+            <value>
+                <fullName>V Series</fullName>
+                <default>false</default>
+                <label>V Series</label>
+            </value>
+            <value>
+                <fullName>V860 Smart</fullName>
+                <default>false</default>
+                <label>V860 Smart</label>
+            </value>
+            <value>
+                <fullName>Vibe Series</fullName>
+                <default>false</default>
+                <label>Vibe Series</label>
+            </value>
+            <value>
+                <fullName>Windows Phone IS12T</fullName>
+                <default>false</default>
+                <label>Windows Phone IS12T</label>
+            </value>
+            <value>
+                <fullName>Wine Smart</fullName>
+                <default>false</default>
+                <label>Wine Smart</label>
+            </value>
+            <value>
+                <fullName>X</fullName>
+                <default>false</default>
+                <label>X</label>
+            </value>
+            <value>
+                <fullName>X Series</fullName>
+                <default>false</default>
+                <label>X Series</label>
+            </value>
+            <value>
+                <fullName>Xcover Series</fullName>
+                <default>false</default>
+                <label>Xcover Series</label>
+            </value>
+            <value>
+                <fullName>XL</fullName>
+                <default>false</default>
+                <label>XL</label>
+            </value>
+            <value>
+                <fullName>XOOM Series</fullName>
+                <default>false</default>
+                <label>XOOM Series</label>
+            </value>
+            <value>
+                <fullName>Xperia C Series</fullName>
+                <default>false</default>
+                <label>Xperia C Series</label>
+            </value>
+            <value>
+                <fullName>Xperia E Series</fullName>
+                <default>false</default>
+                <label>Xperia E Series</label>
+            </value>
+            <value>
+                <fullName>Xperia L Series</fullName>
+                <default>false</default>
+                <label>Xperia L Series</label>
+            </value>
+            <value>
+                <fullName>Xperia M Series</fullName>
+                <default>false</default>
+                <label>Xperia M Series</label>
+            </value>
+            <value>
+                <fullName>Xperia T Series</fullName>
+                <default>false</default>
+                <label>Xperia T Series</label>
+            </value>
+            <value>
+                <fullName>Xperia X Series</fullName>
+                <default>false</default>
+                <label>Xperia X Series</label>
+            </value>
+            <value>
+                <fullName>Xperia Z Series</fullName>
+                <default>false</default>
+                <label>Xperia Z Series</label>
+            </value>
+            <value>
+                <fullName>XpressMusic Series</fullName>
+                <default>false</default>
+                <label>XpressMusic Series</label>
+            </value>
+            <value>
+                <fullName>Y Series</fullName>
+                <default>false</default>
+                <label>Y Series</label>
+            </value>
+            <value>
+                <fullName>Z Series</fullName>
+                <default>false</default>
+                <label>Z Series</label>
+            </value>
+            <value>
+                <fullName>Zenfone 2 Series</fullName>
+                <default>false</default>
+                <label>Zenfone 2 Series</label>
+            </value>
+            <value>
+                <fullName>Zenfone 3 Series</fullName>
+                <default>false</default>
+                <label>Zenfone 3 Series</label>
+            </value>
+            <value>
+                <fullName>Zenfone 4 Series</fullName>
+                <default>false</default>
+                <label>Zenfone 4 Series</label>
+            </value>
+            <value>
+                <fullName>Zenfone 5 Series</fullName>
+                <default>false</default>
+                <label>Zenfone 5 Series</label>
+            </value>
+            <value>
+                <fullName>Zenfone 6 Series</fullName>
+                <default>false</default>
+                <label>Zenfone 6 Series</label>
+            </value>
+            <value>
+                <fullName>Zenfone C Series</fullName>
+                <default>false</default>
+                <label>Zenfone C Series</label>
+            </value>
+            <value>
+                <fullName>Zenfone Go Series</fullName>
+                <default>false</default>
+                <label>Zenfone Go Series</label>
+            </value>
+            <value>
+                <fullName>Zenfone Max Series</fullName>
+                <default>false</default>
+                <label>Zenfone Max Series</label>
+            </value>
+            <value>
+                <fullName>Zenfone Pegasus Series</fullName>
+                <default>false</default>
+                <label>Zenfone Pegasus Series</label>
+            </value>
+            <value>
+                <fullName>Zenfone Selfie Series</fullName>
+                <default>false</default>
+                <label>Zenfone Selfie Series</label>
+            </value>
+            <value>
+                <fullName>Zenfone Zoom Series</fullName>
+                <default>false</default>
+                <label>Zenfone Zoom Series</label>
+            </value>
+            <value>
+                <fullName>Zenpad 3 Series</fullName>
+                <default>false</default>
+                <label>Zenpad 3 Series</label>
+            </value>
+            <value>
+                <fullName>ZenPad 7 Series</fullName>
+                <default>false</default>
+                <label>ZenPad 7 Series</label>
+            </value>
+            <value>
+                <fullName>ZenPad 8 Series</fullName>
+                <default>false</default>
+                <label>ZenPad 8 Series</label>
+            </value>
+            <value>
+                <fullName>ZenPad C Series</fullName>
+                <default>false</default>
+                <label>ZenPad C Series</label>
+            </value>
+            <value>
+                <fullName>Zero</fullName>
+                <default>false</default>
+                <label>Zero</label>
+            </value>
+            <value>
+                <fullName>ZUK Series</fullName>
+                <default>false</default>
+                <label>ZUK Series</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Xiaomi</controllingFieldValue>
+            <valueName>Mi 1 Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Xiaomi</controllingFieldValue>
+            <valueName>Mi 2 Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Xiaomi</controllingFieldValue>
+            <valueName>Mi 3 Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Xiaomi</controllingFieldValue>
+            <valueName>Mi 4 Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Xiaomi</controllingFieldValue>
+            <valueName>Mi 5 Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Xiaomi</controllingFieldValue>
+            <valueName>Mi Max Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Xiaomi</controllingFieldValue>
+            <valueName>Mi Note Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Xiaomi</controllingFieldValue>
+            <valueName>Mi Pad Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Xiaomi</controllingFieldValue>
+            <valueName>Redmi</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Xiaomi</controllingFieldValue>
+            <valueName>Redmi 1 Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Xiaomi</controllingFieldValue>
+            <valueName>Redmi 2 Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Xiaomi</controllingFieldValue>
+            <valueName>Redmi 3 Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Xiaomi</controllingFieldValue>
+            <valueName>Redmi Note Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Xiaomi</controllingFieldValue>
+            <valueName>Redmi Pro Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Acer</controllingFieldValue>
+            <valueName>Iconia One Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Acer</controllingFieldValue>
+            <valueName>Iconia Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Acer</controllingFieldValue>
+            <valueName>Iconia Tab Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Acer</controllingFieldValue>
+            <valueName>Liquid E Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Acer</controllingFieldValue>
+            <valueName>Liquid Jade Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Acer</controllingFieldValue>
+            <valueName>Liquid M Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Acer</controllingFieldValue>
+            <valueName>Liquid X Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Acer</controllingFieldValue>
+            <valueName>Liquid Z Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Acer</controllingFieldValue>
+            <valueName>Liquid Zest Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Acer</controllingFieldValue>
+            <valueName>Predator Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Asus</controllingFieldValue>
+            <valueName>Fonepad 7 Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Asus</controllingFieldValue>
+            <valueName>Google Nexus Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Asus</controllingFieldValue>
+            <valueName>PadFone S Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Asus</controllingFieldValue>
+            <valueName>Zenfone 2 Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Asus</controllingFieldValue>
+            <valueName>Zenfone 3 Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Asus</controllingFieldValue>
+            <valueName>Zenfone 4 Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Asus</controllingFieldValue>
+            <valueName>Zenfone 5 Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Asus</controllingFieldValue>
+            <valueName>Zenfone 6 Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Asus</controllingFieldValue>
+            <valueName>Zenfone C Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Asus</controllingFieldValue>
+            <valueName>Zenfone Go Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Asus</controllingFieldValue>
+            <valueName>Zenfone Max Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Asus</controllingFieldValue>
+            <valueName>Zenfone Pegasus Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Asus</controllingFieldValue>
+            <valueName>Zenfone Selfie Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Asus</controllingFieldValue>
+            <valueName>Zenfone Zoom Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Asus</controllingFieldValue>
+            <valueName>Zenpad 3 Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Asus</controllingFieldValue>
+            <valueName>ZenPad 7 Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Asus</controllingFieldValue>
+            <valueName>ZenPad 8 Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Asus</controllingFieldValue>
+            <valueName>ZenPad C Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Oppo</controllingFieldValue>
+            <controllingFieldValue>Lenovo</controllingFieldValue>
+            <valueName>A Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Oppo</controllingFieldValue>
+            <valueName>F Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Oppo</controllingFieldValue>
+            <valueName>Find Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Oppo</controllingFieldValue>
+            <valueName>Joy Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Oppo</controllingFieldValue>
+            <valueName>Mirror Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Oppo</controllingFieldValue>
+            <controllingFieldValue>Nokia</controllingFieldValue>
+            <valueName>N Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Oppo</controllingFieldValue>
+            <valueName>Neo Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Oppo</controllingFieldValue>
+            <valueName>R Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OnePlus</controllingFieldValue>
+            <valueName>2</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OnePlus</controllingFieldValue>
+            <valueName>3</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OnePlus</controllingFieldValue>
+            <valueName>One</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OnePlus</controllingFieldValue>
+            <valueName>X</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Meizu</controllingFieldValue>
+            <valueName>m1 Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Meizu</controllingFieldValue>
+            <valueName>m2 series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Meizu</controllingFieldValue>
+            <valueName>m3 Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Meizu</controllingFieldValue>
+            <valueName>MX Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Meizu</controllingFieldValue>
+            <valueName>Pro Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Blackberry</controllingFieldValue>
+            <valueName>4G LTE Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Blackberry</controllingFieldValue>
+            <valueName>9720 Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Blackberry</controllingFieldValue>
+            <valueName>Bold Touch Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Blackberry</controllingFieldValue>
+            <valueName>Classic Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Blackberry</controllingFieldValue>
+            <valueName>Curve Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Blackberry</controllingFieldValue>
+            <valueName>DTEK50 Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Blackberry</controllingFieldValue>
+            <valueName>Leap Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Blackberry</controllingFieldValue>
+            <valueName>Passport Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Blackberry</controllingFieldValue>
+            <valueName>Pearl Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Blackberry</controllingFieldValue>
+            <valueName>PlayBook tablet Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Blackberry</controllingFieldValue>
+            <valueName>Porsche Design Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Blackberry</controllingFieldValue>
+            <valueName>Priv Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Blackberry</controllingFieldValue>
+            <valueName>Q Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Blackberry</controllingFieldValue>
+            <valueName>Storm2 Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Blackberry</controllingFieldValue>
+            <valueName>Style Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Blackberry</controllingFieldValue>
+            <valueName>Torch Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Blackberry</controllingFieldValue>
+            <valueName>Tour Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Blackberry</controllingFieldValue>
+            <controllingFieldValue>Samsung</controllingFieldValue>
+            <valueName>Z Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Toshiba</controllingFieldValue>
+            <valueName>Excite 10 Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Toshiba</controllingFieldValue>
+            <valueName>Excite 13 Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Toshiba</controllingFieldValue>
+            <valueName>Excite 7 Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Toshiba</controllingFieldValue>
+            <valueName>Excite AT200 Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Toshiba</controllingFieldValue>
+            <valueName>Excite Go Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Toshiba</controllingFieldValue>
+            <valueName>Excite Pro Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Toshiba</controllingFieldValue>
+            <valueName>Excite Pure Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Toshiba</controllingFieldValue>
+            <valueName>Excite Write Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Toshiba</controllingFieldValue>
+            <valueName>G450 Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Toshiba</controllingFieldValue>
+            <valueName>G710 Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Toshiba</controllingFieldValue>
+            <valueName>G910 / G920</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Toshiba</controllingFieldValue>
+            <controllingFieldValue>LG</controllingFieldValue>
+            <controllingFieldValue>Lenovo</controllingFieldValue>
+            <valueName>K Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Toshiba</controllingFieldValue>
+            <valueName>TG0 Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Toshiba</controllingFieldValue>
+            <valueName>Thrive Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Toshiba</controllingFieldValue>
+            <valueName>Windows Phone IS12T</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vodafone</controllingFieldValue>
+            <valueName>858 Smart</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vodafone</controllingFieldValue>
+            <valueName>Smart 4 Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vodafone</controllingFieldValue>
+            <valueName>Smart first Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vodafone</controllingFieldValue>
+            <valueName>Smart Mini Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vodafone</controllingFieldValue>
+            <valueName>Smart Platinum Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vodafone</controllingFieldValue>
+            <valueName>smart prime Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vodafone</controllingFieldValue>
+            <valueName>Smart speed Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vodafone</controllingFieldValue>
+            <valueName>Smart Tab Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vodafone</controllingFieldValue>
+            <valueName>Smart ultra Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vodafone</controllingFieldValue>
+            <valueName>Tab Prime Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vodafone</controllingFieldValue>
+            <valueName>V860 Smart</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Samsung</controllingFieldValue>
+            <valueName>Galaxy A Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Samsung</controllingFieldValue>
+            <valueName>Galaxy C Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Samsung</controllingFieldValue>
+            <valueName>Galaxy Core Prime</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Samsung</controllingFieldValue>
+            <valueName>Galaxy E Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Samsung</controllingFieldValue>
+            <valueName>Galaxy Express</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Samsung</controllingFieldValue>
+            <valueName>Galaxy Folder</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Samsung</controllingFieldValue>
+            <valueName>Galaxy Grand Max</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Samsung</controllingFieldValue>
+            <valueName>Galaxy J Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Samsung</controllingFieldValue>
+            <valueName>Galaxy Note</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Samsung</controllingFieldValue>
+            <valueName>Galaxy On</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Samsung</controllingFieldValue>
+            <valueName>Galaxy S Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Samsung</controllingFieldValue>
+            <valueName>Galaxy Tab</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Samsung</controllingFieldValue>
+            <valueName>Galaxy V Plus</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Samsung</controllingFieldValue>
+            <valueName>Galaxy View</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Samsung</controllingFieldValue>
+            <valueName>Guru Plus</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Samsung</controllingFieldValue>
+            <valueName>Metro 360</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Samsung</controllingFieldValue>
+            <valueName>Xcover Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Apple</controllingFieldValue>
+            <valueName>iPad</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Apple</controllingFieldValue>
+            <valueName>iPad Air tablet Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Apple</controllingFieldValue>
+            <valueName>iPad mini tablet Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Apple</controllingFieldValue>
+            <valueName>iPad Pro</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Apple</controllingFieldValue>
+            <valueName>iPhone 3 Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Apple</controllingFieldValue>
+            <valueName>iPhone 4 Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Apple</controllingFieldValue>
+            <valueName>iPhone 5 Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Apple</controllingFieldValue>
+            <valueName>iPhone 6 Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Apple</controllingFieldValue>
+            <valueName>iPhone SE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Microsoft</controllingFieldValue>
+            <valueName>Kin Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Microsoft</controllingFieldValue>
+            <controllingFieldValue>Nokia</controllingFieldValue>
+            <valueName>Lumia Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Microsoft</controllingFieldValue>
+            <valueName>Surface Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Nokia</controllingFieldValue>
+            <valueName>105</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Nokia</controllingFieldValue>
+            <valueName>108</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Nokia</controllingFieldValue>
+            <valueName>130</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Nokia</controllingFieldValue>
+            <valueName>206</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Nokia</controllingFieldValue>
+            <valueName>215</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Nokia</controllingFieldValue>
+            <valueName>220</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Nokia</controllingFieldValue>
+            <valueName>222</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Nokia</controllingFieldValue>
+            <valueName>225</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Nokia</controllingFieldValue>
+            <valueName>230</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Nokia</controllingFieldValue>
+            <valueName>301</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Nokia</controllingFieldValue>
+            <valueName>515</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Nokia</controllingFieldValue>
+            <valueName>808</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Nokia</controllingFieldValue>
+            <valueName>Asha Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Nokia</controllingFieldValue>
+            <valueName>C Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Nokia</controllingFieldValue>
+            <valueName>Symbian Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Nokia</controllingFieldValue>
+            <controllingFieldValue>LG</controllingFieldValue>
+            <valueName>X Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Nokia</controllingFieldValue>
+            <valueName>XL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Nokia</controllingFieldValue>
+            <valueName>XpressMusic Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sony</controllingFieldValue>
+            <valueName>Xperia C Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sony</controllingFieldValue>
+            <valueName>Xperia E Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sony</controllingFieldValue>
+            <valueName>Xperia L Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sony</controllingFieldValue>
+            <valueName>Xperia M Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sony</controllingFieldValue>
+            <valueName>Xperia T Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sony</controllingFieldValue>
+            <valueName>Xperia X Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sony</controllingFieldValue>
+            <valueName>Xperia Z Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LG</controllingFieldValue>
+            <valueName>Bello</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LG</controllingFieldValue>
+            <valueName>G Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LG</controllingFieldValue>
+            <valueName>L Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LG</controllingFieldValue>
+            <valueName>Leon Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LG</controllingFieldValue>
+            <valueName>Magna Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LG</controllingFieldValue>
+            <controllingFieldValue>Motorola</controllingFieldValue>
+            <valueName>Nexus Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LG</controllingFieldValue>
+            <valueName>Optimus Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LG</controllingFieldValue>
+            <valueName>Spirit Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LG</controllingFieldValue>
+            <valueName>Stylo Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LG</controllingFieldValue>
+            <valueName>Stylus Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LG</controllingFieldValue>
+            <valueName>V Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LG</controllingFieldValue>
+            <valueName>Wine Smart</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LG</controllingFieldValue>
+            <valueName>Zero</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>HTC</controllingFieldValue>
+            <valueName>10 Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>HTC</controllingFieldValue>
+            <valueName>Desire 5 Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>HTC</controllingFieldValue>
+            <valueName>Desire 6 Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>HTC</controllingFieldValue>
+            <valueName>Desire 7 Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>HTC</controllingFieldValue>
+            <valueName>Desire 8 Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>HTC</controllingFieldValue>
+            <valueName>Desire Eye Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>HTC</controllingFieldValue>
+            <valueName>One A Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>HTC</controllingFieldValue>
+            <valueName>One E Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>HTC</controllingFieldValue>
+            <valueName>One M Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>HTC</controllingFieldValue>
+            <valueName>One S Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>HTC</controllingFieldValue>
+            <valueName>One Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>HTC</controllingFieldValue>
+            <valueName>One X Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Motorola</controllingFieldValue>
+            <valueName>ATRIX Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Motorola</controllingFieldValue>
+            <valueName>DROID Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Motorola</controllingFieldValue>
+            <valueName>Moto 360 Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Motorola</controllingFieldValue>
+            <valueName>Moto E Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Motorola</controllingFieldValue>
+            <valueName>Moto G Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Motorola</controllingFieldValue>
+            <valueName>Moto Maxx Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Motorola</controllingFieldValue>
+            <valueName>Moto X Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Motorola</controllingFieldValue>
+            <valueName>Moto Z Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Motorola</controllingFieldValue>
+            <valueName>RAZR Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Motorola</controllingFieldValue>
+            <valueName>XOOM Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Huawei</controllingFieldValue>
+            <valueName>Ascend Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Huawei</controllingFieldValue>
+            <valueName>Honor Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Huawei</controllingFieldValue>
+            <valueName>Mate Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Huawei</controllingFieldValue>
+            <valueName>MediaPad Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Huawei</controllingFieldValue>
+            <controllingFieldValue>Lenovo</controllingFieldValue>
+            <valueName>P Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Huawei</controllingFieldValue>
+            <valueName>Y Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Lenovo</controllingFieldValue>
+            <valueName>Lemon Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Lenovo</controllingFieldValue>
+            <valueName>Phab Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Lenovo</controllingFieldValue>
+            <valueName>S Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Lenovo</controllingFieldValue>
+            <valueName>Tab Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Lenovo</controllingFieldValue>
+            <valueName>Vibe Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Lenovo</controllingFieldValue>
+            <valueName>ZUK Series</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Not_allow_number_in_Account_name</fullName>
+    <active>false</active>
+    <errorConditionFormula>ISNEW() 
+&amp;&amp;
+CONTAINS( RecordType.Name ,&#39;Staff&#39;) 
+&amp;&amp;
+(
+NOT( 
+REGEX( 
+FirstName, 
+&#39;([A-Z]*[a-z]*[A-Z]*[a-z]*)([\\s\\\&#39;-][A-Z]*[a-z]*[A-Z]*[a-z]*)*&#39; 
+)) 
+
+|| 
+
+NOT( 
+REGEX( 
+LastName, 
+&#39;([A-Z]*[a-z]*[A-Z]*[a-z]*)([\\s\\\&#39;-][A-Z]*[a-z]*[A-Z]*[a-z]*)*&#39; 
+)))</errorConditionFormula>
+    <errorMessage>The Account name must not contains any number or special character</errorMessage>
+</ValidationRule>

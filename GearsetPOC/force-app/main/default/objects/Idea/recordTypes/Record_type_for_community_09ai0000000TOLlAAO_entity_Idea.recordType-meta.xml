@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Record_type_for_community_09ai0000000TOLlAAO_entity_Idea</fullName>
+    <active>true</active>
+    <description>Record type used to associate Idea with a specific community</description>
+    <label>Questions: Idea Record Type</label>
+    <picklistValues>
+        <picklist>Categories</picklist>
+        <values>
+            <fullName>Activities</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Environment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kitchen</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status</picklist>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

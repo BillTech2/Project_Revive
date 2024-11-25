@@ -1,0 +1,1 @@
+<apex:page language="{!$CurrentPage.parameters.languageCode}" showHeader="false" sidebar="false" contentType="text/plain">{! $Label[$CurrentPage.parameters.labelAPIName] }</apex:page>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ready_to_be_processed</fullName>
+    <columns>NAME</columns>
+    <columns>Company_Name__c</columns>
+    <columns>BAF_number__c</columns>
+    <columns>Lead_Passenger_Name__c</columns>
+    <columns>PNR__c</columns>
+    <columns>Amount_Originally_Charged__c</columns>
+    <columns>Amount_to_be_Refunded__c</columns>
+    <columns>Currency__c</columns>
+    <columns>Additional_Comments__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Approved</value>
+    </filters>
+    <filters>
+        <field>Credit_Note_Number__c</field>
+        <operation>equals</operation>
+    </filters>
+    <label>Ready to be processed</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>Finance_team</group>
+    </sharedTo>
+</ListView>

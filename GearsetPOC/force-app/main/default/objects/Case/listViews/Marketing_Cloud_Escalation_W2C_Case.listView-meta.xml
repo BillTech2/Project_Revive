@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Marketing_Cloud_Escalation_W2C_Case</fullName>
+    <filterScope>Queue</filterScope>
+    <label>Marketing Cloud Escalation W2C</label>
+    <queue>Marketing_Cloud_Escalation_W2C</queue>
+    <sharedTo>
+        <allInternalUsers />
+    </sharedTo>
+</ListView>

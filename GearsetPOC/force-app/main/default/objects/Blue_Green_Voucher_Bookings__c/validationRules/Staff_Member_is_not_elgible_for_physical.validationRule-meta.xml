@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Staff_Member_is_not_elgible_for_physical</fullName>
+    <active>true</active>
+    <errorConditionFormula>Staff_Member__r.Staff_Member_is_Based_Overseas__c = TRUE</errorConditionFormula>
+    <errorMessage>Member of staff is based overseas, please log this booking through the Overseas Staff Voucher Database</errorMessage>
+</ValidationRule>

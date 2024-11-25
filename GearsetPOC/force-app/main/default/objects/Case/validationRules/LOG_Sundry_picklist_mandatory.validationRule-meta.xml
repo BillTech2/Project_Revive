@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LOG_Sundry_picklist_mandatory</fullName>
+    <active>false</active>
+    <description>Sundry picklist is mandatory if sundry is selected from product picklist</description>
+    <errorConditionFormula>ISPICKVAL(Journey_Type_Product__c,&quot;Sundry&quot;) 
+&amp;&amp; 
+ISBLANK(TEXT( Sundry__c ))</errorConditionFormula>
+    <errorDisplayField>Sundry__c</errorDisplayField>
+    <errorMessage>Please enter a sundry type to continue</errorMessage>
+</ValidationRule>

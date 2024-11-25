@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dynamic_Package_Assist_Booking_Amount</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISPICKVAL(Reason_For_Contact_Dynamic_Package__c,&quot;Assistance Package Booking&quot;)
+
+&amp;&amp; 
+OR(
+ISBLANK(TEXT(Refund_Exchange_Currency__c)), 
+ISBLANK(Assistance_Package_Price__c),
+ISBLANK(Hotel_Booking_Reference__c),
+ISBLANK(Hotel_Name__c),
+ISBLANK(Original_Check_In_Date__c),
+ISBLANK(Original_Check_Out_Date__c)
+)</errorConditionFormula>
+    <errorMessage>Please enter the Assistance Package Booking price details,
+Hotel Booking Reference, Hotel name , Original Check in &amp; Check out Dates and Currency on the Refund Information section</errorMessage>
+</ValidationRule>

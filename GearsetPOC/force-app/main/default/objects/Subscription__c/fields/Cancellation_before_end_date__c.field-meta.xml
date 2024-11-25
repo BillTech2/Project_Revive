@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cancellation_before_end_date__c</fullName>
+    <formula>IF(ISBLANK(End_Date__c),FALSE,IF((ISBLANK(Cancellation_date__c)|| Cancellation_date__c &gt; End_Date__c) , FALSE, TRUE ))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Cancellation before end date</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

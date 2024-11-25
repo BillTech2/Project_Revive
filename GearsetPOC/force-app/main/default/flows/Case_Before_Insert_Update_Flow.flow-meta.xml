@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>60.0</apiVersion>
+    <decisions>
+        <name>Is_Create_Update_Record</name>
+        <label>Is Create/Update Record</label>
+        <locationX>176</locationX>
+        <locationY>287</locationY>
+        <defaultConnector>
+            <targetReference>Clear_Contact_Name_and_Web_Email</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Is Update Record</defaultConnectorLabel>
+        <rules>
+            <name>Is_Create_Record</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Price_Detail_Field</targetReference>
+            </connector>
+            <label>Is Create Record</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>priceDetailUpdateSymbol</name>
+        <dataType>String</dataType>
+        <expression>SUBSTITUTE(
+    {!$Record.Group_Booking_Price_Details__c},
+    IF(
+        FIND(&quot;€&quot;, {!$Record.Group_Booking_Price_Details__c}) != 0,
+        &quot;€&quot;,
+        IF(
+            FIND(&quot;$&quot;, {!$Record.Group_Booking_Price_Details__c}) != 0,
+            &quot;$&quot;,
+            &quot;£&quot;
+        )
+    ),
+    IF(ISPICKVAL(
+        {!$Record.Currency__c}, &quot;EUR&quot;),
+        &quot;€&quot;,
+        IF(
+            ISPICKVAL({!$Record.Currency__c}, &quot;USD&quot;),
+            &quot;$&quot;,
+            &quot;£&quot;
+        )
+    )
+)</expression>
+    </formulas>
+    <interviewLabel>Case Before Trigger Flow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Case Before Insert Update Flow</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Clear_Contact_Name_and_Web_Email</name>
+        <label>Clear Contact Name and Web Email</label>
+        <locationX>264</locationX>
+        <locationY>395</locationY>
+        <connector>
+            <targetReference>Update_Price_Detail_Field</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>AccountId</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>ContactId</field>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>SuppliedEmail</field>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Price_Detail_Field</name>
+        <label>Update Price Detail Field</label>
+        <locationX>176</locationX>
+        <locationY>587</locationY>
+        <filterLogic>or</filterLogic>
+        <filters>
+            <field>Currency__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <elementReference>$Record__Prior.Currency__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Id</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Group_Booking_Price_Details__c</field>
+            <value>
+                <elementReference>priceDetailUpdateSymbol</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Is_Create_Update_Record</targetReference>
+        </connector>
+        <object>Case</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

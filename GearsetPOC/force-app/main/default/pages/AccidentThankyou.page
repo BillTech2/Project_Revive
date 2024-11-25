@@ -1,0 +1,13 @@
+<apex:page showHeader="false" standardController="Accident__c" extensions="AccidentController">
+
+ <apex:image value="{!IF(lang=='fr','https://' + $Label.Domain_Eurostar + '.salesforce.com/servlet/servlet.ImageServer?id=015b0000003IQvx&oid=00D7E0000008oz5',
+    'https://' + $Label.Domain_Eurostar + '.salesforce.com/servlet/servlet.ImageServer?id=015b0000003IQvw&oid=00D7E0000008oz5')}" width="25%" height="25%" />
+
+
+    <apex:sectionHeader title="{!$Label.Safety_Incident_Thankyou} {!$User.FirstName}"/>
+    <br></br>
+    {!$Label.Safety_Incident_Form_submitted}
+    <p style="font-size:16px">
+        {!$Label.Safety_Incident_Contact_CRE}
+    </p>
+</apex:page>

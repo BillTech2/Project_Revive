@@ -1,0 +1,3507 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Leisure_Agent</fullName>
+    <active>true</active>
+    <label>Leisure Agent</label>
+    <picklistValues>
+        <picklist>Alliance__c</picklist>
+        <values>
+            <fullName>One World</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sky Team</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Star</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>BE__c</picklist>
+        <values>
+            <fullName>AcTM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Amadeus Aergo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Click Book</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Concur</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Freeway</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Get There</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HRG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KDS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OOTO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rearden</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Traveldoo</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Category__c</picklist>
+        <values>
+            <fullName>Agency</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chamber of Commerce</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Distributor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Event Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GDS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Group Operator</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hotel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inbounder</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Industry Body %2F Association</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>International Managed Accounts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Memberships</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>On-Line Portal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partner Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Publication</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Railway%2FTOC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Redemption Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Representative</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SBT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ski</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Social Media Agency</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Student Operator</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sub Agent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Supplier</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tour Operator</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tourist Board</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Connect_In__c</picklist>
+        <values>
+            <fullName>Amsterdam</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Brussels</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Frankfurt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>London</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Paris</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Distribution_Channel__c</picklist>
+        <values>
+            <fullName>Agent%2Eraileurope%2Ecom</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Appointed Travel Agents</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Call Centre</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>General Sales Agents</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Group Department</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internet Consumer Sales</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internet Trade Sales</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>REI Groups</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rail Europe Shops</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Raileurope%2Ecom</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SNCB</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SNCF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TMC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ticket Offices</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Distribution_System__c</picklist>
+        <values>
+            <fullName>Abacus</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Amadeus</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Amadeus Elgar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Apollo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Atlantis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Axess</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Carina</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Direct Mode</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EDI Anite</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EDI Pharos</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Elgar Direct</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Euronet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Galileo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hermes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Infini</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mosaique</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Multicom Pharos</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ravel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SITA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sabre</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sabre Elgar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Shares</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Socrate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TPV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Web Resarail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>White Label</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Worldspan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Worldspan Elgar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>XML Link</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>FR__c</picklist>
+        <values>
+            <fullName>AcTM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Amadeus Aergo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Click Book</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Concur</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Freeway</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Get There</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HRG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KDS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OOTO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rearden</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Traveldoo</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Fare_Range__c</picklist>
+        <values>
+            <fullName>ABS Group</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ABS Public</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ABS RIT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ADS Group</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ADS Public</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ADS RIT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FR Province Pub</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FR Province RIT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FR Provinces Grp</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>German Connex</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Group</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lyon SOF Pub</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lyon SOF RIT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Promo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Public</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RIT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ski Public</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ski RIT</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>IATA_Designator__c</picklist>
+        <values>
+            <fullName>0S Spice Air %28India%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1A Amadeus Global Travel Distribut</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1B Abacus International %28Singapore</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1C EDS Information Business %28Switz</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1D Radixx Solutions International</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1E Travelsky Technology %28China%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1F INFINI Travel Information %28Japa</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1G Galileo International %28United S</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1H Siren-Travel %28Russia%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1I Deutsche Rettungsflugwacht %28Civ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1J Axess international %28Japan%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1K Southern Cross Distribution %28Au</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1K Sutra %28United States%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1L Open Skies %28United States%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1M JSC Transport Automated Informa</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1N Navitaire %28United States%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1P WorldSpan %28United States%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1Q Sirena %28Russia%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1R Hainan Phoenix Information Syst</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1S Sabre %28United States%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1T 1Time Airline %28South Africa%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1U Polyot Sirena %28Russia%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1V Galileo International %28United S</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1Y Electronic Data Systems Corpora</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1Z Sabre Pacific %28Australia%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2A Deutsche Bahn %28Germany%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2H Thalys %28Belgium%2C France%2C German</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2L Helvetic Airways</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2P Air Philippines %28Philippines%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2R VIA Rail Canada %28Canada%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2U Atlas International Airways</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2V Amtrak %28USA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3J Zip %28Canada%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3K Jetstar Asia</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3Q China Yunnan Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4A Air Kiribati</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4D Air Sinai</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4G Shenzhen Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4K Askari Aviation Pvt Limited %28Pa</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4L Air Astana</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4R Hamburg International</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4U Germanwings</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5C CAL Cargo Air Lines %28Israel%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5D V-Bird Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5G Skyservice Airlines %28Can%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5J Cebu Pacific %28Philippines%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5L Aerosur %28Bolivia%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5P Skyeurope Airlines Hungary</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5T Canadian North %28Canada%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5W Astraeus %28UK%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5X United Parcel Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6G Air Wales</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6H Israir %28Israel%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6P Club Air %28ITA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6U Air Ukraine</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6V Air Vegas</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6W Saratov</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6Z Ukrainian Cargo Airways %28Ukrai</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7B Krasnojarsky Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7D DONBASSAERO %28Ukraine%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7F First Air</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7K Kogalymavia Air Company</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7L Sun d%27Or International Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8A Atlas Blue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8B Caribbean Star Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8C Air Transport International</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8C Horizon Air</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8D Astair</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8D Expo Aviation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8D Servant Air</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8E Bering Air</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8F Fischer Air</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8G Angel Airlines %28Thailand%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8H Heli France</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8I Myway Airlines %28myair%2Ecom-Italy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8J Komiinteravia</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8L Cargo Plus Aviation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8L Redhill Aviation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8M Maxair</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8M Myanmar Airways International</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8N Nordkalottflyg AB</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8O West Coast Air</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8P Pacific Coastal Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8Q Baker Aviation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8Q Onur Air Tasimacilik</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8R Edelweiss Air</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8R Transporte Aereo Regional do In</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8S Scorpio Aviation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8T Air Tindi</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8U Afriqiyah Airways</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8V Wright Air Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8W BAX Global</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8Y Air Burundi</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8Z Linea Aerea de Servicio Ejecuti</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>9D Perm Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>9E Pinnacle Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>9I Thai Sky Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>9Q PB Air</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>9R Phuket Air</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>9U Air Moldova</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>9W Jet Airways</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>A2 Cielos del Peru %28Argentina%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>A3 Aegean Airways %28Greece%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>A4 Southern Winds %28Argentina%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>A5 Airlinair %28France%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>A6 Air Alps Aviation %28Austria%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>A7 Air Comet %28Spain%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>A8 Benin Golf Air %28Benin%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>A9 Airzena Georgian Airlines %28Geor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AA American Airlines %28United State</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AB Air Berlin %28Germany%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AC  Air Canada %28Canada%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AD Air Paradise %28Indonesia%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AE Mandarin Airlines %28Taiwan%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AF Air France %28France%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AG Air Contractors %28Ireland%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AH Air Algerie %28Algeria%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AI Air India %28India%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AJ Aero Contractors Company of Nig</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AK Air Asia %28Malaysia%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AL Skyway Airlines%2FMidwest Connect</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AL Transaviaexport Cargo Airline %28</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AM Aeromxico%2FAerovias de Mexico %28</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AN Ansett Australia %28Australia%29 de</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AO Trans Australia Airlines %28Austr</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AP Air One %28Italy%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AQ Aloha Airlines %28United States%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AR Aerolneas Argentinas %28Argentin</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AS Alaska Airlines %28United States%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AT Royal Air Maroc %28Morocco%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AU Austral Lineas Aereas-Cielos de</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AV Avianca %28Aerovias Nacionales de</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AW Dirgantara Air Services %28Indone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AW Schreiner Airways %28Netherlands%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AX Trans States Airlines %28USA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AY Finnair %28Finland%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AZ Alitalia %28Italy%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>B2 Belavia %28Belarus%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>B3 Bellview Airlines %28Nigeria%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>B4 B%2EA%2EC%2EH%2E Flugbetriebs %28Germany%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>B4 Bankair %28United States%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>B5 Amadeus Flugdienst %28Germany%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>B6 jetBlue Airways %28United States%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>B7 UNI Airways %28Taiwan%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>B8 Eritrean Airways %28Eritrea%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>B9 Air Bangladesh %28Bangladesh%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>B9 Iranair Tours %28Iran%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BA British Airways %28United Kingdom</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BB Seaborne Airlines %28United State</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BC Skymark Airlines %28Japan%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BD bmi %28United Kingdom%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BE Flybe %28United Kingdom%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BF Aero-Service %28Colombia%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BF Bluebird Cargo %28Iceland%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BG Biman Bangladesh Airlines %28Bang</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BH Hawkair Aviation Services %28Cana</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BI Royal Brunei Airlines %28Brunei%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BJ Nouvelair Tunisia %28Tunisia%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BK Potomac Air %28United States%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BL Pacific Airlines %28Vietnam%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BM Air Sicilia %28Italy%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BM Bayu Indonesia Air %28Indonesia%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BN Braniff International Airways %28</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BN Forward Air International Airli</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BN Horizon Airlines Australia defu</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BO Bouraq Indonesia Airlines %28Indo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BP Air Botswana %28Botswana%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BQ Aeromar Airlines %28Dominican Rep</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BR EVA Airways %28Taiwan%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BS British International Helicopte</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BT Air Baltic %28Latvia%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BU Braathens %28Norway%29 defunct</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BV Blue Panorama Airlines %28Italy%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BW British West Indian Airways %28Tr</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BX Coast Air %28Norway%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BY Britannia Airways %28United Kingd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BY Thomsonfly %28United Kingdom%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BZ Blue Dart Aviation %28India%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BZ Keystone Air Service %28Canada%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C0 Centralwings %28Republic of Polan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C2 Air Luxor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C3 Independent Carrier</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C4 Zimex Aviation Limited</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C5 Champlain Enterprises</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C6 CanJet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C7 Rico Linhas Aereas</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C8 Chicago Express Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C9 Cirrus Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CA Air China</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CB Suckling Airways</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CC Air Atlanta Icelandic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CC Macair Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CD Alliance Air</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CE Nationwide Airlines %28SA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CF City Airline</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CG Airlines of Paupa New Guinea</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CH Bermidji Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CI China Airlines %28ROC %28Taiwan%29%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CJ China Northern Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CK China Cargo Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CL Lufthansa CityLine</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM Compaia Panamea de Aviacion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CN Islands Nationair</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CN Westward Airways</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CO Continental Airlines %28USA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CP Canadian Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CP Canadian Pacific Airlines defun</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CQ Sunshine Express Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CR OAG Worldwide %28United Kingdom%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS Continental Micronesia %28No long</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CU Cubana</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CV Cargolux Airlines International</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CW Air Marshall Islands</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CX Cathay Pacific Airways</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CY Cyprus Airways</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CZ China Southern Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>D0 DHL Air Limited</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>D2 Damania Airways</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>D3 Daallo Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>D5 Nepc Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>D6 Inter Air</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>D7 Dinar Lineas Aereas</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>D8 Diamond Sakha Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>D9 Donavia %28Rus%2E%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DA Air Georgia</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DB Brit Air</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DC Golden Air</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DD Conti-Flug</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DD Nok Air %28Thailand%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DE Condor Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DG Eastern Pacific</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DH Independence Air</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DI dba</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DJ Virgin Blue %28Aus%2E%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DK Eastland Air</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DL Delta Air Lines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DM Maersk %28Denmark%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DN Air Deccan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DO Dominicana</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DP First Choice Airways</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DQ Coastal Air Transport</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DR Hyres Aero Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DS Air Senegal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DT TAAG Air Angola</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DU Hemus Air</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DV Nantucket Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DW Helicopter Shuttle</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DX Danish Air Transport</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DY Norwegian Air Shuttle</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DZ Air Metro North</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>E2 Edelweiss Holdings</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>E3 Domodedovo Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>E4 Aero Asia International %28Pakist</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>E5 Samara Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>E7 Estafeta Carga Aerea</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>E7 European Aviation Air</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>E8 ALPI Eagles S%2Ep%2EA%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>E9 Boston-Maine Airways</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EA European Air Express</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EC Avialeasing Aviation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ED Airblue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EE Aero Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EF Far Eastern Air Transport</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EG Japan Asia Airways</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EH SAETA Sociedad Annima Ecuatori</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EI Aer Lingus</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EJ New England Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EK Emirates</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EL Air Nippon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EM Aero Benin</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EM Empire Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EN Air Dolomiti</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EO Express One International</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EO Hewa Bora Airways</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EP Iran Aseman Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EQ TAME %28Transportes Areos Milita</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ER Astar Air Cargo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ES DHL International</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ET Ethiopian Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EU Ecuatoriana %5Bde Aviacin%5D</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EV Atlantic Southeast Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EW Eurowings</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EX Air Santo Domingo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EY Eagle Air</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EY Etihad Airways</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EZ Evergreen International Airline</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EZ Sun Air of Scandinavia</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>F9 Frontier Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FB Bulgaria Air</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FC Finncomm Airlines %28Finland%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FD Thai AirAsia</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FG Ariana Afghan Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FI Icelandair</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FJ Air Pacific</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FL AirTran Airways</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FM Shanghai Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FQ Thomas Cook Airlines Belgium</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FR Centre-South %28Russia%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FR Ryanair</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FV Pulkovo Aviation %28Russia%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FW Fairinc %28Jap%2E%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FX Fedex</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>G0 Ghana International Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>G4 Allegiant Air %28United States%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>G5 Enkor %28Rus%2E%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>G9 Air Arabia %28UAE%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>G9 Gol</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GA Garuda Indonesia</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GB ABX Air %28USA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GC Gambia International Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GF Gulf Air</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GH Ghana Airways</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GM Air Slovakia</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GN Air Gabon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GQ Big Sky Airlines %28United States</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GT GB Airways %28Spain%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GW Kubun Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>H2 Sky Airline %28Chile%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>H5 Magadan Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>H8 Dalavia</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HA Hawaiian Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HE Luftfahrtgesellschaft Walter %28G</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HG Niki</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HM Air Seychelles</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HP America West Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HV Transavia%2Ecom</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HY Uzbekistan Airways</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IB Iberia Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IC Indian Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IG Meridiana %28Italy%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IN Macedonian Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IR Iran Air</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IT Kingfisher Airlines %28India%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IW AOM French Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IY Yemenia %28Yemen Airways%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IZ Arkia Israel Airlines %28Israel%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>J2 Azal Azerbaijan Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>J7 Centre-Avia</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JB HeliJet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JD Japan Airlines Domestic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JJ TAM Linhas Areas</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JK Spanair</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JL Japan Airlines International</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JM Air Jamaica</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JO JALways</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JP Adria Airways</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JQ JetStar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JS Air Koryo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JT Lion Air</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JU Jat Airways</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JW Arrow Cargo %28USA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KA Dragonair</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KB Druk Air %28Bhutan%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KE Korean Air %28South Korea%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KF former Air Botnia Blue1 %28Finlan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KL KLM Royal Dutch Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KM Air Malta</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KQ Kenya Airways</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KU Kuwait Airways</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KV Kavminvodyavia %28Russia%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KW Kelowna Flightcraft</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KX Cayman Airways %28Cayman Islands%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KZ Nippon Cargo Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>L4 Lauda Italy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LA Lan Chile</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LAN Peru%7CLP LAN Peru</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LB Lloyd Aereo Boliviano %28Bolivia%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LD Air Hong Kong</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LG Luxair</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LH Lufthansa</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LJ Sierra National Airlines %28Liber</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LK Air Luxor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LL Lineas Aeras Allegro %28Mexico%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LN Libyan Arab Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LO Lot Polish Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LR Lacsa%2FTACA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LS Channel Express Air Services Lt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LT LTU International Airways</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LX Swiss International Air Lines %28</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LY El Al Israel Airlines %28Israel%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LZ Balkan Bulgarian Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>M5 Kenmore Air</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MA MALV Hungarian Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MB MNG Cargo Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MD Air Madagascar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ME Middle East Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MG MGM Grand Air</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MH Malaysia Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MI Silkair</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MK Air Mauritius Ltd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MM Euroatlantic Airways</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MN Kulula %28South Africa%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MP Martinair Holland</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MR Air Mauritania</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MS Egypt Air</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MT Thomas Cook Airlines UK</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MU China Eastern Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MV Armenian International Airways</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MX Mexicana de Aviacin %28Mexico%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MZ Merpati Nusantara Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>N3 Omskavia</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>N8 CR Airways</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NB Sterling</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NE Skyeurope Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NG Lauda Air</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NH All Nippon Airways</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NI Portugalia</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NK Spirit Airlines %28United States%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NL Shaheen %28Pakistan%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NQ Air Japan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NV Air Central %28JPN%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NW Northwest Airlines %28USA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NZ Air New Zealand</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>O7 OzJet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OA Olympic Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OB Astrahan Airlines %28Rus%2E%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OH Comair %28USA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OK %28CSA%29 Czech Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OM MIAT-Mongolian Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OO SkyWest</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OS Austrian Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OU Croatia Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OV Estonian Air</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OW Executive Airlines %28USA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OX Orient Thai Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OZ Asiana Airlines %28Republic of Ko</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OZ Ozark Airlines %28USA%29 defunct</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P2 UTair %28Rus%2E%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P5 AeroRepublica %28Colombia%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P7 EastLine %28Rus%2E%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PA Pan Am I defunct and III</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PE Air Europe SPA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PG Bangkok Airways</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PI Piedmont Airlines %28USA%29 defunct</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PK Pakistan International Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PN Pan Am II %28defunct%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PO Polar Air Cargo %28USA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PR Pacific Southwest Airlines %28USA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PR Philippine Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PS Ukraine International Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PX Air Niugini</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Q3 PB Air %28Thailand%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Q5 40-Mile Air %28USA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QF Qantas Airways %28Australia%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QH Air Florida defunct</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QQ Alliance Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QQ Reno Air %28USA%29 defunct</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QR Qatar Airways</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QS Travel Service Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QV Lao Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QX Horizon Air %28USA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QZ Air Canada Jazz %28Canada%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>R2 Orenburg Airlines %28Rus%2E%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>R4 Russia Airline</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RA Royal Nepal Airlines Corporatio</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RB Syrian Arab Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RC Atlantic Airways</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RE Aer Arann</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RF Florida West International Airw</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RG Varig %28Brazilian Airlines%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RI Mandala Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RJ Royal Jordanian</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RN Air Horizons</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RO Tarom Romanian Air Transport</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RQ Kam Air %28Afghanistan%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>S2 Air Sahara %28India%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>S4 SATA International</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>S7 Siberia Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>S9 East African Safari Air</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SA South African Airways</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SC Shandong Ailines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SD Sudan Airways</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SG Jetsgo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SH FlyMe</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SJ Freedom Air</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SK Scandinavian Airlines System</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SN SN Brussels Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SQ Singapore Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SR Swissair %28formerly%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SU Aeroflot Russian Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SV Saudi Arabian Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SY Sun Country Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>T4 Hellas Jet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>T5 Turkmenistan%2FAkhal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>T7 Twin Jet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>T9 TransMeridian Airlines %28USA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TA TACA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TE Lithuanian Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TG Thai Airways International</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TK Turkish Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TL Trans Mediterranean Airways %28TM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TN Air Tahiti Nui</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TP Tap Air Portugal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TQ Tandem Aero</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TR Tiger Airways</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TS Air Transat</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TT Air Lithuania</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TU Tunisair</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TX Air Caraibes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TZ ATA Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>U2 easyJet %28UK%29%2FUFS %28USA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>U4 PMT air</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>U5 USA 3000 Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>U6 Ural Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>U8 Armavia</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>U9 Tatarstan JSC Aircompany</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UA United Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UB Myanmar Airways</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UF Ukrainian Mediterrean Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UL Sri Lankan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UM Air Zimbabwe</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UN Transaero Airlines %28Russia%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UO Hong Kong Express</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UQ O%27Connor Airlines %28Aus%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>US US Airways</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UU Air Austral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UX Air Europa Lineas Aereas</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UY Cameroon Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>V7 Air Senegal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>V9 Bashkir Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VA Volare Airlines%2FVIASA %28Venezola</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VD Air Liberte</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VF Valuair</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VG VLM Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VH Aeropostal %28Venezuela%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VI Volga-Dnepr</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VN Vietnam Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VR Cape Verde Airlines %28TACV%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VS Virgin Atlantic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VV Aerosvit Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VX ACES Colombia %28Colombia%29 defunc</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VZ MyTravel Airways %28UK%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W2 Canadian Western Airlines %28Cana</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W3 Flyhy Cargo Airlines %28Thailand%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W5 Mahan Air %28Iran%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W6 Wizzair</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W8 Cargojet Airways Ltd%2E %28Canada%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>W9 Sky Service Bvba %28UK%29%2C Eastwind</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WD DAS Air Cargo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WF Widere</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WH China Northwest Airlines %28China</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WK American Falcon%2C S%2EA%2E %28Argentin</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WN Southwest Airlines %28USA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WO World Airways %28USA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WS WestJet %28Canada%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WV Swe Fly %28Sweden%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WW bmibaby Limited %28UK%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WX Cityjet %28Ireland%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WY Oman Air</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>X3 Hapag-Lloyd Express %28Germany%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>X5 Afrique Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>X7 Chitaavia %28Rus%2E%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>XF Vladivostok Avia</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>XJ Mesaba Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>XK CCM Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>XM J-Air %28Jap%2E%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>XO LTE International Airways</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>XS SITA %28Fra%2E%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>XT KLM exel and Air Exel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Y1 Blue Air Transport Aerian %28Roma</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>YK Air Kibris %28Turkish Airlines%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>YL Yamal Airlines %28Rus%2E%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>YM Montenegro Airlines %28SCG%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>YS Rgional Compagnie Aerienne Eur</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>YT Air Togo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>YV Mesa Airlines %28USA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>YW Air Nostrum</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>YX Midwest Airlines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Z4 Zoom Airlines %28Canada%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ZA Astair %28Russia%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ZE Lneas Areas Azteca %28Mexico%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ZI Aigle Azur %28France%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ZL Regional Express</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ZN Air Bourbon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ZS Azzurra Air</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ZU Helios Airways</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ZW Air Wisconsin</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Industry__c</picklist>
+        <values>
+            <fullName>Aerospace%2FDefence</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Audit%2FConsulting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Banking%2C Finance %26 Insurance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Communications%2FMedia</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Construction</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Energy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Environment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FMCG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Government</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hotels</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Information Technology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Legal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Luxury</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Manufacturing %26 Industry</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pharmaceutical</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Telecomms</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Managed__c</picklist>
+        <values>
+            <fullName>Cancelled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inactive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lead</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Live</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Managed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unmanaged</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Member_of_Trade_Association__c</picklist>
+        <values>
+            <fullName>AAA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ABTA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ANVR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ASTA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Advantage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CARTA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DVR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ETC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ETOA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FGTO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GBTA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GNTO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GTMC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MDLF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NAITA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Railteam</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UIG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>USTOA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Visit Britain</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Visit England</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Visit London</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Visit Scotland</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>NL__c</picklist>
+        <values>
+            <fullName>AcTM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Amadeus Aergo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Click Book</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Concur</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Freeway</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Get There</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HRG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KDS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OOTO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rearden</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Traveldoo</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Owner_Picklist__c</picklist>
+        <values>
+            <fullName>Celine Barton</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Charis Halliday</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Claire Gaide</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dean Dobson</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Emilie Audiot</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inge Bauwens</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Jan Van Eeuwijk</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Jane Ashman</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kim Laws</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kurt Laes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lorcan Le Pen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Madeline Asala</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rajaa Rhouzli</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stephen Roby</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Thierry Cella-Kreutzer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tuesday-Ann Castle</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Profile__c</picklist>
+        <values>
+            <fullName>Inactive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lead not converted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Business Lead</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Potential to Grow</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Relationship</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unmanaged</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Watch</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SBT_Add_1__c</picklist>
+        <values>
+            <fullName>AcTM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Amadeus Aergo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Click Book</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Concur</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Freeway</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Get There</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HRG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KDS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OOTO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rearden</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Traveldoo</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SBT_Add_2__c</picklist>
+        <values>
+            <fullName>AcTM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Amadeus Aergo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Click Book</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Concur</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Freeway</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Get There</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HRG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KDS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OOTO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rearden</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Traveldoo</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SBT__c</picklist>
+        <values>
+            <fullName>AcTM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Amadeus Aergo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Click Book</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Concur</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Freeway</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Get There</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HRG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KDS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OOTO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rearden</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Traveldoo</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>TMC_Tier__c</picklist>
+        <values>
+            <fullName>Tier 1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tier 2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tier 3</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Territories__c</picklist>
+        <values>
+            <fullName>Asia</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Canada</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Caribbean</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Central America</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mexico</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Offline Europe</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Russia</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>South America</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UK</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>USA</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Ticket_Print_Method__c</picklist>
+        <values>
+            <fullName>ATB Printer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ECC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P%40H</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TOD %2F E-Ticket</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Trade_Associations__c</picklist>
+        <values>
+            <fullName>AAA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ABTA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ANVR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ASTA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Advantage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CARTA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DVR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ETC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ETOA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FGTO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GBTA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GNTO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GTMC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MDLF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NAITA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Railteam</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UIG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>USTOA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Visit Britain</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Visit England</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Visit London</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Visit Scotland</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>UK__c</picklist>
+        <values>
+            <fullName>AcTM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Amadeus Aergo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Click Book</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Concur</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Freeway</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Get There</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HRG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KDS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OOTO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rearden</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Traveldoo</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

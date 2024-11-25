@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Action_required__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(No_Further_Action_Required__c = TRUE, &quot;In this case, no further action is required for the record below.&quot;,&quot;Please go to the Compensation record below to see the reason for the rejection and to make the changes that have been requested.&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Action required</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

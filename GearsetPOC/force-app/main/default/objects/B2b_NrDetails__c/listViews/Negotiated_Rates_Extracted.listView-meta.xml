@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Negotiated_Rates_Extracted</fullName>
+    <columns>B2b_Account__c</columns>
+    <columns>NAME</columns>
+    <columns>B2b_Route__c</columns>
+    <columns>B2b_Status__c</columns>
+    <columns>B2b_RouteStartDate__c</columns>
+    <columns>B2b_RouteEndDate__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>B2b_NrDetails__c.Negotiated_Rate_NCO</value>
+    </filters>
+    <filters>
+        <field>B2b_Status__c</field>
+        <operation>equals</operation>
+        <value>Extracted</value>
+    </filters>
+    <label>Negotiated Rates Extracted</label>
+</ListView>

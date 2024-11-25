@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Merge_Accounts_must_have_Merge_Notes</fullName>
+    <active>true</active>
+    <description>If Merge account checkbox is True Merge notes must not be Blank</description>
+    <errorConditionFormula>(Trade_Contract_Merged__c = TRUE)
+&amp;&amp;
+ISBLANK(Merge_Notes__c)</errorConditionFormula>
+    <errorMessage>Please enter the details on the Merge of this Account in the Merge Notes Text area</errorMessage>
+</ValidationRule>

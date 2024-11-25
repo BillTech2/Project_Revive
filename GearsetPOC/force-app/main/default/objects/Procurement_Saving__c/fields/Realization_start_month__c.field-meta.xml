@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Realization_start_month__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Which month will these savings start to be realized?
+Enter month number. For example, &quot;5&quot; if May.</inlineHelpText>
+    <label>Realization start month</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contact_From__c</fullName>
+    <label>Contact From</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Customer Communication Centre</fullName>
+                <default>false</default>
+                <label>Customer Communication Centre</label>
+            </value>
+            <value>
+                <fullName>Customer Resolution</fullName>
+                <default>false</default>
+                <label>Customer Resolution</label>
+            </value>
+            <value>
+                <fullName>Loyalty</fullName>
+                <default>false</default>
+                <label>Loyalty</label>
+            </value>
+            <value>
+                <fullName>Social Media</fullName>
+                <default>false</default>
+                <label>Social Media</label>
+            </value>
+            <value>
+                <fullName>Specialist Sales</fullName>
+                <default>false</default>
+                <label>Specialist Sales</label>
+            </value>
+            <value>
+                <fullName>Commercial Support</fullName>
+                <default>false</default>
+                <label>Commercial Support</label>
+            </value>
+            <value>
+                <fullName>Insight &amp; Improvement</fullName>
+                <default>false</default>
+                <label>Insight &amp; Improvement</label>
+            </value>
+            <value>
+                <fullName>Coaching</fullName>
+                <default>false</default>
+                <label>Coaching</label>
+            </value>
+            <value>
+                <fullName>General Advisor</fullName>
+                <default>false</default>
+                <label>General Advisor</label>
+            </value>
+            <value>
+                <fullName>Department Managers</fullName>
+                <default>false</default>
+                <label>Department Managers</label>
+            </value>
+            <value>
+                <fullName>Senior Managers</fullName>
+                <default>false</default>
+                <label>Senior Managers</label>
+            </value>
+            <value>
+                <fullName>London</fullName>
+                <default>false</default>
+                <label>London</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Webhelp</fullName>
+                <default>false</default>
+                <label>Webhelp</label>
+            </value>
+            <value>
+                <fullName>Advisor Requests (Outside Lockdown)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Advisor Requests (Outside Lockdown)</label>
+            </value>
+            <value>
+                <fullName>Advisor Requests (Within Lockdown)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Advisor Requests (Within Lockdown)</label>
+            </value>
+            <value>
+                <fullName>Department Manager Requests (Outside Lockdown)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Department Manager Requests (Outside Lockdown)</label>
+            </value>
+            <value>
+                <fullName>Department Manager Requests (Within Lockdown)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Department Manager Requests (Within Lockdown)</label>
+            </value>
+            <value>
+                <fullName>London (Outside Lockdown)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>London (Outside Lockdown)</label>
+            </value>
+            <value>
+                <fullName>London (Within Lockdown)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>London (Within Lockdown)</label>
+            </value>
+            <value>
+                <fullName>QA (Outside Lockdown)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>QA (Outside Lockdown)</label>
+            </value>
+            <value>
+                <fullName>QA (Within Lockdown)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>QA (Within Lockdown)</label>
+            </value>
+            <value>
+                <fullName>Senior Management (Outside Lockdown)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Senior Management (Outside Lockdown)</label>
+            </value>
+            <value>
+                <fullName>Senior Management (Within Lockdown)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Senior Management (Within Lockdown)</label>
+            </value>
+            <value>
+                <fullName>Shift Leaders (Outside Lockdown)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Shift Leaders (Outside Lockdown)</label>
+            </value>
+            <value>
+                <fullName>Shift Leaders (Within Lockdown)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Shift Leaders (Within Lockdown)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

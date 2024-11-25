@@ -1,0 +1,80 @@
+<template>
+    <template if:false={showSpinner}>
+        <div class="slds-grid slds-wrap slds-m-bottom_medium font-family">
+            <div class="slds-col slds-size_12-of-12 slds-medium-size_2-of-12 slds-large-size_2-of-12"></div>
+            <div
+                class="slds-col slds-size_12-of-12 slds-medium-size_8-of-12 slds-large-size_8-of-12 slds-align_absolute-center"
+            >
+                <template if:true={isSimple}>
+                    <div class="slds-form-element input-custom">
+                        <lightning-input
+                            type={type}
+                            name={inputLabelName}
+                            label={inputLabel}
+                            onchange={handleChange}
+                            value={value}
+                            placeholder={inputPlaceholder}
+                            class={classAttribute}
+                            required={required}
+                        >
+                        </lightning-input>
+                    </div>
+                </template>
+                <template if:true={isBirthDate}>
+                    <div class="slds-form-element">
+                        <lightning-input
+                            type="date"
+                            name={inputLabelName}
+                            label={inputLabel}
+                            onchange={handleChange}
+                            value={value}
+                            placeholder={inputPlaceholder}
+                        >
+                        </lightning-input>
+                    </div>
+                </template>
+                <template if:true={isTextarea}>
+                    <div class="slds-form-element">
+                        <lightning-textarea
+                            name={inputLabelName}
+                            label={inputLabel}
+                            required={required}
+                            placeholder={inputPlaceholder}
+                            value={value}
+                            onchange={handleChange}
+                        ></lightning-textarea>
+                    </div>
+                </template>
+                <template if:true={isSelect}>
+                    <div class="slds-form-element">
+                        <div class="slds-form-element__control combobox-input">
+                            <lightning-combobox
+                                class="combobox-input"
+                                label={inputLabel}
+                                name={inputLabelName}
+                                placeholder={inputPlaceholder}
+                                value={value}
+                                onchange={handleChange}
+                                options={options}
+                                required={required}
+                            ></lightning-combobox>
+                        </div>
+                    </div>
+                </template>
+            </div>
+            <div class="slds-col slds-size_12-of-12 slds-medium-size_2-of-12 slds-large-size_2-of-12"></div>
+            <template if:true={showButton}>
+                <div class="slds-col slds-size_12-of-12 slds-text-align_center">
+                    <button class="slds-button button-submit slds-m-around_medium" onclick={handleClick}>
+                        {submitLabel}
+                    </button>
+                </div>
+            </template>
+        </div>
+    </template>
+    <template if:true={showSpinner}>
+        <div class="slds-spinner_container slds-is-relative slds-p-around_medium">
+            <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+        </div>
+    </template>
+</template>

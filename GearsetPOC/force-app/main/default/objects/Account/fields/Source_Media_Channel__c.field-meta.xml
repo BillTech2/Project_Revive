@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Source_Media_Channel__c</fullName>
+    <label>How did you hear about E* for Agents?</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Friends and colleagues</fullName>
+                <default>false</default>
+                <label>Friends and colleagues</label>
+            </value>
+            <value>
+                <fullName>Business events (trade show, conference)</fullName>
+                <default>false</default>
+                <label>Business events (trade show, conference)</label>
+            </value>
+            <value>
+                <fullName>Eurostar.com</fullName>
+                <default>false</default>
+                <label>Eurostar.com</label>
+            </value>
+            <value>
+                <fullName>Company Intranet</fullName>
+                <default>false</default>
+                <label>Company Intranet</label>
+            </value>
+            <value>
+                <fullName>Partnerships</fullName>
+                <default>false</default>
+                <label>Partnerships</label>
+            </value>
+            <value>
+                <fullName>Online search engine</fullName>
+                <default>false</default>
+                <label>Online search engine</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

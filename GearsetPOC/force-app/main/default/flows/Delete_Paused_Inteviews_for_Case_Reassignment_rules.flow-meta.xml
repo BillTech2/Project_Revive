@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>49.0</apiVersion>
+    <interviewLabel>Delete Paused Inteviews for Case Reassignment flow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Delete Paused Inteviews for Case Reassignment rules</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordDeletes>
+        <name>Delete_Paused_Flow_Interviews</name>
+        <label>Delete Paused Flow Interviews</label>
+        <locationX>368</locationX>
+        <locationY>74</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>InterviewLabel</field>
+            <operator>Contains</operator>
+            <value>
+                <stringValue>Case_Reassignment_Rules</stringValue>
+            </value>
+        </filters>
+        <object>FlowInterview</object>
+    </recordDeletes>
+    <start>
+        <locationX>83</locationX>
+        <locationY>75</locationY>
+        <connector>
+            <targetReference>Delete_Paused_Flow_Interviews</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+</Flow>

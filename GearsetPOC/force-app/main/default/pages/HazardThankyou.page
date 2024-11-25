@@ -1,0 +1,6 @@
+<apex:page showHeader="false" standardController="Hazard__c">
+<apex:image value="https://eurostar--c.eu2.content.force.com/servlet/servlet.ImageServer?id=015b00000023s8W&oid=00D250000006lz7"/>
+    <apex:sectionHeader title="{!$Label.Hazard_Thankyou} {!$User.FirstName}"/> 
+    <br></br>
+    {!$Label.Hazard_Thankyou_description}
+</apex:page>

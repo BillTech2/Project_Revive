@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Available_Space_VIP_Booking__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( Total_Available_Luggage_space__c &lt; 3 , 0 , Total_Space_VIP_Booking__c  - (  Booked_Space_VIP_Booking__c +   Unconfirmed_Space_VIP_Booking__c )
+ )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Available Space VIP Booking</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

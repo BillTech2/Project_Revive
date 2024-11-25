@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>UK_Sort_Code_Format</fullName>
+    <active>true</active>
+    <errorConditionFormula>NOT(
+ISBLANK(Bank_Sort_Code__c) ||
+REGEX(Bank_Sort_Code__c, &quot;[0-9]{6}&quot;)
+)
+&amp;&amp; AND(NOT(ISPICKVAL(Claim_Status__c, &#39;Draft&#39;)), NOT(ISPICKVAL(Claim_Status__c, &#39;Cancelled&#39;)))</errorConditionFormula>
+    <errorDisplayField>Bank_Sort_Code__c</errorDisplayField>
+    <errorMessage>Sort Code must be 6-digits.</errorMessage>
+</ValidationRule>

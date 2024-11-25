@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Booking</fullName>
+    <availability>online</availability>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>New Booking</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <requireRowSelection>false</requireRowSelection>
+    <url>/lightning/o/Allocation_Booking__c/new?defaultFieldValues=
+PSA__c={!PSA__c.Name},
+Type_of_PSA__c={!PSA__c.RecordType},
+Account_Name__c={!PSA__c.Business_Account_Id__c}</url>
+</WebLink>

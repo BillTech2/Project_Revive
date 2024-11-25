@@ -1,0 +1,1383 @@
+<template>
+  <template if:true={checklist}>
+
+    <lightning-card if:true={isConfirmationDialogVisible}>
+        <div class="slds-container_small">
+            <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <header class="slds-modal__header">
+                        <h2 class="slds-text-heading_medium slds-hyphenate">Declaration has not been ticked</h2>
+                    </header>
+                    <div class="slds-modal__content slds-p-around_medium" style="text-align: center;">
+                        <p>You will need to tick the declaration checkbox in order to submit this checklist.</p>
+                    </div>
+                    <footer class="slds-modal__footer">
+                      <div class="slds-align_absolute-center">
+                        <lightning-button 
+                          variant="brand"
+                          name="confirm"
+                          label="Save and complete later"
+                          title={confirmLabel}
+                          onclick={handleProceedWithSave} >
+                        </lightning-button>
+
+                        <lightning-button 
+                          style="margin-left: 1rem;"
+                          variant="neutral"
+                          name="cancel"
+                          label="Back"
+                          title={cancelLabel}
+                          onclick={handleBackToEdit} >
+                        </lightning-button>
+                      </div>
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </div>
+    </lightning-card>
+
+    <div>
+      <div class="main-title">
+        {pageLabels.mainHeader}
+          <template if:true={showEditIcon}>
+            <lightning-icon class="edit-icon slds-m-left_small"  size="small" icon-name="utility:edit" onclick={changeToEditForm}></lightning-icon>
+          </template>
+      </div>
+    </div>
+
+    <div class="border-t-1-sol-bl border-b-1-sol-bl section">
+      <div 
+        class="benefit-title"
+        style="width:15%; height:auto;">
+        Status
+      </div>
+      <div 
+        class="benefit-options-container border-r-1-sol-bl" 
+        style="width:85%">
+        <template if:false={checklist.Form_Completion_Date__c}>
+          Not Submitted
+        </template>
+        <template if:true={checklist.Form_Completion_Date__c}>
+          Submitted&nbsp;
+          <lightning-formatted-date-time 
+            value={submittedDateTime}
+            year="numeric" 
+            month="numeric" 
+            day="numeric" 
+            hour="2-digit"
+            minute="2-digit"
+            hour12="false">
+          </lightning-formatted-date-time>
+          &nbsp;by&nbsp; 
+          {checklist.Form_Completed_By__r.Name}
+        </template>
+      </div>
+    </div>  
+
+    <br/>
+
+    <div class="section-wordings">
+      <lightning-formatted-rich-text 
+        value={pageLabels.mainWordings} 
+        linkify>
+      </lightning-formatted-rich-text>
+    </div>
+
+    <div class="border-t-1-sol-bl section">
+      <div 
+        class="benefit-title"
+        style="width:14%">
+        {pageLabels.employeeName}
+      </div>
+      
+      <div 
+        data-container-id="Employee_Id__c" 
+        class="benefit-options-container" 
+        style="width:42%">
+        <div style="display: inline-block; vertical-align: middle; width: 95%;">
+          <c-lookup
+            data-id="Employee_Id__c"
+            errors={searchErrors}
+            onsearch={handleSearch}
+            onselectionchange={handleSelectionChange}
+            placeholder="Please start entering employee last name"
+            disabled={isReadOnly}
+            selection={lookupPopulationData}
+            required
+          >
+          </c-lookup> 
+        </div>
+      </div>
+      
+      <div 
+        class="benefit-title"
+        style="width:13%">
+        {pageLabels.employeeNumber}
+      </div>
+      
+      <div
+        data-container-id="Employee_Number__c"  
+        class="benefit-options-container border-r-1-sol-bl" 
+        style="width:31%">
+          <c-leaver-checklist-input
+            value={checklist.Employee_Number__c}
+            data-id="Employee_Number__c"
+            paired="Employee_Number__c"
+            edit-mode={isEditForm}
+            onupdated={handleInputUpdate}
+          ></c-leaver-checklist-input> 
+      </div>
+    </div>
+
+    <div class="border-t-1-sol-bl border-b-1-sol-bl section">
+      <div 
+        class="benefit-title"
+        style="width:14%">
+        {pageLabels.jobTitle}
+      </div>
+      
+      <div 
+        data-container-id="Job_Title__c"  
+        class="benefit-options-container" 
+        style="width:42%">
+          <c-leaver-checklist-input
+            value={checklist.Job_Title__c}
+            data-id="Job_Title__c"
+            paired="Job_Title__c"
+            edit-mode={isEditForm}
+            onupdated={handleInputUpdate}
+          ></c-leaver-checklist-input> 
+      </div>
+      
+      <div 
+        class="benefit-title"
+        style="width:13%">
+        {pageLabels.lastDayOfEmployment}
+      </div> 
+      
+      <div 
+        data-container-id="Last_Day_Of_Employment__c"  
+        class="benefit-options-container border-r-1-sol-bl" 
+        style="width:31%">
+        <lightning-input 
+          style="display:inline-table; width:95%"
+          class="override-date-calendar-input"
+          data-id="Last_Day_Of_Employment__c"
+          type="date" 
+          name="input1" 
+          label="Enter a date" 
+          variant="label-hidden" 
+          date-style="long"
+          onchange={handleLastDateUpdate}
+          value={checklist.Last_Day_Of_Employment__c}
+          disabled={isReadOnly}>
+        </lightning-input>
+      </div>
+    </div>
+
+    <!--TRAVEL BENEFITS-->
+    <br/>
+    <!--TRAVEL BENEFITS-->
+    <div class="section-header-main">{pageLabels.travelRailBenefitsHeader}</div>
+    <br/>
+    <div class="section-wordings">
+      <lightning-formatted-rich-text 
+        value={pageLabels.travelRailBenefitsWordings} 
+        linkify>
+      </lightning-formatted-rich-text>
+    </div>
+
+    <div class="border-t-1-sol-bl section" style="width:53%">
+      <div 
+        class="benefit-title"
+        style="width:20%">
+        {pageLabels.staffTravelCard}
+      </div>
+
+      <div 
+        class="benefit-options-container border-r-1-sol-bl" 
+        style="width:30%">
+        <div style="display: inline-block; vertical-align: middle; width: 100%;">
+          <div style="float: left; width: 30%;">
+            <c-leaver-checklist-checkbox
+              label="Self"
+              value={checklist.Staff_Travel_Card__c}
+              data-id="Staff_Travel_Card__c"
+              edit-mode={isEditForm}
+            ></c-leaver-checklist-checkbox> 
+          </div>
+          
+          <div style="float: left; width: 30%;">
+            <c-leaver-checklist-checkbox
+              label="Spouse"
+              value={checklist.Staff_Travel_Card_Spouse__c}
+              data-id="Staff_Travel_Card_Spouse__c"
+              edit-mode={isEditForm}
+            ></c-leaver-checklist-checkbox> 
+          </div>
+
+          <div style="float: left; width: 40%;">
+            <c-leaver-checklist-checkbox
+              label="Children"
+              value={checklist.Staff_Travel_Card_Children__c} 
+              data-id="Staff_Travel_Card_Children__c"
+              edit-mode={isEditForm}
+            ></c-leaver-checklist-checkbox> 
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="border-t-1-sol-bl section" style="width:53%">
+      <div 
+        class="benefit-title"
+        style="width:20%">
+        {pageLabels.dutyTravelPass}
+      </div>
+      
+      <div 
+        class="benefit-options-container border-r-1-sol-bl" 
+        style="width:30%">
+        <div style="display: inline-block; vertical-align: middle; width: 100%;">
+          <div style="float: left; width: 30%;">
+            <c-leaver-checklist-checkbox
+              label="Self"
+              value={checklist.Duty_Travel_Pass__c}
+              data-id="Duty_Travel_Pass__c"
+              edit-mode={isEditForm}
+            ></c-leaver-checklist-checkbox> 
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="border-t-1-sol-bl section" style="width:53%">
+      <div 
+        class="benefit-title"
+        style="width:20%">
+        {pageLabels.pTACCard}
+      </div>
+      
+      <div 
+        class="benefit-options-container border-r-1-sol-bl" 
+        style="width:30%">
+        <div style="display: inline-block; vertical-align: middle; width: 100%;">
+          <div style="float: left; width: 30%;">
+            <c-leaver-checklist-checkbox
+              label="Self"
+              value={checklist.PTAC_Card__c}
+              data-id="PTAC_Card__c"
+              edit-mode={isEditForm}
+            ></c-leaver-checklist-checkbox> 
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="border-t-1-sol-bl border-b-1-sol-bl section" style="width:53%">
+      <div 
+        class="benefit-title"
+        style="width:20%">
+        {pageLabels.unusedEurostarVouchers}
+      </div>
+      
+      <div 
+        class="benefit-options-container border-r-1-sol-bl" 
+        style="width:30%">
+        <div style="display: inline-block; vertical-align: middle; width: 100%;">
+          <div style="float: left; width: 30%;">
+            <c-leaver-checklist-checkbox
+              label="Self"
+              value={checklist.Unused_Eurostar_Vouchers__c}
+              data-id="Unused_Eurostar_Vouchers__c"
+              edit-mode={isEditForm}
+            ></c-leaver-checklist-checkbox> 
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--DUB-->
+    <br/>
+    <!--DUB-->
+    <div class="section-wordings">
+      <lightning-formatted-rich-text 
+        value={pageLabels.travelRailBenefitsWordingsPart2} 
+        linkify>
+      </lightning-formatted-rich-text>
+    </div>
+
+    <div class="border-t-1-sol-bl section" style="width:57%">
+      <div 
+        class="benefit-title"
+        style="width:20%">
+        {pageLabels.bRLULResidentialPass}
+      </div>
+
+      <div 
+        class="benefit-options-container border-r-1-sol-bl" 
+        style="width:30%">
+        <div style="display: inline-block; vertical-align: middle; width: 100%;">
+          <div style="float: left; width: 30%;">
+            <c-leaver-checklist-checkbox
+              label="Self"
+              value={checklist.BR_LUL_Residential_Pass__c}
+              data-id="BR_LUL_Residential_Pass__c"
+              edit-mode={isEditForm}
+            ></c-leaver-checklist-checkbox> 
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="border-t-1-sol-bl section" style="width:57%">
+      <div 
+        class="benefit-title"
+        style="width:20%">
+        {pageLabels.statusPass}
+      </div>
+      
+      <div 
+        class="benefit-options-container border-r-1-sol-bl" 
+        style="width:30%">
+        <div style="display: inline-block; vertical-align: middle; width: 100%;">
+          <div style="float: left; width: 30%;">
+            <c-leaver-checklist-checkbox
+              label="Self"
+              value={checklist.Status_Pass__c}
+              data-id="Status_Pass__c"
+              edit-mode={isEditForm}
+            ></c-leaver-checklist-checkbox> 
+          </div>
+
+          <div style="float: left; width: 30%;">
+            <c-leaver-checklist-checkbox
+              label="Spouse"
+              value={checklist.Status_Pass_Spouse__c}
+              data-id="Status_Pass_Spouse__c"
+              edit-mode={isEditForm}
+            ></c-leaver-checklist-checkbox> 
+          </div>
+          
+          <div style="float: left; width: 40%;">
+            <c-leaver-checklist-checkbox
+              label="Children"
+              value={checklist.Status_Pass_Children__c}
+              data-id="Status_Pass_Children__c"
+              edit-mode={isEditForm}
+            ></c-leaver-checklist-checkbox> 
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="border-t-1-sol-bl border-b-1-sol-bl section" style="width:57%">
+      <div 
+        class="benefit-title"
+        style="width:20%">
+        {pageLabels.tFLStatusPass}
+      </div>
+      
+      <div 
+        class="benefit-options-container border-r-1-sol-bl" 
+        style="width:30%">
+        <div style="display: inline-block; vertical-align: middle; width: 100%;">
+          <div style="float: left; width: 30%;">
+            <c-leaver-checklist-checkbox
+              label="Self"
+              value={checklist.TFL_Status_Pass__c}
+              data-id="TFL_Status_Pass__c"
+              edit-mode={isEditForm}
+            ></c-leaver-checklist-checkbox> 
+          </div>
+
+          <div style="float: left; width: 30%;">
+            <c-leaver-checklist-checkbox
+              label="Spouse"
+              value={checklist.TFL_Status_Pass_Spouse__c}
+              data-id="TFL_Status_Pass_Spouse__c"
+              edit-mode={isEditForm}
+            ></c-leaver-checklist-checkbox> 
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--MONIES & EQUIPMENT-->
+    <br/>
+    <!--56 9 12 23-->
+
+    <div class="section-header-main stick-next">{pageLabels.moniesEquipmentHeader}</div>
+   
+    <lightning-formatted-rich-text 
+       value={pageLabels.pleaseTickAsApplicableSubHeader}>
+    </lightning-formatted-rich-text>
+
+    <div class="border-t-1-sol-bl section">
+      <div 
+        class="monies-process-title"
+        style="width:56%">
+      </div>
+      
+      <div 
+        class="monies-process-option-container font-bold" 
+        style="width:9%">
+        Applicable
+      </div>
+
+      <div 
+        class="monies-process-option-container font-bold" 
+        style="width:12%">
+        Not Applicable
+      </div>
+
+      <div 
+        class="monies-process-responsible-container text-center" 
+        style="width:23%">
+        Responsibility
+      </div>
+    </div>
+
+    <div class="border-t-1-sol-bl section">
+      <div 
+        class="monies-process-title"
+        style="width:56%">
+        <lightning-formatted-text 
+          value={pageLabels.contactPayrollService} 
+          linkify>
+        </lightning-formatted-text>
+      </div>
+      
+      <div 
+        class="monies-process-option-container" 
+        data-container-id="Contact_Payroll_Service__c"
+        style="width:9%">
+        <c-leaver-checklist-checkbox
+          label=""
+          value={checklist.Contact_Payroll_Service__c}
+          size="huge" 
+          data-id="Contact_Payroll_Service__c"
+          paired="complementContact_Payroll_Service__c"
+          onupdated={handlePairedUpdate}
+          edit-mode={isEditForm}
+        ></c-leaver-checklist-checkbox> 
+      </div>
+
+      <div 
+        class="monies-process-option-container" 
+        data-container-id="Contact_Payroll_Service__c"
+        style="width:12%">
+        <c-leaver-checklist-checkbox
+          label=""
+          value={checklist.Contact_Payroll_Service__c}
+          size="huge" 
+          data-id="complementContact_Payroll_Service__c"
+          paired="Contact_Payroll_Service__c"
+          onupdated={handlePairedUpdate}
+          edit-mode={isEditForm}
+        ></c-leaver-checklist-checkbox> 
+      </div>
+
+      <div 
+        class="monies-process-responsible-container" 
+        style="width:23%">
+        {pageLabels.payrollServicedesk}
+      </div>
+    </div>
+
+    <div class="border-t-1-sol-bl section">
+      <div 
+        class="monies-process-title"
+        style="width:56%">
+        {pageLabels.returnUniformEquipment}
+      </div>
+      
+      <div 
+        class="monies-process-option-container" 
+        data-container-id="Return_Uniform_Equipment__c"
+        style="width:9%">
+        <c-leaver-checklist-checkbox
+          label=""
+          value={checklist.Return_Uniform_Equipment__c}
+          size="huge" 
+          data-id="Return_Uniform_Equipment__c"
+          paired="complementReturn_Uniform_Equipment__c"
+          onupdated={handlePairedUpdate}
+          edit-mode={isEditForm}
+        ></c-leaver-checklist-checkbox> 
+      </div>
+
+      <div 
+        class="monies-process-option-container" 
+        data-container-id="Return_Uniform_Equipment__c"
+        style="width:12%">
+        <c-leaver-checklist-checkbox
+          label=""
+          value={checklist.Return_Uniform_Equipment__c}
+          size="huge" 
+          data-id="complementReturn_Uniform_Equipment__c"
+          paired="Return_Uniform_Equipment__c"
+          onupdated={handlePairedUpdate}
+          edit-mode={isEditForm}
+        ></c-leaver-checklist-checkbox> 
+      </div>
+
+      <div 
+        class="monies-process-responsible-container" 
+        style="width:23%">
+        {pageLabels.lineManager} / {pageLabels.uniformStores}
+      </div>
+    </div>
+
+    <div class="border-t-1-sol-bl section">
+      <div 
+        class="monies-process-title"
+        style="width:56%">
+        {pageLabels.returnRulesBooksPublications}
+      </div>
+      
+      <div 
+        class="monies-process-option-container" 
+        data-container-id="Return_Rules_Books_Publications__c"
+        style="width:9%">
+        <c-leaver-checklist-checkbox
+          label=""
+          value={checklist.Return_Rules_Books_Publications__c}
+          size="huge" 
+          data-id="Return_Rules_Books_Publications__c"
+          paired="complementReturn_Rules_Books_Publications__c"
+          onupdated={handlePairedUpdate}
+          edit-mode={isEditForm}
+        ></c-leaver-checklist-checkbox> 
+      </div>
+
+      <div 
+        class="monies-process-option-container" 
+        data-container-id="Return_Rules_Books_Publications__c"
+        style="width:12%">
+        <c-leaver-checklist-checkbox
+          label=""
+          value={checklist.Return_Rules_Books_Publications__c}
+          size="huge" 
+          data-id="complementReturn_Rules_Books_Publications__c"
+          paired="Return_Rules_Books_Publications__c"
+          onupdated={handlePairedUpdate}
+          edit-mode={isEditForm}
+        ></c-leaver-checklist-checkbox> 
+      </div>
+
+      <div 
+        class="monies-process-responsible-container" 
+        style="width:23%">
+        {pageLabels.lineManager}
+      </div>
+    </div>
+
+    <div class="border-t-1-sol-bl section">
+      <div 
+        class="monies-process-title"
+        style="width:56%">
+        {pageLabels.returnClockingCardLockerKeys}
+      </div>
+      
+      <div 
+        class="monies-process-option-container" 
+        data-container-id="Return_Clocking_Card_Locker_Keys__c"
+        style="width:9%">
+        <c-leaver-checklist-checkbox
+          label=""
+          value={checklist.Return_Clocking_Card_Locker_Keys__c}
+          size="huge" 
+          data-id="Return_Clocking_Card_Locker_Keys__c"
+          paired="complementReturn_Clocking_Card_Locker_Keys__c"
+          onupdated={handlePairedUpdate}
+          edit-mode={isEditForm}
+        ></c-leaver-checklist-checkbox> 
+      </div>
+
+      <div 
+        class="monies-process-option-container" 
+        data-container-id="Return_Clocking_Card_Locker_Keys__c"
+        style="width:12%">
+        <c-leaver-checklist-checkbox
+          label=""
+          value={checklist.Return_Clocking_Card_Locker_Keys__c}
+          size="huge" 
+          data-id="complementReturn_Clocking_Card_Locker_Keys__c"
+          paired="Return_Clocking_Card_Locker_Keys__c"
+          onupdated={handlePairedUpdate}
+          edit-mode={isEditForm}
+        ></c-leaver-checklist-checkbox> 
+      </div>
+
+      <div 
+        class="monies-process-responsible-container" 
+        style="width:23%">
+        {pageLabels.lineManager} / {pageLabels.resourcePlanning}
+      </div>
+    </div>
+
+    <div class="border-t-1-sol-bl section">
+      <div 
+        class="monies-process-title"
+        style="width:56%">
+        {pageLabels.returnSecurityPassesStaffIDBadge}
+      </div>
+      
+      <div 
+        class="monies-process-option-container" 
+        data-container-id="Return_Security_Passes_Staff_ID_Badge__c"
+        style="width:9%">
+        <c-leaver-checklist-checkbox
+          label=""
+          value={checklist.Return_Security_Passes_Staff_ID_Badge__c}
+          size="huge" 
+          data-id="Return_Security_Passes_Staff_ID_Badge__c"
+          paired="complementReturn_Security_Passes_Staff_ID_Badge__c"
+          onupdated={handlePairedUpdate}
+          edit-mode={isEditForm}
+        ></c-leaver-checklist-checkbox> 
+      </div>
+
+      <div 
+        class="monies-process-option-container"
+        data-container-id="Return_Security_Passes_Staff_ID_Badge__c" 
+        style="width:12%">
+        <c-leaver-checklist-checkbox
+          label=""
+          value={checklist.Return_Security_Passes_Staff_ID_Badge__c}
+          size="huge" 
+          data-id="complementReturn_Security_Passes_Staff_ID_Badge__c"
+          paired="Return_Security_Passes_Staff_ID_Badge__c"
+          onupdated={handlePairedUpdate}
+          edit-mode={isEditForm}
+        ></c-leaver-checklist-checkbox> 
+      </div>
+
+      <div 
+        class="monies-process-responsible-container" 
+        style="width:23%">
+        {pageLabels.lineManager} / {pageLabels.eurostarSecurityPassOffice}
+      </div>
+    </div>
+
+    <div class="border-t-1-sol-bl section">
+      <div 
+        class="monies-process-title"
+        style="width:56%">
+        {pageLabels.returnISEquipmentAccessories}
+      </div>
+      
+      <div 
+        class="monies-process-option-container"
+        data-container-id="Return_IS_Equipment_Accessories__c"
+        style="width:9%">
+        <c-leaver-checklist-checkbox
+          label=""
+          value={checklist.Return_IS_Equipment_Accessories__c}
+          size="huge" 
+          data-id="Return_IS_Equipment_Accessories__c"
+          paired="complementReturn_IS_Equipment_Accessories__c"
+          onupdated={handlePairedUpdate}
+          edit-mode={isEditForm}
+        ></c-leaver-checklist-checkbox> 
+      </div>
+
+      <div 
+        class="monies-process-option-container"
+        data-container-id="Return_IS_Equipment_Accessories__c"
+        style="width:12%">
+        <c-leaver-checklist-checkbox
+          label=""
+          value={checklist.Return_IS_Equipment_Accessories__c}
+          size="huge" 
+          data-id="complementReturn_IS_Equipment_Accessories__c"
+          paired="Return_IS_Equipment_Accessories__c"
+          onupdated={handlePairedUpdate}
+          edit-mode={isEditForm}
+        ></c-leaver-checklist-checkbox> 
+      </div>
+
+      <div 
+        class="monies-process-responsible-container" 
+        style="width:23%">
+        {pageLabels.lineManager} / {pageLabels.iSServicedesk}
+      </div>
+    </div>
+
+    <div class="border-t-1-sol-bl section">
+      <div 
+        class="monies-process-title"
+        style="width:56%">
+        {pageLabels.mobilePhoneUnlockSignOut}
+      </div>
+      
+      <div 
+        class="monies-process-option-container"
+        data-container-id="Mobile_Phone_Unlock_Sign_Out__c"
+        style="width:9%">
+        <c-leaver-checklist-checkbox
+          label=""
+          value={checklist.Mobile_Phone_Unlock_Sign_Out__c}
+          size="huge" 
+          data-id="Mobile_Phone_Unlock_Sign_Out__c"
+          paired="complementMobile_Phone_Unlock_Sign_Out__c"
+          onupdated={handlePairedUpdate}
+          edit-mode={isEditForm}
+        ></c-leaver-checklist-checkbox> 
+      </div>
+
+      <div 
+        class="monies-process-option-container"
+        data-container-id="Mobile_Phone_Unlock_Sign_Out__c"
+        style="width:12%">
+        <c-leaver-checklist-checkbox
+          label=""
+          value={checklist.Mobile_Phone_Unlock_Sign_Out__c}
+          size="huge" 
+          data-id="complementMobile_Phone_Unlock_Sign_Out__c"
+          paired="Mobile_Phone_Unlock_Sign_Out__c"
+          onupdated={handlePairedUpdate}
+          edit-mode={isEditForm}
+        ></c-leaver-checklist-checkbox> 
+      </div>
+
+      <div 
+        class="monies-process-responsible-container" 
+        style="width:23%">
+        {pageLabels.employee} / {pageLabels.lineManager} / {pageLabels.iSServicedesk}
+      </div>
+    </div>
+
+    <div class="border-t-1-sol-bl section">
+      <div 
+        class="monies-process-title"
+        style="width:56%">
+        {pageLabels.returnCreditCardsSettleBalance}
+      </div>
+      
+      <div 
+        class="monies-process-option-container"
+        data-container-id="Return_Credit_Cards_Settle_Balance__c"
+        style="width:9%">
+        <c-leaver-checklist-checkbox
+          label=""
+          value={checklist.Return_Credit_Cards_Settle_Balance__c}
+          size="huge" 
+          data-id="Return_Credit_Cards_Settle_Balance__c"
+          paired="complementReturn_Credit_Cards_Settle_Balance__c"
+          onupdated={handlePairedUpdate}
+          edit-mode={isEditForm}
+        ></c-leaver-checklist-checkbox> 
+      </div>
+
+      <div 
+        class="monies-process-option-container"
+        data-container-id="Return_Credit_Cards_Settle_Balance__c"
+        style="width:12%">
+        <c-leaver-checklist-checkbox
+          label=""
+          value={checklist.Return_Credit_Cards_Settle_Balance__c}
+          size="huge" 
+          data-id="complementReturn_Credit_Cards_Settle_Balance__c"
+          paired="Return_Credit_Cards_Settle_Balance__c"
+          onupdated={handlePairedUpdate}
+          edit-mode={isEditForm}
+        ></c-leaver-checklist-checkbox> 
+      </div>
+
+      <div 
+        class="monies-process-responsible-container" 
+        style="width:23%">
+        {pageLabels.lineManager} / {pageLabels.finance}
+      </div>
+    </div>
+
+    <div class="border-t-1-sol-bl border-b-1-sol-bl section">
+      <div 
+        class="monies-process-title"
+        style="width:56%">
+        {pageLabels.ensureExpenseClaimsSubmission}
+      </div>
+      
+      <div 
+        class="monies-process-option-container"
+        data-container-id="Ensure_Expense_Claims_Submission__c"
+        style="width:9%">
+        <c-leaver-checklist-checkbox
+          label=""
+          value={checklist.Ensure_Expense_Claims_Submission__c}
+          size="huge" 
+          data-id="Ensure_Expense_Claims_Submission__c"
+          paired="complementEnsure_Expense_Claims_Submission__c"
+          onupdated={handlePairedUpdate}
+          edit-mode={isEditForm}
+        ></c-leaver-checklist-checkbox> 
+      </div>
+
+      <div 
+        class="monies-process-option-container"
+        data-container-id="Ensure_Expense_Claims_Submission__c"
+        style="width:12%">
+        <c-leaver-checklist-checkbox
+          label=""
+          value={checklist.Ensure_Expense_Claims_Submission__c}
+          size="huge" 
+          data-id="complementEnsure_Expense_Claims_Submission__c"
+          paired="Ensure_Expense_Claims_Submission__c"
+          onupdated={handlePairedUpdate}
+          edit-mode={isEditForm}
+        ></c-leaver-checklist-checkbox> 
+      </div>
+
+      <div 
+        class="monies-process-responsible-container" 
+        style="width:23%">
+        {pageLabels.lineManager}
+      </div>
+    </div>
+
+    <!--PROCESS & SYSTEMS-->
+    <br/>
+    <!--56 9 12 23-->
+    <div class="section-header-main stick-next">{pageLabels.processSystemsHeader}</div>
+    
+    <lightning-formatted-rich-text 
+      value={pageLabels.pleaseTickAsApplicableSubHeader}>
+    </lightning-formatted-rich-text>
+
+    <div class="border-t-1-sol-bl section">
+      <div 
+        class="monies-process-title"
+        style="width:56%">
+      </div>
+      
+      <div 
+        class="monies-process-option-container font-bold" 
+        style="width:9%">
+        Applicable
+      </div>
+
+      <div 
+        class="monies-process-option-container font-bold" 
+        style="width:12%">
+        Not Applicable
+      </div>
+
+      <div 
+        class="monies-process-responsible-container text-center" 
+        style="width:23%">
+        Responsibility
+      </div>
+    </div>
+
+    <div class="border-t-1-sol-bl section">
+      <div 
+        class="monies-process-title"
+        style="width:56%">
+        <lightning-formatted-text 
+          value={pageLabels.ensureHRPayrollNotified} 
+          linkify>
+        </lightning-formatted-text>
+      </div>
+      
+      <div 
+        class="monies-process-option-container"
+        data-container-id="Ensure_HR_Payroll_Notified__c"
+        style="width:9%">
+        <c-leaver-checklist-checkbox
+          label=""
+          value={checklist.Ensure_HR_Payroll_Notified__c}
+          size="huge" 
+          data-id="Ensure_HR_Payroll_Notified__c"
+          paired="complementEnsure_HR_Payroll_Notified__c"
+          onupdated={handlePairedUpdate}
+          edit-mode={isEditForm}
+        ></c-leaver-checklist-checkbox> 
+      </div>
+
+      <div 
+        class="monies-process-option-container"
+        data-container-id="Ensure_HR_Payroll_Notified__c"
+        style="width:12%">
+        <c-leaver-checklist-checkbox
+          label=""
+          value={checklist.Ensure_HR_Payroll_Notified__c}
+          size="huge" 
+          data-id="complementEnsure_HR_Payroll_Notified__c"
+          paired="Ensure_HR_Payroll_Notified__c"
+          onupdated={handlePairedUpdate}
+          edit-mode={isEditForm}
+        ></c-leaver-checklist-checkbox> 
+      </div>
+
+      <div 
+        class="monies-process-responsible-container" 
+        style="width:23%">
+        {pageLabels.lineManager} / {pageLabels.payrollServicedesk}
+      </div>
+    </div>
+
+    <div class="border-t-1-sol-bl section">
+      <div 
+        class="monies-process-title"
+        style="width:56%">
+        {pageLabels.ensureLeaversTicketRaisedWithIS}
+      </div>
+      
+      <div 
+        class="monies-process-option-container"
+        data-container-id="Ensure_Leavers_Ticket_Raised_With_IS__c"
+        style="width:9%">
+        <c-leaver-checklist-checkbox
+          label=""
+          value={checklist.Ensure_Leavers_Ticket_Raised_With_IS__c}
+          size="huge" 
+          data-id="Ensure_Leavers_Ticket_Raised_With_IS__c"
+          paired="complementEnsure_Leavers_Ticket_Raised_With_IS__c"
+          onupdated={handlePairedUpdate}
+          edit-mode={isEditForm}
+        ></c-leaver-checklist-checkbox> 
+      </div>
+
+      <div 
+        class="monies-process-option-container"
+        data-container-id="Ensure_Leavers_Ticket_Raised_With_IS__c"
+        style="width:12%">
+        <c-leaver-checklist-checkbox
+          label=""
+          value={checklist.Ensure_Leavers_Ticket_Raised_With_IS__c}
+          size="huge" 
+          data-id="complementEnsure_Leavers_Ticket_Raised_With_IS__c"
+          paired="Ensure_Leavers_Ticket_Raised_With_IS__c"
+          onupdated={handlePairedUpdate}
+          edit-mode={isEditForm}
+        ></c-leaver-checklist-checkbox> 
+      </div>
+
+      <div 
+        class="monies-process-responsible-container" 
+        style="width:23%">
+        {pageLabels.lineManager} / {pageLabels.iSServicedesk}
+      </div>
+    </div>
+
+    <div class="border-t-1-sol-bl section">
+      <div 
+        class="monies-process-title"
+        style="width:56%">
+        {pageLabels.ensureMarkViewQueuesCleared}
+      </div>
+      
+      <div 
+        class="monies-process-option-container"
+        data-container-id="Ensure_MarkView_Queues_Cleared__c"
+        style="width:9%">
+        <c-leaver-checklist-checkbox
+          label=""
+          value={checklist.Ensure_MarkView_Queues_Cleared__c}
+          size="huge" 
+          data-id="Ensure_MarkView_Queues_Cleared__c"
+          paired="complementEnsure_MarkView_Queues_Cleared__c"
+          onupdated={handlePairedUpdate}
+          edit-mode={isEditForm}
+        ></c-leaver-checklist-checkbox> 
+      </div>
+
+      <div 
+        class="monies-process-option-container"
+        data-container-id="Ensure_MarkView_Queues_Cleared__c"
+        style="width:12%">
+        <c-leaver-checklist-checkbox
+          label=""
+          value={checklist.Ensure_MarkView_Queues_Cleared__c}
+          size="huge" 
+          data-id="complementEnsure_MarkView_Queues_Cleared__c"
+          paired="Ensure_MarkView_Queues_Cleared__c"
+          onupdated={handlePairedUpdate}
+          edit-mode={isEditForm}
+        ></c-leaver-checklist-checkbox> 
+      </div>
+
+      <div 
+        class="monies-process-responsible-container" 
+        style="width:23%">
+        {pageLabels.lineManager} / {pageLabels.finance}
+      </div>
+    </div>
+
+    <div class="border-t-1-sol-bl section">
+      <div 
+        class="monies-process-title"
+        style="width:56%">
+        {pageLabels.ensureDTPROReassigned}
+      </div>
+      
+      <div 
+        class="monies-process-option-container"
+        data-container-id="Ensure_DTP_RO_Reassigned__c" 
+        style="width:9%">
+        <c-leaver-checklist-checkbox
+          label=""
+          value={checklist.Ensure_DTP_RO_Reassigned__c}
+          size="huge" 
+          data-id="Ensure_DTP_RO_Reassigned__c"
+          paired="complementEnsure_DTP_RO_Reassigned__c"
+          onupdated={handlePairedUpdate}
+          edit-mode={isEditForm}
+        ></c-leaver-checklist-checkbox> 
+      </div>
+
+      <div 
+        class="monies-process-option-container"
+        data-container-id="Ensure_DTP_RO_Reassigned__c"
+        style="width:12%">
+        <c-leaver-checklist-checkbox
+          label=""
+          value={checklist.Ensure_DTP_RO_Reassigned__c}
+          size="huge" 
+          data-id="complementEnsure_DTP_RO_Reassigned__c"
+          paired="Ensure_DTP_RO_Reassigned__c"
+          onupdated={handlePairedUpdate}
+          edit-mode={isEditForm}
+        ></c-leaver-checklist-checkbox> 
+      </div>
+
+      <div 
+        class="monies-process-responsible-container" 
+        style="width:23%">
+        {pageLabels.lineManager} / {pageLabels.iSServicedesk}
+      </div>
+    </div>
+
+    <div class="border-t-1-sol-bl section">
+      <div 
+        class="monies-process-title"
+        style="width:56%">
+        {pageLabels.ensureFinancialApprovalRightsReassigned}
+      </div>
+      
+      <div 
+        class="monies-process-option-container" 
+        data-container-id="Ensure_Financial_Approval_Rights_Reassig__c"
+        style="width:9%">
+        <c-leaver-checklist-checkbox
+          label=""
+          value={checklist.Ensure_Financial_Approval_Rights_Reassig__c}
+          size="huge" 
+          data-id="Ensure_Financial_Approval_Rights_Reassig__c"
+          paired="complementEnsure_Financial_Approval_Rights_Reassig__c"
+          onupdated={handlePairedUpdate}
+          edit-mode={isEditForm}
+        ></c-leaver-checklist-checkbox> 
+      </div>
+
+      <div 
+        class="monies-process-option-container"
+        data-container-id="Ensure_Financial_Approval_Rights_Reassig__c"
+        style="width:12%">
+        <c-leaver-checklist-checkbox
+          label=""
+          value={checklist.Ensure_Financial_Approval_Rights_Reassig__c}
+          size="huge" 
+          data-id="complementEnsure_Financial_Approval_Rights_Reassig__c"
+          paired="Ensure_Financial_Approval_Rights_Reassig__c"
+          onupdated={handlePairedUpdate}
+          edit-mode={isEditForm}
+        ></c-leaver-checklist-checkbox> 
+      </div>
+
+      <div 
+        class="monies-process-responsible-container" 
+        style="width:23%">
+        {pageLabels.lineManager} / {pageLabels.finance}
+      </div>
+    </div>
+
+    <div class="border-t-1-sol-bl section">
+      <div 
+        class="monies-process-title"
+        style="width:56%">
+        {pageLabels.ensureBoxFoldersOwnershipAltered}
+      </div>
+      
+      <div 
+        class="monies-process-option-container"
+        data-container-id="Ensure_Box_Folders_Ownership_Altered__c"
+        style="width:9%">
+        <c-leaver-checklist-checkbox
+          label=""
+          value={checklist.Ensure_Box_Folders_Ownership_Altered__c}
+          size="huge" 
+          data-id="Ensure_Box_Folders_Ownership_Altered__c"
+          paired="complementEnsure_Box_Folders_Ownership_Altered__c"
+          onupdated={handlePairedUpdate}
+          edit-mode={isEditForm}
+        ></c-leaver-checklist-checkbox> 
+      </div>
+
+      <div 
+        class="monies-process-option-container"
+        data-container-id="Ensure_Box_Folders_Ownership_Altered__c"
+        style="width:12%">
+        <c-leaver-checklist-checkbox
+          label=""
+          value={checklist.Ensure_Box_Folders_Ownership_Altered__c}
+          size="huge" 
+          data-id="complementEnsure_Box_Folders_Ownership_Altered__c"
+          paired="Ensure_Box_Folders_Ownership_Altered__c"
+          onupdated={handlePairedUpdate}
+          edit-mode={isEditForm}
+        ></c-leaver-checklist-checkbox> 
+      </div>
+
+      <div 
+        class="monies-process-responsible-container" 
+        style="width:23%">
+        {pageLabels.lineManager}
+      </div>
+    </div>
+
+    <div class="border-t-1-sol-bl section">
+      <div 
+        class="monies-process-title"
+        style="width:56%">
+        {pageLabels.ensureIntranetSitesManagerAltered}
+      </div>
+      
+      <div 
+        class="monies-process-option-container"
+        data-container-id="Ensure_Intranet_Sites_Manager_Altered__c"
+        style="width:9%">
+        <c-leaver-checklist-checkbox
+          label=""
+          value={checklist.Ensure_Intranet_Sites_Manager_Altered__c}
+          size="huge" 
+          data-id="Ensure_Intranet_Sites_Manager_Altered__c"
+          paired="complementEnsure_Intranet_Sites_Manager_Altered__c"
+          onupdated={handlePairedUpdate}
+          edit-mode={isEditForm}
+        ></c-leaver-checklist-checkbox> 
+      </div>
+
+      <div 
+        class="monies-process-option-container"
+        data-container-id="Ensure_Intranet_Sites_Manager_Altered__c"
+        style="width:12%">
+        <c-leaver-checklist-checkbox
+          label=""
+          value={checklist.Ensure_Intranet_Sites_Manager_Altered__c}
+          size="huge" 
+          data-id="complementEnsure_Intranet_Sites_Manager_Altered__c"
+          paired="Ensure_Intranet_Sites_Manager_Altered__c"
+          onupdated={handlePairedUpdate}
+          edit-mode={isEditForm}
+        ></c-leaver-checklist-checkbox> 
+      </div>
+
+      <div 
+        class="monies-process-responsible-container" 
+        style="width:23%">
+        {pageLabels.lineManager}
+      </div>
+    </div>
+
+    <div class="border-t-1-sol-bl border-b-1-sol-bl section">
+      <div 
+        class="monies-process-title"
+        style="width:56%">
+        {pageLabels.ensurePayslipsCopiesDownloaded}
+      </div>
+      
+      <div 
+        class="monies-process-option-container"
+        data-container-id="Ensure_Payslips_Copies_Downloaded__c"
+        style="width:9%">
+        <c-leaver-checklist-checkbox
+          label=""
+          value={checklist.Ensure_Payslips_Copies_Downloaded__c}
+          size="huge" 
+          data-id="Ensure_Payslips_Copies_Downloaded__c"
+          paired="complementEnsure_Payslips_Copies_Downloaded__c"
+          onupdated={handlePairedUpdate}
+          edit-mode={isEditForm}
+        ></c-leaver-checklist-checkbox> 
+      </div>
+
+      <div 
+        class="monies-process-option-container"
+        data-container-id="Ensure_Payslips_Copies_Downloaded__c"
+        style="width:12%">
+        <c-leaver-checklist-checkbox
+          label=""
+          value={checklist.Ensure_Payslips_Copies_Downloaded__c}
+          size="huge" 
+          data-id="complementEnsure_Payslips_Copies_Downloaded__c"
+          paired="Ensure_Payslips_Copies_Downloaded__c"
+          onupdated={handlePairedUpdate}
+          edit-mode={isEditForm}
+        ></c-leaver-checklist-checkbox> 
+      </div>
+
+      <div 
+        class="monies-process-responsible-container" 
+        style="width:23%">
+        {pageLabels.lineManager} / {pageLabels.employee}
+      </div>
+    </div>
+
+    <br/>
+
+    <div class="border-t-1-sol-bl border-b-1-sol-bl section">
+      <div 
+        class="benefit-title"
+        style="width:15%; height:auto;">
+        Created date:
+      </div>
+      <div 
+        class="benefit-options-container" 
+        style="width:35%">
+        <lightning-formatted-date-time 
+          value={createdDateTime}
+          year="numeric" 
+          month="numeric" 
+          day="numeric" 
+          hour="2-digit"
+          minute="2-digit"
+          hour12="false">
+        </lightning-formatted-date-time>
+        {createdStatus}
+      </div>
+      <div 
+        class="benefit-title"
+        style="width:15%; height:auto;">
+        Last modified:
+      </div>
+      <div 
+        class="benefit-options-container border-r-1-sol-bl" 
+        style="width:35%">
+        <template if:true={checklist.LastModifiedDate}>
+          <lightning-formatted-date-time 
+            value={modifiedDateTime}
+            year="numeric" 
+            month="numeric" 
+            day="numeric" 
+            hour="2-digit"
+            minute="2-digit"
+            hour12="false">
+          </lightning-formatted-date-time>
+        </template>
+        {modifiedStatus}
+      </div>
+    </div>
+
+    <template if:true={showConfirmationCheckbox}>
+      <br/>
+      <div style="text-align: center; margin-top: 0.5rem; margin-bottom: 0.5rem;">
+        <c-leaver-checklist-checkbox
+          label={pageLabels.confirmationMessage}
+          value={isSigned}
+          data-id="Form_Complete__c"
+          onupdated={handleConfirmationBoxUpdate}
+          edit-mode="true"
+          paired="complementSendButtons"
+        ></c-leaver-checklist-checkbox> 
+        <br>
+        <div class="section-wordings">
+          <lightning-formatted-rich-text 
+            value={pageLabels.confirmationMessageNote}>
+          </lightning-formatted-rich-text>
+        </div>
+      </div>
+    </template>
+
+    <template if:true={showClearEmailsSentStatusCheckbox}>
+      <div style="text-align: center; margin-top: 0.5rem; margin-bottom: 0.5rem;">
+        <c-leaver-checklist-checkbox
+          label="clear Emails Sent status"
+          value={clearSentStatus}
+          data-id="ClearSentStatus"
+          onupdated={handleClearSentStatusRequestedBoxUpdate}
+          edit-mode="true"
+          paired="complementSendButtons"
+        ></c-leaver-checklist-checkbox> 
+      </div>
+    </template>
+
+    <template if:false={recordId}>
+      <lightning-record-edit-form
+        onsuccess={successHandler}
+        object-api-name="Leavers_Checklist__c"
+        onload={handleLoadEditForm}
+        onsubmit={handleSubmit}
+      >
+        <div class="slds-grid slds-grid_align-center slds-wrap slds-m-bottom--medium">
+          <template if:false={checklist.Form_Complete__c}>
+            <template if:false={isSigned}>
+              <lightning-button
+                class="slds-m-top_small slds-m-left--small"
+                variant="brand"
+                type="submit"
+                label="Create"
+              ></lightning-button>
+            </template>
+            
+            <template if:true={isSigned}>
+              <lightning-button 
+                class="slds-m-top_small slds-m-left--small"
+                variant="brand"
+                type="submit"
+                label="Submit"
+              ></lightning-button>
+            </template>
+          </template>
+        </div> 
+      </lightning-record-edit-form> 
+    </template>
+    
+    <template if:true={recordId}>
+      <lightning-record-edit-form
+        record-id={recordId}
+        onsuccess={successHandler}
+        onerror={errorHandler}
+        object-api-name="Leavers_Checklist__c"
+        onload={handleLoadEditForm}
+        onsubmit={handleSubmit}
+      >
+
+        <template if:true={isEditForm}>      
+          <div class="slds-grid slds-grid_align-center slds-wrap slds-m-bottom--medium">
+            <template if:true={showSaveButton}>
+              <lightning-button
+                class="slds-m-top_small slds-m-left--small"
+                variant="brand"
+                type="submit"
+                label="Save"
+              ></lightning-button>
+            </template>
+
+            <template if:true={showSaveAndSendEmailsButton}>
+              <lightning-button 
+                class="slds-m-top_small slds-m-left--small"
+                variant="brand"
+                type="submit"
+                label="Submit"
+              ></lightning-button>
+            </template>
+          </div> 
+        </template>
+        
+        <template if:true={showSendEmailsButton}>
+          <div class="slds-grid slds-grid_align-center slds-wrap slds-m-bottom--medium">
+            <lightning-button 
+              class="slds-m-top_small slds-m-left--small"
+              variant="brand"
+              type="submit"
+              label="Submit"
+            ></lightning-button>
+          </div>
+        </template>
+      </lightning-record-edit-form> 
+    </template>
+  </template>
+</template>

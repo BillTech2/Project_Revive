@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Other_Pd_Time_Off_Hrs__c</fullName>
+    <inlineHelpText>Total number of Other Paid Time Off hours for this Timesheet.</inlineHelpText>
+    <label>Total Other Pd Time Off Hrs</label>
+    <summarizedField>Timesheet_Entry__c.Other_Paid_Time_Off_Hrs__c</summarizedField>
+    <summaryForeignKey>Timesheet_Entry__c.Timesheet__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Segment__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( Customer_Segment__c == 1, IMAGE(&quot;/resource/NonCorporateBusiness&quot;, &quot;Small Business&quot;) + &quot; Small Business&quot;, 
+    IF( Customer_Segment__c == 2, IMAGE(&quot;/resource/MatureLeisure&quot;, &quot;Mature Leisure&quot;) + &quot; Mature Leisure&quot;, 
+								IF( Customer_Segment__c == 3, IMAGE(&quot;/resource/YoungLeisure&quot;, &quot;Young Leisure&quot;) + &quot; Young Leisure&quot;, 
+								    IF( Customer_Segment__c == 4, IMAGE(&quot;/resource/MatureVFR&quot;, &quot;Mature VFR&quot;) + &quot; Mature VFR&quot;, 
+								        IF( Customer_Segment__c == 5, IMAGE(&quot;/resource/FamilyIcon&quot;, &quot;Family&quot;) + &quot; Family&quot;, 
+								            IF( Customer_Segment__c == 6, IMAGE(&quot;/resource/CorporateBusiness&quot;, &quot;Large Business&quot;) + &quot; Large Business&quot;, 
+								                IF( Customer_Segment__c == 7, IMAGE(&quot;/resource/YoungVFR&quot;, &quot;Young VFR&quot;) + &quot; Young VFR&quot;, 
+								                    IF( Customer_Segment__c == 8, IMAGE(&quot;/resource/LongHolidays&quot;, &quot;Long Holidays&quot;) + &quot; Long Holidays&quot;, 
+								                        null
+								                    )
+								                )
+								            )
+								        )
+								    )
+								)
+				)
+)</formula>
+    <label>Segment</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>oassis_fields</fullName>
+    <columns>NAME</columns>
+    <columns>Commercial_Group__c</columns>
+    <columns>Ticket_Has_Additional_Compensation__c</columns>
+    <columns>Compensation_Delay__c</columns>
+    <columns>Compensation_Check__c</columns>
+    <columns>Number_of_Compensations__c</columns>
+    <columns>Total_GBP_Payment_Amt__c</columns>
+    <columns>Payment_Type__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CREATED_DATE</field>
+        <operation>greaterThan</operation>
+        <value>6/1/2019 12:00 AM</value>
+    </filters>
+    <label>oassis fields</label>
+    <language>en_US</language>
+</ListView>

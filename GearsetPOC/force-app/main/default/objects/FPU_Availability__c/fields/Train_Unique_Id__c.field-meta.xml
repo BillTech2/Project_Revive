@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Train_Unique_Id__c</fullName>
+    <caseSensitive>false</caseSensitive>
+    <description>External Id feild to avoid duplication while uploading data from excel.</description>
+    <externalId>true</externalId>
+    <inlineHelpText>Please use the following format : TrainNumber,DepartureDate (9116,2018-01-22)</inlineHelpText>
+    <label>Train Unique Id</label>
+    <length>40</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>true</unique>
+</CustomField>

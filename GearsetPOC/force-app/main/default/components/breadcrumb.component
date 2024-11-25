@@ -1,0 +1,136 @@
+<apex:component >
+    <apex:attribute name="chosenLanguageISO" description="chosenLanguageISO" type="String" required="false"/>
+    <apex:attribute name="PageID" description="PageID" type="String" required="false"/>
+    <apex:attribute name="PageTitle" description="PageTitle" type="String" required="false"/>
+    <apex:attribute name="site" description=".com/E4A/Mobile" type="String" required="false"/>
+
+
+    <style>
+    
+    a{
+        font-size: 16px !important;
+        text-decoration: none !important;
+    }
+
+    .breadcrumb>.active{
+        color: black;
+        font-family: ABCSocial-regular;
+        font-size: 16px;
+    }
+    
+    </style>
+
+    <div>
+    <apex:outputpanel rendered="{!PageID=='Home'}"> <!-- Home page   -->
+        	<apex:outputText rendered="{!site == 'e4a'}">
+              <ol class="breadcrumb">
+                  <li><a style="color: black !important;" href="http://www.eurostar4agents.com/">Eurostar4Agents.com home</a></li>  
+    			<li class="active" style="font-weight: bold;">Help centre</li>  
+              </ol>
+          </apex:outputText>
+          <apex:outputText rendered="{!chosenLanguageISO==null || CONTAINS(chosenLanguageISO,'en') && site != 'e4a'}">
+              <ol class="breadcrumb">
+                  <li><a style="color: black !important;" href="http://www.eurostar.com/{!chosenLanguageISO}/">Eurostar.com home</a></li>  
+    			<li class="active"  style="font-weight: bold;">Help centre</li>  
+              </ol>
+          </apex:outputText>   
+        <apex:outputText rendered="{!chosenLanguageISO!=null && CONTAINS(chosenLanguageISO,'fr') && site != 'e4a'}">
+              <ol class="breadcrumb">
+                  <li><a style="color: black !important;" href="http://www.eurostar.com/{!chosenLanguageISO}/">Eurostar.com</a></li>  
+    			<li class="active"  style="font-weight: bold;">Centre d'assistance</li>  
+              </ol>
+          </apex:outputText> 
+        <apex:outputText rendered="{!chosenLanguageISO!=null && CONTAINS(chosenLanguageISO,'nl') && site != 'e4a'}">
+              <ol class="breadcrumb">
+                  <li><a style="color: black !important;" href="http://www.eurostar.com/{!chosenLanguageISO}/">Eurostar.com</a></li>  
+    			<li class="active"  style="font-weight: bold;">Help center</li>  
+              </ol>
+          </apex:outputText>
+          <apex:outputText rendered="{!chosenLanguageISO!=null && CONTAINS(chosenLanguageISO,'de') && site != 'e4a'}">
+              <ol class="breadcrumb">
+                  <li><a style="color: black !important;" href="http://www.eurostar.com/{!chosenLanguageISO}/">Eurostar.com</a></li>  
+    			<li class="active"  style="font-weight: bold;">Help centre</li>  
+              </ol>
+          </apex:outputText>
+    </apex:outputpanel>
+    
+    <apex:outputpanel rendered="{!PageID=='Category'}"> <!-- Category page -->
+        	<apex:outputText rendered="{!site == 'e4a'}">
+              <ol class="breadcrumb">
+                <li><a style="color: black !important;" href="http://www.eurostar4agents.com/">Eurostar4Agents.com home</a></li>  
+    			<li><a style="color: black !important; font-weight: bold;" href="/faq?language={!chosenLanguageISO}">Help centre</a></li>
+    			<li class="active"><c:FAQCategoryName uniqueCategoryName="{!PageTitle}"/></li>  
+              </ol>
+          </apex:outputText>  
+          <apex:outputText rendered="{!chosenLanguageISO==null || CONTAINS(chosenLanguageISO,'en') && site != 'e4a'}">
+              <ol class="breadcrumb">
+                  <li><a style="color: black !important;" href="http://www.eurostar.com/{!chosenLanguageISO}/">Eurostar.com home</a></li>  
+    			<li><a style="color: black !important; font-weight: bold;" href="/faq?language={!chosenLanguageISO}">Help centre</a></li>
+    			<li class="active"><c:FAQCategoryName uniqueCategoryName="{!PageTitle}"/></li>  
+              </ol>
+          </apex:outputText>  
+        <apex:outputText rendered="{!chosenLanguageISO!=null && CONTAINS(chosenLanguageISO,'fr') && site != 'e4a'}">
+              <ol class="breadcrumb">
+                  <li><a style="color: black !important;" href="http://www.eurostar.com/{!chosenLanguageISO}/">Eurostar.com home</a></li>  
+    			<li><a style="color: black !important; font-weight: bold;" href="/faq?language={!chosenLanguageISO}">Centre d'assistance</a></li>
+    			<li class="active"><c:FAQCategoryName uniqueCategoryName="{!PageTitle}"/></li>  
+              </ol>
+          </apex:outputText> 
+        <apex:outputText rendered="{!chosenLanguageISO!=null && CONTAINS(chosenLanguageISO,'nl') && site != 'e4a'}">
+              <ol class="breadcrumb">
+                  <li><a style="color: black !important;" href="http://www.eurostar.com/{!chosenLanguageISO}/">Eurostar.com home</a></li>  
+    			<li><a style="color: black !important; font-weight: bold;" href="/faq?language={!chosenLanguageISO}">Help center</a></li>
+    			<li class="active"><c:FAQCategoryName uniqueCategoryName="{!PageTitle}"/></li>  
+              </ol>
+          </apex:outputText> 
+        <apex:outputText rendered="{!chosenLanguageISO!=null && CONTAINS(chosenLanguageISO,'de') && site != 'e4a'}">
+            <ol class="breadcrumb">
+                <li><a style="color: black !important;" href="http://www.eurostar.com/{!chosenLanguageISO}/">Eurostar.com home</a></li>  
+            <li><a  style="color: black !important; font-weight: bold;" href="/faq?language={!chosenLanguageISO}">Help center</a></li>
+            <li class="active"><c:FAQCategoryName uniqueCategoryName="{!PageTitle}"/></li>  
+            </ol>
+        </apex:outputText> 
+    </apex:outputpanel>
+    
+    
+    <apex:outputpanel rendered="{!PageID=='Article'}"> <!-- Article page -->
+        	 <apex:outputText rendered="{!site == 'e4a'}">
+              <ol class="breadcrumb">
+                <li><a style="color: black !important;" href="http://www.eurostar4agents.com/">Eurostar4Agents.com home</a></li>   
+    			<li><a  style="color: black !important; font-weight: bold;" href="/faq?language={!chosenLanguageISO}">Help centre</a></li>
+    			<li class="active">{!PageTitle}</li>  
+              </ol>
+          </apex:outputText> 
+          <apex:outputText rendered="{!chosenLanguageISO==null || CONTAINS(chosenLanguageISO,'en') && site != 'e4a'}">
+              <ol class="breadcrumb">
+                  <li><a style="color: black !important;" href="http://www.eurostar.com/{!chosenLanguageISO}/">Eurostar.com home</a></li>  
+    			<li><a  style="color: black !important; font-weight: bold;" href="/faq?language={!chosenLanguageISO}">Help centre</a></li>
+    			<li class="active">{!PageTitle}</li>  
+              </ol>
+          </apex:outputText> 
+         <apex:outputText rendered="{!chosenLanguageISO!=null && CONTAINS(chosenLanguageISO,'fr') && site != 'e4a'}">
+              <ol class="breadcrumb">
+                  <li><a style="color: black !important;" href="http://www.eurostar.com/{!chosenLanguageISO}/">Eurostar.com home</a></li>  
+    			<li><a  style="color: black !important; font-weight: bold;" href="/faq?language={!chosenLanguageISO}">Centre d'assistance</a></li>
+    			<li class="active">{!PageTitle}</li>  
+              </ol>
+          </apex:outputText>
+         <apex:outputText rendered="{!chosenLanguageISO!=null && CONTAINS(chosenLanguageISO,'nl') && site != 'e4a'}">
+              <ol class="breadcrumb">
+                  <li><a style="color: black !important;" href="http://www.eurostar.com/{!chosenLanguageISO}/">Eurostar.com home</a></li>  
+    			<li><a  style="color: black !important; font-weight: bold;" href="/faq?language={!chosenLanguageISO}">Help center</a></li>
+    			<li class="active">{!PageTitle}</li>  
+              </ol>
+          </apex:outputText>
+          <apex:outputText rendered="{!chosenLanguageISO!=null && CONTAINS(chosenLanguageISO,'de') && site != 'e4a'}">
+              <ol class="breadcrumb">
+                  <li><a style="color: black !important;" href="http://www.eurostar.com/{!chosenLanguageISO}/">Eurostar.com home</a></li>  
+    			<li><a  style="color: black !important; font-weight: bold;" href="/faq?language={!chosenLanguageISO}">Help center</a></li>
+    			<li class="active">{!PageTitle}</li>  
+              </ol>
+          </apex:outputText>
+    </apex:outputpanel>
+    </div>
+    
+
+</apex:component>

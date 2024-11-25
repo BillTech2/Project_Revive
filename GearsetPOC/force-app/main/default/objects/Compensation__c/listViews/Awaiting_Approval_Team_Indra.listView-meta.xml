@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Awaiting_Approval_Team_Indra</fullName>
+    <booleanFilter>1 AND 2</booleanFilter>
+    <columns>CREATED_DATE</columns>
+    <columns>NAME</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>Payment_Amount__c</columns>
+    <columns>Payment_Currency__c</columns>
+    <columns>PNR__c</columns>
+    <columns>Comments__c</columns>
+    <columns>Compensation_Type__c</columns>
+    <columns>Reason_Code__c</columns>
+    <columns>Comp_Approval_Status__c</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Comp_Approval_Status__c</field>
+        <operation>equals</operation>
+        <value>Awaiting Approval</value>
+    </filters>
+    <filters>
+        <field>CREATEDBY_USER</field>
+        <operation>equals</operation>
+        <value>Labinot Lutolli,Camille Gillisjans,June Aberkan,Patrice Cremers,Valentine Boudart,Bart Keppens,Nele Danhieux,Brigitte Nannan,Paul Hart,Kim Hell,Gracia Ekoondo,Sabrine Trabelsi,Manuella Ndaye Ngenyi,Reda Akchich,Justine Motmans</value>
+    </filters>
+    <label>Awaiting Approval Team Indra</label>
+</ListView>

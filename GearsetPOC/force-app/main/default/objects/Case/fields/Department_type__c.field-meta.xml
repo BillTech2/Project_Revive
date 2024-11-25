@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Department_type__c</fullName>
+    <description>What department is this relevant to?</description>
+    <label>Department type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Salesforce</fullName>
+                <default>false</default>
+                <label>Salesforce</label>
+            </value>
+            <value>
+                <fullName>Marketing Cloud</fullName>
+                <default>false</default>
+                <label>Marketing Cloud</label>
+            </value>
+            <value>
+                <fullName>--None--</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>--None--</label>
+            </value>
+            <value>
+                <fullName>Sales Cloud</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Sales Cloud</label>
+            </value>
+            <value>
+                <fullName>Salesforce/Starlight</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Salesforce/Starlight</label>
+            </value>
+            <value>
+                <fullName>Service Cloud</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Service Cloud</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

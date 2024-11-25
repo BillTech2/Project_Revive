@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Club_Eurostar_Queue_Case</fullName>
+    <columns>CASES.CASE_NUMBER</columns>
+    <columns>Preferred_Language__c</columns>
+    <columns>CASES.SUBJECT</columns>
+    <columns>CASES.STATUS</columns>
+    <columns>Departure_Date__c</columns>
+    <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
+    <columns>Days_Since_Last_Contact__c</columns>
+    <columns>NAME</columns>
+    <columns>Loyalty__c</columns>
+    <columns>CASES.RECORDTYPE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Carrier__c</columns>
+    <columns>TCN__c</columns>
+    <filterScope>ScopingRule</filterScope>
+    <filters>
+        <field>CASES.STATUS</field>
+        <operation>notEqual</operation>
+        <value>Closed</value>
+    </filters>
+    <filters>
+        <field>Customer_Loyalty_Tier__c</field>
+        <operation>notEqual</operation>
+        <value>Elite,Etoile</value>
+    </filters>
+    <filters>
+        <field>OWNER_NAME</field>
+        <operation>contains</operation>
+        <value>Club Eurostar Queue,Carte Blanche</value>
+    </filters>
+    <label>Club Eurostar Queries - Queue</label>
+    <sharedTo>
+        <allInternalUsers />
+    </sharedTo>
+</ListView>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FPU_Avail_Train_Id__c</fullName>
+    <description>Creating Train Id</description>
+    <externalId>false</externalId>
+    <formula>&quot;0&quot;&amp;TEXT(FPU_Avail_Train_Number__c)&amp;&quot;, &quot;&amp; TEXT(FPU_Avail_Departure_Date__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>FPU_Avail_Train_Id</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

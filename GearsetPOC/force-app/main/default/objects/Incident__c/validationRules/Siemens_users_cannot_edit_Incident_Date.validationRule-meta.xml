@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Siemens_users_cannot_edit_Incident_Date</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND (ISCHANGED( Incident_Date__c ), ($User.CompanyName = &#39;Siemens&#39;))</errorConditionFormula>
+    <errorMessage>Siemens users can&#39;t edit  Incident Date feild</errorMessage>
+</ValidationRule>

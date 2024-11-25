@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Date_Used_For_Deletion__c</fullName>
+    <formula>IF( 
+AND( 
+ISBLANK(Latest_Booking_Date__pc), 
+ISBLANK(Latest_Travel_Date__pc), 
+ISBLANK(FCR_Last_Case_Closed_Date__c)
+), 
+NULL, 
+DATE(1900, 01, 01) + 
+MAX( 
+BLANKVALUE(Latest_Booking_Date__pc, DATE(1900, 01, 01)) - DATE(1900, 01, 01), 
+BLANKVALUE(Latest_Travel_Date__pc, DATE(1900, 01, 01)) - DATE(1900, 01, 01), 
+BLANKVALUE(FCR_Last_Case_Closed_Date__c , DATE(1900, 01, 01)) - DATE(1900, 01, 01)
+) 
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Oldest date value between: Latest Booking date, Last Travel Date and Last Case Closed Date</inlineHelpText>
+    <label>Date Used For Deletion</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Date</type>
+</CustomField>

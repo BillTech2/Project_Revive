@@ -1,0 +1,65 @@
+<apex:page showHeader="false">
+  <style>
+    /* Your existing CSS styles here */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f9;
+      color: #333; 
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      font-size: 14px; /* Adjust the font size for labels */
+
+    }
+
+    .header {
+      padding: 10px;
+    }
+
+    .logo-img {
+      width: 200px;
+      height: 112.5px;
+    }
+
+    .thank-you-container {
+      max-width: 500px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      color: var(--primary-color);
+    }
+
+    p {
+      color: var(--secondary-color);
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: blue; /* Change the background color to blue */
+      color: #fff; /* Change text color to white to make it visible on the blue background */
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      margin-top: 20px;
+    }
+  </style>
+
+  <!-- Header -->
+  <div class="header">
+    <apex:image value="https://logos-world.net/wp-content/uploads/2023/02/Eurostar-Logo-New.png" styleClass="logo-img" />
+  </div>
+
+  <!-- Main Content -->
+  <div class="thank-you-container">
+    <h1>Thank you for your request</h1>
+    <p>Your request has been received and our team will respond to you with further details within the next 24 hours.</p>
+    <a href="https://eurostar--simpplr.vf.force.com/apex/Simpplr__app?u=/" class="btn">Go to Intranet</a>
+
+  </div>
+
+</apex:page>

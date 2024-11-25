@@ -1,0 +1,149 @@
+<apex:page applyHtmlTag="false" applyBodyTag="false" showHeader="false" controller="LiveChatInvisibleStartPageController" language="{!userLang}">
+    <html>
+        <head>
+        
+
+            <script type="text/javascript">    
+            // CONFIG SECTION:
+            var buttonId = '{!buttonId}';
+            var deploymentId = '{!deploymentId}';
+            var userAgent = window.navigator.userAgent;
+            var isHandlerInitialized = false;
+            
+            </script>            
+            <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"></meta>
+        <style type="text/css" media="screen">
+            html, body{
+                height: 100%;
+            }
+            #iframe-wrapper{
+                height: 100%;
+            }
+            iframe{
+                border: 1px double black; 
+                height: 520px; 
+                width: 380px; 
+                margin-left: auto; 
+                margin-right: auto; 
+                display: block;
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 20px;
+                margin: auto;
+            }
+            @media (max-width: 480px){
+                iframe{
+                    border: none !important;
+                    width: 100% !important;
+                    height: 100%;
+                }
+                }
+            iframe.iphone,iframe.android {
+                width: 100% !important;
+                border: none !important;
+                height: 100% !important;
+                position: absolute;
+                top: 0;
+            }
+        </style>
+    </head>
+    <body class="new-window">
+    
+
+        <div id="offline-message" style="display: none;">
+            <p style="font-size: 16px; padding: 20px; margin: 0px;">
+                <script type="text/javascript">
+                document.write('{!$Label.Live_Chat_Label_Standalone_Chat_Greeting}');
+                var isAndroid = userAgent.toLowerCase().indexOf("android") > -1;
+                
+                document.addEventListener('DOMContentLoaded', function(){
+                    var iframe = document.getElementsByTagName('iframe')[0];
+                    if (userAgent.match(/iPhone/i)) {
+                        
+                        iframe.className += 'iphone';
+                    }
+                    if (isAndroid){
+                        iframe.className += 'android';
+                    }
+
+                    window.addEventListener('message', function(e){
+                        if (e.data.reinitChatSys === true){
+                            liveagent.startChatWithWindow(buttonId, 'chat-frame');
+                        }
+                    });
+                });
+                </script>
+            </p>
+        </div>
+        
+        <div id="iframe-wrapper" style="width: 100%; display: none;">
+            <iframe name="chat-frame"></iframe>
+        </div>
+
+        <div id="empty" />
+
+        <script type="text/javascript">
+        if (!window._laq) { window._laq = []; }
+        window._laq.push(function(){liveagent.showWhenOnline(buttonId, document.getElementById('empty'));
+                                    liveagent.showWhenOffline(buttonId, document.getElementById('empty'));
+                                   });
+        </script>
+        
+        <script type='text/javascript' src='{!$Setup.LiveChat__c.Deployment_URL__c}/deployment.js'></script>
+        
+        <script type='text/javascript'>
+            function generateId() {
+                var ADDON = '00000000000';
+                var rand = String(Math.random()) + ADDON;
+                var time = ADDON + String(new Date().getTime());
+                
+                return rand.slice(2, 12) + time.slice(time.length - 10, time.length);
+            };
+        
+            function getParameterByName(name) {
+                url = window.location.href;
+                name = name.replace(/[\[\]]/g, "\\$&");
+                var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                    results = regex.exec(url);
+                if (!results) return null;
+                if (!results[2]) return '';
+                return decodeURIComponent(results[2].replace(/\+/g, " "));
+            };
+        
+            liveagent.addButtonEventHandler(buttonId,function (e){
+                if (!isHandlerInitialized) {
+                    isHandlerInitialized = true;
+                    if(e == liveagent.BUTTON_EVENT.BUTTON_AVAILABLE){
+                        liveagent.startChatWithWindow(buttonId, 'chat-frame');
+                        document.getElementById('iframe-wrapper').style.display = 'block';
+                        document.getElementById('offline-message').style.display = 'none';
+                    }
+                    else if(e == liveagent.BUTTON_EVENT.BUTTON_UNAVAILABLE){
+                        document.getElementById('iframe-wrapper').style.display = 'none';
+                        document.getElementById('offline-message').style.display = 'block';
+                    }
+                }
+            });
+        
+            liveagent.addCustomDetail("isFromOuterLink", "true");
+            liveagent.addCustomDetail("hostUrl", "*");
+            liveagent.addCustomDetail("instanceId", generateId());
+        
+            var siteLocation = getParameterByName('location');
+            if (!siteLocation) siteLocation = "GB";
+            liveagent.addCustomDetail("location", siteLocation);
+        
+            liveagent.init('{!$Setup.LiveChat__c.Live_Agent_Chat_Url__c}', deploymentId, '{!URLENCODE(LEFT($Organization.Id,15))}');
+            //Prepopulating the customer information from URL params
+            window.onload = function(){ 
+                var iframe = document.querySelector('iframe');
+                var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+                innerDoc.getElementById('firstName').value = getParameterByName('firstName');
+                innerDoc.getElementById('lastName').value = getParameterByName('lastName');
+                innerDoc.getElementById('email').value = getParameterByName('email');
+            }
+        </script>
+    </body>
+</html>
+</apex:page>

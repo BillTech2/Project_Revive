@@ -1,0 +1,6 @@
+<apex:page showHeader="false" standardController="Hazard__c">
+<apex:image value="{!'https://' + $Label.Domain_Eurostar + '.salesforce.com/servlet/servlet.ImageServer?id=015b00000023s8W&oid=00D7E0000008oz5'}"/>
+    <apex:sectionHeader title="Oops - sorry {!$User.FirstName}"/>
+    <br></br>
+    A problem occured when submitting your form - please try again
+</apex:page>

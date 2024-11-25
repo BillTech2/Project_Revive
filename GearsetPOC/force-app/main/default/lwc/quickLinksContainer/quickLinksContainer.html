@@ -1,0 +1,9 @@
+<template>
+    <lightning-card variant="Narrow"  title="Custom Forms" icon-name="standard:actions_and_buttons">
+        <div class="links-container">
+            <template for:each={quickLinks} for:item="link">
+                <lightning-button key={link} data-target-id={link.RecordType}  variant="base" label={link.Name} onclick={onClick}></lightning-button>
+            </template>
+        </div>
+    </lightning-card>
+</template>

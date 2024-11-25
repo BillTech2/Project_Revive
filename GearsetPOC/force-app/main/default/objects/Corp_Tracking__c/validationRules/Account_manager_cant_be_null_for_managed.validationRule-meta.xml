@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_manager_cant_be_null_for_managed</fullName>
+    <active>true</active>
+    <errorConditionFormula>(ISPICKVAL(managed_status__c, &#39;CONTRACTED&#39;)||ISPICKVAL(managed_status__c, &#39;NL ACCOUNTS&#39;))&amp;&amp;  ISBLANK(account_manager__c)</errorConditionFormula>
+    <errorMessage>Account Manager cannot be blank if Managed Status is either Contracted or NL accounts</errorMessage>
+</ValidationRule>

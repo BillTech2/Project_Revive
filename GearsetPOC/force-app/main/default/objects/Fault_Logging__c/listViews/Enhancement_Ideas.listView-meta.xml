@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Enhancement_Ideas</fullName>
+    <columns>NAME</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>Enhancement_For__c</columns>
+    <columns>How_Would_This_Impact_ECC__c</columns>
+    <columns>RECORDTYPE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Fault_Logging__c.Enhancement</value>
+    </filters>
+    <label>Enhancement Ideas</label>
+    <language>en_US</language>
+</ListView>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Processed_Requests</fullName>
+    <columns>NAME</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>Date_That_Refund_Was_Processed__c</columns>
+    <columns>Case__c</columns>
+    <columns>Currency__c</columns>
+    <columns>Amount_To_Be_Refunded__c</columns>
+    <columns>Reason_Code__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Refund_Processed__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>Processed Requests</label>
+    <language>en_US</language>
+</ListView>

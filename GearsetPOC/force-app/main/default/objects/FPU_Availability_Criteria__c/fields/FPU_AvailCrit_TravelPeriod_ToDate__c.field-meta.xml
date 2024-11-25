@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FPU_AvailCrit_TravelPeriod_ToDate__c</fullName>
+    <description>To date of travel period for which offer is valid</description>
+    <inlineHelpText>To date of travel period for which offer is valid</inlineHelpText>
+    <label>TravelPeriod_ToDate</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

@@ -1,0 +1,638 @@
+<apex:page docType="html-5.0" showHeader="false" sidebar="false" cache="false" Standardcontroller="case" >
+	<apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" />
+	<style>
+		body {
+		background-color: #ffffff;
+		color: #FFFFFF;
+		}
+		.MyButton{
+		transition-duration: 0.2s;
+		color:#585858 !important;
+		font-size:16px !important;
+		background:white !important;
+		height: 70px !important;
+		width: 150px !important;
+		border: 3px solid #24b5c9 !important;
+		}
+		.MyButton:hover{
+		color:white !important;
+		font-size:16px !important;
+		background:#24b5c9 !important;
+		height: 70px !important;
+		width: 150px !important;
+		border: 4px solid #24b5c9 !important;
+		}
+		.Text1{
+		height:200px;
+		width:100%;
+		display:inline-block;
+		font-size:0;
+		background-color:#24b5c9;
+		}
+		.TextField{
+		width: 210px;
+		padding: 10px 20px;
+		border: none;
+		border-radius: 3px;
+		background-color: #ffffff;"
+		}
+		.PicklistField{
+		width: 250px;
+		padding: 10px 20px;
+		border: none;
+		border-radius: 3px;
+		background-color: #ffffff;
+		}
+		.title{
+		border: 0px solid #000;
+		text-align:left;
+		}
+	</style>
+	<script type="text/javascript" >
+		jQuery(function(){
+		var counter = 2;
+
+		    // FUNCTION ADD A ROW
+
+
+		jQuery('a.add-author').click(function(event){
+
+		    event.preventDefault();
+		    var newRow = jQuery('<tr id ="row" class="rowClass"><td> First name '
+		        + '</td><td><input class="passengersC" onChange="passengers()" style="width: 210px;padding: 10px 20px;border: none;border-radius: 3px;background-color: #ffffff;" type="text" '
+		        + '"/></td><td style="text-align:center"> Last name '
+		        + '</td><td><input class="passengersC" onChange="passengers()" style="width: 210px;padding: 10px 20px;border: none;border-radius: 3px;background-color: #ffffff;" type="text" '
+		        + '"/></td><tr>');
+
+		    	if (counter < 5){
+		    	$(newRow).insertBefore( "#new" );
+		        }
+		   		 else{
+		        return null
+		        }
+		    counter++;
+		    document.getElementById('{!$Component.theform.NumPax}').value = counter;
+
+		    });
+
+
+		    // FUNCTION DELETE A ROW
+
+		     jQuery('a.delete-line').click(function(event){
+		         if(0 < counter){
+		    	event.preventDefault();
+		     	counter = counter - 1;
+		    	$('.rowClass').last().remove();
+		         document.getElementById('{!$Component.theform.NumPax}').value = counter;
+				passengers();
+		             }
+		});
+		});
+
+
+
+		// FUNCTION MERGE PASSENGERS FIELDS
+
+		function isOdd(num) { return (num % 2) == 1;}
+		function passengers()
+		{
+		    var z=" ";
+
+
+		var x = document.getElementsByClassName("passengersC");
+		for(var i = 0; i < x.length; i++) {
+		var y = document.getElementById('{!$Component.theform.departureCase}').value;
+		y = x[i].value;
+
+		var h = i +1;
+		    	if(isOdd(h) == true){
+
+		    		var z = z + "Passenger "  + "    firstname :"  +"  "+ y ;
+		               		}
+
+		  		else{
+
+		        var z = z + "  Lastname : "  + y + "    /   ";
+
+		   		}
+
+		    }
+
+		document.getElementById('{!$Component.theform.departureCase}').value = z;
+		return z;
+		}
+
+		// FUNCTION SET STATIONS
+
+		function departureFT()
+		{
+
+
+		dep = document.getElementById('departureStation').value;
+		var x = document.querySelectorAll('datalist > option');
+		var bool = false;
+
+		    for(var i = 0; i < x.length; i++) {
+
+			if(dep == x[i].value){
+		        bool = true;
+		    					 }
+		    								  }
+
+
+		    if(bool == true){
+		    	document.getElementById('{!$Component.theform.fromOutbound}').value = dep;
+		    	check = document.getElementById('{!$Component.theform.oneWay}').checked;
+
+					if(check == false){
+		    		document.getElementById('{!$Component.theform.toReturn}').value = dep;
+
+
+				 				 	  }
+		    				}
+
+		    if(bool == false){
+		        alert("Please choose a correct sation in the picklist");
+		        document.getElementById('departureStation').value= null;
+		                    }
+
+
+
+		    }
+
+		    function returnFT()
+		{
+
+		dep = document.getElementById('returnStation').value;
+		var x = document.querySelectorAll('datalist > option');
+		var bool = false;
+
+		    for(var i = 0; i < x.length; i++) {
+
+			if(dep == x[i].value){
+		        bool = true;
+		    					 }
+		    								  }
+
+
+		    if(bool == true){
+
+		    document.getElementById('{!$Component.theform.toOutbound}').value = dep;
+
+
+		    check = document.getElementById('{!$Component.theform.oneWay}').checked;
+
+			if(check == false){
+
+		    document.getElementById('{!$Component.theform.fromReturn}').value = dep;
+		  	}
+
+		        }
+
+		    if(bool == false){
+		        alert("Please choose a correct sation in the picklist");
+		        document.getElementById('returnStation').value= null;
+		                    }
+		}
+
+
+		// FUNCTION CHECK IF THE DATE IS CORRECT
+
+		function Wrongdate1()
+		{
+		var dateX = new Date();
+		var numberOfDaysToAdd = 3;
+		dateX.setDate(dateX.getDate() + numberOfDaysToAdd);
+		var dd = dateX.getDate();
+		var mm = dateX.getMonth()+1; //January is 0!
+		var yyyy = dateX.getFullYear();
+
+
+
+		if(dd<10) {
+		dd='0'+dd
+		}
+
+		if(mm<10) {
+		mm='0'+mm
+		}
+
+		dateX = yyyy+'-'+mm+'-'+dd;
+
+
+		date1 = document.getElementById('{!$Component.theform.departureDateO}').value;
+		date2 = document.getElementById('{!$Component.theform.departureDateR}').value;
+
+		if ( date1 < dateX){
+		alert("Please select a date in at least 72h from now");
+		document.getElementById('{!$Component.theform.departureDateO}').value= null;
+
+		}
+		    return date1;
+		    }
+		function Wrongdate2()
+		{
+		  date1 = document.getElementById('{!$Component.theform.departureDateO}').value;
+		  date2 = document.getElementById('{!$Component.theform.departureDateR}').value;
+		if (date2 < date1 ){
+		    alert("You can't select a return date which is before the departure date");
+		    document.getElementById('{!$Component.theform.departureDateR}').value = null;
+		    }
+		return date2;
+
+		}
+
+
+
+
+
+
+		// FUNCTION HYDE/SHOW RETURN TABLE
+
+
+		function valueChanged()
+		{
+		check = document.getElementById('{!$Component.theform.oneWay}').checked;
+
+		if(check == true) {
+		    document.getElementById('{!$Component.theform.toReturn}').value = " ";
+
+		    document.getElementById('{!$Component.theform.fromReturn}').value = " ";
+
+		    $(".return").hide();
+
+		    }
+
+		else{
+		    dep1 = document.getElementById('departureStation').value;
+		    dep2 = document.getElementById('returnStation').value;
+
+		    document.getElementById('{!$Component.theform.toReturn}').value = dep1;
+
+		    document.getElementById('{!$Component.theform.fromReturn}').value = dep2;
+
+		    $(".return").show();
+		    ;
+		}
+		}
+
+	</script>
+	<apex:form id="theform" >
+		<div class="Text1">
+			<img style="padding-top:50px;padding-left:15px; width:25%;  display: inline-block;x solid #ddd; border-radius: 4px;" src="{!'https://' + $Label.Domain_Eurostar + '.salesforce.com/servlet/servlet.ImageServer?id=015b00000023s2nAAA&oid=00Db0000000aXu7EAE'}" alt="Home" />
+			<font size="6" style="display :inline-block; padding-left:105px;width:33%">
+				<b>
+					<center>Customised booking</center>
+				</b>
+			</font>
+		</div>
+		<center>
+			<div  style="margin: 50px;background-color:#d3d3d3;line-height: 0.7;border-radius: 5px">
+				<TABLE style="border: 10px  solid #d3d3d3 " WIDTH="95%"  HEIGHT ="400px" CELLPADDING="5" CELLSPACING="5">
+					<TR>
+						<div style="padding:60px;line-height: 20px;text-align:left;font-color:#FFFFFF;">
+							<p align="justify"><font color="#585858"><font size="4">If you are booking an indirect journey to one of our onward French destinations and you want a specific connection or require a stopover in Paris or Lille (maximum 24hrs) then please complete this webform.
+								Once received by the staff travel team it will be processed within 3 days.  You will be contacted to approve the journey and for your payment details / notification of how many e-vouchers you wish to use.
+								This form can be used for onward French destination journeys that are either fully paid by bank card or where employee e-vouchers are being used towards the payment.
+								</font></font>
+							</p>
+							<b style="color:#000000"><font size="3">Please note that this form is only for specific connection requests that ARIA cannot handle.  In the first instance you should check if ARIA can handle your request.</font></b>
+						</div>
+					<TR>
+						<TH colspan="5" style="color:#000000; text-decoration: underline; font-size:15px">General information</TH>
+					</TR>
+					<TR>
+						<TH colspan="5" style="border: 0px solid #000;height:20px"></TH>
+					</TR>
+					<TR>
+						<td styleClass="title">Staff first name</td>
+						<td style="padding-left:5px;border: 0px solid #000;">
+							<apex:inputField id="FirstName" value="{!case.First_Name__c}" styleClass="TextField" required="true"/>
+						</td>
+						<td styleClass="title"  >Email address</td>
+						<td style="border: 0px solid #000;">
+							<apex:inputField value="{!case.SuppliedEmail}" styleClass="TextField" required="true"/>
+						</td>
+					</TR>
+					<TR>
+						<td styleClass="title">Staff last name</td>
+						<td style="border: 0px solid #000;">
+							<apex:inputField value="{!case.Last_Name__c}" styleClass="TextField" required="true"/>
+						</td>
+						<td styleClass="title">Phone number</td>
+						<td style="border: 0px solid #000;">
+							<apex:inputField value="{!case.Staff_Phone__c}" styleClass="TextField" required="true"/>
+						</td>
+					</TR>
+					<TR id="ligne">
+						<td styleClass="title">One-way ticket</td>
+						<td style="border: 0px solid #000;text-align:left">
+							<apex:inputField onChange="valueChanged();"  id="oneWay" value="{!case.One_way__c}" />
+						</td>
+					</TR>
+					<TR>
+						<TH colspan="5" style="border: 0px solid #000;height:20px"></TH>
+					</TR>
+					<TR>
+						<TH colspan="5" style="color:#000000; text-decoration: underline; font-size:15px">Outbound journey</TH>
+					</TR>
+					<TR>
+						<TH colspan="5" style="border: 0px solid #000;height:20px"></TH>
+					</TR>
+					<TR>
+						<td styleClass="title">Departure Station </td>
+						<td>
+							<input href="#" onChange="departureFT();"  id="departureStation" type="text" name="departure" style="width: 210px;padding: 10px 20px;border: none;border-radius: 3px;background-color: #ffffff;" list="exampleList"/>
+							<datalist   id="exampleList">
+								<option value="	Agde	"/>
+								<option value="	Agen	"/>
+								<option value="	Aime la Plagne	"/>
+								<option value="	Aix en Provence	"/>
+								<option value="	Angers	"/>
+								<option value="	Angoulème	"/>
+								<option value="	Annecy	"/>
+								<option value="	Antibes	"/>
+								<option value="	Ashford	"/>
+								<option value="	Avignon	"/>
+								<option value="	Avignon TGV	"/>
+								<option value="	Belfort-Montbéliard TGV	"/>
+								<option value="	Besançon Franche-Comté TGV	"/>
+								<option value="	Biarritz	"/>
+								<option value="	Bordeaux	"/>
+								<option value="	Bourg St Maurice	"/>
+								<option value="	Brest	"/>
+								<option value="	Caen	"/>
+								<option value="	Cannes	"/>
+								<option value="	Chalons en Champagne	"/>
+								<option value="	Chalons sur Saône	"/>
+								<option value="	Chambéry	"/>
+								<option value="	Champage-Ardennes TGV	"/>
+								<option value="	Charles de Gaulle TGV	"/>
+								<option value="	Clermont-Ferrand	"/>
+								<option value="	Dijon	"/>
+								<option value="	Disneyland Resort (Marne-la-Vallée/Chessy)	"/>
+								<option value="	Ebbsfleet	"/>
+								<option value="	Grenoble	"/>
+								<option value="	La Rochelle	"/>
+								<option value="	Laval	"/>
+								<option value="	Le Creusot TGV	"/>
+								<option value="	Le Mans	"/>
+								<option value="	Les Aubrais	"/>
+								<option value="	Libourne	"/>
+								<option value="	Limoges	"/>
+								<option value="	London 	"/>
+								<option value="	Lorient	"/>
+								<option value="	Lorraine TGV	"/>
+								<option value="	Lourdes	"/>
+								<option value="	Lyon Part Dieu	"/>
+								<option value="	Lyon Perrache	"/>
+								<option value="	Lyon St Exupéry	"/>
+								<option value="	Mâcon Loche TGV	"/>
+								<option value="	Marseille	"/>
+								<option value="	Metz	"/>
+								<option value="	Meuse TGV	"/>
+								<option value="	Montpellier	"/>
+								<option value="	Moutiers	"/>
+								<option value="	Mulhouse	"/>
+								<option value="	Nancy	"/>
+								<option value="	Nantes	"/>
+								<option value="	Nice	"/>
+								<option value="	Nimes	"/>
+								<option value="	Orleans	"/>
+								<option value="	Perpignan	"/>
+								<option value="	Poitier	"/>
+								<option value="	Quimper	"/>
+								<option value="	Reims	"/>
+								<option value="	Rennes	"/>
+								<option value="	Rouen	"/>
+								<option value="	St Pierre des Corps	"/>
+								<option value="	St Raphael	"/>
+								<option value="	Strasbourg	"/>
+								<option value="	Toulon	"/>
+								<option value="	Toulouse Matabiau	"/>
+								<option value="	Tours	"/>
+								<option value="	Troyes	"/>
+								<option value="	Valence TGV	"/>
+								<option value="	Vannes	"/>
+							</datalist>
+						</td>
+						<td styleClass="title">Arrival Station </td>
+						<td>
+						<input href="#" onChange="returnFT();"  id="returnStation" type="text" name="departure" style="width: 210px;padding: 10px 20px;border: none;border-radius: 3px;background-color: #ffffff;" list="exampleList"/>
+						<datalist   id="exampleList">
+						<option value="	Agde	"/>
+						<option value="	Agen	"/>
+						<option value="	Aime la Plagne	"/>
+						<option value="	Aix en Provence	"/>
+						<option value="	Angers	"/>
+						<option value="	Angoulème	"/>
+						<option value="	Annecy	"/>
+						<option value="	Antibes	"/>
+						<option value="	Ashford	"/>
+						<option value="	Avignon	"/>
+						<option value="	Avignon TGV	"/>
+						<option value="	Belfort-Montbéliard TGV	"/>
+						<option value="	Besançon Franche-Comté TGV	"/>
+						<option value="	Biarritz	"/>
+						<option value="	Bordeaux	"/>
+						<option value="	Bourg St Maurice	"/>
+						<option value="	Brest	"/>
+						<option value="	Caen	"/>
+						<option value="	Cannes	"/>
+						<option value="	Chalons en Champagne	"/>
+						<option value="	Chalons sur Saône	"/>
+						<option value="	Chambéry	"/>
+						<option value="	Champage-Ardennes TGV	"/>
+						<option value="	Charles de Gaulle TGV	"/>
+						<option value="	Clermont-Ferrand	"/>
+						<option value="	Dijon	"/>
+						<option value="	Disneyland Resort (Marne-la-Vallée/Chessy)	"/>
+						<option value="	Ebbsfleet	"/>
+						<option value="	Grenoble	"/>
+						<option value="	La Rochelle	"/>
+						<option value="	Laval	"/>
+						<option value="	Le Creusot TGV	"/>
+						<option value="	Le Mans	"/>
+						<option value="	Les Aubrais	"/>
+						<option value="	Libourne	"/>
+						<option value="	Limoges	"/>
+						<option value="	London 	"/>
+						<option value="	Lorient	"/>
+						<option value="	Lorraine TGV	"/>
+						<option value="	Lourdes	"/>
+						<option value="	Lyon Part Dieu	"/>
+						<option value="	Lyon Perrache	"/>
+						<option value="	Lyon St Exupéry	"/>
+						<option value="	Mâcon Loche TGV	"/>
+						<option value="	Marseille	"/>
+						<option value="	Metz	"/>
+						<option value="	Meuse TGV	"/>
+						<option value="	Montpellier	"/>
+						<option value="	Moutiers	"/>
+						<option value="	Mulhouse	"/>
+						<option value="	Nancy	"/>
+						<option value="	Nantes	"/>
+						<option value="	Nice	"/>
+						<option value="	Nimes	"/>
+						<option value="	Orleans	"/>
+						<option value="	Perpignan	"/>
+						<option value="	Poitier	"/>
+						<option value="	Quimper	"/>
+						<option value="	Reims	"/>
+						<option value="	Rennes	"/>
+						<option value="	Rouen	"/>
+						<option value="	St Pierre des Corps	"/>
+						<option value="	St Raphael	"/>
+						<option value="	Strasbourg	"/>
+						<option value="	Toulon	"/>
+						<option value="	Toulouse Matabiau	"/>
+						<option value="	Tours	"/>
+						<option value="	Troyes	"/>
+						<option value="	Valence TGV	"/>
+						<option value="	Vannes	"/>
+						</datalist>
+						</td>
+					</TR>
+					<TR>
+					<td styleClass="title">Departure date </td>
+					<td style="border: 0px solid #000;">
+					<apex:inputField type="date" showDatePicker="false" onChange="Wrongdate1()" id="departureDateO" value="{!case.Departure_DATE_O__c}" style="width: 210px;padding: 10px 20px;border: none;border-radius: 3px;background-color: #ffffff;" required="true"/>
+					</td>
+					<td styleClass="title">Departure time</td>
+					<td style="border: 0px solid #000;">
+					<apex:inputField value="{!case.Departure_Time_Out__c}" html-min=" {!TODAY()}" styleClass="TextField" html-placeholder="HH:MM" required="true"/>
+					</td>
+					</TR>
+					<TR>
+					<td styleClass="title">Via point</td>
+					<td style="border: 0px solid #000;">
+					<apex:inputField value="{!case.Via_point_outbound__c}" styleClass="PicklistField" required="true"/>
+					</td>
+					<td styleClass="title">Stopover length </td>
+					<td style="border: 0px solid #000;">
+					<apex:inputField value="{!case.Stopover_length_Outbound__c}" styleClass="PicklistField" required="true"/>
+					</td>
+					</TR>
+					<TR>
+					<td styleClass="title"> Class  </td>
+					<td style="border: 0px solid #000;">
+					<apex:inputField value="{!case.Class_of_service_journey_outbound__c}" styleClass="PicklistField" required="true"/>
+					</td>
+					</TR>
+					<TR>
+					<TH colspan="5" style="border: 0px solid #000;height:20px"></TH>
+					</TR>
+					</TR>
+				</TABLE>
+			</div>
+			<div  style="margin: 50px;background-color:#d3d3d3;line-height: 0.7;border-radius: 5px">
+			<TABLE id="table2" class="return" style="border: 20px  solid #d3d3d3 " WIDTH="95%"  HEIGHT ="200px" CELLPADDING="5" CELLSPACING="5">
+			<TR>
+			<TH colspan="5" style="color:#000000; text-decoration: underline; font-size:15px">Return journey</TH>
+			</TR>
+			<TR>
+			</TR>
+			<TR>
+			<td styleClass="title">Departure date</td>
+			<td style="border: 0px solid #000;">
+			<apex:inputField type="date" showDatePicker="false" id="departureDateR"  onChange="Wrongdate2()" value="{!case.Departure_DATE_R__c}"  style="width: 210px;padding: 10px 20px;border: none;border-radius: 3px;background-color: #ffffff;" />
+			</td>
+			<td styleClass="title">Departure Time </td>
+			<td style="border: 0px solid #000;">
+			<apex:inputField value="{!case.Departure_Time_Ret__c}" styleClass="TextField" html-placeholder="HH:MM" />
+			</td>
+			</TR>
+			<TR>
+			<td styleClass="title">Via point</td>
+			<td style="border: 0px solid #000;">
+			<apex:inputField value="{!case.Via_point_return__c}" styleClass="PicklistField" />
+			</td>
+			<td styleClass="title">Stopover length </td>
+			<td style="border: 0px solid #000;">
+			<apex:inputField value="{!case.Stopover_length_Return__c}" styleClass="PicklistField" />
+			</td>
+			</TR>
+			<TR>
+			<td styleClass="title"> Class  </td>
+			<td style="border: 0px solid #000;">
+			<apex:inputField value="{!case.Class_of_service_journey_return__c}" styleClass="PicklistField" />
+			</td>
+			</TR>
+			</TABLE></div>
+			<div  style="margin: 50px;background-color:#d3d3d3;line-height: 0.7;border-radius: 5px">
+			<TABLE id="table3" style="border: 20px  solid #d3d3d3 " WIDTH="95%"  HEIGHT ="120px" CELLPADDING="5" CELLSPACING="5">
+			<TR>
+			<TH colspan="5" style="color:#000000; text-decoration: underline; font-size:15px"> Travellers names</TH>
+			</TR>
+			<td>
+			<apex:inputHidden id="NumPax" value="{!case.Number_of_Pax__c}" />
+			</td>
+			<tr id ="row" class="rowClass"><td> First name
+			</td><td><input class="passengersC" onChange="passengers()" style="width: 210px;padding: 10px 20px;border: none;border-radius: 3px;background-color: #ffffff;" type="text" />
+			</td>
+			<td style="text-align:center"> Last name</td>
+			<td><input class="passengersC" onChange="passengers()" style="width: 210px;padding: 10px 20px;border: none;border-radius: 3px;background-color: #ffffff;" type="text"
+				/></td></tr>
+			<tr id ="row" class="rowClass"><td> First name
+			</td><td><input class="passengersC" onChange="passengers()" style="width: 210px;padding: 10px 20px;border: none;border-radius: 3px;background-color: #ffffff;" type="text" />
+			</td>
+			<td style="text-align:center"> Last name</td>
+			<td><input class="passengersC" onChange="passengers()" style="width: 210px;padding: 10px 20px;border: none;border-radius: 3px;background-color: #ffffff;" type="text"
+				/></td></tr>
+			<td style="border: 0px solid #000;">
+			<apex:inputHidden id="departureCase"  value="{!case.Passenger_Names__c}"  />
+			</td>
+			<tr id="new"><td>
+			<a  href="#" title="" class="add-author">+ Add passenger</a>
+			</td></tr>
+			<tr><td>
+			<a  href="#" title="" class="delete-line">delete passenger</a>
+			</td></tr>
+			<TR>
+			<TH colspan="5" style="border: 0px solid #000;height:20px"></TH>
+			</TR>
+			<TR>
+			<TH colspan="5" style="border: 0px solid #000;height:20px"></TH>
+			</TR>
+			<TR>
+			<TH colspan="5" style="color:#000000; text-decoration: underline; font-size:15px"> Payment details</TH>
+			</TR>
+			<TR>
+			<TH colspan="5" style="color:#000000; font-size:12px">Find the price of your journey <a href="{!'https://' + $Label.Domain_Eurostar + '.salesforce.com/apex/simpplr__knowledgearticledetail?articleId=kA2b0000000TgyTCAS'}" target="_blank">here </a> </TH>
+			</TR>
+			<TH colspan="5" style="border: 0px solid #000;height:20px"></TH>
+			<TR>
+			</TR>
+			<TR id="theline">
+			<td styleClass="title">Voucher Amount</td>
+			<td style="border: 0px solid #000;width:450px">
+			<apex:inputField html-pattern="24.5*" type="number" id="voucherAmount"   html-min="24.5" html-step="24.5" value="{!case.Voucher_Amount__c}"  styleClass="TextField" />
+			</td>
+			<td styleClass="title">Credit card amount</td>
+			<td style="border: 0px solid #000; ">
+			<apex:inputfield value="{!case.Credit_card_amount__c}" styleClass="TextField" />
+			</td>
+			</TR>
+			<TR>
+			<TH ></TH>
+			<td >
+			<apex:inputHidden id="toOutbound" value="{!case.Destination_station_outbound__c}" />
+			<apex:inputHidden id="fromOutbound" value="{!case.Departure_station_outbound__c}" />
+			<apex:inputHidden id="toReturn" value="{!case.Destination_station_return__c}" />
+			<apex:inputHidden id="fromReturn" value="{!case.Departure_station_return__c}" />
+			</td>
+			</TR>
+			<TR>
+			<td colspan="4" style="border: 0px solid #000;">
+			<center>
+			<br>
+			<apex:commandButton styleClass="MyButton" action="{!save}" value="Submit"/>
+			</br>
+			</center>
+			</td>
+			</tr>
+			</TABLE>
+			</div>
+		</center>
+	</apex:form>
+</apex:page>

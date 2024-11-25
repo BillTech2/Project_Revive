@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Already_Approved_Promo_Rule</fullName>
+    <active>true</active>
+    <description>This is for Promo and Partner eVouchers only.</description>
+    <errorConditionFormula>ISNEW()
+&amp;&amp;
+NOT(ISBLANK(TEXT(Promotional_eVoucher_rule__r.Status__c)))
+&amp;&amp;
+(RecordType.Name = &#39;Promotional&#39;
+|| 
+RecordType.Name = &#39;Partner&#39;)</errorConditionFormula>
+    <errorMessage>Can&#39;t insert a Promo or Partner eVoucher against an already approved or processed rule.</errorMessage>
+</ValidationRule>

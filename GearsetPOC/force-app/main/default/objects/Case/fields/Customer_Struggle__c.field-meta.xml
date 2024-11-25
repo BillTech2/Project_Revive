@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer_Struggle__c</fullName>
+    <label>Customer Struggle</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Can&#39;t Get Seats Together</fullName>
+                <default>false</default>
+                <label>Can&#39;t Get Seats Together</label>
+            </value>
+            <value>
+                <fullName>Couldn&#39;t Find</fullName>
+                <default>false</default>
+                <label>Couldn&#39;t Find</label>
+            </value>
+            <value>
+                <fullName>Couldn&#39;t Find The Right Meal</fullName>
+                <default>false</default>
+                <label>Couldn&#39;t Find The Right Meal</label>
+            </value>
+            <value>
+                <fullName>Customer error</fullName>
+                <default>false</default>
+                <label>Customer error</label>
+            </value>
+            <value>
+                <fullName>Customer giving feedback</fullName>
+                <default>false</default>
+                <label>Customer giving feedback</label>
+            </value>
+            <value>
+                <fullName>Customer Room Booking</fullName>
+                <default>false</default>
+                <label>Customer Room Booking</label>
+            </value>
+            <value>
+                <fullName>Didn&#39;t Know This Was Online</fullName>
+                <default>false</default>
+                <label>Didn&#39;t Know This Was Online</label>
+            </value>
+            <value>
+                <fullName>Didn&#39;t Receive A Confirmation</fullName>
+                <default>false</default>
+                <label>Didn&#39;t Receive A Confirmation</label>
+            </value>
+            <value>
+                <fullName>Didn&#39;t understand</fullName>
+                <default>false</default>
+                <label>Didn&#39;t understand</label>
+            </value>
+            <value>
+                <fullName>Didn&#39;t Understand Compensation</fullName>
+                <default>false</default>
+                <label>Didn&#39;t Understand Compensation</label>
+            </value>
+            <value>
+                <fullName>Didn&#39;t Understand The Seat Plan</fullName>
+                <default>false</default>
+                <label>Didn&#39;t Understand The Seat Plan</label>
+            </value>
+            <value>
+                <fullName>Don&#39;t Understand How To Do This Online</fullName>
+                <default>false</default>
+                <label>Don&#39;t Understand How To Do This Online</label>
+            </value>
+            <value>
+                <fullName>Don&#39;t Understand Refund Options</fullName>
+                <default>false</default>
+                <label>Don&#39;t Understand Refund Options</label>
+            </value>
+            <value>
+                <fullName>Don&#39;t Understand Terms &amp; Conditions</fullName>
+                <default>false</default>
+                <label>Don&#39;t Understand Terms &amp; Conditions</label>
+            </value>
+            <value>
+                <fullName>Don&#39;t Understand The Price Or Fees</fullName>
+                <default>false</default>
+                <label>Don&#39;t Understand The Price Or Fees</label>
+            </value>
+            <value>
+                <fullName>Don&#39;t Want To Do This Online</fullName>
+                <default>false</default>
+                <label>Don&#39;t Want To Do This Online</label>
+            </value>
+            <value>
+                <fullName>Don&#39;t Want To Use Website Or No Access To Website</fullName>
+                <default>false</default>
+                <label>Don&#39;t Want To Use Website Or No Access To Website</label>
+            </value>
+            <value>
+                <fullName>Eurostar Error</fullName>
+                <default>false</default>
+                <label>Eurostar Error</label>
+            </value>
+            <value>
+                <fullName>Failed To Add Meal</fullName>
+                <default>false</default>
+                <label>Failed To Add Meal</label>
+            </value>
+            <value>
+                <fullName>Form Of Payment Not Online</fullName>
+                <default>false</default>
+                <label>Form Of Payment Not Online</label>
+            </value>
+            <value>
+                <fullName>Needed A Recap Or Reassurance</fullName>
+                <default>false</default>
+                <label>Needed A Recap Or Reassurance</label>
+            </value>
+            <value>
+                <fullName>Need More Information</fullName>
+                <default>false</default>
+                <label>Need More Information</label>
+            </value>
+            <value>
+                <fullName>No self service option</fullName>
+                <default>false</default>
+                <label>No self service option</label>
+            </value>
+            <value>
+                <fullName>Not An Online Product</fullName>
+                <default>false</default>
+                <label>Not An Online Product</label>
+            </value>
+            <value>
+                <fullName>Not An Online Product Or Not Refundable Online</fullName>
+                <default>false</default>
+                <label>Not An Online Product Or Not Refundable Online</label>
+            </value>
+            <value>
+                <fullName>Outside Booking Horizon</fullName>
+                <default>false</default>
+                <label>Outside Booking Horizon</label>
+            </value>
+            <value>
+                <fullName>Overbooked Seat</fullName>
+                <default>false</default>
+                <label>Overbooked Seat</label>
+            </value>
+            <value>
+                <fullName>Phone Case - please complete</fullName>
+                <default>false</default>
+                <label>Phone Case - please complete</label>
+            </value>
+            <value>
+                <fullName>Point Of Sale Prevents Self Service</fullName>
+                <default>false</default>
+                <label>Point Of Sale Prevents Self Service</label>
+            </value>
+            <value>
+                <fullName>System - please review</fullName>
+                <default>false</default>
+                <label>System - please review</label>
+            </value>
+            <value>
+                <fullName>Ticket Status Prevents Self Service</fullName>
+                <default>false</default>
+                <label>Ticket Status Prevents Self Service</label>
+            </value>
+            <value>
+                <fullName>Unable to use website due to disability</fullName>
+                <default>false</default>
+                <label>Unable to use website due to disability</label>
+            </value>
+            <value>
+                <fullName>Unable to use website to book due to disability</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Unable to use website to book due to disability</label>
+            </value>
+            <value>
+                <fullName>Webform case - please review</fullName>
+                <default>false</default>
+                <label>Webform case - please review</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

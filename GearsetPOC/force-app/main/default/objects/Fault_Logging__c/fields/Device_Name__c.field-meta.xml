@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Device_Name__c</fullName>
+    <label>Device Name</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Samsung Galaxy</fullName>
+                <default>false</default>
+                <label>Samsung Galaxy</label>
+            </value>
+            <value>
+                <fullName>Samsung Tablet</fullName>
+                <default>false</default>
+                <label>Samsung Tablet</label>
+            </value>
+            <value>
+                <fullName>iPhone</fullName>
+                <default>false</default>
+                <label>iPhone</label>
+            </value>
+            <value>
+                <fullName>iPad</fullName>
+                <default>false</default>
+                <label>iPad</label>
+            </value>
+            <value>
+                <fullName>HTC</fullName>
+                <default>false</default>
+                <label>HTC</label>
+            </value>
+            <value>
+                <fullName>Blackberry</fullName>
+                <default>false</default>
+                <label>Blackberry</label>
+            </value>
+            <value>
+                <fullName>Nokia</fullName>
+                <default>false</default>
+                <label>Nokia</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

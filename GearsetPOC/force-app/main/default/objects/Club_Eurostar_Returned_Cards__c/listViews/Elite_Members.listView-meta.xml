@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Elite_Members</fullName>
+    <columns>NAME</columns>
+    <columns>Member_Name__c</columns>
+    <columns>Status__c</columns>
+    <columns>Language_Formula__c</columns>
+    <columns>Email_Tracker__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Type_of_Card__c</field>
+        <operation>equals</operation>
+        <value>Carte Blanche Elite</value>
+    </filters>
+    <label>Elite Members</label>
+    <language>en_US</language>
+</ListView>

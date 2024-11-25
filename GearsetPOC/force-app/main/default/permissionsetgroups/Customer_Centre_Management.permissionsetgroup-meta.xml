@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This group contains a collection of Permission Sets that need to be assigned to Service Centre Managers - in addition to the ones they already have</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Customer Centre Management</label>
+    <permissionSets>CRM_Bearer_Pass_Availability</permissionSets>
+    <permissionSets>CRM_Live_Agent_Supervisor</permissionSets>
+    <permissionSets>Can_Edit_Case_Priority_Field_Permission_Set</permissionSets>
+    <permissionSets>Case_eVoucher_Permission_Set</permissionSets>
+    <permissionSets>Compensation_Approver</permissionSets>
+    <permissionSets>ContactWorld_Agent_3</permissionSets>
+    <permissionSets>Customer_Room_Booking</permissionSets>
+    <permissionSets>EBSC_Chat</permissionSets>
+    <permissionSets>EBSC_Groups</permissionSets>
+    <permissionSets>EBSC_Management</permissionSets>
+    <permissionSets>Einstein_Template_View</permissionSets>
+    <permissionSets>LoyaltyManagementEndUser</permissionSets>
+    <permissionSets>Mass_Handle_Simple_Cases</permissionSets>
+    <permissionSets>NVMStatsSF__View_NVM_Stats</permissionSets>
+    <permissionSets>QA_Assessments_Access</permissionSets>
+    <permissionSets>Vonage_Softphone_Permission_Set</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

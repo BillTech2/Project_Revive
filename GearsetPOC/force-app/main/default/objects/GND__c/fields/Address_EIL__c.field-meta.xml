@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Address_EIL__c</fullName>
+    <defaultValue>$User.Street + &quot; &quot; + $User.City + &quot; &quot; + $User.State + &quot; &quot; +  $User.PostalCode + &quot; &quot; +  $User.Country</defaultValue>
+    <externalId>false</externalId>
+    <label>Address</label>
+    <length>200</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

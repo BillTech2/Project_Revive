@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>To_Outward__c</fullName>
+    <description>This field wil be used for the destination of the outward journey.</description>
+    <inlineHelpText>*only direct services &amp; no business class available</inlineHelpText>
+    <label>To (Outward)</label>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>From_Outward__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>London St Pancras</fullName>
+                <default>false</default>
+                <label>London St Pancras</label>
+            </value>
+            <value>
+                <fullName>Ebbsfleet</fullName>
+                <default>false</default>
+                <label>Ebbsfleet</label>
+            </value>
+            <value>
+                <fullName>Ashford</fullName>
+                <default>false</default>
+                <label>Ashford</label>
+            </value>
+            <value>
+                <fullName>Paris</fullName>
+                <default>false</default>
+                <label>Paris</label>
+            </value>
+            <value>
+                <fullName>Brussels</fullName>
+                <default>false</default>
+                <label>Brussels</label>
+            </value>
+            <value>
+                <fullName>Lille</fullName>
+                <default>false</default>
+                <label>Lille</label>
+            </value>
+            <value>
+                <fullName>Calais</fullName>
+                <default>false</default>
+                <label>Calais</label>
+            </value>
+            <value>
+                <fullName>Disney*</fullName>
+                <default>false</default>
+                <label>Disney*</label>
+            </value>
+            <value>
+                <fullName>Avignon*</fullName>
+                <default>false</default>
+                <label>Avignon*</label>
+            </value>
+            <value>
+                <fullName>Lyon*</fullName>
+                <default>false</default>
+                <label>Lyon*</label>
+            </value>
+            <value>
+                <fullName>Marseille*</fullName>
+                <default>false</default>
+                <label>Marseille*</label>
+            </value>
+            <value>
+                <fullName>Bourg St Maurice*</fullName>
+                <default>false</default>
+                <label>Bourg St Maurice*</label>
+            </value>
+            <value>
+                <fullName>Aime La Plagne*</fullName>
+                <default>false</default>
+                <label>Aime La Plagne*</label>
+            </value>
+            <value>
+                <fullName>Moutiers*</fullName>
+                <default>false</default>
+                <label>Moutiers*</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Marseille*</controllingFieldValue>
+            <controllingFieldValue>Bourg St Maurice*</controllingFieldValue>
+            <controllingFieldValue>Aime La Plagne*</controllingFieldValue>
+            <controllingFieldValue>Moutiers*</controllingFieldValue>
+            <controllingFieldValue>Paris</controllingFieldValue>
+            <controllingFieldValue>Brussels</controllingFieldValue>
+            <controllingFieldValue>Lille</controllingFieldValue>
+            <controllingFieldValue>Calais</controllingFieldValue>
+            <controllingFieldValue>Disney*</controllingFieldValue>
+            <controllingFieldValue>Avignon*</controllingFieldValue>
+            <controllingFieldValue>Lyon*</controllingFieldValue>
+            <valueName>London St Pancras</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Marseille*</controllingFieldValue>
+            <controllingFieldValue>Bourg St Maurice*</controllingFieldValue>
+            <controllingFieldValue>Aime La Plagne*</controllingFieldValue>
+            <controllingFieldValue>Moutiers*</controllingFieldValue>
+            <controllingFieldValue>Paris</controllingFieldValue>
+            <controllingFieldValue>Brussels</controllingFieldValue>
+            <controllingFieldValue>Lille</controllingFieldValue>
+            <controllingFieldValue>Calais</controllingFieldValue>
+            <controllingFieldValue>Disney*</controllingFieldValue>
+            <controllingFieldValue>Avignon*</controllingFieldValue>
+            <controllingFieldValue>Lyon*</controllingFieldValue>
+            <valueName>Ebbsfleet</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Marseille*</controllingFieldValue>
+            <controllingFieldValue>Bourg St Maurice*</controllingFieldValue>
+            <controllingFieldValue>Aime La Plagne*</controllingFieldValue>
+            <controllingFieldValue>Moutiers*</controllingFieldValue>
+            <controllingFieldValue>Paris</controllingFieldValue>
+            <controllingFieldValue>Brussels</controllingFieldValue>
+            <controllingFieldValue>Lille</controllingFieldValue>
+            <controllingFieldValue>Calais</controllingFieldValue>
+            <controllingFieldValue>Disney*</controllingFieldValue>
+            <controllingFieldValue>Avignon*</controllingFieldValue>
+            <controllingFieldValue>Lyon*</controllingFieldValue>
+            <valueName>Ashford</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>London St Pancras</controllingFieldValue>
+            <controllingFieldValue>Ebbsfleet</controllingFieldValue>
+            <controllingFieldValue>Ashford</controllingFieldValue>
+            <valueName>Paris</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>London St Pancras</controllingFieldValue>
+            <controllingFieldValue>Ebbsfleet</controllingFieldValue>
+            <controllingFieldValue>Ashford</controllingFieldValue>
+            <valueName>Brussels</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>London St Pancras</controllingFieldValue>
+            <controllingFieldValue>Ebbsfleet</controllingFieldValue>
+            <controllingFieldValue>Ashford</controllingFieldValue>
+            <valueName>Lille</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>London St Pancras</controllingFieldValue>
+            <controllingFieldValue>Ebbsfleet</controllingFieldValue>
+            <controllingFieldValue>Ashford</controllingFieldValue>
+            <valueName>Calais</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>London St Pancras</controllingFieldValue>
+            <controllingFieldValue>Ebbsfleet</controllingFieldValue>
+            <controllingFieldValue>Ashford</controllingFieldValue>
+            <valueName>Disney*</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>London St Pancras</controllingFieldValue>
+            <controllingFieldValue>Ebbsfleet</controllingFieldValue>
+            <controllingFieldValue>Ashford</controllingFieldValue>
+            <valueName>Avignon*</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>London St Pancras</controllingFieldValue>
+            <controllingFieldValue>Ebbsfleet</controllingFieldValue>
+            <controllingFieldValue>Ashford</controllingFieldValue>
+            <valueName>Lyon*</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>London St Pancras</controllingFieldValue>
+            <controllingFieldValue>Ebbsfleet</controllingFieldValue>
+            <controllingFieldValue>Ashford</controllingFieldValue>
+            <valueName>Marseille*</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>London St Pancras</controllingFieldValue>
+            <controllingFieldValue>Ebbsfleet</controllingFieldValue>
+            <controllingFieldValue>Ashford</controllingFieldValue>
+            <valueName>Bourg St Maurice*</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>London St Pancras</controllingFieldValue>
+            <controllingFieldValue>Ebbsfleet</controllingFieldValue>
+            <controllingFieldValue>Ashford</controllingFieldValue>
+            <valueName>Aime La Plagne*</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>London St Pancras</controllingFieldValue>
+            <controllingFieldValue>Ebbsfleet</controllingFieldValue>
+            <controllingFieldValue>Ashford</controllingFieldValue>
+            <valueName>Moutiers*</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

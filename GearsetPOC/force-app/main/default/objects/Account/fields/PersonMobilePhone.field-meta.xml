@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PersonMobilePhone</fullName>
+    <inlineHelpText>When adding Phone numbers please do the following:
+
+remove any punctuation or spaces
+
+add the prefix for the country code without the “+” : eg:
+
+BE: 0032
+
+DE: 0049
+
+FR: 0033
+
+NL: 0031
+
+UK: 0044</inlineHelpText>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+</CustomField>

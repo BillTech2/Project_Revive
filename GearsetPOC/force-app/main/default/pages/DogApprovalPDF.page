@@ -1,0 +1,49 @@
+<!--
+ - Created by JU on 16.12.2022.
+ -->
+
+
+<apex:page id="DogApprovalPDF" renderAs="pdf" applyHtmlTag="false" showHeader="false" cache="true" readOnly="true"  controller="DogApprovalPDFController" action="{!getData}">
+
+    <html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+        <style>
+            @page {
+                size: a4 portrait;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div align="center">
+            <h1>Guide and assistance pet request</h1>
+            <p>{!error}</p>
+
+
+        </div>
+    <apex:repeat value="{!formData}" var="block">
+        <div>
+            <h2>{!block.BlockName}</h2>
+        </div>
+        <div>
+            <apex:repeat value="{!block.fields}" var="field">
+            <p>
+                {!field.FieldLabelEn__c} :  {!field.FieldValue__c}
+            </p>
+            </apex:repeat>
+        </div>
+    </apex:repeat>
+
+    <div>
+        <p>
+            Date: {!MONTH(TODAY())}/{!DAY(TODAY())}/{!YEAR(TODAY())}
+            Signature:_______________________________________________
+        </p>
+    </div>
+
+
+    </body>
+
+    </html>
+</apex:page>

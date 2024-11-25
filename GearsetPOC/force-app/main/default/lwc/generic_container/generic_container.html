@@ -1,0 +1,159 @@
+<template>
+    <div class="wrapper slds-p-vertical--x-large">
+        <!-- COMM: INFO HEADER -->
+        <lightning-layout
+            class="header-around-padding"
+            horizontal-align="center"
+            vertical-align="stretch"
+            multiple-rows="true"
+        >
+            <lightning-layout-item
+                class="max-width-restriction"
+                flexibility="grow"
+                size="12"
+                small-device-size="12"
+                medium-device-size="12"
+                large-device-size="12"
+            >
+                <div class="slds-text-align_center header-title">
+                    <span lang="fr">{contactUsPageTitle}</span>
+                </div>
+                <div class="slds-p-top--medium slds-text-align_center header-text">
+                    <!-- DECS-509 -->
+                    <!-- <p>
+                {contactUsPermText1}
+                  <a href={helpCenterLink}>{helpCenterLabel}</a>
+                  {contactUsPermText2}
+              </p> -->
+                    <!-- CHANGED TO RICH-TEXT TO SUPPORT LABELS FORMATTING -->
+                    <lightning-formatted-rich-text value={cuPermanentPageText}></lightning-formatted-rich-text>
+                    <!-- DECS-509 -->
+                </div>
+                <c-dynamic-text-component
+                    lang-code={langCode}
+                    dynamic-text-dev-name="cu_Reactive_Text"
+                ></c-dynamic-text-component>
+            </lightning-layout-item>
+        </lightning-layout>
+        <!--/ COMM: INFO HEADER -->
+
+        <!-- COMM: BODY -->
+        <lightning-layout horizontal-align="center" vertical-align="stretch" multiple-rows="true">
+            <lightning-layout-item
+                class="slds-box inner-background"
+                flexibility="grow"
+                size="12"
+                small-device-size="12"
+                medium-device-size="11"
+                large-device-size="10"
+            >
+                <template if:true={showBreadcrumbs}>
+                    <div class="slds-m-bottom_medium">
+                        <c-generic_breadcrumbs
+                            breadcrumb-elements={breadcrumbs}
+                            onbcitemclick={handleBreadcrumbClick}
+                        ></c-generic_breadcrumbs>
+                    </div>
+                </template>
+
+                <!-- DECS-509 -->
+                <!-- <div class="page-subtitle slds-m-bottom_small">{pageSubtitle}</div> -->
+
+                <!-- CHANGED TO RICH-TEXT TO SUPPORT LABELS FORMATTING -->
+                <div lwc:if={pageTitle} class="page-subtitle slds-text-align_center slds-m-bottom_small">
+                    <lightning-formatted-rich-text value={pageTitle}></lightning-formatted-rich-text>
+                </div>
+                <div class="page-subtitle slds-m-bottom_small">
+                    <lightning-formatted-rich-text value={pageSubtitle}></lightning-formatted-rich-text>
+                </div>
+                <!-- DECS-509 -->
+
+                <template if:true={showDynamicText}>
+                    <c-dynamic-text-component
+                        lang-code={langCode}
+                        dynamic-text-dev-name={dynamicTextOutput}
+                    ></c-dynamic-text-component>
+                </template>
+                <template if:true={hasGenericInput}>
+                    <template for:each={inputData} for:item="inp">
+                        <c-generic_input
+                            key={inp.inputLabelName}
+                            lang-code={langCode}
+                            input-name={inp.inputName}
+                            input-label-name={inp.inputLabelName}
+                            input-placeholder-name={inp.inputPlaceholderName}
+                            submit-label-name={inp.submitLabelName}
+                            check-pnr={inp.checkPNR}
+                            check-tcn={inp.checkTCN}
+                            check-membership={inp.checkMembership}
+                            check-birth-date={inp.checkBirthDate}
+                            check-departure-date={inp.checkDepartureDate}
+                            pnr={pnrData.pnr}
+                            input-type={inp.inputType}
+                            next-step-key={inp.nextStepKey}
+                            show-submit={inp.showButton}
+                            regexp={inp.regexp}
+                            required={inp.required}
+                            origin={origin}
+                            onprocessinputdata={handleProcessInputData}
+                            onshowerrorinput={handleShowErrorInput}
+                            oncleanerror={handleCleanErrorMessage}
+                            is-london={isLondon}
+                            is-compensation-check={isCompensationCheck}
+                        ></c-generic_input>
+                    </template>
+                </template>
+                <template if:true={showMessage}>
+                    <div class={messageTypeClass}>{message}</div>
+                </template>
+                <template if:true={hasBtnListType}>
+                    <c-generic_button-list
+                        lang-code={langCode}
+                        onbtnclick={handleListButtonClick}
+                        btn-list-type={btnListType}
+                        btn-list-label={btnListLabel}
+                        pnr-item={pnrData}
+                    >
+                    </c-generic_button-list>
+                </template>
+                <template if:true={hasForm}>
+                    <!---  GENERIC CUSTOMER QUERY FORM GOES HERE   -->
+                    <c-generic_customer-query
+                        show-uploader={showUploader}
+                        selected-action={selectedAction}
+                        current-label={currLabel}
+                        pnr-item={pnrData}
+                        form-data={formData}
+                        add-to-existing={addToExisting}
+                        onchangesubtitle={handleChangePageSubtitle}
+                        lang-code={langCode}
+                        topic={topic}
+                        what-is-the-question={whatIsTheQuestion}
+                        b2b-form={b2bForm}
+                    ></c-generic_customer-query>
+                    <!---  / GENERIC CUSTOMER QUERY FORM GOES HERE   -->
+                </template>
+
+                <template if:true={hasPrevStep}>
+                    <div class="prev-btn-block">
+                        <button class="slds-button slds-m-left_small slds-m-top_small" onclick={handlePrevClick}>
+                            {prevLabel}
+                        </button>
+                    </div>
+                </template>
+            </lightning-layout-item>
+        </lightning-layout>
+        <!--/ COMM: BODY -->
+        <div class="exit-button-container">
+            <a
+                role="button"
+                class="primary"
+                style="box-sizing: content-box; color: white !important"
+                data-toggle="modal"
+                onclick={handleExitButtonClick}
+            >
+                <i style="color: #ffffff; margin-right: 5%"> </i>{exitButtonLabel}</a
+            >
+        </div>
+    </div>
+</template>

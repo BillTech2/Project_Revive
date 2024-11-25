@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>B2b_Only_Admin_Can_Change_Extracted</fullName>
+    <active>false</active>
+    <description>Only the admins can change the data if the status is at Extracted.</description>
+    <errorConditionFormula>AND(
+    NOT($User.B2b_Bypass_Validation_Rules__c),
+    NOT($Permission.Sales_Admin),
+    NOT(ISNEW()),
+    NOT(CONTAINS($Profile.Name, &#39;Admin&#39;)),
+    ISPICKVAL(B2b_Status__c, &#39;Extracted&#39;)
+)</errorConditionFormula>
+    <errorMessage>Only the admins can change the data if the status is at Extracted.</errorMessage>
+</ValidationRule>

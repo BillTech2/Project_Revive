@@ -1,0 +1,1097 @@
+<apex:page showHeader="false" sidebar="false" controller="JuniorTraveller_Controller" language="{!selectedLanguageCode}" standardStylesheets="false" applyHtmlTag="false" applyBodyTag="false" docType="html-5.0">
+
+
+<html lang="en" ng-app="juniorTraveller" ng-controller="RootController">
+<form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST" name="jrTrvForm" > 
+ <input name="oid" type="hidden" value="00Db0000000aXu7" />
+ <input  type="hidden"  name="retURL" value="https://eurostarhelp.secure.force.com/JuniorTraveler/JrTravellerSubmit?lang={{language}}"/>
+
+ <input type="hidden"  id="Subject" name="Subject" value="JrTraveller"/>
+<input type="hidden"  id="Description" name="Description" value="Junior Traveller Booking Enquiry"/>
+<head>
+  <meta name="viewport" content="width=device-width"/>
+ <input type="hidden" name="orgid" value="00Db0000000aXu7"/>
+<input type="hidden" name="retURL" value="http://"/>
+<input type="hidden"  id="recordType" name="recordType" value="0120N000000ohcV"/>
+ <input type="hidden"  id="type" name="type" value="JrTraveller"/>
+ 
+ <!-- for reCaptcha -->
+<input type="hidden" name='captcha_settings' value='{"keyname":"Junior_Traveler","fallback":"true","orgId":"00Db0000000aXu7","ts":""}'/>
+
+
+  <title>Eurostar - Junior Traveller</title>  
+  <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.junior_traveller, '/junior_traveller/css/font-awesome.min.css')}"/> 
+  <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.junior_traveller, '/junior_traveller/css/bootstrap/bootstrap.css')}"/>
+  <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.junior_traveller, '/junior_traveller/css/main.css')}"/>
+  <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.junior_traveller, '/junior_traveller/css/angular/angular-date-picker.css')}"/>
+  <script src="{!URLFOR($Resource.junior_traveller, '/junior_traveller/js/angular/angular1.3.15.js')}"></script>
+  <script src="{!URLFOR($Resource.junior_traveller, '/junior_traveller/js/angular/angular-translate.js')}"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="{!URLFOR($Resource.junior_traveller, '/junior_traveller/js/angular/angular-date-picker.js')}"></script>
+  <script src="{!URLFOR($Resource.junior_traveller, '/junior_traveller/js/popper.min.js')}"></script>
+  <script src="{!URLFOR($Resource.junior_traveller, '/junior_traveller/js/bootstrap/bootstrap.min.js')}"></script>   
+  <script src="{!URLFOR($Resource.junior_traveller, '/junior_traveller/js/bluebird.min.js')}"></script>  
+  <script src="{!URLFOR($Resource.junior_traveller, '/junior_traveller/app/app.js')}"></script>  
+  
+  
+          <!-- Loading Angular Controllers-->
+ <script src="{!URLFOR($Resource.junior_traveller, '/junior_traveller/app/app.js')}"></script>
+  <!-- for reCaptcha -->
+  <script src='https://www.google.com/recaptcha/api.js'></script> 
+  
+    <script>
+            (function() {
+                'strict mode';
+                angular
+                    .module('juniorTraveller')
+                    
+                    }); 
+            
+        </script>
+        
+<script type="text/javascript">    
+                        
+         $(window ).ready(function() {
+
+             pageload();
+             });
+
+            function pageload(){
+           
+            var data=[];
+            
+                             Visualforce.remoting.Manager.invokeAction(
+                            '{!$RemoteAction.JuniorTraveller_Controller.initialValues}',
+                            
+                            function(result, event){
+                                if (event.status) {
+                                   data=result;
+                                  
+                                       var elem = angular.element(document.querySelector('[ng-app]'));
+                                         var injector = elem.injector();
+                                         var $rootScope = injector.get('$rootScope');  
+       
+       
+                                         $rootScope.$apply(function(){
+                                            $rootScope.returnDatesEnabledMasterset = data.dep;
+                                            $rootScope.departureDatesEnabled = data.ret;
+                                            $rootScope.returnDatesEnabled= data.dep;
+                                            $rootScope.departureDatesEnabledMasterset= data.ret;
+
+                                         
+                                         
+                                         });
+                          
+                                } else if (event.type === 'exception') 
+                                    alert(event.message);
+                    
+                            }, 
+                            {escape: true}
+                        );
+
+        }
+
+
+   
+     function getDepDate(val){
+     
+                                         
+        var elem = angular.element(document.querySelector('[ng-app]'));
+                         var injector = elem.injector();
+                         var $rootScope = injector.get('$rootScope');  
+       
+     
+                           $rootScope.$apply(function(){
+                          Visualforce.remoting.Manager.invokeAction(
+                            '{!$RemoteAction.JuniorTraveller_Controller.getDepDates}',
+                            val,
+                            function(result, event){
+                                if (event.status) {
+                                   data=result;
+                               
+                                   $rootScope.departureDatesEnabled = data.dep;
+                                   $rootScope.returnDatesEnabled= data.ret;
+
+                                    $rootScope.departureDatesEnabledMasterset= data.dep;                                       
+                                    $rootScope.returnDatesEnabledMasterset = data.ret;
+                                    
+                                                                           
+                                } else if (event.type === 'exception') 
+                                    alert(event.message);
+                    
+                            }, 
+                            {escape: true}
+                        );
+
+        });                                         
+          
+  
+     }
+     
+          function getRetDate(val){
+     
+                               
+        var elem = angular.element(document.querySelector('[ng-app]'));
+                         var injector = elem.injector();
+                         var $rootScope = injector.get('$rootScope');  
+       
+     
+                           $rootScope.$apply(function(){
+                          Visualforce.remoting.Manager.invokeAction(
+                            '{!$RemoteAction.JuniorTraveller_Controller.getDepDates}',
+                            val,
+                            function(result, event){
+                                if (event.status) {
+                                   data=result;
+                                
+                                   $rootScope.departureDatesEnabled = data.ret;
+                                   $rootScope.returnDatesEnabled= data.dep;    
+
+                                    $rootScope.departureDatesEnabledMasterset= data.ret;                                       
+                                    $rootScope.returnDatesEnabledMasterset = data.dep;                                 
+                                } else if (event.type === 'exception') 
+                                    alert(event.message);
+                    
+                            }, 
+                            {escape: true}
+                        );
+
+        });                                         
+          
+  
+     }
+  
+        </script>
+        
+ <!-- for reCaptcha -->
+<script>
+ function timestamp() { 
+    var response = document.getElementById("g-recaptcha-response"); 
+    
+    if (response == null || response.value.trim() == "") {
+            var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value);
+            elems["ts"] = JSON.stringify(new Date().getTime());
+            document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems); 
+            
+            var elem = angular.element(document.querySelector('[ng-app]'));
+                         var injector = elem.injector();
+                         var $rootScope = injector.get('$rootScope');  
+                           $rootScope.$apply(function(){
+                           
+                           $rootScope.captchaResponse = true;
+                           
+                        });  
+            
+            } 
+    } setInterval(timestamp, 500); 
+</script>
+
+<script type="text/javascript">
+function recaptcha_callback(){
+
+var elem = angular.element(document.querySelector('[ng-app]'));
+                         var injector = elem.injector();
+                         var $rootScope = injector.get('$rootScope');  
+                           $rootScope.$apply(function(){
+                           
+                           $rootScope.captchaResponse = false;
+                           
+                        });    
+
+}
+</script>
+
+</head> 
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+                                         <img src="{!URLFOR($Resource.junior_traveller, '/junior_traveller/images/logo.png')}" alt="logo"/>
+                                  </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+          aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                          </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+
+            <li class="nav-item dropdown">
+              <button style="width:200px;" class="btn btn-outline-heading my-2 my-md-0 my-2 ml-2  nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{country}}<i class="fa fa-angle-down" ></i></button>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+         <a class="dropdown-item"  ng-click="changeLanguage('uk')">United Kingdom</a>
+                <a class="dropdown-item"  ng-click="changeLanguage('fr')">France</a> 
+                 
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <button class="btn btn-outline-heading my-2 my-md-0 my-2  ml-2  nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-disabled="showDetailsFormDiv">{{currency}} <i class="fa fa-angle-down" ></i></button>
+              <div class="dropdown-menu ml-2" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" ng-click="changeCurrency('Euros')">Euros</a>
+                <a class="dropdown-item" ng-click="changeCurrency('Pounds')">Pounds</a>
+              </div>
+              <input type="hidden"  id="00N0N00000APF17" name="00N0N00000APF17" value="{{currencycode}}" /> 
+              <input type="hidden"  id="00Nb00000069BY8" name="00Nb00000069BY8" value="{{language}}" /> 
+                <!-- Train # (Outward): --> 
+                <input  type="hidden"  id="00Nb0000009qDLr" maxlength="10"  value="{{outwardTrain.trainNumber}}" name="00Nb0000009qDLr" size="20"/>
+                
+                <input  type="hidden"  id="00Nb0000009r7mO" maxlength="10"  value="{{outwardTrain.departureTime}}" name="00Nb0000009r7mO" size="20"/>
+                <input  type="hidden"  id="00Nb0000009r7mG" maxlength="10"  value="{{outwardTrain.arrivalTime}}" name="00Nb0000009r7mG" size="20"/>
+                 <!-- Train # (Return): -->
+                <input  type="hidden"   id="00Nb0000009qDLq" maxlength="10" value="{{returnTrain.trainNumber}}" name="00Nb0000009qDLq" size="20"/>
+                
+                <input  type="hidden"  id="00Nb0000009r7mP" maxlength="10"  value="{{returnTrain.departureTime}}" name="00Nb0000009r7mP" size="20"/>
+                <input  type="hidden"  id="00Nb0000009r7mH" maxlength="10"  value="{{returnTrain.arrivalTime}}" name="00Nb0000009r7mH" size="20"/>
+            </li>
+
+          </ul>
+
+        </div>
+      </div>
+      <!-- container -->
+    </nav>
+
+  </header>
+  <div class="wrapper"> 
+   
+      <div class="container" ng-show="hideSearchForm">
+
+    
+         <div class="row m-0 p-0">
+              
+          <div class="col-12 bg-blue ">
+         
+            <div class="form-check form-check-inline p-3">
+              <input class="form-check-input" type="radio" ng-model="travelOption" id="returnOption" value="return"/>
+              <label class="form-check-label" for="inlineRadio1">{{'return' | translate}}</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" ng-model="travelOption" id="onewayOption" value="oneway"/>
+              <label class="form-check-label" for="inlineRadio2">{{'oneWay' | translate}}</label>
+            </div>
+            <input id='00Nb0000009xjOY'  value="{{oneWay}}" type='hidden'  name='00Nb0000009xjOY'/>
+          </div>
+        </div>
+        <div class="row p-4">
+          <div class="col-12 col-md-4">
+            <div class="form-group">
+              <label for="exampleFormControlSelect1" class="wrap">{{'from'  | translate}}</label>
+              <select class="form-control" ng-model="fromStationSelected"  ng-change="toggleStation('fromStation')" onchange = "getDepDate(this.value);">
+                <option value="London St Pancras International">London St Pancras International</option>
+                 <option value="Paris Gare du Nord">Paris Gare du Nord</option>
+                </select>
+                
+                <input type = "hidden" value="{{fromStationSelected}}" id="00Nb0000009xjOT" name="00Nb0000009xjOT"/>
+                <input type = "hidden"  ng-disabled="disableReturnDate" value="{{fromStationSelected}}" id="00Nb0000009xjOW" name="00Nb0000009xjOW"/>
+                
+                
+            </div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="form-group">
+              <label for="exampleFormControlSelect1" class="wrap">{{'to'  | translate}}</label>
+              <select class="form-control" ng-model="toStationSelected" ng-change="toggleStation('toStation')" onchange ="getRetDate(this.value);" >
+                <option value="London St Pancras International">London St Pancras International</option>
+                 <option value="Paris Gare du Nord">Paris Gare du Nord</option>
+                </select>
+                
+                <input type = "hidden" value="{{toStationSelected}}" id="00Nb0000009xjOV" name="00Nb0000009xjOV"/>
+                <input type = "hidden" ng-disabled="disableReturnDate" value="{{toStationSelected}}" id="00Nb0000009xjOU" name="00Nb0000009xjOU"/>
+                
+            </div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="form-group">
+              <label for="exampleFormControlSelect1" class="wrap">{{'passengers' | translate}}</label>
+              <select class="form-control" ng-model="passengerCountSelected" ng-options="x for x in passengerNumberList">
+                </select>
+            </div>
+          </div>
+        </div>
+        <!--row-->
+        <div class="row p-4">
+          <div class="col-12 col-md-4">
+            <div class="form-group">
+              <label for="exampleFormControlSelect1" class="date">{{'Departure ' | translate}}</label>
+              <datepicker date-format="dd/MM/yyyy" button-prev='<i class="fa fa-arrow-circle-left"></i>' button-next='<i class="fa fa-arrow-circle-right"></i>'
+                date-enabled-dates="{{departureDatesEnabled}}">
+                <input ng-model="departureDate"  readonly="true" type="text" required="true" class="form-control return" style="width: 100%;" placeholder="DD/MM/YYYY" ng-change = "checkDDates()"
+                id="00Nb0000009r7mK" name="00Nb0000009r7mK"/>
+              </datepicker>
+            </div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="form-group" ng-show="!disableReturnDate">
+             <label for="exampleFormControlSelect1" class="date">{{'returndate' | translate}}</label>
+              <datepicker date-format="dd/MM/yyyy" button-prev='<i class="fa fa-arrow-circle-left"></i>' button-next='<i class="fa fa-arrow-circle-right"></i>'
+                date-enabled-dates="{{returnDatesEnabled}}" >
+                
+                <input ng-disabled="disableReturnDate" ng-model="returnDate" readonly="true" type="text" class="form-control return" style="width: 100%;"
+                  placeholder="MM/DD/YYYY" ng-change = "checkRDates()" id="00Nb0000009r7mL" name="00Nb0000009r7mL" />
+ 
+              </datepicker>
+            </div>
+          </div>
+        </div>
+        <br />
+        <div class="row justify-content-center p-4">
+        
+        <button type="button" class="btn btn-search btn-lg col-6"  ng-disabled="(disableReturnDate && !departureDate) || (!disableReturnDate && (!departureDate || !returnDate))" 
+          ng-click="doSearch()">{{'Search' | translate}}</button>
+
+        
+       
+        </div>
+      
+    </div>
+  
+     <div class="row justify-content-center ">
+        <div class="detailsBox bg-white col-8 p-0 rounded mb-5 mt-5 " style="padding:20px;">   
+   <div class="searchResults" ng-if="showSearchResult">
+    
+          <div class="searchResults__header" style="padding:20px;">
+          <div class="row justify-content-center">
+            <div class=" col-md-9  justify-content-center">
+              <h2> {{fromStationSelected}} <i class="fa fa-long-arrow-right"></i> {{toStationSelected}}</h2>
+            </div>
+            <div class="col-md-3  justify-content-center">
+              <h4 ng-bind="departureDate | date:'EEEE, MMMM d, y'"></h4>
+            </div>
+          </div>
+        </div>
+    <div class="container" ng-repeat="search in searchResult.outward track by $index" >       
+       
+      
+        <div class="searchResults__content">
+          <div class="row shadow bg-white rounded">
+            <div class="col-12">
+              <div class="searchResults__content--box">
+                <div class="row">
+                  <div class="col-12 col-md-2 col-sm-3 pt-4">
+                    <div class="row justify-content-center">
+                      <div class="col-12 text-center font-weight-bold">
+                        <h2>{{search.departureTime}}</h2>
+                      </div>
+                      
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-4 col-sm-6 pt-3 pb-4">
+                    <div class="row justify-content-center">
+                      <div class="col-12 text-center font-weight-bold pb-3">
+                        <p>{{search.trainNumber}}</p>
+                      </div>
+                      <div class="col-12">
+                        <div class="c-train-times__line">
+                        </div>
+                      </div>
+                      
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-2 col-sm-3 pt-4">
+                    <div class="row justify-content-center">
+                      <div class="col-12  text-center ">
+                        <h2>{{search.arrivalTime}}</h2>
+                      </div>
+                      
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-4 pt-3 pb-3">
+                    <div class="row">
+                      <div class="col-12 pricecat">
+                        <div class="row justify-content-center">
+                          <div class="col-12  text-center">
+                            <input type="radio" name="outwardtrain" ng-model="selectedRate" ng-change="selectTrain(search)" value="{{totalPriceperPerson}}" required="true"/>
+                          </div>
+                          <div class="col-12  text-center">
+                            <p class="pricecat__price font-weight-bold">{{currencySymbol}}{{totalPriceperPerson}}</p>
+                          </div>
+                          <div class="col-12  text-center">
+                            <p class="pricecat__person">{{'perperson' | translate}}</p>
+                          </div>
+                          <div class="col-12  text-center">
+                            <p class="pricecat__cat font-weight-bold">{{search.rateType}}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          
+            </div>
+          </div>
+        </div>
+      </div>
+   <div class="searchResults__header" style="padding:20px;" ng-if="!disableReturnDate">
+          
+          <div class="row justify-content-center">
+            <div class=" col-md-9  justify-content-center">
+              <h2> {{toStationSelected}} <i class="fa fa-long-arrow-right"></i> {{fromStationSelected}}</h2>
+            </div>
+            <div class="col-md-3  justify-content-center">
+              <h4 ng-bind="returnDate | date:'EEEE, MMMM d, y'"></h4>
+            </div>
+          </div>
+        </div>
+   <div class="container" ng-if="!disableReturnDate" ng-repeat="search in searchResult.returns track by $index">       
+
+      
+        <div class="searchResults__content">
+          <div class="row shadow bg-white rounded">
+            <div class="col-12">
+              <div class="searchResults__content--box">
+                <div class="row">
+                  <div class="col-12 col-md-2 col-sm-3 pt-4">
+                    <div class="row justify-content-center">
+                      <div class="col-12 text-center font-weight-bold">
+                        <h2>{{search.departureTime}}</h2>
+                      </div>
+                      
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-4 col-sm-6 pt-3 pb-4">
+                    <div class="row justify-content-center">
+                      <div class="col-12 text-center font-weight-bold pb-3">
+                        <p>{{search.trainNumber}}</p>
+                      </div>
+                      <div class="col-12">
+                        <div class="c-train-times__line">
+                        </div>
+                      </div>
+                      
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-2 col-sm-3 pt-4">
+                    <div class="row justify-content-center">
+                      <div class="col-12  text-center ">
+                        <h2>{{search.arrivalTime}}</h2>
+                      </div>
+                      
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-4 pt-3 pb-3">
+                    <div class="row">
+                      <div class="col-12 pricecat">
+                        <div class="row justify-content-center">
+                          <div class="col-12  text-center">
+                            <input type="radio" name="returntrain" ng-model="selectedRate" ng-change="selectReturnTrain(search)" value="{{totalPriceperPerson}}" required="true"/>
+                          </div>
+                          <div class="col-12  text-center">
+                            <p class="pricecat__price font-weight-bold">{{currencySymbol}}{{totalPriceperPerson}}</p>
+                                                   
+                          </div>
+                          <div class="col-12  text-center">
+                            <p class="pricecat__person">{{'perperson' | translate}}</p>
+                          </div>
+                          <div class="col-12  text-center">
+                            <p class="pricecat__cat font-weight-bold">{{search.rateType}}</p>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+          
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      </div>
+     </div>
+   
+         <div class="faredetails" ng-if="showSearchResult">
+      <div class="container">
+        <div class="row ">
+          <div class="col-12 font-weight-bold text-right">
+            <p>{{'GrantTotal' | translate}}<span class="totalfare"> {{currencySymbol}}{{grandTotal}}</span></p>
+
+          </div>
+            <div class="col-12 text-right"> 
+             <b>{{'message7' | translate}}
+                    </b>
+                    <button type="button"  class="btn btn-search btn-lg col-3" ng-disabled="jrTrvForm.$invalid" ng-click="showDetailsForm()"  >{{'Continue' | translate}}</button>
+          
+             </div>
+          
+        </div>
+      </div>
+    </div>
+    
+    <div class="detailsSection" ng-if="showDetailsFormDiv">
+      
+      <button type="button" class="btn btn-back btn-lg col-5 col-sm-2  ng-scope m-5" ng-click="showSearchResultFunction()">{{'Back' | translate}}</button>
+      <div class="goingoutTab mb-5">
+        <div class="container">
+          <div class="row justify-content-center ">
+            <div class="detailsBox bg-white col-8 p-0 rounded mb-5 mt-5 " ng-repeat="train in trainData">
+              <div class="row m-0 justify-content-center rounded">
+                <div class="col-12 bg-yellow p-3">
+                  <h2>{{train.travelType == 'outbound' ? 'Going Out' : 'Coming Back'}}</h2>
+                </div>
+                <div class="col-12 text-center pt-2">
+                  <p class="font-weight-bold font-20">{{train.fromStation}} <i class="fa fa-long-arrow-right"></i> {{train.toStation}}</p>
+                </div>
+                <div class="col-12 col-sm-6 text-left pl-5 color-blue">
+                  <p class="font-weight-bold" ng-bind="train.departureDate | date:'EEEE, MMMM d, y'"></p>
+                </div>
+                <div class="col-12 col-sm-6 text-right pr-5 color-blue">
+                  <p class="font-weight-bold">{{passengerCountSelected}}x {{'Child' | translate}}</p>
+                </div>
+                <div class="col-11 border-line">
+                </div>
+                <div class="col-12 col-sm-4 pt-4">
+                  <div class="row justify-content-center">
+                    <div class="col-12 text-center ">
+                      <h2>{{train.departureTime}}</h2>
+                    </div>
+                    <div class="col-12  text-center">
+                      <p>{{'Departure' | translate}}</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-4 pt-3 pb-4">
+                  <div class="row justify-content-center">
+                    <div class="col-12 text-center font-weight-bold pb-3">
+                      <p>{{train.travelDuration}}</p>
+                    </div>
+                    <div class="col-12">
+                      <div class="c-train-times__line">
+                      </div>
+                    </div>
+                    <div class="col-12 text-center pt-3 font-weight-bold ">
+                      <p>{{'Direct' | translate}}</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-4 pt-4">
+                  <div class="row justify-content-center">
+                    <div class="col-12  text-center ">
+                      <h2>{{train.arrivalTime}}</h2>
+                    </div>
+                    <div class="col-12  text-center">
+                      <p>{{'Arrival' | translate}}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+          
+          <div class="col-12">
+            <h2>{{'PassengersDetails' | translate}} </h2>
+          </div>
+                   
+             <div class="detailsBox bg-white p-0 rounded mb-5 mt-5 ">         
+         <div class="row pb-5" style="padding:15px;">
+            <div class="col-12">
+            
+             <h4>{{'Child' | translate}} {{1}}</h4>
+            </div>
+            <div class="col-12 col-md-4">
+              <div class="form-group">
+                 <label for="lastname">{{'LastName' | translate}}  <span style="color:red;">*</span> </label>
+                <input type="text" ng-pattern="/^[a-zA-Z\s\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]{1,80}$/" class="form-control" ng-model="formObj.child[1].lname" id="lname_1" name="lname_1"  required="true"/>
+                
+                <span ng-show="jrTrvForm.lname_1.$error.pattern">  Please enter a valid LastName </span>  
+                <span ng-show="jrTrvForm.lname_1.$error.required" ng-if='jrTrvForm.lname_1.$dirty'>  Please fill this field </span>  
+            
+                
+                <input id='00N0N00000FDl9z'  value="{{formObj.child[1].lname}}" type='hidden'  name='00N0N00000FDl9z'/>
+              
+              </div>
+            </div>
+            <div class="col-12 col-md-4">
+              <div class="form-group">
+                <label for="firstname">{{'FirstName' | translate}}  <span style="color:red;">*</span>  </label>
+                <input type="text" ng-pattern="/^[a-zA-Z\s\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]{1,80}$/" class="form-control" ng-model="formObj.child[1].fname"  id="fname_1" name="fname_1" required="true"/>
+                
+                <span ng-show="jrTrvForm.fname_1.$error.pattern">  Please enter a valid FirstName </span>  
+                <span ng-show="jrTrvForm.fname_1.$error.required" ng-if='jrTrvForm.fname_1.$dirty'>  Please fill this field </span>  
+                <input id='00N0N00000FDl9y'  value="{{formObj.child[1].fname}}" type='hidden'  name='00N0N00000FDl9y'/>
+             </div>
+            </div>
+            <div class="col-12 col-md-4">
+              <div class="form-group">
+                <label for="gender" class="wrap">{{'Gender' | translate}}  <span style="color:red;">*</span> </label>
+                <select class="form-control" ng-model="formObj.child[1].gender" id="gender" name="gender" required="true">
+                 <option value=""></option>
+                   <option value="male">{{'Male' | translate}}</option>
+                  <option value="female">{{'Female' | translate}}</option>
+                  
+                  
+                <span ng-show="jrTrvForm.gender.$error.required" ng-if='jrTrvForm.gender.$dirty'>  Please fill this field </span>  
+                <input id='00N0N00000FDl9w'  value="{{formObj.child[1].gender}}" type='hidden'  name='00N0N00000FDl9w'/>
+                  
+                </select>
+              </div>
+            </div>
+            <div class="col-sm col-sm-4 col-md-9">
+              <div class="form-group">
+                  <label for="exampleFormControlSelect1" class="date">{{'DateofBirth' | translate}}  <span style="color:red;">*</span> </label>
+                <datepicker date-format="dd/MM/yyyy" button-prev='<i class="fa fa-arrow-circle-left"></i>' button-next='<i class="fa fa-arrow-circle-right"></i>'  
+                date-min-limit="{{minDOBDate}}" date-max-limit="{{maxDOBDate}}" >
+                  <input ng-model="formObj.child[1].dob" readonly="true" type="text" id="dob" name="dob" required="true" class="form-control return" style="width: 100%;" placeholder="DD/MM/YYYY"
+                  />
+                </datepicker>
+                
+                <span ng-show="jrTrvForm.dob.$error.required" ng-if='jrTrvForm.dob.$dirty'>  Please fill this field </span>  
+                <input id='00N0N00000FDl9x'  value="{{formObj.child[1].dob}}" type='hidden'  name='00N0N00000FDl9x'/>
+                
+              </div>
+            </div>
+            <div class="col-12 col-md-6">
+              <p class="font-weight-bold">{{'WheelchairUser' | translate}}</p>
+            </div>
+            <div class="col-12 col-md-6">
+             
+         <input type="checkbox"  ng-model="formObj.child[1].wheelchair"  ng-true-value="1" ng-false-value="0" id="X00N0N00000FDlA0"  name="X00N0N00000FDlA0" />
+             <input id='00N0N00000FDlA0'  value="{{formObj.child[1].wheelchair}}" type='hidden'  name='00N0N00000FDlA0'/>
+             </div>
+            <div class="col-12 col-md-6">
+                <p class="font-weight-bold">{{'Specialrequirements' | translate}}</p>
+            </div>
+            <div class="col-12 col-md-6">
+                 <textarea rows="5" cols="50" ng-model="formObj.child[1].specialreq" id="00Nb000000A3IKt" name="00Nb000000A3IKt" placeholder="{{'Specialreqtext' | translate}}">
+                    
+ </textarea>
+            </div>
+             
+                      </div>
+                      </div>
+          <div class="detailsBox bg-white p-0 rounded mb-5 mt-5 ">         
+         <div class="row pb-5" style="padding:15px;">
+            <div class="col-12">
+             <h2>{{'YourDetails' | translate}}</h2>
+              <p>{{'Message2' | translate}}</p>
+            </div>
+
+            <div class="col-12 col-md-6">
+              <div class="form-group">
+                 <label for="lastname">{{'LastName' | translate}}  <span style="color:red;">*</span>  </label>
+                <input type="text" ng-pattern="/^[a-zA-Z\s\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]{1,80}$/" class="form-control" ng-model="formObj.bookingperson.lname" id="lname_2" maxlength="24" name="lname_2" required="true"/>
+              
+                <span ng-show="jrTrvForm.lname_2.$error.pattern">  Please enter a valid LastName </span>  
+                <span ng-show="jrTrvForm.lname_2.$error.required" ng-if='jrTrvForm.lname_2.$dirty'>  Please fill this field </span>  
+                <input id='00Nb000000A3IKl'  value="{{formObj.bookingperson.lname}}" type='hidden'  name='00Nb000000A3IKl'/>
+              
+              
+              </div>
+            </div>
+            <div class="col-12 col-md-6">
+              <div class="form-group">
+              <label for="firstname">{{'FirstName' | translate}}  <span style="color:red;">*</span>  </label>
+                <input type="text" ng-pattern="/^[a-zA-Z\s\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]{1,80}$/" class="form-control" ng-model="formObj.bookingperson.fname" id="name" maxlength="80" name="name"  required="true"/>
+              
+              <input id='00Nb000000A3IKg'  value="{{formObj.bookingperson.fname}}" type='hidden'  name='00Nb000000A3IKg'/>
+              <span ng-show="jrTrvForm.name.$error.pattern">  Please enter a valid FirstName </span>  
+              <span ng-show="jrTrvForm.name.$error.required" ng-if='jrTrvForm.name.$dirty'>  Please fill this field </span>  
+              
+              </div>
+            </div>
+            <div class="col-12 col-md-4">
+              <div class="form-group">
+                <label for="email">{{'Email' | translate}}  <span style="color:red;">*</span>  </label>
+                <input style="height: calc(3.25rem + 2px);background: #f3f3f3 !important;" type="email"  class="form-control" ng-model="formObj.bookingperson.email" id="email" maxlength="80" name="email" required="true"/>
+              
+                 <input id='ContactEmail'  value="{{formObj.bookingperson.email}}" type='hidden'  name='ContactEmail'/>
+                 <span ng-show="jrTrvForm.email.$error.email">  Please enter a valid Email </span>  
+              <span ng-show="jrTrvForm.email.$error.required" ng-if='jrTrvForm.email.$dirty'>  Please fill this field </span>  
+                
+              </div>
+            </div>
+            <div class="col-12 col-md-4">
+              <div class="form-group">
+               <label for="phonenumber">{{'MobileNumber' | translate}}  <span style="color:red;">*</span> </label>
+                <input type="text" ng-pattern="/^[0-9 ]{10,20}$/" class="form-control" ng-model="formObj.bookingperson.mob" id="phone" maxlength="40" name="phone" required="true"/>
+                 <span ng-show="jrTrvForm.phone.$error.pattern">  Please enter a valid phone Number </span>
+                <span ng-show="jrTrvForm.phone.$error.required" ng-if='jrTrvForm.phone.$dirty'>  Please fill this field </span>  
+                 
+              </div>
+            </div>
+            
+          </div>
+          </div>
+      
+<div class="detailsBox bg-white p-0 rounded mb-5 mt-5 ">         
+         <div class="row pb-5" style="padding:15px;">
+            <div class="col-12">
+             
+         
+ <h3>{{'Adultfordropoff' | translate}}:{{'GoingOut' | translate}}
+                <span class="font-weight-bold">{{person.trainDetails.fromStation}} </span> 
+              </h3>
+        <label>{{'message8' | translate}} </label>    
+         </div>
+
+            <div class="col-12 col-md-6">
+              <div class="form-group">
+                 <label for="lastname">{{'LastName' | translate}}  <span style="color:red;">*</span> </label>
+                <input type="text" ng-pattern="/^[a-zA-Z\s\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]{1,80}$/" class="form-control" ng-model="formObj.Drop_Outward.lname" id="lname_3" maxlength="60" name="lname_3" required="true"/>
+                
+                <span ng-show="jrTrvForm.lname_3.$error.pattern">  Please enter a valid LastName </span>  
+                <span ng-show="jrTrvForm.lname_3.$error.required" ng-if='jrTrvForm.lname_3.$dirty'>  Please fill this field </span> 
+                 <input id='00N0N00000FDlA5'  value="{{formObj.Drop_Outward.lname}}" type='hidden'  name='00N0N00000FDlA5'/>
+                 
+              </div>
+            </div>
+            <div class="col-12 col-md-6">
+              <div class="form-group">
+                 <label for="firstname">{{'FirstName' | translate}}  <span style="color:red;">*</span> </label>
+                <input type="text" ng-pattern="/^[a-zA-Z\s\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]{1,80}$/" class="form-control" ng-model="formObj.Drop_Outward.fname" id="fname_3" maxlength="60" name="fname_3" required="true"/>
+                
+                <span ng-show="jrTrvForm.fname_3.$error.pattern">  Please enter a valid FirstName</span>  
+                <span ng-show="jrTrvForm.fname_3.$error.required" ng-if='jrTrvForm.fname_3.$dirty'>  Please fill this field </span>  
+              <input id='00N0N00000FDlA3'  value="{{formObj.Drop_Outward.fname}}" type='hidden'  name='00N0N00000FDlA3'/>
+              
+             </div>
+            </div>
+            <div class="col-12 col-md-4">
+              <div class="form-group">
+               <label for="email">{{'Email' | translate}} <span style="color:red;">*</span> </label>
+                <input style="height: calc(3.25rem + 2px);background: #f3f3f3 !important;" type="email" class="form-control" ng-model="formObj.Drop_Outward.email" id="email_3" maxlength="50" name="email_3" required="true"/>
+                
+                
+                <span ng-show="jrTrvForm.email_3.$error.email">  Please enter a valid Email </span>  
+                <span ng-show="jrTrvForm.email_3.$error.required" ng-if='jrTrvForm.email_3.$dirty'>  Please fill this field </span>  
+              <input id='00N0N00000FDlA1'  value="{{formObj.Drop_Outward.email}}" type='hidden'  name='00N0N00000FDlA1'/>
+              
+              </div>
+            </div>
+              <div class="col-12 col-md-4">
+              <div class="form-group">
+                <label for="phonenumber">{{'MobileNumber' | translate}}  <span style="color:red;">*</span> </label>
+                <input type="text" ng-pattern="/^[0-9 ]{10,20}$/" class="form-control" ng-model="formObj.Drop_Outward.phno" id="phno" maxlength="30" name="phno" required="true"/>
+                
+                <span ng-show="jrTrvForm.phno.$error.pattern">  Please enter a valid phone Number </span>
+                <span ng-show="jrTrvForm.phno.$error.required" ng-if='jrTrvForm.phno.$dirty'>  Please fill this field </span>  
+                <input id='00N0N00000FDlA7'  value="{{formObj.Drop_Outward.phno}}" type='hidden'  name='00N0N00000FDlA7'/>              
+             </div>
+            </div>
+            <hr/>
+          </div>
+          </div>
+         
+          <div class="detailsBox bg-white p-0 rounded mb-5 mt-5 ">         
+         <div class="row pb-5" style="padding:15px;">
+            <div class="col-12">
+        
+            <h3>{{'Adultforpickup' | translate}}:{{'GoingOut' | translate}}
+
+                <span class="font-weight-bold">{{person.trainDetails.toStation}} </span> 
+              </h3>
+                <label>{{'message9' | translate}} </label>
+            </div>
+
+            <div class="col-12 col-md-6">
+              <div class="form-group">
+                 <label for="lastname">{{'LastName' | translate}}  <span style="color:red;">*</span> </label>
+                <input type="text" ng-pattern="/^[a-zA-Z\s\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]{1,80}$/" class="form-control" ng-model="formObj.Pickup_Outward.lname" id="lname_4" maxlength="60" name="lname_4" required="true"/>
+    
+                <span ng-show="jrTrvForm.lname_4.$error.pattern">  Please enter a valid LastName </span>
+                <span ng-show="jrTrvForm.lname_4.$error.required" ng-if='jrTrvForm.lname_4.$dirty'>  Please fill this field </span>  
+                <input id='00N0N00000FDlAF'  value="{{formObj.Pickup_Outward.lname}}" type='hidden'  name='00N0N00000FDlAF'/>       
+                
+            </div>
+            </div>
+            <div class="col-12 col-md-6">
+              <div class="form-group">
+                 <label for="firstname">{{'FirstName' | translate}}  <span style="color:red;">*</span> </label>
+                <input type="text" ng-pattern="/^[a-zA-Z\s\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]{1,80}$/" class="form-control" ng-model="formObj.Pickup_Outward.fname" id="fname_4" maxlength="60" name="fname_4" required="true"/>
+             
+                <span ng-show="jrTrvForm.fname_4.$error.pattern">  Please enter a valid FirstName</span>
+                <span ng-show="jrTrvForm.fname_4.$error.required" ng-if='jrTrvForm.fname_4.$dirty'>  Please fill this field </span>  
+                <input id='00N0N00000FDlAD'  value="{{formObj.Pickup_Outward.fname}}" type='hidden'  name='00N0N00000FDlAD'/>       
+
+             </div>
+            </div>
+            <div class="col-12 col-md-4">
+              <div class="form-group">
+               <label for="email">{{'Email' | translate}}  <span style="color:red;">*</span> </label>
+                <input style="height: calc(3.25rem + 2px);background: #f3f3f3 !important;" type="email" class="form-control" ng-model="formObj.Pickup_Outward.email" id="email_4" maxlength="80" name="email_4" required="true"/>
+                              
+               <span ng-show="jrTrvForm.email_4.$error.email">  Please enter a valid Email </span>
+                <span ng-show="jrTrvForm.email_4.$error.required" ng-if='jrTrvForm.email_4.$dirty'>  Please fill this field </span>  
+                <input id='00N0N00000FDlAB'  value="{{formObj.Pickup_Outward.email}}" type='hidden'  name='00N0N00000FDlAB'/>       
+               
+              </div>
+            </div>
+              <div class="col-12 col-md-4">
+              <div class="form-group">
+               <label for="phonenumber">{{'MobileNumber' | translate}}  <span style="color:red;">*</span> </label>
+                <input type="text" ng-pattern="/^[0-9 ]{10,20}$/" class="form-control" ng-model="formObj.Pickup_Outward.phno" id="phone_4" maxlength="20" name="phone_4" required="true"/>
+              
+              <span ng-show="jrTrvForm.phone_4.$error.pattern">  Please enter a valid phone Number </span>
+                <span ng-show="jrTrvForm.phone_4.$error.required" ng-if='jrTrvForm.phone_4.$dirty'>  Please fill this field </span>  
+                <input id='00N0N00000FDlAH'  value="{{formObj.Pickup_Outward.phno}}" type='hidden'  name='00N0N00000FDlAH'/>        
+              
+              </div>
+            </div>
+            <hr/>
+          </div>
+          </div>             
+            <div class="detailsBox bg-white p-0 rounded mb-5 mt-5" ng-if="!disableReturnDate">         
+         <div class="row pb-5" style="padding:15px;">
+            <div class="col-12">
+       
+<h3>{{'Adultfordropoff' | translate}}:{{'ComingBack' | translate}}
+                <span class="font-weight-bold">{{person.trainDetails.toStation}} </span> 
+              </h3>
+<label>{{'message8' | translate}} </label>
+               </div>
+
+            <div class="col-12 col-md-6">
+              <div class="form-group">
+                <label for="lastname">{{'LastName' | translate}}  <span style="color:red;">*</span> </label>
+                <input type="text" ng-pattern="/^[a-zA-Z\s\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]{1,80}$/" class="form-control" ng-model="formObj.Drop_Return.lname" id="lname_5" maxlength="80" name="lname_5" required="true"/>
+
+                <span ng-show="jrTrvForm.lname_5.$error.pattern">  Please enter a valid LastName </span>
+                <span ng-show="jrTrvForm.lname_5.$error.required" ng-if='jrTrvForm.lname_5.$dirty'>  Please fill this field </span>  
+                <input id='00N0N00000FDlA6'  value="{{formObj.Drop_Return.lname}}" type='hidden'  name='00N0N00000FDlA6'/>                      
+
+             </div>
+            </div>
+            <div class="col-12 col-md-6">
+              <div class="form-group">
+                 <label for="firstname">{{'FirstName' | translate}}  <span style="color:red;">*</span> </label>
+                <input type="text" ng-pattern="/^[a-zA-Z\s\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]{1,80}$/" class="form-control" ng-model="formObj.Drop_Return.fname" id="fname_5" maxlength="80" name="fname_5" required="true"/>
+             
+                <span ng-show="jrTrvForm.fname_5.$error.pattern">  Please enter a valid FirstName </span>
+                <span ng-show="jrTrvForm.fname_5.$error.required" ng-if='jrTrvForm.fname_5.$dirty'>  Please fill this field </span>  
+                <input id='00N0N00000FDlA4'  value="{{formObj.Drop_Return.fname}}" type='hidden'  name='00N0N00000FDlA4'/>                      
+
+             </div>
+            </div>
+            <div class="col-12 col-md-4">
+              <div class="form-group">
+               <label for="email">{{'Email' | translate}}  <span style="color:red;">*</span> </label>
+                <input style="height: calc(3.25rem + 2px);background: #f3f3f3 !important;" type="email" class="form-control" ng-model="formObj.Drop_Return.email" id="email_5" maxlength="60" name="email_5" required="true"/>
+               
+                
+                <span ng-show="jrTrvForm.email_5.$error.email">  Please enter a valid Email </span>
+                <span ng-show="jrTrvForm.email_5.$error.required" ng-if='jrTrvForm.email_5.$dirty'>  Please fill this field </span>  
+                <input id='00N0N00000FDlA2'  value="{{formObj.Drop_Return.email}}" type='hidden'  name='00N0N00000FDlA2'/>                      
+
+              </div>
+            </div>
+              <div class="col-12 col-md-4">
+              <div class="form-group">
+               <label for="phonenumber">{{'MobileNumber' | translate}}  <span style="color:red;">*</span> </label>
+                <input type="text" ng-pattern="/^[0-9 ]{10,20}$/" class="form-control" ng-model="formObj.Drop_Return.phno" id="phone_5" maxlength="60" name="phone_5" required="true"/>
+
+                <span ng-show="jrTrvForm.phone_5.$error.pattern">  Please enter a valid phone Number </span>
+                <span ng-show="jrTrvForm.phone_5.$error.required" ng-if='jrTrvForm.phone_5.$dirty'>  Please fill this field </span>  
+                <input id='00N0N00000FDlA8'  value="{{formObj.Drop_Return.phno}}" type='hidden'  name='00N0N00000FDlA8'/>                                       
+
+            </div>
+            </div>
+            <hr/>
+          </div>
+          </div>
+         
+            <div class="detailsBox bg-white p-0 rounded mb-5 mt-5 " ng-if="!disableReturnDate">         
+         <div class="row pb-5" style="padding:15px;">
+            <div class="col-12">
+
+            <h3>{{'Adultforpickup' | translate}}:{{'ComingBack' | translate}}
+
+                <span class="font-weight-bold">{{person.trainDetails.fromStation}} </span> 
+              </h3>
+        <label>{{'message9' | translate}} </label>
+        
+            </div>
+
+            <div class="col-12 col-md-6">
+              <div class="form-group">
+                 <label for="lastname">{{'LastName' | translate}}  <span style="color:red;">*</span> </label>
+                <input type="text" ng-pattern="/^[a-zA-Z\s\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]{1,80}$/" class="form-control" ng-model="formObj.Pickup_Return.lname" id="lname_6" maxlength="80" name="lname_6" required="true"/>
+
+                <span ng-show="jrTrvForm.phone_5.$error.pattern">  Please enter a valid LastName </span>
+                <span ng-show="jrTrvForm.lname_6.$error.required" ng-if='jrTrvForm.lname_6.$dirty'>  Please fill this field </span>  
+                <input id='00N0N00000FDlAG'  value="{{formObj.Pickup_Return.lname}}" type='hidden'  name='00N0N00000FDlAG'/>                        
+
+            </div>
+            </div>
+            <div class="col-12 col-md-6">
+              <div class="form-group">
+                 <label for="firstname">{{'FirstName' | translate}}  <span style="color:red;">*</span> </label>
+                <input type="text" ng-pattern="/^[a-zA-Z\s\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]{1,80}$/" class="form-control" ng-model="formObj.Pickup_Return.fname" id="fname_6" maxlength="80" name="fname_6" required="true"/>
+            
+                <span ng-show="jrTrvForm.fname_6.$error.pattern">  Please enter a valid FirstName </span>
+                <span ng-show="jrTrvForm.fname_6.$error.required" ng-if='jrTrvForm.fname_6.$dirty'>  Please fill this field </span>  
+                <input id='00N0N00000FDlAE'  value="{{formObj.Pickup_Return.fname}}" type='hidden'  name='00N0N00000FDlAE'/>        
+            
+            </div>
+            </div>
+            <div class="col-12 col-md-4">
+              <div class="form-group">
+                <label for="email">{{'Email' | translate}}  <span style="color:red;">*</span> </label>
+                <input style="height: calc(3.25rem + 2px);background: #f3f3f3 !important;" type="email" class="form-control" ng-model="formObj.Pickup_Return.email" id="email_6" maxlength="50" name="email_6" required="true"/>
+            
+               
+               <span ng-show="jrTrvForm.email_6.$error.email">  Please enter a valid Email </span>
+                <span ng-show="jrTrvForm.email_6.$error.required" ng-if='jrTrvForm.email_6.$dirty'>  Please fill this field </span>  
+                <input id='00N0N00000FDlAC'  value="{{formObj.Pickup_Return.email}}" type='hidden'  name='00N0N00000FDlAC'/>        
+               
+              </div>
+            </div>
+              <div class="col-12 col-md-4">
+              <div class="form-group">
+              <label for="phonenumber">{{'MobileNumber' | translate}}  <span style="color:red;">*</span> </label>
+                <input type="text" ng-pattern="/^[0-9 ]{10,20}$/" class="form-control" ng-model="formObj.Pickup_Return.phno" id="phno_6" maxlength="50" name="phno_6" required="true"/>
+            
+                <span ng-show="jrTrvForm.phno_6.$error.pattern">  Please enter a valid phone Number </span>
+                <span ng-show="jrTrvForm.phno_6.$error.required" ng-if='jrTrvForm.phno_6.$dirty'>  Please fill this field </span>  
+                <input id='00N0N00000FDlAI'  value="{{formObj.Pickup_Return.phno}}" type='hidden'  name='00N0N00000FDlAI'/>     
+            
+            </div>
+            </div>
+            <hr/>
+          </div>
+          </div>
+          
+          <div class="detailsBox bg-white p-0 rounded mb-5 mt-5 ">         
+         <div class="row pb-5" style="padding:15px;">
+            <div class="col-12 pb-3">
+              <h3>{{'Conditions' | translate}}</h3>
+
+            </div>
+            <div class="col-12 pb-3">
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" ng-model="acknowledgement" id="exampleCheck1" required="true"/>
+                <label class="form-check-label " for="exampleCheck1">{{'Condition1' | translate}}</label>
+              </div>
+            </div>
+            <div class="col-12 pb-3">
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" ng-model="agrement1" id="exampleCheck2" required="true"/>
+                <label class="form-check-label " for="exampleCheck2">{{'Condition2' | translate}}</label>
+              </div>
+            </div>
+            <div class="col-12 pb-3">
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" ng-model="agrement2" id="exampleCheck3"  required="true"/>
+                <label class="form-check-label " for="exampleCheck3">{{'Condition3' | translate}}</label>
+              </div>
+            </div>
+            <div class="col-12 pb-3">
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" ng-model="authority" id="exampleCheck4"  required="true"/>
+                <label class="form-check-label " for="exampleCheck4">{{'Condition4' | translate}}</label>
+              </div>
+            </div>
+            <div class="col-12 pb-3">
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" ng-model="agrement3" id="exampleCheck5"  required="true"/>
+                <label class="form-check-label " for="exampleCheck5">{{'Iaccept' | translate}} <a href="{{'EurostarJrTravellerT&C' | translate}}" target="_blank"> {{'Link1' | translate}} </a> {{'and' | translate}}  <a href="{{'EurostarT&C' | translate}}" target="_blank">{{'Link2' | translate}} </a> </label>
+              </div>
+            </div>
+          </div>
+             </div>
+          
+            <div class="detailsBox bg-white p-0 rounded mb-5 mt-5 ">  
+            <div class="row" style="padding:15px;">
+              <div class="col-12">
+                  <h3>{{'Whencancall'| translate}}</h3>
+                <p>{{'message4' | translate}}</p>
+              </div>
+              
+              <div class="col-12 col-md-6">
+                <div class="form-group">
+                   <label for="timeslot1" class="wrap">{{'timeslotOne' | translate}} <span style="color:red;">*</span> </label>
+                  <select class="form-control" ng-model="formObj.timeslot1"  id="00N0N00000FDlA9"  name="00N0N00000FDlA9" required="true">
+                  <option value=""></option>
+                      <option value="09:00 - 11:00 (Mon to Fri-UK time)">09:00 - 11:00(Monday to Friday - UK time)</option>
+                      <option value="10:00 - 12:00 (Mon to Fri-UK time)">10:00 - 12:00(Monday to Friday - UK timee)</option>
+                      <option value="11:00 - 13:00 (Mon to Fri-UK time)">11:00 - 13:00(Monday to Friday - UK time)</option>
+                      <option value="12:00 - 14:00 (Mon to Fri-UK time)">12:00 - 14:00(Monday to Friday - UK time)</option>
+                      <option value="13:00 - 15:00 (Mon to Fri-UK time)">13:00 - 15:00(Monday to Friday - UK time)</option>
+                      <option value="14:00 - 16:00 (Mon to Fri-UK time)">14:00 - 16:00(Monday to Friday - UK time)</option>
+                      <option value="15:00 - 17:00 (Mon to Fri-UK time)">15:00 - 17:00(Monday to Friday - UK time)</option>
+                      <option value="09:00 - 13:00 (Sat, Sun & Bank Holiday-UK time)">09:00 - 13:00 (Saturday, Sunday , Bank Holiday - UK time)</option>
+                      <option value="13:00 - 17:00 (Sat, Sun & Bank Holiday-UK time)">13:00 - 17:00 (Saturday, Sunday , Bank Holiday - UK time)</option>
+                    </select>
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="form-group">
+                  <label for="timeslot2" class="wrap">{{'timeSlotTwo' | translate}}  <span style="color:red;">*</span> </label>
+                  <select class="form-control" ng-model="formObj.timeslot2" id="00N0N00000FDlAA" name="00N0N00000FDlAA"  required="true">
+                  <option value=""></option>
+                      <option value="09:00 - 11:00 (Mon to Fri-UK time)">09:00 - 11:00 (Monday to Friday - UK time)</option>
+                      <option value="10:00 - 12:00 (Mon to Fri-UK time)">10:00 - 12:00 (Monday to Friday - UK time)</option>
+                      <option value="11:00 - 13:00 (Mon to Fri-UK time)">11:00 - 13:00 (Monday to Friday - UK time)</option>
+                      <option value="12:00 - 14:00 (Mon to Fri-UK time)">12:00 - 14:00 (Monday to Friday - UK time)</option>
+                      <option value="13:00 - 15:00 (Mon to Fri-UK time)">13:00 - 15:00 (Monday to Friday - UK time)</option>
+                      <option value="14:00 - 16:00 (Mon to Fri-UK time)">14:00 - 16:00 (Monday to Friday - UK time)</option>
+                      <option value="15:00 - 17:00 (Mon to Fri-UK time)">15:00 - 17:00 (Monday to Friday - UK time)</option>
+                      <option value="09:00 - 13:00 (Sat, Sun & Bank Holiday-UK time)">09:00 - 13:00 (Saturday, Sunday , Bank Holiday - UK time)</option>
+                      <option value="13:00 - 17:00 (Sat, Sun & Bank Holiday-UK time)">13:00 - 17:00 (Saturday, Sunday , Bank Holiday - UK time)</option>
+                      </select>
+               
+                </div>
+              </div>
+              </div>
+              
+               </div>
+              </div>
+            </div>
+
+             
+              <div class="container">
+            <div class="detailsBox bg-white p-0 rounded mb-5 mt-5 " ng-show="showDetailsFormDiv">
+             <div class="row" style="padding:15px;">
+             <div class="col-12">
+                  <h3>Are you a robot?</h3>
+              </div>
+              
+               <div class="col-12 col-md-6">
+                <div class="form-group">
+                <div id="reCaptchaId" class="g-recaptcha" data-sitekey="6LfGeVsUAAAAAEetqWvJQcIkURChuTNd4813D7U2" data-callback="recaptcha_callback"></div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+           </div>
+            
+     <div class="detailsSection" ng-if="showDetailsFormDiv">        
+      <div class="faredetails_total">
+        <div class="container">
+          <div class="row ">
+            <div class="col-12 font-weight-bold text-right">
+              <p>{{'GrantTotal' | translate}}<span class="totalfare"> {{currencySymbol}}{{grandTotal}}</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="faredetails_button">
+        <div class="container">
+          <div class="row ">
+            <div class="col-12 text-right">
+        
+             <input type="hidden"  id="00Nb0000009r7mo" name="00Nb0000009r7mo" value="{{grandTotal}}"/> 
+            <button ng-disabled="jrTrvForm.$invalid || captchaResponse" formaction="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST" target ="#thankyou" class="btn btn-search col-10 col-sm-6 col-md-6 btn-lg">{{'bookNow' | translate}}<i class="fa fa-angle-right"></i></button>
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    </div>
+   
+
+  </body>
+</form>
+</html>
+</apex:page>

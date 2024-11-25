@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Travel_Services_Operational_Supervisors_Case</fullName>
+    <filterScope>Queue</filterScope>
+    <label>ETSmanifests</label>
+    <queue>ETSmanifests</queue>
+    <sharedTo>
+        <allInternalUsers />
+    </sharedTo>
+</ListView>

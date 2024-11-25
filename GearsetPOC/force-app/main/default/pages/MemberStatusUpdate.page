@@ -1,0 +1,29 @@
+<apex:page id="MemberStatusUpdate"
+			showHeader="true"
+			sidebar="true"
+			tabStyle="SalesforceMember__x"
+			standardController="SalesforceMember__x"
+			extensions="MemberStatusUpdateController">
+
+	<apex:sectionHeader title="Member status Edit" subtitle="New Member status" />
+	<c:LoyaltyTierAccessCheck accessedButtonName="Update_status" recordIdValue="{!member.Id}">
+		<apex:form >
+			<apex:pageBlock title="Member status Edit" mode="edit">
+				<apex:pageMessages />
+				<apex:pageBlockSection columns="1" >
+					<apex:selectList value="{!selectedStatus}" label="Status" size="1" required="true">
+						<apex:selectOptions value="{!statuses}"/>
+					</apex:selectList>
+					<apex:selectList value="{!selectedReason}" label="Reason" size="1" required="true">
+						<apex:selectOptions value="{!reasons}"/>
+					</apex:selectList>
+					<apex:inputText value="{!reasonText}" label="Reason text" />
+				</apex:pageBlockSection>
+				<apex:pageBlockButtons >
+					<apex:commandButton action="{!save}" value=" Save "/>
+					<apex:commandButton action="{!cancel}" value="Cancel"/>
+				</apex:pageBlockButtons>
+			</apex:pageBlock>
+		</apex:form>
+	</c:LoyaltyTierAccessCheck>
+</apex:page>

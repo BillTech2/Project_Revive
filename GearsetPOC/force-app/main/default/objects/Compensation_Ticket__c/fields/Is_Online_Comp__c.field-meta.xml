@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Online_Comp__c</fullName>
+    <formula>IF ( AND( Compensation__r.RecordTypeName__c =&quot;Online&quot;, Compensation__r.Is_Excluded_From_Delay_Compensation__c =false, Compensation__r.Delay_Duration_Mins__c &gt;=60), true, false)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Is Online Comp?</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

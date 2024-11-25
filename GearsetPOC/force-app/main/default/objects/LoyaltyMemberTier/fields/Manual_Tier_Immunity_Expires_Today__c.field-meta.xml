@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Manual_Tier_Immunity_Expires_Today__c</fullName>
+    <description>Helper field used mainly in the Loyalty - Manual Tier Immunity Expiration. Was created to be able to select only Loyalty Member Tier records that expire when the flow runs (relateive dates cannot be used in entry criteria flr flows). Not on layout .</description>
+    <formula>Manual_Tier_Immunity_Expiration_Date__c = TODAY()</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Manual Tier Immunity Expires Today</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

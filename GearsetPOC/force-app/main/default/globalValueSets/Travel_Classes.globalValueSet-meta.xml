@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Standard</fullName>
+        <default>false</default>
+        <label>Standard</label>
+    </customValue>
+    <customValue>
+        <fullName>Standard Premier</fullName>
+        <default>false</default>
+        <label>Standard Premier</label>
+    </customValue>
+    <customValue>
+        <fullName>Business</fullName>
+        <default>false</default>
+        <label>Business</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Premier</fullName>
+        <default>false</default>
+        <label>Business Premier</label>
+    </customValue>
+    <customValue>
+        <fullName>Comfort</fullName>
+        <default>false</default>
+        <label>Comfort</label>
+    </customValue>
+    <customValue>
+        <fullName>Premium</fullName>
+        <default>false</default>
+        <label>Premium</label>
+    </customValue>
+    <customValue>
+        <fullName>Wheelchair</fullName>
+        <default>false</default>
+        <label>Wheelchair</label>
+    </customValue>
+    <customValue>
+        <fullName>Plus</fullName>
+        <default>false</default>
+        <label>Plus</label>
+    </customValue>
+    <customValue>
+        <fullName>Premier</fullName>
+        <default>false</default>
+        <label>Premier</label>
+    </customValue>
+    <masterLabel>Travel Classes</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

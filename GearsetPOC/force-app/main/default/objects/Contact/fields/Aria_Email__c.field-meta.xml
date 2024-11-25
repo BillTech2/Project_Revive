@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Aria_Email__c</fullName>
+    <caseSensitive>true</caseSensitive>
+    <description>This field contains the email of the staff as defined in Aria.</description>
+    <externalId>false</externalId>
+    <label>Aria Email</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Email</type>
+    <unique>true</unique>
+</CustomField>

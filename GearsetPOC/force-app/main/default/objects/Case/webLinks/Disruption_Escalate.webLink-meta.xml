@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Disruption_Escalate</fullName>
+    <availability>online</availability>
+    <description>Re-assigns the case to the Disruption queue, changes the status to &quot;Escalated&quot;</description>
+    <displayType>link</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Disruption - Escalate</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&#39;//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js&#39;)}
+{!REQUIRESCRIPT(&#39;//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js&#39;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/33.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/33.0/apex.js&quot;)}
+
+
+
+try
+{ 
+	jQuery(function() 
+	{
+		/*Append the jQuery CSS CDN Link to the Head tag.*/
+		jQuery(&#39;head&#39;).append(&#39;&lt;link rel=&quot;stylesheet&quot; href=&quot;//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/start/jquery-ui.css&quot; type=&quot;text/css&quot; /&gt;&#39;);
+		
+		/* Get the record details */
+		var updateRecord = new Array(); 
+		var myquery = &quot;SELECT Id FROM Disruption_Case__c WHERE Name = &#39;{!Case.CaseNumber}&#39; limit 1&quot;; 
+		result = sforce.connection.query(myquery); 
+		records = result.getArray(&quot;records&quot;); 
+		if(records[0]) 
+		{
+			var update_Case = records[0];
+			
+			/*Create the HTML(DIV Tag) for the Dialog.*/
+			var html = &#39;&lt;div id=&quot;dialog&quot; title=&quot;Escalate details&quot;&gt;&lt;form&gt;Comment: &lt;input id=&quot;Comment&quot; type=&quot;text&quot; name=&quot;Comment&quot; value=&quot;Impossible to find the booking on CARMEN&quot;&gt; &lt;br&gt;&lt;/form&gt;&lt;/div&gt;&#39;;
+			
+			/*Check if the Dialog(DIV Tag) already exists if not then Append the same to the Body tag.*/
+			if(!jQuery(&#39;[id=dialog]&#39;).size())
+			{
+				jQuery(&#39;body&#39;).append(html);
+			}  
+			/*Open the jQuery Dialog.*/ 
+			jQuery( &quot;#dialog&quot; ).dialog(
+			{
+				autoOpen: true,
+				modal: true,
+				show: 
+				{
+					effect: &quot;fade&quot;,
+					duration: 500
+				},
+				hide: 
+				{
+					effect: &quot;fade&quot;,
+					duration: 500
+				},
+				buttons: 
+				{
+					&quot;Continue&quot;: function() 
+					{
+						
+						/* Update the Disruption Case */ 
+						update_Case.Status__c = &quot;Escalated&quot;;
+						updateRecord.push(update_Case); 
+						result = sforce.connection.update(updateRecord); 
+						sforce.apex.execute
+						(
+							&quot;Create_Case_Comment&quot;,
+							&quot;Create_A_CaseComment&quot;,
+							{
+								Parent_Id:&quot;{!Case.Id}&quot;,
+								content:&quot; ---------- Case Escalated ({!NOW()}) ---------- Comments: &quot; + $( &quot;#Comment&quot; ).val() + &quot; -------------&quot;
+							}
+						);						
+						
+						jQuery( this ).dialog( &quot;close&quot; );
+						parent.location.href = parent.location.href;
+					},
+					Cancel: function() 
+					{
+						jQuery( this ).dialog( &quot;close&quot; );
+					}
+				}							
+			});
+		}
+	});
+}
+catch(e){
+alert(&#39;An Error has Occured. Error: &#39; + e);
+}</url>
+</WebLink>

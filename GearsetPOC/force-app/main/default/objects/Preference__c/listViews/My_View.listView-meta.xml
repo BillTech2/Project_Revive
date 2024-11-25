@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_View</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>Source__c</columns>
+    <columns>Preference__c</columns>
+    <columns>Consent__c</columns>
+    <columns>Preferred_Language__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>LAST_UPDATE</field>
+        <operation>greaterOrEqual</operation>
+        <value>7/15/2024 11:00 AM</value>
+    </filters>
+    <filters>
+        <field>NAME</field>
+        <operation>contains</operation>
+        <value>Trains</value>
+    </filters>
+    <filters>
+        <field>LAST_UPDATE</field>
+        <operation>lessOrEqual</operation>
+        <value>7/15/2024 11:59 PM</value>
+    </filters>
+    <filters>
+        <field>Consent__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>My View</label>
+</ListView>

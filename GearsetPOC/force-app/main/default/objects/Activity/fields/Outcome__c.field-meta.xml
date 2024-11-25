@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Outcome__c</fullName>
+    <label>Outcome</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Call Dropped Before Resolution</fullName>
+                <default>false</default>
+                <label>Call Dropped Before Resolution</label>
+            </value>
+            <value>
+                <fullName>Completed Request</fullName>
+                <default>false</default>
+                <label>Completed Request</label>
+            </value>
+            <value>
+                <fullName>Completed Request - GWG</fullName>
+                <default>false</default>
+                <label>Completed Request - GWG</label>
+            </value>
+            <value>
+                <fullName>Couldn&#39;t Complete The Request</fullName>
+                <default>false</default>
+                <label>Couldn&#39;t Complete The Request</label>
+            </value>
+            <value>
+                <fullName>Customer Abandoned Request</fullName>
+                <default>false</default>
+                <label>Customer Abandoned Request</label>
+            </value>
+            <value>
+                <fullName>Customer failed security checks</fullName>
+                <default>false</default>
+                <label>Customer failed security checks</label>
+            </value>
+            <value>
+                <fullName>Customer Just Wanted A Quote</fullName>
+                <default>false</default>
+                <label>Customer Just Wanted A Quote</label>
+            </value>
+            <value>
+                <fullName>Directed Customer Back To Original Point Of Sale</fullName>
+                <default>false</default>
+                <label>Directed Customer Back To Original Point Of Sale</label>
+            </value>
+            <value>
+                <fullName>Directed Customer Online</fullName>
+                <default>false</default>
+                <label>Directed Customer Online</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

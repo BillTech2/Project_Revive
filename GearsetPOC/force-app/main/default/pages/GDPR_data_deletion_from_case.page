@@ -1,0 +1,100 @@
+<apex:page standardController="Case" extensions="GDPRDataDeletion">
+   <!-- <style type="text/css">   
+       #popup{
+        position: absolute;
+        bottom: 0;
+        left:25%;
+        width:50%;
+        padding:2px;
+        border: 1px solid #1798C1;
+        }
+        
+        #popupButtons{       
+        float:right;
+        position:relative;
+        }
+        
+        #loadingImage{            
+        //float:right;
+        //position:relative;
+        position: absolute;
+        bottom: 0;
+        right:0;
+        padding:0;
+        margin:0;
+        width:30px;
+        height:30px;
+        }
+   </style>-->
+	   
+<script type="text/javascript">
+
+    /*import { LightningElement } from 'lwc';
+    
+		export default class DemoComponent extends LightningElement {
+            progress = 0;
+            isProgressing = false;
+        
+            updateProgress() {
+                this.progress =
+                    this.progress === 100 ? this.resetProgress() : this.progress + 10;
+            }
+        
+            resetProgress() {
+                this.progress = 0;
+                clearInterval(this._interval);
+            }
+        
+            disconnectedCallback() {
+                clearInterval(this._interval);
+            }
+        
+            get computedLabel() {
+                return this.isProgressing ? 'Stop' : 'Start';
+            }
+        
+            toggleProgress() {
+                if (this.isProgressing) {
+                    // stop
+                    this.isProgressing = false;
+                    if (!this.progress) {
+                        this.progress = 0;
+                    }
+                    clearInterval(this._interval);
+                } else {
+                    // start
+                    this.isProgressing = true;
+                    this._interval = setInterval(this.updateProgress.bind(this), 200);
+                }
+            }
+        }*/
+    </script>
+<apex:form > 
+    <!--<div id="popup">
+        <apex:outputLabel value="Are you sure you want to delete?"/>
+        <div id="popupButtons">
+            <apex:commandButton action="{!CaseTest}" value="Yes" />
+            <apex:commandButton action="alert('write code for refresh for that new method in apex class');" value="No"/>
+        </div>
+    </div> -->
+    <!--<div id="popup">
+        <apex:outputLabel style="font-size:15px; float:left;"> Are you sure you want to remove PII data?</apex:outputLabel>
+        <div id="popupButtons">
+            
+       
+           <apex:commandButton style="width: 40px;  background: #009EDB; color: white;" value="Yes" action="{!CaseTest}" status="updatestatus" rerender="none"/>    		
+        	
+	       
+        </div>
+    </div>   
+    <div >
+        <apex:actionStatus id="updatestatus" >
+              <apex:facet name="start" >
+                <img id="loadingImage" src="/img/loading.gif" />                    
+              </apex:facet>
+           </apex:actionStatus>
+    </div>-->
+</apex:form>   
+ 
+    
+</apex:page>

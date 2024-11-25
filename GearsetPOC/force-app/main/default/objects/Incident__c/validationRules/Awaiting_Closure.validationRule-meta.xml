@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Awaiting_Closure</fullName>
+    <active>false</active>
+    <description>Checks that Incident Summary, Root Cause are completed and Siemens where applicable</description>
+    <errorConditionFormula>IF( Inform_Siemens__c &amp;&amp; ISPICKVAL(EIL_Status__c , &quot;Awaiting Closure&quot;),  NOT(ISPICKVAL( Siemens_Attribution__c , &quot;Accepted&quot;))  &amp;&amp; NOT(ISPICKVAL( Siemens_Attribution__c , &quot;Rejected&quot;))
+ || ISBLANK( EIL_Summary_Conclusion__c )|| NOT(ISPICKVAL( Siemens_Status__c ,&quot;Complete&quot;)) || TEXT(EIL_Attribution__c) &lt;&gt;  TEXT(Siemens_Attribution__c ) || ISPICKVAL( Reasonable_Time__c,&quot;&quot; )
+
+ , IF( NOT(Inform_Siemens__c)&amp;&amp; ISPICKVAL(EIL_Status__c , &quot;Awaiting Closure&quot;),    ISBLANK( Root_Cause__c ) ||  ISPICKVAL( Secondary_Code__c , &quot;&quot;) || ISBLANK( EQX_Work_Reports__c )||ISBLANK( Unit_History__c )||
+ISBLANK( Fault_Codes__c )|| ISBLANK( EIL_Lead_Investigator__c )|| ISBLANK( Remedial_Action_Taken__c )|| ISBLANK( Recommendations__c )||ISBLANK( EIL_Summary_Conclusion__c )
+,FALSE))</errorConditionFormula>
+    <errorMessage>Cannot set to Awaiting Closure
+Please Check the below have values
+-Fault Codes -EQX Work Reports
+-Unit History -EIL Lead Investigator
+-Secondary Code -Route Cause
+-Remedial Action Taken -Recommendations
+-EIL Summary / Conclusion -Reasonable Time</errorMessage>
+</ValidationRule>

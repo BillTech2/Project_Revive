@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer_Issue__c</fullName>
+    <label>Customer Issue</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Booking Horizon</fullName>
+                <default>false</default>
+                <label>Booking Horizon</label>
+            </value>
+            <value>
+                <fullName>Can&#39;t see comp points on account</fullName>
+                <default>false</default>
+                <label>Can&#39;t see comp points on account</label>
+            </value>
+            <value>
+                <fullName>Chasing Comp Or Refund</fullName>
+                <default>false</default>
+                <label>Chasing Comp Or Refund</label>
+            </value>
+            <value>
+                <fullName>Dates &amp; Times</fullName>
+                <default>false</default>
+                <label>Dates &amp; Times</label>
+            </value>
+            <value>
+                <fullName>Death Or Illness Or Injury</fullName>
+                <default>false</default>
+                <label>Death Or Illness Or Injury</label>
+            </value>
+            <value>
+                <fullName>Destinations</fullName>
+                <default>false</default>
+                <label>Destinations</label>
+            </value>
+            <value>
+                <fullName>Don&#39;t Agree With Comp Awarded</fullName>
+                <default>false</default>
+                <label>Don&#39;t Agree With Comp Awarded</label>
+            </value>
+            <value>
+                <fullName>Don&#39;t Have Ticket Numbers Or Correct Details</fullName>
+                <default>false</default>
+                <label>Don&#39;t Have Ticket Numbers Or Correct Details</label>
+            </value>
+            <value>
+                <fullName>Double Booking</fullName>
+                <default>false</default>
+                <label>Double Booking</label>
+            </value>
+            <value>
+                <fullName>Meals</fullName>
+                <default>false</default>
+                <label>Meals</label>
+            </value>
+            <value>
+                <fullName>Missed Departure</fullName>
+                <default>false</default>
+                <label>Missed Departure</label>
+            </value>
+            <value>
+                <fullName>Passport or Visa Issue</fullName>
+                <default>false</default>
+                <label>Passport or Visa Issue</label>
+            </value>
+            <value>
+                <fullName>Plans Changed</fullName>
+                <default>false</default>
+                <label>Plans Changed</label>
+            </value>
+            <value>
+                <fullName>Points awarded to wrong account</fullName>
+                <default>false</default>
+                <label>Points awarded to wrong account</label>
+            </value>
+            <value>
+                <fullName>Price</fullName>
+                <default>false</default>
+                <label>Price</label>
+            </value>
+            <value>
+                <fullName>Price/points cost</fullName>
+                <default>false</default>
+                <label>Price/points cost</label>
+            </value>
+            <value>
+                <fullName>Seats</fullName>
+                <default>false</default>
+                <label>Seats</label>
+            </value>
+            <value>
+                <fullName>Ticket Type Or Class</fullName>
+                <default>false</default>
+                <label>Ticket Type Or Class</label>
+            </value>
+            <value>
+                <fullName>Unhappy With Seats</fullName>
+                <default>false</default>
+                <label>Unhappy With Seats</label>
+            </value>
+            <value>
+                <fullName>Want To Change Comp Type</fullName>
+                <default>false</default>
+                <label>Want To Change Comp Type</label>
+            </value>
+            <value>
+                <fullName>Wrong Date</fullName>
+                <default>false</default>
+                <label>Wrong Date</label>
+            </value>
+            <value>
+                <fullName>Wrong Destination Or Wrong Way Round</fullName>
+                <default>false</default>
+                <label>Wrong Destination Or Wrong Way Round</label>
+            </value>
+            <value>
+                <fullName>Wrong Journey Or Ticket Details</fullName>
+                <default>false</default>
+                <label>Wrong Journey Or Ticket Details</label>
+            </value>
+            <value>
+                <fullName>Wrong Name</fullName>
+                <default>false</default>
+                <label>Wrong Name</label>
+            </value>
+            <value>
+                <fullName>Wrong Passenger Or Name</fullName>
+                <default>false</default>
+                <label>Wrong Passenger Or Name</label>
+            </value>
+            <value>
+                <fullName>Wrong Personal Details (DOB or Email orPhone)</fullName>
+                <default>false</default>
+                <label>Wrong Personal Details (DOB/Email/Phone/Membership number)</label>
+            </value>
+            <value>
+                <fullName>Wrong Product</fullName>
+                <default>false</default>
+                <label>Wrong Product</label>
+            </value>
+            <value>
+                <fullName>Wrong Ticket Types Or Class</fullName>
+                <default>false</default>
+                <label>Wrong Ticket Types Or Class</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

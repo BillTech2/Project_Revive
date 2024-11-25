@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Phone</fullName>
+        <default>true</default>
+        <label>Phone</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Email</fullName>
+        <default>false</default>
+        <label>Email</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Web</fullName>
+        <default>false</default>
+        <label>Web</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Disruption Web</fullName>
+        <default>false</default>
+        <label>Disruption Web</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Letter</fullName>
+        <default>false</default>
+        <label>Letter</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Facebook</fullName>
+        <default>false</default>
+        <label>Facebook</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Twitter</fullName>
+        <default>false</default>
+        <label>Twitter</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Qubit</fullName>
+        <default>false</default>
+        <label>Qubit</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Email CC Q1</fullName>
+        <default>false</default>
+        <label>Email CC Q1</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Email CC Q2</fullName>
+        <default>false</default>
+        <label>Email CC Q2</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Email Traveller Care</fullName>
+        <default>false</default>
+        <label>Email Traveller Care</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Email Carte Blanche</fullName>
+        <default>false</default>
+        <label>Email Carte Blanche</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Email Elite</fullName>
+        <default>false</default>
+        <label>Email Elite</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Email FT Redemptions</fullName>
+        <default>false</default>
+        <label>Email FT Redemptions</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Email Exec</fullName>
+        <default>false</default>
+        <label>Email Exec</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Email Junior</fullName>
+        <default>false</default>
+        <label>Email Junior</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Email Reply</fullName>
+        <default>false</default>
+        <label>Email Reply</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Mobile Feedback</fullName>
+        <default>false</default>
+        <label>Mobile Feedback</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Email Groups</fullName>
+        <default>false</default>
+        <label>Email Groups</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Email Trade Support</fullName>
+        <default>false</default>
+        <label>Email Trade Support</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Email Catering</fullName>
+        <default>false</default>
+        <label>Email Catering</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Chat</fullName>
+        <default>false</default>
+        <label>Chat</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Email Somme</fullName>
+        <default>false</default>
+        <label>Email Somme</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Email E4A</fullName>
+        <default>false</default>
+        <label>Email E4A</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Email GDS</fullName>
+        <default>false</default>
+        <label>Email GDS</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Email Shift Leaders</fullName>
+        <default>false</default>
+        <label>Email Shift Leaders</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Email Young Voyager</fullName>
+        <default>false</default>
+        <label>Email Young Voyager</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Email Duty Travel</fullName>
+        <default>false</default>
+        <label>Email Duty Travel</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Email Invitation Travel</fullName>
+        <default>false</default>
+        <label>Email Invitation Travel</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Walkup</fullName>
+        <default>false</default>
+        <label>Walkup</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Lync</fullName>
+        <default>false</default>
+        <label>Lync</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Email SpecialServices</fullName>
+        <default>false</default>
+        <label>Email SpecialServices</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Email Trade Contracts</fullName>
+        <default>false</default>
+        <label>Email Trade Contracts</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Email Staff Travel</fullName>
+        <default>false</default>
+        <label>Email Staff Travel</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Email Commercial Support</fullName>
+        <default>false</default>
+        <label>Email Commercial Support</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Email Partner Rewards</fullName>
+        <default>false</default>
+        <label>Email Partner Rewards</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Email Tech Team</fullName>
+        <default>false</default>
+        <label>Email Tech Team</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Email The Hub</fullName>
+        <default>false</default>
+        <label>Email The Hub</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Email Mailroom</fullName>
+        <default>false</default>
+        <label>Email Mailroom</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Email Ideal Refunds</fullName>
+        <default>false</default>
+        <label>Email Ideal Refunds</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Email Junior Traveller</fullName>
+        <default>false</default>
+        <label>Email Junior Traveller</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Email SNCF Query Mailbox</fullName>
+        <default>false</default>
+        <label>Email SNCF Query Mailbox</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Email Commercial Sales</fullName>
+        <default>false</default>
+        <label>Email Commercial Sales</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Email Data Protection</fullName>
+        <default>false</default>
+        <label>Email Data Protection</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Email Dynamic Packages</fullName>
+        <default>false</default>
+        <label>Email Dynamic Packages</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Email Exclusive Groups</fullName>
+        <default>false</default>
+        <label>Email Exclusive Groups</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Email Quality Assurance</fullName>
+        <default>false</default>
+        <label>Email Quality Assurance</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Email MTV Queries</fullName>
+        <default>false</default>
+        <label>Email MTV Queries</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Email Trade Competitions</fullName>
+        <default>false</default>
+        <label>Email Trade Competitions</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Email Disruption Hotel</fullName>
+        <default>false</default>
+        <label>Email Disruption Hotel</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Email VIP Services</fullName>
+        <default>false</default>
+        <label>Email VIP Services</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Internal</fullName>
+        <default>false</default>
+        <label>Internal</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Email Distributor Queries</fullName>
+        <default>false</default>
+        <label>Email Distributor Queries</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Email Lost Property</fullName>
+        <default>false</default>
+        <label>Email Lost Property</label>
+    </standardValue>
+    <standardValue>
+        <fullName>TACT</fullName>
+        <default>false</default>
+        <label>TACT</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Email (Red)</fullName>
+        <default>false</default>
+        <label>Email (Red)</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Email (Blue)</fullName>
+        <default>false</default>
+        <label>Email (Blue)</label>
+    </standardValue>
+    <standardValue>
+        <fullName>B2B Groups</fullName>
+        <default>false</default>
+        <label>B2B Groups</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Thalys Groups</fullName>
+        <default>false</default>
+        <label>Thalys Groups</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Brandwatch</fullName>
+        <default>false</default>
+        <label>Brandwatch</label>
+    </standardValue>
+    <standardValue>
+        <fullName>E4A</fullName>
+        <default>false</default>
+        <label>E4A</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Email (Red - 4 Languages)</fullName>
+        <default>false</default>
+        <label>Email (Red - 4 Languages)</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Email (Red - DE)</fullName>
+        <default>false</default>
+        <label>Email (Red - DE)</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Email (Red - EN)</fullName>
+        <default>false</default>
+        <label>Email (Red - EN)</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Email (Red - FR)</fullName>
+        <default>false</default>
+        <label>Email (Red - FR)</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Email (Red - NL)</fullName>
+        <default>false</default>
+        <label>Email (Red - NL)</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Email Safety</fullName>
+        <default>false</default>
+        <label>Email Safety</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Eurostar for Business</fullName>
+        <default>false</default>
+        <label>Eurostar for Business</label>
+    </standardValue>
+    <standardValue>
+        <fullName>PRM Notification</fullName>
+        <default>false</default>
+        <label>PRM Notification</label>
+    </standardValue>
+</StandardValueSet>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>On_Siemens_Complete</fullName>
+    <active>true</active>
+    <description>Check data to ensure Status can be selected, only applies to E320</description>
+    <errorConditionFormula>OR(
+AND(
+ISPICKVAL( Siemens_Status__c ,&quot;Complete&quot;),
+NOT(ISPICKVAL( Fleet__c ,&quot;E320&quot;))
+),
+AND(
+ISPICKVAL( Siemens_Status__c ,&quot;Complete&quot;),
+ISPICKVAL( Fleet__c ,&quot;E320&quot;),
+OR(
+LEN(Fault_Codes__c) = 0,
+LEN(EQX_Work_Reports__c) = 0,
+LEN(Unit_History__c) = 0,
+ISPICKVAL( Primary_Code__c,&quot;&quot;), 
+ISPICKVAL( Secondary_Code__c ,&quot;&quot;),
+ISBLANK( Root_Cause__c),
+ISBLANK( Root_Cause_non_technical__c),
+LEN(Siemens_Summary_Conclusion__c) = 0,
+Inform_Siemens__c=FALSE ,
+ISBLANK(EIL_Lead_Investigator__c),
+ISBLANK( Siemens_Lead_Investigator__c ),
+ISPICKVAL( Siemens_Attribution__c ,&quot;&quot;)
+)
+)
+)</errorConditionFormula>
+    <errorMessage>Unable to select Siemens Complete status
+Please ensure that the Fleet is E320, and the Supporting Data, Analysis and Siemens sections are filled in</errorMessage>
+</ValidationRule>

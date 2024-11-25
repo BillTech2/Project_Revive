@@ -1,0 +1,37 @@
+<template>
+    <lightning-card variant="Narrow"  title="Current Open Cases" icon-name="standard:case">
+        <div slot="actions">
+            <p class="cases-total">Total Cases:<span class="cases-total-number">{casesTotal}</span></p>
+        </div>
+        <div class="content">
+            <template for:each={relatedCases} for:item="relatedCase">
+                <div key={relatedCase.Id} class="case-item">
+                    <div class="case-title">
+                        <h1>Case Number:</h1>
+                        <a data-target-id={relatedCase.Id} onclick={navigateToCasePage}>{relatedCase.CaseNumber}</a>
+                    </div>
+                    <div class="case-fields">
+                        <div class="space-between slds-m-bottom_x-small">
+                            <div>
+                                <p class="field-title">Case Type:</p>
+                                <p class="slds-m-bottom_x-small">{relatedCase.Type}</p>
+                                <p class="field-title">Case Owner:</p>
+                                <p>{relatedCase.Owner.Name}</p>
+                            </div>
+                            <div>
+                                <p class="field-title">Case Age:</p>
+                                <p class="slds-m-bottom_x-small">{relatedCase.Age__c} hours</p>
+                                <p class="field-title">Opened Date:</p>
+                                <p>{relatedCase.Date_Opened__c}</p>
+                            </div>
+                        </div>
+                        <div class="subject">
+                            <p class="field-title">Subject:</p>
+                            <p>{relatedCase.Subject}</p>
+                        </div>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

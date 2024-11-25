@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer_struggle_Invalid_Options</fullName>
+    <active>false</active>
+    <description>Check if Customer Struggle is populated  with accurate options when case is closed</description>
+    <errorConditionFormula>AND( 
+RecordType.Name=&#39;New Standard Case&#39;,
+(ISPICKVAL(Status,&quot;Closed&quot;)),
+OR(
+ ISPICKVAL(Customer_Struggle__c ,&quot;Phone Case - please complete&quot;),
+ISPICKVAL(  Customer_Struggle__c   ,&quot;System - please review&quot;),
+ISPICKVAL(  Customer_Struggle__c  ,&quot;Webform case - please review&quot;)))</errorConditionFormula>
+    <errorMessage>Please note the Value entered in the &quot;Customer Struggle&quot; is invalid for Case Closure</errorMessage>
+</ValidationRule>

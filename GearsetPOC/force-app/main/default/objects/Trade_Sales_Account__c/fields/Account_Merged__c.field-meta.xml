@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Merged__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Merged information - Will be filled in if field: Trade_Contract_Merged__c on Trade Contracts companies is TRUE</description>
+    <inlineHelpText>The account is merged when checkbox is ticket - information on merge can be found on Trade Contracts Companies related Record</inlineHelpText>
+    <label>Account Merged</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

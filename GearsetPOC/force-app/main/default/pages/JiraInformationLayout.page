@@ -1,0 +1,87 @@
+<apex:page id="JiraInformationLayout"
+           standardController="Salesforce_Support_Request__c"
+           tabStyle="Salesforce_Support_Request__c"
+           showHeader="false"
+           sidebar="false"
+           extensions="JiraInformationLayoutController"
+           lightningStylesheets="true">
+
+    <apex:pageMessages />
+    <apex:pageBlock mode="maindetail" rendered="{!NOT(isJiraAttached)}">
+        <div style="height:200px;text-align:center;padding-top:90px">
+            <apex:outputText escape="false" value="<b>No Jira associated</b>" style="margin:auto;"/>
+        </div>
+    </apex:pageBlock>
+    <apex:pageBlock mode="maindetail" rendered="{!isNetworkError}">
+        <div style="height:200px;text-align:center;padding-top:90px">
+            <apex:outputText escape="false" value="<b>Network error: {!networkErrorMessage}</b>" style="margin:auto;"/>
+        </div>
+    </apex:pageBlock>
+    <apex:pageBlock mode="maindetail" rendered="{!isLogicError}">
+        <div style="height:200px;text-align:center;padding-top:90px">
+            <apex:outputText escape="false" value="<b>{!jira.errorMessage}</b>" style="margin:auto;"/>
+        </div>
+    </apex:pageBlock>
+    <apex:pageBlock mode="maindetail" rendered="{!isJiraAttached}">
+    <div style="display: flex;">
+        <div style="flex-grow:7; width:100px;"><!-- overflow-y: scroll; height: 15.4rem;-->
+            <apex:pageBlock mode="maindetail" >
+                <apex:pageBlockSection columns="1">
+                    <apex:pageBlockSectionItem labelStyle="width:35%" dataStyle="width:65%" >
+                        <apex:outputText value="Project"/>
+                        <apex:outputText value="{!jira.project}"/>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                        <apex:outputText value="Jira Issue number"/>
+                        <apex:outputLink value="https://eurostar.atlassian.net/browse/{!jira.jiraIssueNumber}" target="_blank">{!jira.jiraIssueNumber}</apex:outputLink>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                        <apex:outputText value="Issue Type"/>
+                        <apex:outputText value="{!jira.issueType}"/>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                        <apex:outputText value="Epic"/>
+                        <apex:outputLink value="https://eurostar.atlassian.net/browse/{!jira.epicLink}" target="_blank">{!jira.epicLinkSummary}</apex:outputLink>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                        <apex:outputText value="Assignee"/>
+                        <apex:outputText value="{!jira.assignee}"/>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                        <apex:outputText value="Sprint"/>
+                        <apex:outputText value="{!jira.sprint}"/>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                        <apex:outputText value="Jira Status"/>
+                        <apex:outputText value="{!jira.status}"/>
+                    </apex:pageBlockSectionItem>
+                </apex:pageBlockSection>
+            </apex:pageBlock>
+        </div>
+        <div style="flex-grow:10;width:100px; padding-left: 1rem;">
+            <div style="display: flex;  flex-direction: column">
+                <apex:pageBlock mode="maindetail" rendered="{!NOT(isCommentsExist)}">
+                    <div style="height:200px;text-align:center;padding-top:90px">
+                        <apex:outputText escape="false" value="<b>No Comments on Jira</b>" style="margin:auto;"/>
+                    </div>
+                </apex:pageBlock>
+                <apex:pageBlock mode="maindetail" rendered="{!isCommentsExist}">
+                    <div style="">
+                        <apex:outputText value="<b>Last Jira Comment </b>"  escape="false"/>
+                        <apex:outputText value="made by "  escape="false"/>
+                        <apex:outputText value="<b>{!jira.authorName}</b>"  escape="false"/>
+                        <apex:outputText value=", {!jira.createdDateTime}"  escape="false"/>
+                    </div>
+                    <div style="display: block; overflow:auto; height:12.7rem; border:1px solid; padding:0.5rem; margin-top:0.1rem; border-color: #94b9d1;">
+                        <apex:outputText value="{!jira.lastJiraComment}" escape="false" />
+                    </div>
+                </apex:pageBlock>
+            </div>
+        </div>
+    </div>
+        </apex:pageBlock>
+</apex:page>

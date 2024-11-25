@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Hazard_on_closure_notify__c</fullName>
+    <inlineHelpText>Select the users and groups to notify by email when the case status is changed to Closed</inlineHelpText>
+    <label>On closure notify</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Key Manager</fullName>
+                <default>true</default>
+                <label>Key Manager</label>
+            </value>
+            <value>
+                <fullName>Line Manager</fullName>
+                <default>false</default>
+                <label>Line Manager</label>
+            </value>
+            <value>
+                <fullName>Other Managers</fullName>
+                <default>false</default>
+                <label>Other Managers</label>
+            </value>
+            <value>
+                <fullName>Other Reps</fullName>
+                <default>false</default>
+                <label>Other Reps</label>
+            </value>
+            <value>
+                <fullName>Reporting Contractor</fullName>
+                <default>false</default>
+                <label>Reporting Contractor</label>
+            </value>
+            <value>
+                <fullName>Reporting User</fullName>
+                <default>false</default>
+                <label>Reporting User</label>
+            </value>
+            <value>
+                <fullName>TMI Reps</fullName>
+                <default>false</default>
+                <label>TMI Reps</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>5</visibleLines>
+</CustomField>

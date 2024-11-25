@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>No_Updates_If_Compensation_Processed</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(NOT($Setup.Escape_Validation_Rules_GDPR__c.Escape_Validation_Rule_Checkbox__c),(
+
+NOT(ISNEW())
+&amp;&amp; $Profile.Name != &#39;Integration Profile&#39;
+&amp;&amp; $Profile.Name != &#39;System Administrator&#39;
+&amp;&amp; $User.Id != &#39;005b0000000fSLGAA2&#39;
+&amp;&amp; $User.Id != &#39;005b0000000fSLIAA2&#39;
+&amp;&amp; (
+
+(
+(Sent_For_Payment__c == True || Voucher_Redeemed__c == True)
+&amp;&amp; (ISCHANGED(Case__c)
+|| ISCHANGED(CustomerC__c)
+|| ISCHANGED(Payment_Amount__c)
+|| ISCHANGED(Payment_Currency__c)
+|| ISCHANGED(Voucher_Type__c)
+|| ISCHANGED(Gift__c)
+|| ISCHANGED(Paypal_email__c)
+|| ISCHANGED(Points_Amount__c)
+|| ISCHANGED(Quantity__c)
+|| ISCHANGED(Bank_Account_Name__c)
+|| ISCHANGED(Bank_Sort_Code__c)
+|| ISCHANGED(Bank_Account_Number__c)
+|| ISCHANGED(IBAN_Account_Number__c)
+|| ISCHANGED(Swift_Sort_Code__c))
+)
+
+||
+
+(
+$Profile.Name != &#39;ECC Manager&#39;
+&amp;&amp; (Sent_For_Payment__c == False &amp;&amp; ISCHANGED(Sent_For_Payment__c) || Voucher_Redeemed__c == False &amp;&amp; ISCHANGED(Voucher_Redeemed__c))
+)
+
+)
+
+))</errorConditionFormula>
+    <errorMessage>The Compensation has been Processed.  Please speak to a manager if you need to amend any details.</errorMessage>
+</ValidationRule>

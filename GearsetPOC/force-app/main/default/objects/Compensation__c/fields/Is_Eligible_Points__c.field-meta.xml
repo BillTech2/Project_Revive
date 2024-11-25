@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Eligible_Points__c</fullName>
+    <formula>AND(
+CustomerC__c &lt;&gt; &quot;&quot;,
+CustomerC__r.Account.DELTA_Loyalty_Member__c &lt;&gt; &quot;&quot;,
+ISPICKVAL(CustomerC__r.Account.DELTA_Loyalty_Member__r.MemberStatus, &#39;Active&#39;))</formula>
+    <label>Is Eligible Points</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

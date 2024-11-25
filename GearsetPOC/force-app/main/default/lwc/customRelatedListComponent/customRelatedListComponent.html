@@ -1,0 +1,63 @@
+<template>
+    <div if:true={isMoreThanZero}>
+        <div class="componentStype">
+            <article class="slds-card lightning-card">
+                <div class="slds-card__header slds-grid slds-theme_shade styleHeaderFooter">
+                    <header class="slds-media slds-media_center slds-has-flexi-truncate" style="padding: 1rem;">
+                        <div class="slds-media__figure">
+                            <lightning-icon icon-name={state.iconName} size="small"></lightning-icon>
+                        </div>
+                        <div class="slds-media__body">
+                            <h2 class="slds-card__header-title">
+                                <a class="slds-card__header-link" onclick={handleGotoRelatedList}>{state.titleRelatedList}</a>
+                            </h2>
+                        </div>
+                        <div class="slds-no-flex">
+                            <lightning-button-icon class="buttonStyle"
+                                                    icon-name="utility:refresh"
+                                                    alternative-text="Refresh"
+                                                    variant="border"
+                                                    type="reset"
+                                                    onclick={onRefresh}>
+                            </lightning-button-icon>
+                            <lightning-button class="slds-m-horizontal_xx-small" label="New" onclick={handleCreateRecord}></lightning-button>
+                        </div>
+                    </header>
+                </div>
+                <div class="lineElement"></div>
+                <div class="">
+                    <lightning-datatable
+                        show-row-number-column
+                        columns={state.columns}
+                        data={state.recordsToDisplay}
+                        sorted-direction={state.sortedDirection}
+                        sorted-by={state.sortedBy}
+                        key-field="Id"
+                        min-column-width="50px"
+                        hide-checkbox-column="true"
+                        onsort={handleSortValues}
+                        onrowaction={handleRowAction}>
+                    </lightning-datatable>
+                </div>
+                <footer class="slds-card__footer styleHeaderFooter">
+                    <c-pagination onprevious={handlePreviousPage}
+                                onnext={handleNextPage}
+                                is-first-page={isFirstPage}
+                                current-page={pageNumber}
+                                is-need-page-info={isNeedPageInfo}
+                                total-pages={totalPages}
+                                is-last-page={isLastPage}>
+                    </c-pagination>
+                </footer>
+            </article>
+        </div>
+    </div>
+    <template if:true={confirmationPage}>
+        <c-modal-related-list-cmp options={options}
+                                title-modal={titleModal}
+                                body-message={modalQuestion}
+                                style-body={styleModal}
+                                onselect={handleProceedDeleteRecord}>
+        </c-modal-related-list-cmp>
+    </template>
+</template>

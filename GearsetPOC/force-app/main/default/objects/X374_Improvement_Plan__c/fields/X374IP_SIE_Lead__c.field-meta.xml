@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X374IP_SIE_Lead__c</fullName>
+    <inlineHelpText>Insert the name(s) of the Siemens lead engineer(s)</inlineHelpText>
+    <label>SIE Lead</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>
