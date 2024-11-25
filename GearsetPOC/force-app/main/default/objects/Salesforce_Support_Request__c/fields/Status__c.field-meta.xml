@@ -21,6 +21,11 @@
                 <label>In progress</label>
             </value>
             <value>
+                <fullName>In progress2</fullName>
+                <default>false</default>
+                <label>In progress2</label>
+            </value>
+            <value>
                 <fullName>Referred to Requester</fullName>
                 <default>false</default>
                 <label>Referred to Requester</label>
