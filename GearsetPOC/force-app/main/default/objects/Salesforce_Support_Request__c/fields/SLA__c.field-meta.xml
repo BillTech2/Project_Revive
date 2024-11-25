@@ -2,15 +2,15 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>SLA__c</fullName>
     <externalId>false</externalId>
-    <formula>IF( TEXT(Status__c) = &apos;New&apos;,
+    <formula>IF( TEXT(Status__c) = &#39;New&#39;,
      (IF((NOW() -  CreatedDate) &lt;4 ,  
-          IMAGE(&apos;/resource/FlagGreen2&apos;, &apos;Green&apos;, 32, 32) , 
+          IMAGE(&#39;/resource/FlagGreen2&#39;, &#39;Green&#39;, 32, 32) , 
           (IF((NOW() -  CreatedDate) &lt;8 , 
-               IMAGE(&apos;/resource/FlagYellow&apos;, &apos;Yellow&apos;, 32, 32), 
-               IMAGE(&apos;/resource/FlagRed&apos;, &apos;Red&apos;, 32, 32) 
+               IMAGE(&#39;/resource/FlagYellow&#39;, &#39;Yellow&#39;, 32, 32), 
+               IMAGE(&#39;/resource/FlagRed&#39;, &#39;Red&#39;, 32, 32) 
           ))
      )) ,
-     &apos;&apos;
+     &#39;&#39;
 )</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>SLA</label>

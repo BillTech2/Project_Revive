@@ -4,21 +4,21 @@
     <active>true</active>
     <errorConditionFormula>AND( NOT(ISNEW()),(
 AND( 
- OR(RecordType.Name = &apos;Bug&apos;, 
-    RecordType.Name = &apos;Improvement&apos;, 
-    RecordType.Name = &apos;Knowledge&apos;
+ OR(RecordType.Name = &#39;Bug&#39;, 
+    RecordType.Name = &#39;Improvement&#39;, 
+    RecordType.Name = &#39;Knowledge&#39;
  ), 
  OR(
   AND( 
    CreatedById !=  $User.Id,
    NOT( $Permission.Feedback_Permission),
-   NOT( $Profile.Name = &apos;System Administrator&apos;)
+   NOT( $Profile.Name = &#39;System Administrator&#39;)
   ),
   AND(
    AND(
     CreatedById =  $User.Id, 
     NOT( $Permission.Feedback_Permission),
-    NOT( $Profile.Name = &apos;System Administrator&apos;)
+    NOT( $Profile.Name = &#39;System Administrator&#39;)
    ),  
    OR(
     ISCHANGED(Status__c), 
@@ -27,6 +27,6 @@ AND(
   )
  )
 )))</errorConditionFormula>
-    <errorMessage>If you are not the creator of ticket you can&apos;t edit it. 
-If you are the creator, you can&apos;t change Status and Sub Status fields.</errorMessage>
+    <errorMessage>If you are not the creator of ticket you can&#39;t edit it. 
+If you are the creator, you can&#39;t change Status and Sub Status fields.</errorMessage>
 </ValidationRule>

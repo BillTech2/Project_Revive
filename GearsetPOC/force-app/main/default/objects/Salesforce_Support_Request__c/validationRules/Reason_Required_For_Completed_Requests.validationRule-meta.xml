@@ -9,6 +9,6 @@ ISPICKVAL(Status__c,&quot;Rejected&quot;)
 )
 &amp;&amp;
 OR(ISBLANK(TEXT(Closed_Reason__c)),ISBLANK(TEXT(Outcome_Category__c))),
-AND( RecordType.Name != &apos;Bug&apos;, RecordType.Name != &apos;Improvement&apos;, RecordType.Name != &apos;Knowledge&apos;))</errorConditionFormula>
+AND( RecordType.Name != &#39;Bug&#39;, RecordType.Name != &#39;Improvement&#39;, RecordType.Name != &#39;Knowledge&#39;))</errorConditionFormula>
     <errorMessage>Please choose a reason and outcome for ticket closure or rejection</errorMessage>
 </ValidationRule>

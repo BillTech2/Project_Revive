@@ -3,7 +3,7 @@
     <fullName>Prevent_Save_Bug_Improvement_1</fullName>
     <active>true</active>
     <errorConditionFormula>AND(NOT(Advisors__c), NOT(Customers__c), NOT(Both__c ), 
-OR( RecordType.Name = &apos;Bug&apos;, RecordType.Name = &apos;Improvement&apos;))</errorConditionFormula>
+OR( RecordType.Name = &#39;Bug&#39;, RecordType.Name = &#39;Improvement&#39;))</errorConditionFormula>
     <errorDisplayField>Advisors__c</errorDisplayField>
     <errorMessage>At least one checkbox must be checked in the section.</errorMessage>
 </ValidationRule>

@@ -3,7 +3,7 @@
     <fullName>Prevent_Save_Knowledge_3</fullName>
     <active>true</active>
     <errorConditionFormula>AND(
-RecordType.Name = &apos;Knowledge&apos;,
+RecordType.Name = &#39;Knowledge&#39;,
 NOT(Information__c ),
 NOT(Sales__c ),
 NOT(Exchanges__c ),

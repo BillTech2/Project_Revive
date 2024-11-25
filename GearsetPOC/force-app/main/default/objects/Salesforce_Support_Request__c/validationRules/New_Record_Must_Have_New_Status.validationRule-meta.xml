@@ -2,7 +2,7 @@
 <ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>New_Record_Must_Have_New_Status</fullName>
     <active>true</active>
-    <errorConditionFormula>AND(ISNEW(),  NOT(ISPICKVAL(Status__c, &apos;New&apos;)) )</errorConditionFormula>
+    <errorConditionFormula>AND(ISNEW(),  NOT(ISPICKVAL(Status__c, &#39;New&#39;)) )</errorConditionFormula>
     <errorDisplayField>Status__c</errorDisplayField>
-    <errorMessage>New record must have status &apos;New&apos;</errorMessage>
+    <errorMessage>New record must have status &#39;New&#39;</errorMessage>
 </ValidationRule>

@@ -12,9 +12,9 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>Can&apos;t complete a Task</fullName>
+                <fullName>Can&#39;t complete a Task</fullName>
                 <default>false</default>
-                <label>Can&apos;t complete a Task</label>
+                <label>Can&#39;t complete a Task</label>
             </value>
             <value>
                 <fullName>Slows me down</fullName>

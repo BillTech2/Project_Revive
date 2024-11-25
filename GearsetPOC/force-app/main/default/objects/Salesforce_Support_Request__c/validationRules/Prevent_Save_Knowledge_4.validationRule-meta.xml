@@ -3,7 +3,7 @@
     <fullName>Prevent_Save_Knowledge_4</fullName>
     <active>true</active>
     <errorConditionFormula>AND(
-RecordType.Name = &apos;Knowledge&apos;,
+RecordType.Name = &#39;Knowledge&#39;,
 NOT( Stops_me_from_doing_something__c ),
 NOT( Slows_me_down__c ),
 NOT( Reduces_confidence_in_what_I_am_doing__c ),
