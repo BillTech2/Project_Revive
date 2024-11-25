@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X2023_Unassigned_Salesforce_Tickets</fullName>
+    <columns>CREATED_DATE</columns>
+    <columns>NAME</columns>
+    <columns>Requester_Email__c</columns>
+    <columns>Subject__c</columns>
+    <columns>Status__c</columns>
+    <columns>OWNER.ALIAS</columns>
+    <columns>Priority__c</columns>
+    <columns>Request_Age_Hours_And_Minutes__c</columns>
+    <filterScope>Queue</filterScope>
+    <filters>
+        <field>CREATED_DATE</field>
+        <operation>greaterOrEqual</operation>
+        <value>1/1/2023 12:00 AM</value>
+    </filters>
+    <filters>
+        <field>CREATED_DATE</field>
+        <operation>lessOrEqual</operation>
+        <value>12/31/2023 12:00 AM</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Salesforce_Support_Request__c.Salesforce_Change_Request,Salesforce_Support_Request__c.Salesforce_Support</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>New,In progress,Referred to Requester,Assessment,Under Development,Testing,Pending Internal Information,Pending Team Resource</value>
+    </filters>
+    <filters>
+        <field>OWNER.ALIAS</field>
+        <operation>equals</operation>
+        <value>Salesforce Support Queue</value>
+    </filters>
+    <label>2023 Unassigned Open Salesforce Tickets</label>
+    <queue>Salesforce_Support_Queue</queue>
+    <sharedTo>
+        <group>Salesforce_Admin_Team</group>
+        <group>Salesforce_Support_Team</group>
+    </sharedTo>
+</ListView>

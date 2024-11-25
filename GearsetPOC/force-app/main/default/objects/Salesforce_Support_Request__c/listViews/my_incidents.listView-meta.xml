@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>my_incidents</fullName>
+    <columns>NAME</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>Subject__c</columns>
+    <columns>Summary__c</columns>
+    <columns>Status__c</columns>
+    <columns>Impacted_Application__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>Incident_Number__c</columns>
+    <columns>RECORDTYPE</columns>
+    <filterScope>Mine</filterScope>
+    <label>My Incidents</label>
+</ListView>

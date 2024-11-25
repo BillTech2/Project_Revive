@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Relevant_Info__c</fullName>
+    <label>Relevant Info</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Language</fullName>
+                <default>false</default>
+                <label>Language</label>
+            </value>
+            <value>
+                <fullName>Information Missing</fullName>
+                <default>false</default>
+                <label>Information Missing</label>
+            </value>
+            <value>
+                <fullName>Information Unclear</fullName>
+                <default>false</default>
+                <label>Information Unclear</label>
+            </value>
+            <value>
+                <fullName>Information Out of Date</fullName>
+                <default>false</default>
+                <label>Information Out of Date</label>
+            </value>
+            <value>
+                <fullName>Broken Link</fullName>
+                <default>false</default>
+                <label>Broken Link</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Something Else</fullName>
+                <default>false</default>
+                <label>Something Else</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

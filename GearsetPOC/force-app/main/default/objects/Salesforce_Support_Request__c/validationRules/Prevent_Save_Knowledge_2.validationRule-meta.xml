@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_Save_Knowledge_2</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+RecordType.Name = &apos;Knowledge&apos;,
+NOT(  Content_is_inaccurate__c ),
+NOT(  Content_is_missing__c  ),
+NOT(  Content_is_no_longer_required__c ),
+NOT( Other_2__c )
+)</errorConditionFormula>
+    <errorMessage>At least one of the checkboxes in the section &quot;This is because&quot; must be checked.</errorMessage>
+</ValidationRule>

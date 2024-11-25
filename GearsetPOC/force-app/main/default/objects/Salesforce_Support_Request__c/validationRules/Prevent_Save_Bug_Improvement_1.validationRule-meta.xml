@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_Save_Bug_Improvement_1</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(NOT(Advisors__c), NOT(Customers__c), NOT(Both__c ), 
+OR( RecordType.Name = &apos;Bug&apos;, RecordType.Name = &apos;Improvement&apos;))</errorConditionFormula>
+    <errorDisplayField>Advisors__c</errorDisplayField>
+    <errorMessage>At least one checkbox must be checked in the section.</errorMessage>
+</ValidationRule>

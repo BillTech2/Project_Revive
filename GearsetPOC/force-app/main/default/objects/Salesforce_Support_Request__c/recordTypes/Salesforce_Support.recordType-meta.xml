@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Salesforce_Support</fullName>
+    <active>true</active>
+    <description>Salesforce Support Requests</description>
+    <label>Salesforce Support</label>
+    <picklistValues>
+        <picklist>Business_Area__c</picklist>
+        <values>
+            <fullName>CRM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Experience</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Data Team</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EBSC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GDPR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loyalty</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Revenue Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Safety Assurance %26 Risk</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sales</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Salesforce Platform</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TMI</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Carrier__c</picklist>
+        <values>
+            <fullName>Blue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Purple</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Red</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Closed_Reason__c</picklist>
+        <values>
+            <fullName>Duplicate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Re-directed to App Support</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Re-directed to EBSC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Re-directed to IBS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Re-directed to IS Service Desk</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Resolved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unresolved</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Impacted_Application__c</picklist>
+        <values>
+            <fullName>Aria</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Docusign</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ICLP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing Cloud</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sales Cloud</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service Cloud</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Simpplr</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Social Studio</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stella Surveys</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Impacted_Area__c</picklist>
+        <values>
+            <fullName>Cases</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Compensation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Data Import%2FExport</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Emails</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GDPR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Incident Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Integration%2FSync</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Invoice Requests</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loyalty</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partner Vouchers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Performance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Queues%2FList Views</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reports%2FDashboards</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Safety</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Social</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Social - Facebook</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Social - Twitter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tickets</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trains</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>User Permissions</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Impacts_on_Advisors__c</picklist>
+        <values>
+            <fullName>Can%27t complete a Task</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Impact</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Slows me down</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Impacts_on_Customers__c</picklist>
+        <values>
+            <fullName>Can%27t complete a Task</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Impact</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Slows them down</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Is_there_a_knowledge_article_about_this__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Language__c</picklist>
+        <values>
+            <fullName>Dutch</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>English</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>French</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Origin__c</picklist>
+        <values>
+            <fullName>Application Support</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IS Service Desk</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Salesforce</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Outcome_Category__c</picklist>
+        <values>
+            <fullName>Investigation%2FAnalysis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No action</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Record%2FData Update</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>System Configuration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Training%2Fbest practice advised</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Priority__c</picklist>
+        <values>
+            <fullName>High</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Low</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Relevant_Info__c</picklist>
+        <values>
+            <fullName>Broken Link</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Information Missing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Information Out of Date</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Information Unclear</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Language</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Something Else</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Delta Freeze</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>On Hold</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Referred to Requester</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rejected</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Sub_Status__c</picklist>
+        <values>
+            <fullName>Delivered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Duplicate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rejected</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type__c</picklist>
+        <values>
+            <fullName>Bug Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Change Request</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Was_this_addressed_on_dates_in_teams__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Which_Tool__c</picklist>
+        <values>
+            <fullName>Booking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Call Pop Up</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cancelling</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cases</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Club Eurostar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Evoucher tool</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Exchanging</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inbound or outbound calls</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Language IO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Logging calls</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Payment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Queues</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Something else</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Who_does_it_Impact__c</picklist>
+        <values>
+            <fullName>Advisor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Both</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

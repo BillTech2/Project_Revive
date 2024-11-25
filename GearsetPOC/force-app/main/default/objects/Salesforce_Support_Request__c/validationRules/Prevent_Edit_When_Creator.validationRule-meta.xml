@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_Edit_When_Creator</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( NOT(ISNEW()),(
+AND( 
+ OR(RecordType.Name = &apos;Bug&apos;, 
+    RecordType.Name = &apos;Improvement&apos;, 
+    RecordType.Name = &apos;Knowledge&apos;
+ ), 
+ OR(
+  AND( 
+   CreatedById !=  $User.Id,
+   NOT( $Permission.Feedback_Permission),
+   NOT( $Profile.Name = &apos;System Administrator&apos;)
+  ),
+  AND(
+   AND(
+    CreatedById =  $User.Id, 
+    NOT( $Permission.Feedback_Permission),
+    NOT( $Profile.Name = &apos;System Administrator&apos;)
+   ),  
+   OR(
+    ISCHANGED(Status__c), 
+    ISCHANGED(Status__c)
+   )
+  )
+ )
+)))</errorConditionFormula>
+    <errorMessage>If you are not the creator of ticket you can&apos;t edit it. 
+If you are the creator, you can&apos;t change Status and Sub Status fields.</errorMessage>
+</ValidationRule>

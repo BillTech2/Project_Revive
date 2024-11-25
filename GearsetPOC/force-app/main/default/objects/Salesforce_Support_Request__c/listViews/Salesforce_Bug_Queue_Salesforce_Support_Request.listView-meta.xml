@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Salesforce_Bug_Queue_Salesforce_Support_Request</fullName>
+    <columns>NAME</columns>
+    <filterScope>Queue</filterScope>
+    <label>3. Salesforce Bug Queue</label>
+    <queue>Salesforce_Bug_Queue</queue>
+    <sharedTo>
+        <group>Salesforce_Admin_Team</group>
+    </sharedTo>
+</ListView>

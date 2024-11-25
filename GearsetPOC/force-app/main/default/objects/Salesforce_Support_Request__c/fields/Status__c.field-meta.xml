@@ -21,11 +21,6 @@
                 <label>In progress</label>
             </value>
             <value>
-                <fullName>Test Value</fullName>
-                <default>false</default>
-                <label>Test Value</label>
-            </value>
-            <value>
                 <fullName>Referred to Requester</fullName>
                 <default>false</default>
                 <label>Referred to Requester</label>

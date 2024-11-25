@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_Save_Knowledge_5</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+RecordType.Name = &apos;Knowledge&apos;,
+NOT(  English__c ),
+NOT(  French__c ),
+NOT(  Dutch__c ),
+NOT(  German__c  ),
+NOT(  All__c )
+)</errorConditionFormula>
+    <errorMessage>At least one of the checkboxes in the section &quot;Language&quot; must be checked.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Knowledge_Tickets_Queue</fullName>
+    <booleanFilter>(1 OR 3) AND 2</booleanFilter>
+    <columns>NAME</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>Subject__c</columns>
+    <columns>Summary__c</columns>
+    <columns>Status__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>OWNER.FIRST_NAME</columns>
+    <columns>OWNER.LAST_NAME</columns>
+    <columns>OWNER.ALIAS</columns>
+    <columns>Carrier__c</columns>
+    <columns>Add_a_knowledge_article__c</columns>
+    <columns>Remove_a_knowledge_article__c</columns>
+    <columns>SLA__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Salesforce_Support_Request__c.Knowledge</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>notEqual</operation>
+        <value>Rejected,Closed,Delivered,Completed,Rejected - other,Rejected - request inaccurate,Rejected - already exists,Rejected - duplicate,Rejected - inaccurate</value>
+    </filters>
+    <filters>
+        <field>OWNER.ALIAS</field>
+        <operation>contains</operation>
+        <value>Knowledge</value>
+    </filters>
+    <label>Knowledge Tickets Queue</label>
+    <sharedTo>
+        <group>Feedback_Ticket</group>
+    </sharedTo>
+</ListView>
