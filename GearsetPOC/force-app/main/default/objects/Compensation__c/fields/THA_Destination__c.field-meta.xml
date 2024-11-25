@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>THA_Destination__c</fullName>
+    <description>To capture legacy Thalys Destination on Compensation from old Thango system</description>
+    <inlineHelpText>To capture legacy Thalys Destination on Compensation from old Thango system</inlineHelpText>
+    <label>Destination</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Aachen Hbf</fullName>
+                <default>false</default>
+                <label>Aachen Hbf</label>
+            </value>
+            <value>
+                <fullName>Aime-La Plagne</fullName>
+                <default>false</default>
+                <label>Aime-La Plagne</label>
+            </value>
+            <value>
+                <fullName>Aix-en-Provence</fullName>
+                <default>false</default>
+                <label>Aix-en-Provence</label>
+            </value>
+            <value>
+                <fullName>Albertville</fullName>
+                <default>false</default>
+                <label>Albertville</label>
+            </value>
+            <value>
+                <fullName>Amsterdam Centraal</fullName>
+                <default>false</default>
+                <label>Amsterdam Centraal</label>
+            </value>
+            <value>
+                <fullName>Antwerpen-Centraal</fullName>
+                <default>false</default>
+                <label>Antwerpen-Centraal</label>
+            </value>
+            <value>
+                <fullName>Avignon</fullName>
+                <default>false</default>
+                <label>Avignon</label>
+            </value>
+            <value>
+                <fullName>Bordeaux</fullName>
+                <default>false</default>
+                <label>Bordeaux</label>
+            </value>
+            <value>
+                <fullName>Bourg-St-Maurice</fullName>
+                <default>false</default>
+                <label>Bourg-St-Maurice</label>
+            </value>
+            <value>
+                <fullName>Brugge</fullName>
+                <default>false</default>
+                <label>Brugge</label>
+            </value>
+            <value>
+                <fullName>Brussels Airport</fullName>
+                <default>false</default>
+                <label>Brussels Airport</label>
+            </value>
+            <value>
+                <fullName>Bruxelles-Midi</fullName>
+                <default>false</default>
+                <label>Bruxelles-Midi</label>
+            </value>
+            <value>
+                <fullName>Chambery-Challes-Les-Eaux</fullName>
+                <default>false</default>
+                <label>Chambery-Challes-Les-Eaux</label>
+            </value>
+            <value>
+                <fullName>Charleroi-Sud</fullName>
+                <default>false</default>
+                <label>Charleroi-Sud</label>
+            </value>
+            <value>
+                <fullName>Dortmund Hbf</fullName>
+                <default>false</default>
+                <label>Dortmund Hbf</label>
+            </value>
+            <value>
+                <fullName>Duisburg Hbf</fullName>
+                <default>false</default>
+                <label>Duisburg Hbf</label>
+            </value>
+            <value>
+                <fullName>Düsseldorf Flughafen</fullName>
+                <default>false</default>
+                <label>Düsseldorf Flughafen</label>
+            </value>
+            <value>
+                <fullName>Düsseldorf Hbf</fullName>
+                <default>false</default>
+                <label>Düsseldorf Hbf</label>
+            </value>
+            <value>
+                <fullName>Essen Hbf</fullName>
+                <default>false</default>
+                <label>Essen Hbf</label>
+            </value>
+            <value>
+                <fullName>Gent-Sint-Pieters</fullName>
+                <default>false</default>
+                <label>Gent-Sint-Pieters</label>
+            </value>
+            <value>
+                <fullName>Köln-Ehrenfeld</fullName>
+                <default>false</default>
+                <label>Köln-Ehrenfeld</label>
+            </value>
+            <value>
+                <fullName>Köln Hbf</fullName>
+                <default>false</default>
+                <label>Köln Hbf</label>
+            </value>
+            <value>
+                <fullName>Landry</fullName>
+                <default>false</default>
+                <label>Landry</label>
+            </value>
+            <value>
+                <fullName>Liège</fullName>
+                <default>false</default>
+                <label>Liège</label>
+            </value>
+            <value>
+                <fullName>Lille Europe</fullName>
+                <default>false</default>
+                <label>Lille Europe</label>
+            </value>
+            <value>
+                <fullName>London StPancras</fullName>
+                <default>false</default>
+                <label>London StPancras</label>
+            </value>
+            <value>
+                <fullName>Marne-la-Vallée Chessy Disneyland® Paris</fullName>
+                <default>false</default>
+                <label>Marne-la-Vallée Chessy Disneyland® Paris</label>
+            </value>
+            <value>
+                <fullName>Marseille</fullName>
+                <default>false</default>
+                <label>Marseille</label>
+            </value>
+            <value>
+                <fullName>Mons</fullName>
+                <default>false</default>
+                <label>Mons</label>
+            </value>
+            <value>
+                <fullName>Moûtiers Salins Brides L Bains</fullName>
+                <default>false</default>
+                <label>Moûtiers Salins Brides L Bains</label>
+            </value>
+            <value>
+                <fullName>Namur</fullName>
+                <default>false</default>
+                <label>Namur</label>
+            </value>
+            <value>
+                <fullName>Oostende</fullName>
+                <default>false</default>
+                <label>Oostende</label>
+            </value>
+            <value>
+                <fullName>Paris-Charles de Gaulle Airport</fullName>
+                <default>false</default>
+                <label>Paris-Charles de Gaulle Airport</label>
+            </value>
+            <value>
+                <fullName>Paris Nord</fullName>
+                <default>false</default>
+                <label>Paris Nord</label>
+            </value>
+            <value>
+                <fullName>Rotterdam Centraal</fullName>
+                <default>false</default>
+                <label>Rotterdam Centraal</label>
+            </value>
+            <value>
+                <fullName>Schiphol</fullName>
+                <default>false</default>
+                <label>Schiphol</label>
+            </value>
+            <value>
+                <fullName>Valence</fullName>
+                <default>false</default>
+                <label>Valence</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

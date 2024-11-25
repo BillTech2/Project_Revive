@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cust_name_must_not_have_numbers_vchr</fullName>
+    <active>true</active>
+    <description>Customer name cannot include numbers or the voucher will fail to generate</description>
+    <errorConditionFormula>CONTAINS(RecordType.Name, &quot;Voucher&quot;) 
+&amp;&amp; 
+(CONTAINS(CustomerC__r.FirstName, TEXT(1)) 
+|| 
+CONTAINS(CustomerC__r.FirstName, TEXT(2)) 
+|| 
+CONTAINS(CustomerC__r.FirstName, TEXT(3)) 
+|| 
+CONTAINS(CustomerC__r.FirstName, TEXT(4)) 
+|| 
+CONTAINS(CustomerC__r.FirstName, TEXT(5)) 
+|| 
+CONTAINS(CustomerC__r.FirstName, TEXT(6)) 
+|| 
+CONTAINS(CustomerC__r.FirstName, TEXT(7)) 
+|| 
+CONTAINS(CustomerC__r.FirstName, TEXT(8)) 
+|| 
+CONTAINS(CustomerC__r.FirstName, TEXT(9)) 
+|| 
+CONTAINS(CustomerC__r.LastName , TEXT(0)) 
+|| 
+CONTAINS(CustomerC__r.LastName , TEXT(1)) 
+|| 
+CONTAINS(CustomerC__r.LastName , TEXT(2)) 
+|| 
+CONTAINS(CustomerC__r.LastName , TEXT(3)) 
+|| 
+CONTAINS(CustomerC__r.LastName , TEXT(4)) 
+|| 
+CONTAINS(CustomerC__r.LastName , TEXT(5)) 
+|| 
+CONTAINS(CustomerC__r.LastName , TEXT(6)) 
+|| 
+CONTAINS(CustomerC__r.LastName , TEXT(7)) 
+|| 
+CONTAINS(CustomerC__r.LastName , TEXT(8)) 
+|| 
+CONTAINS(CustomerC__r.LastName , TEXT(9)) 
+|| 
+CONTAINS(CustomerC__r.LastName , TEXT(0)))</errorConditionFormula>
+    <errorMessage>Customer name must not contain numbers</errorMessage>
+</ValidationRule>

@@ -1,0 +1,17 @@
+<apex:page showHeader="false" sidebar="false" language="{!selectedLanguageCode}" controller="CompApp_CtrlApp" standardStylesheets="false" applyHtmlTag="false" applyBodyTag="false" showChat="false">
+
+    <div>
+        <h2 class="row">
+            {!$label.CompApp_TFL_Successfully_Registred}
+        </h2>
+
+        <div class="row p2">
+                {!$label.CompApp_TFL_Successfully_Registred_2}
+        </div>
+
+        <div class="row commands-section">
+            <a href="https://aria.eurostar.com/" target="_blank" class="btn secondary" ng-click="">{!$label.CompApp_TFL_ARIA_Visit}</a>
+            <a ref="#/" class="btn primary" ng-click="restartTFLRegistration()">{!$label.CompApp_TFL_Register_Another_User}</a>
+        </div>
+    </div>
+</apex:page>

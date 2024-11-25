@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Annual_Review_cant_be_cleared</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+OR(RecordType.Name = &#39;Corporate London&#39;,RecordType.Name = &#39;Corporate Continent&#39;) ,
+ISCHANGED( Review_Date__c),
+ISBLANK(Review_Date__c) 
+)</errorConditionFormula>
+    <errorDisplayField>Review_Date__c</errorDisplayField>
+    <errorMessage>Annual Review/Renegotiation Date cannot be changed to blank once it has been populated</errorMessage>
+</ValidationRule>

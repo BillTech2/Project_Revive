@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Channel_Icon_Url__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(Channel__c==&#39;Email&#39;,&quot;/sfc/servlet.shepherd/version/download/0683z00000QNhbF&quot;,
+(IF(Channel__c==&#39;SMS&#39;, &quot;/sfc/servlet.shepherd/version/download/0683z00000QNhbG&quot;, &quot;&quot;)
+))</formula>
+    <label>Channel Icon Url</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

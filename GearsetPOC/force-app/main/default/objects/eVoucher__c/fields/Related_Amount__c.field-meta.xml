@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Related_Amount__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(RecordType.Name = &quot;Service Recovery&quot;, Compensation__r.Payment_Amount__c,
+  IF(RecordType.Name = &quot;Partner&quot;, Promotional_eVoucher_rule__r.Evoucher_Value__c,
+   IF(RecordType.Name = &quot;DotCom&quot;, Promotional_eVoucher_rule__r.Evoucher_Value__c,
+    IF(RecordType.Name = &quot;Promotional&quot; &amp;&amp; ISBLANK(Custom_Amount__c), Promotional_eVoucher_rule__r.Evoucher_Value__c,
+      IF(
+        (RecordType.Name = &quot;Promotional&quot;
+        || RecordType.Name = &quot;Eurostar Voucher&quot;
+        || RecordType.Name = &quot;MITIE Voucher&quot;
+        || RecordType.Name = &quot;Momentum Voucher&quot;
+        || RecordType.Name = &quot;DotCom&quot;
+        || RecordType.Name = &quot;Retiree Voucher&quot;)
+        &amp;&amp; NOT(ISBLANK(Custom_Amount__c)),
+        Custom_Amount__c,
+        0
+      )
+    )
+  )
+))</formula>
+    <inlineHelpText>Final Amount requested by Boomi to Datacash - will change depending on the Record Type, and on the value of Custom_Amount__c</inlineHelpText>
+    <label>Requested Amount</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validated__c</fullName>
+    <defaultValue>true</defaultValue>
+    <description>Data Cleanse indicator</description>
+    <inlineHelpText>Use to indicate this record has been validated as part of data cleanse excercise</inlineHelpText>
+    <label>Validated</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

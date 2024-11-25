@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>B2b_Block_To_Be_Extracted_V2</fullName>
+    <active>false</active>
+    <description>Can&#39;t pass the status from &quot;Extracted/Integrated&quot; to &quot;To be extracted&quot;.</description>
+    <errorConditionFormula>AND(
+NOT($User.B2b_Bypass_Validation_Rules__c),
+NOT($Profile.Name = &#39;Thalys B2b System Admin&#39;),
+ISCHANGED(B2b_Status__c),
+OR(
+ISPICKVAL(PRIORVALUE(B2b_Status__c), &#39;Extracted&#39;),
+ISPICKVAL(PRIORVALUE(B2b_Status__c), &#39;Integrated&#39;)
+),
+ISPICKVAL(B2b_Status__c, &#39;To be Extracted&#39;),
+B2b_Bene_Extract__c = TRUE,
+B2b_GDS3_Extract__c = TRUE,
+B2b_Resarail_Extract__c = TRUE
+)</errorConditionFormula>
+    <errorMessage>Can&#39;t pass the status from &quot;Extracted/Integrated&quot; to &quot;To be extracted&quot;.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,915 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>B2b_S3_BeNe_Standard_Tariff_Code__c</fullName>
+    <label>S3 &amp; BeNe Standard Tariff Code</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>B2b_Percentage_Discount_Standard__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>TB00C02FRBE</fullName>
+                <default>false</default>
+                <label>TB00C02FRBE</label>
+            </value>
+            <value>
+                <fullName>TB00C04FRBE</fullName>
+                <default>false</default>
+                <label>TB00C04FRBE</label>
+            </value>
+            <value>
+                <fullName>TB00C05FRBE</fullName>
+                <default>false</default>
+                <label>TB00C05FRBE</label>
+            </value>
+            <value>
+                <fullName>TB00C06FRBE</fullName>
+                <default>false</default>
+                <label>TB00C06FRBE</label>
+            </value>
+            <value>
+                <fullName>TB00C07FRBE</fullName>
+                <default>false</default>
+                <label>TB00C07FRBE</label>
+            </value>
+            <value>
+                <fullName>TB00C08FRBE</fullName>
+                <default>false</default>
+                <label>TB00C08FRBE</label>
+            </value>
+            <value>
+                <fullName>TB00C09FRBE</fullName>
+                <default>false</default>
+                <label>TB00C09FRBE</label>
+            </value>
+            <value>
+                <fullName>TB00C10FRBE</fullName>
+                <default>false</default>
+                <label>TB00C10FRBE</label>
+            </value>
+            <value>
+                <fullName>TB00C11FRBE</fullName>
+                <default>false</default>
+                <label>TB00C11FRBE</label>
+            </value>
+            <value>
+                <fullName>TB00C12FRBE</fullName>
+                <default>false</default>
+                <label>TB00C12FRBE</label>
+            </value>
+            <value>
+                <fullName>TB00C13FRBE</fullName>
+                <default>false</default>
+                <label>TB00C13FRBE</label>
+            </value>
+            <value>
+                <fullName>TB00C14FRBE</fullName>
+                <default>false</default>
+                <label>TB00C14FRBE</label>
+            </value>
+            <value>
+                <fullName>TB00C15FRBE</fullName>
+                <default>false</default>
+                <label>TB00C15FRBE</label>
+            </value>
+            <value>
+                <fullName>TB00C16FRBE</fullName>
+                <default>false</default>
+                <label>TB00C16FRBE</label>
+            </value>
+            <value>
+                <fullName>TB00C17FRBE</fullName>
+                <default>false</default>
+                <label>TB00C17FRBE</label>
+            </value>
+            <value>
+                <fullName>TB00C18FRBE</fullName>
+                <default>false</default>
+                <label>TB00C18FRBE</label>
+            </value>
+            <value>
+                <fullName>TB00C19FRBE</fullName>
+                <default>false</default>
+                <label>TB00C19FRBE</label>
+            </value>
+            <value>
+                <fullName>TB00C20FRBE</fullName>
+                <default>false</default>
+                <label>TB00C20FRBE</label>
+            </value>
+            <value>
+                <fullName>TB00C21FRBE</fullName>
+                <default>false</default>
+                <label>TB00C21FRBE</label>
+            </value>
+            <value>
+                <fullName>TB00CBXFRBE</fullName>
+                <default>false</default>
+                <label>TB00CBXFRBE</label>
+            </value>
+            <value>
+                <fullName>TB00C02FRDE</fullName>
+                <default>false</default>
+                <label>TB00C02FRDE</label>
+            </value>
+            <value>
+                <fullName>TB00C04FRDE</fullName>
+                <default>false</default>
+                <label>TB00C04FRDE</label>
+            </value>
+            <value>
+                <fullName>TB00C05FRDE</fullName>
+                <default>false</default>
+                <label>TB00C05FRDE</label>
+            </value>
+            <value>
+                <fullName>TB00C06FRDE</fullName>
+                <default>false</default>
+                <label>TB00C06FRDE</label>
+            </value>
+            <value>
+                <fullName>TB00C07FRDE</fullName>
+                <default>false</default>
+                <label>TB00C07FRDE</label>
+            </value>
+            <value>
+                <fullName>TB00C08FRDE</fullName>
+                <default>false</default>
+                <label>TB00C08FRDE</label>
+            </value>
+            <value>
+                <fullName>TB00C09FRDE</fullName>
+                <default>false</default>
+                <label>TB00C09FRDE</label>
+            </value>
+            <value>
+                <fullName>TB00C10FRDE</fullName>
+                <default>false</default>
+                <label>TB00C10FRDE</label>
+            </value>
+            <value>
+                <fullName>TB00C11FRDE</fullName>
+                <default>false</default>
+                <label>TB00C11FRDE</label>
+            </value>
+            <value>
+                <fullName>TB00C12FRDE</fullName>
+                <default>false</default>
+                <label>TB00C12FRDE</label>
+            </value>
+            <value>
+                <fullName>TB00C13FRDE</fullName>
+                <default>false</default>
+                <label>TB00C13FRDE</label>
+            </value>
+            <value>
+                <fullName>TB00C14FRDE</fullName>
+                <default>false</default>
+                <label>TB00C14FRDE</label>
+            </value>
+            <value>
+                <fullName>TB00C15FRDE</fullName>
+                <default>false</default>
+                <label>TB00C15FRDE</label>
+            </value>
+            <value>
+                <fullName>TB00C16FRDE</fullName>
+                <default>false</default>
+                <label>TB00C16FRDE</label>
+            </value>
+            <value>
+                <fullName>TB00C17FRDE</fullName>
+                <default>false</default>
+                <label>TB00C17FRDE</label>
+            </value>
+            <value>
+                <fullName>TB00C18FRDE</fullName>
+                <default>false</default>
+                <label>TB00C18FRDE</label>
+            </value>
+            <value>
+                <fullName>TB00C19FRDE</fullName>
+                <default>false</default>
+                <label>TB00C19FRDE</label>
+            </value>
+            <value>
+                <fullName>TB00C20FRDE</fullName>
+                <default>false</default>
+                <label>TB00C20FRDE</label>
+            </value>
+            <value>
+                <fullName>TB00C21FRDE</fullName>
+                <default>false</default>
+                <label>TB00C21FRDE</label>
+            </value>
+            <value>
+                <fullName>TB00CBXFRDE</fullName>
+                <default>false</default>
+                <label>TB00CBXFRDE</label>
+            </value>
+            <value>
+                <fullName>TB00C02FRNL</fullName>
+                <default>false</default>
+                <label>TB00C02FRNL</label>
+            </value>
+            <value>
+                <fullName>TB00C04FRNL</fullName>
+                <default>false</default>
+                <label>TB00C04FRNL</label>
+            </value>
+            <value>
+                <fullName>TB00C05FRNL</fullName>
+                <default>false</default>
+                <label>TB00C05FRNL</label>
+            </value>
+            <value>
+                <fullName>TB00C06FRNL</fullName>
+                <default>false</default>
+                <label>TB00C06FRNL</label>
+            </value>
+            <value>
+                <fullName>TB00C07FRNL</fullName>
+                <default>false</default>
+                <label>TB00C07FRNL</label>
+            </value>
+            <value>
+                <fullName>TB00C08FRNL</fullName>
+                <default>false</default>
+                <label>TB00C08FRNL</label>
+            </value>
+            <value>
+                <fullName>TB00C09FRNL</fullName>
+                <default>false</default>
+                <label>TB00C09FRNL</label>
+            </value>
+            <value>
+                <fullName>TB00C10FRNL</fullName>
+                <default>false</default>
+                <label>TB00C10FRNL</label>
+            </value>
+            <value>
+                <fullName>TB00C11FRNL</fullName>
+                <default>false</default>
+                <label>TB00C11FRNL</label>
+            </value>
+            <value>
+                <fullName>TB00C12FRNL</fullName>
+                <default>false</default>
+                <label>TB00C12FRNL</label>
+            </value>
+            <value>
+                <fullName>TB00C13FRNL</fullName>
+                <default>false</default>
+                <label>TB00C13FRNL</label>
+            </value>
+            <value>
+                <fullName>TB00C14FRNL</fullName>
+                <default>false</default>
+                <label>TB00C14FRNL</label>
+            </value>
+            <value>
+                <fullName>TB00C15FRNL</fullName>
+                <default>false</default>
+                <label>TB00C15FRNL</label>
+            </value>
+            <value>
+                <fullName>TB00C16FRNL</fullName>
+                <default>false</default>
+                <label>TB00C16FRNL</label>
+            </value>
+            <value>
+                <fullName>TB00C17FRNL</fullName>
+                <default>false</default>
+                <label>TB00C17FRNL</label>
+            </value>
+            <value>
+                <fullName>TB00C18FRNL</fullName>
+                <default>false</default>
+                <label>TB00C18FRNL</label>
+            </value>
+            <value>
+                <fullName>TB00C19FRNL</fullName>
+                <default>false</default>
+                <label>TB00C19FRNL</label>
+            </value>
+            <value>
+                <fullName>TB00C20FRNL</fullName>
+                <default>false</default>
+                <label>TB00C20FRNL</label>
+            </value>
+            <value>
+                <fullName>TB00C21FRNL</fullName>
+                <default>false</default>
+                <label>TB00C21FRNL</label>
+            </value>
+            <value>
+                <fullName>TB00CBXFRNL</fullName>
+                <default>false</default>
+                <label>TB00CBXFRNL</label>
+            </value>
+            <value>
+                <fullName>TB00C02BEDE</fullName>
+                <default>false</default>
+                <label>TB00C02BEDE</label>
+            </value>
+            <value>
+                <fullName>TB00C04BEDE</fullName>
+                <default>false</default>
+                <label>TB00C04BEDE</label>
+            </value>
+            <value>
+                <fullName>TB00C05BEDE</fullName>
+                <default>false</default>
+                <label>TB00C05BEDE</label>
+            </value>
+            <value>
+                <fullName>TB00C06BEDE</fullName>
+                <default>false</default>
+                <label>TB00C06BEDE</label>
+            </value>
+            <value>
+                <fullName>TB00C07BEDE</fullName>
+                <default>false</default>
+                <label>TB00C07BEDE</label>
+            </value>
+            <value>
+                <fullName>TB00C08BEDE</fullName>
+                <default>false</default>
+                <label>TB00C08BEDE</label>
+            </value>
+            <value>
+                <fullName>TB00C09BEDE</fullName>
+                <default>false</default>
+                <label>TB00C09BEDE</label>
+            </value>
+            <value>
+                <fullName>TB00C10BEDE</fullName>
+                <default>false</default>
+                <label>TB00C10BEDE</label>
+            </value>
+            <value>
+                <fullName>TB00C11BEDE</fullName>
+                <default>false</default>
+                <label>TB00C11BEDE</label>
+            </value>
+            <value>
+                <fullName>TB00C12BEDE</fullName>
+                <default>false</default>
+                <label>TB00C12BEDE</label>
+            </value>
+            <value>
+                <fullName>TB00C13BEDE</fullName>
+                <default>false</default>
+                <label>TB00C13BEDE</label>
+            </value>
+            <value>
+                <fullName>TB00C14BEDE</fullName>
+                <default>false</default>
+                <label>TB00C14BEDE</label>
+            </value>
+            <value>
+                <fullName>TB00C15BEDE</fullName>
+                <default>false</default>
+                <label>TB00C15BEDE</label>
+            </value>
+            <value>
+                <fullName>TB00C16BEDE</fullName>
+                <default>false</default>
+                <label>TB00C16BEDE</label>
+            </value>
+            <value>
+                <fullName>TB00C17BEDE</fullName>
+                <default>false</default>
+                <label>TB00C17BEDE</label>
+            </value>
+            <value>
+                <fullName>TB00C18BEDE</fullName>
+                <default>false</default>
+                <label>TB00C18BEDE</label>
+            </value>
+            <value>
+                <fullName>TB00C19BEDE</fullName>
+                <default>false</default>
+                <label>TB00C19BEDE</label>
+            </value>
+            <value>
+                <fullName>TB00C20BEDE</fullName>
+                <default>false</default>
+                <label>TB00C20BEDE</label>
+            </value>
+            <value>
+                <fullName>TB00C21BEDE</fullName>
+                <default>false</default>
+                <label>TB00C21BEDE</label>
+            </value>
+            <value>
+                <fullName>TB00CBXBEDE</fullName>
+                <default>false</default>
+                <label>TB00CBXBEDE</label>
+            </value>
+            <value>
+                <fullName>TB00C02BENL</fullName>
+                <default>false</default>
+                <label>TB00C02BENL</label>
+            </value>
+            <value>
+                <fullName>TB00C04BENL</fullName>
+                <default>false</default>
+                <label>TB00C04BENL</label>
+            </value>
+            <value>
+                <fullName>TB00C05BENL</fullName>
+                <default>false</default>
+                <label>TB00C05BENL</label>
+            </value>
+            <value>
+                <fullName>TB00C06BENL</fullName>
+                <default>false</default>
+                <label>TB00C06BENL</label>
+            </value>
+            <value>
+                <fullName>TB00C07BENL</fullName>
+                <default>false</default>
+                <label>TB00C07BENL</label>
+            </value>
+            <value>
+                <fullName>TB00C08BENL</fullName>
+                <default>false</default>
+                <label>TB00C08BENL</label>
+            </value>
+            <value>
+                <fullName>TB00C09BENL</fullName>
+                <default>false</default>
+                <label>TB00C09BENL</label>
+            </value>
+            <value>
+                <fullName>TB00C10BENL</fullName>
+                <default>false</default>
+                <label>TB00C10BENL</label>
+            </value>
+            <value>
+                <fullName>TB00C11BENL</fullName>
+                <default>false</default>
+                <label>TB00C11BENL</label>
+            </value>
+            <value>
+                <fullName>TB00C12BENL</fullName>
+                <default>false</default>
+                <label>TB00C12BENL</label>
+            </value>
+            <value>
+                <fullName>TB00C13BENL</fullName>
+                <default>false</default>
+                <label>TB00C13BENL</label>
+            </value>
+            <value>
+                <fullName>TB00C14BENL</fullName>
+                <default>false</default>
+                <label>TB00C14BENL</label>
+            </value>
+            <value>
+                <fullName>TB00C15BENL</fullName>
+                <default>false</default>
+                <label>TB00C15BENL</label>
+            </value>
+            <value>
+                <fullName>TB00C16BENL</fullName>
+                <default>false</default>
+                <label>TB00C16BENL</label>
+            </value>
+            <value>
+                <fullName>TB00C17BENL</fullName>
+                <default>false</default>
+                <label>TB00C17BENL</label>
+            </value>
+            <value>
+                <fullName>TB00C18BENL</fullName>
+                <default>false</default>
+                <label>TB00C18BENL</label>
+            </value>
+            <value>
+                <fullName>TB00C19BENL</fullName>
+                <default>false</default>
+                <label>TB00C19BENL</label>
+            </value>
+            <value>
+                <fullName>TB00C20BENL</fullName>
+                <default>false</default>
+                <label>TB00C20BENL</label>
+            </value>
+            <value>
+                <fullName>TB00C21BENL</fullName>
+                <default>false</default>
+                <label>TB00C21BENL</label>
+            </value>
+            <value>
+                <fullName>TB00CBXBENL</fullName>
+                <default>false</default>
+                <label>TB00CBXBENL</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>14 BENL</controllingFieldValue>
+            <valueName>TB00C14BENL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>15 BENL</controllingFieldValue>
+            <valueName>TB00C15BENL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>16 BENL</controllingFieldValue>
+            <valueName>TB00C16BENL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>17 BENL</controllingFieldValue>
+            <valueName>TB00C17BENL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>18 BENL</controllingFieldValue>
+            <valueName>TB00C18BENL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>19 BENL</controllingFieldValue>
+            <valueName>TB00C19BENL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>20 BENL</controllingFieldValue>
+            <valueName>TB00C20BENL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Deutscher Bund BENL</controllingFieldValue>
+            <valueName>TB00CBXBENL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>21 FRBE</controllingFieldValue>
+            <valueName>TB00C21FRBE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>21 FRDE</controllingFieldValue>
+            <valueName>TB00C21FRDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>12 FRBE</controllingFieldValue>
+            <valueName>TB00C12FRBE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>21 FRNL</controllingFieldValue>
+            <valueName>TB00C21FRNL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>13 FRBE</controllingFieldValue>
+            <valueName>TB00C13FRBE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>21 BEDE</controllingFieldValue>
+            <valueName>TB00C21BEDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>14 FRBE</controllingFieldValue>
+            <valueName>TB00C14FRBE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>15 FRBE</controllingFieldValue>
+            <valueName>TB00C15FRBE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>16 FRBE</controllingFieldValue>
+            <valueName>TB00C16FRBE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>17 FRBE</controllingFieldValue>
+            <valueName>TB00C17FRBE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>18 FRBE</controllingFieldValue>
+            <valueName>TB00C18FRBE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>19 FRBE</controllingFieldValue>
+            <valueName>TB00C19FRBE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>20 FRBE</controllingFieldValue>
+            <valueName>TB00C20FRBE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Deutscher Bund FRBE</controllingFieldValue>
+            <valueName>TB00CBXFRBE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>2 FRBE</controllingFieldValue>
+            <valueName>TB00C02FRBE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>4 FRBE</controllingFieldValue>
+            <valueName>TB00C04FRBE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>5 FRBE</controllingFieldValue>
+            <valueName>TB00C05FRBE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>6 FRBE</controllingFieldValue>
+            <valueName>TB00C06FRBE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>7 FRBE</controllingFieldValue>
+            <valueName>TB00C07FRBE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>8 FRBE</controllingFieldValue>
+            <valueName>TB00C08FRBE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>9 FRBE</controllingFieldValue>
+            <valueName>TB00C09FRBE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>10 FRBE</controllingFieldValue>
+            <valueName>TB00C10FRBE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>11 FRBE</controllingFieldValue>
+            <valueName>TB00C11FRBE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>2 FRDE</controllingFieldValue>
+            <valueName>TB00C02FRDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>4 FRDE</controllingFieldValue>
+            <valueName>TB00C04FRDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>5 FRDE</controllingFieldValue>
+            <valueName>TB00C05FRDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>6 FRDE</controllingFieldValue>
+            <valueName>TB00C06FRDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>7 FRDE</controllingFieldValue>
+            <valueName>TB00C07FRDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>8 FRDE</controllingFieldValue>
+            <valueName>TB00C08FRDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>9 FRDE</controllingFieldValue>
+            <valueName>TB00C09FRDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>10 FRDE</controllingFieldValue>
+            <valueName>TB00C10FRDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>11 FRDE</controllingFieldValue>
+            <valueName>TB00C11FRDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>12 FRDE</controllingFieldValue>
+            <valueName>TB00C12FRDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>13 FRDE</controllingFieldValue>
+            <valueName>TB00C13FRDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>14 FRDE</controllingFieldValue>
+            <valueName>TB00C14FRDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>15 FRDE</controllingFieldValue>
+            <valueName>TB00C15FRDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>16 FRDE</controllingFieldValue>
+            <valueName>TB00C16FRDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>17 FRDE</controllingFieldValue>
+            <valueName>TB00C17FRDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>18 FRDE</controllingFieldValue>
+            <valueName>TB00C18FRDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>19 FRDE</controllingFieldValue>
+            <valueName>TB00C19FRDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>20 FRDE</controllingFieldValue>
+            <valueName>TB00C20FRDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Deutscher Bund FRDE</controllingFieldValue>
+            <valueName>TB00CBXFRDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>2 FRNL</controllingFieldValue>
+            <valueName>TB00C02FRNL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>4 FRNL</controllingFieldValue>
+            <valueName>TB00C04FRNL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>5 FRNL</controllingFieldValue>
+            <valueName>TB00C05FRNL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>6 FRNL</controllingFieldValue>
+            <valueName>TB00C06FRNL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>7 FRNL</controllingFieldValue>
+            <valueName>TB00C07FRNL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>8 FRNL</controllingFieldValue>
+            <valueName>TB00C08FRNL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>9 FRNL</controllingFieldValue>
+            <valueName>TB00C09FRNL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>10 FRNL</controllingFieldValue>
+            <valueName>TB00C10FRNL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>11 FRNL</controllingFieldValue>
+            <valueName>TB00C11FRNL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>12 FRNL</controllingFieldValue>
+            <valueName>TB00C12FRNL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>13 FRNL</controllingFieldValue>
+            <valueName>TB00C13FRNL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>14 FRNL</controllingFieldValue>
+            <valueName>TB00C14FRNL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>15 FRNL</controllingFieldValue>
+            <valueName>TB00C15FRNL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>16 FRNL</controllingFieldValue>
+            <valueName>TB00C16FRNL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>17 FRNL</controllingFieldValue>
+            <valueName>TB00C17FRNL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>18 FRNL</controllingFieldValue>
+            <valueName>TB00C18FRNL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>19 FRNL</controllingFieldValue>
+            <valueName>TB00C19FRNL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>20 FRNL</controllingFieldValue>
+            <valueName>TB00C20FRNL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Deutscher Bund FRNL</controllingFieldValue>
+            <valueName>TB00CBXFRNL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>2 BEDE</controllingFieldValue>
+            <valueName>TB00C02BEDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>4 BEDE</controllingFieldValue>
+            <valueName>TB00C04BEDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>5 BEDE</controllingFieldValue>
+            <valueName>TB00C05BEDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>6 BEDE</controllingFieldValue>
+            <valueName>TB00C06BEDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>7 BEDE</controllingFieldValue>
+            <valueName>TB00C07BEDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>8 BEDE</controllingFieldValue>
+            <valueName>TB00C08BEDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>9 BEDE</controllingFieldValue>
+            <valueName>TB00C09BEDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>10 BEDE</controllingFieldValue>
+            <valueName>TB00C10BEDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>11 BEDE</controllingFieldValue>
+            <valueName>TB00C11BEDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>12 BEDE</controllingFieldValue>
+            <valueName>TB00C12BEDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>13 BEDE</controllingFieldValue>
+            <valueName>TB00C13BEDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>14 BEDE</controllingFieldValue>
+            <valueName>TB00C14BEDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>15 BEDE</controllingFieldValue>
+            <valueName>TB00C15BEDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>16 BEDE</controllingFieldValue>
+            <valueName>TB00C16BEDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>17 BEDE</controllingFieldValue>
+            <valueName>TB00C17BEDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>18 BEDE</controllingFieldValue>
+            <valueName>TB00C18BEDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>19 BEDE</controllingFieldValue>
+            <valueName>TB00C19BEDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>20 BEDE</controllingFieldValue>
+            <valueName>TB00C20BEDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Deutscher Bund BEDE</controllingFieldValue>
+            <valueName>TB00CBXBEDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>2 BENL</controllingFieldValue>
+            <valueName>TB00C02BENL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>4 BENL</controllingFieldValue>
+            <valueName>TB00C04BENL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>5 BENL</controllingFieldValue>
+            <valueName>TB00C05BENL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>21 BENL</controllingFieldValue>
+            <valueName>TB00C21BENL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>6 BENL</controllingFieldValue>
+            <valueName>TB00C06BENL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>7 BENL</controllingFieldValue>
+            <valueName>TB00C07BENL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>8 BENL</controllingFieldValue>
+            <valueName>TB00C08BENL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>9 BENL</controllingFieldValue>
+            <valueName>TB00C09BENL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>10 BENL</controllingFieldValue>
+            <valueName>TB00C10BENL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>11 BENL</controllingFieldValue>
+            <valueName>TB00C11BENL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>12 BENL</controllingFieldValue>
+            <valueName>TB00C12BENL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>13 BENL</controllingFieldValue>
+            <valueName>TB00C13BENL</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

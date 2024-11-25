@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Related_Case_must_be_linked_to_a_ticket</fullName>
+    <active>true</active>
+    <description>The related case must be linked to a ticket</description>
+    <errorConditionFormula>NOT(ISBLANK(Case__c))&amp;&amp; (ISBLANK(Case__r.TCN__c) &amp;&amp; No_TCN_to_Use__c = FALSE)  &amp;&amp;  RecordType.DeveloperName &lt;&gt; &#39;Online&#39; &amp;&amp; ISNEW()</errorConditionFormula>
+    <errorDisplayField>TCN__c</errorDisplayField>
+    <errorMessage>The related case must be linked to a ticket</errorMessage>
+</ValidationRule>

@@ -1,0 +1,14 @@
+<apex:page standardController="FPU_Availability_Criteria__c" extensions="FPU_Update_Main" recordSetVar="i" action="{!executeNow}">
+<apex:form >
+<!-- <apex:actionFunction name="doInit" action="{!getData}" rerender="allPanel"/>  -->
+<apex:pagemessages />
+
+
+  <script>
+           window.onload=function()
+           {
+             doInit();
+           };
+        </script>
+</apex:form>
+</apex:page>

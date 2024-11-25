@@ -1,0 +1,153 @@
+<apex:page id="CompApp_MICE_DelegateRegForm" language="{!selectedLanguageCode}" controller="CompApp_MICE_DelegateRegFormController"  showHeader="false" sidebar="false"  standardStylesheets="false" applyHtmlTag="false" applyBodyTag="false">
+
+    <h1 style="margin-top: 20px; margin-bottom: 40px;">{!$label.CompApp_MICE_Delegate_Account_Registration_Form_header}</h1>
+
+    <div class="row ">
+        <label for="salutation" class="cell-label">{!$label.CompApp_MICE_Salutation}</label>
+        <div class="input-wrapper validity-sign cell-input" style="margin-bottom: 1.4rem;">
+            <select ng-model="$angularState.miceDelegateInfo.salutation" ng-options="o as o for o in {!salutationList}"></select>
+        </div>
+    </div>
+
+    <div class="row {{formManager.firstNameValidity | validityClass}}">
+        <label for="first-name" class="cell-label">{!$label.CompApp_MICE_FirstName} *</label>
+        <div class="input-wrapper validity-sign cell-input">
+            <input
+                    maxlength="30"
+                    id="first-name"
+                    ng-pattern="USER_NAME_REGEX"
+                    ng-change="formManager.firstNameValidity = !! $angularState.miceDelegateInfo.firstName"
+                    ng-model="$angularState.miceDelegateInfo.firstName"
+            />
+            <div class="error-message">{!$label.CompApp_enterFirstNamePRR}</div>
+        </div>
+    </div>
+
+    <div class="row {{formManager.lastNameValidity | validityClass}}">
+        <label for="surname" class="cell-label">{!$label.CompApp_MICE_LastName} *</label>
+        <div class="input-wrapper validity-sign cell-input">
+            <input
+                    maxlength="30"
+                    id="surname"
+                    ng-pattern="USER_30_NAME_REGEX"
+                    ng-change="formManager.lastNameValidity = !! $angularState.miceDelegateInfo.lastName"
+                    ng-model="$angularState.miceDelegateInfo.lastName"
+            />
+            <div class="error-message">{!$label.CompApp_enterLastNamePRR}</div>
+        </div>
+    </div>
+
+
+    <div class="row {{formManager.emailValidity | validityClass}} {{formManager.notMICEAccExistsValidity | validAccountClass}}">
+        <label for="email" class="cell-label">{!$label.CompApp_MICE_Email} *</label>
+        <div class="input-wrapper validity-sign cell-input">
+            <input type="email"
+                   id="email"
+                   ng-change="formManager.emailValidity = isPrimaryEmailValid()"
+                   ng-model="$angularState.miceDelegateInfo.email"
+            />
+            <div class="error-message" id="emailAddressError">{!$label.CompApp_enterEmailPRR}</div>
+            <div class="error-message-email">{{emailErrorMessage}}</div>
+        </div>
+    </div>
+
+    <div class="row {{formManager.streetValidity | validityClass}}">
+        <label for="street" class="cell-label">{!$label.CompApp_MICE_Street} *</label>
+        <div class="input-wrapper validity-sign cell-input">
+            <input
+                    maxlength="30"
+                    id="street"
+                    ng-change="formManager.streetValidity = !! $angularState.miceDelegateInfo.street"
+                    ng-model="$angularState.miceDelegateInfo.street"
+            />
+            <div class="error-message">{!$label.CompApp_MICE_Street_Error}</div>
+        </div>
+    </div>
+
+    <div class="row {{formManager.cityValidity | validityClass}}">
+        <label for="city" class="cell-label">{!$label.CompApp_MICE_City} *</label>
+        <div class="input-wrapper validity-sign cell-input">
+            <input
+                    maxlength="30"
+                    id="city"
+                    ng-change="formManager.cityValidity = !! $angularState.miceDelegateInfo.city"
+                    ng-model="$angularState.miceDelegateInfo.city"
+            />
+            <div class="error-message">{!$label.CompApp_MICE_City_Error}</div>
+        </div>
+    </div>
+
+    <div class="row {{formManager.postcodeValidity | validityClass}}">
+        <label for="postcode" class="cell-label">{!$label.CompApp_MICE_Postcode} *</label>
+        <div class="input-wrapper validity-sign cell-input">
+            <input
+                    maxlength="10"
+                    id="postcode"
+                    ng-change="formManager.postcodeValidity = isZipValid()"
+                    ng-model="$angularState.miceDelegateInfo.postcode"
+            />
+            <div class="error-message">{!$label.CompApp_MICE_Postcode_Error}</div>
+        </div>
+    </div>
+
+    <div class="row {{formManager.countryValidity | validityClass}}">
+        <label for="state" class="cell-label">{!$label.CompApp_MICE_County} *</label>
+        <div class="input-wrapper validity-sign cell-input">
+            <input
+                    maxlength="30"
+                    id="state"
+                    ng-change="formManager.countryValidity = !! $angularState.miceDelegateInfo.country"
+                    ng-model="$angularState.miceDelegateInfo.country"
+            />
+            <div class="error-message">{!$label.CompApp_MICE_County_Error}</div>
+        </div>
+    </div>
+
+    <div class="row {{formManager.mobilePhoneValidity | validityClass}}">
+        <label for="phone" class="cell-label">{!$label.CompApp_MICE_Phone} *</label>
+        <div class="input-wrapper validity-sign cell-input">
+            <input
+                    type="tel"
+                    maxlength="11"
+                    id="phone"
+                    ng-change="formManager.mobilePhoneValidity = isPhoneValid()"
+                    ng-model="$angularState.miceDelegateInfo.mobilePhone"
+            />
+            <div class="error-message">{!$label.CompApp_MICE_Phone_Error}</div>
+        </div>
+    </div>
+
+    <div class="row {{formManager.specialRateCodeValidity | validityClass}}
+                    {{formManager.specialRateCodeIsExist | validSpecRateCodeClass}}
+                    {{formManager.userAlreadyHasActiveCodeValidity | validUserHasActiveCodeClass}}
+                    {{formManager.delegateLimitValidity | validDelegateLimitClass}}">
+        <label for="specCode" class="cell-label">{!$label.CompApp_MICE_Special_Rate_Code} *</label>
+        <div class="input-wrapper validity-sign cell-input">
+            <input
+                    type="text"
+                    maxlength="30"
+                    id="specCode"
+                    ng-model="$angularState.miceDelegateInfo.specialRateCode"
+                    ng-change="codeChanged()"
+            />
+            <div class="error-message">{!$label.CompApp_MICE_Special_Rate_Code_Error}</div>
+            <!--<div class="error-message">{{errorMessage}}</div>-->
+            <div class="error-message-non-valid-code">Rate code isn't valid. Please enter valid special rate code.</div>
+            <div class="error-message-has-active-code">The customer already has active special rate code.</div>
+            <div class="error-message-delegate-limits">Delegate limit has been reached.</div>
+        </div>
+    </div>
+
+    <div class="row commands-section">
+        <a href="" class="btn primary" ng-click="submitDelegateRegForm();" id="register-button">
+            {!$label.CompApp_Submit}</a>
+        <p class="error-message-main" ng-hide="formManager.noErrors">{!$label.CompApp_incorrectDataPrr}</p>
+        <div class="lds-spinner" hidden="hidden"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    </div>
+
+    <script>
+        //$('#top-section-lang-select-box').css('display', 'none');
+        var GLOBAL_REMOTE_USER_IP = '{!USER_IP}';
+    </script>
+
+</apex:page>

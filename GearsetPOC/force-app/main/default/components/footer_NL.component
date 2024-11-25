@@ -1,0 +1,74 @@
+<apex:component >
+  <footer class="bs-docs-footer" role="contentinfo">
+  <div class="container" style="padding-top:0;">
+      <hr/>
+    <div class ="footer-block"> 
+        <ul class="bs-docs-footer-links text-muted">
+        <h4>Eurostar-websites</h4>
+        <li><a href="http://www.eurostar.com/be-nl">België Nederlands</a></li>
+<li><a href="http://www.eurostar.com/be-en">België Engels</a></li>
+<li><a href="http://www.eurostar.com/be-fr">België Frans</a></li>
+<li><a href="http://www.eurostar.com/nl-nl">Nederland</a></li>
+<li><a href="http://www.eurostar.com/fr-fr">Frankrijk</a></li>
+<li><a href="http://www.eurostar.com/uk-en">Verenigd Koninkrijk</a></li>
+<li><a href="http://www.eurostar.com/us-en">Verenigde Staten</a></li>
+<li><a href="http://www.eurostar.com/rw-en">Rest van de Wereld</a></li>
+        </ul>
+    </div>
+    <div class ="footer-block">
+            <ul class="bs-docs-footer-links text-muted">
+        <h4>Bestemmingengids</h4>
+        <li><a href="http://www.eurostar.com/nl-nl">Londen</a></li>
+<li><a href="http://www.eurostar.com/nl-nl/">Kent</a></li>
+<li><a href="http://www.eurostar.com/nl-nl/">Brighton</a></li>
+<li><a href="http://www.eurostar.com/nl-nl">Oxford</a></li>
+        </ul>
+    </div>
+    <div class ="footer-block">
+        <ul class="bs-docs-footer-links text-muted">
+        <h4>Website-informatie</h4>
+        <li><a href="http://www.eurostar.com/nl-nl/sitemap">Sitemap</a></li>
+<li><a href="http://www.eurostar.com/nl-nl/gebruik-van-de-website">Gebruik van de website</a></li>
+<li><a href="http://www.eurostar.com/nl-nl/vervoersvoorwaarden">Vervoersvoorwaarden</a></li>
+<li><a href="http://www.eurostar.com/nl-nl/privacybeleid">Privacybeleid</a></li>
+<li><a href="http://www.eurostar.com/nl-nl/ons-cookiebeleid">Cookies</a></li>
+<li><a href="http://www.eurostar.com/nl-nl/toegankelijkheid">Toegankelijkheid</a></li>
+<li><a href="http://www.eurostar.com/nl-nl/vragen-en-antwoorden">FAQs</a></li>
+        </ul>
+        </div>
+        <div class ="footer-block">
+        <ul class="bs-docs-footer-links text-muted">
+        <h4>Bedrijfsinformatie</h4>
+        <li><a href="http://www.eurostar.com/nl-nl/over-eurostar">Over Eurostar</a></li>
+<li><a href="http://www.eurostar.com/nl-nl/contact">Contact</a></li>
+<li><a href="http://www.eurostar.com/nl-nl/over-eurostar/persafdeling">Persafdeling</a></li>
+<li><a href="http://www.eurostar.com/nl-nl/over-eurostar/werken-voor-eurostar">Werken voor Eurostar</a></li>
+<li><a href="http://www.eurostar.com/nl-nl/klantenverbintenis">Klantenverbintenis</a></li>
+<li><a href="http://www.eurostar.com/nl-nl/over-eurostar/eurostar-app">Eurostar app</a></li>
+            <h4 style="margin-top: 30px;">Blijf in contact</h4>
+            <li class= "socnet"><a href="http://facebook.com/eurostar" target="_blank"><i class="fa fa-facebook-square fa-2x" style="margin-right:5px;"></i> Facebook</a></li>
+            <li class= "socnet"><a href="http://twitter.com/eurostar" target="_blank"><i class="fa fa-twitter-square fa-2x"  style="margin-right:5px;"></i> Twitter</a></li>
+              <li class= "socnetmob"><a href="http://facebook.com/eurostar" target="_blank"><i class="fa fa-facebook-square fa-4x" style="margin-right:10px;"></i></a><a href="http://twitter.com/eurostar"  target="_blank"><i class="fa fa-twitter-square fa-4x"></i></a></li>
+            <br/><li> <a href="http://www.eurostar.com/newsletters/signup">Blijf op de hoogte van de aanbiedingen van Eurostar</a></li>
+        </ul>
+        </div>
+      
+      
+          <div id="footer-bottom" style="margin-top: 30px; float: left; border-top: 1px solid #eee; padding-top: 50px;">
+            <div id="footer-bottom-inner">
+                <div class="region region-footer-bottom">
+    <div id="block-eurostar-gateway-legal-footer" class="block block-eurostar-gateway">
+
+    
+  <div class="content">
+    <p>© {!year(today())} Eurostar International Ltd. Alle rechten voorbehouden</p>   </div>
+</div>
+  </div>
+            </div>
+          </div> <!-- /#footer-bottom -->
+      
+  </div>
+
+</footer>
+             
+</apex:component>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Environment</fullName>
+        <default>false</default>
+        <label>Environment</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Kitchen</fullName>
+        <default>false</default>
+        <label>Kitchen</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Activities</fullName>
+        <default>false</default>
+        <label>Activities</label>
+    </standardValue>
+</StandardValueSet>

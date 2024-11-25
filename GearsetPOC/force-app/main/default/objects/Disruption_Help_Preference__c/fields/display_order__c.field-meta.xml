@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>display_order__c</fullName>
+    <description>NOT TO BE DISPLAYED 
+This formula return a number + a text (to sort alphabetically)
+The number is set so that 1 is the preference for which the day is the same that today
+the number 2 is the day after,...
+the number 7 is the day 6 days after today. 
+
+Then the text is here to order preferences by time of travel. We want it to be displayed in the right order 
+(e.g:
+Travel Monday between 05:00 and 12:00 
+Travel Monday between 12:00 and 18:00 
+...)</description>
+    <externalId>false</externalId>
+    <formula>IF
+(
+		display_order_TODAY_in_number__c   &gt;  display_order_PREFERENCE_DAY_in_number__c   ,
+		TEXT(display_order_PREFERENCE_DAY_in_number__c  - (display_order_TODAY_in_number__c -1) +7)+ RIGHT(Name,LEN(Name)-(FIND(&quot;day&quot;,Name)+3)),
+		TEXT(display_order_PREFERENCE_DAY_in_number__c  - (display_order_TODAY_in_number__c -1)) + RIGHT(Name,LEN(Name)-(FIND(&quot;day&quot;,Name)+3))
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>display order</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

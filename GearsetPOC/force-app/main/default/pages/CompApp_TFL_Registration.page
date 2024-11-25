@@ -1,0 +1,211 @@
+<apex:page id="CompApp_TFL_Registration" showHeader="false" sidebar="false" language="{!selectedLanguageCode}" controller="CompApp_CtrlTFL_Form" standardStylesheets="false" applyHtmlTag="false" applyBodyTag="false">
+
+    <div id="make-a-claim-controller-wrapper">
+
+        <h1 class="row">{!$label.CompApp_TFL_Form_Name}</h1>
+
+        <div class="row p1">
+            <div style="display: inline-block">
+                {!$label.CompApp_required_fields}
+            </div>
+
+            <div style="display: inline-block; margin-left: 3rem; width: 16rem;">
+                <b>NOTE:</b> this page is for new registrations. If you already have an Aria account please
+                <a href="https://aria.eurostar.com/#/login" style="text-decoration: underline">login here</a>
+            </div>
+        </div>
+
+        <h2 class="row">{!$label.CompApp_TFL_EmployesDetailsSection}</h2>
+
+        <div class="row {{formManager.firstNameValdity | validityClass}}">
+            <label for="first-name" class="cell-label">{!$label.CompApp_TFL_FirstName}</label>
+            <div class="input-wrapper validity-sign cell-input">
+                <input
+                        maxlength="30"
+                        placeholder="{!$label.CompApp_TFL_FirstName_Placeholder}"
+                        id="first-name"
+                        ng-change="validateFirstName()"
+                        ng-model="$angularState.tflInfo.firstName"
+                />
+                <div class="error-message">Please enter your first name using only alphabetical characters.</div>
+            </div>
+        </div>
+
+        <div class="row {{formManager.lastNameValdity | validityClass}}">
+            <label for="surname" class="cell-label">{!$label.CompApp_TFL_LastName}</label>
+            <div class="input-wrapper validity-sign cell-input">
+                <input
+                        maxlength="30"
+                        placeholder="{!$label.CompApp_TFL_LastName_Placeholder}"
+                        id="surname"
+                        ng-change="validateLastName()"
+                        ng-model="$angularState.tflInfo.lastName"
+                />
+                <div class="error-message">Please enter your last name using only alphabetical characters.</div>
+            </div>
+        </div>
+
+        <div class="row {{formManager.emailValidity | validityClass}} {{formManager.uniqueEmail | uniqueEmailClass}} {{formManager.uniqueEmailForPersonalAcc | uniqueEmailClassForPersonalAcc}}">
+            <label for="email" class="cell-label">{!$label.ComApp_TFL_Email}</label>
+            <div class="input-wrapper validity-sign cell-input">
+                <input type="email"
+                       placeholder="{!$label.ComApp_TFL_Email_Placeholder}"
+                       id="email"
+                       ng-change="formManager.emailValidity = isPrimaryEmailValid()"
+                       ng-model="$angularState.tflInfo.email"
+                />
+                <div class="error-message" id="emailAddressError">{!$label.CompApp_enterEmailPRR}</div>
+                <div class="error-message-email">
+                    {!$Label.CompApp_TFL_Duplicate_Email_Error}
+                </div>
+                <div class="error-message-email-person-acc">
+                    {!$Label.CompApp_TFL_Person_Duplicate_Email_Error_part1}
+                    <a href="mailto:{!$Label.CompApp_TFL_CallCentre_Email}" target="_top">{!$Label.CompApp_TFL_CallCentre_Email}</a>
+                    {!$Label.CompApp_TFL_Person_Duplicate_Email_Error_part2}
+                </div>
+            </div>
+        </div>
+
+        <div class="row {{formManager.confirmEmailValidity | validityClass}}">
+            <label for="confirmEmail" class="cell-label">{!$label.ComApp_TFL_ConfirmEmail}</label>
+            <div class="input-wrapper validity-sign cell-input">
+                <input type="email"
+                       placeholder="{!$label.ComApp_TFL_ConfirmEmail_Placeholder}"
+                       id="confirmEmail"
+                       ng-paste="preventPaste($event)"
+                       ng-change="formManager.confirmEmailValidity = isSecondaryEmailValid()"
+                       ng-model="$angularState.tflInfo.confirmEmail"
+                />
+                <div class="error-message">{!$label.CompApp_confirmEmailPRR}</div>
+            </div>
+        </div>
+
+        <div class="row {{formManager.mobilePhoneValidity | validityClass}}">
+            <label for="phone" class="cell-label">{!$label.ComApp_TFL_MobilePhone}</label>
+            <div class="input-wrapper validity-sign cell-input">
+                <input
+                        placeholder="{!$label.ComApp_TFL_MobilePhone_Placeholder}"
+                        maxlength="11"
+                        type="tel"
+                        id="phone"
+                        ng-change="formManager.mobilePhoneValidity = isPhoneValid()"
+                        ng-model="$angularState.tflInfo.mobilePhone"
+                />
+                <div class="error-message">{!$label.ComApp_TFL_MobilePhone_Error}</div>
+            </div>
+        </div>
+
+        <h2 class="row">{!$label.CompApp_TFL_Location_Section}</h2>
+
+        <div class="row {{formManager.streetValidity | validityClass}}">
+            <label for="street" class="cell-label">{!$label.CompApp_TFL_Street}</label>
+            <div class="input-wrapper validity-sign cell-input">
+                <input
+                        maxlength="30"
+                        id="street"
+                        ng-change="validateStreet()"
+                        ng-model="$angularState.tflInfo.street"
+                />
+                <div class="error-message">{!$label.CompApp_TFL_Street_Error}</div>
+            </div>
+        </div>
+
+        <div class="row {{formManager.cityValidity | validityClass}}">
+            <label for="city" class="cell-label">{!$label.CompApp_TFL_City}</label>
+            <div class="input-wrapper validity-sign cell-input">
+                <input
+                        maxlength="30"
+                        id="city"
+                        ng-change="validateCity()"
+                        ng-model="$angularState.tflInfo.city"
+                />
+                <div class="error-message">{!$label.CompApp_TFL_City_Error}</div>
+            </div>
+        </div>
+
+        <div class="row {{formManager.postcodeValidity | validityClass}}">
+            <label for="postcode" class="cell-label">{!$label.CompApp_TFL_Postcode}</label>
+            <div class="input-wrapper validity-sign cell-input">
+                <input
+                        maxlength="10"
+                        id="postcode"
+                        ng-change="formManager.postcodeValidity = isZipValid()"
+                        ng-model="$angularState.tflInfo.postcode"
+                />
+                <div class="error-message">{!$label.CompApp_TFL_Postcode_Error}</div>
+            </div>
+        </div>
+
+        <div class="row {{formManager.stateValidity | validityClass}}">
+            <label for="state" class="cell-label">{!$label.CompApp_TFL_State}</label>
+            <div class="input-wrapper validity-sign cell-input">
+                <input
+                        maxlength="30"
+                        id="state"
+                        ng-change="validateCounty()"
+                        ng-model="$angularState.tflInfo.state"
+                />
+                <div class="error-message">{!$label.CompApp_TFL_State_Error}</div>
+            </div>
+        </div>
+
+        <div class="row {{formManager.countryValidity | validityClass}}">
+            <label for="state" class="cell-label">{!$label.CompApp_TFL_Country}</label>
+            <div class="input-wrapper validity-sign cell-input">
+                <input
+                        disabled="true"
+                        style="background: #ffffff"
+                        type="text"
+                        maxlength="30"
+                        id="country"
+                        placeholder="{!$label.CompApp_TFL_Country_Placeholder}"
+                        ng-change="formManager.countryValidity = !! $angularState.tflInfo.country"
+                        ng-model="$angularState.tflInfo.country"
+                />
+                <div class="error-message">{!$label.CompApp_TFL_Country_Error}</div>
+            </div>
+        </div>
+
+        <h2 class="row">{!$label.CompApp_TFL_Ident_Pass_Section}</h2>
+
+        <div class="row {{formManager.staffCardIdValidity | validityClass}} {{formManager.uniqueStaffCardId | uniqueStaffIdClass}}">
+            <label for="staffCardId" class="cell-label">{!$label.CompApp_Staff_Card_Id}</label>
+            <div class="id-card__wrapper input-wrapper validity-sign cell-input">
+                <input type="text" id="static" value="TFL" disabled="disabled"/>
+                <input
+                        type="text"
+                        maxlength="12"
+                        placeholder="{!$label.CompApp_Staff_Card_Id_Placeholder}"
+                        id="staffCardId"
+                        ng-pattern="TFL_CARD_ID"
+                        ng-change="formManager.staffCardIdValidity = isCardIdValid()"
+                        ng-model="$angularState.tflInfo.staffCardId"
+
+                />
+                <div class="error-message" id="idCardError">{!$label.CompApp_Staff_Card_Id_Error}</div>
+                <div class="error-message-card-id">{!$label.CompApp_Staff_Duplicate_Card_Id_Error}</div>
+            </div>
+        </div>
+
+        <div class="row commands-section">
+            <a href="" class="btn primary" ng-click="submitTFLForm();" id="register-button">
+                {!$label.CompApp_TFL_Register_Button}</a>
+            <p style="color: red !important;" ng-hide="formManager.noErrors">{!$label.CompApp_incorrectDataPrr}</p>
+            <div class="lds-spinner" hidden="hidden"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+    </div>
+    <script>
+        var GLOBAL_REMOTE_USER_IP = '{!USER_IP}';
+    </script>
+    <script>
+        $(function () {
+            $('#top-section-lang-select-box').css('display', 'none');
+            $("#phone").intlTelInput({allowDropdown: false, onlyCountries: ["gb"]});
+            $("#phone").intlTelInput("setCountry", "gb");
+
+            $("#country").countrySelect();
+            $("#country").countrySelect("selectCountry", "gb");
+            $("#country").countrySelect("setCountry", "United Kingdom");
+        });
+    </script>
+</apex:page>

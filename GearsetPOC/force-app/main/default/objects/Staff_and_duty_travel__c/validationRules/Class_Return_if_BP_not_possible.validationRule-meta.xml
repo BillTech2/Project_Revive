@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Class_Return_if_BP_not_possible</fullName>
+    <active>true</active>
+    <description>For some destination, the Business Premier Class is not available</description>
+    <errorConditionFormula>AND (
+ OR(
+  ISPICKVAL(From_Return__c, &quot;Disney*&quot;),
+  ISPICKVAL(From_Return__c, &quot;Avignon*&quot;),
+  ISPICKVAL(From_Return__c, &quot;Lyon*&quot;),
+  ISPICKVAL(From_Return__c, &quot;Marseille*&quot;),
+  ISPICKVAL(From_Return__c, &quot;Bourg St Maurice*&quot;),
+  ISPICKVAL(From_Return__c, &quot;Aime La Plagne*&quot;),
+  ISPICKVAL(From_Return__c, &quot;Moutiers*&quot;),
+  ISPICKVAL(To_Return__c, &quot;Disney*&quot;),
+  ISPICKVAL(To_Return__c, &quot;Avignon*&quot;),
+  ISPICKVAL(To_Return__c, &quot;Lyon*&quot;),
+  ISPICKVAL(To_Return__c, &quot;Marseille*&quot;),
+  ISPICKVAL(To_Return__c, &quot;Bourg St Maurice*&quot;),
+  ISPICKVAL(To_Return__c, &quot;Aime La Plagne*&quot;),
+  ISPICKVAL(To_Return__c, &quot;Moutiers*&quot;)
+ ),
+ ISPICKVAL(Class_Return__c, &quot;Business Premier&quot;)
+)</errorConditionFormula>
+    <errorDisplayField>Class_Return__c</errorDisplayField>
+    <errorMessage>The class &quot;Business Travel&quot; is not available for the stations marked with *</errorMessage>
+</ValidationRule>

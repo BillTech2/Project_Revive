@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Feedback_Notes_Box</fullName>
+    <active>true</active>
+    <description>Feedback notes box must not be blank if the status is changed to &quot;Has Been Fed Back&quot;</description>
+    <errorConditionFormula>ISBLANK(Feedback_Notes__c)
+&amp;&amp;
+ISPICKVAL(Status__c,&quot;Has Been Fed Back&quot;)</errorConditionFormula>
+    <errorDisplayField>Feedback_Notes__c</errorDisplayField>
+    <errorMessage>Please enter feedback notes before continuing</errorMessage>
+</ValidationRule>

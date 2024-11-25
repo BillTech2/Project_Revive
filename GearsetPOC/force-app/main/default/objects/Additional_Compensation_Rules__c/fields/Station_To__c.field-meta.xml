@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Station_To__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <description>Destination Station</description>
+    <inlineHelpText>Enter thedestination station which this rule is applicable</inlineHelpText>
+    <label>Station To</label>
+    <referenceTo>Stations__c</referenceTo>
+    <relationshipLabel>Additional Compensation Rules (Station To)</relationshipLabel>
+    <relationshipName>Additional_Compensation_Rules1</relationshipName>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pending_Requests</fullName>
+    <columns>NAME</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>Case__c</columns>
+    <columns>PNR__c</columns>
+    <columns>Currency__c</columns>
+    <columns>Amount_To_Be_Refunded__c</columns>
+    <columns>Reason_Code__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Refund_Pending__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>Pending Requests</label>
+    <language>en_US</language>
+</ListView>

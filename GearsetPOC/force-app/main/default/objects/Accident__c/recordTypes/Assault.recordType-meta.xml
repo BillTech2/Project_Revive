@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Assault</fullName>
+    <active>true</active>
+    <label>Assault</label>
+    <picklistValues>
+        <picklist>Accident_Event_Type__c</picklist>
+        <values>
+            <fullName>AJ - Commuting Accident %28continental based employee only%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AT - Workplace accident</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Accident_Fleet__c</picklist>
+        <values>
+            <fullName>373</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>374</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Accident_Gender__c</picklist>
+        <values>
+            <fullName>Female</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Male</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Accident_Location__c</picklist>
+        <values>
+            <fullName>Amsterdam</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ashford</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Avignon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bourg St Maurice</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Brussels Midi</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Brussels Place Marcel Broodthaers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Calais</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ebbsfleet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Eurostar Contact Centre</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kings Place</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lille Eurocentre %28CRE%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lille Europe</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lille rue de Luxembourg</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lyon Part Dieu</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marne La Vallee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marseille St Charles</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>On train</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Paris Dunkerque</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Paris Gare du Nord</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Paris Rue du Delta</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rotterdam</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>St Pancras</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TMI</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Accident_Reps_group__c</picklist>
+        <values>
+            <fullName>AIT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ECC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EIT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OBS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SPI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TMI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Traction</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Accident_Site_Type__c</picklist>
+        <values>
+            <fullName>Office</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Station</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wholly on-board</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yard%2Fdepot</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Accident_Status__c</picklist>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Draft</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Accident_Victim_status__c</picklist>
+        <values>
+            <fullName>Contractor - Continent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contractor - UK</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Employee - Continent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Employee - UK</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other %28visitors etc%29 - Continent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other %28visitors etc%29 - UK</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Passenger - Continent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Passenger - UK</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Accident_Work_location__c</picklist>
+        <values>
+            <fullName>Amsterdam</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ashford</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Avignon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Brussels Midi</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Brussels Place Marcel Broodthaers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Calais</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ebbsfleet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Eurostar Contact Centre</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kings Place</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lille Eurocentre %28CRE%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lille Europe</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lille rue de Luxembourg</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lyon Part Dieu</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marne La Vallee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marseille St Charles</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>On train</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Paris Dunkerque</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Paris Gare du Nord</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Paris Rue du Delta</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rotterdam</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>St Pancras</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TMI</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Accident_abuse_type__c</picklist>
+        <values>
+            <fullName>Foul and abusive language</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Physical violence</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Telephone%2Femail abuse</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Threatening%2Fintimidating behavior</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Accident_exacerbating_factors__c</picklist>
+        <values>
+            <fullName>Age</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Alcohol%2Fdrugs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disability</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disruption</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gender</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lack of Business Premier access</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lack of luggage assistance%2Fstowage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lack of services on board</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Late boarding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other - please state</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Race</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Religion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sexuality</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ticket%2Ffare dispute</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Accident_incident_type__c</picklist>
+        <values>
+            <fullName>Accident</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Assault</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Accident_type__c</picklist>
+        <values>
+            <fullName>Another kind of accident</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contact%2FExposure%3A Harmful substance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contact%3A electricity%2Felec discharge</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contact%3A moving vehicles or machinery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contact%3A sharp object or material</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contact%3A something fixed or stationary</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Exposure%3A  fire%2Fsmoke%2Fhot surface</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hit by moving%2C flying or falling object</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Injured handling%2C lifting or carrying</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Slip%2F trip%2Ffall%3A from a height</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Slip%2Ftrip%2Ffall%3A boarding%2Falighting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Slip%2Ftrip%2Ffall%3A on the same level</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trapped by equipment or collapsed thing</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Case_Language__c</picklist>
+        <values>
+            <fullName>English</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>French</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+</RecordType>

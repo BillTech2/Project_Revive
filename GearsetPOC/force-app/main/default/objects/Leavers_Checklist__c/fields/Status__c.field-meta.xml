@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(ISNULL(Form_Completion_Date__c),
+    &quot;Not Submitted&quot;, 
+    &quot;Submitted &quot; 
+       + LPAD(TEXT(DAY(DATEVALUE(Form_Completion_Date__c))), 2, &#39;0&#39;) + &quot;/&quot;
+       + LPAD(TEXT(MONTH(DATEVALUE(Form_Completion_Date__c))), 2, &#39;0&#39;) + &quot;/&quot; 
+       + TEXT(YEAR(DATEVALUE(Form_Completion_Date__c))) + &quot;, &quot; 
+       + LPAD(TEXT(HOUR(TIMEVALUE(Form_Completion_Date__c))), 2, &#39;0&#39;) + &quot;:&quot; 
+       + LPAD(TEXT(MINUTE(TIMEVALUE(Form_Completion_Date__c))), 2, &#39;0&#39;)   
+       + &quot; by &quot; + Form_Completed_By__r.LastName + &quot; &quot; +Form_Completed_By__r.FirstName 
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Status</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

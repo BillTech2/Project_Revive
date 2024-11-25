@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Salesforce_Support_Queue_ESBC</fullName>
+    <columns>CREATED_DATE</columns>
+    <columns>NAME</columns>
+    <columns>Requester_Email__c</columns>
+    <columns>Subject__c</columns>
+    <columns>Priority_Flag__c</columns>
+    <columns>Status__c</columns>
+    <columns>Request_Age_Hours_And_Minutes__c</columns>
+    <columns>OWNER.FIRST_NAME</columns>
+    <filterScope>Queue</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>notEqual</operation>
+        <value>Closed</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Salesforce_Support_Request__c.Salesforce_Support</value>
+    </filters>
+    <filters>
+        <field>Subject__c</field>
+        <operation>notContain</operation>
+        <value>[Postmaster] Email Delivery Failure,Your Eurostar Intranet Daily Digest</value>
+    </filters>
+    <filters>
+        <field>CREATED_DATE</field>
+        <operation>equals</operation>
+        <value>THIS_YEAR</value>
+    </filters>
+    <label>Salesforce Support Queue - ESBC</label>
+    <queue>Salesforce_Support_Queue</queue>
+    <sharedTo>
+        <group>EBSC_Salesforce_Support</group>
+    </sharedTo>
+</ListView>

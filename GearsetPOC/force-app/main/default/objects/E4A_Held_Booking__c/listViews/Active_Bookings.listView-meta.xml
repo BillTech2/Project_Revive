@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active_Bookings</fullName>
+    <columns>NAME</columns>
+    <columns>Company__c</columns>
+    <columns>Status_of_Booking__c</columns>
+    <columns>Departure_Date__c</columns>
+    <columns>Booking_Expiry_Date__c</columns>
+    <columns>PNR_s__c</columns>
+    <columns>Value_of_Booking__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status_of_Booking__c</field>
+        <operation>equals</operation>
+        <value>Active</value>
+    </filters>
+    <label>Active Bookings</label>
+    <language>en_US</language>
+</ListView>

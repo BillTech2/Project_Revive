@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Loyalty_ICLP__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(Loyalty_Tier__c,
+&quot;Avantage&quot; ,Image(&quot;/servlet/servlet.FileDownload?file=&quot;+ $Setup.Images__c.Avantage_Icon__c ,&quot;Avantage&quot; ,30,70),
+&quot;Carte Blanche&quot; ,Image(&quot;/servlet/servlet.FileDownload?file=&quot;+ $Setup.Images__c.Carte_Blanche_Icon__c ,&quot;Carte Blanche&quot; ,30,70),
+&quot;Classique&quot; ,Image(&quot;/servlet/servlet.FileDownload?file=&quot;+ $Setup.Images__c.Classique_Icon__c ,&quot;Classique&quot; ,30,70),
+&quot;Elite&quot; ,Image(&quot;/servlet/servlet.FileDownload?file=&quot;+ $Setup.Images__c.Elite_Icon__c ,&quot;Elite&quot; ,30,70),
+null)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Loyalty</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

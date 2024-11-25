@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Effective_FromDate__c</fullName>
+    <description>Effective date of configuration</description>
+    <inlineHelpText>Date from which this configuration is effective</inlineHelpText>
+    <label>Effective From</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

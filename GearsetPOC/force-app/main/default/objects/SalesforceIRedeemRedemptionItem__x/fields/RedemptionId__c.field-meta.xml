@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RedemptionId__c</fullName>
+    <description>RedemptionId</description>
+    <externalDeveloperName>RedemptionId</externalDeveloperName>
+    <isFilteringDisabled>false</isFilteringDisabled>
+    <isNameField>false</isNameField>
+    <isSortingDisabled>false</isSortingDisabled>
+    <label>RedemptionId</label>
+    <length>128</length>
+    <referenceTo>SalesforceIRedeemRedemption__x</referenceTo>
+    <relationshipLabel>SalesforceIRedeemRedemptionItem</relationshipLabel>
+    <relationshipName>SalesforceIRedeemRedemptionItem</relationshipName>
+    <type>ExternalLookup</type>
+</CustomField>

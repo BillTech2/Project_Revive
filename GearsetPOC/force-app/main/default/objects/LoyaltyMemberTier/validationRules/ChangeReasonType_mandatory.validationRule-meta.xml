@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ChangeReasonType_mandatory</fullName>
+    <active>true</active>
+    <description>Tier Immunity Reason mandatory if the Tier Immunity flag is true.</description>
+    <errorConditionFormula>AND(
+				Tier_Immunity__c ,
+				ISBLANK(Tier_Immunity_Reason__c))</errorConditionFormula>
+    <errorDisplayField>Tier_Immunity_Reason__c</errorDisplayField>
+    <errorMessage>Its mandatory to fill Tier Immunity Reason Field</errorMessage>
+</ValidationRule>

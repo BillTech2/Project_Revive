@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Supplier__c</fullName>
+    <label>Supplier</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Firmdale</fullName>
+                <default>false</default>
+                <label>Firmdale</label>
+            </value>
+            <value>
+                <fullName>Fortnum and Mason</fullName>
+                <default>false</default>
+                <label>Fortnum and Mason</label>
+            </value>
+            <value>
+                <fullName>Kadeos</fullName>
+                <default>false</default>
+                <label>Kadeos</label>
+            </value>
+            <value>
+                <fullName>Mama Shelter</fullName>
+                <default>false</default>
+                <label>Mama Shelter</label>
+            </value>
+            <value>
+                <fullName>Montblanc</fullName>
+                <default>false</default>
+                <label>Montblanc</label>
+            </value>
+            <value>
+                <fullName>Mr &amp; Mrs Smith - Euro</fullName>
+                <default>false</default>
+                <label>Mr &amp; Mrs Smith - Euro</label>
+            </value>
+            <value>
+                <fullName>Mr &amp; Mrs Smith - Pound</fullName>
+                <default>false</default>
+                <label>Mr &amp; Mrs Smith - Pound</label>
+            </value>
+            <value>
+                <fullName>Nicolas</fullName>
+                <default>false</default>
+                <label>Nicolas</label>
+            </value>
+            <value>
+                <fullName>Port Design</fullName>
+                <default>false</default>
+                <label>Port Design</label>
+            </value>
+            <value>
+                <fullName>Selfridge</fullName>
+                <default>false</default>
+                <label>Selfridge</label>
+            </value>
+            <value>
+                <fullName>Starwood - Euro</fullName>
+                <default>false</default>
+                <label>Starwood - Euro</label>
+            </value>
+            <value>
+                <fullName>Starwood - Pound</fullName>
+                <default>false</default>
+                <label>Starwood - Pound</label>
+            </value>
+            <value>
+                <fullName>Tordoffs</fullName>
+                <default>false</default>
+                <label>Tordoffs</label>
+            </value>
+            <value>
+                <fullName>World Land Trust</fullName>
+                <default>false</default>
+                <label>World Land Trust</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

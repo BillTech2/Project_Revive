@@ -1,0 +1,49 @@
+<apex:page id="SalesforceMemberManualPointsAdjustment"
+			showHeader="true"
+			sidebar="true"
+			tabStyle="SalesforceMemberManualPointsAdjustment__x"
+			standardController="SalesforceMemberManualPointsAdjustment__x"
+			extensions="SMManualPointsAdjustmentController">
+
+	<apex:sectionHeader title="{!$ObjectType.SalesforceMemberManualPointsAdjustment__x.Label} Edit"
+						subtitle="New {!$ObjectType.SalesforceMemberManualPointsAdjustment__x.Label}" />
+	<c:LoyaltyTierAccessCheck accessedButtonName="Manual_points_adjustment">
+		<apex:form >
+			<apex:pageBlock id="dataTable" title="{!$ObjectType.SalesforceMemberManualPointsAdjustment__x.Label} Edit" mode="edit">
+				<apex:pageMessages id="messages"/>
+				<apex:pageBlockSection columns="1">
+					<apex:selectList value="{!selectedPointType}" label="Points type" size="1" required="true">
+						<apex:selectOptions value="{!pointTypes}"/>
+					</apex:selectList>
+					<apex:selectList value="{!selectedReason}" label="Reason" size="1" required="true"
+									 onchange="valueWasChanged();">
+						<apex:selectOptions value="{!reasons}"/>
+					</apex:selectList>
+					<apex:inputField value="{!member.ReasonText__c}"/>
+					<apex:pageBlockSectionItem helpText="Additional information for 'Compensation' reasons." rendered="{!pnrIsRequired}">
+						<apex:outputLabel value="PNR"/>
+						<apex:inputText value="{!pnr}"/>
+					</apex:pageBlockSectionItem>
+					<apex:pageBlockSectionItem helpText="{!$ObjectType.SalesforceMemberManualPointsAdjustment__x.fields.Value__c.inlineHelpText}">
+						<apex:outputLabel value="Amount"/>
+						<apex:inputField value="{!member.Value__c}"/>
+					</apex:pageBlockSectionItem>
+				</apex:pageBlockSection>
+				<apex:pageBlockButtons >
+					<apex:commandButton action="{!save}" value=" Save "/>
+					<apex:commandButton action="{!SaveAndNew}" value="Save & New"/>
+					<apex:commandButton action="{!cancel}" value="Cancel"/>
+				</apex:pageBlockButtons>
+				<apex:outputPanel id="redirectPanel" >
+					<apex:outputText rendered="{!shouldRedirect}">
+						<script type="text/javascript">
+							window.top.location.href = '{!redirectUrl}';
+						</script>
+					</apex:outputText>
+				</apex:outputPanel>
+			</apex:pageBlock>
+
+			<apex:actionFunction name="valueWasChanged" action="{!valueWasChanged}" reRender="dataTable" oncomplete="console.log('rerendered');"/>
+		</apex:form>
+	</c:LoyaltyTierAccessCheck>
+</apex:page>

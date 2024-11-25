@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Booking_Expiry_Date__c</fullName>
+    <formula>IF( ISBLANK(Manual_Booking_Expiry_Date__c),
+(IF(
+Days_Between_Booking_and_Travel__c &lt;= 9,  Date_of_Booking__c +1,
+IF( 
+Days_Between_Booking_and_Travel__c &lt;= 29, Date_of_Booking__c +3,
+IF(
+Days_Between_Booking_and_Travel__c  &gt;= 30, Date_of_Booking__c +7,NULL
+)
+)
+)),Manual_Booking_Expiry_Date__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Booking Expiry Date</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

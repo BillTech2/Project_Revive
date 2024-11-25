@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>GBP_Converted_Amount__c</fullName>
+    <description>The amount paid by the customer converted into GBP if they pay using a different currency e.g. USD or EUR. This will be “null” if the customer paid in GBP.</description>
+    <externalId>false</externalId>
+    <label>GBP Converted Amount</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

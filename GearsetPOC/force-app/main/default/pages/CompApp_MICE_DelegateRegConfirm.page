@@ -1,0 +1,19 @@
+<apex:page id="CompApp_MICE_DelegateRegConfirm" showHeader="false" sidebar="false" language="{!selectedLanguageCode}" controller="CompApp_CtrlApp" standardStylesheets="false" applyHtmlTag="false" applyBodyTag="false" showChat="false">
+    <div>
+        <h2 class="row">
+            You have successfully registered
+        </h2>
+
+        <div class="row p2">
+            Your account has been created and you will receive your username and password via email
+        </div>
+
+        <!--<div class="row p2">-->
+            <!--Please go to https://aria.eurostar.com and reset your password.-->
+        <!--</div>-->
+
+        <!--<div class="row commands-section">-->
+            <!--<a href="https://aria.eurostar.com/" target="_blank" class="btn secondary" ng-click="">{!$label.CompApp_TFL_ARIA_Visit}</a>-->
+        <!--</div>-->
+    </div>
+</apex:page>

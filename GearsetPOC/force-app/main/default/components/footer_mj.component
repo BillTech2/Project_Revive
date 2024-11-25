@@ -1,0 +1,11 @@
+<apex:component >
+    <footer class="bs-docs-footer" role="contentinfo">
+  <div class="container" style="padding-top:0;">
+      <hr/>
+      
+    <div class="content">
+    	<p>© 2016 Eurostar International Ltd. All Rights Reserved</p>
+	</div>
+  </div>
+    </footer>
+</apex:component>

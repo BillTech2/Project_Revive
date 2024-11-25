@@ -1,0 +1,11 @@
+<apex:page showHeader="false" sidebar="false" language="{!selectedLanguageCode}" controller="CompApp_CtrlGroupBooking" standardStylesheets="false" applyHtmlTag="false" applyBodyTag="false">
+
+        <div id="group-booking-wrapper">
+
+            <h1 class="row">{!$Label.CompApp_Groups_Booking_Enquiry}</h1>
+            <div class="row p1">{!$Label.CompApp_End_Booking}</div>
+        </div>
+           
+
+        
+</apex:page>

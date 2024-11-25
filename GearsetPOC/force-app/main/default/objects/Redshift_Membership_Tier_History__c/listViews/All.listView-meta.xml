@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>MemberCard__c</columns>
+    <columns>MemberSalesforceId__c</columns>
+    <columns>FromTier__c</columns>
+    <columns>FromTierStartDate__c</columns>
+    <columns>ReasonCode1__c</columns>
+    <columns>ReasonCode2__c</columns>
+    <columns>ReasonText__c</columns>
+    <columns>ToTier__c</columns>
+    <columns>ToTierStartDate__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>

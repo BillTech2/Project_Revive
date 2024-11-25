@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Eurostar_Staff_Voucher_Mandatory</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISPICKVAL(Type_of_booking__c,&quot;Eurostar Staff Voucher&quot;)
+&amp;&amp;
+ISBLANK( Number_of_Vouchers__c )</errorConditionFormula>
+    <errorDisplayField>Number_of_Vouchers__c</errorDisplayField>
+    <errorMessage>Please enter the number of vouchers that are being used</errorMessage>
+</ValidationRule>

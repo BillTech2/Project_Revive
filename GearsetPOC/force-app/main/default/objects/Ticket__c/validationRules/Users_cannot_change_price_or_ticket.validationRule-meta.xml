@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Users_cannot_change_price_or_ticket</fullName>
+    <active>true</active>
+    <description>Prevent users editing these fields</description>
+    <errorConditionFormula>AND(
+    CONTAINS($Profile.Name,&#39;ECC&#39;), 
+    OR(
+        ISCHANGED(Name),
+        ISCHANGED(Ticket_Price__c),
+        ISCHANGED(Train__c)
+    )
+)</errorConditionFormula>
+    <errorMessage>Ticket cannot be amended</errorMessage>
+</ValidationRule>

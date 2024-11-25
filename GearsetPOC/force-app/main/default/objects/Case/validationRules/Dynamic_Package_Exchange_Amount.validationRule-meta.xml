@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dynamic_Package_Exchange_Amount</fullName>
+    <active>true</active>
+    <errorConditionFormula>OR(
+ISPICKVAL(Reason_For_Contact_Dynamic_Package__c,&quot;Package Hotel Exchange&quot;),
+ISPICKVAL(Reason_For_Contact_Dynamic_Package__c,&quot;Standalone Hotel Exchange&quot;),
+ISPICKVAL(Reason_For_Contact_Dynamic_Package__c,&quot;Assistance Package Exchange&quot;)) 
+
+&amp;&amp;
+OR(
+ISBLANK(TEXT(Refund_Exchange_Currency__c)),
+ISBLANK(Exchange_Amount__c), 
+ISBLANK(New_Check_In_Dates_After_Exchange__c), 
+ISBLANK(New_Check_Out_Dates_After_Exchange__c),
+ISBLANK(Hotel_Booking_Reference__c),
+ISBLANK(Hotel_Name__c),
+ISBLANK(Original_Check_In_Date__c),
+ISBLANK(Original_Check_In_Date__c)
+)</errorConditionFormula>
+    <errorMessage>Please enter the following:
+Amount &amp; Exchange Currency, 
+Hotel Booking Reference &amp; Hotel Name
+Check in Dates (original &amp; after exchange)</errorMessage>
+</ValidationRule>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Delay_Compensation_Increase_Flag__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+  OR(NOT(OR(ISBLANK(Destination_Cash__c),Destination_Cash__c == 0)),NOT(OR(ISBLANK(Destination_Voucher__c ),Destination_Voucher__c == 0 )),NOT(OR(ISBLANK(PP_Compensation_increase__c),PP_Compensation_increase__c == 0 )))
+,  
+IMAGE(&quot; /resource/MoneyImage&quot;, &#39;moneyImage&#39;) ,
+ &#39;&#39;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Delay Compensation Increase Flag</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

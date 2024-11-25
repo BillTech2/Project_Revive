@@ -1,0 +1,7 @@
+<apex:page id="GDPR_WebformAppSuccess" showHeader="false" sidebar="false" language="{!selectedLanguageCode}" controller="CompApp_CtrlApp" standardStylesheets="false" applyHtmlTag="false" applyBodyTag="false" showChat="false">
+
+    <div class="row p1" style="padding-top: 1rem">{! $Label.GDPR_Submit_Success_landing}
+    </div>
+
+    
+</apex:page>

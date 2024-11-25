@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Legal_form__c</fullName>
+    <label>Legal form</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Civil Company in the form of a General Partnership</fullName>
+                <default>false</default>
+                <label>Civil Company in the form of a General Partnership</label>
+            </value>
+            <value>
+                <fullName>Civil Company in the form of a Limited Company</fullName>
+                <default>false</default>
+                <label>Civil Company in the form of a Limited Company</label>
+            </value>
+            <value>
+                <fullName>Civile Company in the form of a Civile Company with Limited Liability</fullName>
+                <default>false</default>
+                <label>Civile Company in the form of a Civile Company with Limited Liability</label>
+            </value>
+            <value>
+                <fullName>Civile Company in the form of a Private Company with Limited Liability</fullName>
+                <default>false</default>
+                <label>Civile Company in the form of a Private Company with Limited Liability</label>
+            </value>
+            <value>
+                <fullName>Co-operative Company</fullName>
+                <default>false</default>
+                <label>Co-operative Company</label>
+            </value>
+            <value>
+                <fullName>Co-operative Company with Limited Liability</fullName>
+                <default>false</default>
+                <label>Co-operative Company with Limited Liability</label>
+            </value>
+            <value>
+                <fullName>European Company (Societas Europaea)</fullName>
+                <default>false</default>
+                <label>European Company (Societas Europaea)</label>
+            </value>
+            <value>
+                <fullName>General Partnership</fullName>
+                <default>false</default>
+                <label>General Partnership</label>
+            </value>
+            <value>
+                <fullName>International Organisation</fullName>
+                <default>false</default>
+                <label>International Organisation</label>
+            </value>
+            <value>
+                <fullName>Non-profit Organisation</fullName>
+                <default>false</default>
+                <label>Non-profit Organisation</label>
+            </value>
+            <value>
+                <fullName>Ordinary Limited Partnership</fullName>
+                <default>false</default>
+                <label>Ordinary Limited Partnership</label>
+            </value>
+            <value>
+                <fullName>Private Company with Limited Liability</fullName>
+                <default>false</default>
+                <label>Private Company with Limited Liability</label>
+            </value>
+            <value>
+                <fullName>Public Limited Company</fullName>
+                <default>false</default>
+                <label>Public Limited Company</label>
+            </value>
+            <value>
+                <fullName>Other Legal Form</fullName>
+                <default>false</default>
+                <label>Other Legal Form</label>
+            </value>
+            <value>
+                <fullName>Association Internationale</fullName>
+                <default>false</default>
+                <label>Association Internationale</label>
+            </value>
+            <value>
+                <fullName>Association Sans But Lucratif</fullName>
+                <default>false</default>
+                <label>Association Sans But Lucratif</label>
+            </value>
+            <value>
+                <fullName>Etablissement Public à Caractère Industriel et Commercial</fullName>
+                <default>false</default>
+                <label>Etablissement Public à Caractère Industriel et Commercial</label>
+            </value>
+            <value>
+                <fullName>Société Anonyme</fullName>
+                <default>false</default>
+                <label>Société Anonyme</label>
+            </value>
+            <value>
+                <fullName>Société Anonyme à Responsabilités Limitées</fullName>
+                <default>false</default>
+                <label>Société Anonyme à Responsabilités Limitées</label>
+            </value>
+            <value>
+                <fullName>Société à Actions Simplifiées</fullName>
+                <default>false</default>
+                <label>Société à Actions Simplifiées</label>
+            </value>
+            <value>
+                <fullName>Société Civile sous forme de Société Anonyme</fullName>
+                <default>false</default>
+                <label>Société Civile sous forme de Société Anonyme</label>
+            </value>
+            <value>
+                <fullName>Société Civile sous forme de Société Coopérative à Responsabilité Limitée</fullName>
+                <default>false</default>
+                <label>Société Civile sous forme de Société Coopérative à Responsabilité Limitée</label>
+            </value>
+            <value>
+                <fullName>Société Civile sous forme de Société en Nom Collectif</fullName>
+                <default>false</default>
+                <label>Société Civile sous forme de Société en Nom Collectif</label>
+            </value>
+            <value>
+                <fullName>Société Civile sous forme de Société Privée à Responsabilité Limitée</fullName>
+                <default>false</default>
+                <label>Société Civile sous forme de Société Privée à Responsabilité Limitée</label>
+            </value>
+            <value>
+                <fullName>Société Coopérative</fullName>
+                <default>false</default>
+                <label>Société Coopérative</label>
+            </value>
+            <value>
+                <fullName>Société Coopérative à Responsabilité Limitée</fullName>
+                <default>false</default>
+                <label>Société Coopérative à Responsabilité Limitée</label>
+            </value>
+            <value>
+                <fullName>Société Européenne (Societas Europaea)</fullName>
+                <default>false</default>
+                <label>Société Européenne (Societas Europaea)</label>
+            </value>
+            <value>
+                <fullName>Société en Commandite Simple</fullName>
+                <default>false</default>
+                <label>Société en Commandite Simple</label>
+            </value>
+            <value>
+                <fullName>Société en Nom Collectif</fullName>
+                <default>false</default>
+                <label>Société en Nom Collectif</label>
+            </value>
+            <value>
+                <fullName>Société Mutualiste</fullName>
+                <default>false</default>
+                <label>Société Mutualiste</label>
+            </value>
+            <value>
+                <fullName>Société Privée à Responsabilité Limitée</fullName>
+                <default>false</default>
+                <label>Société Privée à Responsabilité Limitée</label>
+            </value>
+            <value>
+                <fullName>Autre Forme Juridique</fullName>
+                <default>false</default>
+                <label>Autre Forme Juridique</label>
+            </value>
+            <value>
+                <fullName>Besloten Vennootschap</fullName>
+                <default>false</default>
+                <label>Besloten Vennootschap</label>
+            </value>
+            <value>
+                <fullName>Besloten Vennootschap met Beperkte Aansprakelijkheid</fullName>
+                <default>false</default>
+                <label>Besloten Vennootschap met Beperkte Aansprakelijkheid</label>
+            </value>
+            <value>
+                <fullName>Burgerlijke Vennootschap onder de vorm van Besloten Vennootschap met Beperkte Aansprakelijkheid</fullName>
+                <default>false</default>
+                <label>Burgerlijke Vennootschap onder de vorm van Besloten Vennootschap met Beperkte Aansprakelijkheid</label>
+            </value>
+            <value>
+                <fullName>Burgerlijke Vennootschap onder de vorm van Coöperatieve Venootschap met Beperkte Aansprakelijkheid</fullName>
+                <default>false</default>
+                <label>Burgerlijke Vennootschap onder de vorm van Coöperatieve Venootschap met Beperkte Aansprakelijkheid</label>
+            </value>
+            <value>
+                <fullName>Burgerlijke Vennootschap onder de vorm van Naamloze Vennootschap</fullName>
+                <default>false</default>
+                <label>Burgerlijke Vennootschap onder de vorm van Naamloze Vennootschap</label>
+            </value>
+            <value>
+                <fullName>Burgerlijke Vennootschap onder de vorm van Vennootschap Onder Firma</fullName>
+                <default>false</default>
+                <label>Burgerlijke Vennootschap onder de vorm van Vennootschap Onder Firma</label>
+            </value>
+            <value>
+                <fullName>Coöperatieve Vennootschap</fullName>
+                <default>false</default>
+                <label>Coöperatieve Vennootschap</label>
+            </value>
+            <value>
+                <fullName>Coöperatieve Vennootschap met Beperkte Aansprakelijkheid</fullName>
+                <default>false</default>
+                <label>Coöperatieve Vennootschap met Beperkte Aansprakelijkheid</label>
+            </value>
+            <value>
+                <fullName>Europese Vennootschap (Societas Europaea)</fullName>
+                <default>false</default>
+                <label>Europese Vennootschap (Societas Europaea)</label>
+            </value>
+            <value>
+                <fullName>Gewone Commanditaire Vennootschap</fullName>
+                <default>false</default>
+                <label>Gewone Commanditaire Vennootschap</label>
+            </value>
+            <value>
+                <fullName>Internationale Vereniging</fullName>
+                <default>false</default>
+                <label>Internationale Vereniging</label>
+            </value>
+            <value>
+                <fullName>Naamloze Vennootschap</fullName>
+                <default>false</default>
+                <label>Naamloze Vennootschap</label>
+            </value>
+            <value>
+                <fullName>Vennootschap Onder Firma</fullName>
+                <default>false</default>
+                <label>Vennootschap Onder Firma</label>
+            </value>
+            <value>
+                <fullName>Vereniging Zonder Winstoogmerk</fullName>
+                <default>false</default>
+                <label>Vereniging Zonder Winstoogmerk</label>
+            </value>
+            <value>
+                <fullName>Andere Rechtsvormen</fullName>
+                <default>false</default>
+                <label>Andere Rechtsvormen</label>
+            </value>
+            <value>
+                <fullName>Aktiengesellschaft</fullName>
+                <default>false</default>
+                <label>Aktiengesellschaft</label>
+            </value>
+            <value>
+                <fullName>Genossenschaft</fullName>
+                <default>false</default>
+                <label>Genossenschaft</label>
+            </value>
+            <value>
+                <fullName>Genossenschaft Mit Beschränkter Haftplicht</fullName>
+                <default>false</default>
+                <label>Genossenschaft Mit Beschränkter Haftplicht</label>
+            </value>
+            <value>
+                <fullName>Europäische Gesellschaft</fullName>
+                <default>false</default>
+                <label>Europäische Gesellschaft</label>
+            </value>
+            <value>
+                <fullName>Gesellschaft des Bürgerlichen Rechts in Form einer Aktiengesellschaft</fullName>
+                <default>false</default>
+                <label>Gesellschaft des Bürgerlichen Rechts in Form einer Aktiengesellschaft</label>
+            </value>
+            <value>
+                <fullName>Gesellschaft des Bürgerlichen Rechts in Form einer Offene Handelsgesellschaft</fullName>
+                <default>false</default>
+                <label>Gesellschaft des Bürgerlichen Rechts in Form einer Offene Handelsgesellschaft</label>
+            </value>
+            <value>
+                <fullName>Gesellschaft des Bürgerlichen Recht in Form einer Genossenschaft Mit Beschrankter Haftplicht</fullName>
+                <default>false</default>
+                <label>Gesellschaft des Bürgerlichen Recht in Form einer Genossenschaft Mit Beschrankter Haftplicht</label>
+            </value>
+            <value>
+                <fullName>Gesellschaft des Bürgerlichen Recht in Form einer Privatgesellschaft Mit Beschränkter Haftung</fullName>
+                <default>false</default>
+                <label>Gesellschaft des Bürgerlichen Recht in Form einer Privatgesellschaft Mit Beschränkter Haftung</label>
+            </value>
+            <value>
+                <fullName>Internationale Organisation</fullName>
+                <default>false</default>
+                <label>Internationale Organisation</label>
+            </value>
+            <value>
+                <fullName>Kommanditgesellschaft</fullName>
+                <default>false</default>
+                <label>Kommanditgesellschaft</label>
+            </value>
+            <value>
+                <fullName>Offene HandelsGesellschaft</fullName>
+                <default>false</default>
+                <label>Offene HandelsGesellschaft</label>
+            </value>
+            <value>
+                <fullName>Privatgesellschaft Mit Beschränkter Haftung</fullName>
+                <default>false</default>
+                <label>Privatgesellschaft Mit Beschränkter Haftung</label>
+            </value>
+            <value>
+                <fullName>Vereinigung Ohne Erwerbszweck</fullName>
+                <default>false</default>
+                <label>Vereinigung Ohne Erwerbszweck</label>
+            </value>
+            <value>
+                <fullName>Andere RechtsFormen</fullName>
+                <default>false</default>
+                <label>Andere RechtsFormen</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

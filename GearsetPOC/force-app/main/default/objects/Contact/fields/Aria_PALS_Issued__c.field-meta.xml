@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Aria_PALS_Issued__c</fullName>
+    <description>If the staff is a current Eurostar employee, he/she is entitled to 15 Pals.</description>
+    <externalId>false</externalId>
+    <formula>if(Aria_Active__c = true,
+      if(text(Aria_Company__c) = &quot;Webhelp&quot;, 
+           if((ADDMONTHS(NOW(),-6) &gt; CreatedDate), 10,
+           if(ADDMONTHS(TODAY(),-6) &gt; Aria_Date_of_Employment__c, 10, 0)),
+           if(text(Aria_Company__c) = &quot;Eurostar&quot;, 15, 10)
+      ),
+      0
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Aria PALS Issued</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

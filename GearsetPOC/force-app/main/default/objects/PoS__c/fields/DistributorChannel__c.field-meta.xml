@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DistributorChannel__c</fullName>
+    <label>Distributor Channel</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>distributor__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>DB</fullName>
+                <default>false</default>
+                <label>DB</label>
+            </value>
+            <value>
+                <fullName>EIL BUSINESS AGENTS</fullName>
+                <default>false</default>
+                <label>EIL BUSINESS AGENTS</label>
+            </value>
+            <value>
+                <fullName>EIL BUSINESS PORTAL</fullName>
+                <default>false</default>
+                <label>EIL BUSINESS PORTAL</label>
+            </value>
+            <value>
+                <fullName>EIL CONTACT CENTRE</fullName>
+                <default>false</default>
+                <label>EIL CONTACT CENTRE</label>
+            </value>
+            <value>
+                <fullName>EIL LEISURE AGENTS</fullName>
+                <default>false</default>
+                <label>EIL LEISURE AGENTS</label>
+            </value>
+            <value>
+                <fullName>EIL PACKAGES</fullName>
+                <default>false</default>
+                <label>EIL PACKAGES</label>
+            </value>
+            <value>
+                <fullName>EIL STATIONS</fullName>
+                <default>false</default>
+                <label>EIL STATIONS</label>
+            </value>
+            <value>
+                <fullName>EUROSTAR.COM</fullName>
+                <default>false</default>
+                <label>EUROSTAR.COM</label>
+            </value>
+            <value>
+                <fullName>NS</fullName>
+                <default>false</default>
+                <label>NS</label>
+            </value>
+            <value>
+                <fullName>ONLINE TRAVEL AGENCIES</fullName>
+                <default>false</default>
+                <label>ONLINE TRAVEL AGENCIES</label>
+            </value>
+            <value>
+                <fullName>OTHER SELLING RAILWAYS</fullName>
+                <default>false</default>
+                <label>OTHER SELLING RAILWAYS</label>
+            </value>
+            <value>
+                <fullName>RAIL EUROPE</fullName>
+                <default>false</default>
+                <label>RAIL EUROPE</label>
+            </value>
+            <value>
+                <fullName>SNAP</fullName>
+                <default>false</default>
+                <label>SNAP</label>
+            </value>
+            <value>
+                <fullName>SNCB BUSINESS AGENTS</fullName>
+                <default>false</default>
+                <label>SNCB BUSINESS AGENTS</label>
+            </value>
+            <value>
+                <fullName>SNCB CONTACT CENTRE</fullName>
+                <default>false</default>
+                <label>SNCB CONTACT CENTRE</label>
+            </value>
+            <value>
+                <fullName>SNCB DIGITAL</fullName>
+                <default>false</default>
+                <label>SNCB DIGITAL</label>
+            </value>
+            <value>
+                <fullName>SNCB LEISURE AGENTS</fullName>
+                <default>false</default>
+                <label>SNCB LEISURE AGENTS</label>
+            </value>
+            <value>
+                <fullName>SNCB STATIONS</fullName>
+                <default>false</default>
+                <label>SNCB STATIONS</label>
+            </value>
+            <value>
+                <fullName>SNCF BUSINESS AGENTS</fullName>
+                <default>false</default>
+                <label>SNCF BUSINESS AGENTS</label>
+            </value>
+            <value>
+                <fullName>SNCF CONTACT CENTRE</fullName>
+                <default>false</default>
+                <label>SNCF CONTACT CENTRE</label>
+            </value>
+            <value>
+                <fullName>SNCF DIGITAL</fullName>
+                <default>false</default>
+                <label>SNCF DIGITAL</label>
+            </value>
+            <value>
+                <fullName>SNCF LEISURE AGENTS</fullName>
+                <default>false</default>
+                <label>SNCF LEISURE AGENTS</label>
+            </value>
+            <value>
+                <fullName>SNCF STATIONS</fullName>
+                <default>false</default>
+                <label>SNCF STATIONS</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>SBB</controllingFieldValue>
+            <controllingFieldValue>CFL</controllingFieldValue>
+            <valueName>OTHER SELLING RAILWAYS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SNCB</controllingFieldValue>
+            <controllingFieldValue>SNCF</controllingFieldValue>
+            <controllingFieldValue>EIL</controllingFieldValue>
+            <valueName>ONLINE TRAVEL AGENCIES</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SNCB</controllingFieldValue>
+            <valueName>SNCB BUSINESS AGENTS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SNCB</controllingFieldValue>
+            <valueName>SNCB CONTACT CENTRE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SNCB</controllingFieldValue>
+            <valueName>SNCB DIGITAL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SNCB</controllingFieldValue>
+            <valueName>SNCB LEISURE AGENTS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SNCB</controllingFieldValue>
+            <valueName>SNCB STATIONS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SNCB</controllingFieldValue>
+            <controllingFieldValue>SNCF</controllingFieldValue>
+            <controllingFieldValue>EIL</controllingFieldValue>
+            <valueName>SNCF LEISURE AGENTS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SNCF</controllingFieldValue>
+            <controllingFieldValue>EIL</controllingFieldValue>
+            <valueName>EIL BUSINESS AGENTS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SNCF</controllingFieldValue>
+            <valueName>SNCF BUSINESS AGENTS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SNCF</controllingFieldValue>
+            <valueName>SNCF CONTACT CENTRE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SNCF</controllingFieldValue>
+            <valueName>SNCF DIGITAL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SNCF</controllingFieldValue>
+            <valueName>SNCF STATIONS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>DB</controllingFieldValue>
+            <valueName>DB</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>EHL DIGITAL</controllingFieldValue>
+            <valueName>EIL PACKAGES</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>EIL</controllingFieldValue>
+            <controllingFieldValue>EIL EBSC</controllingFieldValue>
+            <controllingFieldValue>EIL EBSC GROUPS</controllingFieldValue>
+            <controllingFieldValue>EIL STATIONS</controllingFieldValue>
+            <valueName>EIL CONTACT CENTRE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>EIL</controllingFieldValue>
+            <valueName>EIL LEISURE AGENTS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>EIL</controllingFieldValue>
+            <controllingFieldValue>EIL STATIONS</controllingFieldValue>
+            <valueName>EIL STATIONS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>EIL DIGITAL</controllingFieldValue>
+            <valueName>EIL BUSINESS PORTAL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>EIL DIGITAL</controllingFieldValue>
+            <valueName>EUROSTAR.COM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>EIL DIGITAL</controllingFieldValue>
+            <valueName>SNAP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NS</controllingFieldValue>
+            <valueName>NS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>RAIL EUROPE</controllingFieldValue>
+            <valueName>RAIL EUROPE</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

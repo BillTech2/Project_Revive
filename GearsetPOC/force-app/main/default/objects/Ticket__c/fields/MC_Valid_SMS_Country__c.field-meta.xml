@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MC_Valid_SMS_Country__c</fullName>
+    <formula>(Phone_Locale__c = &quot;US&quot;) ||
+(Phone_Locale__c = &quot;EG&quot;) ||
+(Phone_Locale__c = &quot;MA&quot;) ||
+(Phone_Locale__c = &quot;BR&quot;) ||
+(Phone_Locale__c = &quot;CA&quot;) ||
+(Phone_Locale__c = &quot;CL&quot;) ||
+(Phone_Locale__c = &quot;GL&quot;) ||
+(Phone_Locale__c = &quot;MX&quot;) ||
+(Phone_Locale__c = &quot;AE&quot;) ||
+(Phone_Locale__c = &quot;BH&quot;) ||
+(Phone_Locale__c = &quot;CN&quot;) ||
+(Phone_Locale__c = &quot;GE&quot;) ||
+(Phone_Locale__c = &quot;HK&quot;) ||
+(Phone_Locale__c = &quot;IL&quot;) ||
+(Phone_Locale__c = &quot;IN&quot;) ||
+(Phone_Locale__c = &quot;JO&quot;) ||
+(Phone_Locale__c = &quot;KR&quot;) ||
+(Phone_Locale__c = &quot;KW&quot;) ||
+(Phone_Locale__c = &quot;MY&quot;) ||
+(Phone_Locale__c = &quot;OM&quot;) ||
+(Phone_Locale__c = &quot;PH&quot;) ||
+(Phone_Locale__c = &quot;QA&quot;) ||
+(Phone_Locale__c = &quot;SA&quot;) ||
+(Phone_Locale__c = &quot;SG&quot;) ||
+(Phone_Locale__c = &quot;TH&quot;) ||
+(Phone_Locale__c = &quot;AU&quot;) ||
+(Phone_Locale__c = &quot;NZ&quot;) ||
+(Phone_Locale__c = &quot;AT&quot;) ||
+(Phone_Locale__c = &quot;BA&quot;) ||
+(Phone_Locale__c = &quot;BE&quot;) ||
+(Phone_Locale__c = &quot;BG&quot;) ||
+(Phone_Locale__c = &quot;CH&quot;) ||
+(Phone_Locale__c = &quot;CZ&quot;) ||
+(Phone_Locale__c = &quot;DE&quot;) ||
+(Phone_Locale__c = &quot;DK&quot;) ||
+(Phone_Locale__c = &quot;EE&quot;) ||
+(Phone_Locale__c = &quot;ES&quot;) ||
+(Phone_Locale__c = &quot;FI&quot;) ||
+(Phone_Locale__c = &quot;FR&quot;) ||
+(Phone_Locale__c = &quot;GB&quot;) ||
+(Phone_Locale__c = &quot;GR&quot;) ||
+(Phone_Locale__c = &quot;IE&quot;) ||
+(Phone_Locale__c = &quot;IM&quot;) ||
+(Phone_Locale__c = &quot;IS&quot;) ||
+(Phone_Locale__c = &quot;IT&quot;) ||
+(Phone_Locale__c = &quot;LT&quot;) ||
+(Phone_Locale__c = &quot;LU&quot;) ||
+(Phone_Locale__c = &quot;LV&quot;) ||
+(Phone_Locale__c = &quot;ME&quot;) ||
+(Phone_Locale__c = &quot;NL&quot;) ||
+(Phone_Locale__c = &quot;NO&quot;) ||
+(Phone_Locale__c = &quot;PL&quot;) ||
+(Phone_Locale__c = &quot;PT&quot;) ||
+(Phone_Locale__c = &quot;RO&quot;) ||
+(Phone_Locale__c = &quot;SE&quot;) ||
+(Phone_Locale__c = &quot;SI&quot;) ||
+(Phone_Locale__c = &quot;SK&quot;) ||
+(Phone_Locale__c = &quot;UA&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Checked, indicates Phone Country Code is eligible for Marketing SMS Send</inlineHelpText>
+    <label>MC Valid SMS Country</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

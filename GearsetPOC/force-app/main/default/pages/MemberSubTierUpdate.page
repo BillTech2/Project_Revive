@@ -1,0 +1,26 @@
+<apex:page id="MemberSubTierUpdate"
+			showHeader="true"
+			sidebar="true"
+			tabStyle="SalesforceMember__x"
+			standardController="SalesforceMember__x"
+			extensions="MemberSubTierUpdateController">
+
+	<apex:sectionHeader title="Member sub-tier Edit" subtitle="New Member sub-tier" />
+	<c:LoyaltyTierAccessCheck accessedButtonName="Update_sub_tier">
+		<apex:form >
+			<apex:pageBlock title="Member sub-tier Edit" mode="edit">
+				<apex:pageMessages />
+				<apex:pageBlockSection columns="1" >
+					<apex:selectList value="{!selectedSubTier}" label="Sub-tier" size="1">
+						<apex:selectOptions value="{!subTiers}"/>
+					</apex:selectList>
+					<apex:inputText value="{!reasonText}" label="Reason text" />
+				</apex:pageBlockSection>
+				<apex:pageBlockButtons >
+					<apex:commandButton action="{!save}" value=" Save "/>
+					<apex:commandButton action="{!cancel}" value="Cancel"/>
+				</apex:pageBlockButtons>
+			</apex:pageBlock>
+		</apex:form>
+	</c:LoyaltyTierAccessCheck>
+</apex:page>

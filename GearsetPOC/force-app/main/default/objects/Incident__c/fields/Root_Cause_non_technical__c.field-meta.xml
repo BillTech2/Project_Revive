@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Root_Cause_non_technical__c</fullName>
+    <description>any non-techncial element which has been identified as the root cause of the incident</description>
+    <inlineHelpText>any non-techncial element which has been identified as the root cause of the incident</inlineHelpText>
+    <label>Root Cause (non-technical)</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>How_Many__c</fullName>
+    <label>How Many</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Other_Users_Affected__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>0 - 10</fullName>
+                <default>false</default>
+                <label>0 - 10</label>
+            </value>
+            <value>
+                <fullName>10 - 25</fullName>
+                <default>false</default>
+                <label>10 - 25</label>
+            </value>
+            <value>
+                <fullName>25 - 100</fullName>
+                <default>false</default>
+                <label>25 - 100</label>
+            </value>
+            <value>
+                <fullName>100 - 500</fullName>
+                <default>false</default>
+                <label>100 - 500</label>
+            </value>
+            <value>
+                <fullName>500+</fullName>
+                <default>false</default>
+                <label>500+</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Yes</controllingFieldValue>
+            <valueName>0 - 10</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Yes</controllingFieldValue>
+            <valueName>10 - 25</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Yes</controllingFieldValue>
+            <valueName>25 - 100</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Yes</controllingFieldValue>
+            <valueName>100 - 500</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Yes</controllingFieldValue>
+            <valueName>500+</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

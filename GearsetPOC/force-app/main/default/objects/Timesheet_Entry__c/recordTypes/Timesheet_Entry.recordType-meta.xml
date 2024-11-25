@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Timesheet_Entry</fullName>
+    <active>true</active>
+    <label>Timesheet Entry</label>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>N%2FA</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Paid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unpaid</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type_of_Day__c</picklist>
+        <values>
+            <fullName>Arrét maladie</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CET</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Congé conv</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Congé parental</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Congé sabbatique</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Congé sans solde</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Congés 1%2F2 CP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Congés 1%2F2 RTT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Congés CP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Congés RTT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Formation%2FRéunion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Horaires décalés</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Maternité</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Offsite%2FExpense</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Paternité</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RDV maternité</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Récupération</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WE et%2Fou férié travaillés</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TACT_Tag_1_Internal__c</fullName>
+    <description>Created to support TACT integration - expected  to be retired</description>
+    <label>TACT Tag 1</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Delay compensation</fullName>
+                <default>false</default>
+                <label>Delay compensation</label>
+            </value>
+            <value>
+                <fullName>Booking (sales/after-sales)</fullName>
+                <default>false</default>
+                <label>Booking (sales/after-sales)</label>
+            </value>
+            <value>
+                <fullName>On board and at the station</fullName>
+                <default>false</default>
+                <label>On board and at the station</label>
+            </value>
+            <value>
+                <fullName>Information &amp; Communication</fullName>
+                <default>false</default>
+                <label>Information &amp; Communication</label>
+            </value>
+            <value>
+                <fullName>Traffic and schedules</fullName>
+                <default>false</default>
+                <label>Traffic and schedules</label>
+            </value>
+            <value>
+                <fullName>My Thalys World and my miles</fullName>
+                <default>false</default>
+                <label>My Thalys World and my miles</label>
+            </value>
+            <value>
+                <fullName>Your subscription</fullName>
+                <default>false</default>
+                <label>Your subscription</label>
+            </value>
+            <value>
+                <fullName>Does not concern Thalys</fullName>
+                <default>false</default>
+                <label>Does not concern Thalys</label>
+            </value>
+            <value>
+                <fullName>Prank Call</fullName>
+                <default>false</default>
+                <label>Prank Call</label>
+            </value>
+            <value>
+                <fullName>Passenger control (requisition)</fullName>
+                <default>false</default>
+                <label>Passenger control (requisition)</label>
+            </value>
+            <value>
+                <fullName>Transfer to distributor</fullName>
+                <default>false</default>
+                <label>Transfer to distributor</label>
+            </value>
+            <value>
+                <fullName>Does not concern Izy</fullName>
+                <default>false</default>
+                <label>Does not concern Izy</label>
+            </value>
+            <value>
+                <fullName>Concerning Izy</fullName>
+                <default>false</default>
+                <label>Concerning Izy</label>
+            </value>
+            <value>
+                <fullName>Concerning CCU</fullName>
+                <default>false</default>
+                <label>Concerning CCU</label>
+            </value>
+            <value>
+                <fullName>GDPR / My Data</fullName>
+                <default>false</default>
+                <label>GDPR / My Data</label>
+            </value>
+            <value>
+                <fullName>Proof of delay</fullName>
+                <default>false</default>
+                <label>Proof of delay</label>
+            </value>
+            <value>
+                <fullName>Proof of journey</fullName>
+                <default>false</default>
+                <label>Proof of journey</label>
+            </value>
+            <value>
+                <fullName>Justificatory</fullName>
+                <default>false</default>
+                <label>Justificatory</label>
+            </value>
+            <value>
+                <fullName>Fraud investigation</fullName>
+                <default>false</default>
+                <label>Fraud investigation</label>
+            </value>
+            <value>
+                <fullName>My train was cancelled by Thalys</fullName>
+                <default>false</default>
+                <label>My train was cancelled by Thalys</label>
+            </value>
+            <value>
+                <fullName>Contact Agent</fullName>
+                <default>false</default>
+                <label>Contact Agent</label>
+            </value>
+            <value>
+                <fullName>Thalys the Card and my miles</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Thalys the Card and my miles</label>
+            </value>
+            <value>
+                <fullName>Traffic and schedule</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Traffic and schedule</label>
+            </value>
+            <value>
+                <fullName>Travel informations</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Travel informations</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

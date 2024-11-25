@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Close_all_routes_at_contract_end_date</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>page</linkType>
+    <masterLabel>Close all routes at contract end date</masterLabel>
+    <openType>replace</openType>
+    <page>DLT_EndContractButton</page>
+    <protected>false</protected>
+</WebLink>

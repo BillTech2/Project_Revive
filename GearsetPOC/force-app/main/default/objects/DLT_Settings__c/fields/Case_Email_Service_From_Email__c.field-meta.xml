@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Case_Email_Service_From_Email__c</fullName>
+    <defaultValue>&#39;casereply@eurostar.com&#39;</defaultValue>
+    <description>The email address will be used in the &#39;from&#39; email field. It needs to be one of the verified org-wide addresses.</description>
+    <externalId>false</externalId>
+    <label>Case Email Service From Email</label>
+    <length>255</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

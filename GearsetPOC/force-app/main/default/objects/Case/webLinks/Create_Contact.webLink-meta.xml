@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Create_Contact</fullName>
+    <availability>online</availability>
+    <description>Links Current Case With Existing or New Contacts</description>
+    <displayType>link</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Create Customer</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>//Javascript Code to create a new contact and link it with existing case also links existing contact with case
+
+{!REQUIRESCRIPT(&quot;/soap/ajax/29.0/connection.js&quot;)}
+
+sforce.connection.sessionId = &quot;{!$Api.Session_ID}&quot;;
+var acct = new sforce.SObject(&quot;Account&quot;);
+
+var recordId=sforce.connection.query(&quot;SELECT Id FROM RecordType where SobjectType = &#39;Account&#39; and Name = &#39;Person Account&#39; &quot;);
+records = recordId.getArray(&quot;records&quot;);
+	   for (var i=0; i&lt; records.length; i++)
+	   {
+		var recordno = records[0];
+           }
+acct.recordtypeid = recordno.Id; 
+var nampart=&#39;{!Case.SuppliedName}&#39;;
+
+// If the email name is blank then use the email text up to the @ character
+if(nampart == &#39;&#39; || nampart == null)
+{
+    var nampart = &#39;{!Case.SuppliedEmail}&#39;;
+    var namePartsA = nampart.split(&#39;@&#39;,1);
+    var nampartB = namePartsA[0];
+    var nameParts = nampartB.split(&#39;.&#39;,2);
+} else 
+{
+    var nameParts = nampart.split(&#39; &#39;,6); 
+}
+
+if(nameParts[1]== null)
+{ 
+	nameParts[1]=&quot; &quot;;
+	nameParts[1]=nameParts[0];
+	nameParts[0]=&quot; &quot;;
+}
+if(nameParts[2]== null)
+{ 
+	nameParts[2]=&quot; &quot;;
+}
+if(nameParts[3]== null)
+{ 
+	nameParts[3]=&quot; &quot;;
+}
+if(nameParts[4]== null)
+{ 
+	nameParts[4]=&quot; &quot;;
+}
+if(nameParts[5]== null)
+{ 
+	nameParts[5]=&quot; &quot;;
+}
+
+acct.LastName=nameParts[1]+&quot; &quot;+nameParts[2]+&quot; &quot;+nameParts[3]+&quot; &quot;+nameParts[4]+&quot; &quot;+nameParts[5]; 
+acct.FirstName=nameParts[0];
+acct.Customer_Email__pc = &#39;{!Case.SuppliedEmail}&#39;;
+
+if(acct.LastName!=&quot;&quot; &amp;&amp; acct.Customer_Email__pc!=&quot;&quot;)
+{
+var qrr=sforce.connection.query(&quot;Select Case.ContactId from Case where Case.Id=&#39;{!Case.Id}&#39; &quot;);
+records = qrr.getArray(&quot;records&quot;);
+var rec = records[0];
+		if (rec.ContactId != null)
+		{
+		alert(&#39;Already Linked To Contact&#39;);
+		}
+		else
+		{
+		var lemail=&#39;{!Case.SuppliedEmail}&#39;.toLowerCase();
+		var query1=&quot;Select Customer_Email__pc from Account where Customer_Email__pc= \&#39;&quot;+lemail+&quot;\&#39;&quot;;
+		var qr =sforce.connection.query(query1);
+
+			if (qr.size == 0)
+			{
+				//alert(&#39;No Record found.&#39;);
+				var result = sforce.connection.create([acct]); //Inserting new Person Account
+						if(result[0].getBoolean(&quot;success&quot;)) 
+						{ 
+						//alert(&#39;Record Created,Linking Current Case &#39;); 
+						} 
+						else 
+						{ 
+						alert(&#39;Could not create record &#39;+result);
+						} 
+			}
+			else
+			{
+			alert(&#39;Existing Record found.&#39;);
+			}
+result = sforce.connection.query(&quot;SELECT Id FROM Contact where Customer_Email__c = \&#39;&quot;+lemail+&quot;\&#39;&quot;);
+records = result.getArray(&quot;records&quot;);
+	   for (var i=0; i&lt; records.length; i++)
+	   {
+		var record = records[i];
+		}
+var currentCase = window.location.pathname;
+var caseno=currentCase.substring(1,16);
+var casee = new sforce.SObject(&quot;Case&quot;);
+casee.Id=caseno;
+casee.ContactId=record.Id;
+var caseresult=sforce.connection.update([casee]);
+window.location.reload();
+		}
+}
+else
+{
+	var origin=&quot;{!Case.Origin}&quot;;
+	
+		if(origin == &#39;Phone&#39; || origin == &#39;Letter&#39;)
+		{
+		alert(&quot;This Functionality Is Not Supported For Phone &amp; Letter Origin Cases&quot;);
+		}
+		else
+		{
+		alert(&quot;Required Info Email/Web Name Missing...&quot;);
+		}
+		
+}</url>
+</WebLink>

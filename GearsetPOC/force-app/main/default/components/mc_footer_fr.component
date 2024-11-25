@@ -1,0 +1,61 @@
+<apex:component >
+ <div class="row footer">
+
+        <!-- footer top -->
+        <div class="row footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="section">
+                        <ul>
+                            <h6>Offres trains</h6>
+                            <li><a href="http://www.eurostar.com/fr-fr/offres-speciales/offres-train/trains-pour-angleterre">Trains pour l&#039;Angleterre</a></li>
+                            <li><a href="http://www.eurostar.com/fr-fr/offres-speciales/offres-train/trains-pour-langleterre/londres-pour-86-euros">Trains pour Londres</a></li>
+                            <li><a href="http://www.eurostar.com/fr-fr/offres-speciales/offres-train/tarif-seniors">Tarif Seniors Londres</a></li>
+                            <li><a href="http://www.eurostar.com/fr-fr/offres-speciales/offres-train/trains-pour-langleterre/londres-tarif-jeunes">Tarif jeunes Londres</a></li>
+                        </ul>
+                    </div>
+                    <div class="section">
+                        <ul>
+                            <h6>Séjours</h6>
+                            <li><a href="http://www.eurostar.com/fr-fr/destinations/sejours-angleterre">Séjours Angleterre</a></li>
+                            <li><a href="http://www.eurostar.com/fr-fr/destinations/sejours-en-angleterre/sejours-londres">Séjours Londres</a></li>
+                        </ul>
+                    </div>
+                    <div class="section">
+                        <ul>
+                            <h6>Informations générales</h6>
+                            <li><a href="http://www.eurostar.com/fr-fr/sitemap">Plan du site</a></li>
+                            <li><a href="http://www.eurostar.com/fr-fr/conditions-dutilisation">Conditions d&#039;utilisation</a></li>
+                            <li><a href="http://www.eurostar.com/fr-fr/conditions-de-transport" target="_blank">Conditions de transport</a></li>
+                            <li><a href="http://www.eurostar.com/fr-fr/confidentialite-des-donnees">Confidentialité des données</a></li>
+                            <li><a href="http://www.eurostar.com/fr-fr/utilisation-des-cookies">Utilisation des cookies</a></li>
+                            <li><a href="http://www.eurostar.com/fr-fr/accessibilit%C3%A9">Accessibilité</a></li>
+                            <li><a href="http://www.eurostar.com/fr-fr/a-propos-deurostar/application-eurostar">Application Eurostar</a></li>
+                            <li><a href="http://www.eurostar.com/mobile">Site mobile</a></li>
+                        </ul>
+                    </div>
+                    <div class="section">
+                        <ul>
+                            <h6>Information sur l&#039;entreprise</h6>
+                            <li><a href="/fr-fr/a-propos-deurostar">A propos d’Eurostar</a></li>
+                            <li><a href="/fr-fr/contactez-nous">Contactez-nous</a></li>
+                            <li><a href="/fr-fr/eurostar-s%E2%80%99engage-pour-ses-voyageurs">Eurostar s’engage pour ses voyageurs</a></li>
+                            <li><a href="/fr-fr/a-propos-deurostar/carrieres-eurostar">Travailler pour Eurostar</a></li>
+                            <h4 style="margin-top: 30px;">Restez connecté</h4>
+                            <li class= "socnet"><a href="http://facebook.com/eurostar" target="_blank"><i class="fa fa-facebook-square fa-2x" style="margin-right:5px;"></i> Facebook</a></li>
+                            <li class= "socnet"><a href="http://twitter.com/eurostar" target="_blank"><i class="fa fa-twitter-square fa-2x"  style="margin-right:5px;"></i> Twitter</a></li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- footer bottom -->
+        <div class="row footer-bottom">
+            <div class="container">
+               <p>© {!year(today())} Eurostar International Ltd. Tous droits réservés</p>
+            </div>
+        </div>
+    </div>
+</apex:component>

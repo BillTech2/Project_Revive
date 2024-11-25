@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer_s_CB_CBE_Card_Has_Been_Returned__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>This box will be checked if the customer&#39;s Carte Blanche or Carte Blanche Elite card has been returned to us and a resolution is still outstanding</inlineHelpText>
+    <label>Customer&#39;s CB/CBE Card Has Been Returned</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Must_Select_Vocal_Authorisation_over_250</fullName>
+    <active>true</active>
+    <description>If value is over £250/€285/$320 then advisors from Derby or Bucharest must select from the who gave vocal authorisation picklist (QA and DM&#39;s only)</description>
+    <errorConditionFormula>AND
+(OR($User.Department = &quot;Derby&quot;,$User.Department = &quot;Bucharest&quot;),
+
+AND(
+Write_Off_Amount__c &gt;= 250, ISPICKVAL(Currency__c, &quot;GBP&quot;)) 
+|| 
+AND(
+Write_Off_Amount__c &gt;= 285, ISPICKVAL(Currency__c, &quot;EUR&quot;))
+|| 
+AND(
+Write_Off_Amount__c &gt;= 320, ISPICKVAL(Currency__c, &quot;USD&quot;)),
+
+
+TEXT(Who_Gave_Vocal_Authorisation__c)&lt;&gt; &quot;Peter Broom&quot;,
+TEXT(Who_Gave_Vocal_Authorisation__c)&lt;&gt; &quot;Aaron Gourlay&quot;,
+TEXT(Who_Gave_Vocal_Authorisation__c)&lt;&gt; &quot;Karen Edwards&quot;,
+TEXT(Who_Gave_Vocal_Authorisation__c)&lt;&gt; &quot;Katie Constantine&quot;,
+TEXT(Who_Gave_Vocal_Authorisation__c)&lt;&gt; &quot;Kelly Butcher&quot;,
+TEXT(Who_Gave_Vocal_Authorisation__c)&lt;&gt; &quot;Laurence Brocard&quot;,
+TEXT(Who_Gave_Vocal_Authorisation__c)&lt;&gt; &quot;Chanel Claringbold&quot;,
+TEXT(Who_Gave_Vocal_Authorisation__c)&lt;&gt; &quot;Natalie Hutton&quot;,
+TEXT(Who_Gave_Vocal_Authorisation__c)&lt;&gt; &quot;Tracie Graham&quot;,
+TEXT(Who_Gave_Vocal_Authorisation__c)&lt;&gt; &quot;Disruption&quot;,
+TEXT(Who_Gave_Vocal_Authorisation__c)&lt;&gt; &quot;Stephanie Ribeiro&quot;,
+TEXT(Who_Gave_Vocal_Authorisation__c)&lt;&gt; &quot;Sarah Jones&quot;
+)</errorConditionFormula>
+    <errorMessage>Please select a member of the QA team or a DM from the EBSC</errorMessage>
+</ValidationRule>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customers_with_Social_Accounts</fullName>
+    <booleanFilter>1 AND (2 OR 3 OR 4)</booleanFilter>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Customer_Email__pc</columns>
+    <columns>PC_PHONE3</columns>
+    <columns>Loyalty__pc</columns>
+    <columns>Membership_Number__pc</columns>
+    <columns>ACCOUNT.CREATED_DATE</columns>
+    <columns>Twitter_Handle_Search__c</columns>
+    <columns>Twitter_Profile_Picture__c</columns>
+    <columns>Facebook_Account__c</columns>
+    <columns>Facebook_Profile_Picture__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ACCOUNT.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>PersonAccount.PersonAccount</value>
+    </filters>
+    <filters>
+        <field>Facebook_Account__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>Twitter_Handle_Search__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>Twitter__pc</field>
+        <operation>notEqual</operation>
+    </filters>
+    <label>Customers (with Social Accounts)</label>
+    <language>en_US</language>
+</ListView>

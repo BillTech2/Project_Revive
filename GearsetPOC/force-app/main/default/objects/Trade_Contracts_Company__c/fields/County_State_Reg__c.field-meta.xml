@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>County_State_Reg__c</fullName>
+    <label>Registered County / State</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Bedfordshire</fullName>
+                <default>false</default>
+                <label>Bedfordshire</label>
+            </value>
+            <value>
+                <fullName>Berkshire</fullName>
+                <default>false</default>
+                <label>Berkshire</label>
+            </value>
+            <value>
+                <fullName>Bristol</fullName>
+                <default>false</default>
+                <label>Bristol</label>
+            </value>
+            <value>
+                <fullName>Buckinghamshire</fullName>
+                <default>false</default>
+                <label>Buckinghamshire</label>
+            </value>
+            <value>
+                <fullName>Cambridgeshire</fullName>
+                <default>false</default>
+                <label>Cambridgeshire</label>
+            </value>
+            <value>
+                <fullName>Cheshire</fullName>
+                <default>false</default>
+                <label>Cheshire</label>
+            </value>
+            <value>
+                <fullName>City of London</fullName>
+                <default>false</default>
+                <label>City of London</label>
+            </value>
+            <value>
+                <fullName>Cornwall</fullName>
+                <default>false</default>
+                <label>Cornwall</label>
+            </value>
+            <value>
+                <fullName>Cumbria</fullName>
+                <default>false</default>
+                <label>Cumbria</label>
+            </value>
+            <value>
+                <fullName>Derbyshire</fullName>
+                <default>false</default>
+                <label>Derbyshire</label>
+            </value>
+            <value>
+                <fullName>Devon</fullName>
+                <default>false</default>
+                <label>Devon</label>
+            </value>
+            <value>
+                <fullName>Dorset</fullName>
+                <default>false</default>
+                <label>Dorset</label>
+            </value>
+            <value>
+                <fullName>Durham</fullName>
+                <default>false</default>
+                <label>Durham</label>
+            </value>
+            <value>
+                <fullName>East Riding of Yorkshire</fullName>
+                <default>false</default>
+                <label>East Riding of Yorkshire</label>
+            </value>
+            <value>
+                <fullName>East Sussex</fullName>
+                <default>false</default>
+                <label>East Sussex</label>
+            </value>
+            <value>
+                <fullName>Essex</fullName>
+                <default>false</default>
+                <label>Essex</label>
+            </value>
+            <value>
+                <fullName>Gloucestershire</fullName>
+                <default>false</default>
+                <label>Gloucestershire</label>
+            </value>
+            <value>
+                <fullName>Greater London</fullName>
+                <default>false</default>
+                <label>Greater London</label>
+            </value>
+            <value>
+                <fullName>Greater Manchester</fullName>
+                <default>false</default>
+                <label>Greater Manchester</label>
+            </value>
+            <value>
+                <fullName>Hampshire</fullName>
+                <default>false</default>
+                <label>Hampshire</label>
+            </value>
+            <value>
+                <fullName>Herefordshire</fullName>
+                <default>false</default>
+                <label>Herefordshire</label>
+            </value>
+            <value>
+                <fullName>Hertfordshire</fullName>
+                <default>false</default>
+                <label>Hertfordshire</label>
+            </value>
+            <value>
+                <fullName>Isle of Wight</fullName>
+                <default>false</default>
+                <label>Isle of Wight</label>
+            </value>
+            <value>
+                <fullName>Kent</fullName>
+                <default>false</default>
+                <label>Kent</label>
+            </value>
+            <value>
+                <fullName>Lancashire</fullName>
+                <default>false</default>
+                <label>Lancashire</label>
+            </value>
+            <value>
+                <fullName>Leicestershire</fullName>
+                <default>false</default>
+                <label>Leicestershire</label>
+            </value>
+            <value>
+                <fullName>Lincolnshire</fullName>
+                <default>false</default>
+                <label>Lincolnshire</label>
+            </value>
+            <value>
+                <fullName>Merseyside</fullName>
+                <default>false</default>
+                <label>Merseyside</label>
+            </value>
+            <value>
+                <fullName>Middlesex</fullName>
+                <default>false</default>
+                <label>Middlesex</label>
+            </value>
+            <value>
+                <fullName>Norfolk</fullName>
+                <default>false</default>
+                <label>Norfolk</label>
+            </value>
+            <value>
+                <fullName>North Yorkshire</fullName>
+                <default>false</default>
+                <label>North Yorkshire</label>
+            </value>
+            <value>
+                <fullName>Northamptonshire</fullName>
+                <default>false</default>
+                <label>Northamptonshire</label>
+            </value>
+            <value>
+                <fullName>Northumberland</fullName>
+                <default>false</default>
+                <label>Northumberland</label>
+            </value>
+            <value>
+                <fullName>Nottinghamshire</fullName>
+                <default>false</default>
+                <label>Nottinghamshire</label>
+            </value>
+            <value>
+                <fullName>Oxfordshire</fullName>
+                <default>false</default>
+                <label>Oxfordshire</label>
+            </value>
+            <value>
+                <fullName>Rutland</fullName>
+                <default>false</default>
+                <label>Rutland</label>
+            </value>
+            <value>
+                <fullName>Shropshire</fullName>
+                <default>false</default>
+                <label>Shropshire</label>
+            </value>
+            <value>
+                <fullName>Somerset</fullName>
+                <default>false</default>
+                <label>Somerset</label>
+            </value>
+            <value>
+                <fullName>South Yorkshire</fullName>
+                <default>false</default>
+                <label>South Yorkshire</label>
+            </value>
+            <value>
+                <fullName>Staffordshire</fullName>
+                <default>false</default>
+                <label>Staffordshire</label>
+            </value>
+            <value>
+                <fullName>Suffolk</fullName>
+                <default>false</default>
+                <label>Suffolk</label>
+            </value>
+            <value>
+                <fullName>Surrey</fullName>
+                <default>false</default>
+                <label>Surrey</label>
+            </value>
+            <value>
+                <fullName>Tyne and Wear</fullName>
+                <default>false</default>
+                <label>Tyne and Wear</label>
+            </value>
+            <value>
+                <fullName>Warwickshire</fullName>
+                <default>false</default>
+                <label>Warwickshire</label>
+            </value>
+            <value>
+                <fullName>West Midlands</fullName>
+                <default>false</default>
+                <label>West Midlands</label>
+            </value>
+            <value>
+                <fullName>West Sussex</fullName>
+                <default>false</default>
+                <label>West Sussex</label>
+            </value>
+            <value>
+                <fullName>West Yorkshire</fullName>
+                <default>false</default>
+                <label>West Yorkshire</label>
+            </value>
+            <value>
+                <fullName>Wiltshire</fullName>
+                <default>false</default>
+                <label>Wiltshire</label>
+            </value>
+            <value>
+                <fullName>Worcestershire</fullName>
+                <default>false</default>
+                <label>Worcestershire</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Upgrade_qualification__c</fullName>
+    <label>Upgrade qualification</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Good will gesture</fullName>
+                <default>false</default>
+                <label>Good will gesture</label>
+            </value>
+            <value>
+                <fullName>Standard class upgrade</fullName>
+                <default>false</default>
+                <label>Standard class upgrade</label>
+            </value>
+            <value>
+                <fullName>Standard Premier upgrade</fullName>
+                <default>false</default>
+                <label>Standard Premier upgrade</label>
+            </value>
+            <value>
+                <fullName>Business Premier upgrade</fullName>
+                <default>false</default>
+                <label>Business Premier upgrade</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

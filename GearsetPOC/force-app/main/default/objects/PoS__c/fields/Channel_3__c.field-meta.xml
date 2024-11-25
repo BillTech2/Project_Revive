@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Channel_3__c</fullName>
+    <label>Channel 3</label>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Channel_2__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Business Agents</fullName>
+                <default>false</default>
+                <label>Business Agents</label>
+            </value>
+            <value>
+                <fullName>Leisure Agents</fullName>
+                <default>false</default>
+                <label>Leisure Agents</label>
+            </value>
+            <value>
+                <fullName>Mixed agents</fullName>
+                <default>false</default>
+                <label>Mixed agents</label>
+            </value>
+            <value>
+                <fullName>Online Travel Agents</fullName>
+                <default>false</default>
+                <label>Online Travel Agents</label>
+            </value>
+            <value>
+                <fullName>Call Centre Thalys</fullName>
+                <default>false</default>
+                <label>Call Centre Thalys</label>
+            </value>
+            <value>
+                <fullName>Call Centre Eurostar</fullName>
+                <default>false</default>
+                <label>Call Centre Eurostar</label>
+            </value>
+            <value>
+                <fullName>Call Centres Distributors</fullName>
+                <default>false</default>
+                <label>Call Centres Distributors</label>
+            </value>
+            <value>
+                <fullName>HQ</fullName>
+                <default>false</default>
+                <label>HQ</label>
+            </value>
+            <value>
+                <fullName>Staff Travel</fullName>
+                <default>false</default>
+                <label>Staff Travel</label>
+            </value>
+            <value>
+                <fullName>Indirect Sales</fullName>
+                <default>false</default>
+                <label>Indirect Sales</label>
+            </value>
+            <value>
+                <fullName>Eurostar Website</fullName>
+                <default>false</default>
+                <label>Eurostar Website</label>
+            </value>
+            <value>
+                <fullName>Eurostar App</fullName>
+                <default>false</default>
+                <label>Eurostar App</label>
+            </value>
+            <value>
+                <fullName>Eurostar Business Portal</fullName>
+                <default>false</default>
+                <label>Eurostar Business Portal</label>
+            </value>
+            <value>
+                <fullName>Thalys Website</fullName>
+                <default>false</default>
+                <label>Thalys Website</label>
+            </value>
+            <value>
+                <fullName>Thalys App</fullName>
+                <default>false</default>
+                <label>Thalys App</label>
+            </value>
+            <value>
+                <fullName>Bahn.de</fullName>
+                <default>false</default>
+                <label>Bahn.de</label>
+            </value>
+            <value>
+                <fullName>NSInt.com</fullName>
+                <default>false</default>
+                <label>NSInt.com</label>
+            </value>
+            <value>
+                <fullName>SNCF Connect</fullName>
+                <default>false</default>
+                <label>SNCF Connect</label>
+            </value>
+            <value>
+                <fullName>B-Europe.com</fullName>
+                <default>false</default>
+                <label>B-Europe.com</label>
+            </value>
+            <value>
+                <fullName>Other Distributor Websites</fullName>
+                <default>false</default>
+                <label>Other Distributor Websites</label>
+            </value>
+            <value>
+                <fullName>Stations: Eurostar</fullName>
+                <default>false</default>
+                <label>Stations: Eurostar</label>
+            </value>
+            <value>
+                <fullName>Stations: Non-Eurostar</fullName>
+                <default>false</default>
+                <label>Stations: Non-Eurostar</label>
+            </value>
+            <value>
+                <fullName>Small distributors</fullName>
+                <default>false</default>
+                <label>Small distributors</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Rail Europe B2C</fullName>
+                <default>false</default>
+                <label>Rail Europe B2C</label>
+            </value>
+            <value>
+                <fullName>Rail Europe B2B</fullName>
+                <default>false</default>
+                <label>Rail Europe B2B</label>
+            </value>
+            <value>
+                <fullName>Rail Europe SNCF</fullName>
+                <default>false</default>
+                <label>Rail Europe SNCF</label>
+            </value>
+            <value>
+                <fullName>Refund</fullName>
+                <default>false</default>
+                <label>Refund</label>
+            </value>
+            <value>
+                <fullName>Portail Entreprise</fullName>
+                <default>false</default>
+                <label>Portail Entreprise</label>
+            </value>
+            <value>
+                <fullName>Rail Europe</fullName>
+                <default>false</default>
+                <label>Rail Europe</label>
+            </value>
+            <value>
+                <fullName>Rail Europe website</fullName>
+                <default>false</default>
+                <label>Rail Europe website</label>
+            </value>
+            <value>
+                <fullName>Unknown</fullName>
+                <default>false</default>
+                <label>Unknown</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Agencies</controllingFieldValue>
+            <valueName>Business Agents</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Agencies</controllingFieldValue>
+            <valueName>Leisure Agents</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Agencies</controllingFieldValue>
+            <valueName>Mixed agents</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Agencies</controllingFieldValue>
+            <valueName>Online Travel Agents</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Agencies</controllingFieldValue>
+            <valueName>Portail Entreprise</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Agencies</controllingFieldValue>
+            <controllingFieldValue>Call Centres</controllingFieldValue>
+            <controllingFieldValue>HQ</controllingFieldValue>
+            <controllingFieldValue>Eurostar Digital</controllingFieldValue>
+            <controllingFieldValue>Thalys Digital</controllingFieldValue>
+            <controllingFieldValue>Distributor Websites</controllingFieldValue>
+            <controllingFieldValue>Stations</controllingFieldValue>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <controllingFieldValue>Unknown</controllingFieldValue>
+            <controllingFieldValue>Refund</controllingFieldValue>
+            <valueName>Unknown</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Call Centres</controllingFieldValue>
+            <valueName>Call Centre Thalys</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Call Centres</controllingFieldValue>
+            <valueName>Call Centre Eurostar</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Call Centres</controllingFieldValue>
+            <valueName>Call Centres Distributors</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>HQ</controllingFieldValue>
+            <valueName>HQ</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>HQ</controllingFieldValue>
+            <valueName>Staff Travel</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>HQ</controllingFieldValue>
+            <valueName>Indirect Sales</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Eurostar Digital</controllingFieldValue>
+            <valueName>Eurostar Website</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Eurostar Digital</controllingFieldValue>
+            <valueName>Eurostar App</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Eurostar Digital</controllingFieldValue>
+            <valueName>Eurostar Business Portal</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Thalys Digital</controllingFieldValue>
+            <valueName>Thalys Website</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Thalys Digital</controllingFieldValue>
+            <valueName>Thalys App</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Distributor Websites</controllingFieldValue>
+            <valueName>Bahn.de</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Distributor Websites</controllingFieldValue>
+            <valueName>NSInt.com</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Distributor Websites</controllingFieldValue>
+            <valueName>SNCF Connect</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Distributor Websites</controllingFieldValue>
+            <valueName>B-Europe.com</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Distributor Websites</controllingFieldValue>
+            <valueName>Other Distributor Websites</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Distributor Websites</controllingFieldValue>
+            <valueName>Rail Europe</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Distributor Websites</controllingFieldValue>
+            <valueName>Rail Europe website</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Stations</controllingFieldValue>
+            <valueName>Stations: Eurostar</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Stations</controllingFieldValue>
+            <valueName>Stations: Non-Eurostar</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Small distributors</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Other</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Rail Europe B2C</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Rail Europe B2B</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Rail Europe SNCF</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Refund</controllingFieldValue>
+            <valueName>Refund</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

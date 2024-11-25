@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OSF_Batches_Oassis</fullName>
+    <columns>NAME</columns>
+    <columns>Class_Name__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>Error_Log_Type__c</columns>
+    <columns>Error_Message__c</columns>
+    <columns>Line_Number__c</columns>
+    <columns>OBJECT_ID</columns>
+    <columns>Stack_Trace__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>OSF_Batches_Oassis</label>
+</ListView>

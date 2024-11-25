@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Area_On_Website__c</fullName>
+    <inlineHelpText>Ask the customer which page of the website they were on when they experienced the issue</inlineHelpText>
+    <label>Area On Website</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Home page</fullName>
+                <default>false</default>
+                <label>Home page</label>
+            </value>
+            <value>
+                <fullName>Booking path</fullName>
+                <default>false</default>
+                <label>Booking path</label>
+            </value>
+            <value>
+                <fullName>Lowest fare finder</fullName>
+                <default>false</default>
+                <label>Lowest fare finder</label>
+            </value>
+            <value>
+                <fullName>Checkout</fullName>
+                <default>false</default>
+                <label>Checkout</label>
+            </value>
+            <value>
+                <fullName>Availability searches</fullName>
+                <default>false</default>
+                <label>Availability searches</label>
+            </value>
+            <value>
+                <fullName>Exchange path</fullName>
+                <default>false</default>
+                <label>Exchange path</label>
+            </value>
+            <value>
+                <fullName>Extras</fullName>
+                <default>false</default>
+                <label>Extras</label>
+            </value>
+            <value>
+                <fullName>MYB</fullName>
+                <default>false</default>
+                <label>MYB</label>
+            </value>
+            <value>
+                <fullName>FAQs</fullName>
+                <default>false</default>
+                <label>FAQs</label>
+            </value>
+            <value>
+                <fullName>Content Pages</fullName>
+                <default>false</default>
+                <label>Content Pages</label>
+            </value>
+            <value>
+                <fullName>Contact Us form</fullName>
+                <default>false</default>
+                <label>Contact Us form</label>
+            </value>
+            <value>
+                <fullName>Compensation form</fullName>
+                <default>false</default>
+                <label>Compensation form</label>
+            </value>
+            <value>
+                <fullName>PRR form</fullName>
+                <default>false</default>
+                <label>PRR form</label>
+            </value>
+            <value>
+                <fullName>AOP</fullName>
+                <default>false</default>
+                <label>AOP</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

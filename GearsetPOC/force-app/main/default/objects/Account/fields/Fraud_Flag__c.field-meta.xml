@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fraud_Flag__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+OR(Number_Of_Fraud_Flags_On_Account__c = 0, ISBLANK(Number_Of_Fraud_Flags_On_Account__c)),  IMAGE(&quot;https://eurostar--lfraud--c.cs85.content.force.com/servlet/servlet.ImageServer?id=0156E000000Zq4Z&amp;oid=00D6E0000004gXl&amp;lastMod=1562835887000&quot;, &quot;tick&quot; , 15, 15),
+IF(
+AND(Number_Of_Fraud_Flags_On_Account__c &gt;= 1, Number_Of_Fraud_Flags_On_Account__c &lt;=3), IMAGE(&quot;https://eurostar--lfraud--c.cs85.content.force.com/servlet/servlet.ImageServer?id=0156E000000Zq4e&amp;oid=00D6E0000004gXl&amp;lastMod=1562835872000&quot;, &quot;caution&quot; , 15, 15),
+IMAGE(&quot;https://eurostar--lfraud--c.cs85.content.force.com/servlet/servlet.ImageServer?id=0156E000000Zq4j&amp;oid=00D6E0000004gXl&amp;lastMod=1562835944000&quot;, &quot;caution&quot; , 15, 15)
+)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Fraud Flag</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

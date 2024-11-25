@@ -1,0 +1,271 @@
+<apex:page showHeader="false" sidebar="false" language="{!JSENCODE(selectedLanguageCode)}" controller="CompApp_CtrlCoronaVirus" standardStylesheets="false" applyHtmlTag="false" applyBodyTag="false">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/3.4.5/select2.css" />
+    <style>
+            #app-root .select2-choice {
+                width: 98%;
+                display: inline-block;
+                padding-top: 13px;
+                padding-bottom: 13px;
+            }
+            #app-root .select2-choice:hover {
+                text-decoration: none;
+            }
+            #app-root .select2-drop {
+                margin-top: -5px;
+            }
+            #app-root .select2-container {
+                width: 100%;
+            }
+            body {
+                position: initial!important;
+            }
+        </style>
+
+
+    <apex:remoteObjects >
+        <apex:remoteObjectModel name="Reason_Code__c" jsShorthand="reasonCodeSFDC" fields="Id,nl_Label__c,en_Label__c,fr_Label__c,Available_Online__c,Active__c" />
+    </apex:remoteObjects>
+
+    <div id="contact-us-wrapper">
+
+        <h1 class="row">{!$label.CompApp_Corona_Virus_Header}</h1>
+        <div class="row p1" style="white-space:pre-wrap; margin-top: 0px; margin-bottom: 0px;">{!$label.CompApp_Corona_Virus_Description_Part1}</div>
+        <!--div class="row p1" style="white-space:pre-wrap; margin-top: 0px; margin-bottom: 0px;">&nbsp;</div-->
+        <div class="row p1" style="white-space:pre-wrap; margin-top: 0px; margin-bottom: 0px;" ng-show="$angularState.system.selectedLanguage != 'fr'">&nbsp;</div>
+        <div class="row p1" style="white-space:pre-wrap; margin-top: 0px; margin-bottom: 0px;">{!$label.CompApp_Corona_Virus_Description_Part2}</div>
+        <!--div class="row p1" style="white-space:pre-wrap; margin-top: 0px; margin-bottom: 0px;">{!$label.CompApp_Corona_Virus_Description_Part3}</div-->
+
+        <div class="row p1">{!$label.CompApp_required_fields}</div>
+
+        <h2 class="row">{!$label.CompApp_Traveller_details}</h2>
+
+        <div class="row {{formManager.firstNameValdity | validityClass}}">
+            <label for="first-name" class="cell-label">{!$label.CompApp_First_name}</label>
+            <div class="input-wrapper validity-sign cell-input">
+                <input
+                        placeholder="{!$label.CompApp_Traveller_First_Name}"
+                        id="first-name"
+                        ng-pattern="USER_NAME_REGEX"
+                        ng-change="formManager.firstNameValdity = !! $angularState.personalInfo.firstName"
+                        ng-model="$angularState.personalInfo.firstName"
+                />
+                <div class="error-message">{!$label.CompApp_enterFirstNameContactUs}</div>
+            </div>
+        </div>
+
+        <div class="row {{formManager.lastNameValdity | validityClass}}">
+            <label for="surname" class="cell-label">{!$label.CompApp_Surname}</label>
+            <div class="input-wrapper validity-sign cell-input">
+                <input
+                        placeholder="{!$label.CompApp_Traveller_Surname}"
+                        id="surname"
+                        ng-pattern="USER_NAME_REGEX"
+                        ng-change="formManager.lastNameValdity = !! $angularState.personalInfo.lastName"
+                        ng-model="$angularState.personalInfo.lastName"
+                />
+                <div class="error-message">{!$label.CompApp_enterLastNameContactUs}</div>
+            </div>
+        </div>
+
+        <div class="row tooltip {{formManager.PNRValdity | validityClass}}">
+            <label for="pnr" class="cell-label" style="margin-top:0px">{!$label.CompApp_Booking_Reference_CoronaVirus}</label>
+            <!--label for="pnr" class="cell-label" style="margin-top:0px">{!$label.CompApp_Booking_Reference_CoronaVirus}</label-->
+            <div class="input-wrapper validity-sign cell-input">
+                <input
+                        placeholder="{!$label.CompApp_six_letter_booking}"
+                        id="pnr"
+                        ng-change="$angularState.enquiryInfo.PNR = $angularState.enquiryInfo.PNR.toUpperCase(); formManager.PNRValdity = isPNRValid()"
+                        ng-model="$angularState.enquiryInfo.PNR"
+                />
+                <a class="tooltip-sign" id="pnr-tooltip"></a>
+                <div class="error-message">{!$label.CompApp_enterPNRContactUs}</div>
+            </div>
+        </div>
+
+        <div class="row {{formManager.outboundDepartureDateValidity | validityClass}}">
+            <label for="departure-date" class="cell-label">{!$label.CompApp_Corona_Virus_Outbound_Departure_Date}</label>
+            <div class="input-wrapper validity-sign cell-input">
+                <datepicker
+                        date-format="dd/MM/yyyy" date-min-limit="{{ $root.DateObj | date:'MM/dd/yyyy' }}"
+                        button-prev="<span class='datepicker-month-arrow'>&lt;</span>"
+                        button-next="<span class='datepicker-month-arrow'>&gt;</span>"
+                        style="z-index: 2"
+                >
+                    <input
+                            type="text"
+                            placeholder="{!$label.CompApp_Date}"
+                            id="dateInput"
+                            ng-model="$angularState.enquiryInfo.outboundDepartureDate"
+                            readonly="readonly"
+                    />
+                </datepicker>
+                <div class="error-message">{!$label.CompApp_Corona_Virus_enterOutboundDepartureDate}</div>
+            </div>
+        </div>
+
+
+        <div class="row {{formManager.eVoucherValidity | validityClass}}">
+            <label for="evoucher-type" class="cell-label" style="margin-top:0px;">{!$label.CompApp_eVoucher_Types}</label>
+            <div id="evoucher-type" class="input-wrapper cell-input">
+                <label>
+                    <input type="checkbox"
+                           ng-model="$angularState.enquiryInfo.eVoucherBoth"
+                           ng-change="formManager.eVoucherValidity = toggleEVoucherChoice(1)"
+                    />
+                        {!$label.CompApp_eVoucher_Both_Directions}
+                </label><br/>
+                <label>
+                    <input type="checkbox"
+                           ng-model="$angularState.enquiryInfo.eVoucherOutbound"
+                           ng-change="formManager.eVoucherValidity = toggleEVoucherChoice(2)"
+                    />
+                        {!$label.CompApp_eVoucher_Outbound}
+                </label><br/>
+                <label>
+                    <input type="checkbox"
+                           ng-model="$angularState.enquiryInfo.eVoucherReturn"
+                           ng-change="formManager.eVoucherValidity = toggleEVoucherChoice(3)"
+                    />
+                        {!$label.CompApp_eVoucher_Return}
+                </label>
+                <span ng-show="!formManager.eVoucherValidity || $angularState.enquiryInfo.eVoucherBoth">
+                    <div class="error-message">{!$label.CompApp_chooseJourneyType}</div>
+                </span>
+            </div>
+        </div>
+
+        <div class="row {{formManager.eVoucherConfirmationValidity | validityClass}}" ng-show="$angularState.enquiryInfo.eVoucherOutbound || $angularState.enquiryInfo.eVoucherReturn">
+            <label for="evoucher-confirmation" class="cell-label" style="margin-top:0px;"><!--{!$label.CompApp_eVoucher_Types}--></label>
+            <div id="evoucher-confirmation" class="input-wrapper cell-input">
+                <label>
+
+                    <input type="checkbox" style="height: 32px; margin-top: -5px;"
+                           ng-model="$angularState.enquiryInfo.eVoucherSingleDirectionConfirmed"
+                           ng-change="formManager.eVoucherConfirmationValidity = toggleEVoucherChoiceConfirmation()"
+                    />
+                    <span ng-show="$angularState.enquiryInfo.eVoucherOutbound">{!$label.CompApp_eVoucher_Outbound_Only_Claim_Confirmation}</span>
+                    <span ng-show="$angularState.enquiryInfo.eVoucherReturn">{!$label.CompApp_eVoucher_Inbound_Only_Claim_Confirmation}</span>
+                </label>
+                <div class="error-message">{!$label.CompApp_confirmSingleJourneyOnly}</div>
+            </div>
+        </div>
+
+        <div class="row {{formManager.primaryEmailValdity | validityClass}}">
+            <label for="email" class="cell-label">{!$label.CompApp_email}</label>
+            <div class="input-wrapper validity-sign cell-input">
+                <input type="email"
+                       placeholder="{!$label.CompApp_Traveller_Email}"
+                       id="email"
+                       ng-change="formManager.primaryEmailValdity = isPrimaryEmailValid()"
+                       ng-model="formManager.primaryEmail"
+                />
+                <div class="error-message">{!$label.CompApp_enterEmail}</div>
+            </div>
+        </div>
+
+        <div class="row {{formManager.secondaryEmailValdity | validityClass}}">
+            <label for="email" class="cell-label">{!$label.CompApp_Confirm_email}</label>
+            <div class="input-wrapper validity-sign cell-input">
+                <input type="email"
+                       placeholder="{!$label.CompApp_Traveller_Email}"
+                       id="email"
+                       ng-paste="preventPaste($event)"
+                       ng-change="formManager.secondaryEmailValdity = isSecondaryEmailValid()"
+                       ng-model="formManager.secondaryEmail"
+                />
+                <div class="error-message">{!$label.CompApp_confirmEmail}</div>
+            </div>
+        </div>
+
+
+        <div class="row" ng-repeat="selectedFile in selectedFileList">
+            <label class="cell-label" style="width:{{ $angularState.system.maxLabelWidth }}px;">&nbsp;</label>
+            <div class="cell-input">
+                <div>
+                    <img ng-click="removeAttachment(selectedFile);" style="display: inline-block; cursor: pointer;" src="{!URLFOR($Resource.CompApp_Res, '/res/BigRedX.png')}" width="14" height="14"/>
+                    <span style="display: inline-block; vertical-align: 10%;">&nbsp;&nbsp;{{ selectedFile.name }}</span>
+                </div>
+                <div class="error-message">{!$label.CompApp_pleaseSelectGoodSize}</div>
+            </div>
+        </div>
+
+
+        <div class="row {{ formManager.captchaValdity | validityClass }}">
+            <label for="recaptcha" class="cell-label" >{!$label.CompApp_robot_question}</label>
+            <div class="cell-input">
+                <no-captcha
+                        g-recaptcha-response="captchaResponse"
+                        theme='light'
+                        language="{!JSENCODE(selectedLanguageCode)}"
+                        control="noCaptchaControl"
+                        site-key="{!GOOGLE_CAPTCHA_SITE_KEY}"
+                >
+                </no-captcha>
+                <div class="error-message">{!$label.CompApp_Validate_not_robot}</div>
+            </div>
+        </div>
+
+        <div class="row p1">{!$label.CompApp_Corona_Virus_Before_Submit}</div>
+
+        <div class="row commands-section">
+            <a href="" class="btn primary" ng-class="{ 'disable-link-activity' : isSubmitDisabled }" ng-click="createCaseHandler();">{!$label.CompApp_Submit}</a>
+            <p style="color: red !important;" ng-hide="formManager.noErrors">{!$label.CompApp_incorrectData}</p>
+            <div class="lds-spinner" style="margin-left: -15px;" ng-hide="formManager.hideSpinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+
+        <!--p style="color: red !important;" ng-show="formManager.isDuplicateRequest">{!$label.CompApp_Corona_Virus_Duplicate_Request}</p>
+        <p style="color: red !important;" ng-hide="formManager.isTicketExist">{!$label.CompApp_Corona_Virus_No_Booking_Found}</p>
+        <p style="color: red !important;" ng-show="formManager.isNotEligible">{!$label.CompApp_Corona_Virus_Not_Eligible}</p>
+        <p style="color: red !important;" ng-show="formManager.isNoTicketsInScope">{!$label.CompApp_Corona_Virus_No_Tickets_In_Scope}</p>
+        <p style="color: red !important;" ng-show="formManager.isNoDisneyTicketsInScope">{!$label.CompApp_Corona_Virus_No_Disney_Tickets_In_Scope}</p-->
+
+        <div class="row p1">{!$label.CompApp_Corona_Virus_After_Submit}</div>
+
+        <script>
+                var GLOBAL_REMOTE_USER_IP = '{!USER_IP}';
+            </script>
+    </div>
+
+
+    <div id="pnr-tooltip-images-template" style="display:none;">
+        <div class="images-wrapper">
+            <img src="" /> <img src="" /> <img src="" /> <img src="" />
+        </div>
+    </div>
+    <script>function imgLoaded(img) { console.log('img loaded', img.src); }</script>
+    <script>function imgError(img)  { console.log('img error',  img.src); }</script>
+    <script>
+            $(function () {
+
+                var isDesktop = window.isDesktop = $(window).width() > 960,
+                    pnr = (isDesktop ? [
+                        "{! URLFOR($Resource.CompApp_Eurostar_Ticket_Examples, '/img/PNR-desktop-0.jpg') }",
+                        "{! URLFOR($Resource.CompApp_Eurostar_Ticket_Examples, '/img/PNR-desktop-1.jpg') }",
+                        "{! URLFOR($Resource.CompApp_Eurostar_Ticket_Examples, '/img/PNR-desktop-2.jpg') }",
+                        "{! URLFOR($Resource.CompApp_Eurostar_Ticket_Examples, '/img/PNR-desktop-3.jpg') }"
+                    ] : [
+                        "{! URLFOR($Resource.CompApp_Eurostar_Ticket_Examples, '/img/PNR-tablet-0.jpg') }",
+                        "{! URLFOR($Resource.CompApp_Eurostar_Ticket_Examples, '/img/PNR-tablet-1.jpg') }",
+                        "{! URLFOR($Resource.CompApp_Eurostar_Ticket_Examples, '/img/PNR-tablet-2.jpg') }",
+                        "{! URLFOR($Resource.CompApp_Eurostar_Ticket_Examples, '/img/PNR-tablet-3.jpg') }"
+                    ]),
+                    $pnrImagesWrapper = $('#pnr-tooltip-images-template > div');
+
+                $pnrImagesWrapper.
+                    find('img').
+                    each(function (i, img) { img.src = pnr[i] || ''; });
+
+                $('#pnr-tooltip').click(openTooltip.bind(null, {
+                    title: "{!$label.CompApp_find_booking_reference}",
+                    text: [
+                        "{!$label.CompApp_different_booking_reference}",
+                        $pnrImagesWrapper,
+                        "{!$label.CompApp_locate_ticket_number} <a target='_blank' href='http://eurostarhelp.force.com/faq/?language=uk-en'>{!$label.CompApp_Help_Centre}</a>"
+                    ]
+                }));
+
+            });
+        </script>
+
+</apex:page>

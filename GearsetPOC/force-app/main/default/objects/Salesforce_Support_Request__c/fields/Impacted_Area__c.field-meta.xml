@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Impacted_Area__c</fullName>
+    <label>Impacted Area</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>User Permissions</fullName>
+                <default>false</default>
+                <label>User Permissions</label>
+            </value>
+            <value>
+                <fullName>Data Import/Export</fullName>
+                <default>false</default>
+                <label>Data Import/Export</label>
+            </value>
+            <value>
+                <fullName>Reports/Dashboards</fullName>
+                <default>false</default>
+                <label>Reports/Dashboards</label>
+            </value>
+            <value>
+                <fullName>Integration/Sync</fullName>
+                <default>false</default>
+                <label>Integration/Sync</label>
+            </value>
+            <value>
+                <fullName>Customers</fullName>
+                <default>false</default>
+                <label>Customers</label>
+            </value>
+            <value>
+                <fullName>Cases</fullName>
+                <default>false</default>
+                <label>Cases</label>
+            </value>
+            <value>
+                <fullName>Queues/List Views</fullName>
+                <default>false</default>
+                <label>Queues/List Views</label>
+            </value>
+            <value>
+                <fullName>Compensation</fullName>
+                <default>false</default>
+                <label>Compensation</label>
+            </value>
+            <value>
+                <fullName>Tickets</fullName>
+                <default>false</default>
+                <label>Tickets</label>
+            </value>
+            <value>
+                <fullName>Trains</fullName>
+                <default>false</default>
+                <label>Trains</label>
+            </value>
+            <value>
+                <fullName>GDPR</fullName>
+                <default>false</default>
+                <label>GDPR</label>
+            </value>
+            <value>
+                <fullName>Partner Vouchers</fullName>
+                <default>false</default>
+                <label>Partner Vouchers</label>
+            </value>
+            <value>
+                <fullName>Incident Management</fullName>
+                <default>false</default>
+                <label>Incident Management</label>
+            </value>
+            <value>
+                <fullName>Safety</fullName>
+                <default>false</default>
+                <label>Safety</label>
+            </value>
+            <value>
+                <fullName>Loyalty</fullName>
+                <default>false</default>
+                <label>Loyalty</label>
+            </value>
+            <value>
+                <fullName>Social</fullName>
+                <default>false</default>
+                <label>Social</label>
+            </value>
+            <value>
+                <fullName>Social - Facebook</fullName>
+                <default>false</default>
+                <label>Social - Facebook</label>
+            </value>
+            <value>
+                <fullName>Social - Twitter</fullName>
+                <default>false</default>
+                <label>Social - Twitter</label>
+            </value>
+            <value>
+                <fullName>Invoice Requests</fullName>
+                <default>false</default>
+                <label>Invoice Requests</label>
+            </value>
+            <value>
+                <fullName>Emails</fullName>
+                <default>false</default>
+                <label>Emails</label>
+            </value>
+            <value>
+                <fullName>Performance</fullName>
+                <default>false</default>
+                <label>Performance</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

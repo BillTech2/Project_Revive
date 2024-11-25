@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IS_Teams__c</fullName>
+    <label>IS_Teams</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Corporate and Operations Systems</fullName>
+                <default>true</default>
+                <label>Corporate and Operations Systems</label>
+            </value>
+            <value>
+                <fullName>Customer Systems</fullName>
+                <default>false</default>
+                <label>Customer Systems</label>
+            </value>
+            <value>
+                <fullName>Infrastructure Services</fullName>
+                <default>false</default>
+                <label>Infrastructure Services</label>
+            </value>
+            <value>
+                <fullName>IS Security</fullName>
+                <default>false</default>
+                <label>IS Security</label>
+            </value>
+            <value>
+                <fullName>Sales Systems</fullName>
+                <default>false</default>
+                <label>Sales Systems</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

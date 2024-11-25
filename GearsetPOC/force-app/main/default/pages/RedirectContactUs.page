@@ -1,0 +1,8 @@
+<apex:page controller="Disruption_Webform_Con"
+    sidebar="false"
+    showheader="false"
+    standardStylesheets="true"
+    docType="html-5.0"
+    language="{!languageSF}"
+    action="{!BackToBasis}">
+</apex:page>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Selection</fullName>
+    <active>true</active>
+    <description>A rule to ensure that at least one of the Sense of Occasion products are selected</description>
+    <errorConditionFormula>ISBLANK( TEXT(  Champagne_37_cl_Quantity__c) )
+&amp;&amp;
+ISBLANK( TEXT(   Brussels_Cake_Quantity__c ) )
+&amp;&amp;
+ISBLANK( TEXT(   Champagne_75_cl_Quantity__c ) )
+&amp;&amp;
+ISBLANK( TEXT(   Chocolate_Box_Quantity__c ) )
+&amp;&amp;
+ISBLANK( TEXT(   London_Cake_Quantity__c ) )
+&amp;&amp;
+ISBLANK( TEXT(   Paris_Cake_Quantity__c ) )
+&amp;&amp;
+ISBLANK( TEXT(   Sparkling_wine_Quantity__c ) )</errorConditionFormula>
+    <errorMessage>Please select at least 1 Sense Of Occasion product</errorMessage>
+</ValidationRule>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Hazard_Email_Managers__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>Tick to email case details to named managers on Save</inlineHelpText>
+    <label>Send 1st email</label>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

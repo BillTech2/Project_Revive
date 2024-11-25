@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Chats_with_No_Cases</fullName>
+    <columns>Owner</columns>
+    <columns>CreatedDate</columns>
+    <columns>Name</columns>
+    <columns>Case</columns>
+    <columns>Account</columns>
+    <columns>StartTime</columns>
+    <columns>EndTime</columns>
+    <columns>WaitTime</columns>
+    <columns>ChatDuration</columns>
+    <columns>OperatorMessageCount</columns>
+    <columns>VisitorMessageCount</columns>
+    <columns>EndedBy</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>StartTime</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>Case</field>
+        <operation>equals</operation>
+    </filters>
+    <label>Chats with No Cases</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>ECC_Webhelp_Escalation_Queue_Management</group>
+        <group>Webhelp_TLs</group>
+    </sharedTo>
+</ListView>

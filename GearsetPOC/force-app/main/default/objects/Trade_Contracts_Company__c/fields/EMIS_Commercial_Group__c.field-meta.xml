@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EMIS_Commercial_Group__c</fullName>
+    <label>NEMIS Commercial Group</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>3A**TMC</fullName>
+                <default>false</default>
+                <label>3A**TMC</label>
+            </value>
+            <value>
+                <fullName>3B**LeisAgt</fullName>
+                <default>false</default>
+                <label>3B**LeisAgt</label>
+            </value>
+            <value>
+                <fullName>3E**TourOp</fullName>
+                <default>false</default>
+                <label>3E**TourOp</label>
+            </value>
+            <value>
+                <fullName>3F**Inbd</fullName>
+                <default>false</default>
+                <label>3F**Inbd</label>
+            </value>
+            <value>
+                <fullName>3H**TvlPortal</fullName>
+                <default>false</default>
+                <label>3H**TvlPortal</label>
+            </value>
+            <value>
+                <fullName>Dedicated</fullName>
+                <default>false</default>
+                <label>Dedicated</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

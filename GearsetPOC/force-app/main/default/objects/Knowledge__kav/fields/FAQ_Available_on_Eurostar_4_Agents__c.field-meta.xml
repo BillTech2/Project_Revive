@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FAQ_Available_on_Eurostar_4_Agents__c</fullName>
+    <defaultValue>false</defaultValue>
+    <label>Available on Eurostar 4 Agents</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

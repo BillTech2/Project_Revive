@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Partner_ID__c</fullName>
+    <caseSensitive>false</caseSensitive>
+    <description>Unique Partner ID sent to Datacash for Partner Vouchers Integration</description>
+    <externalId>false</externalId>
+    <label>Partner ID</label>
+    <length>10</length>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>true</unique>
+</CustomField>

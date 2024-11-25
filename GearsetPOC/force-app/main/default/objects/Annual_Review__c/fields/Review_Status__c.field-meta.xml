@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Review_Status__c</fullName>
+    <label>Review Status</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Passed - Contract Extended</fullName>
+                <default>false</default>
+                <label>Passed - Contract Extended</label>
+            </value>
+            <value>
+                <fullName>Failed - Threshold Not Reached</fullName>
+                <default>false</default>
+                <label>Failed - Threshold Not Reached</label>
+            </value>
+            <value>
+                <fullName>Failed - Credit Check Not Approved</fullName>
+                <default>false</default>
+                <label>Failed - Credit Check Not Approved</label>
+            </value>
+            <value>
+                <fullName>Failed - Digital &amp; Brand Not Compliant</fullName>
+                <default>false</default>
+                <label>Failed - Digital &amp; Brand Not Compliant</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

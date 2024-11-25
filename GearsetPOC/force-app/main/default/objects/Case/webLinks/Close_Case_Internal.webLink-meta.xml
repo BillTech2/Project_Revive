@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Close_Case_Internal</fullName>
+    <availability>online</availability>
+    <description>Button to close Hub cases without applying reason code</description>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Close Case</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/22.0/connection.js&quot;)}
+
+var updateRecord = new Array(); 
+var myquery = &quot;SELECT Id FROM Case WHERE Id = &#39;{!Case.Id}&#39; limit 1&quot;;
+
+result = sforce.connection.query(myquery);
+records = result.getArray(&quot;records&quot;);
+
+if(records[0])
+{
+    var update_Case = records[0];
+    update_Case.Status = &quot;Closed&quot;;
+    updateRecord.push(update_Case);
+}
+
+result = sforce.connection.update(updateRecord);
+parent.location.href = parent.location.href;
+
+if (result[0].success==&#39;true&#39;)
+{
+    alert(&#39;The Case has been updated&#39;);
+} else {
+    alert(&#39;The Case could not be updated - &#39; + result[0].errors);
+}</url>
+</WebLink>

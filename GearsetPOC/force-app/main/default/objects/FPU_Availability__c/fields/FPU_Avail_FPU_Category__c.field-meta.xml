@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FPU_Avail_FPU_Category__c</fullName>
+    <description>FPU Category</description>
+    <externalId>false</externalId>
+    <label>FPU_Avail_FPU_Category</label>
+    <length>15</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

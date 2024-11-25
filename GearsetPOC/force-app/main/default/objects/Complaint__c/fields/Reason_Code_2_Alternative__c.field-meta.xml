@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_Code_2_Alternative__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( NOT(ISBLANK(Text(Staff_Complaint__c))),Text(Staff_Complaint__c),
+IF( NOT(ISBLANK(Text(Where_Was_The_Food_From__c ))),Text(Where_Was_The_Food_From__c),
+IF( NOT(ISBLANK(Text(Which_Policy__c ))),Text(Which_Policy__c),
+IF( NOT(ISBLANK(Text(Where_Is_The_Safety_Concern__c  ))),Text(Where_Is_The_Safety_Concern__c ),
+IF( NOT(ISBLANK(Text( Onboard_Complaint__c  ))),Text(Onboard_Complaint__c ),
+IF( NOT(ISBLANK(Text( Which_Station__c  ))),Text(  Which_Station__c  ), 
+IF( NOT(ISBLANK(Text(  Disruption_Feedback__c))),Text ( Disruption_Feedback__c),
+Text(   Website_Feedback__c )
+)))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Reason Code 2</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>German_translation__c</fullName>
+    <description>German translation of the help preference
+Will be displayed on the German version of the disruption webform if the checkbox &quot;visible&quot; is checked</description>
+    <externalId>false</externalId>
+    <inlineHelpText>German translation of the help preference
+Will be displayed on the German version of the disruption webform if the checkbox &quot;visible&quot; is checked</inlineHelpText>
+    <label>German translation</label>
+    <length>255</length>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

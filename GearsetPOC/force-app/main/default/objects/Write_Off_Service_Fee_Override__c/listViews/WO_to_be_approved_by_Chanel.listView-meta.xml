@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>WO_to_be_approved_by_Chanel</fullName>
+    <columns>NAME</columns>
+    <columns>Currency__c</columns>
+    <columns>Write_Off_Amount__c</columns>
+    <columns>Who_Gave_Vocal_Authorisation__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Approval_Status__c</field>
+        <operation>notEqual</operation>
+        <value>approved,rejected,recalled</value>
+    </filters>
+    <filters>
+        <field>Who_Gave_Vocal_Authorisation__c</field>
+        <operation>equals</operation>
+        <value>Mirjam Bons,Chanel Claringbold</value>
+    </filters>
+    <filters>
+        <field>Write_Off_Amount__c</field>
+        <operation>greaterThan</operation>
+        <value>249</value>
+    </filters>
+    <filters>
+        <field>Advisor_Department__c</field>
+        <operation>equals</operation>
+        <value>Webhelp</value>
+    </filters>
+    <filters>
+        <field>Created_Date_Time__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>5/1/2019 12:00 AM</value>
+    </filters>
+    <label>WO to be approved by Chanel</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>Write_Off_Approvers_Ashford</group>
+    </sharedTo>
+</ListView>

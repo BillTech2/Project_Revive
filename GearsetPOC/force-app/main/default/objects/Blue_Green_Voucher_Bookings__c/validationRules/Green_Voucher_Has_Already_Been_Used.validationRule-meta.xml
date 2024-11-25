@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Green_Voucher_Has_Already_Been_Used</fullName>
+    <active>true</active>
+    <description>Does not allow record to be saved if the staff member has already used their green voucher allocation for the month</description>
+    <errorConditionFormula>ISNEW()
+&amp;&amp;
+ISPICKVAL(Ticket__c,&quot;Green Voucher&quot;)
+&amp;&amp;
+CONTAINS( Staff_Member__r.Last_Green_Voucher_Booking_Made_In__c,  Month_that_Booking_Was_Made__c )</errorConditionFormula>
+    <errorMessage>Staff Member has already used this months allocation of Green Vouchers</errorMessage>
+</ValidationRule>

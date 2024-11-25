@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DotCom</fullName>
+    <active>true</active>
+    <description>eVoucher record type for online promotions on dotcom</description>
+    <label>DotCom</label>
+    <picklistValues>
+        <picklist>Carrier__c</picklist>
+        <values>
+            <fullName>Blue</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Red</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Custom_Currency__c</picklist>
+        <values>
+            <fullName>EUR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GBP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>USD</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Integration_Status__c</picklist>
+        <values>
+            <fullName>De-activated %E2%80%93 Internal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Failure - Not sent to Integration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Integration Completed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Integration Failed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Integration Started</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Started</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending Integration</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Assigned</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sent</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

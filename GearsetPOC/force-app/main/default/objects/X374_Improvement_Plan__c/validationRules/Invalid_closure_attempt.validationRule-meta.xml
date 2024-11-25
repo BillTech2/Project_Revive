@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Invalid_closure_attempt</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+RecordType.DeveloperName = &#39;X374_Improvement_Plan&#39;,
+ISCHANGED( X374IP_Status__c ) ,
+ISPICKVAL(X374IP_Status__c, &quot;Closed&quot;)
+,
+OR(
+AND(
+NOT(ISBLANK( X374_closed_by_EIL__c )),
+$User.CompanyName &lt;&gt; &quot;Siemens&quot;
+),
+AND(
+NOT(ISBLANK( X374_closed_by_SIE__c )),
+$User.CompanyName = &quot;Siemens&quot;
+)
+)
+)</errorConditionFormula>
+    <errorMessage>Cannot close record without second authorisation</errorMessage>
+</ValidationRule>

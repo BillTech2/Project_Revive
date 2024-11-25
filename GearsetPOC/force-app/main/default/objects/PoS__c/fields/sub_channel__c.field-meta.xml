@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>sub_channel__c</fullName>
+    <label>Sub Channel</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>channel__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>BUSINESS AGENTS</fullName>
+                <default>false</default>
+                <label>BUSINESS AGENTS</label>
+            </value>
+            <value>
+                <fullName>WEB PORTALS</fullName>
+                <default>false</default>
+                <label>WEB PORTALS</label>
+            </value>
+            <value>
+                <fullName>DIRECT CORPORATE</fullName>
+                <default>false</default>
+                <label>DIRECT CORPORATE</label>
+            </value>
+            <value>
+                <fullName>TOUR OPS</fullName>
+                <default>false</default>
+                <label>TOUR OPS</label>
+            </value>
+            <value>
+                <fullName>RAILWAY WEB</fullName>
+                <default>false</default>
+                <label>RAILWAY WEB</label>
+            </value>
+            <value>
+                <fullName>NON-E* STATIONS</fullName>
+                <default>false</default>
+                <label>NON-E* STATIONS</label>
+            </value>
+            <value>
+                <fullName>OSR</fullName>
+                <default>false</default>
+                <label>OSR</label>
+            </value>
+            <value>
+                <fullName>LEISURE AGENTS</fullName>
+                <default>false</default>
+                <label>LEISURE AGENTS</label>
+            </value>
+            <value>
+                <fullName>GROUP SALES</fullName>
+                <default>false</default>
+                <label>GROUP SALES</label>
+            </value>
+            <value>
+                <fullName>DUTY</fullName>
+                <default>false</default>
+                <label>DUTY</label>
+            </value>
+            <value>
+                <fullName>CALL CENTER</fullName>
+                <default>false</default>
+                <label>CALL CENTER</label>
+            </value>
+            <value>
+                <fullName>EUROSTAR – TRAIN + HOTEL</fullName>
+                <default>false</default>
+                <label>EUROSTAR – TRAIN + HOTEL</label>
+            </value>
+            <value>
+                <fullName>EUROSTAR – TRAINS</fullName>
+                <default>false</default>
+                <label>EUROSTAR – TRAINS</label>
+            </value>
+            <value>
+                <fullName>BUSINESS PORTAL - TRAINS</fullName>
+                <default>false</default>
+                <label>BUSINESS PORTAL - TRAINS</label>
+            </value>
+            <value>
+                <fullName>EUROSTAR – HOTEL ONLY</fullName>
+                <default>false</default>
+                <label>EUROSTAR – HOTEL ONLY</label>
+            </value>
+            <value>
+                <fullName>TIMES HOUSE</fullName>
+                <default>false</default>
+                <label>TIMES HOUSE</label>
+            </value>
+            <value>
+                <fullName>EUROSTAR BULK CHANGES</fullName>
+                <default>false</default>
+                <label>EUROSTAR BULK CHANGES</label>
+            </value>
+            <value>
+                <fullName>TEST</fullName>
+                <default>false</default>
+                <label>TEST</label>
+            </value>
+            <value>
+                <fullName>OTHER</fullName>
+                <default>false</default>
+                <label>OTHER</label>
+            </value>
+            <value>
+                <fullName>OUI.SNCF</fullName>
+                <default>false</default>
+                <label>SNCF CONNECT</label>
+            </value>
+            <value>
+                <fullName>VSC.EU</fullName>
+                <default>false</default>
+                <label>VSC.EU</label>
+            </value>
+            <value>
+                <fullName>RAIL EUROPE</fullName>
+                <default>false</default>
+                <label>RAIL EUROPE</label>
+            </value>
+            <value>
+                <fullName>E* STATIONS</fullName>
+                <default>false</default>
+                <label>E* STATIONS</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>TRAVEL PORTALS</controllingFieldValue>
+            <controllingFieldValue>AGENCIES</controllingFieldValue>
+            <controllingFieldValue>CALL CENTRES</controllingFieldValue>
+            <valueName>WEB PORTALS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>AGENCIES</controllingFieldValue>
+            <controllingFieldValue>STATIONS</controllingFieldValue>
+            <valueName>BUSINESS AGENTS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>AGENCIES</controllingFieldValue>
+            <valueName>DIRECT CORPORATE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>AGENCIES</controllingFieldValue>
+            <valueName>TOUR OPS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>AGENCIES</controllingFieldValue>
+            <controllingFieldValue>OTHER</controllingFieldValue>
+            <controllingFieldValue>SNCB</controllingFieldValue>
+            <controllingFieldValue>SNCB.BE</controllingFieldValue>
+            <valueName>RAILWAY WEB</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>AGENCIES</controllingFieldValue>
+            <controllingFieldValue>OTHER</controllingFieldValue>
+            <controllingFieldValue>SNCB</controllingFieldValue>
+            <controllingFieldValue>STATIONS</controllingFieldValue>
+            <valueName>NON-E* STATIONS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>AGENCIES</controllingFieldValue>
+            <controllingFieldValue>CALL CENTRES</controllingFieldValue>
+            <controllingFieldValue>OTHER</controllingFieldValue>
+            <controllingFieldValue>STATIONS</controllingFieldValue>
+            <valueName>OSR</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>AGENCIES</controllingFieldValue>
+            <controllingFieldValue>CALL CENTRES</controllingFieldValue>
+            <valueName>LEISURE AGENTS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CALL CENTRES</controllingFieldValue>
+            <valueName>GROUP SALES</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CALL CENTRES</controllingFieldValue>
+            <controllingFieldValue>STATIONS</controllingFieldValue>
+            <valueName>DUTY</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CALL CENTRES</controllingFieldValue>
+            <controllingFieldValue>OTHER</controllingFieldValue>
+            <controllingFieldValue>SNCB</controllingFieldValue>
+            <controllingFieldValue>STATIONS</controllingFieldValue>
+            <valueName>CALL CENTER</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>EUROSTAR.COM</controllingFieldValue>
+            <valueName>EUROSTAR – TRAIN + HOTEL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>EUROSTAR.COM</controllingFieldValue>
+            <valueName>EUROSTAR – TRAINS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>EUROSTAR.COM</controllingFieldValue>
+            <valueName>BUSINESS PORTAL - TRAINS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>EUROSTAR.COM</controllingFieldValue>
+            <valueName>EUROSTAR – HOTEL ONLY</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>INTERNAL</controllingFieldValue>
+            <valueName>TIMES HOUSE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>INTERNAL</controllingFieldValue>
+            <valueName>EUROSTAR BULK CHANGES</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>INTERNAL</controllingFieldValue>
+            <valueName>TEST</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OTHER</controllingFieldValue>
+            <controllingFieldValue>SNCB</controllingFieldValue>
+            <valueName>OTHER</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OUI.SNCF</controllingFieldValue>
+            <valueName>OUI.SNCF</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OUI.SNCF</controllingFieldValue>
+            <valueName>VSC.EU</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>RAIL EUROPE</controllingFieldValue>
+            <valueName>RAIL EUROPE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>STATIONS</controllingFieldValue>
+            <valueName>E* STATIONS</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

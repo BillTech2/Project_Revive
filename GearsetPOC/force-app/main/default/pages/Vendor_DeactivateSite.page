@@ -1,0 +1,131 @@
+<apex:page sidebar="false"  standardStyleSheets="false"  controller="Vendor_DeactivateSiteController" docType="html-5.0">
+   <style type="text/css">
+      .detailList {
+      table-layout: fixed;
+      }
+      .labelCol {
+      text-align: right!important;
+      width: 30% !important;
+      max-width: 30% !important;
+      font-weight: normal !important;
+      }       
+      .accordionPanel .ui-accordion .ui-accordion-content{padding:0 0 ;border:0}
+      .odd {background-color: #FCF7F7;}
+      .even {background-color: #E3DCDB;}
+      
+      .headerStyle {
+           font-family: "Calibri", Georgia, Serif;
+           font-size:15px;
+           color:white;
+           background-color:#1975A3;
+       }
+   </style>
+   <apex:form id="form" > 
+      <script type="text/javascript">
+         function clearValue()
+            {
+                alert( "entered function");
+            document.getElementById('{!$Component.form.Block1.Section2.item2_1.prevcompnoVal}').value = '';
+            
+           
+            alert();
+                return false;
+            }
+                
+         
+         
+         
+      </script>
+      <html>
+         <head>
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+            <title>EUROSTAR</title>
+            <apex:stylesheet value="{!URLFOR($Resource.customCSS, 'customCSS/css/jquery-ui.css')}"/>
+            <apex:stylesheet value="{!URLFOR($Resource.customCSS, 'customCSS/css/reset.css')}"/>
+            <apex:stylesheet value="{!URLFOR($Resource.customCSS, 'customCSS/css/style.css')}"/>
+         </head>
+         <body>
+            <div class="container">
+               <div class="mid-panel">
+                  
+                  <div class="bread-crums"><a href="#">Site Management</a> <i>&gt;</i> <a href="#" class="underline">Deactivate Site</a></div>
+                  <div class="form-panel">
+                     <dl>
+                        <apex:pageMessages />
+                     </dl>
+                     <div class="accordionPanel row margin-top0">
+                        <div id="accordion" class="ui-accordion ui-widget ui-helper-reset">
+                           <h3 class="ui-accordion-header ui-helper-reset ui-state-default ui-accordion-icons ui-corner-top ui-accordion-header-active ui-state-active">
+                              <span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-s"></span>
+                              General Details
+                           </h3>
+                           <div class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom ui-accordion-content-active">
+                              
+                                 <apex:pageBlock id="Block1">
+                                    
+                                    <apex:pageBlockSection id="Section1" columns="2">
+                                       <apex:pageBlockSectionItem id="item1_1"  helpText="Supplier Name">
+                                          <apex:outputLabel value="Supplier Name* " id="supLbl" />
+                                          <apex:inputField value="{!Request.suppname__c}"  id="supVal" style="width:200px"/>
+                                       </apex:pageBlockSectionItem>
+                                       <apex:pageBlockSectionItem id="item1_2" helpText="Site Name">
+                                          <apex:outputLabel value="Site Name* " id="sitenameLbl" />
+                                          <apex:inputField value="{!Request.sitename__c}" id="sitenameVal"  style="width:200px"/>
+                                       </apex:pageBlockSectionItem>
+                                    </apex:pageBlockSection>
+                                    <apex:pageBlockSection id="Section2" columns="2">
+                                        <apex:pageBlockSectionItem id="item2_1" helpText="Effective Date">
+                                          <apex:outputLabel value="Effective Date* " id="effdateLbl" />
+                                          <apex:inputField type="date" showdatepicker="false" value="{!Request.effectivedate__c}" id="effdateVal" style="width:200px"/>
+                                       </apex:pageBlockSectionItem>
+                                         <apex:pageBlockSectionItem id="item2_2" helpText="category">
+                                          <apex:outputLabel value="Category* " id="categoryLbl" />
+                                          <apex:selectList size="1" id="category" value="{!categoryCode}">
+                                             <apex:selectOptions value="{!CategoryOptions}" />
+                                          </apex:selectList>
+                                       </apex:pageBlockSectionItem>
+                                     </apex:pageBlockSection>
+                                    <apex:pageBlockSection id="Section3" columns="2">
+                                    <apex:pageBlockSectionItem id="item3_1"  helpText="Comments">
+                                       <apex:outputLabel value="Comments* " id="commentsLbl" />
+                                       <apex:inputTextarea value="{!Request.comments__c}"  id="commentsVal" style="width:400px" rows="5"/>
+                                    </apex:pageBlockSectionItem>
+                                      
+                                        </apex:pageBlockSection>
+                                    
+                                     </apex:pageBlock>
+                                        
+                           </div>
+                           <!-- <div class="bottomMsg"> --> 
+    <apex:dataTable value="{!Trial}" var="audittrial"  border="2" rendered="{!Trial.size>0}" style="table-layout:fixed;width:830px;" columns="4" columnsWidth="15%,15%,15%,55%" rowClasses="odd,even">
+    <!-- <apex:column value="{!audittrial.name}" headerValue="Audit Id" headerClass="headerStyle" id="AuditTrialIdLbl" style="word-wrap:break-word" styleClas="cell" /> -->
+    <apex:column value="{!audittrial.Actioned_Date__c}" headerValue="Date" headerClass="headerStyle" style="word-wrap:break-word" styleClass="cell" width="8%"/>
+    <apex:column value="{!audittrial.Action__c}" headerValue="Action"  headerClass="headerStyle" style="word-wrap:break-word" styleClass="cell" /> 
+    <apex:column value="{!audittrial.Actioned_By_User__r.Firstname} {!audittrial.Actioned_By_User__r.Lastname}" headerValue="Actioned By" headerClass="headerStyle" style="word-wrap:break-word" styleClass="cell"/>
+    
+    <apex:column value="{!audittrial.Long_Comment__c }" headerValue="Comments" headerClass="headerStyle" style="word-wrap:break-word" width="10%" styleClass="cell"/>
+    </apex:dataTable>  
+<!-- </div> -->  
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!--<div class="blue-panel">
+               <i class="divider"></i>
+               <div class="textforum">
+                  <b>NEW PAYMENT TERMS!!!! PLEASE ENSURE YOU ARE FAMILIAR WITH THEM!!! THANK YOU.</b>
+                  <p>Please note that Eurostar's standard payment terms are 30 days from invoice date, Do not agree any other payment terms. Please also ensure that you make the vendor aware of our standard payment terms, so the vendor knows them before they commit.</p>
+               </div>
+            </div>-->
+            <div class="bottom-button text-align-center">
+               <apex:commandButton disabled="{!submitDisabled}" onclick="if(!confirm('Are you sure?')){return false;}"  action="{!saveOrUpdate}"  value="Submit" />
+                <apex:commandButton action="{!formselection}" immediate="true" value="Cancel" html-formnovalidate="formnovalidate"/>
+            </div>
+            <apex:includeScript value="{!URLFOR($Resource.customCSS, 'customCSS/js/jquery-1.10.2.js')}"/>
+            <apex:includeScript value="{!URLFOR($Resource.customCSS, 'customCSS/js/jquery-ui.js')}"/>
+            <apex:includeScript value="{!URLFOR($Resource.customCSS, 'customCSS/js/custom.js')}"/>
+         </body>
+      </html>
+   </apex:form>
+</apex:page>

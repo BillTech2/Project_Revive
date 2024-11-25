@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Savings_next_year__c</fullName>
+    <formula>IF( YEAR(DATEVALUE(CreatedDate) ) = 2018 , One_Off_2019__c, One_Off_2018__c)   + IF( Realized_starting_this_year__c =False,  IF( (Savings_period__c+ Savings_period__c )  &gt; 12,  (  Total_Recurrent__c  /  Savings_period__c )  * ( 12 -  Realization_start_month__c  + 1 ) ,  Total_Recurrent__c ) ,  IF( Savings_period__c  +  Realization_start_month__c  &gt; 24,    (  Total_Recurrent__c  /  Savings_period__c  )  * 12 ,  IF( (Realization_start_month__c  +  Savings_period__c  - 1) &lt; 12 , 0,  IF(( Savings_period__c  +  Realization_start_month__c  - 1) &lt; 24, ( Total_Recurrent__c  /  Savings_period__c ) *  (  Realization_start_month__c  +  Savings_period__c  - 12),  (Total_Recurrent__c  /  Savings_period__c) * 12 )  ) ) )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Savings next year</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

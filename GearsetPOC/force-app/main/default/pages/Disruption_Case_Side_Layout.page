@@ -1,0 +1,6 @@
+<apex:page standardController="Case" docType="html-5.0">
+    <apex:pageMessages />  <!-- this is where the error messages will appear -->
+    <apex:pageBlock title="Disrupted Trains List">
+        <apex:outputText value="{!$Label.Case_Disruption_Trains_List}" escape="false" />
+    </apex:pageBlock>    
+</apex:page>

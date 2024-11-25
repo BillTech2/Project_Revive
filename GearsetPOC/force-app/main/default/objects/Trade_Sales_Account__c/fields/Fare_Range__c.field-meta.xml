@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fare_Range__c</fullName>
+    <label>Fare Range</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>ADS Public</fullName>
+                <default>false</default>
+                <label>ADS Public</label>
+            </value>
+            <value>
+                <fullName>ADS RIT</fullName>
+                <default>false</default>
+                <label>ADS RIT</label>
+            </value>
+            <value>
+                <fullName>ADS Group</fullName>
+                <default>false</default>
+                <label>ADS Group</label>
+            </value>
+            <value>
+                <fullName>German Connex</fullName>
+                <default>false</default>
+                <label>German Connex</label>
+            </value>
+            <value>
+                <fullName>FR Province Pub</fullName>
+                <default>false</default>
+                <label>FR Province Pub</label>
+            </value>
+            <value>
+                <fullName>FR Provinces Grp</fullName>
+                <default>false</default>
+                <label>FR Provinces Grp</label>
+            </value>
+            <value>
+                <fullName>FR Province RIT</fullName>
+                <default>false</default>
+                <label>FR Province RIT</label>
+            </value>
+            <value>
+                <fullName>ABS Public</fullName>
+                <default>false</default>
+                <label>ABS Public</label>
+            </value>
+            <value>
+                <fullName>ABS RIT</fullName>
+                <default>false</default>
+                <label>ABS RIT</label>
+            </value>
+            <value>
+                <fullName>ABS Group</fullName>
+                <default>false</default>
+                <label>ABS Group</label>
+            </value>
+            <value>
+                <fullName>Ski Public</fullName>
+                <default>false</default>
+                <label>Ski Public</label>
+            </value>
+            <value>
+                <fullName>Ski RIT</fullName>
+                <default>false</default>
+                <label>Ski RIT</label>
+            </value>
+            <value>
+                <fullName>Public</fullName>
+                <default>false</default>
+                <label>Public</label>
+            </value>
+            <value>
+                <fullName>Group</fullName>
+                <default>false</default>
+                <label>Group</label>
+            </value>
+            <value>
+                <fullName>RIT</fullName>
+                <default>false</default>
+                <label>RIT</label>
+            </value>
+            <value>
+                <fullName>Promo</fullName>
+                <default>false</default>
+                <label>Promo</label>
+            </value>
+            <value>
+                <fullName>Lyon SOF Pub</fullName>
+                <default>false</default>
+                <label>Lyon SOF Pub</label>
+            </value>
+            <value>
+                <fullName>Lyon SOF RIT</fullName>
+                <default>false</default>
+                <label>Lyon SOF RIT</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>5</visibleLines>
+</CustomField>

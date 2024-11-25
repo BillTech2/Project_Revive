@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MICE_Team_Contacts</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Job_Title__c</columns>
+    <columns>Organisation_Name__c</columns>
+    <columns>Customer_Email__pc</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Important_Customer_Information__c</field>
+        <operation>contains</operation>
+        <value>MICE</value>
+    </filters>
+    <label>MICE Team Contacts</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>Eurostar_Sales_Team</group>
+        <group>MICE_Team</group>
+    </sharedTo>
+</ListView>

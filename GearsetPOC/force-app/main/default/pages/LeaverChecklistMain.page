@@ -1,0 +1,47 @@
+<apex:page id="LeaverChecklistMain" standardController="Leavers_Checklist__c" showHeader="true" standardStylesheets="false"
+           sidebar="true" docType="html-5.0">
+
+  <style>
+    body {
+      background-color:white;
+    }
+  </style>
+      
+  <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <link rel="shortcut icon" href="{!URLFOR($Resource.EurostarFavIcon)}"/>
+    <apex:slds />
+    <apex:includeLightning />
+  </head>
+
+    
+    <apex:outputPanel id="formMain">
+      <div style="display: block; text-align:center;">
+        <div class="slds-scope" id="leaverChecklistContainer" style="max-width: 1000px; display: inline-block; background-color:white; text-align: initial;"></div>
+      </div>
+
+      <script>
+        $Lightning.use('c:LeaverChecklistLightningApp', function() {
+          $Lightning.createComponent(
+              'c:leaverChecklistCore',
+              {
+                recordId: "{!$CurrentPage.parameters.id}"
+              },
+              'leaverChecklistContainer',
+              function(cmp) {
+                console.log('component created {!$CurrentPage.parameters.id}');
+              }
+          );
+        });
+      </script>
+
+    </apex:outputPanel>
+  </html>
+</apex:page>

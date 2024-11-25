@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_PNR_Validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>NOT(
+ISBLANK(New_PNR__c) || LEN(New_PNR__c)=6 &amp;&amp; REGEX(New_PNR__c,&quot;[A-Z]+&quot;)
+)</errorConditionFormula>
+    <errorDisplayField>New_PNR__c</errorDisplayField>
+    <errorMessage>New PNR must contain exactly 6 capital letters.</errorMessage>
+</ValidationRule>

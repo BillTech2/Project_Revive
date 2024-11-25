@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Closed_Cases_cannot_be_Reassisgned</fullName>
+    <active>false</active>
+    <description>Cases with status as Closed can not be reassigned</description>
+    <errorConditionFormula>AND(( 
+ISPICKVAL(Status, &#39;Closed&#39;)), 
+
+NOT(CONTAINS($Profile.Name, &#39;System Administrator&#39;)), 
+ISCHANGED( OwnerId ) 
+)</errorConditionFormula>
+    <errorMessage>Your Case is currently Closed and can therefor not be Re-Assigned</errorMessage>
+</ValidationRule>

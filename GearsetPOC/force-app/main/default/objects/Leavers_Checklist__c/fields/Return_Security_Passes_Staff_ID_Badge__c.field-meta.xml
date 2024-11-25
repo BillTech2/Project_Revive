@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Return_Security_Passes_Staff_ID_Badge__c</fullName>
+    <defaultValue>false</defaultValue>
+    <label>Return Security Passes &amp; Staff ID Badge</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_must_have_Corp_Tracking_Continen</fullName>
+    <active>true</active>
+    <description>A contract can only be created if the Account has a Corporate Tracking code.</description>
+    <errorConditionFormula>!($User.B2b_Bypass_Validation_Rules__c)
+&amp;&amp;
+ISNEW()
+&amp;&amp;
+((
+RecordType.DeveloperName = &#39;Thalys&#39;
+&amp;&amp;
+ISBLANK( AccountId__r.FCE_Continent__c)
+&amp;&amp;
+ISBLANK( AccountId__r.GDS_Code__c )
+&amp;&amp;
+ISBLANK ( AccountId__r.GND_BE_Continent__c)
+&amp;&amp;
+ISBLANK ( AccountId__r.GND_NL_Continent__c)
+))</errorConditionFormula>
+    <errorMessage>If there’s a new Contract of the record type “Continent”, at least one of these fields on the Business Account must have a value: GND_NL_Continent__c, GND_BE_Continent__c, FCE_Continent__c, GDS_Code__c</errorMessage>
+</ValidationRule>

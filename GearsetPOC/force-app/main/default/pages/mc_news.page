@@ -1,0 +1,200 @@
+<apex:page Controller="mc_article_news_controller" language="{!mc_LanguageISO}" showHeader="false" sidebar="false" standardStylesheets="false" docType="html-5.0" applyHtmlTag="false" >
+ 
+<link REL="SHORTCUT ICON" HREF="https://static.eurostar.com/ui/design-system/favicon.png"/>
+ 
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Eurostar-Media Centre</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <c:mc_styles ></c:mc_styles>
+</head>
+<body>
+
+    
+  
+ 
+    <!-- header starts -->
+    <apex:outputpanel rendered="{!language==null}">
+        <c:mc_header_es lang="United Kingdom"></c:mc_header_es>
+    </apex:outputpanel>
+    <apex:outputpanel rendered="{!language!=null && CONTAINS(language,'en')}">
+        <c:mc_header_es lang="United Kingdom"></c:mc_header_es>
+    </apex:outputpanel>
+    <apex:outputpanel rendered="{!language!=null && CONTAINS(language,'fr')}">
+        <c:mc_header_fr lang="Français"></c:mc_header_fr>         
+    </apex:outputpanel>
+    <apex:outputpanel rendered="{!language!=null && CONTAINS(language,'nl')}">
+        <c:mc_header_nl lang="Nederland"></c:mc_header_nl>                            
+    </apex:outputpanel>
+    
+   
+    <!-- header ends -->
+
+    <!-- searchbar starts -->
+   
+    <!-- searchbar ends -->
+
+    <!-- content wrapper starts -->
+    <div class="row">
+        <div class="container content">
+
+           <!-- search row -->
+        <div>
+            <span>
+                <ul class="search-ul">
+                    <li><a href="{!$Site.BaseUrl}/mc_news?language={!language}" class="selected">{!$Label.mc_news}</a></li>
+                    <li><a href="{!$Site.BaseUrl}/mc_financial?language={!language}">{!$Label.mc_financial_result}</a></li>
+                    <li><a href="{!$Site.BaseUrl}/mc_contact?language={!language}">{!$Label.mc_contact}</a></li>
+                     <!--<li><a href="http://www.eurostar.com/uk-en/about-eurostar" target="_blank">About</a></li>-->
+               
+                     <li><a href="http://www.eurostar.com/{!language}/{!$Label.mc_aboutsite}" target="_blank">{!$Label.mc_about_result}</a></li>
+                </ul>
+                <!--<form action="/mc_view/language/article_Id" method="get">
+                 <input id="phSearchInput" type="text" name="str"/>
+                 <input type="submit" value="Search"/>
+                </form>-->
+                <form>
+                <div class="search-buttons">
+                    <button class="form-control search-btn">{!$Label.mc_search}</button>
+                    <input class="form-control" height="50" placeholder="{!$Label.mc_search}" type="text" width="25"/>
+                </div>
+                </form>
+                <div class="clear"></div>
+            </span>
+        </div>  
+            <!-- /search row -->
+            
+
+            <!-- content starts -->
+            <div class="row inside financial">
+                <!-- content specific for news -->
+                <div class="row top-banner">
+                    <div class="images">
+                        <apex:outputpanel rendered="{!language==null}">
+                            <img src="{!URLFOR($Resource.mc_news_header, 'Press-centre-news.jpg')}" alt="news-page-eurostar" class="hidden-xs" />
+                        </apex:outputpanel>
+                        <apex:outputpanel rendered="{!language!=null && CONTAINS(language,'en')}">
+                            <img src="{!URLFOR($Resource.mc_news_header, 'Press-centre-news.jpg')}" alt="news-page-eurostar" class="hidden-xs" />
+                        </apex:outputpanel>
+                        <apex:outputpanel rendered="{!language!=null && CONTAINS(language,'fr')}">
+                            <img src="{!URLFOR($Resource.mc_news_header, 'Press-centre-newsFR.jpg')}" alt="news-page-eurostar" class="hidden-xs" />          
+                        </apex:outputpanel>
+                        <apex:outputpanel rendered="{!language!=null && CONTAINS(language,'nl')}">
+                            <img src="{!URLFOR($Resource.mc_news_header, 'Press-centre-newsBE.jpg')}" alt="news-page-eurostar" class="hidden-xs" />                            
+                        </apex:outputpanel>
+                        <apex:outputpanel rendered="{!language!=null && CONTAINS(language,'de')}">
+                            <img src="{!URLFOR($Resource.mc_news_header, 'Press-centre-newsDE.jpg')}" alt="news-page-eurostar" class="hidden-xs" />                            
+                        </apex:outputpanel>
+                        <h1>News</h1>
+                        <p>The latest news from Eurostar</p>
+                    </div>
+                </div>
+                
+                
+                    <div>
+                <div class="row inner">
+                    <apex:repeat value="{!mc_featured_news}" var="mc_featured" id="theFeaturedRepeat">
+                    <div class="row news-list">
+                        <apex:outputPanel rendered="{!mc_featured.Media_Centre_News_Article_Image__c!=null}">
+                            <div class="col-sm-6 image">
+                               <a href="{!$Site.BaseUrl}/mc_view?language={!language}&article_Id={!mc_featured.Id}"> 
+                                   <img src="{!mc_featured.Media_Centre_News_Article_Image__c}" />
+                               </a>
+                               </div>
+                               <div class="col-sm-6 description">
+                                    <h4><a href="{!$Site.BaseUrl}/mc_view?language={!language}&article_Id={!mc_featured.Id}">{!mc_featured.title}</a></h4>
+                                    <p class="date">
+                                  <apex:outputText value="{0, date, d MMMM   yyyy}" >
+                                      <apex:param value="{!IF(mc_featured.Media_Centre_OriginalPublishDate__c == NULL ,mc_featured.FirstPublishedDate, mc_featured.Media_Centre_OriginalPublishDate__c)}" />
+                                  </apex:outputText></p>
+                                    <p class="paragraph">
+                                        <apex:outputText escape="false"  value="{!mc_featured.Media_Centre_SummaryWebPage__c}"></apex:outputText>
+                                    </p>
+                                </div>
+                        </apex:outputPanel>
+                        </div>
+                    </apex:repeat>
+                    
+                    <apex:repeat value="{!mc_news}" var="mc_news_arti" id="theRepeat">
+                        <div class="row news-list">
+                            <apex:outputPanel rendered="{!mc_news_arti.Media_Centre_News_Article_Image__c!=null}">
+                               
+                               <div class="col-sm-4 image">
+                               <a href="{!$Site.BaseUrl}/mc_view?language={!language}&article_Id={!mc_news_arti.Id}">
+                                   <img src="{!mc_news_arti.Media_Centre_News_Article_Image__c}"/>
+                               </a>
+                               </div>
+                               <div class="col-sm-8 description">
+                                    <h4><a href="{!$Site.BaseUrl}/mc_view?language={!language}&article_Id={!mc_news_arti.Id}">{!mc_news_arti.title}</a></h4>
+                                    <p class="date">
+                                  <apex:outputText value="{0, date, d MMMM   yyyy}" >
+                                      <apex:param value="{!IF(mc_news_arti.Media_Centre_OriginalPublishDate__c == NULL ,mc_news_arti.FirstPublishedDate, mc_news_arti.Media_Centre_OriginalPublishDate__c)}" />
+                                  </apex:outputText></p>
+                                    <p class="paragraph">
+                                        <apex:outputText escape="false"  value="{!mc_news_arti.Media_Centre_SummaryWebPage__c}"></apex:outputText>
+                                    </p>
+                                </div>
+                            </apex:outputPanel>
+                            <apex:outputPanel rendered="{!mc_news_arti.Media_Centre_News_Article_Image__c==null}">
+                               
+                               <div class="col-sm-12 description">
+                                    <h4><a href="{!$Site.BaseUrl}/mc_view?language={!language}&article_Id={!mc_news_arti.Id}">{!mc_news_arti.title}</a></h4>
+                                    <p class="date">
+                                  <apex:outputText value="{0, date, d MMMM   yyyy}" >
+                                      <apex:param value="{!IF(mc_news_arti.Media_Centre_OriginalPublishDate__c == NULL ,mc_news_arti.FirstPublishedDate, mc_news_arti.Media_Centre_OriginalPublishDate__c)}" />
+                                  </apex:outputText></p>
+                                    <p class="paragraph">
+                                        <apex:outputText escape="false"  value="{!mc_news_arti.Media_Centre_SummaryWebPage__c}"></apex:outputText>
+                                    </p>
+                                </div>
+                            </apex:outputPanel>
+                        </div>
+                    </apex:repeat>
+                    <!-- news item ends -->
+                </div>
+              
+                <!-- end content specific for news -->
+                </div>
+            </div>
+            <!-- content ends -->
+
+        </div>
+    </div>
+    
+    <!-- content wrapper ends -->
+
+    <!-- footer starts -->
+    <apex:outputpanel rendered="{!language==null}">
+        <c:mc_footer ></c:mc_footer> 
+    </apex:outputpanel>
+    <apex:outputpanel rendered="{!language!=null && CONTAINS(language,'en')}">
+        <c:mc_footer ></c:mc_footer> 
+    </apex:outputpanel>
+    <apex:outputpanel rendered="{!language!=null && CONTAINS(language,'fr')}">
+        <c:mc_footer_fr ></c:mc_footer_fr>           
+    </apex:outputpanel>
+    <apex:outputpanel rendered="{!language!=null && CONTAINS(language,'nl')}">
+        <c:mc_footer_nl ></c:mc_footer_nl>                            
+    </apex:outputpanel>  
+ 
+    <!-- footer ends -->
+
+    <script src="https://code.jquery.com/jquery-2.1.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script>
+        $(".dropdown").hover(function() {
+            $(".dropdown .dropdown-menu").toggle();
+        });
+        if ($(window).width() <= 767) {
+            var x = $(".menu .dropdown-menu").clone();
+            $(".collapse").append(x);
+            $("li.dropdown").click(function() {
+                $(".collapse .dropdown-menu:last-of-type").toggle();
+            });
+        }
+    </script>
+</body>
+</html>
+</apex:page>

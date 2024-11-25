@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Main_Agency_Business_Accounts</fullName>
+    <columns>NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Business_Account__c.Agency_Account</value>
+    </filters>
+    <filters>
+        <field>Hierarchy_Level__c</field>
+        <operation>equals</operation>
+        <value>Main Account</value>
+    </filters>
+    <label>Main Agency Business Accounts</label>
+    <sharedTo>
+        <roleAndSubordinatesInternal>Sales_Admin</roleAndSubordinatesInternal>
+    </sharedTo>
+</ListView>

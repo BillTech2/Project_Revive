@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Where_suspected_Fraud_is_Other</fullName>
+    <active>true</active>
+    <description>Further details required if suspected Fraud value is &#39;Other&#39;</description>
+    <errorConditionFormula>AND(
+ISPICKVAL(Where_Was_The_Suspected_Fraud_Found__c,&quot;Other&quot;),
+ISPICKVAL(Type, &quot;Fraud&quot;),
+LEN(Supporting_Information__c)=0
+)</errorConditionFormula>
+    <errorMessage>Please provide further details in the &#39;Supporting Information&#39; box.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,54 @@
+<apex:component >
+	<apex:attribute name="language" description="A string containing market and language (eg: uk-en or be-fr)" type="String" required="true"/>
+    <apex:attribute name="categoryRecord" description="Details of the category" type="FAQ_Category_Data__c" required="true"/>
+    
+    <!-- CATEGORY IMAGE AND FRIENDLY URL IN ENGLISH -->
+    
+	<apex:outputpanel layout="none" rendered="{!language=='uk-en'}">
+	    <a href="/faq/uk-en/category/{!categoryRecord.English_URL_Friendly_Name__c}"> 
+	    	<img src="{!URLFOR($Resource.FAQ_Mockup, categoryRecord.Category_Image__c)}" width="100%"/>
+	    </a>
+	</apex:outputpanel>
+	<apex:outputpanel layout="none" rendered="{!language=='us-en'}">
+	    <a href="/faq/us-en/category/{!categoryRecord.English_URL_Friendly_Name__c}"> 
+	    	<img src="{!URLFOR($Resource.FAQ_Mockup, categoryRecord.Category_Image__c)}" width="100%"/>
+	    </a>
+	</apex:outputpanel>
+	<apex:outputpanel layout="none" rendered="{!language=='rw-en'}">
+	    <a href="/faq/rw-en/category/{!categoryRecord.English_URL_Friendly_Name__c}"> 
+	    	<img src="{!URLFOR($Resource.FAQ_Mockup, categoryRecord.Category_Image__c)}" width="100%"/>
+	    </a>
+	</apex:outputpanel>
+	
+	<!-- CATEGORY IMAGE AND FRIENDLY URL IN FRENCH -->
+	<apex:outputpanel layout="none" rendered="{!language=='fr-fr'}">
+	    <a href="/faq/fr-fr/categorie/{!categoryRecord.French_URL_Friendly_Name__c}"> 
+	    	<img src="{!URLFOR($Resource.FAQ_Mockup, categoryRecord.Category_Image__c)}" width="100%"/>
+	    </a>
+	</apex:outputpanel>
+	<apex:outputpanel layout="none" rendered="{!language=='be-fr'}">
+	    <a href="/faq/be-fr/categorie/{!categoryRecord.French_URL_Friendly_Name__c}"> 
+	    	<img src="{!URLFOR($Resource.FAQ_Mockup, categoryRecord.Category_Image__c)}" width="100%"/>
+	    </a>
+	</apex:outputpanel>
+	
+	<!-- CATEGORY IMAGE AND FRIENDLY URL IN DUTCH -->
+	<apex:outputpanel layout="none" rendered="{!language=='nl-nl'}">
+	    <a href="/faq/nl-nl/categorie/{!categoryRecord.Dutch_URL_Friendly_Name__c}"> 
+	    	<img src="{!URLFOR($Resource.FAQ_Mockup, categoryRecord.Category_Image__c)}" width="100%"/>
+	    </a>
+	</apex:outputpanel>
+	<apex:outputpanel layout="none" rendered="{!language=='be-nl'}">
+	    <a href="/faq/be-nl/categorie/{!categoryRecord.Dutch_URL_Friendly_Name__c}"> 
+	    	<img src="{!URLFOR($Resource.FAQ_Mockup, categoryRecord.Category_Image__c)}" width="100%"/>
+	    </a>
+	</apex:outputpanel>
+
+	<!-- CATEGORY IMAGE AND FRIENDLY URL IN GERMAN -->
+	<apex:outputpanel layout="none" rendered="{!language=='de-de'}">
+	    <a href="/faq/de-de/categorie/{!categoryRecord.German_URL_Friendly_Name__c}"> 
+	    	<img src="{!URLFOR($Resource.FAQ_Mockup, categoryRecord.Category_Image__c)}" width="100%"/>
+	    </a>
+	</apex:outputpanel>
+	
+</apex:component>

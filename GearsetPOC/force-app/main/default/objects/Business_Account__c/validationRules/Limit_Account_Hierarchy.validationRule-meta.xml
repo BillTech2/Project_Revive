@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Limit_Account_Hierarchy</fullName>
+    <active>true</active>
+    <description>Limits Account hierarchies to two levels, so one level of child accounts only underneath the parent account.</description>
+    <errorConditionFormula>(ISNEW() || ISCHANGED(ParentId__c))
+
+&amp;&amp; 
+
+!ISBLANK(ParentId__r.ParentId__c)</errorConditionFormula>
+    <errorDisplayField>ParentId__c</errorDisplayField>
+    <errorMessage>Account Hierarchy can only have 2 levels. Chosen Account is already a child to some other Account.</errorMessage>
+</ValidationRule>

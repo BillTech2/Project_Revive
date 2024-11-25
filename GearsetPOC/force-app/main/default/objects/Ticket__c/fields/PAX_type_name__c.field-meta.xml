@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PAX_type_name__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+	CONTAINS(PAX_Type__c,&quot;GC&quot;)
+	||CONTAINS(PAX_Type__c,&quot;GE&quot;)
+	||CONTAINS(PAX_Type__c,&quot;GA&quot;)
+	||CONTAINS(PAX_Type__c,&quot;GV&quot;)
+	||CONTAINS(PAX_Type__c,&quot;OG&quot;)
+	||CONTAINS(PAX_Type__c,&quot;GW&quot;)
+	||CONTAINS(PAX_Type__c,&quot;GF&quot;)
+	||CONTAINS(PAX_Type__c,&quot;GU&quot;)
+	||CONTAINS(PAX_Type__c,&quot;GZ&quot;),
+	&quot;Group Booking&quot;,
+
+IF(
+	CONTAINS(PAX_Type__c,&quot;FI&quot;)
+	||CONTAINS(PAX_Type__c,&quot;FB&quot;),
+	&quot;FIP Booking&quot;,
+
+IF(
+	CONTAINS(PAX_Type__c,&quot;FG&quot;)
+	||CONTAINS(PAX_Type__c,&quot;SV&quot;),
+	&quot;Staff Voucher Booking&quot;,
+
+IF(
+	CONTAINS(PAX_Type__c,&quot;FE&quot;)
+	||CONTAINS(PAX_Type__c,&quot;PL&quot;),
+	&quot;PALS Booking&quot;,
+
+IF(
+	CONTAINS(PAX_Type__c,&quot;TE&quot;)
+	||CONTAINS(PAX_Type__c,&quot;TF&quot;)
+	||CONTAINS(PAX_Type__c,&quot;TP&quot;),
+	&quot;Duty Booking&quot;,
+
+IF(
+	CONTAINS(PAX_Type__c,&quot;YD&quot;)
+	||CONTAINS(PAX_Type__c,&quot;WC&quot;),
+	&quot;Wheelchair Booking&quot;,
+
+IF(
+	CONTAINS(PAX_Type__c,&quot;BP&quot;),
+	&quot;Guide Dog Booking&quot;,
+
+IF(
+	CONTAINS(FBC__c,&quot;BGENOVSB&quot;),
+	&quot;SNAP Booking&quot;,
+
+&quot;Standard Passenger&quot;
+
+)
+)
+)
+)
+)
+)
+)
+)</formula>
+    <label>PAX Type Description</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

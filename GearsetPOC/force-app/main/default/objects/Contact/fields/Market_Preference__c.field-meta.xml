@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Market_Preference__c</fullName>
+    <label>Market Preference</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>France</fullName>
+                <default>false</default>
+                <label>France</label>
+            </value>
+            <value>
+                <fullName>Belgium</fullName>
+                <default>false</default>
+                <label>Belgium</label>
+            </value>
+            <value>
+                <fullName>Great Britain</fullName>
+                <default>false</default>
+                <label>Great Britain</label>
+            </value>
+            <value>
+                <fullName>Netherlands</fullName>
+                <default>false</default>
+                <label>Netherlands</label>
+            </value>
+            <value>
+                <fullName>United States of America</fullName>
+                <default>false</default>
+                <label>United States of America</label>
+            </value>
+            <value>
+                <fullName>Rest of the World</fullName>
+                <default>false</default>
+                <label>Rest of the World</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

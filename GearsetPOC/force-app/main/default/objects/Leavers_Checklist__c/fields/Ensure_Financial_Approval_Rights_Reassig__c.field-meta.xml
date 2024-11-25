@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ensure_Financial_Approval_Rights_Reassig__c</fullName>
+    <defaultValue>false</defaultValue>
+    <label>Ensure Financial Approval Rights Reassig</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

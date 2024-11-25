@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Declaration__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>I declare that all the information submitted by me on this Timesheet is correct.</inlineHelpText>
+    <label>DECLARATION</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

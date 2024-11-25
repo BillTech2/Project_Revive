@@ -1,0 +1,13 @@
+<apex:page showHeader="false" sidebar="false" language="{!selectedLanguageCode}" controller="CompApp_CtrlApp" standardStylesheets="false" applyHtmlTag="false" applyBodyTag="false" showChat="false">
+
+    <div>
+        <h1 class="row">{!$label.CompApp_thankYouInterest}</h1>
+
+        <div class="row p1">{!$label.CompApp_contactShortly}</div>
+
+        <div class="row commands-section">
+            <a href="http://www.eurostar.com/" target="_blank" class="btn secondary" ng-click="">{!$label.CompApp_visit_eurostar}</a>
+        </div>
+    </div>
+
+</apex:page>

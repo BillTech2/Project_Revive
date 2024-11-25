@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Impacted_Application__c</fullName>
+    <label>Impacted Application</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Service Cloud</fullName>
+                <default>false</default>
+                <label>Service Cloud</label>
+            </value>
+            <value>
+                <fullName>Sales Cloud</fullName>
+                <default>false</default>
+                <label>Sales Cloud</label>
+            </value>
+            <value>
+                <fullName>Marketing Cloud</fullName>
+                <default>false</default>
+                <label>Marketing Cloud</label>
+            </value>
+            <value>
+                <fullName>ICLP</fullName>
+                <default>false</default>
+                <label>ICLP</label>
+            </value>
+            <value>
+                <fullName>Social Studio</fullName>
+                <default>false</default>
+                <label>Social Studio</label>
+            </value>
+            <value>
+                <fullName>Stella Surveys</fullName>
+                <default>false</default>
+                <label>Stella Surveys</label>
+            </value>
+            <value>
+                <fullName>Simpplr</fullName>
+                <default>false</default>
+                <label>Simpplr</label>
+            </value>
+            <value>
+                <fullName>Docusign</fullName>
+                <default>false</default>
+                <label>Docusign</label>
+            </value>
+            <value>
+                <fullName>Aria</fullName>
+                <default>false</default>
+                <label>Aria</label>
+            </value>
+            <value>
+                <fullName>Salesforce</fullName>
+                <default>false</default>
+                <label>Salesforce</label>
+            </value>
+            <value>
+                <fullName>Voyager</fullName>
+                <default>false</default>
+                <label>Voyager</label>
+            </value>
+            <value>
+                <fullName>Vonage</fullName>
+                <default>false</default>
+                <label>Vonage</label>
+            </value>
+            <value>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <label>Others</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,165 @@
+<apex:component >
+<!-- event system built on local storage -->
+<script type="text/javascript">
+function cookieEvents(cookieName) {
+    var EXPIRATION = 10000;
+    var INTERVAL = 100;
+    var lastId = 0;
+    var listeners = {};
+
+    init();
+
+    return {
+        off: off,
+        on: on,
+        trigger: trigger
+    };
+
+    ///
+
+    function checkEvents() {
+        var events = getEvents();
+        events.forEach(function(event, i) {
+            if (event.id > lastId) {
+                try {
+                    handle(event.name, event.data);
+                } catch (e) {
+                    console.log(e);
+                }
+                lastId = event.id;
+            }
+        });
+    }
+
+    function getEvents() {
+        var events = getCookie(cookieName);
+        return events ? JSON.parse(events) : [];
+    }
+
+    function handle(event, data) {
+        if (event in listeners) {
+            listeners[event].forEach(function(listener) {
+                listener(data);
+            });
+        }
+    }
+
+    function init() {
+        var events = getEvents();
+        if (events.length) {
+            lastId = events[events.length - 1].id;
+        }
+        setInterval(checkEvents, INTERVAL);
+    }
+
+    function off(event, offListener) {
+        if (listeners[event]) {
+            var offIndex = -1;
+            listeners[event].forEach(function(listener, i) {
+                if (offIndex < 0 && listener === offListener) {
+                    offIndex = i;
+                }
+            });
+
+            if (offIndex >= 0) {
+                listeners[event].splice(offIndex, 1);
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    function on(event, onListener) {
+        if (!listeners[event]) {
+            listeners[event] = [];
+        }
+        listeners[event].push(onListener);
+    }
+
+    function storeEvents(events) {
+        var i;
+        var start = events.length;
+        var startTime = new Date().getTime() - EXPIRATION;
+        for (i = events.length - 1; i >= 0; --i) {
+            if (events[i].time > startTime) {
+                start = i;
+            }
+        }
+        setCookie(cookieName, JSON.stringify(events.slice(start, events.length)), {
+            path: '/'
+        });
+    }
+
+    function trigger(event, data) {
+        var events = getEvents();
+        events.push({
+            data: data,
+            id: ++lastId,
+            name: event,
+            time: new Date().getTime()
+        });
+        storeEvents(events);
+    }
+}
+</script>
+
+<!-- cross-browser postMessage -->
+<script type="text/javascript">
+if (!window.ESR) {
+    window.ESR = {};
+}
+
+(function() {
+    var EVENTS_COOKIE = 'esr_livechat_events';
+
+    ESR.initMessageProxy = function() {
+        var ce = cookieEvents(EVENTS_COOKIE);
+        ce.on('liveChatProxy', function(data) {
+            if (data.instanceId === window.location.hash.replace('#', '')) {
+                window.parent.postMessage({
+                    event: data.event,
+                    payload: data.payload
+                }, data.host);
+            }
+        });
+    };
+
+    ESR.Messenger = function(newWindow, instanceId, host) {
+        var ce = cookieEvents(EVENTS_COOKIE);
+        var IE = /MSIE |Trident\//.test(window.navigator.userAgent);
+        var target = newWindow ? window.opener : window.parent;
+        host = host || '*';
+
+        return {
+            postEventMessage: postEventMessage
+        };
+
+        ///
+
+        function postEventMessage(event, payload) {
+
+            if (newWindow && IE) {
+                ce.trigger('liveChatProxy', {
+                    event: event,
+                    host: host,
+                    payload: payload,
+                    instanceId: instanceId
+                });
+            } else {
+
+                try{
+                    target.postMessage({
+                        event: event,
+                        payload: payload
+                    }, host);
+
+                } catch (e) {
+                    console.log(e);
+                }
+            }
+        }
+    };
+})();
+</script>
+</apex:component>

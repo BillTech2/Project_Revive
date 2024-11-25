@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_the_dog_of_good_health_and_free_from__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>Is the dog of good health and free from infectious diseases</inlineHelpText>
+    <label>Is the dog of good health</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

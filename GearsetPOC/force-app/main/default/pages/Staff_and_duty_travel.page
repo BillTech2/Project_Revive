@@ -1,0 +1,218 @@
+<apex:page standardcontroller="Staff_and_duty_travel__c" extensions="StaffAndDutyTravel_extension">
+    
+    
+    <apex:form id="formulaire">
+        
+        <apex:pageBlock >
+            
+            <!-- _________________ Button Section ____________________ -->
+            <div align="center">
+                <apex:commandButton action="{!saveAndThanks}" value="Save"/>
+            </div>
+            <!-- _________________ /Button Section ____________________ -->  
+            
+            <apex:messages styleClass="errorMsg"/>            
+            
+            <!-- _________________ Description Section ____________________ -->
+            <apex:actionRegion >
+                <apex:pageBlockSection columns="1">
+                    
+                    
+                    <apex:inputHidden value="{!Staff_and_duty_travel__c.RecordTypeId}" id="recordType"/>
+                    <script> 
+                    var blueVoucher = document.getElementById('{!$Component.recordType}').value="{!StaffRecordId}";
+                    </script>
+                    
+                    <apex:outputText value="{!$Label.Staff_Travel_Form_Blue_vouchers_description}" escape="false"/>
+                    
+                    <apex:inputHidden value="{!Staff_and_duty_travel__c.Status__c}" id="status"/>
+                    <script> 
+                    var status = document.getElementById('{!$Component.status}').value="Open";
+                    </script>
+                </apex:pageBlockSection>
+            </apex:actionRegion>
+            <!-- _________________ /Description Section ____________________ -->
+            
+            
+            <!-- _________________ Staff Information Section ____________________ -->
+            <apex:pageBlockSection columns="2" title="{!$Label.Staff_Travel_Information}">
+                <apex:outputText value="{!$User.FirstName}" label="{!$Label.Staff_Travel_First_Name}"/>
+                <apex:outputText value="{!$User.LastName}" label="{!$Label.Staff_Travel_Last_Name}"/>
+                <apex:outputText value="{!$User.Email}" label="{!$Label.Staff_Travel_Email_Address}"/>
+                <apex:inputField value="{!Staff_and_duty_travel__c.Staff_phone_number__c}" required="true"/>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="{!$Label.Staff_travel_pass_number}" for="passNumber"/>
+                    <apex:outputPanel id="passNumber">
+                        <apex:inputField value="{!Staff_and_duty_travel__c.Pass_number_prefix__c}" required="true"/>
+                        <apex:inputField value="{!Staff_and_duty_travel__c.Staff_pass_number__c}" required="true"/>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+                <apex:inputHidden value="{!Staff_and_duty_travel__c.Staff_First_Name__c}" id="FirstName"/>
+                <apex:inputHidden value="{!Staff_and_duty_travel__c.Staff_Last_name__c}" id="LastName"/>
+                <apex:inputHidden value="{!Staff_and_duty_travel__c.Staff_email_address__c}" id="EmailAddress"/>
+                <script> 
+                var FirstName = document.getElementById('{!$Component.FirstName}').value="{!$User.FirstName}";
+                var LastName = document.getElementById('{!$Component.LastName}').value="{!$User.LastName}"; 
+                var EmailAddress = document.getElementById('{!$Component.EmailAddress}').value="{!$User.Email}";
+                </script>
+            </apex:pageBlockSection>
+            <!-- _________________ /Staff Information Section ____________________ -->
+            
+            <!-- _________________ Passenger Information Section ____________________ -->
+            
+            <apex:pageBlockSection columns="1" id="PassengerInformation" title="{!$Label.Staff_travel_Passenger_Information}">
+                <apex:pageBlockSection id="PassengerList" columns="1">
+                    <apex:actionRegion >
+                        <apex:pageBlockSection >
+                            <apex:inputField value="{!Staff_and_duty_travel__c.Nb_of_passengers__c}" required="true">
+                                <apex:actionSupport event="onchange" rerender="PassengerList"/>
+                            </apex:inputField>
+                        </apex:pageBlockSection>
+                    </apex:actionRegion>
+                    
+                    <apex:pageBlockSection id="passenger1" columns="2" 
+                                           rendered="{!IF(Staff_and_duty_travel__c.Nb_of_passengers__c='1' || Staff_and_duty_travel__c.Nb_of_passengers__c='2' 
+                                                     || Staff_and_duty_travel__c.Nb_of_passengers__c='3' || Staff_and_duty_travel__c.Nb_of_passengers__c='4'
+                                                     ||Staff_and_duty_travel__c.Nb_of_passengers__c='5' || Staff_and_duty_travel__c.Nb_of_passengers__c='6' 
+                                                     || Staff_and_duty_travel__c.Nb_of_passengers__c='More than 6', true, false)}">
+                        <apex:inputField value="{!Staff_and_duty_travel__c.Passenger_1_last_name__c}" required="true"/>
+                        <apex:inputField value="{!Staff_and_duty_travel__c.Passenger_1_first_name__c}" required="true"/>
+                        <apex:inputField value="{!Staff_and_duty_travel__c.Dietary_Requirements_1__c}"/>
+                    </apex:pageBlockSection>
+                    
+                    <apex:pageBlockSection id="passenger2" columns="2"
+                                           rendered="{!IF(Staff_and_duty_travel__c.Nb_of_passengers__c='2' || Staff_and_duty_travel__c.Nb_of_passengers__c='3' 
+                                                     || Staff_and_duty_travel__c.Nb_of_passengers__c='4' ||Staff_and_duty_travel__c.Nb_of_passengers__c='5' 
+                                                     || Staff_and_duty_travel__c.Nb_of_passengers__c='6' || Staff_and_duty_travel__c.Nb_of_passengers__c='More than 6', true, false)}">
+                        <apex:inputField value="{!Staff_and_duty_travel__c.Passenger_2_last_name__c}" required="true"/>
+                        <apex:inputField value="{!Staff_and_duty_travel__c.Passenger_2_first_name__c}" required="true"/>
+                        <apex:inputField value="{!Staff_and_duty_travel__c.Dietary_Requirements_2__c}"/>
+                        <apex:inputField value="{!Staff_and_duty_travel__c.Is_passenger_2_a_dependent_child__c}"/>
+                    </apex:pageBlockSection>
+                    <apex:pageBlockSection id="passenger3" columns="2" 
+                                           rendered="{!IF(Staff_and_duty_travel__c.Nb_of_passengers__c='3' || Staff_and_duty_travel__c.Nb_of_passengers__c='4'
+                                                     ||Staff_and_duty_travel__c.Nb_of_passengers__c='5' || Staff_and_duty_travel__c.Nb_of_passengers__c='6' 
+                                                     || Staff_and_duty_travel__c.Nb_of_passengers__c='More than 6', true, false)}">
+                        <apex:inputField value="{!Staff_and_duty_travel__c.Passenger_3_last_name__c}" required="true"/>
+                        <apex:inputField value="{!Staff_and_duty_travel__c.Passenger_3_first_name__c}" required="true"/>
+                        <apex:inputField value="{!Staff_and_duty_travel__c.Dietary_Requirements_3__c}"/>
+                        <apex:inputField value="{!Staff_and_duty_travel__c.Is_passenger_3_a_dependent_child__c}"/>
+                    </apex:pageBlockSection>
+                    <apex:pageBlockSection id="passenger4" columns="2" 
+                                           rendered="{!IF(Staff_and_duty_travel__c.Nb_of_passengers__c='4'||Staff_and_duty_travel__c.Nb_of_passengers__c='5' 
+                                                     || Staff_and_duty_travel__c.Nb_of_passengers__c='6' || Staff_and_duty_travel__c.Nb_of_passengers__c='More than 6', true, false)}">
+                        <apex:inputField value="{!Staff_and_duty_travel__c.Passenger_4_last_name__c}" required="true"/>
+                        <apex:inputField value="{!Staff_and_duty_travel__c.Passenger_4_first_name__c}" required="true"/>
+                        <apex:inputField value="{!Staff_and_duty_travel__c.Dietary_Requirements_4__c}"/>
+                        <apex:inputField value="{!Staff_and_duty_travel__c.Is_passenger_4_a_dependent_child__c}"/>
+                    </apex:pageBlockSection>
+                    <apex:pageBlockSection id="passenger5" columns="2" 
+                                           rendered="{!IF(Staff_and_duty_travel__c.Nb_of_passengers__c='5' || Staff_and_duty_travel__c.Nb_of_passengers__c='6' 
+                                                     || Staff_and_duty_travel__c.Nb_of_passengers__c='More than 6', true, false)}">
+                        <apex:inputField value="{!Staff_and_duty_travel__c.Passenger_5_last_name__c}" required="true"/>
+                        <apex:inputField value="{!Staff_and_duty_travel__c.Passenger_5_first_name__c}" required="true"/>
+                        <apex:inputField value="{!Staff_and_duty_travel__c.Dietary_Requirements_5__c}"/>
+                        <apex:inputField value="{!Staff_and_duty_travel__c.Is_passenger_5_a_dependent_child__c}"/>
+                    </apex:pageBlockSection>
+                    <apex:pageBlockSection id="passenger6" columns="2" 
+                                           rendered="{!IF(Staff_and_duty_travel__c.Nb_of_passengers__c='6' || Staff_and_duty_travel__c.Nb_of_passengers__c='More than 6', true, false)}">
+                        <apex:inputField value="{!Staff_and_duty_travel__c.Passenger_6_last_name__c}"  required="true"/>
+                        <apex:inputField value="{!Staff_and_duty_travel__c.Passenger_6_first_name__c}" required="true"/>
+                        <apex:inputField value="{!Staff_and_duty_travel__c.Dietary_Requirements_6__c}"/>
+                        <apex:inputField value="{!Staff_and_duty_travel__c.Is_passenger_6_a_dependent_child__c}"/>
+                    </apex:pageBlockSection>
+                    <apex:pageBlockSection id="passengerPlus" columns="1" 
+                                           rendered="{!IF(Staff_and_duty_travel__c.Nb_of_passengers__c='More than 6', true, false)}">
+                        <apex:inputField value="{!Staff_and_duty_travel__c.Additional_passengers__c}" required="true" html-placeholder="Last Name / First Name / Dietary requirement / Is the passenger a dependent child?"/>
+                    </apex:pageBlockSection>
+                </apex:pageBlockSection>
+            </apex:pageBlockSection>
+            <!-- _________________ /Passenger Information Section ____________________ -->
+            
+            
+            <!-- _________________ Travel Information Section ____________________ -->
+            <apex:pageBlockSection id="Travel" columns="1"  title="$Label.Staff_Travel_Information_First_Choice">
+                <apex:outputPanel >
+                    <apex:outputText value="{!$Label.Staff_Travel_Form_Check_Train_schedule}"/>&nbsp; 
+                    <apex:outputLink value="www.eurostar.com">Eurostar.com </apex:outputLink> &nbsp;  
+                    <apex:outputText value="{!$Label.Staff_Travel_Form_Check_Train_Availability}"/>&nbsp; 
+                    <apex:outputLink value="http://intranet.ad.eurostar.inet/?item_id=23585">Train Availability Guide</apex:outputLink>. &nbsp;
+                    <apex:outputText value="{!$Label.Staff_Travel_Form_Check_Number_of_vouchers}"/>&nbsp;
+                    <apex:outputLink value="http://intranet.ad.eurostar.inet/?item_id=23388">Employee Vouchers - Information</apex:outputLink>   
+                </apex:outputPanel>
+                
+                <apex:actionRegion >
+                    <apex:pageBlockSection >
+                        <apex:inputField value="{!Staff_and_duty_travel__c.One_way__c}">
+                            <apex:actionSupport event="onchange" rerender="Travel"/>
+                        </apex:inputField>
+                    </apex:pageBlockSection>
+                </apex:actionRegion>
+                
+                <apex:pageBlockSection columns="2" >
+                    <apex:pageBlockSection id="Outward" columns="1" title="{!$Label.Staff_travel_Outward_Journey}">
+                        <apex:inputField value="{!Staff_and_duty_travel__c.From_Outward__c}" required="true"/>
+                        <apex:inputField value="{!Staff_and_duty_travel__c.To_Outward__c}" required="true"/>
+                        <apex:inputField value="{!Staff_and_duty_travel__c.Departure_Date_Outward__c}" required="true"/>
+                        <apex:inputField value="{!Staff_and_duty_travel__c.Departure_Time_Outward_1__c}" required="true"/>
+                        <apex:inputField value="{!Staff_and_duty_travel__c.Class_Outward__c}" required="true"/>
+                        <apex:inputField value="{!Staff_and_duty_travel__c.Seating_requirements_Outward__c}"/>
+                    </apex:pageBlockSection>
+                    <apex:pageBlockSection columns="1" title="{!$Label.Staff_Travel_Return_Journey}" rendered="{!NOT(Staff_and_duty_travel__c.One_way__c==true)}">
+                        <apex:inputField value="{!Staff_and_duty_travel__c.From_Return__c}" required="true"/>
+                        <apex:inputField value="{!Staff_and_duty_travel__c.To_Return__c}" required="true"/>
+                        <apex:inputField value="{!Staff_and_duty_travel__c.Departure_Date_Return__c}" required="true"/>
+                        <apex:inputField value="{!Staff_and_duty_travel__c.Departure_Time_Return_1__c}" required="true"/>
+                        <apex:inputField value="{!Staff_and_duty_travel__c.Class_Return__c}" required="true"/>
+                        <apex:inputField value="{!Staff_and_duty_travel__c.Seating_requirements_Return__c}"/>
+                    </apex:pageBlockSection>
+                </apex:pageBlockSection>
+                
+                <apex:inputField value="{!Staff_and_duty_travel__c.Preferences__c}" required="true"/>
+                
+            </apex:pageBlockSection>
+            <!-- _________________ /Travel Information Section ____________________ -->
+            
+            <!-- _________________ Travel second choice Information Section ____________________ -->
+            <apex:pageBlockSection id="Travel_2" columns="1" title="{!$Label.Staff_Travel_Information_Second_Choice}">
+                <apex:actionRegion ><apex:pageBlockSection >
+                    <apex:inputField value="{!Staff_and_duty_travel__c.One_way_2__c}">
+                        <apex:actionSupport event="onchange" rerender="Travel_2"/>
+                    </apex:inputField>
+                    </apex:pageBlockSection></apex:actionRegion>
+                <apex:pageBlockSection columns="2">
+                    <apex:pageBlockSection id="Outward_2" columns="1" title="{!$Label.Staff_travel_Outward_Journey}">
+                        <apex:inputField value="{!Staff_and_duty_travel__c.From_Outward_2__c}"/>
+                        <apex:inputField value="{!Staff_and_duty_travel__c.To_Outward_2__c}"/>
+                        <apex:inputField value="{!Staff_and_duty_travel__c.Departure_Date_Outward_2__c}"/>
+                        <apex:inputField value="{!Staff_and_duty_travel__c.Departure_Time_Outward_2__c}"/>
+                        <apex:inputField value="{!Staff_and_duty_travel__c.Class_Outward_2__c}"/>
+                        <apex:inputField value="{!Staff_and_duty_travel__c.Seating_requirements_Outward_2__c}"/>
+                    </apex:pageBlockSection>
+                    <apex:pageBlockSection id="Return_2" columns="1" title="{!$Label.Staff_Travel_Return_Journey}" rendered="{!NOT(Staff_and_duty_travel__c.One_way_2__c == true)}">
+                        <apex:inputField value="{!Staff_and_duty_travel__c.From_Return_2__c}"/>
+                        <apex:inputField value="{!Staff_and_duty_travel__c.To_Return_2__c}"/>
+                        <apex:inputField value="{!Staff_and_duty_travel__c.Departure_Date_Return_2__c}"/>
+                        <apex:inputField value="{!Staff_and_duty_travel__c.Departure_Time_Return_2__c}"/>
+                        <apex:inputField value="{!Staff_and_duty_travel__c.Class_Return_2__c}"/>
+                        <apex:inputField value="{!Staff_and_duty_travel__c.Seating_requirements_Return_2__c}"/>
+                    </apex:pageBlockSection>
+                </apex:pageBlockSection>
+            </apex:pageBlockSection>
+            <!-- _________________ /Travel second choice Information Section ____________________ -->
+            
+            <!-- _________________ Button Section ____________________ -->
+            <div align="center">
+                <apex:commandButton action="{!saveAndThanks}" value="Save"/>
+                
+            </div>            <!-- _________________ /Button Section ____________________ -->               
+            
+            
+        </apex:pageBlock>
+        
+        <!-- GA Tracking -->
+        <site:googleAnalyticsTracking />
+    </apex:form>
+    
+</apex:page>

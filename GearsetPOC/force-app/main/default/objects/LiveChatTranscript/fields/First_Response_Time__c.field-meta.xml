@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>First_Response_Time__c</fullName>
+    <description>First Response Time</description>
+    <externalId>false</externalId>
+    <inlineHelpText>First Response Time - Time between first response of agent and client message, without auto greeting message.</inlineHelpText>
+    <label>First Response Time</label>
+    <precision>5</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

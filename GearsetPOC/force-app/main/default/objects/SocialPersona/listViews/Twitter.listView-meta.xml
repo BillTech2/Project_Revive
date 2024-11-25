@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Twitter</fullName>
+    <columns>Profile_Picture__c</columns>
+    <columns>Name</columns>
+    <columns>Provider</columns>
+    <columns>CreatedDate</columns>
+    <columns>Followers</columns>
+    <columns>Following</columns>
+    <columns>High_Influencer__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Provider</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Twitter</label>
+    <language>en_US</language>
+</ListView>

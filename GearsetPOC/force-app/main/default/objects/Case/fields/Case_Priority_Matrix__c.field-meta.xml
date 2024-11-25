@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Case_Priority_Matrix__c</fullName>
+    <externalId>false</externalId>
+    <formula>If (Disruptions_Last_6_Months__c &gt;= 1 &amp;&amp; Disruptions_Last_6_Months__c &lt;= 3, 80, 0) +
+
+If (Disruptions_Last_6_Months__c &gt; 3, 120, 0) +
+
+Days_Since_Created__c +
+
+Keywords__c +
+
+Loyalty_Tier_New__c +
+
+IF(Contact.Sensitive__c = TRUE, 100, 0) +
+
+Travel_Date__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Case Priority Matrix</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

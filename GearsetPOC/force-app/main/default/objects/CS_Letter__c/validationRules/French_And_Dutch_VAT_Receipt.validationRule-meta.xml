@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>French_And_Dutch_VAT_Receipt</fullName>
+    <active>true</active>
+    <errorConditionFormula>CONTAINS(RecordType.Name,&quot;VAT&quot;)
+&amp;&amp;
+NOT(ISPICkVAL(Requested_Language__c,&quot;English&quot;))</errorConditionFormula>
+    <errorMessage>There are currently no French or Dutch templates for this letter, please send this confirmation in English</errorMessage>
+</ValidationRule>

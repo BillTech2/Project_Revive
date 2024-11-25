@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>User_Service_Team__c</fullName>
+    <formula>IF(
+TEXT($User.Train_Service__c) == TEXT(Carrier__c) 
+||
+(TEXT(Carrier__c) == &quot;Blue&quot; &amp;&amp; TEXT($User.Train_Service__c) == &quot;Purple&quot;)
+||
+(TEXT(Carrier__c) == &quot;Red&quot; &amp;&amp; TEXT($User.Train_Service__c) == &quot;Purple&quot;)
+||
+(TEXT(Carrier__c) == &quot;Purple&quot; &amp;&amp; NOT(ISBLANK(TEXT($User.Train_Service__c)))),
+TRUE, FALSE)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>User&#39;s Service Team</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

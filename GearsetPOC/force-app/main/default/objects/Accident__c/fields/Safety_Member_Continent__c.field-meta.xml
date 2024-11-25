@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Safety_Member_Continent__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Name of  the the saftey team member responsible to handle incidents occured in the continent or to employees in the continent</description>
+    <inlineHelpText>Please enter the name  of the Saftey Team member in the continent if he/she need to be aware of this incident.</inlineHelpText>
+    <label>Safety Member (Continent)</label>
+    <referenceTo>User</referenceTo>
+    <relationshipName>Safety_Incidents2</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

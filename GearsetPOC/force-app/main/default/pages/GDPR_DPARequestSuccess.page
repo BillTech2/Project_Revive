@@ -1,0 +1,6 @@
+<apex:page id="GDPR_DPARequestSuccess" showHeader="false" sidebar="false" language="{!selectedLanguageCode}" controller="CompApp_CtrlApp" standardStylesheets="false" applyHtmlTag="false" applyBodyTag="false" showChat="false">
+
+    <div class="row p1" style="padding-top: 1rem">{! $Label.GDPR_DPA_Request_confirm}
+    </div>
+
+</apex:page>

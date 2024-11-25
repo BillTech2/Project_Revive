@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Compliance_Was_Met_Scoring__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(OR( ISPICKVAL(   GDPR_compliance_was_met_check__c  ,&quot;YES&quot;),ISPICKVAL( GDPR_compliance_was_met_check__c ,&quot;NA&quot;)),4,
+IF(OR(ISPICKVAL(GDPR_compliance_was_met_check__c ,&quot;NO - MINOR BREACH&quot;),ISPICKVAL(GDPR_compliance_was_met_check__c ,&quot;NO - MAJOR BREACH&quot;)),0,
+0))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>GDPR &amp; Compliance Was Met Scoring</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>1</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

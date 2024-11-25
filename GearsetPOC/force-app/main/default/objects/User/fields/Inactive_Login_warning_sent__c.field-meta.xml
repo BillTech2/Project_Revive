@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Inactive_Login_warning_sent__c</fullName>
+    <label>Inactive Login warning sent</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>1st warning sent</fullName>
+                <default>false</default>
+                <label>1st warning sent</label>
+            </value>
+            <value>
+                <fullName>2nd warning sent</fullName>
+                <default>false</default>
+                <label>2nd warning sent</label>
+            </value>
+            <value>
+                <fullName>3rd warning and user to be deactivated</fullName>
+                <default>false</default>
+                <label>3rd warning and user to be deactivated</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,97 @@
+<apex:page controller="ChangePalsIssuedPageController" docType="html-5.0" sidebar="false" showHeader="true">
+   <apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" />
+
+   <style>
+      .MyButton{
+      transition-duration: 0.2s;
+      color:#585858 !important;
+      font-size:16px !important;
+      background:white !important;
+      height: 40px !important;
+      width: 90px !important;
+      border: 3px solid #24b5c9 !important;
+      }
+      .MyButton:hover{
+      color:white !important;
+      font-size:16px !important;
+      background:#24b5c9 !important;
+      height: 40px !important;
+      width: 90px !important;
+      border: 4px solid #24b5c9 !important;
+      }
+      .MyButton2{
+      transition-duration: 0.2s;
+      color:#585858 !important;
+      font-size:20px !important;
+      background:white !important;
+      height: 90px !important;
+      width: 210px !important;
+      border: 3px solid #24b5c9 !important;
+      }
+      .MyButton2:hover{
+      color:white !important;
+      font-size:20px !important;
+      background:#24b5c9 !important;
+      height: 90px !important;
+      width: 210px !important;
+      border: 4px solid #24b5c9 !important;
+      }
+      .TextField{
+      width: 100px;
+       font-size:68px !important;
+      padding: 50px 15px;
+      border-radius: 3px;
+      background-color: #ffffff;"
+      border:4px solid #24b5c9 !important;
+
+      }
+      .Selectbox{
+
+      font-size:18px !important;
+      width: 250px;
+      border:2px solid #24b5c9 !important;
+      border-radius: 3px;
+      background-color: #ffffff;
+
+      }
+
+
+      }
+   </style>
+   <img style="padding-top:50px;padding-left:15px; width:25%;  display: inline-block;x solid #ddd; border-radius: 4px;" src="{!'https://' + $Label.Domain_Eurostar + '.salesforce.com/servlet/servlet.ImageServer?id=015b00000023s2nAAA&oid=00Db0000000aXu7EAE'}" alt="Home" />
+   <apex:form style="padding-top:50px; padding-left:200px; color:#FFFFFF; padding-right:220px">
+      <div style="border: 10px  solid #d3d3d3 " color="#d3d3d3" WIDTH="75%"  HEIGHT ="600px" CELLPADDING="5" CELLSPACING="5">
+         <div style="padding-left:100px; padding-right:50px;  padding-top:50px; display:inline-block">
+             <apex:input styleClass="TextField" type="number" value="{!num}" /> <font style ="color :#A2A0A0;font-size:48px; text-decoration:bold;"> PALS for</font>
+          </div>
+          <span style="padding-right:100px; padding-top:150px">
+            <apex:selectList styleClass="Selectbox"  value="{!companies}" multiselect="true" onchange="testQuery()">
+               <apex:selectOptions value="{!items}"/>
+            </apex:selectList>
+         </span>
+         <p/>
+            <span style="width: 500px; heigth:200px color:#000000">
+              <center><apex:commandButton styleClass="MyButton"  value="Apply" action="{!test}" rerender="out" status="status" />
+               </center>
+         <p/>
+         </span>
+      </div>
+            <div style="padding-top:30px;padding-bottom:50px">
+
+           <span>      <apex:outputPanel id="out">
+         <apex:actionstatus id="status" startText="testing...">
+            <apex:facet name="stop">
+               <apex:outputPanel >
+                   <p style="color :#A2A0A0;font-size:28px; text-decoration:bold;">Set the PALS issued to <b style="color:#24b5c9; font-size:30px;">{!num}</b> for:<b style="color:#ffffff; font-size:30px;"> {!query}</b> </p>
+                  <apex:dataList style="color:#24b5c9; font-size:30px;" value="{!companies}" var="c">{!c} </apex:dataList>
+               </apex:outputPanel>
+            </apex:facet>
+         </apex:actionstatus>
+        </apex:outputPanel></span>
+           <center>
+           <span>
+           <apex:commandButton styleClass="MyButton2"  value="execute" action="{!execute}" onclick="if(!confirm('Are you sure ?')){return false};"/>
+            </span></center>
+            </div>
+   </apex:form>
+</apex:page>

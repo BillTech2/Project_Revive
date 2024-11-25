@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Staff_Duty_Travel_CLEAN_UP</fullName>
+    <columns>Associated_account__c</columns>
+    <columns>NAME</columns>
+    <columns>Created_this_year__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>Type_of_booking__c</columns>
+    <columns>Status_of_the_booking__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Created_this_year__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Type_of_booking__c</field>
+        <operation>equals</operation>
+        <value>Pals</value>
+    </filters>
+    <filters>
+        <field>CREATED_DATE</field>
+        <operation>equals</operation>
+        <value>LAST_YEAR</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Staff_and_duty_travel__c.Aria_travel</value>
+    </filters>
+    <label>Staff &amp; Duty Travel - CLEAN UP</label>
+    <language>en_US</language>
+</ListView>

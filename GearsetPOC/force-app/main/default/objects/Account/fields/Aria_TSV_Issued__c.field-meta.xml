@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Aria_TSV_Issued__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( 
+Aria_TSV__c= true  &amp;&amp; YEAR(Aria_Date_of_Employment__pc)&lt;YEAR(DATEVALUE(NOW())),16,
+
+(if(Aria_TSV__c= true  &amp;&amp; Text(CEILING(MONTH(Aria_Date_of_Employment__pc)/3))=&quot;1&quot;,12,
+if(Aria_TSV__c= true  &amp;&amp; Text(CEILING(MONTH(Aria_Date_of_Employment__pc)/3))=&quot;2&quot;,8,
+if(Aria_TSV__c= true  &amp;&amp; Text(CEILING(MONTH(Aria_Date_of_Employment__pc)/3))=&quot;3&quot;,4,0)
+
+)))
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Aria TSV Issued</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

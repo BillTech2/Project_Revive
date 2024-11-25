@@ -1,0 +1,157 @@
+<apex:component >
+<style>
+
+@media (max-width: 768px) and (min-width: 680px)  
+    {   
+    
+   .header {
+    padding:0;
+    }
+    
+    .header__logo {
+    height:44px;
+    width:150px;
+    }
+    
+}   
+    
+@media (max-width: 680px) {
+    
+.header {
+    height:65px;
+    padding: 0;
+}
+    
+    .header__container {
+    padding:0;
+    }
+    
+    .header__logo {
+        width: 43%;
+    padding: 29px 0;
+    }
+    
+    .header__navigation  {
+        margin-top: 7px;
+    }
+    
+    .header__navigation__block {
+    padding: 10px 0 15px 0;
+}
+    
+ .header__user, .header__primary, .header__secondary {
+z-index: 100;
+    background:#F2F2F2;
+}
+    
+    .header__user {
+    padding:0 !important;
+    }
+    
+.header__secondary {
+    clear: left;
+   background: #F2F2F2;
+    width: 100%;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+    
+    .menu--user .menu__item {
+    border-right: none!important;
+}
+    
+    
+    .header__navigation__toggle {
+    padding: 12px 10px;
+}
+    
+    .dropdown-toggle {
+    width: 100%;
+    background: #fff;
+    border: none;
+    color: #06183d;
+    padding: 10px 15px;
+    font-size: 14px;
+    margin: 5px 0;
+    margin-top: 0!important;
+    text-align: center;
+}
+    
+    .btn-default.active.focus, .btn-default.active:focus, .btn-default.active:hover, .btn-default:active.focus, .btn-default:active:focus, .btn-default:active:hover, .open>.dropdown-toggle.btn-default.focus, .open>.dropdown-toggle.btn-default:focus, .open>.dropdown-toggle.btn-default:hover {
+    color: #333;
+    background-color: #fff;
+        -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0x;
+        -webkit-box-shadow: none;
+    box-shadow: none;
+    
+}
+    .dropdown-toggle:hover {
+    border: none;
+    }
+    
+    .open>.dropdown-menu, .dropdown-menu {
+        width: 101%;
+    margin: 0 0 0 -1px !important;
+        border-bottom: 2px solid #06183d;
+    border-radius: 0 !important;
+    }
+    
+    .dropdown-menu>li>a {
+    border-top: 1px solid #e6e6e7;
+    font-size: 14px;
+    padding: 10px 15px;
+    background: #eeeeee;
+    color: #333;
+}
+    
+    .btn .caret {
+    margin-left: 10px;
+    display: inline-block !important;
+}
+
+}    
+    
+@media (min-width: 681px) {
+.header__primary {
+   float:left;
+    clear:left;
+}
+
+}
+    
+    .dropdown-toggle {
+    margin-top: -4px;
+    }
+    
+    .header__user {
+    padding: 13px 7px 10px;
+}
+    
+    .header__container {
+    max-width: 1200px;
+}
+    
+.menu--user .menu__item {
+    vertical-align: middle;
+}
+    
+    .dropdown-menu {
+    border-radius: 0 0 7px 7px;
+    margin: -4px 5px;
+    padding: 0;
+    border-top: 0;
+    }
+    
+    .btn .caret {
+    display: none;
+}
+    
+}
+    
+
+    
+</style>
+</apex:component>

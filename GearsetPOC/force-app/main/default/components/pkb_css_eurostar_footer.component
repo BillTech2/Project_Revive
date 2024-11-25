@@ -1,0 +1,100 @@
+<apex:component >
+
+<footer>
+  <div id="footer" class="clearfix">
+    <div class="section">
+    <div id="footer-top">
+    <div class="region region-footer-top">
+    <div id="block-menu-menu-footer-1" class="block block-menu">
+
+    <h2>Eurostar websites</h2>
+
+    <div class="content">
+    <ul class="menu count-8"><li class="menu-item-belgium-dutch first leaf"><a href="http://www.eurostar.com/be-nl">Belgium Dutch</a></li>
+    <li class="menu-item-belgium-english leaf"><a href="http://www.eurostar.com/be-en">Belgium English</a></li>
+    <li class="menu-item-belgium-french leaf"><a href="http://www.eurostar.com/be-fr">Belgium French</a></li>
+    <li class="menu-item-netherlands leaf"><a href="http://www.eurostar.com/nl-nl">Netherlands</a></li>
+    <li class="menu-item-france leaf"><a href="http://www.eurostar.com/fr-fr">France</a></li>
+    <li class="menu-item-united-kingdom leaf"><a href="http://www.eurostar.com/uk-en">United Kingdom</a></li>
+    <li class="menu-item-united-states leaf"><a href="http://www.eurostar.com/us-en">United States</a></li>
+    <li class="menu-item-rest-of-the-world last leaf"><a href="http://www.eurostar.com/rw-en">Rest of the World</a></li>
+    </ul>
+    </div>
+    </div>
+    <div id="block-menu-menu-footer-2" class="block block-menu">
+
+    <h2>City breaks</h2>
+
+    <div class="content">
+    <ul class="menu count-5">
+    <li class="menu-item-paris-city-breaks first leaf"><a href="http://www.eurostar.com/uk-en/destinations/city-breaks/paris-city-breaks">Paris city breaks</a></li>
+    <li class="menu-item-brussels-city-breaks leaf"><a href="http://www.eurostar.com/uk-en/destinations/city-breaks/brussels-city-breaks">Brussels city breaks</a></li>
+    <li class="menu-item-lille-city-breaks leaf"><a href="http://www.eurostar.com/uk-en/destinations/city-breaks/lille-city-breaks">Lille city breaks</a></li>
+    <li class="menu-item-amsterdam-city-breaks leaf"><a href="http://www.eurostar.com/uk-en/destinations/city-breaks/amsterdam-city-breaks">Amsterdam city breaks</a></li>
+    <li class="menu-item-bruges-city-breaks last leaf"><a href="http://www.eurostar.com/uk-en/destinations/city-breaks/bruges-city-breaks">Bruges city breaks</a></li>
+    </ul>
+    </div>
+    </div>
+    <div id="block-menu-menu-footer-3" class="block block-menu">
+
+    <h2>Website information</h2>
+
+    <div class="content">
+    <ul class="menu count-8"><li class="menu-item-sitemap first leaf"><a href="http://www.eurostar.com/uk-en/sitemap">Sitemap</a></li>
+    <li class="menu-item-website-tampcs leaf"><a href="http://www.eurostar.com/uk-en/website-terms-and-conditions">Website T&amp;Cs</a></li>
+    <li class="menu-item-conditions-of-carriage leaf"><a href="http://www.eurostar.com/uk-en/conditions-carriage">Conditions of carriage</a></li>
+    <li class="menu-item-privacy-policy leaf"><a href="http://www.eurostar.com/uk-en/privacy-policy">Privacy policy</a></li>
+    <li class="menu-item-cookies-and-personal-data leaf"><a href="http://www.eurostar.com/uk-en/cookies-and-personal-data">Cookies and personal data</a></li>
+    <li class="menu-item-accessibility leaf"><a href="http://www.eurostar.com/uk-en/accessibility">Accessibility</a></li>
+    <li class="menu-item-faqs leaf"><a href="http://www.eurostar.com/uk-en/contact-us/faqs">FAQs</a></li>
+    <li class="menu-item-mobile-site last leaf"><a href="http://www.eurostar.com/mobile">Mobile site</a></li>
+    </ul>
+    </div>
+    </div>
+    <div id="block-menu-menu-contact-menu" class="block block-menu">
+
+    <h2>Company information</h2>
+
+    <div class="content">
+    <ul class="menu count-6"><li class="menu-item-contact-us first leaf"><a href="http://www.eurostar.com/uk-en/contact-us">Contact us</a></li>
+    <li class="menu-item-about-eurostar leaf"><a href="http://www.eurostar.com/uk-en/about-eurostar">About Eurostar</a></li>
+    <li class="menu-item-press-office leaf"><a href="http://www.eurostar.com/uk-en/about-eurostar/press-office">Press office</a></li>
+    <li class="menu-item-careers leaf"><a href="http://www.eurostar.com/uk-en/about-eurostar/eurostar-vacancies">Careers</a></li>
+    <li class="menu-item-affiliates leaf"><a href="http://www.eurostar.com/uk-en/affiliates">Affiliates</a></li>
+    <li class="menu-item-customer-charter last leaf"><a href="http://www.eurostar.com/uk-en/customer-charter">Customer charter</a></li>
+    </ul>
+    </div>
+    </div>
+    <div id="block-eurostar-gateway-stay-connected-block" class="block block-eurostar-gateway">
+
+
+    <div class="content">
+    <p class="title"><strong>Stay Connected</strong></p>
+    <ul>
+    <li class="share"><!-- AddThis Button BEGIN --><div class="addthis_toolbox addthis_default_style "><a class="addthis_counter addthis_pill_style"></a></div><!-- AddThis Button END --></li>
+    <li class="icon-facebook"><a href="http://facebook.com/eurostar">facebook.com/eurostar</a></li>
+    <li class="icon-twitter"><a href="http://twitter.com/eurostar">twitter.com/eurostar</a></li>
+    <li class=""><a href="/newsletters/signup">Sign up to our newsletter</a></li>
+    </ul>
+    </div>
+    </div>
+    </div>
+    </div> <!-- /footer-top -->
+    <div id="footer-bottom">
+    <div id="footer-bottom-inner">
+    <div class="region region-footer-bottom">
+    <div id="block-eurostar-gateway-legal-footer" class="block block-eurostar-gateway">
+
+
+    <div class="content">
+    <p>Eurostar International Limited is an Appointed Representative of Mondial Assistance(UK) Limited (trading as Allianz Global Assistance) which is authorised and regulated by the Financial Conduct Authority (FCA). Mondial Assistance (UK) Limited FCA registration number is 311909. FCA authorisation can be checked on the FCA register at <a href="http://www.fsa.gov.uk/register/" target="_blank">http://www.fsa.gov.uk/register/</a></p> <p>Allianz Global Assistance, 102 George Street, Croydon CR9 6HD. E-mail: <a href="mailto:Insurance@allianz-assistance.co.uk">Insurance@allianz-assistance.co.uk</a></p>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div> <!-- /#footer-bottom -->
+    </div>
+  </div> <!-- /.section, /#footer -->
+</footer>
+
+</apex:component>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>annual_spend_numeric__c</fullName>
+    <description>This is a filed created for reporting purpose. This converts annual spend to numeric value.</description>
+    <externalId>false</externalId>
+    <formula>VALUE(annualspend__c )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Annual spend in numeric format</inlineHelpText>
+    <label>annual_spend_numeric</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Assaults</fullName>
+    <columns>NAME</columns>
+    <columns>Accident_Investigating_Manager__c</columns>
+    <columns>Accident_Status__c</columns>
+    <columns>Accident_Description__c</columns>
+    <columns>Accident_Event_Date__c</columns>
+    <columns>Accident_Location__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Accident__c.Assault</value>
+    </filters>
+    <label>Assaults</label>
+    <language>en_US</language>
+</ListView>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Horizon_Carmen_Options</fullName>
+    <columns>NAME</columns>
+    <columns>French_translation__c</columns>
+    <columns>Dutch_translation__c</columns>
+    <columns>Visible__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CREATEDBY_USER</field>
+        <operation>equals</operation>
+        <value>Sharon Ocansey</value>
+    </filters>
+    <filters>
+        <field>CREATED_DATE</field>
+        <operation>equals</operation>
+        <value>3/11/2020 12:00 AM</value>
+    </filters>
+    <label>Horizon Carmen Options</label>
+    <language>en_US</language>
+</ListView>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Delay_duration__c</fullName>
+    <label>Delay duration</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Ignore</fullName>
+                <default>false</default>
+                <label>Ignore</label>
+            </value>
+            <value>
+                <fullName>0-29</fullName>
+                <default>false</default>
+                <label>0-29</label>
+            </value>
+            <value>
+                <fullName>30-59</fullName>
+                <default>false</default>
+                <label>30-59</label>
+            </value>
+            <value>
+                <fullName>60-119</fullName>
+                <default>false</default>
+                <label>60-119</label>
+            </value>
+            <value>
+                <fullName>120-179</fullName>
+                <default>false</default>
+                <label>120-179</label>
+            </value>
+            <value>
+                <fullName>180+</fullName>
+                <default>false</default>
+                <label>180+</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

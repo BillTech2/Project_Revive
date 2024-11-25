@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Follow_Up_Actions__c</fullName>
+    <inlineHelpText>select any required follow up action that must be taken</inlineHelpText>
+    <label>Follow Up Actions</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None Reqd</fullName>
+                <default>false</default>
+                <label>None Reqd</label>
+            </value>
+            <value>
+                <fullName>Depot Quality/Process</fullName>
+                <default>false</default>
+                <label>Depot Quality/Process</label>
+            </value>
+            <value>
+                <fullName>Eurostar Engineering</fullName>
+                <default>false</default>
+                <label>Eurostar Engineering</label>
+            </value>
+            <value>
+                <fullName>Siemens Engineering/Process</fullName>
+                <default>false</default>
+                <label>Siemens Engineering/Process</label>
+            </value>
+            <value>
+                <fullName>supply chain / materials</fullName>
+                <default>false</default>
+                <label>supply chain / materials</label>
+            </value>
+            <value>
+                <fullName>operations</fullName>
+                <default>false</default>
+                <label>operations</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

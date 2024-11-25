@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Outcome__c</fullName>
+    <label>Outcome</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Initial_Reason_For_Contact__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Call Dropped Before Resolution</fullName>
+                <default>false</default>
+                <label>Call Dropped Before Resolution</label>
+            </value>
+            <value>
+                <fullName>Cancelled Train – Evoucher Issued</fullName>
+                <default>false</default>
+                <label>Cancelled Train – Evoucher Issued</label>
+            </value>
+            <value>
+                <fullName>Cancelled Train – Exchanged to running train on that day</fullName>
+                <default>false</default>
+                <label>Cancelled Train – Exchanged to running train on that day</label>
+            </value>
+            <value>
+                <fullName>Cancelled Train – Refunded</fullName>
+                <default>false</default>
+                <label>Cancelled Train – Refunded</label>
+            </value>
+            <value>
+                <fullName>Changed Booking</fullName>
+                <default>false</default>
+                <label>Changed Booking</label>
+            </value>
+            <value>
+                <fullName>Completed Request (PNR Required)</fullName>
+                <default>false</default>
+                <label>Completed Request (PNR Required)</label>
+            </value>
+            <value>
+                <fullName>Completed Request - Goodwill Gesture (PNR Required)</fullName>
+                <default>false</default>
+                <label>Completed Request - Goodwill Gesture (PNR Required)</label>
+            </value>
+            <value>
+                <fullName>Couldn&#39;t Complete The Request</fullName>
+                <default>false</default>
+                <label>Couldn&#39;t Complete The Request</label>
+            </value>
+            <value>
+                <fullName>Customer Abandoned Request</fullName>
+                <default>false</default>
+                <label>Customer Abandoned Request</label>
+            </value>
+            <value>
+                <fullName>Customer failed security checks</fullName>
+                <default>false</default>
+                <label>Customer failed security checks</label>
+            </value>
+            <value>
+                <fullName>Customer Just Wanted A Quote</fullName>
+                <default>false</default>
+                <label>Customer Just Wanted A Quote</label>
+            </value>
+            <value>
+                <fullName>Customer not authorised to discuss account</fullName>
+                <default>false</default>
+                <label>Customer not authorised to discuss account</label>
+            </value>
+            <value>
+                <fullName>Customer Not Eligible For Compensation</fullName>
+                <default>false</default>
+                <label>Customer Not Eligible For Compensation</label>
+            </value>
+            <value>
+                <fullName>Directed Customer Back To Original Point Of Sale</fullName>
+                <default>false</default>
+                <label>Directed Customer Back To Original Point Of Sale</label>
+            </value>
+            <value>
+                <fullName>Directed Customer Online</fullName>
+                <default>false</default>
+                <label>Directed Customer Online</label>
+            </value>
+            <value>
+                <fullName>Generated Receipt Or CS Letter</fullName>
+                <default>false</default>
+                <label>Generated Receipt Or CS Letter</label>
+            </value>
+            <value>
+                <fullName>New Booking</fullName>
+                <default>false</default>
+                <label>New Booking</label>
+            </value>
+            <value>
+                <fullName>Redirected To Another Eurostar Point Of Sale</fullName>
+                <default>false</default>
+                <label>Redirected To Another Eurostar Point Of Sale</label>
+            </value>
+            <value>
+                <fullName>Request Not Completed - Customer Will Call Back</fullName>
+                <default>false</default>
+                <label>Request Not Completed - Customer Will Call Back</label>
+            </value>
+            <value>
+                <fullName>Resent Confirmation</fullName>
+                <default>false</default>
+                <label>Resent Confirmation</label>
+            </value>
+            <value>
+                <fullName>Resolved Query Or Answered Question</fullName>
+                <default>false</default>
+                <label>Resolved Query Or Answered Question</label>
+            </value>
+            <value>
+                <fullName>Running Train – Evoucher issued</fullName>
+                <default>false</default>
+                <label>Running Train – Evoucher issued</label>
+            </value>
+            <value>
+                <fullName>Running Train – Travelling</fullName>
+                <default>false</default>
+                <label>Running Train – Travelling</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Buy or Book</controllingFieldValue>
+            <controllingFieldValue>Change</controllingFieldValue>
+            <controllingFieldValue>Cancel or Refund</controllingFieldValue>
+            <controllingFieldValue>Info or Advice or Confirmation</controllingFieldValue>
+            <controllingFieldValue>Disruption or Compensation</controllingFieldValue>
+            <valueName>Call Dropped Before Resolution</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Buy or Book</controllingFieldValue>
+            <controllingFieldValue>Change</controllingFieldValue>
+            <controllingFieldValue>Cancel or Refund</controllingFieldValue>
+            <valueName>Completed Request (PNR Required)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Buy or Book</controllingFieldValue>
+            <controllingFieldValue>Change</controllingFieldValue>
+            <controllingFieldValue>Cancel or Refund</controllingFieldValue>
+            <valueName>Completed Request - Goodwill Gesture (PNR Required)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Buy or Book</controllingFieldValue>
+            <controllingFieldValue>Change</controllingFieldValue>
+            <controllingFieldValue>Cancel or Refund</controllingFieldValue>
+            <controllingFieldValue>Info or Advice or Confirmation</controllingFieldValue>
+            <controllingFieldValue>Disruption or Compensation</controllingFieldValue>
+            <valueName>Couldn&#39;t Complete The Request</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Buy or Book</controllingFieldValue>
+            <controllingFieldValue>Change</controllingFieldValue>
+            <controllingFieldValue>Cancel or Refund</controllingFieldValue>
+            <controllingFieldValue>Disruption or Compensation</controllingFieldValue>
+            <valueName>Customer Abandoned Request</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Buy or Book</controllingFieldValue>
+            <controllingFieldValue>Change</controllingFieldValue>
+            <controllingFieldValue>Cancel or Refund</controllingFieldValue>
+            <controllingFieldValue>Info or Advice or Confirmation</controllingFieldValue>
+            <controllingFieldValue>Disruption or Compensation</controllingFieldValue>
+            <valueName>Customer failed security checks</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Buy or Book</controllingFieldValue>
+            <controllingFieldValue>Change</controllingFieldValue>
+            <valueName>Customer Just Wanted A Quote</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Buy or Book</controllingFieldValue>
+            <controllingFieldValue>Change</controllingFieldValue>
+            <controllingFieldValue>Cancel or Refund</controllingFieldValue>
+            <controllingFieldValue>Info or Advice or Confirmation</controllingFieldValue>
+            <controllingFieldValue>Disruption or Compensation</controllingFieldValue>
+            <valueName>Customer not authorised to discuss account</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Buy or Book</controllingFieldValue>
+            <controllingFieldValue>Change</controllingFieldValue>
+            <controllingFieldValue>Cancel or Refund</controllingFieldValue>
+            <controllingFieldValue>Info or Advice or Confirmation</controllingFieldValue>
+            <controllingFieldValue>Disruption or Compensation</controllingFieldValue>
+            <valueName>Directed Customer Back To Original Point Of Sale</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Buy or Book</controllingFieldValue>
+            <controllingFieldValue>Change</controllingFieldValue>
+            <controllingFieldValue>Cancel or Refund</controllingFieldValue>
+            <controllingFieldValue>Info or Advice or Confirmation</controllingFieldValue>
+            <controllingFieldValue>Disruption or Compensation</controllingFieldValue>
+            <valueName>Directed Customer Online</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Buy or Book</controllingFieldValue>
+            <controllingFieldValue>Change</controllingFieldValue>
+            <controllingFieldValue>Cancel or Refund</controllingFieldValue>
+            <controllingFieldValue>Info or Advice or Confirmation</controllingFieldValue>
+            <controllingFieldValue>Disruption or Compensation</controllingFieldValue>
+            <valueName>Redirected To Another Eurostar Point Of Sale</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Buy or Book</controllingFieldValue>
+            <controllingFieldValue>Change</controllingFieldValue>
+            <controllingFieldValue>Cancel or Refund</controllingFieldValue>
+            <valueName>Request Not Completed - Customer Will Call Back</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Buy or Book</controllingFieldValue>
+            <controllingFieldValue>Change</controllingFieldValue>
+            <controllingFieldValue>Cancel or Refund</controllingFieldValue>
+            <controllingFieldValue>Info or Advice or Confirmation</controllingFieldValue>
+            <controllingFieldValue>Disruption or Compensation</controllingFieldValue>
+            <valueName>Resolved Query Or Answered Question</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Info or Advice or Confirmation</controllingFieldValue>
+            <valueName>Generated Receipt Or CS Letter</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Info or Advice or Confirmation</controllingFieldValue>
+            <valueName>Resent Confirmation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Disruption or Compensation</controllingFieldValue>
+            <valueName>Changed Booking</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Disruption or Compensation</controllingFieldValue>
+            <valueName>Customer Not Eligible For Compensation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Disruption or Compensation</controllingFieldValue>
+            <valueName>New Booking</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Package_Outbound_Calling</controllingFieldValue>
+            <valueName>Cancelled Train – Evoucher Issued</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Package_Outbound_Calling</controllingFieldValue>
+            <valueName>Cancelled Train – Exchanged to running train on that day</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Package_Outbound_Calling</controllingFieldValue>
+            <valueName>Cancelled Train – Refunded</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Package_Outbound_Calling</controllingFieldValue>
+            <valueName>Running Train – Evoucher issued</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Package_Outbound_Calling</controllingFieldValue>
+            <valueName>Running Train – Travelling</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

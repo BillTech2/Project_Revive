@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Baseline_type__c</fullName>
+    <label>Baseline type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Business case (Project)</fullName>
+                <default>false</default>
+                <label>Business case (Project)</label>
+            </value>
+            <value>
+                <fullName>First quote (Tender)</fullName>
+                <default>false</default>
+                <label>First quote (Tender)</label>
+            </value>
+            <value>
+                <fullName>On-year budget</fullName>
+                <default>false</default>
+                <label>On-year budget</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

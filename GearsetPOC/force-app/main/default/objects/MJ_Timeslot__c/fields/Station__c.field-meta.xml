@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Station__c</fullName>
+    <label>Station</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>London St. Pancras</fullName>
+                <default>false</default>
+                <label>London St. Pancras</label>
+            </value>
+            <value>
+                <fullName>Paris Gare du Nord</fullName>
+                <default>false</default>
+                <label>Paris Gare du Nord</label>
+            </value>
+            <value>
+                <fullName>Ebbsfleet Int</fullName>
+                <default>false</default>
+                <label>Ebbsfleet Int</label>
+            </value>
+            <value>
+                <fullName>Ashford Int</fullName>
+                <default>false</default>
+                <label>Ashford Int</label>
+            </value>
+            <value>
+                <fullName>Brussels Midi</fullName>
+                <default>false</default>
+                <label>Brussels Midi</label>
+            </value>
+            <value>
+                <fullName>Lille Europe</fullName>
+                <default>false</default>
+                <label>Lille Europe</label>
+            </value>
+            <value>
+                <fullName>Calais</fullName>
+                <default>false</default>
+                <label>Calais</label>
+            </value>
+            <value>
+                <fullName>Disneyland</fullName>
+                <default>false</default>
+                <label>Disneyland</label>
+            </value>
+            <value>
+                <fullName>Process Exchanges on Carmen</fullName>
+                <default>false</default>
+                <label>Process Exchanges on Carmen</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

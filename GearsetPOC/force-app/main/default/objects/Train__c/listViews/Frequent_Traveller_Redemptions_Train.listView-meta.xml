@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Frequent_Traveller_Redemptions_Train</fullName>
+    <filterScope>Queue</filterScope>
+    <label>Frequent Traveller Redemptions</label>
+    <queue>Frequent_Traveller_Redemptions</queue>
+    <sharedTo>
+        <allInternalUsers />
+    </sharedTo>
+</ListView>

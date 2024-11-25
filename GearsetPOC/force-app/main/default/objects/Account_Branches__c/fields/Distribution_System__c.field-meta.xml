@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Distribution_System__c</fullName>
+    <label>Distribution System</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Elgar</fullName>
+                <default>false</default>
+                <label>Elgar</label>
+            </value>
+            <value>
+                <fullName>Galileo</fullName>
+                <default>false</default>
+                <label>Galileo</label>
+            </value>
+            <value>
+                <fullName>Amadeus</fullName>
+                <default>false</default>
+                <label>Amadeus</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

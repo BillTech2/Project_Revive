@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Origin__c</fullName>
+    <label>Origin</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Phone</fullName>
+                <default>false</default>
+                <label>Phone</label>
+            </value>
+            <value>
+                <fullName>Email</fullName>
+                <default>false</default>
+                <label>Email</label>
+            </value>
+            <value>
+                <fullName>Web</fullName>
+                <default>false</default>
+                <label>Web</label>
+            </value>
+            <value>
+                <fullName>Disruption Web</fullName>
+                <default>false</default>
+                <label>Disruption Web</label>
+            </value>
+            <value>
+                <fullName>Letter</fullName>
+                <default>false</default>
+                <label>Letter</label>
+            </value>
+            <value>
+                <fullName>Facebook</fullName>
+                <default>false</default>
+                <label>Facebook</label>
+            </value>
+            <value>
+                <fullName>Twitter</fullName>
+                <default>false</default>
+                <label>Twitter</label>
+            </value>
+            <value>
+                <fullName>Qubit</fullName>
+                <default>false</default>
+                <label>Qubit</label>
+            </value>
+            <value>
+                <fullName>Email CC Q1</fullName>
+                <default>false</default>
+                <label>Email CC Q1</label>
+            </value>
+            <value>
+                <fullName>Email CC Q2</fullName>
+                <default>false</default>
+                <label>Email CC Q2</label>
+            </value>
+            <value>
+                <fullName>Email HLC</fullName>
+                <default>false</default>
+                <label>Email HLC</label>
+            </value>
+            <value>
+                <fullName>Email FT</fullName>
+                <default>false</default>
+                <label>Email FT</label>
+            </value>
+            <value>
+                <fullName>Email FTE</fullName>
+                <default>false</default>
+                <label>Email FTE</label>
+            </value>
+            <value>
+                <fullName>Email FT Redemptions</fullName>
+                <default>false</default>
+                <label>Email FT Redemptions</label>
+            </value>
+            <value>
+                <fullName>Email Exec</fullName>
+                <default>false</default>
+                <label>Email Exec</label>
+            </value>
+            <value>
+                <fullName>Email Junior</fullName>
+                <default>false</default>
+                <label>Email Junior</label>
+            </value>
+            <value>
+                <fullName>Email Reply</fullName>
+                <default>false</default>
+                <label>Email Reply</label>
+            </value>
+            <value>
+                <fullName>Mobile Feedback</fullName>
+                <default>false</default>
+                <label>Mobile Feedback</label>
+            </value>
+            <value>
+                <fullName>Email Groups</fullName>
+                <default>false</default>
+                <label>Email Groups</label>
+            </value>
+            <value>
+                <fullName>Email Trade Support</fullName>
+                <default>false</default>
+                <label>Email Trade Support</label>
+            </value>
+            <value>
+                <fullName>Email Catering</fullName>
+                <default>false</default>
+                <label>Email Catering</label>
+            </value>
+            <value>
+                <fullName>Chat</fullName>
+                <default>false</default>
+                <label>Chat</label>
+            </value>
+            <value>
+                <fullName>Email Somme</fullName>
+                <default>false</default>
+                <label>Email Somme</label>
+            </value>
+            <value>
+                <fullName>Email E4A</fullName>
+                <default>false</default>
+                <label>Email E4A</label>
+            </value>
+            <value>
+                <fullName>Email GDS</fullName>
+                <default>false</default>
+                <label>Email GDS</label>
+            </value>
+            <value>
+                <fullName>Email Shift Leaders</fullName>
+                <default>false</default>
+                <label>Email Shift Leaders</label>
+            </value>
+            <value>
+                <fullName>Email Young Voyager</fullName>
+                <default>false</default>
+                <label>Email Young Voyager</label>
+            </value>
+            <value>
+                <fullName>Email Duty Travel</fullName>
+                <default>false</default>
+                <label>Email Duty Travel</label>
+            </value>
+            <value>
+                <fullName>Email Invitiation Travel</fullName>
+                <default>false</default>
+                <label>Email Invitiation Travel</label>
+            </value>
+            <value>
+                <fullName>Walkup</fullName>
+                <default>false</default>
+                <label>Walkup</label>
+            </value>
+            <value>
+                <fullName>Lync</fullName>
+                <default>false</default>
+                <label>Lync</label>
+            </value>
+            <value>
+                <fullName>Post-It</fullName>
+                <default>false</default>
+                <label>Post-It</label>
+            </value>
+            <value>
+                <fullName>Email EuroDespatch</fullName>
+                <default>false</default>
+                <label>Email EuroDespatch</label>
+            </value>
+            <value>
+                <fullName>Email Trade Contracts</fullName>
+                <default>false</default>
+                <label>Email Trade Contracts</label>
+            </value>
+            <value>
+                <fullName>Email Staff Travel</fullName>
+                <default>false</default>
+                <label>Email Staff Travel</label>
+            </value>
+            <value>
+                <fullName>Email Commercial Support</fullName>
+                <default>false</default>
+                <label>Email Commercial Support</label>
+            </value>
+            <value>
+                <fullName>Email Partner Rewards</fullName>
+                <default>false</default>
+                <label>Email Partner Rewards</label>
+            </value>
+            <value>
+                <fullName>Internal</fullName>
+                <default>false</default>
+                <label>Internal</label>
+            </value>
+            <value>
+                <fullName>Commercial Support</fullName>
+                <default>false</default>
+                <label>Commercial Support</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Preferred_Language__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(Customer_Language__c,
+&#39;EN-GB&#39;, &#39;English&#39;,
+&#39;BE-EN&#39;, &#39;English&#39;,
+&#39;en&#39;, &#39;English&#39;,
+&#39;EN&#39;, &#39;English&#39;,
+&#39;ENGLISH&#39;, &#39;English&#39;,
+&#39;ENGLISH (UK)&#39;, &#39;English&#39;,
+&#39;FR-FR&#39;, &#39;French&#39;,
+&#39;BE-FR&#39;, &#39;French&#39;,
+&#39;FR&#39;, &#39;French&#39;,
+&#39;fr&#39;, &#39;French&#39;,
+&#39;FRENCH&#39;, &#39;French&#39;,
+&#39;NL-NL&#39;, &#39;Dutch&#39;,
+&#39;BE-NL&#39;, &#39;Dutch&#39;,
+&#39;nl&#39;, &#39;Dutch&#39;,
+&#39;NL&#39;, &#39;Dutch&#39;,
+&#39;Flemish&#39;, &#39;Dutch&#39;,
+&#39;DUTCH&#39;, &#39;Dutch&#39;,
+&#39;DE-DE&#39;, &#39;German&#39;,
+&#39;BE-DE&#39;, &#39;German&#39;,
+&#39;de&#39;, &#39;German&#39;,
+&#39;DE&#39;, &#39;German&#39;,
+&#39;GERMAN&#39;, &#39;German&#39;,
+
+(CASE(TEXT(Booker__r.Preferred_Language__pc),
+&#39;English (UK)&#39;, &#39;English&#39;,
+&#39;French&#39;, &#39;French&#39;,
+&#39;Dutch&#39;,&#39;Dutch&#39;,
+&#39;German&#39;,&#39;German&#39;,
+
+(CASE(LEFT( city_code__c, 2),
+&#39;EN&#39;, &#39;English&#39;,
+&#39;BE&#39;, &#39;English&#39;,
+&#39;FR&#39;, &#39;French&#39;,
+&#39;NL&#39;,&#39;Dutch&#39;,
+&#39;DE&#39;,&#39;German&#39;,
+
+&#39;English&#39;)))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Preferred Language</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

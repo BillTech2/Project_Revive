@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Feedback_Category__c</fullName>
+    <label>Feedback Category</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Audit Fail - Club Eurostar</fullName>
+                <default>false</default>
+                <label>Audit Fail - Club Eurostar</label>
+            </value>
+            <value>
+                <fullName>Audit Fail - Other Reports</fullName>
+                <default>false</default>
+                <label>Audit Fail - Other Reports</label>
+            </value>
+            <value>
+                <fullName>Audit Fail - Service Fee</fullName>
+                <default>false</default>
+                <label>Audit Fail - Service Fee</label>
+            </value>
+            <value>
+                <fullName>Audit Fail - Sundry Refund</fullName>
+                <default>false</default>
+                <label>Audit Fail - Sundry Refund</label>
+            </value>
+            <value>
+                <fullName>Audit Fail - Write Off</fullName>
+                <default>false</default>
+                <label>Audit Fail - Write Off</label>
+            </value>
+            <value>
+                <fullName>Club Eurostar</fullName>
+                <default>false</default>
+                <label>Club Eurostar</label>
+            </value>
+            <value>
+                <fullName>Compensation</fullName>
+                <default>false</default>
+                <label>Compensation</label>
+            </value>
+            <value>
+                <fullName>GDPR Breach</fullName>
+                <default>false</default>
+                <label>GDPR Breach</label>
+            </value>
+            <value>
+                <fullName>Exchange</fullName>
+                <default>false</default>
+                <label>Exchange</label>
+            </value>
+            <value>
+                <fullName>Incorrect booking details given or entered</fullName>
+                <default>false</default>
+                <label>Incorrect booking details given or entered</label>
+            </value>
+            <value>
+                <fullName>Incorrect fees charged</fullName>
+                <default>false</default>
+                <label>Incorrect fees charged</label>
+            </value>
+            <value>
+                <fullName>Insurance</fullName>
+                <default>false</default>
+                <label>Insurance</label>
+            </value>
+            <value>
+                <fullName>Praise</fullName>
+                <default>false</default>
+                <label>Praise</label>
+            </value>
+            <value>
+                <fullName>Prize winner</fullName>
+                <default>false</default>
+                <label>Prize winner</label>
+            </value>
+            <value>
+                <fullName>Refund</fullName>
+                <default>false</default>
+                <label>Refund</label>
+            </value>
+            <value>
+                <fullName>Salesforce logging/notes on booking</fullName>
+                <default>false</default>
+                <label>Salesforce logging/notes on booking</label>
+            </value>
+            <value>
+                <fullName>Seating</fullName>
+                <default>false</default>
+                <label>Seating</label>
+            </value>
+            <value>
+                <fullName>Service Fee</fullName>
+                <default>false</default>
+                <label>Service Fee</label>
+            </value>
+            <value>
+                <fullName>Special Assistance</fullName>
+                <default>false</default>
+                <label>Special Assistance</label>
+            </value>
+            <value>
+                <fullName>Special delivery</fullName>
+                <default>false</default>
+                <label>Special delivery</label>
+            </value>
+            <value>
+                <fullName>Staff Travel</fullName>
+                <default>false</default>
+                <label>Staff Travel</label>
+            </value>
+            <value>
+                <fullName>Ticket collection</fullName>
+                <default>false</default>
+                <label>Ticket collection</label>
+            </value>
+            <value>
+                <fullName>Trade</fullName>
+                <default>false</default>
+                <label>Trade</label>
+            </value>
+            <value>
+                <fullName>Traveller Care</fullName>
+                <default>false</default>
+                <label>Traveller Care</label>
+            </value>
+            <value>
+                <fullName>Upgrade</fullName>
+                <default>false</default>
+                <label>Upgrade</label>
+            </value>
+            <value>
+                <fullName>Behaviour</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Behaviour</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Policy</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Policy</label>
+            </value>
+            <value>
+                <fullName>Process</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Process</label>
+            </value>
+            <value>
+                <fullName>Product</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Product</label>
+            </value>
+            <value>
+                <fullName>Staff travel -  Other</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Staff travel -  Other</label>
+            </value>
+            <value>
+                <fullName>Staff travel – Dependent children</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Staff travel – Dependent children</label>
+            </value>
+            <value>
+                <fullName>Staff travel – Incorrect amount charged</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Staff travel – Incorrect amount charged</label>
+            </value>
+            <value>
+                <fullName>Staff travel – Salesforce logging</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Staff travel – Salesforce logging</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

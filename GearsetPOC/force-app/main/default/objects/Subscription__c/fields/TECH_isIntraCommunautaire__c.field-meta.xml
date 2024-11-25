@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TECH_isIntraCommunautaire__c</fullName>
+    <formula>IF(
+AND(
+LEFT(VAT_Number__c,2) != &quot;DE&quot;,
+LEFT(VAT_Number__c,2) != &quot;AT&quot;,
+LEFT(VAT_Number__c,2) != &quot;BG&quot;,
+LEFT(VAT_Number__c,2) != &quot;CY&quot;,
+LEFT(VAT_Number__c,2) != &quot;HR&quot;,
+LEFT(VAT_Number__c,2) != &quot;DK&quot;,
+LEFT(VAT_Number__c,2) != &quot;ES&quot;,
+LEFT(VAT_Number__c,2) != &quot;EE&quot;,
+LEFT(VAT_Number__c,2) != &quot;FI&quot;,
+LEFT(VAT_Number__c,2) != &quot;FR&quot;,
+LEFT(VAT_Number__c,2) != &quot;CH&quot;,
+LEFT(VAT_Number__c,2) != &quot;EL&quot;,
+LEFT(VAT_Number__c,2) != &quot;HU&quot;,
+LEFT(VAT_Number__c,2) != &quot;IE&quot;,
+LEFT(VAT_Number__c,2) != &quot;IT&quot;,
+LEFT(VAT_Number__c,2) != &quot;LV&quot;,
+LEFT(VAT_Number__c,2) != &quot;LT&quot;,
+LEFT(VAT_Number__c,2) != &quot;LU&quot;,
+LEFT(VAT_Number__c,2) != &quot;MT&quot;,
+LEFT(VAT_Number__c,2) != &quot;NL&quot;,
+LEFT(VAT_Number__c,2) != &quot;PL&quot;,
+LEFT(VAT_Number__c,2) != &quot;PT&quot;,
+LEFT(VAT_Number__c,2) != &quot;CZ&quot;,
+LEFT(VAT_Number__c,2) != &quot;RO&quot;,
+LEFT(VAT_Number__c,2) != &quot;SK&quot;,
+LEFT(VAT_Number__c,2) != &quot;SI&quot;,
+LEFT(VAT_Number__c,2) != &quot;SE&quot;
+), FALSE, TRUE)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>TECH_isIntraCommunautaire</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>managed_status__c</fullName>
+    <label>Managed Status</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>UNMANAGED</fullName>
+                <default>false</default>
+                <label>UNMANAGED</label>
+            </value>
+            <value>
+                <fullName>CONTRACTED</fullName>
+                <default>false</default>
+                <label>CONTRACTED</label>
+            </value>
+            <value>
+                <fullName>SOFTLY MANAGED</fullName>
+                <default>false</default>
+                <label>SOFTLY MANAGED</label>
+            </value>
+            <value>
+                <fullName>BUSINESS DEVELOPMENT</fullName>
+                <default>false</default>
+                <label>BUSINESS DEVELOPMENT</label>
+            </value>
+            <value>
+                <fullName>NL ACCOUNTS</fullName>
+                <default>false</default>
+                <label>NL ACCOUNTS</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Webhelp_Bucharest</fullName>
+    <booleanFilter>1 AND 2</booleanFilter>
+    <columns>CORE.USERS.ACTIVE</columns>
+    <columns>FULL_NAME</columns>
+    <columns>CORE.USERS.USERNAME</columns>
+    <columns>CORE.USER_ROLE.NAME</columns>
+    <columns>CORE.PROFILE.NAME</columns>
+    <columns>CORE.USERS.DEPARTMENT</columns>
+    <columns>MANAGER</columns>
+    <columns>CORE.USERS.LAST_LOGIN</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>UPDATEDBY_USER.NAME</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CORE.USERS.ACTIVE</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>CORE.USERS.DEPARTMENT</field>
+        <operation>equals</operation>
+        <value>Bucharest</value>
+    </filters>
+    <label>Webhelp (Bucharest)</label>
+    <language>en_US</language>
+</ListView>

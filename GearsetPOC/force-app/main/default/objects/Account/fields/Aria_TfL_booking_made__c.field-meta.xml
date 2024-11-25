@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Aria_TfL_booking_made__c</fullName>
+    <description>Sum of the bookings made by TfL staff</description>
+    <label>Aria TfL booking made</label>
+    <summaryFilterItems>
+        <field>Staff_and_duty_travel__c.Type_of_booking__c</field>
+        <operation>equals</operation>
+        <value>TfL</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Staff_and_duty_travel__c.Status_of_the_booking__c</field>
+        <operation>equals</operation>
+        <value>Created, Exchanged</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Staff_and_duty_travel__c.Associated_account__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

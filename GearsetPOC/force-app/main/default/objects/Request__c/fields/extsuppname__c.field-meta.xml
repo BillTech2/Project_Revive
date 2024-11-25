@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>extsuppname__c</fullName>
+    <description>Existing supplier name</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Existing supplier name</inlineHelpText>
+    <label>extsuppname</label>
+    <length>80</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

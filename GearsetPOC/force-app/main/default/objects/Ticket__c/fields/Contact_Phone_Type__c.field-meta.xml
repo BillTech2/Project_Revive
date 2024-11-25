@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contact_Phone_Type__c</fullName>
+    <label>Contact Phone Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Fixed Line</fullName>
+                <default>false</default>
+                <label>Fixed Line</label>
+            </value>
+            <value>
+                <fullName>Mobile</fullName>
+                <default>false</default>
+                <label>Mobile</label>
+            </value>
+            <value>
+                <fullName>Fixed Line or Mobile</fullName>
+                <default>false</default>
+                <label>Fixed Line or Mobile</label>
+            </value>
+            <value>
+                <fullName>Toll Free</fullName>
+                <default>false</default>
+                <label>Toll Free</label>
+            </value>
+            <value>
+                <fullName>Premium Rate</fullName>
+                <default>false</default>
+                <label>Premium Rate</label>
+            </value>
+            <value>
+                <fullName>Shared Cost</fullName>
+                <default>false</default>
+                <label>Shared Cost</label>
+            </value>
+            <value>
+                <fullName>VOIP</fullName>
+                <default>false</default>
+                <label>VOIP</label>
+            </value>
+            <value>
+                <fullName>Personal Number</fullName>
+                <default>false</default>
+                <label>Personal Number</label>
+            </value>
+            <value>
+                <fullName>Pager</fullName>
+                <default>false</default>
+                <label>Pager</label>
+            </value>
+            <value>
+                <fullName>UAN</fullName>
+                <default>false</default>
+                <label>UAN</label>
+            </value>
+            <value>
+                <fullName>VoiceMail</fullName>
+                <default>false</default>
+                <label>VoiceMail</label>
+            </value>
+            <value>
+                <fullName>Unknown</fullName>
+                <default>false</default>
+                <label>Unknown</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

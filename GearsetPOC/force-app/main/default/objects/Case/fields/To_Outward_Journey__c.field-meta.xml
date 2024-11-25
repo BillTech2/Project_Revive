@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>To_Outward_Journey__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Arrival Station of the Outward Journey</description>
+    <inlineHelpText>Arrival Station of the Outward Journey</inlineHelpText>
+    <label>To (Outward Journey)</label>
+    <referenceTo>Stations__c</referenceTo>
+    <relationshipLabel>Cases (To (Outward Journey))</relationshipLabel>
+    <relationshipName>Cases1</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,137 @@
+<apex:page controller="Disruption_Webform_Con" sidebar="false" showheader="false" standardStylesheets="false" docType="html-5.0" language="{!languageSF}" >\
+
+<apex:variable var="mobileToScreenSize"  value="{! '42.983em' }" />
+
+<apex:variable var="tabletFromScreenSize" value="{! '43em' }" />
+<apex:variable var="tabletToScreenSize"   value="{! '59.93em' }" />
+
+<html data-ieuglyhack="en">
+
+	<apex:outputpanel rendered="{!IF(CONTAINS(userAgent, 'MSIE 8.0'),false,true)}">
+        <apex:stylesheet value="{!URLFOR($Resource.styles, 'css/cssoveride.css')}" />
+        <c:cssdwm ></c:cssdwm>
+    </apex:outputpanel>
+    
+    <apex:outputpanel rendered="{!IF(CONTAINS(userAgent, 'MSIE 8.0'),true,false)}">
+        <c:cssiedwm ></c:cssiedwm>
+    </apex:outputpanel>
+    
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="description" content=""/>
+        <meta name="author" content="Eurostar Ltd"/>
+
+                <!-- Styles -->
+                <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.CompApp_Res, '/res/all-prembrokeWeb.css')}"/>
+                <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.CompApp_Res, '/css/12-cols-grid.css')}"/>
+                <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.CompApp_Res, '/css/no-grid.css')}" />
+                <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.CompApp_Res, '/css/angular-date-picker.css')}"/>
+                <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.CompApp_Res, '/css/select2-3.4.5.css')}"/>
+                <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.CompApp_Res, '/css/elements.css')}"/>
+                <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.CompApp_Res, '/css/template-base.css')}"/>
+                <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.CompApp_Eurostar_Ticket_Examples, '/ticket-examples.css')}"/>
+        
+                <style>
+
+                    input[type=submit], input[type=submit]:hover, input[type=submit]:active{
+                        background: 0;
+                        color:#000000 !important;
+                        text-shadow:none;
+                        position: relative;
+                        margin-right: 20px;
+                        display: block;
+                    }
+
+                    #app-footer-template {
+                    position: absolute;
+                    width: 100%;
+                    bottom: 0;
+                    }
+
+                    @media only screen and (min-width: {! tabletFromScreenSize } and max-width: {! tabletToScreenSize }) {
+                        #app-footer-template-image {
+                            background-color: #00286A;
+                        }
+                    }
+        
+                    @media only screen and (max-width: {! mobileToScreenSize }) {
+                        #app-footer-template-image {
+                            background-color: #00286A;
+                        }
+                    }
+                </style>
+
+        <title>Eurostar - Disruption Form sent with success</title>
+    	</head>
+    
+    <!-- ============================================================================= -->
+    <!------------------------------------------- BODY ------------------------------- -->
+    <!-- ============================================================================= -->
+
+    <body>
+        
+        <header id="app-header-template">
+            <div id="app-header-template-top-section">
+                <!-- <img id="top-section-logo" src="{!URLFOR($Resource.CompApp_Res, '/res/SVGS/eurostar_logo.svg')}" alt="logo" height="30" width="100"/> -->
+                <div id="top-section-logo"></div>
+                
+                <div id="top-section-lang-select-box">
+                    <div id="select-box-selected-lang">{!$Label.CompApp_english}</div>
+                    <img id="select-box-arrow" src="{!URLFOR($Resource.CompApp_Res, '/res/SVGS/arrow_down.svg')}" height="14" width="14" onclick="showLanguageSelectionMenu();"/>
+                </div>
+                <div id="top-section-title">
+                    {!$Label.HelpCentreHeader}
+                </div>
+            </div>
+            <div id="app-header-template-lang-selection-menu">
+                <h6 id="lang-selection-menu-description" style="margin-bottom: 10px; color: #FCF5D8;">{!$Label.CompApp_selectLang}</h6>
+                <div id="app-header-template-line"></div>
+                <div id="app-header-template-options">
+                    <a class="options-button" hreflang="en">{!$Label.CompApp_english}</a>
+                    <br/>
+                    <a class="options-button" hreflang="fr">{!$Label.CompApp_Francias}</a>
+                    <br/>
+                    <a class="options-button" hreflang="nl">{!$Label.CompApp_Nederlands}</a>
+                    <br/>
+                    <a class="options-button" hreflang="de">{!$Label.CompApp_German}</a>
+                </div>
+            </div>
+        </header>        
+        <div id='app-root' ng-app='compApp' class="ng-scope">
+                    
+            <h1 class="row">
+                <apex:outputText value="{!$Label.Case_Disruption_TY_title}" />
+            </h1>
+            <p class="p1 row">
+               <apex:outputText value="{!$Label.Case_Disruption_TY_text}" /></p>
+
+            <apex:form >
+                <div class="row">
+                <apex:commandButton action="{!Submit_another_form}" value="{!$Label.Case_Disruption_ButtonSubmitAnotherWF}" id="Submit_another_form" styleClass="btn primary a" style="border-width:0px; margin:0; color:#000000 !important; width:auto;">
+                </apex:commandButton>
+            </div>
+            </apex:form>
+
+        </div>
+        <footer id="app-footer-template">
+            <div id="app-footer-template-image">
+                <div id="app-footer-template-content">
+                    <p id="app-footer-template-image-description" >{!$Label.CompApp_HelpCentre}</p>
+                    <a class="primary" href="{!$Setup.HelpCentre__c.URL__c}">{!$Label.CompApp_Help_Centre}</a>
+                </div>
+            </div>
+            <p id="app-footer-template-copyright">© {!YEAR(TODAY())} {!$Label.CompApp_EurostarRights} <a id="app-footer-template-link" href="http://www.eurostar.com">{!$Label.CompApp_eurostar_site}</a></p>
+        </footer>        <c:js ></c:js> 
+    
+  
+    
+    </body> 
+    
+    <!-- ============================================================================= -->
+    <!------------------------------------------ /BODY ------------------------------- -->
+    <!-- ============================================================================= -->
+    
+    </html>
+</apex:page>

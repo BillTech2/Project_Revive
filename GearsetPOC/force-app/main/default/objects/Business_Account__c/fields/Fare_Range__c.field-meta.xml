@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fare_Range__c</fullName>
+    <label>Fare Range</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Public</fullName>
+                <default>false</default>
+                <label>Public</label>
+            </value>
+            <value>
+                <fullName>RIT</fullName>
+                <default>false</default>
+                <label>RIT</label>
+            </value>
+            <value>
+                <fullName>Allotment</fullName>
+                <default>false</default>
+                <label>Allotment</label>
+            </value>
+            <value>
+                <fullName>Groups</fullName>
+                <default>false</default>
+                <label>Groups</label>
+            </value>
+            <value>
+                <fullName>Concession Fares</fullName>
+                <default>false</default>
+                <label>Concession Fares</label>
+            </value>
+            <value>
+                <fullName>FIP</fullName>
+                <default>false</default>
+                <label>FIP</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

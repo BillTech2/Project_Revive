@@ -1,0 +1,55 @@
+<apex:page showHeader="false" sidebar="false" cache="false" controller="Staff_Travel_WheelChair_controller" >
+    <!-- Javascript -->
+    <script>
+        function abc()
+        {
+            window.location = 'https://aria.eurostar.com/#/';
+        }
+    </script>
+    <style>
+        body {
+        background-color: #ffffff;
+        color: #FFFFFF;
+        }
+        .MyButton{
+        transition-duration: 0.2s;
+        color:#585858 !important;
+        font-size:18px !important;
+        background:white !important;
+        height: 150px !important;
+        width: 300px !important;
+        border: 4px solid #24b5c9 !important;
+        }
+        .MyButton:hover{
+        color:white !important;
+        font-size:18px !important;
+        background:#24b5c9 !important;
+        height: 150px !important;
+        width: 300px !important;
+        border: 4px solid #24b5c9 !important;
+    </style>
+    <apex:form style="height :500px">
+        <div style = "height:200px;width:100%;display:inline-block;font-size:0; background-color:#24b5c9">
+            <img style="padding-top:60px;padding-left:15px; width:25%;  display: inline-block;x solid #ddd; border-radius: 4px;" src="{!'https://' + $Label.Domain_Eurostar + '.salesforce.com/servlet/servlet.ImageServer?id=015b00000023s2nAAA&oid=00DQz000000hALtEAE'}" alt="Home" ></img>
+            <font size="4" style="display :inline-block; padding-left:105px;width:33%">
+                <b>
+                    <center align="justify">Thank you for submitting your request.
+We aim to be in touch with you within 3 workings days to confirm your booking.
+
+Thanks,
+
+Eurostar Staff Travel
+
+</center>
+                </b>
+            </font>
+        </div>
+        <TR >
+            <center style="padding-top:150px">
+                <apex:commandButton styleClass="MyButton" action="{!save2}" value="SUBMIT ANOTHER FORM"/>
+                "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <apex:commandButton styleClass="MyButton" onComplete="abc();" value="GO BACK TO ARIA"/>
+            </center>
+        </TR>
+    </apex:form>
+</apex:page>

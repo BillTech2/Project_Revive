@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_that_case_is_being_reopened__c</fullName>
+    <label>Reason that case is being reopened</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Lower Fare Exchanges</fullName>
+                <default>false</default>
+                <label>Lower Fare Exchanges</label>
+            </value>
+            <value>
+                <fullName>Drupal Exchanges</fullName>
+                <default>false</default>
+                <label>Drupal Exchanges</label>
+            </value>
+            <value>
+                <fullName>Fulfilment</fullName>
+                <default>false</default>
+                <label>Fulfilment</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

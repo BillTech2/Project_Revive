@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Most_Recent_Contract__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>Most Recent Contract</label>
+    <referenceTo>Business_Contract__c</referenceTo>
+    <relationshipLabel>Business Accounts</relationshipLabel>
+    <relationshipName>Business_Accounts</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,399 @@
+<apex:component >
+<style>
+     /* PRE CHAT PAGE*/
+    .prechat-open h1 {font-family: "eurostarsansregular", "Tahoma", "Geneva", sans-serif;
+    color: #06183D;
+    }
+    
+    .prechat-open {width:100%; padding:16px 16px 0; float: left;}
+    .prechat-box  {width:100%; padding:0 16px; float: left;}
+.prechat-field p, prechat-open p, #waitingMessage, .pbBody h1 {font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; 
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333;
+      margin-bottom: 3px;}
+    .prechat-field {
+  margin-top: 16px;
+  float: left;
+    width: 100%;
+}
+    
+    #waitingMessage {  height: auto!important;}
+    
+    #firstNameError, #lastNameError, #emailError {color:#cc0000;}
+    
+.prechat-field input,.liveAgentChatInput {
+    height: auto!important;
+    padding: 6px 12px!important;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc !important;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+  -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  float: left;
+  width: 100%;
+  font-size: 14px;
+}
+  
+    .liveAgentSendButton {/*float: right!important;width: 20%!important;margin-top: 0!important;  padding: 5px!important;height: auto !important;right: 0!important;*/
+ }
+    
+    #liveAgentClientChat form {padding: 4px;}
+  
+#prechat_submit, .liveAgentSendButton, .liveAgentEndButton, .liveAgentSaveButton {
+  font-family: "eurostarsansregular", "Tahoma", "Geneva", sans-serif;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
+    border-color: #24b5c9;
+  background-color: #24b5c9;
+    cursor:pointer;
+  color: #fff;
+  padding: 8px 0;
+  font-size: 14px;
+  float: left;
+  clear: both;
+  /*margin-top:16px;*/
+  width: 100%;
+  height: auto;
+  text-shadow: 1px 1px 1px #11455A;
+  /* background-image: -webkit-gradient(linear,left top,left 100%,from(#24b5c9),to(#004c76)); */
+  background-image: -webkit-linear-gradient(top,#24b5c9 0,#004c76 100%);
+  background: #0071a0;
+  background: -moz-linear-gradient(left, #24b5c9 1%, #004c76 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(1%,#24b5c9), color-stop(100%,#004c76));
+  background: -webkit-linear-gradient(left, #24b5c9 1%,#004c76 100%);
+  background: -o-linear-gradient(top, #24b5c9 1%,#004c76 100%);
+  background: -ms-linear-gradient(top, #24b5c9 1%,#004c76 100%);
+  background: linear-gradient(to bottom, #24b5c9 1%,#004c76 100%);
+  background: linear-gradient(to bottom, #24b5c9 1%,#004c76 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#24b5c9', endColorstr='#004c76',GradientType=1 );}
+    
+    #prechat_submit {opacity:1;}
+    
+.liveAgentEndButton, .liveAgentSaveButton {
+  width: 40%;
+  float: left;
+  clear: none;
+  margin: 0 5%;
+    padding:1% 0;
+    
+    border: 1px solid #06183d;
+  background-color: #f1f2f2;
+  cursor: pointer;
+  color: #06183d;
+  margin-top: 5px;
+  height: auto;
+  text-shadow: none;
+  /* background-image: -webkit-gradient(linear,left top,left 100%,from(#f1f2f2),to(#b2dcdf)); */
+  background-image: -webkit-linear-gradient(top,#f1f2f2 0,#b2dcdf 100%);
+  background: -moz-linear-gradient(left, #f1f2f2 1%, #b2dcdf 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(1%,#f1f2f2), color-stop(100%,#b2dcdf));
+  background: -webkit-linear-gradient(left, #f1f2f2 1%,#b2dcdf 100%);
+  background: -o-linear-gradient(top, #f1f2f2 1%,#b2dcdf 100%);
+  background: -ms-linear-gradient(top, #f1f2f2 1%,#b2dcdf 100%);
+  background: linear-gradient(to bottom, #f1f2f2 1%,#b2dcdf 100%);
+  background: linear-gradient(to bottom, #f1f2f2 1%,#b2dcdf 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b2dcdf', endColorstr='#f1f2f2',GradientType=1 );
+}
+    
+    .liveAgentEndButton:hover, .liveAgentSaveButton:hover, .liveAgentSendButton:hover {text-decoration:underline;}
+    
+    
+#prechat_submit:hover {text-decoration:underline;}
+   body.sfdcBody {background:#fff;}
+    .bodyDiv {
+  background-color: #fff;
+  border:0;
+  -moz-border-radius-bottomleft:0;
+  -moz-border-radius-bottomright:0;
+  border-bottom-right-radius:0;
+  border-bottom-left-radius:0;
+  -moz-box-shadow:none;
+  -webkit-box-shadow:none;
+  box-shadow:none;
+  float: left;
+  min-width: 100%;
+}
+    #AppBodyHeader .phHeader td.left img:first-child, body #AppBodyHeader .phHeaderCustomLogo {
+  display:none;
+}
+    #contentWrapper {
+  min-width: 100%;
+}
+    .hasMotif {
+    margin: 0;
+}
+    .noSidebarCell {
+    padding:0;
+}
+   @media (max-width: 1024px) {
+.navbar-brand img {
+  height: 60px; display:block;
+} 
+}
+    
+    
+/* LIVE CHAT PAGE*/
+#waitingMessage { height: 100%; width: 100%; vertical-align: middle; text-align: center;
+display: none; }
+.banner {height: 120px;
+  background: url(//staticassets1e.eurostar.com/profiles/eurostar/themes/eurostar/base/img/gradient-180-1d4a7d-0e1640.png) left top repeat-x #06183D;
+  background-image: -webkit-gradient(linear,left top,left 100%,from(#1d4a7d),to(#0e1640));
+  background-image: -webkit-linear-gradient(top,#1d4a7d 0,#0e1640 100%);
+  background-image: -moz-linear-gradient(top,#1d4a7d 0,#0e1640 100%);
+  background-image: -ms-linear-gradient(top,#1d4a7d 0,#0e1640 100%);
+  background-image: -o-linear-gradient(top,#1d4a7d 0,#0e1640 100%);
+  background-image: linear-gradient(top,#1d4a7d 0,#0e1640 100%);
+  padding-top: 10px;
+    background-color: #0e1640;
+    }
+ 
+  .bn-left, .bn-right {width: 50%} 
+    
+ @media (max-width: 410px) {
+.bn-left{width: 100% !important;} .bn-right {display:none;}
+}  
+   
+    .system {
+  padding: 24px 0;
+  width: 100%;
+   }
+    .chat_error {padding: 0; margin-bottom: 16px;}
+    .chat_error button {
+display:none;
+    }
+    .chat_container,#survey_container {width: 100%; float:left; padding-bottom: 5px; background-color: #0f1b45;margin-bottom: 20px;}
+    #chat_box_container {  height: 86%;
+  overflow-y: auto;}
+
+    
+span.operator strong {
+color:#ff0000;
+}
+span.messageText {font-size:1em!important;}
+span.client strong {
+color:#999;
+}
+#liveAgentClientChat.liveAgentStateWaiting #waitingMessage { display: table; }
+#liveAgentSaveButton, #liveAgentEndButton { z-index: 2; }
+.liveAgentChatInput {
+ /* height: 25px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #000;
+  background: #fff;
+  width: 75%;
+  margin: 8px;*/
+}
+.liveAgentSendButton {
+width: 60px;
+height: 31px;
+margin-bottom: 16px;
+margin-right: 8px;
+}
+#liveAgentChatLog {
+overflow-y: auto;
+    overflow-x: hidden;
+left: 0;
+right: 0;
+height:70%;
+/*bottom: 170px;**/
+border:none !important;
+    position:absolute;
+}
+
+
+.esr_chat_btn_row{
+  border-top: 1px solid;
+  display:block;
+  width: 100%;
+}
+
+.esr_row{
+  display:block;
+  width: 100%;
+}
+        #liveAgentChatLog.chat_box_container_big { bottom: 80px !important; }
+    
+.file_transfer {
+  position: absolute;
+  bottom: 60px;
+  width: 100%;
+  padding: 8px;
+}
+    #fileDragLabel, .liveAgentFileNameLabel {float: left; margin: 8px 0; text-align: left; width: 100%;}
+    #fileDragLabel a {text-align:center;  margin-left: 8px;}
+    .liveAgentFileDragArea {float: left; width:75%;}
+    
+    .liveAgentFileCancelButton:hover {text-decoration:underline;}
+    .liveAgentFileCancelButton {
+    font-family: "eurostarsansregular", "Tahoma", "Geneva", sans-serif;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
+  border: 1px solid #06183d;
+  background-color: #f1f2f2;
+  cursor: pointer;
+  color: #06183d;
+  padding: 5px 26px;
+  font-size: 14px;
+  float: right;
+  height: auto;
+  text-shadow: none;
+  background-image: -webkit-gradient(linear,left top,left 100%,from(#f1f2f2),to(#b2dcdf)); */
+  background-image: -webkit-linear-gradient(top,#f1f2f2 0,#b2dcdf 100%);
+  background: -moz-linear-gradient(left, #f1f2f2 1%, #b2dcdf 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(1%,#f1f2f2), color-stop(100%,#b2dcdf));
+  background: -webkit-linear-gradient(left, #f1f2f2 1%,#b2dcdf 100%);
+  background: -o-linear-gradient(top, #f1f2f2 1%,#b2dcdf 100%);
+  background: -ms-linear-gradient(top, #f1f2f2 1%,#b2dcdf 100%);
+  background: linear-gradient(to bottom, #f1f2f2 1%,#b2dcdf 100%);
+  background: linear-gradient(to bottom, #f1f2f2 1%,#b2dcdf 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b2dcdf', endColorstr='#f1f2f2',GradientType=1 );
+}
+    
+    .liveAgentFileSendButton {
+    font-family: "eurostarsansregular", "Tahoma", "Geneva", sans-serif;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
+   border-color: #24b5c9;
+  background-color: #24b5c9;
+  cursor: pointer;
+  color: #fff;
+  padding: 5px 26px;
+  font-size: 14px;
+  float: right;
+  margin: 8px 0;
+  height: auto;
+  text-shadow: 1px 1px 1px #11455A;
+  background-image: -webkit-gradient(linear,left top,left 100%,from(#24b5c9),to(#004c76)); */
+  background-image: -webkit-linear-gradient(top,#24b5c9 0,#004c76 100%);
+  background: #0071a0;
+  background: -moz-linear-gradient(left, #24b5c9 1%, #004c76 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(1%,#24b5c9), color-stop(100%,#004c76));
+  background: -webkit-linear-gradient(left, #24b5c9 1%,#004c76 100%);
+  background: -o-linear-gradient(top, #24b5c9 1%,#004c76 100%);
+  background: -ms-linear-gradient(top, #24b5c9 1%,#004c76 100%);
+  background: linear-gradient(to bottom, #24b5c9 1%,#004c76 100%);
+  background: linear-gradient(to bottom, #24b5c9 1%,#004c76 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#24b5c9', endColorstr='#004c76',GradientType=1 );
+    }
+ 
+ 
+    
+    /* SURVEY PAGE*/   
+    h1 {
+  font-family: "eurostarsansregular","Tahoma","Geneva",sans-serif;
+  color: #06183D!important;
+  font-weight: 400;
+  font-size: 24px;
+    margin-bottom:8px;
+}
+    
+    .pbBody h1 {
+    }
+    
+    input[type=radio] {
+  margin: 8px 8px 8px 0;
+  line-height: normal;
+}
+    
+form {
+  padding: 16px;
+} 
+    .pbBody {margin:8px 8px 16px !important;}
+    
+    .pbBody td {  
+  color: #333;
+  padding: 8px 8px 0;
+  float: none;
+  width: auto;
+  display: inline-block;
+  cursor: pointer;
+}
+    .pbBody td:last-child {}
+    .pbBody tr td:hover {background: #fff;}
+    .pbBody label {cursor: pointer;}
+    
+.bPageBlock {background-color: #fff !important;
+      border-bottom: 0 !important;
+  border-left: 0 !important;
+  border-right: 0 !important;
+  -moz-border-radius: 0 !important;
+  -webkit-border-radius: 0 !important;
+  border-radius: 0 !important;
+    border-color: #fff!important;
+    }
+    
+    textarea {
+  margin-top:8px;
+      width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  display: block !important;
+  height: 50px;
+}
+    
+    html input [type=button], body .btn, body input.btn, body .btn:hover, body input.btn:hover {
+    border-color: #24b5c9;
+  background-color: #24b5c9;
+  color: #fff;
+  padding: 2% 0;
+  font-size: 1em;
+    font-weight:400;
+  margin: 0 5%;
+  float: right;
+  clear: both;
+  width: 90%;
+  height: auto;
+  text-shadow: 1px 1px 1px #11455A;
+  /* background-image: -webkit-gradient(linear,left top,left 100%,from(#24b5c9),to(#004c76)); */
+  background-image: -webkit-linear-gradient(top,#24b5c9 0,#004c76 100%);
+  background: #0071a0;
+  background: -moz-linear-gradient(left, #24b5c9 1%, #004c76 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(1%,#24b5c9), color-stop(100%,#004c76));
+  background: -webkit-linear-gradient(left, #24b5c9 1%,#004c76 100%);
+  background: -o-linear-gradient(top, #24b5c9 1%,#004c76 100%);
+  background: -ms-linear-gradient(top, #24b5c9 1%,#004c76 100%);
+  background: linear-gradient(to bottom, #24b5c9 1%,#004c76 100%);
+  background: linear-gradient(to bottom, #24b5c9 1%,#004c76 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#24b5c9', endColorstr='#004c76',GradientType=1 );
+    font-family: "eurostarsansregular", "Tahoma", "Geneva", sans-serif;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
+    }
+    
+    .end-chat-button {padding:16px 16px 16px 0;}
+    
+    body .btn:hover, body input.btn:hover {text-decoration:underline;}
+    
+    #row, #radio {width:100%;}
+    
+    .highlight {
+  color: #fff !important;
+  background-image: -webkit-gradient(linear,bottom,top 100%,from(#004c76),to(#24b5c9));
+  background-image: -webkit-linear-gradient(bottom,#004c76 0,#24b5c9 100%);
+  background: #0096b2 !important;
+  background: -moz-linear-gradient(left, #004c76 1%, #24b5c9 100%);
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(1%,#004c76), color-stop(100%,#24b5c9));
+  background: -webkit-linear-gradient(bottom, #004c76 1%,#24b5c9 100%);
+  background: -o-linear-gradient(top, #004c76 1%,#24b5c9 100%);
+  background: -ms-linear-gradient(top, #004c76 1%,#24b5c9 100%);
+  background: linear-gradient(to top, #004c76 1%,#24b5c9 100%);
+  background: linear-gradient(to top, #004c76 1%,#24b5c9 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0071a0', endColorstr='#24b5c9',GradientType=1 );
+}
+    
+    </style>
+</apex:component>

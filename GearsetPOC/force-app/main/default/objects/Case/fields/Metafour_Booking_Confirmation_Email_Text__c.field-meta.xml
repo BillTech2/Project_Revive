@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Metafour_Booking_Confirmation_Email_Text__c</fullName>
+    <defaultValue>&quot;Thank you for contacting EuroDespatch. Following on from our phone conversation, I am writing to confirm the details of your reservation.&quot; &amp; BR()&amp;BR()&amp;BR()&amp;
+
+&quot;You should be able to see attached your PDF consignment note. Please either have this available on your mobile device or bring along a printed copy of this along with your Eurostar ticket when dropping off and collecting. &quot; &amp; BR()&amp;BR()&amp;BR()&amp;
+
+&quot;Just to remind you that this booking is exchangeable up to the time of the scheduled departure subject to availability, however, it is non-refundable. &quot;&amp; BR()&amp;BR()&amp;BR()&amp;
+
+&quot;If you have any further questions, please do not hesitate to call me on 03448 225822 or you can email Eurodespatch@eurostar.com. &quot;&amp; BR()&amp;BR()&amp;BR()&amp;
+
+
+&quot;I hope you have a very pleasant trip&quot;</defaultValue>
+    <inlineHelpText>Booking Confirmation Email Body</inlineHelpText>
+    <label>Booking Confirmation Email Text</label>
+    <length>50000</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>25</visibleLines>
+</CustomField>

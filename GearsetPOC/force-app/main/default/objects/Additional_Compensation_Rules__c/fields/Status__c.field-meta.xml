@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status__c</fullName>
+    <description>Closed: The rule applies to past dates and all compensations have been created. No modifications can be made.  
+Active: The rule applies to past and future dates. Some compensations have been created and only limited modifications can be made. Users can change the ‘End Date’ of the rule only.  
+Pending: The rule applies to future dates and compensations have not yet been created. All modifications can be made</description>
+    <externalId>false</externalId>
+    <formula>IF(AND(Date_From__c &lt;=TODAY(),Date_To__c&gt;=TODAY()), &quot;Active&quot;, If(AND(Date_From__c &lt;TODAY(),Date_To__c&lt;TODAY()),&quot;Closed&quot;,&quot;Pending&quot;))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Closed:  Rule applied in the past.No modifications can be made.  
+Active: Rule active now. Limited modifications can be made. Users can change the ‘End Date’ of the rule only
+Pending:  Rule is not yet applied. All modifications can be made. </inlineHelpText>
+    <label>Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

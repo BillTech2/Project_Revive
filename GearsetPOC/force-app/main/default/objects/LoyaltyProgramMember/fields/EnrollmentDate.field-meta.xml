@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EnrollmentDate</fullName>
+    <description>The date when the member is enrolled in the loyalty program.</description>
+    <inlineHelpText>The date when the member is enrolled in the loyalty program. This is a required field.</inlineHelpText>
+    <trackHistory>false</trackHistory>
+</CustomField>

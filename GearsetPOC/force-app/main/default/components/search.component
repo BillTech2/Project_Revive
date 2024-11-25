@@ -1,0 +1,218 @@
+<apex:component controller="FAQSearchController">
+
+<style>
+
+    #searchbar{
+        margin-top: -10px;
+        box-shadow: none;
+        border-bottom: none;
+        }
+
+    .form-control, .form-control-mobile{
+        box-sizing: border-box !important;
+    }
+    #SearchResults{
+        font-family: ABCSocial-Regular;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 20px;
+        text-align: left;
+        color: #1C1C1A;
+    }
+    
+
+
+</style>
+    <apex:attribute name="chosenLanguageISO" description="chosenLanguageISO" type="String" required="true"/>
+    <apex:attribute name="site" description=".com/E4A/Mobile" type="String" required="false"/>
+    <apex:variable value="" var="friendlyURL"/>
+                           <apex:outputpanel rendered="{!chosenLanguageISO==null}">
+                               <apex:variable value="/faq/uk-en/question/" var="friendlyURL"/>
+                            </apex:outputpanel>
+                            <apex:outputpanel rendered="{!chosenLanguageISO!=null && CONTAINS(chosenLanguageISO,'en')}">
+                                <apex:variable value="/faq/{!chosenLanguageISO}/question/" var="friendlyURL"/>
+                            </apex:outputpanel>
+                            <apex:outputpanel rendered="{!chosenLanguageISO!=null && CONTAINS(chosenLanguageISO,'fr')}">
+                                <apex:variable value="/faq/{!chosenLanguageISO}/question/" var="friendlyURL"/>
+                            </apex:outputpanel>
+                            <apex:outputpanel rendered="{!chosenLanguageISO!=null && CONTAINS(chosenLanguageISO,'nl')}">
+                                <apex:variable value="/faq/{!chosenLanguageISO}/vraag/" var="friendlyURL"/>
+                            </apex:outputpanel>  
+                            <apex:outputpanel rendered="{!chosenLanguageISO!=null && CONTAINS(chosenLanguageISO,'de')}">
+                                <apex:variable value="/faq/{!chosenLanguageISO}/frage/" var="friendlyURL"/>
+                            </apex:outputpanel>  
+    
+ <script>
+    document.addEventListener("DOMContentLoaded", readyForCustomSearch);
+    var parametersSearchText = '';
+    var parametersLanguage = '';
+    function readyForCustomSearch() {
+      parametersSearchText = "{!JSENCODE($CurrentPage.parameters.searchArticle)}";
+      parametersLanguage = "{!JSENCODE($CurrentPage.parameters.languageArticle)}";
+
+      if (parametersSearchText.length >2) {
+        myFunction(parametersSearchText, false);
+      }
+    }
+    
+
+    function CheckKey(event) {
+        var x = event.keyCode;
+       
+        var SearchTerm = document.getElementById("autocomplete").value;
+        if (SearchTerm == '') { // Main box is empty so check Mobile
+            var SearchTerm = document.getElementById("autocomplete-mob").value;
+        }
+        
+        if (x == 13 || x == 0 || x == null) { 
+            myFunction(SearchTerm, false);
+          } else if (SearchTerm.length > 3) {
+              // uncomment this to enable Autocomplete search
+              //myFunction(SearchTerm, true);
+         }
+        }
+    
+function myFunction(SearchTerm, Autocomplete) {
+    var ResultFound = false;
+    var chosenLanguageISO;
+    if (parametersSearchText == '') {
+      $('html,body').scrollTop(0);
+    }
+    if (parametersLanguage != '') {
+      var lang = ['uk-en','be-en','us-en','rw-en','fr-fr','be-fr','nl-nl','be-nl','de-de'];
+      for (var i = 0; i < lang.length; i++) {
+        if (lang[i] == parametersLanguage) {
+          chosenLanguageISO = parametersLanguage;
+          break;
+        }
+      }
+    } else {
+      chosenLanguageISO = '{!chosenLanguageISO}';
+    }
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.FAQSearchController.PerformSearch}',
+            SearchTerm, 
+            chosenLanguageISO,'{!site}',
+            
+            function(result, event){
+                if (event.status) {  // Everything is ok, serve up the results
+                    var SearchResults;
+                    var SearchResultArray = [];
+                    //document.getElementById("SearchResultOutput").innerHTML = "<div id='SearchResults'><h3>Search Results: </h3>";
+                    SearchResults = "<div id='SearchResults'><h3>{!$Label.FAQ_LABEL_SEARCH_RESULTS}:</h3>";
+                    //TODO : Streamline this !
+                    var count = 0;
+                    for (var key in result) {
+                       if (result.hasOwnProperty(key)) {
+                          var obj = result[key];
+                          obj.Summary = obj.Summary == undefined ? '' : obj.Summary;
+                           if (SearchTerm == obj.Title && count == 0) { // Exactly match!
+                               //document.getElementById("SearchResultOutput").innerHTML += "<a href='http://faq-eurostarhelp.cs20.force.com/{!friendlyURL}" + obj.UrlName + "' class='list-group-item'><h4 class='list-group-item-heading'>" + obj.Title + "</h4><p>" + obj.Summary + "</p></a>";
+                               SearchResults  += "<div id='SearchResults-title'><a class='header' href='{!friendlyURL}" + obj.UrlName + "' class='list-group-item'><h4 class='list-group-item-heading'>" + obj.Title + "</h4></a></div><div id=‘SearchResults-summary’><a class='summary' href='{!friendlyURL}" + obj.UrlName + "'><p>" + obj.Summary + "</p></a></div>";
+                              
+                               ResultFound = true;
+                               break;
+                            } else {
+                              for (var prop in obj) {
+                                  if (obj.hasOwnProperty(prop)) {
+                                      if (prop == "UrlName") {
+                                         // Output top 10 results
+                                        if (count < 10) {
+                                            count++;
+                                            
+                                            //document.getElementById("SearchResultOutput").innerHTML += "<a href='http://faq-eurostarhelp.cs20.force.com/{!friendlyURL}" + obj[prop] + "' class='list-group-item'><h4 class='list-group-item-heading'>" + count + ") " + obj.Title + "</h4><p>" + obj.Summary + "</p></a>";
+                                            SearchResults  += "<div id='SearchResults-title'><a class='header' href='{!friendlyURL}" + obj.UrlName + "' class='list-group-item'><h4 class='list-group-item-heading'>" + count + ") " + obj.Title + "</h4></a></div><div id=‘SearchResults-summary’><a class='summary' href='{!friendlyURL}" + obj.UrlName + "' class='list-group-item'><p>" + obj.Summary + "</p></a></div>";
+                                            SearchResultArray.push(obj.Title);
+                                            ResultFound = true;
+                                        }
+                                    }
+                                  }
+                              }
+                            }
+                       }
+                    }
+                    
+                    if (ResultFound == false) {
+                        //document.getElementById("SearchResultOutput").innerHTML += "<div id='SearchResults'>No results found for : " + SearchTerm;
+                         SearchResults  += "<div id='SearchResults'>{!$Label.FAQ_LABEL_SEARCH_NORESULTS} " + SearchTerm;
+                    }
+                    //document.getElementById("SearchResultOutput").innerHTML += "</div>";
+                     SearchResults += "</div>";
+                    
+                    if (Autocomplete == true && ResultFound == false) {
+                        document.getElementById("SearchResultOutput").innerHTML= "";
+                    } else if (Autocomplete == true && ResultFound == true) {
+                            $(function() {
+                                $("#autocomplete").autocomplete({
+                                    source: SearchResultArray,
+                                    minLength: 3,
+                                    items: 5,
+                                    });
+                               });
+                        
+                    } else {
+                        document.getElementById("SearchResultOutput").innerHTML= SearchResults;
+                    }
+                } else if (event.type === 'exception') {
+                    //to-do
+                    alert('Error Searching : ' + event.message);
+                    alert('Error Searching : ' + result);
+                } else {
+                    //to-do
+                    alert ('Error Searcing : ' + event.message);
+                }
+            },
+            {escape: true}
+        );
+    //}
+    }
+//}
+  
+</script>
+
+    
+<nav id="searchbar" class="well">
+   <div class="container-fluid">
+         <!-- <form role="search"> -->
+        <div class="form-group">  
+            
+         <!-- SF Search Box -->
+        <!--<apex:inputText styleClass="autocomplete" id="autocomplete"/><br/>
+        <apex:commandButton styleClass="btn btn-search" style="padding: 0; border:0; margin-left:0; clear:none; width:20%; border-top-left-radius:0; border-bottom-left-radius:0;height:50px;/* background-image: -webkit-gradient(linear,left top,left 100%,from(#66CBD9),to(#1B808E)); */
+background-image: -webkit-linear-gradient(top,#66CBD9 0,#1B808E 100%); text-shadow: 1px 1px 1px #11455A; color:#FFF; font-size: 1.3em; text-shadow: 1px 1px 1px #11455A;" action="{!search}" value="{!$Label.FAQ_HOME_SEARCH}" rerender="theSearchResults"/> 
+        -->
+            
+        <!-- HTML Search Box -->
+<input type="text" class="form-control" onkeyup="CheckKey(event)" id="autocomplete" placeholder="{!$Label.FAQ_HOME_SEARCHTEXT_LONG}" x-webkit-speech="true" autocomplete="off" data-provide="typeahead"/>
+<input type="text" class="form-control-mobile" onkeyup="CheckKey(event)" id="autocomplete-mob" placeholder="{!$Label.FAQ_HOME_SEARCHTEXT_SHORT}" x-webkit-speech="true" autocomplete="off" data-provide="typeahead"/>
+            
+<button type="submit" id="submit" onclick="CheckKey(event)" class="primary " style="border-radius: 0px !important;">{!$Label.FAQ_HOME_SEARCH}</button>
+        </div>
+        <!-- </form> -->
+   </div>
+</nav>
+<!--/Searchbar-->
+<script src="{!URLFOR($Resource.jscript,'js/jquery.min.js')}"> </script> 
+    <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+<script>
+    
+/* we need this only on touch devices */
+if (Modernizr.touch) {
+    /* cache dom references */ 
+    var $body = jQuery('body'); 
+
+    /* bind events */
+    $(document)
+    .on('focus', 'input', function(e) {
+        $body.addClass('fixfixed');
+    })
+    .on('blur', 'input', function(e) {
+        $body.removeClass('fixfixed');
+    });
+}
+</script>
+    
+     
+<style>.fixfixed .header, .fixfixed .footer { position: absolute;} </style>
+
+</apex:component>

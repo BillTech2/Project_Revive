@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_Code_2_new__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( ISBLANK(Reason_Code__c), TEXT( Reason_Tier_2__c  ), 
+IF(ISBLANK(TEXT(Reason_2__c)), Reason_Code__r.Reason_Code_2__c,TEXT(Reason_2__c)))</formula>
+    <label>Reason Code 2 (new)</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

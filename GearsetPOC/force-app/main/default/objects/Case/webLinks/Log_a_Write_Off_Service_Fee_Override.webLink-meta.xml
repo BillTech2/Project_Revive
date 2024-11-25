@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Log_a_Write_Off_Service_Fee_Override</fullName>
+    <availability>online</availability>
+    <displayType>link</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Log a Write-Off / Service Fee Override</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>https://eurostar.my.salesforce.com/
+a7a/e?
+CF00Nb000000AA5f4={!Case.Account}
+&amp;00Nb000000AA5f7={!Case.PNR__c}
+&amp;CF00Nb000000AA5vy={!Case.CaseNumber}
+&amp;retURL=%2Fa57%2Fo</url>
+</WebLink>

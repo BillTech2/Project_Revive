@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TACT_Tag_2_Internal__c</fullName>
+    <description>Created to Support TACT Integration - expected to be retired soon</description>
+    <label>TACT Tag 2</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Fare</fullName>
+                <default>false</default>
+                <label>Fare</label>
+            </value>
+            <value>
+                <fullName>Payment</fullName>
+                <default>false</default>
+                <label>Payment</label>
+            </value>
+            <value>
+                <fullName>Ticket reception</fullName>
+                <default>false</default>
+                <label>Ticket reception</label>
+            </value>
+            <value>
+                <fullName>Purchase confirmation</fullName>
+                <default>false</default>
+                <label>Purchase confirmation</label>
+            </value>
+            <value>
+                <fullName>Ticket exchange or cancellation</fullName>
+                <default>false</default>
+                <label>Ticket exchange or cancellation</label>
+            </value>
+            <value>
+                <fullName>Tick-up booking</fullName>
+                <default>false</default>
+                <label>Tick-up booking</label>
+            </value>
+            <value>
+                <fullName>Kids Connection booking</fullName>
+                <default>false</default>
+                <label>Kids Connection booking</label>
+            </value>
+            <value>
+                <fullName>Contest</fullName>
+                <default>false</default>
+                <label>Contest</label>
+            </value>
+            <value>
+                <fullName>Service before and after your trip</fullName>
+                <default>false</default>
+                <label>Service before and after your trip</label>
+            </value>
+            <value>
+                <fullName>Travel agency</fullName>
+                <default>false</default>
+                <label>Travel agency</label>
+            </value>
+            <value>
+                <fullName>Thalys Store &amp; More</fullName>
+                <default>false</default>
+                <label>Thalys Store &amp; More</label>
+            </value>
+            <value>
+                <fullName>Thalys Lounge</fullName>
+                <default>false</default>
+                <label>Thalys Lounge</label>
+            </value>
+            <value>
+                <fullName>Thalys information desk</fullName>
+                <default>false</default>
+                <label>Thalys information desk</label>
+            </value>
+            <value>
+                <fullName>Ticket counter</fullName>
+                <default>false</default>
+                <label>Ticket counter</label>
+            </value>
+            <value>
+                <fullName>Our staff</fullName>
+                <default>false</default>
+                <label>Our staff</label>
+            </value>
+            <value>
+                <fullName>Ticket inspection</fullName>
+                <default>false</default>
+                <label>Ticket inspection</label>
+            </value>
+            <value>
+                <fullName>The Welcome-Bar</fullName>
+                <default>false</default>
+                <label>The Welcome-Bar</label>
+            </value>
+            <value>
+                <fullName>Catering in comfort 1</fullName>
+                <default>false</default>
+                <label>Catering in comfort 1</label>
+            </value>
+            <value>
+                <fullName>Wifi</fullName>
+                <default>false</default>
+                <label>Wifi</label>
+            </value>
+            <value>
+                <fullName>Taxi reservation</fullName>
+                <default>false</default>
+                <label>Taxi reservation</label>
+            </value>
+            <value>
+                <fullName>Press offer</fullName>
+                <default>false</default>
+                <label>Press offer</label>
+            </value>
+            <value>
+                <fullName>Lost objects</fullName>
+                <default>false</default>
+                <label>Lost objects</label>
+            </value>
+            <value>
+                <fullName>Travel conditions</fullName>
+                <default>false</default>
+                <label>Travel conditions</label>
+            </value>
+            <value>
+                <fullName>Traffic info SMS</fullName>
+                <default>false</default>
+                <label>Traffic info SMS</label>
+            </value>
+            <value>
+                <fullName>Travel confirmation SMS</fullName>
+                <default>false</default>
+                <label>Travel confirmation SMS</label>
+            </value>
+            <value>
+                <fullName>Traffic info email</fullName>
+                <default>false</default>
+                <label>Traffic info email</label>
+            </value>
+            <value>
+                <fullName>Announcements</fullName>
+                <default>false</default>
+                <label>Announcements</label>
+            </value>
+            <value>
+                <fullName>Website</fullName>
+                <default>false</default>
+                <label>Website</label>
+            </value>
+            <value>
+                <fullName>Leaflets</fullName>
+                <default>false</default>
+                <label>Leaflets</label>
+            </value>
+            <value>
+                <fullName>Advertising campaigns</fullName>
+                <default>false</default>
+                <label>Advertising campaigns</label>
+            </value>
+            <value>
+                <fullName>Newsletter</fullName>
+                <default>false</default>
+                <label>Newsletter</label>
+            </value>
+            <value>
+                <fullName>Mobile App</fullName>
+                <default>false</default>
+                <label>Mobile App</label>
+            </value>
+            <value>
+                <fullName>Info request</fullName>
+                <default>false</default>
+                <label>Info request</label>
+            </value>
+            <value>
+                <fullName>Construction works that might impact your travel</fullName>
+                <default>false</default>
+                <label>Construction works that might impact your travel</label>
+            </value>
+            <value>
+                <fullName>Strikes that might impact your travel</fullName>
+                <default>false</default>
+                <label>Strikes that might impact your travel</label>
+            </value>
+            <value>
+                <fullName>My account</fullName>
+                <default>false</default>
+                <label>My account</label>
+            </value>
+            <value>
+                <fullName>My Miles</fullName>
+                <default>false</default>
+                <label>My Miles</label>
+            </value>
+            <value>
+                <fullName>Reward tickets</fullName>
+                <default>false</default>
+                <label>Reward tickets</label>
+            </value>
+            <value>
+                <fullName>My Thalys World benefits and services</fullName>
+                <default>false</default>
+                <label>My Thalys World benefits and services</label>
+            </value>
+            <value>
+                <fullName>Which subscription ?</fullName>
+                <default>false</default>
+                <label>Which subscription ?</label>
+            </value>
+            <value>
+                <fullName>New request or renewal</fullName>
+                <default>false</default>
+                <label>New request or renewal</label>
+            </value>
+            <value>
+                <fullName>Website problem</fullName>
+                <default>false</default>
+                <label>Website problem</label>
+            </value>
+            <value>
+                <fullName>Promo 20 years Thalys</fullName>
+                <default>false</default>
+                <label>Promo 20 years Thalys</label>
+            </value>
+            <value>
+                <fullName>Promo 25 years Thalys</fullName>
+                <default>false</default>
+                <label>Promo 25 years Thalys</label>
+            </value>
+            <value>
+                <fullName>Missed connection</fullName>
+                <default>false</default>
+                <label>Missed connection</label>
+            </value>
+            <value>
+                <fullName>Availability</fullName>
+                <default>false</default>
+                <label>Availability</label>
+            </value>
+            <value>
+                <fullName>Mobile app problem</fullName>
+                <default>false</default>
+                <label>Mobile app problem</label>
+            </value>
+            <value>
+                <fullName>Option on a ticket</fullName>
+                <default>false</default>
+                <label>Option on a ticket</label>
+            </value>
+            <value>
+                <fullName>Right of access</fullName>
+                <default>false</default>
+                <label>Right of access</label>
+            </value>
+            <value>
+                <fullName>Right to rectification</fullName>
+                <default>false</default>
+                <label>Right to rectification</label>
+            </value>
+            <value>
+                <fullName>Right to erasure</fullName>
+                <default>false</default>
+                <label>Right to erasure</label>
+            </value>
+            <value>
+                <fullName>Right to object</fullName>
+                <default>false</default>
+                <label>Right to object</label>
+            </value>
+            <value>
+                <fullName>Right to restriction</fullName>
+                <default>false</default>
+                <label>Right to restriction</label>
+            </value>
+            <value>
+                <fullName>Right to data Portability</fullName>
+                <default>false</default>
+                <label>Right to data Portability</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Opt-out Newsletter</fullName>
+                <default>false</default>
+                <label>Opt-out Newsletter</label>
+            </value>
+            <value>
+                <fullName>Invoice request</fullName>
+                <default>false</default>
+                <label>Invoice request</label>
+            </value>
+            <value>
+                <fullName>Refund my ticket</fullName>
+                <default>false</default>
+                <label>Refund my ticket</label>
+            </value>
+            <value>
+                <fullName>Exchange my ticket</fullName>
+                <default>false</default>
+                <label>Exchange my ticket</label>
+            </value>
+            <value>
+                <fullName>Booking in the future</fullName>
+                <default>false</default>
+                <label>Booking in the future</label>
+            </value>
+            <value>
+                <fullName>Booking in the past</fullName>
+                <default>false</default>
+                <label>Booking in the past</label>
+            </value>
+            <value>
+                <fullName>No booking yet</fullName>
+                <default>false</default>
+                <label>No booking yet</label>
+            </value>
+            <value>
+                <fullName>Gates at the NS station</fullName>
+                <default>false</default>
+                <label>Gates at the NS station</label>
+            </value>
+            <value>
+                <fullName>Construction work that might impact your travel</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Construction work that might impact your travel</label>
+            </value>
+            <value>
+                <fullName>TheCard benefits and services</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>TheCard benefits and services</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

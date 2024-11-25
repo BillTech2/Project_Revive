@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dog_Approval_Event</fullName>
+    <active>true</active>
+    <label>Dog Approval Event</label>
+    <picklistValues>
+        <picklist>Action__c</picklist>
+        <values>
+            <fullName>Agency visit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client visit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contact e-mail%2Fphone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Visit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Eductour</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Event%2FNetworking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Follow up on SLA %2F PAC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sending Contract</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sending Proposal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Speed Meeting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sponsoring</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tradefair</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Training</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Customer_Struggle__c</picklist>
+        <values>
+            <fullName>AOP issue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Couldn%27t Find</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer error</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Didn%27t Receive A Confirmation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Don%27t Understand How To Do This Online</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Don%27t Want To Do This Online</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Eurostar Error</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Form Of Payment Not Online</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loyalty issue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Need More Information</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Access To Website</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not An Online Product Or Not Refundable Online</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Outside Booking Horizon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Seating Issues</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Website error</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Initial_Reason_For_Contact__c</picklist>
+        <values>
+            <fullName>Buy or Book</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cancel or Refund</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Change</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disruption or Compensation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Info or Advice or Confirmation</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Outcome__c</picklist>
+        <values>
+            <fullName>Call Dropped Before Resolution</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Completed Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Completed Request - GWG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Couldn%27t Complete The Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Abandoned Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Just Wanted A Quote</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer failed security checks</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Directed Customer Back To Original Point Of Sale</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Directed Customer Online</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Preferred_Language__c</picklist>
+        <values>
+            <fullName>DE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NL</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Subject</picklist>
+        <values>
+            <fullName>Assistance Animal Travel</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Call</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Meeting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Send Letter%2FQuote</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Target_Group__c</picklist>
+        <values>
+            <fullName>AGV Loisirs%2FTO%2FMICE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client Corporate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Distributeur</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partenaire</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prospect</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TMC</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Tone_of_Contact__c</picklist>
+        <values>
+            <fullName>Complaint</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Neutral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Praise</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type</picklist>
+        <values>
+            <fullName>Call</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Meeting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type__c</picklist>
+        <values>
+            <fullName>Eductour%2FFamtrip</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Meeting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

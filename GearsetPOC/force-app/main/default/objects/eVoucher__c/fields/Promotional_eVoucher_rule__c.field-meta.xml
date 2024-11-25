@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Promotional_eVoucher_rule__c</fullName>
+    <inlineHelpText>Rule that governs the eVouchers creation (different for each type of voucher)</inlineHelpText>
+    <label>eVoucher Rule</label>
+    <referenceTo>Promotional_eVoucher_rule__c</referenceTo>
+    <relationshipLabel>eVouchers</relationshipLabel>
+    <relationshipName>Promotional_eVouchers</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>true</reparentableMasterDetail>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

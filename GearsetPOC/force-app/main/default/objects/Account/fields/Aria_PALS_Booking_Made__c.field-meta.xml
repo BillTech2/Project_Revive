@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Aria_PALS_Booking_Made__c</fullName>
+    <description>This is a rollup summary of the PALS that were made by this user this year</description>
+    <label>Aria PALS Booking Made</label>
+    <summaryFilterItems>
+        <field>Staff_and_duty_travel__c.Created_this_year__c</field>
+        <operation>equals</operation>
+        <value>True</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Staff_and_duty_travel__c.Type_of_booking__c</field>
+        <operation>equals</operation>
+        <value>Pals</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Staff_and_duty_travel__c.Status_of_the_booking__c</field>
+        <operation>equals</operation>
+        <value>Created, Exchanged</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Staff_and_duty_travel__c.Associated_account__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RI_validate_diagram</fullName>
+    <active>true</active>
+    <description>validate the format of the diagram to ensure it matches the Train object format, ie 9014 NOT 9O14</description>
+    <errorConditionFormula>OR (
+BEGINS( UPPER(Diagram__c) ,&quot;9O&quot;),
+BEGINS( UPPER(Diagram__c) ,&quot;9I&quot;)
+)</errorConditionFormula>
+    <errorDisplayField>Diagram__c</errorDisplayField>
+    <errorMessage>Please use the numeric form of the diagram - ie 9014 not 9O14</errorMessage>
+</ValidationRule>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>This_Month__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(MID(Today__c  ,6,2) = &quot;01&quot;,&quot;January&quot;,
+IF(MID(Today__c  ,6,2) = &quot;02&quot;,&quot;February&quot;,
+IF(MID(Today__c  ,6,2) = &quot;03&quot;,&quot;March&quot;,
+IF(MID(Today__c  ,6,2) = &quot;04&quot;,&quot;April&quot;,
+IF(MID(Today__c  ,6,2) = &quot;05&quot;,&quot;May&quot;,
+IF(MID(Today__c  ,6,2) = &quot;06&quot;,&quot;June&quot;,
+IF(MID(Today__c  ,6,2) = &quot;07&quot;,&quot;July&quot;,
+IF(MID(Today__c  ,6,2) = &quot;08&quot;,&quot;August&quot;,
+IF(MID(Today__c  ,6,2) = &quot;09&quot;,&quot;September&quot;,
+IF(MID(Today__c  ,6,2) = &quot;10&quot;,&quot;October&quot;,
+IF(MID(Today__c  ,6,2) = &quot;11&quot;,&quot;November&quot;,
+IF(MID(Today__c  ,6,2) = &quot;12&quot;,&quot;December&quot;,
+NULL
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>This Month</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

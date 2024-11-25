@@ -1,0 +1,5 @@
+<apex:page standardController="Business_Contract__c" recordSetVar="risks"
+    extensions="DLT_VFNewContractController"
+    action="{!newContractContinent}">
+    <apex:pageMessages />
+</apex:page>

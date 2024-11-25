@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contract_type_Reward_Redemption</fullName>
+    <columns>NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Contract_Type__c</field>
+        <operation>equals</operation>
+        <value>Reward Redemption</value>
+    </filters>
+    <label>Contract type ~ Reward Redemption</label>
+    <sharedTo>
+        <role>Trade_Team</role>
+    </sharedTo>
+</ListView>

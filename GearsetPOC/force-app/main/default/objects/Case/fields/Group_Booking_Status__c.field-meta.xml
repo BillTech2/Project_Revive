@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Group_Booking_Status__c</fullName>
+    <description>Status of the Group Booking</description>
+    <inlineHelpText>Status of the Group Booking</inlineHelpText>
+    <label>Group Booking Status</label>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Quote</fullName>
+                <color>#0B6FCE</color>
+                <default>false</default>
+                <label>Quote</label>
+            </value>
+            <value>
+                <fullName>Future Pre-registered</fullName>
+                <default>false</default>
+                <label>Future Pre-registered</label>
+            </value>
+            <value>
+                <fullName>Advised Dates Open</fullName>
+                <default>false</default>
+                <label>Advised Dates Open</label>
+            </value>
+            <value>
+                <fullName>Provisional</fullName>
+                <color>#E27001</color>
+                <default>false</default>
+                <label>Provisional</label>
+            </value>
+            <value>
+                <fullName>Paid</fullName>
+                <color>#006600</color>
+                <default>false</default>
+                <label>Paid</label>
+            </value>
+            <value>
+                <fullName>Deposit taken</fullName>
+                <color>#CC33CC</color>
+                <default>false</default>
+                <label>Deposit taken</label>
+            </value>
+            <value>
+                <fullName>Reinstated</fullName>
+                <default>false</default>
+                <label>Reinstated</label>
+            </value>
+            <value>
+                <fullName>Cancelled - Non Payment</fullName>
+                <default>false</default>
+                <label>Cancelled - Non Payment</label>
+            </value>
+            <value>
+                <fullName>Cancelled - No Longer Travelling</fullName>
+                <default>false</default>
+                <label>Cancelled - No Longer Travelling</label>
+            </value>
+            <value>
+                <fullName>Cancelled - Too Expensive</fullName>
+                <default>false</default>
+                <label>Cancelled - Too Expensive</label>
+            </value>
+            <value>
+                <fullName>Cancelled - Low Take Up</fullName>
+                <default>false</default>
+                <label>Cancelled - Low Take Up</label>
+            </value>
+            <value>
+                <fullName>Cancelled - Alternative Travel Booked</fullName>
+                <default>false</default>
+                <label>Cancelled - Alternative Travel Booked</label>
+            </value>
+            <value>
+                <fullName>Cancelled - Terror Alert</fullName>
+                <default>false</default>
+                <label>Cancelled - Terror Alert</label>
+            </value>
+            <value>
+                <fullName>Cancelled - Other</fullName>
+                <color>#660000</color>
+                <default>false</default>
+                <label>Cancelled - Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

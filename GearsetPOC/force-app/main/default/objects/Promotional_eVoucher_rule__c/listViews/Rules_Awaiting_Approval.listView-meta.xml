@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rules_Awaiting_Approval</fullName>
+    <columns>NAME</columns>
+    <columns>Partner__c</columns>
+    <columns>Evoucher_Value__c</columns>
+    <columns>Currency__c</columns>
+    <columns>Expiry_Date__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>Total_Number_of_Vouchers__c</columns>
+    <columns>Total_Money_Amount__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Pending</value>
+    </filters>
+    <label>Rules Awaiting Approval</label>
+    <language>en_US</language>
+</ListView>

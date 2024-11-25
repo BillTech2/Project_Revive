@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>eins_LanguageCodes__c</fullName>
+    <description>Codes that used in Case field Language Code - English, Dutch, French languages</description>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>Codes that used in Case field Language Code - English, Dutch, French languages. Example: &#39;en;nl;fr&#39;</inlineHelpText>
+    <label>LanguageCodes</label>
+    <required>false</required>
+    <type>TextArea</type>
+</CustomField>

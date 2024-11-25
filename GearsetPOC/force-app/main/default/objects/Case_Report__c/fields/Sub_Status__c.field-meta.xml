@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sub_Status__c</fullName>
+    <label>Sub Status</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Nothing Pending</fullName>
+                <default>false</default>
+                <label>Nothing Pending</label>
+            </value>
+            <value>
+                <fullName>Customer Responded</fullName>
+                <default>false</default>
+                <label>Customer Responded</label>
+            </value>
+            <value>
+                <fullName>Case Comment Received</fullName>
+                <default>false</default>
+                <label>Case Comment Received</label>
+            </value>
+            <value>
+                <fullName>Compensation pending</fullName>
+                <default>false</default>
+                <label>Compensation pending</label>
+            </value>
+            <value>
+                <fullName>Compensation rejected</fullName>
+                <default>false</default>
+                <label>Compensation rejected</label>
+            </value>
+            <value>
+                <fullName>Compensation approved</fullName>
+                <default>false</default>
+                <label>Compensation approved</label>
+            </value>
+            <value>
+                <fullName>Supervisor</fullName>
+                <default>false</default>
+                <label>Supervisor</label>
+            </value>
+            <value>
+                <fullName>Advisor</fullName>
+                <default>false</default>
+                <label>Advisor</label>
+            </value>
+            <value>
+                <fullName>Legal</fullName>
+                <default>false</default>
+                <label>Legal</label>
+            </value>
+            <value>
+                <fullName>Application Support</fullName>
+                <default>false</default>
+                <label>Application Support</label>
+            </value>
+            <value>
+                <fullName>Finance</fullName>
+                <default>false</default>
+                <label>Finance</label>
+            </value>
+            <value>
+                <fullName>Train Manager</fullName>
+                <default>false</default>
+                <label>Train Manager</label>
+            </value>
+            <value>
+                <fullName>On Board Services</fullName>
+                <default>false</default>
+                <label>On Board Services</label>
+            </value>
+            <value>
+                <fullName>Board Member</fullName>
+                <default>false</default>
+                <label>Board Member</label>
+            </value>
+            <value>
+                <fullName>Control Room</fullName>
+                <default>false</default>
+                <label>Control Room</label>
+            </value>
+            <value>
+                <fullName>Loyalty</fullName>
+                <default>false</default>
+                <label>Loyalty</label>
+            </value>
+            <value>
+                <fullName>GDPR</fullName>
+                <default>false</default>
+                <label>GDPR</label>
+            </value>
+            <value>
+                <fullName>Station Staff</fullName>
+                <default>false</default>
+                <label>Station Staff</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

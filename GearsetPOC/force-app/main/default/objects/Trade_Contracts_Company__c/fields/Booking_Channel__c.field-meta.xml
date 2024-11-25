@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Booking_Channel__c</fullName>
+    <label>Method of Booking</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Amadeus</fullName>
+                <default>false</default>
+                <label>Amadeus</label>
+            </value>
+            <value>
+                <fullName>Sabre</fullName>
+                <default>false</default>
+                <label>Sabre</label>
+            </value>
+            <value>
+                <fullName>Galileo</fullName>
+                <default>false</default>
+                <label>Galileo</label>
+            </value>
+            <value>
+                <fullName>Voyager</fullName>
+                <default>false</default>
+                <label>Voyager</label>
+            </value>
+            <value>
+                <fullName>API</fullName>
+                <default>false</default>
+                <label>API</label>
+            </value>
+            <value>
+                <fullName>Amadeus Rail</fullName>
+                <default>false</default>
+                <label>Amadeus Rail</label>
+            </value>
+            <value>
+                <fullName>Contact Centre</fullName>
+                <default>false</default>
+                <label>Contact Centre</label>
+            </value>
+            <value>
+                <fullName>Eurostar For Business Portal</fullName>
+                <default>false</default>
+                <label>Eurostar For Business Portal</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

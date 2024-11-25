@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>End_within_Timesheet_Pay_Period</fullName>
+    <active>false</active>
+    <description>Timesheet Entry End must be less than or equal to Timesheet Pay Period End.</description>
+    <errorConditionFormula>IF ( and ( DATEVALUE(End__c)  &lt;&gt; null,  Timesheet__r.Pay_Period_End__c  &lt;&gt;  null, DATEVALUE(End__c) &gt; Timesheet__r.Pay_Period_End__c ) , true, false)</errorConditionFormula>
+    <errorDisplayField>End__c</errorDisplayField>
+    <errorMessage>The End must be less than or equal to the Timesheet Pay Period End.</errorMessage>
+</ValidationRule>

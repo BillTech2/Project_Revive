@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Write_Off_s_Overrides</fullName>
+    <columns>CREATED_DATE</columns>
+    <columns>NAME</columns>
+    <columns>Type__c</columns>
+    <columns>Currency__c</columns>
+    <columns>Write_Off_Amount__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>Approved_By__c</columns>
+    <columns>Who_Gave_Vocal_Authorisation__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Created_Date_Time__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>5/1/2019 12:00 AM</value>
+    </filters>
+    <label>All Write-Off&#39;s &amp; Overrides</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>Advisor_QA_QA_Team</group>
+        <group>EBSC_Helpdesk</group>
+    </sharedTo>
+</ListView>

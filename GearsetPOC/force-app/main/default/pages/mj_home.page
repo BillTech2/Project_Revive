@@ -1,0 +1,94 @@
+<apex:page controller="mj_class" docType="html-5.0"  language="{!selectedLanguageCode}" sidebar="false" showheader="false" standardStylesheets="false"  applyHtmlTag="false" cache="false" >
+<html>
+<head>
+    
+     
+        <c:css ></c:css>
+       
+        <c:cssdwm ></c:cssdwm>
+        <apex:stylesheet value="{!URLFOR($Resource.styles, 'css/cssoveride.css')}" />
+  
+    
+    
+     <title>{!$Label.MJ_pagetitle}</title>
+    
+    </head>    
+    
+    <body>
+        <c:disruption_webform_header ></c:disruption_webform_header>
+        
+                
+                
+                
+  <div class="container" >
+         <apex:form prependId="false" onsubmit="javascript:MessageRender(this)"  >
+            <apex:pageMessages />  <!-- this is where the error messages will appear -->
+             <apex:pageBlock rendered="{!if(isActive, false, true)}">
+                 <br/>
+                 <h2>
+                     {!$Label.MJ_homepagetitle}
+                 </h2>
+                 
+                 <br/><br/>
+                 <p>
+                 {!$Label.MJ_home_offline1}
+                 <br/><br/>
+                 {!$Label.MJ_home_offline2} <a href="mailto:ECCInternalcoms.OnCall@eurostar.com">ECCInternalcoms.OnCall@eurostar.com.</a>
+                 </p>
+             </apex:pageBlock>
+             
+            <apex:pageBlock title="{!$Label.MJ_homepagetitle}" mode="edit" rendered="{!if(isActive, true, false)}">
+                <div class="form-para">
+                    {!$Label.MJ_home_line1}
+                    <br/><br/>
+                    <apex:outputText escape="false"  value="{!$Label.MJ_home_line2}"/>
+                </div>
+                <div data-role="fieldcontain">
+                   <apex:pageBlockSection title="Stations" columns="1" showHeader="false" >
+                     
+                    <h4> 
+                        {!$Label.MJ_home_form_heading1}
+                    </h4>
+                        <apex:selectRadio value="{!countries}" layout="pageDirection" required="True" styleClass="paymentOpt" onchange="javascript:MessageRender(this)" >
+                            <apex:selectOptions value="{!items}"/>
+                        </apex:selectRadio>
+                    </apex:pageBlockSection>
+                </div>
+                <apex:pageBlockSection title="Details" columns="1" showHeader="false" >
+                    <br/><br/>
+                    <h4>
+                        {!$Label.MJ_home_form_heading2}
+                    </h4>
+                
+                <apex:inputField id="FirstName" value="{!volunteer.FirstName__c}" required="true" label="{!$Label.Mj_home_form_firstname}" html-placeholder=""/><br/>
+                
+                <apex:inputField id="Surname" value="{!volunteer.Surname__c}" required="true" label="{!$Label.MJ_home_form_lastname}" html-placeholder=""/><br/>
+
+                <apex:inputField id="Phone" value="{!volunteer.Phone__c}" required="true" label="{!$Label.MJ_home_form_mobile}" html-placeholder="+44 7814 123 123"/>                
+                    <i>{!$Label.MJ_home_form_mobile_info}</i><br/><br/>
+                
+                <apex:inputField id="Email" value="{!volunteer.Email__c}" required="true" label="{!$Label.MJ_home_form_email}" html-placeholder="joe.bloggs@eurostar.com"/><br/>
+                
+                 </apex:pageBlockSection>
+                 <!-- _________________ Button Section ____________________   -->                  
+                 <apex:commandButton action="{!saveData}" value=" {!$Label.MJ_button_submit} " id="button-send">
+                    </apex:commandButton>
+                <!--  _________________ /Button Section ____________________ -->
+                
+            </apex:pageBlock>
+         </apex:form>        
+        </div>
+       
+                
+  
+        <c:footer_mj ></c:footer_mj>
+        <c:js ></c:js>
+        <script>
+            document.getElementById('j_id0:j_id26:j_id27:j_id28:0:j_id29:j_id30:j_id32').value = 'test';
+        </script>
+    </body>
+    
+    
+    
+</html>
+</apex:page>

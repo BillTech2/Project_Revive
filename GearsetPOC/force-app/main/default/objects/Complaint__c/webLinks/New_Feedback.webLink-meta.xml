@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Feedback</fullName>
+    <availability>online</availability>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <height>600</height>
+    <linkType>url</linkType>
+    <masterLabel>New Feedback</masterLabel>
+    <openType>sidebar</openType>
+    <protected>false</protected>
+    <requireRowSelection>false</requireRowSelection>
+    <url>https://eurostar.my.salesforce.com/
+
+a8Y/e?
+
+00N0N00000APDvc={!IF(ISPICKVAL(Case.Origin ,&quot;Phone&quot;),&quot;Phone&quot;,IF(Contains(Text(Case.Origin ),&quot;Email&quot;),&quot;Email&quot;,IF(ISPICKVAL(Case.Origin ,&quot;Web&quot;),&quot;Web&quot;,IF(ISPICKVAL(Case.Origin,&quot;Facebook&quot;),&quot;Social&quot;,IF(ISPICKVAL(Case.Origin,&quot;Twitter&quot;),&quot;Social&quot;,IF(ISPICKVAL(Case.Origin,&quot;Letter&quot;),&quot;Letter&quot;,NULL))))))}
+
+&amp;CF00N0N00000APDvg={!Case.Account}
+
+&amp;CF00N0N00000APDva={!Case.CaseNumber}
+
+&amp;CF00N0N00000APDvu={!Case.TCN__c}
+
+&amp;00N0N00000APDvn={!Case.PNR__c}
+
+&amp;00N0N00000APDvi={!Case.Description}
+
+
+
+&amp;retURL=%2Fa59%2Fo</url>
+</WebLink>

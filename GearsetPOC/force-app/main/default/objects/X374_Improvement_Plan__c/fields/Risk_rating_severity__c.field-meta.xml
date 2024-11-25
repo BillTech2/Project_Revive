@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Risk_rating_severity__c</fullName>
+    <description>Select the most appropriate risk rating (severity)</description>
+    <inlineHelpText>Select the most appropriate risk rating (severity)</inlineHelpText>
+    <label>Risk rating- severity</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>1 – insignificant – trivial or no effect on service, rolling stock or infrastructure.</fullName>
+                <default>false</default>
+                <label>1 – insignificant – trivial or no effect on service, rolling stock or infrastructure.</label>
+            </value>
+            <value>
+                <fullName>2 – Staff / Passenger minor injury requiring 1st aid, Service Delay of 5 mins or Rolling stock / infrastructure damage up to £1000</fullName>
+                <default>false</default>
+                <label>2 – Staff / Passenger minor injury requiring 1st aid, Service Delay of 5 mins or Rolling stock / infrastructure damage up to £1000</label>
+            </value>
+            <value>
+                <fullName>3 – Major injury requiring hospitalisation / RIDDOR, Service cancellation, Damage up to £10k</fullName>
+                <default>false</default>
+                <label>3 – Major injury requiring hospitalisation / RIDDOR, Service cancellation, Damage up to £10k</label>
+            </value>
+            <value>
+                <fullName>4 – Serious injury – loss of eye/ limb. Multiple service cancellations. Damage up to  £100k</fullName>
+                <default>false</default>
+                <label>4 – Serious injury – loss of eye/ limb. Multiple service cancellations. Damage up to  £100k</label>
+            </value>
+            <value>
+                <fullName>5 – Fatality. Long term disruption to service / Fleet out of service. Catastrophic damage in excess of £100k.</fullName>
+                <default>false</default>
+                <label>5 – Fatality. Long term disruption to service / Fleet out of service. Catastrophic damage in excess of £100k.</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

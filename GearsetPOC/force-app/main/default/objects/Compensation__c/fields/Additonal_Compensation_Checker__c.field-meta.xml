@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Additonal_Compensation_Checker__c</fullName>
+    <description>This filed is used to check if the compensation need reprocessing because of a change in Additional Compensation Rule. If the value of this fielsd is different from the ACR_Reprocess_Count__c on the Train, we have to reprocess the compensation. This fields should not be modified manually</description>
+    <externalId>false</externalId>
+    <label>Additonal Compensation Checker</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_GBP_Payment_Amt__c</fullName>
+    <inlineHelpText>Bug: The Compensation_Ticket__r.GBP_Payment_Amount_Num__c field is not populated, resulting in a 0 value.</inlineHelpText>
+    <label>Compensation - Total (GBP) (Not Working)</label>
+    <summarizedField>Compensation_Ticket__c.GBP_Payment_Amount_Num__c</summarizedField>
+    <summaryForeignKey>Compensation_Ticket__c.Ticket__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

@@ -1,0 +1,931 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Trade_Contracts_Company_Name_N_Z__c</fullName>
+    <label>Trade Contracts - Company Name (N - Z)</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>NCL Tours</fullName>
+                <default>false</default>
+                <label>NCL Tours</label>
+            </value>
+            <value>
+                <fullName>NDL Travel Ltd</fullName>
+                <default>false</default>
+                <label>NDL Travel Ltd</label>
+            </value>
+            <value>
+                <fullName>Nectar</fullName>
+                <default>false</default>
+                <label>Nectar</label>
+            </value>
+            <value>
+                <fullName>Newmarket Promotions</fullName>
+                <default>false</default>
+                <label>Newmarket Promotions</label>
+            </value>
+            <value>
+                <fullName>Nissin Travel Service (UK) Ltd</fullName>
+                <default>false</default>
+                <label>Nissin Travel Service (UK) Ltd</label>
+            </value>
+            <value>
+                <fullName>Norad Travel Managment Services</fullName>
+                <default>false</default>
+                <label>Norad Travel Managment Services</label>
+            </value>
+            <value>
+                <fullName>Northbourne Park School</fullName>
+                <default>false</default>
+                <label>Northbourne Park School</label>
+            </value>
+            <value>
+                <fullName>Nottingham Trams Ltd</fullName>
+                <default>false</default>
+                <label>Nottingham Trams Ltd</label>
+            </value>
+            <value>
+                <fullName>NST Transport Services Ltd</fullName>
+                <default>false</default>
+                <label>NST Transport Services Ltd</label>
+            </value>
+            <value>
+                <fullName>Nuco Travel</fullName>
+                <default>false</default>
+                <label>Nuco Travel</label>
+            </value>
+            <value>
+                <fullName>NYS Corporate Limited</fullName>
+                <default>false</default>
+                <label>NYS Corporate Limited</label>
+            </value>
+            <value>
+                <fullName>Oakdene Hollins Limited</fullName>
+                <default>false</default>
+                <label>Oakdene Hollins Limited</label>
+            </value>
+            <value>
+                <fullName>Oceandusk Group</fullName>
+                <default>false</default>
+                <label>Oceandusk Group</label>
+            </value>
+            <value>
+                <fullName>Ocean Map Ltd</fullName>
+                <default>false</default>
+                <label>Ocean Map Ltd</label>
+            </value>
+            <value>
+                <fullName>Omega Executive Travel Ltd</fullName>
+                <default>false</default>
+                <label>Omega Executive Travel Ltd</label>
+            </value>
+            <value>
+                <fullName>Omega Pharma Ltd</fullName>
+                <default>false</default>
+                <label>Omega Pharma Ltd</label>
+            </value>
+            <value>
+                <fullName>Omega World Travel</fullName>
+                <default>false</default>
+                <label>Omega World Travel</label>
+            </value>
+            <value>
+                <fullName>Openlink International Ltd</fullName>
+                <default>false</default>
+                <label>Openlink International Ltd</label>
+            </value>
+            <value>
+                <fullName>Operation Europe Ltd</fullName>
+                <default>false</default>
+                <label>Operation Europe Ltd</label>
+            </value>
+            <value>
+                <fullName>Original Travel Company Ltd</fullName>
+                <default>false</default>
+                <label>Original Travel Company Ltd</label>
+            </value>
+            <value>
+                <fullName>Osprey Holidays (Tickets) Ltd</fullName>
+                <default>false</default>
+                <label>Osprey Holidays (Tickets) Ltd</label>
+            </value>
+            <value>
+                <fullName>Ours Travel Services Limited</fullName>
+                <default>false</default>
+                <label>Ours Travel Services Limited</label>
+            </value>
+            <value>
+                <fullName>Oxford Travel Agency</fullName>
+                <default>false</default>
+                <label>Oxford Travel Agency</label>
+            </value>
+            <value>
+                <fullName>Oxonian Travel Services</fullName>
+                <default>false</default>
+                <label>Oxonian Travel Services</label>
+            </value>
+            <value>
+                <fullName>Pall Mall Travel</fullName>
+                <default>false</default>
+                <label>Pall Mall Travel</label>
+            </value>
+            <value>
+                <fullName>Pan Express Business Travel Ltd</fullName>
+                <default>false</default>
+                <label>Pan Express Business Travel Ltd</label>
+            </value>
+            <value>
+                <fullName>Partizan Ltd</fullName>
+                <default>false</default>
+                <label>Partizan Ltd</label>
+            </value>
+            <value>
+                <fullName>Paul UK Ltd</fullName>
+                <default>false</default>
+                <label>Paul UK Ltd</label>
+            </value>
+            <value>
+                <fullName>Peak Retreats</fullName>
+                <default>false</default>
+                <label>Peak Retreats</label>
+            </value>
+            <value>
+                <fullName>Peltours Groups &amp; Travelink</fullName>
+                <default>false</default>
+                <label>Peltours Groups &amp; Travelink</label>
+            </value>
+            <value>
+                <fullName>Perfect Travel</fullName>
+                <default>false</default>
+                <label>Perfect Travel</label>
+            </value>
+            <value>
+                <fullName>PGL Travel Ltd</fullName>
+                <default>false</default>
+                <label>PGL Travel Ltd</label>
+            </value>
+            <value>
+                <fullName>Phoenix Travel</fullName>
+                <default>false</default>
+                <label>Phoenix Travel</label>
+            </value>
+            <value>
+                <fullName>Piper &amp; Rose Travel Limited</fullName>
+                <default>false</default>
+                <label>Piper &amp; Rose Travel Limited</label>
+            </value>
+            <value>
+                <fullName>Planet Rail Limited</fullName>
+                <default>false</default>
+                <label>Planet Rail Limited</label>
+            </value>
+            <value>
+                <fullName>Platina Partners LLP</fullName>
+                <default>false</default>
+                <label>Platina Partners LLP</label>
+            </value>
+            <value>
+                <fullName>Portman Travel Group</fullName>
+                <default>false</default>
+                <label>Portman Travel Group</label>
+            </value>
+            <value>
+                <fullName>Premium Tours Ltd</fullName>
+                <default>false</default>
+                <label>Premium Tours Ltd</label>
+            </value>
+            <value>
+                <fullName>Pro Executive Travel Ltd</fullName>
+                <default>false</default>
+                <label>Pro Executive Travel Ltd</label>
+            </value>
+            <value>
+                <fullName>Proscenium UK Ltd</fullName>
+                <default>false</default>
+                <label>Proscenium UK Ltd</label>
+            </value>
+            <value>
+                <fullName>QA Business Travel Ltd</fullName>
+                <default>false</default>
+                <label>QA Business Travel Ltd</label>
+            </value>
+            <value>
+                <fullName>Quorn Business Travel</fullName>
+                <default>false</default>
+                <label>Quorn Business Travel</label>
+            </value>
+            <value>
+                <fullName>Railbookers UK Transport Ltd</fullName>
+                <default>false</default>
+                <label>Railbookers UK Transport Ltd</label>
+            </value>
+            <value>
+                <fullName>Rail Canterbury Ltd</fullName>
+                <default>false</default>
+                <label>Rail Canterbury Ltd</label>
+            </value>
+            <value>
+                <fullName>Railwise International Limited</fullName>
+                <default>false</default>
+                <label>Railwise International Limited</label>
+            </value>
+            <value>
+                <fullName>Redfern Travel Ltd</fullName>
+                <default>false</default>
+                <label>Redfern Travel Ltd</label>
+            </value>
+            <value>
+                <fullName>Red Savannah Limited</fullName>
+                <default>false</default>
+                <label>Red Savannah Limited</label>
+            </value>
+            <value>
+                <fullName>RED Tours</fullName>
+                <default>false</default>
+                <label>RED Tours</label>
+            </value>
+            <value>
+                <fullName>Reed and Mackay Travel</fullName>
+                <default>false</default>
+                <label>Reed and Mackay Travel</label>
+            </value>
+            <value>
+                <fullName>Reliance Tours (UK) Ltd</fullName>
+                <default>false</default>
+                <label>Reliance Tours (UK) Ltd</label>
+            </value>
+            <value>
+                <fullName>Review Travel Ltd</fullName>
+                <default>false</default>
+                <label>Review Travel Ltd</label>
+            </value>
+            <value>
+                <fullName>Right Holidays Ltd</fullName>
+                <default>false</default>
+                <label>Right Holidays Ltd</label>
+            </value>
+            <value>
+                <fullName>Rima Travel Ltd</fullName>
+                <default>false</default>
+                <label>Rima Travel Ltd</label>
+            </value>
+            <value>
+                <fullName>Riviera Travel</fullName>
+                <default>false</default>
+                <label>Riviera Travel</label>
+            </value>
+            <value>
+                <fullName>Robert Walters PLC</fullName>
+                <default>false</default>
+                <label>Robert Walters PLC</label>
+            </value>
+            <value>
+                <fullName>S &amp; N Pickford (Romiley) Ltd</fullName>
+                <default>false</default>
+                <label>S &amp; N Pickford (Romiley) Ltd</label>
+            </value>
+            <value>
+                <fullName>Saga Holidays Ltd</fullName>
+                <default>false</default>
+                <label>Saga Holidays Ltd</label>
+            </value>
+            <value>
+                <fullName>Saltours International Ltd</fullName>
+                <default>false</default>
+                <label>Saltours International Ltd</label>
+            </value>
+            <value>
+                <fullName>Sam Smith Travel Ltd</fullName>
+                <default>false</default>
+                <label>Sam Smith Travel Ltd</label>
+            </value>
+            <value>
+                <fullName>Samsung Hospitality UK Ltd</fullName>
+                <default>false</default>
+                <label>Samsung Hospitality UK Ltd</label>
+            </value>
+            <value>
+                <fullName>Sandy Row Travel</fullName>
+                <default>false</default>
+                <label>Sandy Row Travel</label>
+            </value>
+            <value>
+                <fullName>Sarastem The Travel People</fullName>
+                <default>false</default>
+                <label>Sarastem The Travel People</label>
+            </value>
+            <value>
+                <fullName>Scotts Travel Ltd</fullName>
+                <default>false</default>
+                <label>Scotts Travel Ltd</label>
+            </value>
+            <value>
+                <fullName>Screen and Music Travel</fullName>
+                <default>false</default>
+                <label>Screen and Music Travel</label>
+            </value>
+            <value>
+                <fullName>Selective Travel Management</fullName>
+                <default>false</default>
+                <label>Selective Travel Management</label>
+            </value>
+            <value>
+                <fullName>Select School Travel Limited</fullName>
+                <default>false</default>
+                <label>Select School Travel Limited</label>
+            </value>
+            <value>
+                <fullName>Selfridges Retail Ltd</fullName>
+                <default>false</default>
+                <label>Selfridges Retail Ltd</label>
+            </value>
+            <value>
+                <fullName>Serenity Holidays</fullName>
+                <default>false</default>
+                <label>Serenity Holidays</label>
+            </value>
+            <value>
+                <fullName>Shearings Holidays</fullName>
+                <default>false</default>
+                <label>Shearings Holidays</label>
+            </value>
+            <value>
+                <fullName>ShortBreaks Europe Ltd</fullName>
+                <default>false</default>
+                <label>ShortBreaks Europe Ltd</label>
+            </value>
+            <value>
+                <fullName>Simplexity Travel Management Ltd</fullName>
+                <default>false</default>
+                <label>Simplexity Travel Management Ltd</label>
+            </value>
+            <value>
+                <fullName>Simply Travel Direct Ltd</fullName>
+                <default>false</default>
+                <label>Simply Travel Direct Ltd</label>
+            </value>
+            <value>
+                <fullName>Skibound Holidays Ltd</fullName>
+                <default>false</default>
+                <label>Skibound Holidays Ltd</label>
+            </value>
+            <value>
+                <fullName>Ski Line Limited</fullName>
+                <default>false</default>
+                <label>Ski Line Limited</label>
+            </value>
+            <value>
+                <fullName>Skiworld</fullName>
+                <default>false</default>
+                <label>Skiworld</label>
+            </value>
+            <value>
+                <fullName>Skylord Travel and Tours Ltd</fullName>
+                <default>false</default>
+                <label>Skylord Travel and Tours Ltd</label>
+            </value>
+            <value>
+                <fullName>Sky Media Travel Ltd</fullName>
+                <default>false</default>
+                <label>Sky Media Travel Ltd</label>
+            </value>
+            <value>
+                <fullName>Soho Travel</fullName>
+                <default>false</default>
+                <label>Soho Travel</label>
+            </value>
+            <value>
+                <fullName>Soliman Travel</fullName>
+                <default>false</default>
+                <label>Soliman Travel</label>
+            </value>
+            <value>
+                <fullName>Southall Travel</fullName>
+                <default>false</default>
+                <label>Southall Travel</label>
+            </value>
+            <value>
+                <fullName>Sovereign Travel Limited</fullName>
+                <default>false</default>
+                <label>Sovereign Travel Limited</label>
+            </value>
+            <value>
+                <fullName>Specialised Travel Ltd</fullName>
+                <default>false</default>
+                <label>Specialised Travel Ltd</label>
+            </value>
+            <value>
+                <fullName>SSE</fullName>
+                <default>false</default>
+                <label>SSE</label>
+            </value>
+            <value>
+                <fullName>Stamford Hill Travel Limited</fullName>
+                <default>false</default>
+                <label>Stamford Hill Travel Limited</label>
+            </value>
+            <value>
+                <fullName>Stanhope Capital LLP</fullName>
+                <default>false</default>
+                <label>Stanhope Capital LLP</label>
+            </value>
+            <value>
+                <fullName>Stately Tours</fullName>
+                <default>false</default>
+                <label>Stately Tours</label>
+            </value>
+            <value>
+                <fullName>Statesman Travel</fullName>
+                <default>false</default>
+                <label>Statesman Travel</label>
+            </value>
+            <value>
+                <fullName>STA Travel</fullName>
+                <default>false</default>
+                <label>STA Travel</label>
+            </value>
+            <value>
+                <fullName>Sterling Travel Management</fullName>
+                <default>false</default>
+                <label>Sterling Travel Management</label>
+            </value>
+            <value>
+                <fullName>Stewart Travel</fullName>
+                <default>false</default>
+                <label>Stewart Travel</label>
+            </value>
+            <value>
+                <fullName>Stirling Square Capital Partners LLP</fullName>
+                <default>false</default>
+                <label>Stirling Square Capital Partners LLP</label>
+            </value>
+            <value>
+                <fullName>StudyTrips Ltd</fullName>
+                <default>false</default>
+                <label>StudyTrips Ltd</label>
+            </value>
+            <value>
+                <fullName>Success Tours Ltd</fullName>
+                <default>false</default>
+                <label>Success Tours Ltd</label>
+            </value>
+            <value>
+                <fullName>Sunways Travel</fullName>
+                <default>false</default>
+                <label>Sunways Travel</label>
+            </value>
+            <value>
+                <fullName>Superbreak Mini Holidays Transport Limit</fullName>
+                <default>false</default>
+                <label>Superbreak Mini Holidays Transport Limit</label>
+            </value>
+            <value>
+                <fullName>Sweet Chariot Leisure Ltd</fullName>
+                <default>false</default>
+                <label>Sweet Chariot Leisure Ltd</label>
+            </value>
+            <value>
+                <fullName>Tailor Made Rail Ltd</fullName>
+                <default>false</default>
+                <label>Tailor Made Rail Ltd</label>
+            </value>
+            <value>
+                <fullName>Tauck</fullName>
+                <default>false</default>
+                <label>Tauck</label>
+            </value>
+            <value>
+                <fullName>TEB Travel Ltd</fullName>
+                <default>false</default>
+                <label>TEB Travel Ltd</label>
+            </value>
+            <value>
+                <fullName>Teleticket</fullName>
+                <default>false</default>
+                <label>Teleticket</label>
+            </value>
+            <value>
+                <fullName>Ten Lifestyle Management Ltd</fullName>
+                <default>false</default>
+                <label>Ten Lifestyle Management Ltd</label>
+            </value>
+            <value>
+                <fullName>The Church of England</fullName>
+                <default>false</default>
+                <label>The Church of England</label>
+            </value>
+            <value>
+                <fullName>The Dream Travel Group</fullName>
+                <default>false</default>
+                <label>The Dream Travel Group</label>
+            </value>
+            <value>
+                <fullName>The Freedom Tvl Group &amp; Future Tvl</fullName>
+                <default>false</default>
+                <label>The Freedom Tvl Group &amp; Future Tvl</label>
+            </value>
+            <value>
+                <fullName>The International Bank of Reconstruction</fullName>
+                <default>false</default>
+                <label>The International Bank of Reconstruction</label>
+            </value>
+            <value>
+                <fullName>The Midcounties Co-operative Travel</fullName>
+                <default>false</default>
+                <label>The Midcounties Co-operative Travel</label>
+            </value>
+            <value>
+                <fullName>The School Travel Company</fullName>
+                <default>false</default>
+                <label>The School Travel Company</label>
+            </value>
+            <value>
+                <fullName>The Tour Company</fullName>
+                <default>false</default>
+                <label>The Tour Company</label>
+            </value>
+            <value>
+                <fullName>The Travel Division Ltd</fullName>
+                <default>false</default>
+                <label>The Travel Division Ltd</label>
+            </value>
+            <value>
+                <fullName>The Travel Gateway Ltd</fullName>
+                <default>false</default>
+                <label>The Travel Gateway Ltd</label>
+            </value>
+            <value>
+                <fullName>The Travel Professionals Ltd</fullName>
+                <default>false</default>
+                <label>The Travel Professionals Ltd</label>
+            </value>
+            <value>
+                <fullName>The Ultimate Travel Company</fullName>
+                <default>false</default>
+                <label>The Ultimate Travel Company</label>
+            </value>
+            <value>
+                <fullName>The World Of Travel</fullName>
+                <default>false</default>
+                <label>The World Of Travel</label>
+            </value>
+            <value>
+                <fullName>Thirsk Travel Centre</fullName>
+                <default>false</default>
+                <label>Thirsk Travel Centre</label>
+            </value>
+            <value>
+                <fullName>Thomas Cook Services Ltd</fullName>
+                <default>false</default>
+                <label>Thomas Cook Services Ltd</label>
+            </value>
+            <value>
+                <fullName>Times Travel Limited</fullName>
+                <default>false</default>
+                <label>Times Travel Limited</label>
+            </value>
+            <value>
+                <fullName>Titicaca Travel</fullName>
+                <default>false</default>
+                <label>Titicaca Travel</label>
+            </value>
+            <value>
+                <fullName>Tourcenter</fullName>
+                <default>false</default>
+                <label>Tourcenter</label>
+            </value>
+            <value>
+                <fullName>Tours International</fullName>
+                <default>false</default>
+                <label>Tours International</label>
+            </value>
+            <value>
+                <fullName>Tourwise Of London Ltd</fullName>
+                <default>false</default>
+                <label>Tourwise Of London Ltd</label>
+            </value>
+            <value>
+                <fullName>Tradition (UK) Ltd</fullName>
+                <default>false</default>
+                <label>Tradition (UK) Ltd</label>
+            </value>
+            <value>
+                <fullName>Trailfinders</fullName>
+                <default>false</default>
+                <label>Trailfinders</label>
+            </value>
+            <value>
+                <fullName>Travel Agenda Ltd</fullName>
+                <default>false</default>
+                <label>Travel Agenda Ltd</label>
+            </value>
+            <value>
+                <fullName>Travel Assistance International</fullName>
+                <default>false</default>
+                <label>Travel Assistance International</label>
+            </value>
+            <value>
+                <fullName>Travel by Appointment Ltd</fullName>
+                <default>false</default>
+                <label>Travel by Appointment Ltd</label>
+            </value>
+            <value>
+                <fullName>Travelcorr Ltd</fullName>
+                <default>false</default>
+                <label>Travelcorr Ltd</label>
+            </value>
+            <value>
+                <fullName>Travel Counsellors Ltd</fullName>
+                <default>false</default>
+                <label>Travel Counsellors Ltd</label>
+            </value>
+            <value>
+                <fullName>Traveleads</fullName>
+                <default>false</default>
+                <label>Traveleads</label>
+            </value>
+            <value>
+                <fullName>Travel Editions Ltd</fullName>
+                <default>false</default>
+                <label>Travel Editions Ltd</label>
+            </value>
+            <value>
+                <fullName>Travel Empire Ltd</fullName>
+                <default>false</default>
+                <label>Travel Empire Ltd</label>
+            </value>
+            <value>
+                <fullName>Travel Genio</fullName>
+                <default>false</default>
+                <label>Travel Genio</label>
+            </value>
+            <value>
+                <fullName>Travel Harbour</fullName>
+                <default>false</default>
+                <label>Travel Harbour</label>
+            </value>
+            <value>
+                <fullName>Travelknights</fullName>
+                <default>false</default>
+                <label>Travelknights</label>
+            </value>
+            <value>
+                <fullName>Travellers World</fullName>
+                <default>false</default>
+                <label>Travellers World</label>
+            </value>
+            <value>
+                <fullName>Travel Logistics</fullName>
+                <default>false</default>
+                <label>Travel Logistics</label>
+            </value>
+            <value>
+                <fullName>Travel Management Group PLC</fullName>
+                <default>false</default>
+                <label>Travel Management Group PLC</label>
+            </value>
+            <value>
+                <fullName>Travelmania Ltd</fullName>
+                <default>false</default>
+                <label>Travelmania Ltd</label>
+            </value>
+            <value>
+                <fullName>Travel Options</fullName>
+                <default>false</default>
+                <label>Travel Options</label>
+            </value>
+            <value>
+                <fullName>Travelpack Marketing &amp; Leisure Services</fullName>
+                <default>false</default>
+                <label>Travelpack Marketing &amp; Leisure Services</label>
+            </value>
+            <value>
+                <fullName>Travelpan Corporate Ltd</fullName>
+                <default>false</default>
+                <label>Travelpan Corporate Ltd</label>
+            </value>
+            <value>
+                <fullName>Travel Solutions</fullName>
+                <default>false</default>
+                <label>Travel Solutions</label>
+            </value>
+            <value>
+                <fullName>Traveltrust Global Ltd</fullName>
+                <default>false</default>
+                <label>Traveltrust Global Ltd</label>
+            </value>
+            <value>
+                <fullName>Travel Up Group Plc</fullName>
+                <default>false</default>
+                <label>Travel Up Group Plc</label>
+            </value>
+            <value>
+                <fullName>Travelwise</fullName>
+                <default>false</default>
+                <label>Travelwise</label>
+            </value>
+            <value>
+                <fullName>Travelworld International Ltd</fullName>
+                <default>false</default>
+                <label>Travelworld International Ltd</label>
+            </value>
+            <value>
+                <fullName>Travlin Style Ltd</fullName>
+                <default>false</default>
+                <label>Travlin Style Ltd</label>
+            </value>
+            <value>
+                <fullName>TTAFS Ltd</fullName>
+                <default>false</default>
+                <label>TTAFS Ltd</label>
+            </value>
+            <value>
+                <fullName>TTSS Transportation Limited</fullName>
+                <default>false</default>
+                <label>TTSS Transportation Limited</label>
+            </value>
+            <value>
+                <fullName>U Can Fly Ltd</fullName>
+                <default>false</default>
+                <label>U Can Fly Ltd</label>
+            </value>
+            <value>
+                <fullName>Uniglobe Omni Travel</fullName>
+                <default>false</default>
+                <label>Uniglobe Omni Travel</label>
+            </value>
+            <value>
+                <fullName>Uniglobe Preferred Travel</fullName>
+                <default>false</default>
+                <label>Uniglobe Preferred Travel</label>
+            </value>
+            <value>
+                <fullName>Uniglobe Premier Travel</fullName>
+                <default>false</default>
+                <label>Uniglobe Premier Travel</label>
+            </value>
+            <value>
+                <fullName>Uniglobe Prestige Travel</fullName>
+                <default>false</default>
+                <label>Uniglobe Prestige Travel</label>
+            </value>
+            <value>
+                <fullName>Uniglobe Top Flight Travel</fullName>
+                <default>false</default>
+                <label>Uniglobe Top Flight Travel</label>
+            </value>
+            <value>
+                <fullName>Uniglobe Total Travel</fullName>
+                <default>false</default>
+                <label>Uniglobe Total Travel</label>
+            </value>
+            <value>
+                <fullName>Universal Travel House Limited</fullName>
+                <default>false</default>
+                <label>Universal Travel House Limited</label>
+            </value>
+            <value>
+                <fullName>University of London</fullName>
+                <default>false</default>
+                <label>University of London</label>
+            </value>
+            <value>
+                <fullName>Utopia Travel</fullName>
+                <default>false</default>
+                <label>Utopia Travel</label>
+            </value>
+            <value>
+                <fullName>Van Cleef and Arpels Ltd</fullName>
+                <default>false</default>
+                <label>Van Cleef and Arpels Ltd</label>
+            </value>
+            <value>
+                <fullName>Velocita Energy Developments Ltd</fullName>
+                <default>false</default>
+                <label>Velocita Energy Developments Ltd</label>
+            </value>
+            <value>
+                <fullName>Venice Simplon Orient Express</fullName>
+                <default>false</default>
+                <label>Venice Simplon Orient Express</label>
+            </value>
+            <value>
+                <fullName>Venice Simplon-Orient-Express</fullName>
+                <default>false</default>
+                <label>Venice Simplon-Orient-Express</label>
+            </value>
+            <value>
+                <fullName>VML London</fullName>
+                <default>false</default>
+                <label>VML London</label>
+            </value>
+            <value>
+                <fullName>VoliAmo Limited</fullName>
+                <default>false</default>
+                <label>VoliAmo Limited</label>
+            </value>
+            <value>
+                <fullName>Voyage Prive UK Ltd</fullName>
+                <default>false</default>
+                <label>Voyage Prive UK Ltd</label>
+            </value>
+            <value>
+                <fullName>Voyages Jules Verne</fullName>
+                <default>false</default>
+                <label>Voyages Jules Verne</label>
+            </value>
+            <value>
+                <fullName>Voyageur UK Travel Services Limited.</fullName>
+                <default>false</default>
+                <label>Voyageur UK Travel Services Limited.</label>
+            </value>
+            <value>
+                <fullName>Wakanow.com UK Limited</fullName>
+                <default>false</default>
+                <label>Wakanow.com UK Limited</label>
+            </value>
+            <value>
+                <fullName>Wayfarers Business Travel</fullName>
+                <default>false</default>
+                <label>Wayfarers Business Travel</label>
+            </value>
+            <value>
+                <fullName>Wayte Bros Ltd</fullName>
+                <default>false</default>
+                <label>Wayte Bros Ltd</label>
+            </value>
+            <value>
+                <fullName>West End Travel Ltd</fullName>
+                <default>false</default>
+                <label>West End Travel Ltd</label>
+            </value>
+            <value>
+                <fullName>Westerham Travel Ltd</fullName>
+                <default>false</default>
+                <label>Westerham Travel Ltd</label>
+            </value>
+            <value>
+                <fullName>Westway Travel Limited</fullName>
+                <default>false</default>
+                <label>Westway Travel Limited</label>
+            </value>
+            <value>
+                <fullName>Wexas International</fullName>
+                <default>false</default>
+                <label>Wexas International</label>
+            </value>
+            <value>
+                <fullName>WGT Sport Limited</fullName>
+                <default>false</default>
+                <label>WGT Sport Limited</label>
+            </value>
+            <value>
+                <fullName>White Concierge</fullName>
+                <default>false</default>
+                <label>White Concierge</label>
+            </value>
+            <value>
+                <fullName>Wings Corporate Travel Ltd</fullName>
+                <default>false</default>
+                <label>Wings Corporate Travel Ltd</label>
+            </value>
+            <value>
+                <fullName>Wonder International Travel</fullName>
+                <default>false</default>
+                <label>Wonder International Travel</label>
+            </value>
+            <value>
+                <fullName>Wonder International Travel Ltd</fullName>
+                <default>false</default>
+                <label>Wonder International Travel Ltd</label>
+            </value>
+            <value>
+                <fullName>World Club Travel Ltd</fullName>
+                <default>false</default>
+                <label>World Club Travel Ltd</label>
+            </value>
+            <value>
+                <fullName>World Direct Travel</fullName>
+                <default>false</default>
+                <label>World Direct Travel</label>
+            </value>
+            <value>
+                <fullName>Worldwide DMC Ltd</fullName>
+                <default>false</default>
+                <label>Worldwide DMC Ltd</label>
+            </value>
+            <value>
+                <fullName>Your Golf Travel</fullName>
+                <default>false</default>
+                <label>Your Golf Travel</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

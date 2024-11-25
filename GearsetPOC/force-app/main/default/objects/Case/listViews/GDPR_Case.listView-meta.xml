@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>GDPR_Case</fullName>
+    <columns>CASES.CASE_NUMBER</columns>
+    <columns>Days_Since_Last_Contact__c</columns>
+    <columns>CASES.SUBJECT</columns>
+    <columns>CASES.STATUS</columns>
+    <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
+    <columns>NAME</columns>
+    <columns>CASES.LAST_UPDATE_DATE_ONLY</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <filterScope>Queue</filterScope>
+    <filters>
+        <field>CASES.STATUS</field>
+        <operation>notEqual</operation>
+        <value>Closed</value>
+    </filters>
+    <label>GDPR data requests</label>
+    <queue>GDPR_data_requests</queue>
+    <sharedTo>
+        <group>EBSC_Departmental_Managers</group>
+        <group>EBSC_Senior_Managers</group>
+        <group>EBSC_Traveller_Care</group>
+        <group>GDPR_Access</group>
+    </sharedTo>
+</ListView>

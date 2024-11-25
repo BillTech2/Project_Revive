@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Low_Priority_Support_Cases_Open</fullName>
+    <columns>CREATED_DATE</columns>
+    <columns>Origin__c</columns>
+    <columns>NAME</columns>
+    <columns>Requester_Email__c</columns>
+    <columns>Subject__c</columns>
+    <columns>Priority_Flag__c</columns>
+    <columns>Status__c</columns>
+    <columns>Request_Age_Hours_And_Minutes__c</columns>
+    <columns>OWNER.FIRST_NAME</columns>
+    <columns>RECORDTYPE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>notEqual</operation>
+        <value>Closed</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Salesforce_Support_Request__c.Salesforce_Support</value>
+    </filters>
+    <filters>
+        <field>Subject__c</field>
+        <operation>notContain</operation>
+        <value>[Postmaster] Email Delivery Failure,Your Eurostar Intranet Daily Digest</value>
+    </filters>
+    <filters>
+        <field>Priority__c</field>
+        <operation>equals</operation>
+        <value>Low</value>
+    </filters>
+    <label>*Low Priority Support Cases (Open)*</label>
+    <sharedTo>
+        <group>Salesforce_Admin_Team</group>
+    </sharedTo>
+</ListView>

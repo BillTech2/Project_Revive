@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Aria_Company__c</fullName>
+    <description>This field contains the company of the staff as defined in Aria.</description>
+    <label>Aria Company</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Board Member</fullName>
+                <default>false</default>
+                <label>Board Member</label>
+            </value>
+            <value>
+                <fullName>Border Force</fullName>
+                <default>false</default>
+                <label>Border Force</label>
+            </value>
+            <value>
+                <fullName>Eurostar</fullName>
+                <default>false</default>
+                <label>Eurostar</label>
+            </value>
+            <value>
+                <fullName>MICE</fullName>
+                <default>false</default>
+                <label>MICE</label>
+            </value>
+            <value>
+                <fullName>MITIE</fullName>
+                <default>false</default>
+                <label>MITIE</label>
+            </value>
+            <value>
+                <fullName>Momentum</fullName>
+                <default>false</default>
+                <label>Momentum</label>
+            </value>
+            <value>
+                <fullName>Redundant</fullName>
+                <default>false</default>
+                <label>Redundant</label>
+            </value>
+            <value>
+                <fullName>Retired</fullName>
+                <default>false</default>
+                <label>Retired</label>
+            </value>
+            <value>
+                <fullName>TfL</fullName>
+                <default>false</default>
+                <label>TfL</label>
+            </value>
+            <value>
+                <fullName>WebHelp</fullName>
+                <default>false</default>
+                <label>WebHelp</label>
+            </value>
+            <value>
+                <fullName>Thalys</fullName>
+                <default>false</default>
+                <label>Thalys</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,175 @@
+<apex:page controller="AdvisorPageController" applyBodyTag="false" docType="html-5.0" showHeader="true" sidebar="false" cache="false" expires="0">
+    
+    <script src="../../soap/ajax/38.0/connection.js" type="text/javascript"></script>
+    <script>
+        sforce.connection.sessionId='{!GETSESSIONID()}';
+    </script>
+    
+    <apex:stylesheet value="{!URLFOR($Resource.advisor_page, 'app/assets/styles/style.css')}"/>
+    
+    <apex:includeScript value="/support/console/38.0/integration.js"/>
+    
+    <apex:includeScript value="{!URLFOR($Resource.advisor_page, 'libs/js/jquery.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.advisor_page, 'libs/js/angular.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.advisor_page, 'libs/js/angular-route.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.advisor_page, 'libs/js/angular-sanitize.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.advisor_page, 'libs/js/roundProgress.min.js')}" />
+    
+    
+    <apex:includeScript value="{!URLFOR($Resource.advisor_page, 'app/app.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.advisor_page, 'app/controllers/advisor-controller.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.advisor_page, 'app/filter/nl2br.js')}" />
+
+    <style type="text/css" media="screen">
+        #TabViewMessage{
+            padding: 20px;
+            background: #f4f6f9;
+            font-size: 13px;
+        }
+    </style>
+    
+    <div id='TabViewMessage' style='display:none'>
+        <h1>
+            Please switch to the Service Console to see this page!
+        </h1>
+    </div>
+    
+    <body ng-app="advisorApp">
+        
+        <script>
+        // Check for Service Console environnement
+        if (typeof(srcUp) != 'function') {
+            document.querySelector('#TabViewMessage').style.display='block';
+            throw new Error('View this page is possible only on the Service Console only!');
+        }
+
+        var chatLog = {};
+        var updatedChatLog;
+        var chat = sforce.console.chat;
+        var isNeedRefresh = true;
+        var MaxAvdisorResponceTimeout = parseInt('{!$Setup.LiveChat__c.Max_Avdisor_Responce_Timeout__c}');
+        
+        var setRateState = function(chatKey) {
+            Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.AdvisorPageController.getUserSatisfactionFromChatKey}', chatKey,
+                function(result, event){
+                    chatLog[chatKey].rate = result;
+                    updatedChatLog();
+                },
+                {escape: true}
+            );
+        }
+        
+        // Init chatLog from opened chats
+        var initChatLog = function() {
+            chatLog = {};
+            sforce.console.chat.getEngagedChats(function(result) {
+                if (result.success && result.chatKey && result.chatKey.length > 0) {
+                    isNeedRefresh = false;
+                    result.chatKey.forEach(function(item, i, arr) {
+                        var chatItem = new ChatItem(item);
+                        chat.onNewMessage(item, chatItem.update);
+                        chat.onCustomEvent(item, "setRate", function (result) { rateChanged(result, item) });
+                        setRateState(item);
+                        chatLog[item] = chatItem;
+                        chat.getChatLog(item, function(result){
+                            if (result.messages.length > 0) {
+                                chatItem.messages = result.messages;
+                                var lastMessage = result.messages[result.messages.length - 1];
+                                if (lastMessage) {
+                                    chatItem.message = lastMessage;
+                                    chatItem.lastReplic = lastMessage.content;
+                                    updatedChatLog();
+                                }
+                            }
+                        });
+                        chat.getDetailsByChatKey(chatItem.chatId, chatItem.setChatDetails);
+                    });
+                }
+                updatedChatLog();
+            });
+        };
+        
+        this.addEventListener('pageshow', function(event) {
+            initChatLog();
+        });
+        
+        function ChatItem(chatId){
+            var self = this;
+            self.chatId = chatId;
+            self.rate = 0;
+            self.primaryTabId = null;
+            self.messages = [];
+            
+            self.setChatDetails = function(details){
+                if (details) {
+                    self.details = details;
+                    if (details.details.name) self.userName = details.details.name;
+                    if (details.rate) self.rate = details.rate;
+                    if (details.details.messages) self.messages = details.details.messages;
+                    if (details.details.messages && details.details.messages.length > 0) self.message = details.details.messages[details.details.messages.length - 1];
+                    if (self.message) self.lastReplic = self.message.content;
+                    if (details.primaryTabId && details.primaryTabId != 'null') {
+                        self.primaryTabId = details.primaryTabId;
+                    }
+                    else {
+                        setTimeout(function() {
+                            chat.getDetailsByChatKey(self.chatId, self.setChatDetails);
+                        }, 5000);
+                    }
+                    
+                    updatedChatLog();
+                }
+            }            
+            
+            self.update = function(msg){
+                chat.getDetailsByChatKey(self.chatId, self.setChatDetails);
+                self.message = msg;
+                self.messages.push(msg);
+                self.lastReplic = msg.content;
+                
+                updatedChatLog();
+            }
+            
+            self.focusTab = function(){
+                if(self.primaryTabId && self.primaryTabId != 'null'){
+                    sforce.console.focusPrimaryTabById(self.primaryTabId);
+                }
+            }
+            
+            chatLog[chatId] = self;
+        }
+        
+        chat.onChatStarted(function(args){
+            var chatItem = new ChatItem(args.chatKey);
+            chat.onNewMessage(args.chatKey, chatItem.update);
+            chat.onCustomEvent(args.chatKey, "setRate", function (result) { rateChanged(result, args.chatKey) });
+            chat.getDetailsByChatKey(chatItem.chatId, chatItem.setChatDetails);
+            setRateState(args.chatKey);
+            console.log('chat started, chat key = ' + args.chatKey);
+            updatedChatLog();
+        });
+        
+        chat.onChatEnded(function(args){
+            delete chatLog[args.chatKey];
+            updatedChatLog();
+        });
+        
+        chat.onChatTransferredOut(function(args){
+            delete chatLog[args.chatKey];
+            updatedChatLog();
+            location.reload();
+        });
+
+        var rateChanged = function (result, chatKey) {
+            if (result.success) {
+                chatLog[chatKey].rate = result.data;
+                updatedChatLog();
+            }
+        };
+        </script>
+        
+        <div ng-include= "'{!URLFOR($Resource.advisor_page,'app/templates/advisor.html')}'"></div>            
+        
+    </body>
+</apex:page>

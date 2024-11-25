@@ -1,0 +1,388 @@
+<apex:page showHeader="false" sidebar="false" controller="VoucherApp_Partner_CtrlApp" language="{!selectedLanguageCode}" standardStylesheets="false" applyHtmlTag="false" applyBodyTag="false" docType="html-5.0">
+
+<apex:variable var="mobileToScreenSize"  value="{! '42.983em' }" />
+
+<apex:variable var="tabletFromScreenSize" value="{! '43em' }" />
+<apex:variable var="tabletToScreenSize"   value="{! '59.93em' }" />
+
+<html data-ieuglyhack="en">
+    <head>
+        <script>
+            var __SFDC_LABELS__ = {
+                'CompApp_terribleBrowserDetected': '{! JSENCODE($Label.Comp_oldBrowserMsgHeader) }',
+                'CompApp_terribleBrowser':         '{! JSENCODE($Label.Comp_oldBrowserMsgBody) }',
+                'CompApp_Close':                   '{! JSENCODE($Label.CompApp_Close) }',
+                'CompApp_Upgrade':                 '{! JSENCODE($Label.CompApp_Upgrade) }',
+                'Other':                           '{! JSENCODE($Label.CompApp_Other) }',
+                'Popular_Destinations':            '{! JSENCODE($Label.CompApp_GroupDestination) }'
+            };
+            var __SFDC_DOMAINS__ = JSON.parse('{!domainRouting}');
+
+        </script>
+
+        <meta name="viewport" content="width=device-width" />
+
+        <title>{!$Label.VoucherApp_TabTitle}</title>
+        <link rel="shortcut icon" href="{!URLFOR($Resource.EurostarFavIcon)}"/>
+        <!-- Styles -->
+        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.VoucherApp_partner_Res, '/res/all-prembrokeWeb.css')}"/>
+
+        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.VoucherApp_partner_Res, '/css/12-cols-grid.css')}"/>
+        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.VoucherApp_partner_Res, '/css/no-grid.css')}" />
+        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.VoucherApp_partner_Res, '/css/angular-date-picker.css')}"/>
+        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.VoucherApp_partner_Res, '/css/select2-3.4.5.css')}"/>
+
+        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.VoucherApp_partner_Res, '/css/elements.css')}"/>
+        <link rel="stylesheet" type="text/css" media="only screen and (max-width: {! mobileToScreenSize })" href="{!URLFOR($Resource.VoucherApp_partner_Res, '/css/elements-mobile.css')}"/>
+        <link rel="stylesheet" type="text/css" media="only screen and (min-width: {! tabletFromScreenSize }) and (max-width: {! tabletToScreenSize })" href="{!URLFOR($Resource.VoucherApp_partner_Res, '/css/elements-tablet.css')}"/>
+
+        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.VoucherApp_partner_Res, '/css/template-base.css')}"/>
+        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.CompApp_Eurostar_Ticket_Examples, '/ticket-examples.css')}"/>
+
+        <!-- Loading jQuery, angular -->
+        <script src="{!URLFOR($Resource.VoucherApp_partner_Res, '/vendor/jquery2.1.3.js')}"></script>
+        <script src="{!URLFOR($Resource.VoucherApp_partner_Res, '/vendor/jquery.query-object.js')}"></script>
+
+        <script src="{!URLFOR($Resource.VoucherApp_partner_Res, '/vendor/angular1.3.15.js')}"></script>
+        <script src="{!URLFOR($Resource.VoucherApp_partner_Res, '/vendor/angular-route.1.4.4.js')}"></script>
+        <script src="{!URLFOR($Resource.VoucherApp_partner_Res, '/vendor/angular-sanitize.1.4.4.js')}"></script>
+        <script src="{!URLFOR($Resource.VoucherApp_partner_Res, '/vendor/nocaptchRecaptcha.angular.js')}"></script>
+        <script src="{!URLFOR($Resource.VoucherApp_partner_Res, '/vendor/angularjs-autocomplete.min.js')}"></script>
+        <script src="{!URLFOR($Resource.VoucherApp_partner_Res, '/js/angular-date-picker.js')}"></script>
+
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-select/0.13.1/select.min.css"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-select/0.13.1/select.min.js"></script>
+
+        <!-- Loading Angular Controllers-->
+        <script src="{!URLFOR($Resource.VoucherApp_partner_Res, '/js/app.js')}"></script>
+        <script src="{!URLFOR($Resource.VoucherApp_partner_Res, '/js/make-claim-ctrl.js')}"></script>
+        <script src="{!URLFOR($Resource.VoucherApp_partner_Res, '/js/soft-error.js')}"></script>
+
+        <!-- Miscellenous -->
+        <script src="{!URLFOR($Resource.VoucherApp_partner_Res, '/js/pop-in-api.js')}"></script>
+        <script src="{!URLFOR($Resource.VoucherApp_partner_Res, '/js/template.js')}"></script>
+        <script src="{!URLFOR($Resource.VoucherApp_partner_Res, '/js/browser-assert.js')}"></script>
+
+        <script>
+             (function() {
+                'strict mode';
+                angular
+                    .module('compApp')
+                    .constant('excludedEmailDomains',{
+                        domainList: JSON.parse('{!emailExcludeDomains}')
+                    });
+            })();
+        </script>
+        <!-- The images are too big to zip with other resources -->
+        <style>
+            .ng-cloak, .x-ng-cloak {
+              display: none !important;
+            }
+
+            a:hover {
+                    cursor: pointer;
+                }
+
+
+            #app-root .valid .input-wrapper::before   { background-image: url("{!URLFOR($Resource.VoucherApp_partner_Res, '/res/SVGS/tick_correct.svg')}"); }
+            #app-root .invalid .input-wrapper::before { background-image: url("{!URLFOR($Resource.VoucherApp_partner_Res, '/res/SVGS/exclaimation_mark.svg')}"); }
+            #app-root .tooltip-sign  { background-image: url("{!URLFOR($Resource.VoucherApp_partner_Res, '/res/SVGS/helpFilled.svg')}"); }
+
+            #app-root label { width: 150px; }
+            #app-root input, #app-root textarea { width: calc(79%); }
+
+
+        </style>
+
+        <header id="app-header-template">
+            <div id="app-header-template-top-section">
+               <div id="top-section-logo"></div>
+                <div id="top-section-lang-select-box">
+                    <div id="select-box-selected-lang">{!$Label.CompApp_english}</div>
+                    <img id="select-box-arrow" src="{!URLFOR($Resource.VoucherApp_partner_Res, '/res/SVGS/arrow_down.svg')}" height="14" width="14" onclick="showLanguageSelectionMenu();"/>
+                </div>
+                <div id="top-section-title">
+                    {!$Label.HelpCentreHeader}
+                </div>
+            </div>
+            <div id="app-header-template-lang-selection-menu">
+                <h6 id="lang-selection-menu-description" style="margin-bottom: 10px; color: #ffffff;">{!$Label.CompApp_selectLang}</h6>
+                <div id="app-header-template-line"></div>
+                <div id="app-header-template-options">
+                    <a class="options-button" hreflang="en">{!$Label.CompApp_english}</a>
+                    <br/>
+                    <a class="options-button" hreflang="fr">{!$Label.CompApp_Francias}</a>
+                    <br/>
+                    <a class="options-button" hreflang="nl">{!$Label.CompApp_Nederlands}</a>
+                    <br/>
+                    <a class="options-button" hreflang="de">{!$Label.CompApp_German}</a>
+                </div>
+            </div>
+        </header>
+
+
+    </head>
+
+    <body>
+
+        <div id="app-root" ng-app="compApp" ng-controller="make-claim" >
+
+            <h1 class="row">{!$label.VoucherApp_voucher_claim}</h1>
+            <div class="row p1">{!$label.VoucherApp_claim_top_paragraph}</div>
+
+            <div class="row p1">{!$label.VoucherApp_required_fields}</div>
+
+            <h2 class="row">{!$label.VoucherApp_Traveller_details}</h2>
+
+            <div class="row {{formManager.titleValidity | validityClass}}" ng-init="titleList={!titleList}">
+                <label for="title" class="cell-label">{!$label.VoucherApp_Title}</label>
+                <div class="input-wrapper validity-sign cell-input">
+                    <ui-select
+                            ng-model="$angularState.personalInfo.title"
+                            ng-change="formManager.titleValidity == !!$angularState.PersonalInfo.title"
+                            open="true"
+                            theme="select2"
+                            ng-disabled="disabled"
+                            title="Title"
+                            search-enabled="searchEnabled"
+                            style="min-width: 300px;"
+                    >
+                        <ui-select-match placeholder="{!$Label.VoucherApp_enterTitle}">{{ $select.selected }}</ui-select-match>
+                        <ui-select-choices repeat="title in titleList | filter: $select.search">
+                            <div ng-bind-html="title"></div>
+                        </ui-select-choices>
+                    </ui-select>
+
+                    <div class="error-message">{!$label.VoucherApp_enterTitle}</div>
+                </div>
+            </div>
+
+            <div class="row {{formManager.firstNameValdity | validityClass}}">
+                <label for="first-name" class="cell-label">{!$label.VoucherApp_First_name}</label>
+                <div class="input-wrapper validity-sign cell-input">
+                    <input
+                            placeholder="{!$label.VoucherApp_enterFirstName}"
+                            id="first-name"
+                            ng-pattern="USER_NAME_REGEX"
+                            ng-change="formManager.firstNameValdity = !! $angularState.personalInfo.firstName"
+                            ng-model="$angularState.personalInfo.firstName"
+                    />
+                    <div class="error-message">{!$label.VoucherApp_enterFirstName}</div>
+                </div>
+            </div>
+
+            <div class="row {{formManager.lastNameValdity | validityClass}}">
+                <label for="surname" class="cell-label">{!$label.VoucherApp_LastName}</label>
+                <div class="input-wrapper validity-sign cell-input">
+                    <input
+                        placeholder="{!$label.VoucherApp_enterLastName}"
+                        id="surname"
+                        ng-pattern="USER_NAME_REGEX"
+                        ng-change="formManager.lastNameValdity = !! $angularState.personalInfo.lastName"
+                        ng-model="$angularState.personalInfo.lastName"
+                    />
+                    <div class="error-message">{!$label.VoucherApp_enterLastName}</div>
+                </div>
+            </div>
+
+            <div class="row {{formManager.primaryEmailValdity | validityClass}}">
+                <label for="email" class="cell-label">{!$label.VoucherApp_email}</label>
+                <div class="input-wrapper validity-sign cell-input">
+                    <input
+                        placeholder="{!$label.VoucherApp_enterEmail}"
+                        id="email"
+                        ng-change="formManager.primaryEmailValdity = isEmailValid()"
+                        ng-model="$angularState.personalInfo.email"
+                    />
+                    <div class="error-message">{!$label.VoucherApp_enterEmail}</div>
+                </div>
+            </div>
+
+            <div class="row {{formManager.countryValidity | validityClass}}" ng-init="countryList={!countryList}">
+                <label for="country" class="cell-label">{!$label.VoucherApp_Country}</label>
+                <div class="input-wrapper validity-sign cell-input">
+                    <ui-select
+                            ng-model="$angularState.personalInfo.country"
+                            ng-change="formManager.countryValidity == !!$angularState.PersonalInfo.country"
+                            open="true"
+                            theme="select2"
+                            ng-disabled="disabled"
+                            title="Country"
+                            search-enabled="searchEnabled"
+                            style="min-width: 300px;"
+                    >
+                        <ui-select-match placeholder="{!$Label.VoucherApp_enterCountry}">{{ $select.selected }}</ui-select-match>
+                        <ui-select-choices repeat="country in countryList | filter: $select.search">
+                            <div ng-bind-html="country"></div>
+                        </ui-select-choices>
+                    </ui-select>
+
+                    <div class="error-message">{!$label.VoucherApp_enterCountry}</div>
+                </div>
+            </div>
+
+            <div class="row {{formManager.languageValidity | validityClass}}" ng-init="languageList={!languageList}">
+                <label for="language" class="cell-label">{!$label.VoucherApp_Language}</label>
+                <div class="input-wrapper validity-sign cell-input">
+                    <ui-select
+                            ng-model="$angularState.personalInfo.language"
+                            ng-change="formManager.languageValidity == !!$angularState.PersonalInfo.language"
+                            open="true"
+                            theme="select2"
+                            ng-disabled="disabled"
+                            title="Language"
+                            search-enabled="searchEnabled"
+                            style="min-width: 300px;"
+                    >
+                        <ui-select-match placeholder="{!$Label.VoucherApp_enterLanguage}">{{ $select.selected }}</ui-select-match>
+                        <ui-select-choices repeat="language in languageList | filter: $select.search">
+                            <div ng-bind-html="language"></div>
+                        </ui-select-choices>
+                    </ui-select>
+
+                    <div class="error-message">{!$label.VoucherApp_enterLanguage}</div>
+                </div>
+            </div>
+
+            <h2 class="row p1">{!$label.VoucherApp_voucher_details}</h2>
+
+            <div class="row {{formManager.voucherCodeValidity | validityClass}}">
+                <label for="voucherCode" class="cell-label">{!$label.VoucherApp_voucher_code}</label>
+                <div class="input-wrapper validity-sign cell-input">
+                    <input
+                        placeholder="{!$label.VoucherApp_EnterVoucherCode}"
+                        id="voucherCode"
+                        ng-change="$angularState.voucherInfo.voucherCode = $angularState.voucherInfo.voucherCode.toUpperCase(); formManager.voucherCodeValidity = !!$angularState.voucherInfo.voucherCode"
+                        ng-model="$angularState.voucherInfo.voucherCode"
+                    />
+                    <div class="error-message">{!$label.VoucherApp_EnterVoucherCode}</div>
+                </div>
+            </div>
+
+            <h2 class="row p1">{!$label.VoucherApp_partner_details}</h2>
+
+            <div class="row {{formManager.partnerNameValidity | validityClass}}" ng-init="partnerList={!partnerList}">
+                <label for="partnerName" class="cell-label">{!$label.VoucherApp_PartnerName}</label>
+                <div class="input-wrapper validity-sign cell-input">
+                    <ui-select
+                            ng-model="$angularState.voucherInfo.partnerName"
+                            ng-change="formManager.partnerNameValidity == !!$angularState.voucherInfo.partnerName"
+                            open="true"
+                            theme="select2"
+                            ng-disabled="disabled"
+                            title="partnerName"
+                            search-enabled="searchEnabled"
+                            style="min-width: 300px;"
+                    >
+                        <ui-select-match placeholder="{!$Label.VoucherApp_enterPartnerName}">{{ $select.selected }}</ui-select-match>
+                        <ui-select-choices repeat="partner in partnerList | filter: $select.search">
+                            <div ng-bind-html="partner"></div>
+                        </ui-select-choices>
+                    </ui-select>
+
+                    <div class="error-message">{!$label.VoucherApp_enterPartnerName}</div>
+                </div>
+            </div>
+
+            <div class="row {{ formManager.captchaValdity | validityClass }}">
+                <label for="recaptcha" class="cell-label" >{!$label.VoucherApp_robot_question}</label>
+                <div class="cell-input">
+                    <no-captcha
+                        g-recaptcha-response="captchaResponse"
+                        theme='light'
+                        control="noCaptchaControl"
+                        site-key="{!GOOGLE_CAPTCHA_SITE_KEY}"
+                    >
+                    </no-captcha>
+                    <div class="error-message">{!$label.CompApp_Validate_not_robot}</div>
+                </div>
+            </div>
+
+            <h2 class="row">{!$label.VoucherApp_newsletter_title}</h2>
+
+            <div class="row p1">
+                <input type="checkbox"
+                    ng-model="$angularState.personalInfo.optedIn"
+                />{!$label.VoucherApp_newsletter_checkbox_partner}
+            </div>
+
+            <div class="row p1">{!$label.VoucherApp_newsletter_terms_1_partner} <a target="_blank" href="{!$Label.VoucherApp_newsletter_link}">{!$label.VoucherApp_newsletter_terms_4_partner}</a></div>
+
+            <div class="row commands-section">
+                <a class="btn primary" ng-click="checkUserEligibility();">{!$label.VoucherApp_Eligibility_Check}</a>
+                <p class="error-message-main" ng-hide="formManager.noErrors">{!$label.CompApp_incorrectData}</p>
+            </div>
+
+            <script>
+                var GLOBAL_REMOTE_USER_IP = '{!USER_IP}';
+            </script>
+        </div>
+
+        <footer id="app-footer-template">
+        <div id="app-footer-template-image">
+            <div id="app-footer-template-content">
+                <p id="app-footer-template-image-description" >{!$Label.CompApp_HelpCentre}</p>
+                <a class="primary" href="{!$Setup.HelpCentre__c.URL__c}">{!$Label.CompApp_Help_Centre}</a>
+            </div>
+        </div>
+        <p id="app-footer-template-copyright">© {!YEAR(TODAY())} {!$Label.CompApp_EurostarRights} <a id="app-footer-template-link" href="http://www.eurostar.com">{!$Label.CompApp_eurostar_site}</a></p>
+    </footer>
+
+    </body>
+    <script type="text/javascript">
+        var marketLanguage = "{!if(selectedLanguageCode = 'en', 'uk-en', if(selectedLanguageCode = 'de', 'de-de',if(selectedLanguageCode = 'fr', 'fr-fr', if(selectedLanguageCode = 'nl', 'nl-nl', 'uk-en'))))}";
+        var utag_data = {
+            "marketLanguage" : marketLanguage
+        };
+    </script>
+
+    <!-- Loading script asynchronously -->
+    <script type="text/javascript">
+        (function(a,b,c,d)
+
+                { a='{!$Setup.Tealium_Analytics_Settings__c.API__c}'; b=document;c='script';d=b.createElement(c);d.src=a;d.type='text/java'+c;d.async=true; a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a); }
+        )();
+    </script>
+    <script src="https://www.eurostar.com/static/cookie-banner.js?language={!if(or(selectedLanguageCode = 'en', selectedLanguageCode = 'fr', selectedLanguageCode = 'nl', selectedLanguageCode = 'de'), selectedLanguageCode, 'en')}"></script>
+
+    <script>
+        sfdc_prevent_message_warning = true;
+        if (!window.jQuery) {
+            var message = [
+                '{! JSENCODE($Label.CompApp_ie8Error) }'
+            ].join('\n');
+            location.href = confirm(message) ? 'http://windows.microsoft.com/en-gb/internet-explorer/download-ie' : 'http://www.eurostar.com/';
+        }
+
+        $(function(){
+            checkBrowserSupport();
+            $('#select-box-selected-lang').text($('#app-header-template-options .options-button[hreflang="{!selectedLanguageCode}"]').text());
+        });
+
+        var APP_HEADER_TEMPLATE_LANG_SELECTION_MENU = {
+                OPEN:  "{! URLFOR($Resource.VoucherApp_partner_Res, '/res/SVGS/arrow_up.svg') }",
+                CLOSE: "{! URLFOR($Resource.VoucherApp_partner_Res, '/res/SVGS/arrow_down.svg') }",
+        }
+        var GLOBAL_REMOTE_USER_IP = '{!USER_IP}';
+        var SFDC_SITE_PREFIX = '{!$Site.Prefix}' === ''? '/apex':'{!$Site.Prefix}';
+
+        // TODO: Michael 06.10.15 - iOS not supported event  window.onbeforeunload
+        // window.onpagehide = function (e) {
+        //     return '{!$Label.CompApp_refresh_page_message}';
+        // }
+
+        window.onbeforeunload = function (e) {
+            if (!sfdc_prevent_message_warning){
+                var e = e || window.event;
+                // For IE and Firefox
+                if (e) {
+                    e.returnValue = '{!$Label.CompApp_refresh_page_message}';
+                }
+                // For Safari & Chrome
+                return '{!$Label.CompApp_refresh_page_message}';
+            }
+        };
+    </script>
+    <apex:form />
+</html>
+</apex:page>

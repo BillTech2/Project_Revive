@@ -1,0 +1,44 @@
+<apex:page id="MemberCriteriaBasedTicketLink"
+			showHeader="true"
+			sidebar="true"
+			tabStyle="SalesforceCriteriaBasedTicketLink__x"
+			standardController="SalesforceCriteriaBasedTicketLink__x"
+			extensions="MemberCriteriaBasedTicketLinkController">
+
+	<apex:sectionHeader title="{!$ObjectType.SalesforceCriteriaBasedTicketLink__x.Label} Edit"
+						subtitle="New {!$ObjectType.SalesforceCriteriaBasedTicketLink__x.Label}" />
+	<!--apex:form rendered="{!NOT(isAccessAllowed)}">
+		<apex:pageBlock title="{!$ObjectType.SalesforceCriteriaBasedTicketLink__x.Label} Edit" mode="edit">
+			<div style="font-style: italic; font-weight: bold; color: red; padding-top: 1rem; padding-left: 3rem;">
+				Sorry you have no permissions to access that functionality.
+			</div>
+			<apex:pageBlockButtons >
+				<apex:commandButton action="{!cancel}" value="Back"/>
+			</apex:pageBlockButtons>
+		</apex:pageBlock>
+	</apex:form-->
+
+	<c:LoyaltyTierAccessCheck accessedButtonName="Add_a_ticket_no_override">
+	<apex:form >
+		<apex:pageBlock title="{!$ObjectType.SalesforceCriteriaBasedTicketLink__x.Label} Edit" mode="edit">
+			<apex:pageMessages id="messages"/>
+			<apex:pageBlockSection columns="1" >
+				<apex:inputField value="{!member.Tcn__c}"/>
+				<apex:inputField value="{!member.Pnr__c}"/>
+			</apex:pageBlockSection>
+			<apex:pageBlockButtons >
+				<apex:commandButton action="{!save}" value=" Save "/>
+				<apex:commandButton action="{!SaveAndNew}" value="Save & New"/>
+				<apex:commandButton action="{!cancel}" value="Cancel"/>
+			</apex:pageBlockButtons>
+			<apex:outputPanel id="redirectPanel" >
+					<apex:outputText rendered="{!shouldRedirect}">
+						<script type="text/javascript">
+							window.top.location.href = '{!redirectUrl}';
+						</script>
+					</apex:outputText>
+				</apex:outputPanel>
+		</apex:pageBlock>
+	</apex:form>
+	</c:LoyaltyTierAccessCheck>
+</apex:page>

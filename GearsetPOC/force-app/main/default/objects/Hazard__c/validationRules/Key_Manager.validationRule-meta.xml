@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Key_Manager</fullName>
+    <active>true</active>
+    <description>either EIL or Contractor key manager is named, not both</description>
+    <errorConditionFormula>AND(NOT(ISBLANK( Hazard_Key_Manager_EIL__c)), NOT(ISBLANK( Hazard_Key_Manager_Contractor__c)))</errorConditionFormula>
+    <errorMessage>You must set either the EIL Key Manager, or the Contractor key manager, not both</errorMessage>
+</ValidationRule>

@@ -1,0 +1,39 @@
+<apex:page standardStylesheets="true" showHeader="false">
+    <apex:includeLightning />
+    <apex:includeScript value="/support/console/58.0/integration.js"/>
+    <div id="lightningAppDivId">
+    </div>
+
+    <script>
+
+        function openPrimaryTab(recordId) {
+            if (sforce.console.isInConsole()) {
+                var url = location.href;  // entire url including querystring - also: window.location.href;
+                var baseURL = url.substring(0, url.indexOf('/', 14));
+                sforce.console.openPrimaryTab(undefined, 
+                baseURL + '/' + recordId, true, 'Case');
+            } else {
+                window.open('/' + recordId);
+            }
+            
+        }
+
+        document.addEventListener('lightning__showtoast', event => {
+            sforce.one.showToast(event.toastAttributes);
+        });
+        $Lightning.use(
+            "c:Eins_VonageAuraApp",
+            function() {
+                $Lightning.createComponent(
+                    "c:Eins_VonageComponent",
+                    {
+                        phoneNumber: "{!$CurrentPage.parameters.ANI}",
+                        callGUID: "{!$CurrentPage.parameters.callGUID}",
+                        openSubtabCallback: openPrimaryTab
+                    },
+                    "lightningAppDivId"
+                );
+            }
+        );
+    </script>
+</apex:page>

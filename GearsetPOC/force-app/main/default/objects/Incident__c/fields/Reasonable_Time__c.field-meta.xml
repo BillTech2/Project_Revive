@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reasonable_Time__c</fullName>
+    <inlineHelpText>select the relevant statement relating to respect of the 7-day rule</inlineHelpText>
+    <label>Reasonable Time</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Agreed within 7 days</fullName>
+                <default>false</default>
+                <label>Agreed within 7 days</label>
+            </value>
+            <value>
+                <fullName>Over 7 days (accepted by EIL)</fullName>
+                <default>false</default>
+                <label>Over 7 days (accepted by EIL)</label>
+            </value>
+            <value>
+                <fullName>Over 7 days (no response)</fullName>
+                <default>false</default>
+                <label>Over 7 days (no response)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

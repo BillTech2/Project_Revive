@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>From_Return_2__c</fullName>
+    <description>This field will be used for the origin of the return journey of the second choice of travel.</description>
+    <inlineHelpText>*only direct services &amp; no business class available</inlineHelpText>
+    <label>From (Return)</label>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>London St Pancras</fullName>
+                <default>false</default>
+                <label>London St Pancras</label>
+            </value>
+            <value>
+                <fullName>Ebbsfleet</fullName>
+                <default>false</default>
+                <label>Ebbsfleet</label>
+            </value>
+            <value>
+                <fullName>Ashford</fullName>
+                <default>false</default>
+                <label>Ashford</label>
+            </value>
+            <value>
+                <fullName>Paris</fullName>
+                <default>false</default>
+                <label>Paris</label>
+            </value>
+            <value>
+                <fullName>Brussels</fullName>
+                <default>false</default>
+                <label>Brussels</label>
+            </value>
+            <value>
+                <fullName>Lille</fullName>
+                <default>false</default>
+                <label>Lille</label>
+            </value>
+            <value>
+                <fullName>Calais</fullName>
+                <default>false</default>
+                <label>Calais</label>
+            </value>
+            <value>
+                <fullName>Disney*</fullName>
+                <default>false</default>
+                <label>Disney*</label>
+            </value>
+            <value>
+                <fullName>Avignon*</fullName>
+                <default>false</default>
+                <label>Avignon*</label>
+            </value>
+            <value>
+                <fullName>Lyon*</fullName>
+                <default>false</default>
+                <label>Lyon*</label>
+            </value>
+            <value>
+                <fullName>Marseille*</fullName>
+                <default>false</default>
+                <label>Marseille*</label>
+            </value>
+            <value>
+                <fullName>Bourg St Maurice*</fullName>
+                <default>false</default>
+                <label>Bourg St Maurice*</label>
+            </value>
+            <value>
+                <fullName>Aime La Plagne*</fullName>
+                <default>false</default>
+                <label>Aime La Plagne*</label>
+            </value>
+            <value>
+                <fullName>Moutiers*</fullName>
+                <default>false</default>
+                <label>Moutiers*</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

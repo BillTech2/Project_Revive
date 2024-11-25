@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SBT_Formula__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(NOT(ISBLANK(  UK_TMC__c  )),    UK__c   ,
+IF(NOT(ISBLANK(  FR_TMC__c  )),   FR__c ,
+IF(NOT(ISBLANK(  BE_TMC__c  )),   BE__c ,  
+IF(NOT(ISBLANK(   TMC_Additional__c  )),     SBT__c   ,  NL__c 
+
+)
+)
+)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>SBT</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

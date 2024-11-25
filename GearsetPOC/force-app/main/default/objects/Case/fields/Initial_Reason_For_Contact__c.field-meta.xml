@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Initial_Reason_For_Contact__c</fullName>
+    <label>Initial Reason For Contact</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Buy or Book</fullName>
+                <default>false</default>
+                <label>Buy or Book</label>
+            </value>
+            <value>
+                <fullName>Change</fullName>
+                <default>false</default>
+                <label>Change</label>
+            </value>
+            <value>
+                <fullName>Cancel or Refund</fullName>
+                <default>false</default>
+                <label>Cancel or Refund</label>
+            </value>
+            <value>
+                <fullName>Info or Advice or Confirmation</fullName>
+                <default>false</default>
+                <label>Info or Advice or Confirmation</label>
+            </value>
+            <value>
+                <fullName>Disruption or Compensation</fullName>
+                <default>false</default>
+                <label>Disruption or Compensation</label>
+            </value>
+            <value>
+                <fullName>Phone Case - please complete</fullName>
+                <default>false</default>
+                <label>Phone Case - please complete</label>
+            </value>
+            <value>
+                <fullName>Package_Outbound_Calling</fullName>
+                <default>false</default>
+                <label>Package_Outbound_Calling</label>
+            </value>
+            <value>
+                <fullName>Feedback</fullName>
+                <default>false</default>
+                <label>Feedback</label>
+            </value>
+            <value>
+                <fullName>Standalone hotel add on request</fullName>
+                <default>false</default>
+                <label>Standalone hotel add on request</label>
+            </value>
+            <value>
+                <fullName>Package add on request</fullName>
+                <default>false</default>
+                <label>Package add on request</label>
+            </value>
+            <value>
+                <fullName>Disruption</fullName>
+                <default>false</default>
+                <label>Disruption</label>
+            </value>
+            <value>
+                <fullName>Package hotel exchange</fullName>
+                <default>false</default>
+                <label>Package hotel exchange</label>
+            </value>
+            <value>
+                <fullName>Standalone hotel exchange</fullName>
+                <default>false</default>
+                <label>Standalone hotel exchange</label>
+            </value>
+            <value>
+                <fullName>Refund</fullName>
+                <default>false</default>
+                <label>Refund</label>
+            </value>
+            <value>
+                <fullName>Standalone hotel refund</fullName>
+                <default>false</default>
+                <label>Standalone hotel refund</label>
+            </value>
+            <value>
+                <fullName>Customer Room Booking</fullName>
+                <default>false</default>
+                <label>Customer Room Booking</label>
+            </value>
+            <value>
+                <fullName>Social media - please review</fullName>
+                <default>false</default>
+                <label>Social media - please review</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

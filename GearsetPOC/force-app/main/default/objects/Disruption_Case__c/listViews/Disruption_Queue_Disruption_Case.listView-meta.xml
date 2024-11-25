@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Disruption_Queue_Disruption_Case</fullName>
+    <filterScope>Queue</filterScope>
+    <label>Disruptions</label>
+    <queue>ECC_Disruptions</queue>
+    <sharedTo>
+        <allInternalUsers />
+    </sharedTo>
+</ListView>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>No_Updates_If_Case_Approved</fullName>
+    <active>false</active>
+    <errorConditionFormula>NOT(ISNEW())
+&amp;&amp; (Approval_Status__c == &#39;Approved&#39; || Approval_Status__c == &#39;Confirmed Duplicate&#39;)
+&amp;&amp; $Profile.Name != &#39;Integration Profile&#39;
+&amp;&amp; $Profile.Name != &#39;System Administrator&#39;
+&amp;&amp; $Profile.Name != &#39;ECC Manager&#39;
+&amp;&amp; (ISCHANGED(Case__c)
+|| ISCHANGED(CustomerC__c)
+|| ISCHANGED(Payment_Amount__c)
+|| ISCHANGED(Payment_Currency__c)
+|| ISCHANGED(Voucher_Type__c)
+|| ISCHANGED(Gift__c)
+|| ISCHANGED(Paypal_email__c)
+|| ISCHANGED(Points_Amount__c)
+|| ISCHANGED(Quantity__c)
+|| ISCHANGED(PNR__c)
+|| ISCHANGED(TCN_1__c)
+|| ISCHANGED(TCN_2__c)
+|| ISCHANGED(TCN_3__c)
+|| ISCHANGED(TCN_4__c)
+|| ISCHANGED(TCN_5__c)
+|| ISCHANGED(TCN_6__c)
+|| ISCHANGED(TCN_7__c)
+|| ISCHANGED(TCN_8__c)
+|| ISCHANGED(TCN_9__c)
+|| ISCHANGED(TCN_10__c)
+|| ISCHANGED(Bank_Account_Name__c)
+|| ISCHANGED(Bank_Sort_Code__c)
+|| ISCHANGED(Bank_Account_Number__c)
+|| ISCHANGED(IBAN_Account_Number__c)
+|| ISCHANGED(Swift_Sort_Code__c)
+)</errorConditionFormula>
+    <errorMessage>The Case linked to that Compensation has been Approved. You can only process the Compensation, or edit &#39;Comments&#39;, &#39;Reasons&#39;, &#39;Incident Date&#39;, &#39;Location&#39;. Please speak to a manager if you need to amend other details.</errorMessage>
+</ValidationRule>

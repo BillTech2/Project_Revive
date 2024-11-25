@@ -1,0 +1,266 @@
+<apex:page title="PDF Generator" showHeader="false" sidebar="false" controller="PDF_Generator_CreditNote_Public_Ctrl" applyHtmlTag="false" applyBodyTag="false" renderAs="pdf" standardStylesheets="false" language="{!language}" >
+    <head>
+        <apex:includeScript value="{!$Resource.webForm_IsoCountryCode}"/> <!-- just to create a dependency -->
+
+        <style>
+            @page {
+                margin-left: 20px;
+                margin-right: 20px;
+                margin-bottom: 0px;
+                margin-top: 0px;
+            }
+
+            body {
+                font-family: "Arial" "Sans-Serif";
+            }
+
+            footer {
+                position: fixed;
+                bottom: 5px;
+                font-size: 8pt;
+                text-align: center;
+            }
+
+            td {
+                width: 300px;
+            }
+
+            #globalInfos tr {
+                height: 120px ;
+            }
+
+            #globalInfos {
+                margin-left: 60px;
+                margin-right: 60px;
+                margin-top: 20px;
+            }
+
+            #creditNoteInformationTable tr {
+                height: 10px;
+            }
+
+            .img {
+                margin-left: 65px;
+                margin-top: 5px;
+            }
+
+            .td_padding {
+                padding-left: 10px;
+            }
+
+            #memberInfos {
+                margin-top: -30px;
+            }
+
+        </style>
+    </head>
+
+    <header>
+        <p></p>
+    </header>
+
+    <table id="globalInfos">
+        <tr>
+            <td></td>
+
+            <td class="td_padding">
+                <div id="memberInfos" style="margin-top: -15px;">
+                    <c:PDF_Customer_Information companyName="{! creditNote.Invoice__r.Company_Name__c}"
+                        salutation="{! creditNote.Invoice__r.Invoice_Owner_Title__c}"
+                        lastname="{! creditNote.Subscription__r.Last_Name__c}"
+                        firstname="{! creditNote.Subscription__r.First_Name__c} "
+                        mailingStreet="{! creditNote.Invoice__r.Invoice_Street_Number__c}"
+                        mailingAdditionalStreet="{! creditNote.Invoice__r.Inv_Additional_adress_information__c}"
+                        mailingPostalCode="{! creditNote.Invoice__r.Invoice_Postal_Code__c} "
+                        mailingCity="{! creditNote.Invoice__r.Invoice_City__c }"
+                        mailingCountry="{! creditNote.Invoice__r.Invoice_Country__c}"
+                        showSalutation="false"
+                    />
+                </div>
+            </td>
+        </tr>
+
+        <tr></tr>
+
+        <tr>
+            <td style="vertical-align:top;font-size: 13pt;" class="td_padding" >
+                <div id="creditNoteLabel">
+                    <b><i><apex:outputText style="border-bottom-width: 1px; border-bottom-style: solid;" value="{!$Label.PDF_Credit_Note_Label}" /></i></b>
+                </div>
+            </td>
+
+            <td class="td_padding">
+                <div id="creditNoteInformation">
+                    <table id ="creditNoteInformationTable">
+                         <tr>
+                            <td>
+                                <apex:outputText style="font-size: 11pt;" value="{!$Label.PDF_Request_Date} " />
+                            </td>
+                            <td>
+                                <apex:outputLabel style="font-size:11pt;">
+                                    <apex:outputText value="{!requestDate}"/>
+                                </apex:outputLabel>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <apex:outputText style="font-size: 11pt;" value="{!$Label.PDF_Order_Number} " />
+                            </td>
+                            <td>
+                                <apex:outputLabel style="font-size:11pt;">
+                                    <apex:outputField value="{!creditNote.Invoice__r.Order_Number__c}" />
+                                </apex:outputLabel>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <apex:outputText style="font-size: 11pt;" value="{!$Label.PDF_Invoice_Number} " />
+                            </td>
+                            <td>
+                                <apex:outputLabel style="font-size:11pt;">
+                                    <apex:outputField value="{!creditNote.Invoice__r.Invoice_Number__c}" />
+                                </apex:outputLabel>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <apex:outputText style="font-size: 11pt;" value="{!$Label.PDF_Credit_Note_Number} " />
+                            </td>
+                            <td>
+                                <apex:outputLabel style="font-size:11pt;">
+                                    <apex:outputField value="{!creditNote.Credit_Note_Number__c}" />
+                                </apex:outputLabel>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <apex:outputText style="font-size: 11pt; white-space: nowrap;" value="{!$Label.PDF_CIN}" rendered="{! IF(creditNote.Subscription__r.CIN_V2__c != '', true, false)}"/>
+                            </td>
+                            <td>
+                                <apex:outputLabel style="font-size:11pt;">
+                                    <apex:outputField value="{!creditNote.Subscription__r.CIN_V2__c}" rendered="{! IF(creditNote.Subscription__r.CIN_V2__c != '', true, false)}"/>
+                                </apex:outputLabel>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <apex:outputText style="font-size: 11pt;" value="{!$Label.PDF_VAT_Number}" rendered="{! IF(creditNote.Subscription__r.VAT_Number__c != '', true, false)}" />
+                            </td>
+                            <td>
+                                <apex:outputLabel style="font-size:11pt;" rendered="{! IF(creditNote.Subscription__r.VAT_Number__c != '', true, false)}" >
+                                    <apex:outputField value="{!creditNote.Subscription__r.VAT_Number__c}" />
+                                </apex:outputLabel>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <apex:outputText style="font-size: 11pt;" value="{!$Label.PDF_External_Reference}" rendered="{! IF(creditNote.Subscription__r.External_Reference__c != '', true, false)}" />
+                            </td>
+                            <td>
+                                <apex:outputLabel style="font-size:11pt;" rendered="{! IF(creditNote.Subscription__r.External_Reference__c != '', true, false)}">
+                                    <apex:outputField value="{!creditNote.Subscription__r.External_Reference__c}"  />
+                                </apex:outputLabel>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="td_padding">
+                <apex:pageBlock >
+                    <apex:outputText style="font-size: 11pt;" value="{!$Label.Invoice_PDF_Cancellation}" />
+                    <apex:outputText style="font-size: 11pt;" value=" {!$Label.PDF_Invoice_Subscription_Category}" />
+                    <br/>
+                    <b>
+                        <apex:outputLabel style="font-size:11pt;">
+                            <apex:outputField value="{!creditNote.Subscription__r.Subscription_Type_Name__c}" />
+                            <apex:outputText value=" Pass" />
+                        </apex:outputLabel>
+                    </b>
+                </apex:pageBlock>
+
+                <br/>
+                <br/>
+                <br/>
+
+                <apex:outputText style="font-size: 11pt;" value="{!$Label.PDF_Member_Name}" />
+
+                <br/>
+                <br/>
+
+                <apex:outputText style="font-size: 11pt;" value="{!$Label.PDF_Invoice_Duration}"/>
+            </td>
+            <td id="member_name" class="td_padding">
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <b>
+                    <div style="margin-top:55px;">
+                        <apex:outputText style="font-size: 11pt;" value="{! creditNote.Subscription__r.First_Name__c} " />
+                        <apex:outputText style="font-size: 11pt;" value="{! creditNote.Subscription__r.Last_Name__c}" />
+
+                        <br/>
+                        <br/>
+
+                        <apex:outputLabel style="font-size:11pt;">
+                            <apex:outputText style="font-size: 11pt; text-align: right;" value="{!creditNote.Invoice__r.Duration__c} {!$Label.PDF_Month}" />
+                        </apex:outputLabel>
+                    </div>
+                    <br/>
+                    <br/>
+                </b>
+            </td>
+        </tr>
+        <tr>
+            <td class="td_padding">
+               <br/>
+                <br/>
+                <apex:outputText style="font-size: 11pt;" value="{!$Label.PDF_Total_Excl_VAT}" />
+                <br/><br/>
+                <apex:outputText style="font-size: 11pt;"  value="{!asterix}{!$Label.PDF_TVA_Label}" rendered="{!isExemptFromVAT}" />
+                <apex:outputText style="font-size: 11pt;"  value="{!asterix}{!$Label.PDF_TVA_21_Label}" rendered="{! !isExemptFromVAT}" />
+                <br/><br/>
+                <b> <apex:outputText style="font-size: 11pt;" value="{!$Label.PDF_Total_Incl_VAT}" /></b>
+            </td>
+            <td id="amount_infos" class="td_padding" style="">
+                <br/>
+                <br/>
+               <div style="width: 130px; text-align: right;">
+                    <b>
+                        <apex:outputLabel style="font-size:11pt;">
+                            <apex:outputText value="{!amount_excl_VAT}" />
+                        </apex:outputLabel>
+                        <br/>
+                        <br/>
+                        <apex:outputLabel style="font-size:11pt;  ">
+                            <apex:outputText value="{!amount_VAT}" />
+                        </apex:outputLabel> 
+                        <br/>
+                        <br/>
+                        <apex:outputLabel style="font-size:11pt;">
+                            <apex:outputText value="{!amount_incl_VAT}" rendered="{! IF(amount_incl_VAT == '', false, true)}" />
+                        </apex:outputLabel>
+                    </b>
+                </div>
+            </td>
+        </tr>
+
+        <div style="margin-top:20px; margin-left:70px margin-bottom:10px" >
+            <apex:outputText style="font-size: 10pt; font-style: italic;"  value="{!$Label.PDF_VAT_Article_Reference}" rendered="{!countryEU}"/>
+        </div>
+
+    </table>
+
+    <footer>
+        <c:PDF_Signature phoneNumber="{!phoneNumber}"/>
+    </footer>
+</apex:page>

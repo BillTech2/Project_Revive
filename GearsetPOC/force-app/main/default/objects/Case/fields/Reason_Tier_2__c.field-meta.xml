@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_Tier_2__c</fullName>
+    <label>Reason Tier 2</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Reason_Tier_1__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Compensation</fullName>
+                <default>false</default>
+                <label>Compensation</label>
+            </value>
+            <value>
+                <fullName>Have a Booking</fullName>
+                <default>false</default>
+                <label>Have a Booking</label>
+            </value>
+            <value>
+                <fullName>Make a Booking</fullName>
+                <default>false</default>
+                <label>Make a Booking</label>
+            </value>
+            <value>
+                <fullName>Refund or Exchange</fullName>
+                <default>false</default>
+                <label>Refund or Exchange</label>
+            </value>
+            <value>
+                <fullName>Destinations</fullName>
+                <default>false</default>
+                <label>Destinations</label>
+            </value>
+            <value>
+                <fullName>Disruptions</fullName>
+                <default>false</default>
+                <label>Disruptions</label>
+            </value>
+            <value>
+                <fullName>Information</fullName>
+                <default>false</default>
+                <label>Information</label>
+            </value>
+            <value>
+                <fullName>Loyalty</fullName>
+                <default>false</default>
+                <label>Loyalty</label>
+            </value>
+            <value>
+                <fullName>Onboard Facilities</fullName>
+                <default>false</default>
+                <label>Onboard Facilities</label>
+            </value>
+            <value>
+                <fullName>Policies</fullName>
+                <default>false</default>
+                <label>Policies</label>
+            </value>
+            <value>
+                <fullName>Special Assistance</fullName>
+                <default>false</default>
+                <label>Special Assistance</label>
+            </value>
+            <value>
+                <fullName>Special Request</fullName>
+                <default>false</default>
+                <label>Special Request</label>
+            </value>
+            <value>
+                <fullName>Station Facilities</fullName>
+                <default>false</default>
+                <label>Station Facilities</label>
+            </value>
+            <value>
+                <fullName>Accesibility</fullName>
+                <default>false</default>
+                <label>Accesibility</label>
+            </value>
+            <value>
+                <fullName>Complaints Handling</fullName>
+                <default>false</default>
+                <label>Complaints Handling</label>
+            </value>
+            <value>
+                <fullName>Information on Trains, At Stations &amp; Web</fullName>
+                <default>false</default>
+                <label>Information on Trains, At Stations &amp; Web</label>
+            </value>
+            <value>
+                <fullName>Onboard</fullName>
+                <default>false</default>
+                <label>Onboard</label>
+            </value>
+            <value>
+                <fullName>Onboard Catering</fullName>
+                <default>false</default>
+                <label>Onboard Catering</label>
+            </value>
+            <value>
+                <fullName>Staff (ECC/Times House/Webhelp)</fullName>
+                <default>false</default>
+                <label>Staff (ECC/Times House/Webhelp)</label>
+            </value>
+            <value>
+                <fullName>Stations</fullName>
+                <default>false</default>
+                <label>Stations</label>
+            </value>
+            <value>
+                <fullName>Timetable &amp; Connections</fullName>
+                <default>false</default>
+                <label>Timetable &amp; Connections</label>
+            </value>
+            <value>
+                <fullName>Train &amp; Service Performance</fullName>
+                <default>false</default>
+                <label>Train &amp; Service Performance</label>
+            </value>
+            <value>
+                <fullName>Education</fullName>
+                <default>false</default>
+                <label>Education</label>
+            </value>
+            <value>
+                <fullName>Outage</fullName>
+                <default>false</default>
+                <label>Outage</label>
+            </value>
+            <value>
+                <fullName>Seating</fullName>
+                <default>false</default>
+                <label>Seating</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Booking</controllingFieldValue>
+            <valueName>Compensation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Booking</controllingFieldValue>
+            <controllingFieldValue>GDS</controllingFieldValue>
+            <valueName>Have a Booking</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Booking</controllingFieldValue>
+            <controllingFieldValue>GDS</controllingFieldValue>
+            <valueName>Make a Booking</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Booking</controllingFieldValue>
+            <controllingFieldValue>GDS</controllingFieldValue>
+            <valueName>Refund or Exchange</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Enquiry</controllingFieldValue>
+            <valueName>Destinations</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Enquiry</controllingFieldValue>
+            <valueName>Disruptions</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Enquiry</controllingFieldValue>
+            <valueName>Information</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Enquiry</controllingFieldValue>
+            <valueName>Loyalty</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Enquiry</controllingFieldValue>
+            <valueName>Onboard Facilities</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Enquiry</controllingFieldValue>
+            <valueName>Policies</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Enquiry</controllingFieldValue>
+            <valueName>Special Assistance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Enquiry</controllingFieldValue>
+            <valueName>Special Request</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Enquiry</controllingFieldValue>
+            <valueName>Station Facilities</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Feedback</controllingFieldValue>
+            <valueName>Accesibility</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Feedback</controllingFieldValue>
+            <valueName>Complaints Handling</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Feedback</controllingFieldValue>
+            <valueName>Information on Trains, At Stations &amp; Web</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Feedback</controllingFieldValue>
+            <valueName>Onboard</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Feedback</controllingFieldValue>
+            <valueName>Onboard Catering</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Feedback</controllingFieldValue>
+            <valueName>Staff (ECC/Times House/Webhelp)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Feedback</controllingFieldValue>
+            <valueName>Stations</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Feedback</controllingFieldValue>
+            <valueName>Timetable &amp; Connections</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Feedback</controllingFieldValue>
+            <valueName>Train &amp; Service Performance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GDS</controllingFieldValue>
+            <valueName>Education</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GDS</controllingFieldValue>
+            <valueName>Outage</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GDS</controllingFieldValue>
+            <valueName>Seating</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

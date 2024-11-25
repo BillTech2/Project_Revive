@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ensure_DTP_RO_Reassigned__c</fullName>
+    <defaultValue>false</defaultValue>
+    <label>Ensure DTP RO Reassigned</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

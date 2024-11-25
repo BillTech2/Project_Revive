@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>Phone by country</description>
+    <enableFeeds>false</enableFeeds>
+    <label>Live Agent Chat Phone</label>
+    <visibility>Protected</visibility>
+</CustomObject>

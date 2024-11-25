@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_type_for_contract_blue</fullName>
+    <active>true</active>
+    <description>The Account related to the Contract must be of type “Gold” or “Platinum”</description>
+    <errorConditionFormula>AND(
+NOT($User.B2b_Bypass_Validation_Rules__c),
+ISNEW(),
+!ISPICKVAL(AccountId__r.Blue_Account_Type__c, &#39;Gold&#39;),
+!ISPICKVAL(AccountId__r.Blue_Account_Type__c, &#39;Platinum&#39;),
+RecordType.Name = &#39;Corporate London&#39;
+)</errorConditionFormula>
+    <errorMessage>The account related to the Contract must be of the type Gold or Platinum.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IS_Team_Responsible__c</fullName>
+    <label>IS Team Responsible</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Corp &amp; Op Systems</fullName>
+                <default>false</default>
+                <label>Corp &amp; Op Systems</label>
+            </value>
+            <value>
+                <fullName>Customer Systems</fullName>
+                <default>false</default>
+                <label>Customer Systems</label>
+            </value>
+            <value>
+                <fullName>InfoSec Team</fullName>
+                <default>false</default>
+                <label>InfoSec Team</label>
+            </value>
+            <value>
+                <fullName>Infrastructure Services</fullName>
+                <default>false</default>
+                <label>Infrastructure Services</label>
+            </value>
+            <value>
+                <fullName>Sales Systems</fullName>
+                <default>false</default>
+                <label>Sales Systems</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

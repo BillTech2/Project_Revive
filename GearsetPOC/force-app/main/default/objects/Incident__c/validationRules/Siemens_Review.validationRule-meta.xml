@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Siemens_Review</fullName>
+    <active>true</active>
+    <errorConditionFormula>Not(Inform_Siemens__c) &amp;&amp;   ISPICKVAL( EIL_Status__c , &quot;Siemens Review&quot;)</errorConditionFormula>
+    <errorMessage>Cannot select Siemens Review status without checking the &quot;Inform Siemens&quot; Check box</errorMessage>
+</ValidationRule>

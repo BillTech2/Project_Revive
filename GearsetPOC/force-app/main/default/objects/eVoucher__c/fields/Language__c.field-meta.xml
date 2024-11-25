@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Language__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(RecordType.Name,
+   &#39;Service Recovery&#39;, TEXT(Compensation__r.Language__c),
+   &#39;Promotional&#39;, TEXT(Customer__r.Preferred_Language__c),
+   &#39;Partner&#39;, TEXT(Customer__r.Preferred_Language__c),
+&#39;&#39;)</formula>
+    <label>Language</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

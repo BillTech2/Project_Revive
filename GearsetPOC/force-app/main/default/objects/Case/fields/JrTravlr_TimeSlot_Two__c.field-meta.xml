@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>JrTravlr_TimeSlot_Two__c</fullName>
+    <description>Junior Traveler call back  timeslot two</description>
+    <externalId>false</externalId>
+    <label>Call Back TimeSlot Two</label>
+    <length>70</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

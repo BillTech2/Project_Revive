@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Hazard_Age__c</fullName>
+    <description>Calculate age of record based on date case received</description>
+    <externalId>false</externalId>
+    <formula>if(ISBLANK(Hazard_Date_Closed__c),
+ TODAY() - Hazard_Date_received__c, 
+DATEVALUE(Hazard_Date_Closed__c) - Hazard_Date_received__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Number of days the Hazard has been open</inlineHelpText>
+    <label>Age</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

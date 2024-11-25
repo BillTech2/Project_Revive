@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Disruption_Query__c</fullName>
+    <label>Disruption Query</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Alternative_Disruption__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>COVID-19</fullName>
+                <default>false</default>
+                <label>COVID-19</label>
+            </value>
+            <value>
+                <fullName>Evoucher to refund request</fullName>
+                <default>false</default>
+                <label>Evoucher to refund request</label>
+            </value>
+            <value>
+                <fullName>refund request ELIGIBLE</fullName>
+                <default>false</default>
+                <label>refund request ELIGIBLE</label>
+            </value>
+            <value>
+                <fullName>refund request NOT ELIGIBLE</fullName>
+                <default>false</default>
+                <label>refund request NOT ELIGIBLE</label>
+            </value>
+            <value>
+                <fullName>chasing refund</fullName>
+                <default>false</default>
+                <label>chasing refund</label>
+            </value>
+            <value>
+                <fullName>change direct to indirect</fullName>
+                <default>false</default>
+                <label>change direct to indirect</label>
+            </value>
+            <value>
+                <fullName>Free exchange</fullName>
+                <default>false</default>
+                <label>Free exchange</label>
+            </value>
+            <value>
+                <fullName>reschedule to future dates</fullName>
+                <default>false</default>
+                <label>reschedule to future dates</label>
+            </value>
+            <value>
+                <fullName>trying to book or exchange - no availability</fullName>
+                <default>false</default>
+                <label>trying to book or exchange - no availability</label>
+            </value>
+            <value>
+                <fullName>package refund</fullName>
+                <default>false</default>
+                <label>package refund</label>
+            </value>
+            <value>
+                <fullName>refund my fees or fare difference</fullName>
+                <default>false</default>
+                <label>refund my fees or fare difference</label>
+            </value>
+            <value>
+                <fullName>Evoucher extension</fullName>
+                <default>false</default>
+                <label>Evoucher extension</label>
+            </value>
+            <value>
+                <fullName>waiting on vouchers - COMPLETED</fullName>
+                <default>false</default>
+                <label>waiting on vouchers - COMPLETED</label>
+            </value>
+            <value>
+                <fullName>chasing voucher resend</fullName>
+                <default>false</default>
+                <label>chasing voucher resend</label>
+            </value>
+            <value>
+                <fullName>waiting on vouchers - NOT COMPLETED</fullName>
+                <default>false</default>
+                <label>waiting on vouchers - NOT COMPLETED</label>
+            </value>
+            <value>
+                <fullName>problems claiming voucher online</fullName>
+                <default>false</default>
+                <label>problems claiming voucher online</label>
+            </value>
+            <value>
+                <fullName>recieved wrong or partial vouchers</fullName>
+                <default>false</default>
+                <label>recieved wrong or partial vouchers</label>
+            </value>
+            <value>
+                <fullName>package evoucher</fullName>
+                <default>false</default>
+                <label>package evoucher</label>
+            </value>
+            <value>
+                <fullName>problems using vouchers online</fullName>
+                <default>false</default>
+                <label>problems using vouchers online</label>
+            </value>
+            <value>
+                <fullName>cancel voucher I want to travel</fullName>
+                <default>false</default>
+                <label>cancel voucher I want to travel</label>
+            </value>
+            <value>
+                <fullName>What am I entitled to?</fullName>
+                <default>false</default>
+                <label>What am I entitled to?</label>
+            </value>
+            <value>
+                <fullName>Policy</fullName>
+                <default>false</default>
+                <label>Policy</label>
+            </value>
+            <value>
+                <fullName>Kent stations</fullName>
+                <default>false</default>
+                <label>Kent stations</label>
+            </value>
+            <value>
+                <fullName>invalid email problem or confusion</fullName>
+                <default>false</default>
+                <label>invalid email problem or confusion</label>
+            </value>
+            <value>
+                <fullName>Social distancing seating</fullName>
+                <default>false</default>
+                <label>Social distancing seating</label>
+            </value>
+            <value>
+                <fullName>Quarantine enquiry</fullName>
+                <default>false</default>
+                <label>Quarantine enquiry</label>
+            </value>
+            <value>
+                <fullName>potential fraud</fullName>
+                <default>false</default>
+                <label>potential fraud</label>
+            </value>
+            <value>
+                <fullName>membership tier extension</fullName>
+                <default>false</default>
+                <label>membership tier extension</label>
+            </value>
+            <value>
+                <fullName>recieved incorrect or blank communication</fullName>
+                <default>false</default>
+                <label>recieved incorrect or blank communication</label>
+            </value>
+            <value>
+                <fullName>not enough info on cancellations</fullName>
+                <default>false</default>
+                <label>not enough info on cancellations</label>
+            </value>
+            <value>
+                <fullName>missing points</fullName>
+                <default>false</default>
+                <label>missing points</label>
+            </value>
+            <value>
+                <fullName>communications received in error</fullName>
+                <default>false</default>
+                <label>communications received in error</label>
+            </value>
+            <value>
+                <fullName>Immigration</fullName>
+                <default>false</default>
+                <label>Immigration</label>
+            </value>
+            <value>
+                <fullName>PPE</fullName>
+                <default>false</default>
+                <label>PPE</label>
+            </value>
+            <value>
+                <fullName>Connecting rail provider virus measures</fullName>
+                <default>false</default>
+                <label>Connecting rail provider virus measures</label>
+            </value>
+            <value>
+                <fullName>When will Eurodespatch reopen?</fullName>
+                <default>false</default>
+                <label>When will Eurodespatch reopen?</label>
+            </value>
+            <value>
+                <fullName>Need to make a Eurodespatch booking</fullName>
+                <default>false</default>
+                <label>Need to make a Eurodespatch booking</label>
+            </value>
+            <value>
+                <fullName>Free exchange or cancellation as Eurodespatch is closed</fullName>
+                <default>false</default>
+                <label>Free exchange or cancellation as Eurodespatch is closed</label>
+            </value>
+            <value>
+                <fullName>Voucher requested outside of 60 days</fullName>
+                <default>false</default>
+                <label>Voucher requested outside of 60 days</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Expenses</controllingFieldValue>
+            <controllingFieldValue>Covid - Information and communication</controllingFieldValue>
+            <valueName>What am I entitled to?</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Covid - Refunds or exchanges</controllingFieldValue>
+            <valueName>Evoucher to refund request</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Covid - Refunds or exchanges</controllingFieldValue>
+            <valueName>refund request ELIGIBLE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Covid - Refunds or exchanges</controllingFieldValue>
+            <valueName>refund request NOT ELIGIBLE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Covid - Refunds or exchanges</controllingFieldValue>
+            <valueName>chasing refund</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Covid - Refunds or exchanges</controllingFieldValue>
+            <valueName>change direct to indirect</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Covid - Refunds or exchanges</controllingFieldValue>
+            <valueName>Free exchange</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Covid - Refunds or exchanges</controllingFieldValue>
+            <valueName>reschedule to future dates</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Covid - Refunds or exchanges</controllingFieldValue>
+            <valueName>trying to book or exchange - no availability</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Covid - Refunds or exchanges</controllingFieldValue>
+            <valueName>package refund</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Covid - Refunds or exchanges</controllingFieldValue>
+            <valueName>refund my fees or fare difference</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Covid - Vouchers</controllingFieldValue>
+            <valueName>Evoucher extension</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Covid - Vouchers</controllingFieldValue>
+            <valueName>waiting on vouchers - COMPLETED</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Covid - Vouchers</controllingFieldValue>
+            <valueName>chasing voucher resend</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Covid - Vouchers</controllingFieldValue>
+            <valueName>waiting on vouchers - NOT COMPLETED</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Covid - Vouchers</controllingFieldValue>
+            <valueName>problems claiming voucher online</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Covid - Vouchers</controllingFieldValue>
+            <valueName>recieved wrong or partial vouchers</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Covid - Vouchers</controllingFieldValue>
+            <valueName>package evoucher</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Covid - Vouchers</controllingFieldValue>
+            <valueName>problems using vouchers online</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Covid - Vouchers</controllingFieldValue>
+            <valueName>cancel voucher I want to travel</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Covid - Vouchers</controllingFieldValue>
+            <valueName>Voucher requested outside of 60 days</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Covid - Information and communication</controllingFieldValue>
+            <valueName>Policy</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Covid - Information and communication</controllingFieldValue>
+            <valueName>Kent stations</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Covid - Information and communication</controllingFieldValue>
+            <valueName>invalid email problem or confusion</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Covid - Information and communication</controllingFieldValue>
+            <valueName>Social distancing seating</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Covid - Information and communication</controllingFieldValue>
+            <valueName>Quarantine enquiry</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Covid - Information and communication</controllingFieldValue>
+            <valueName>potential fraud</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Covid - Information and communication</controllingFieldValue>
+            <valueName>membership tier extension</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Covid - Information and communication</controllingFieldValue>
+            <valueName>recieved incorrect or blank communication</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Covid - Information and communication</controllingFieldValue>
+            <valueName>not enough info on cancellations</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Covid - Information and communication</controllingFieldValue>
+            <valueName>missing points</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Covid - Information and communication</controllingFieldValue>
+            <valueName>communications received in error</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Covid - Information and communication</controllingFieldValue>
+            <valueName>Immigration</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Covid - Information and communication</controllingFieldValue>
+            <valueName>PPE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Covid - Information and communication</controllingFieldValue>
+            <valueName>Connecting rail provider virus measures</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Covid - Eurodespatch</controllingFieldValue>
+            <valueName>When will Eurodespatch reopen?</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Covid - Eurodespatch</controllingFieldValue>
+            <valueName>Need to make a Eurodespatch booking</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Covid - Eurodespatch</controllingFieldValue>
+            <valueName>Free exchange or cancellation as Eurodespatch is closed</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>managers_name_Mandatory</fullName>
+    <active>true</active>
+    <description>When Duty Travel is checked, the manager&#39;s name is mandatory</description>
+    <errorConditionFormula>Aria_Duty_Travel__pc =TRUE &amp;&amp;  Aria_Manager_s_Name__pc =NULL</errorConditionFormula>
+    <errorDisplayField>Aria_Manager_s_Name__pc</errorDisplayField>
+    <errorMessage>The manager&#39;s name is mandatory for Duty Travel eligibility.</errorMessage>
+</ValidationRule>

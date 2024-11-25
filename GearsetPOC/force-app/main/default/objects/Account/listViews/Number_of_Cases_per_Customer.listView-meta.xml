@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Number_of_Cases_per_Customer</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Number_Of_Cases__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Number_Of_Cases__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>3</value>
+    </filters>
+    <label>Number of Cases per Customer</label>
+</ListView>

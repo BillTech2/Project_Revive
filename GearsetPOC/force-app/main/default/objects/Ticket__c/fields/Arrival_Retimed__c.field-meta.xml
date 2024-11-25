@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Arrival_Retimed__c</fullName>
+    <formula>IF( ISBLANK(Original_Arrival_DateTime__c), false, IF( Arrival_DateTime__c=Original_Arrival_DateTime__c, false,true))</formula>
+    <label>Arrival Retimed?</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

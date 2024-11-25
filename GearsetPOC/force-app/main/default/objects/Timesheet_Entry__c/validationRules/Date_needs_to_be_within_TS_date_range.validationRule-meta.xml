@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Date_needs_to_be_within_TS_date_range</fullName>
+    <active>true</active>
+    <description>TimeSheet Entry Date needs to be within TimeSheet date range.</description>
+    <errorConditionFormula>MONTH(Date__c)&lt;&gt;MONTH(Timesheet__r.Pay_Period_Start__c)</errorConditionFormula>
+    <errorDisplayField>Date__c</errorDisplayField>
+    <errorMessage>The date needs be within TimeSheet range.</errorMessage>
+</ValidationRule>

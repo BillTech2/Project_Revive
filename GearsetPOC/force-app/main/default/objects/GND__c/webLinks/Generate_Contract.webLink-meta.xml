@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Generate_Contract</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <hasMenubar>false</hasMenubar>
+    <hasScrollbars>true</hasScrollbars>
+    <hasToolbar>false</hasToolbar>
+    <height>600</height>
+    <isResizable>true</isResizable>
+    <linkType>url</linkType>
+    <masterLabel>Generate Contract</masterLabel>
+    <openType>newWindow</openType>
+    <position>none</position>
+    <protected>false</protected>
+    <showsLocation>false</showsLocation>
+    <showsStatus>false</showsStatus>
+    <url>https://eurostar.my.salesforce.com/800/e? 
+&amp;RecordType=0120N000000sdnp
+&amp;ctrc7={!GND__c.Corporate_Client_Representative__c}
+&amp;CF00N0N00000APHf6={!GND__c.Account__c}
+&amp;CF00N0N00000APHfL={!GND__c.Name}
+&amp;00N0N00000APHf7={!GND__c.Company_Number__c}
+&amp;00N0N00000APHev={!GND__c.Address_Formatted__c}
+&amp;00N0N00000APHf8={!GND__c.Registered_Country__c}
+&amp;00N0N00000APHfK={!GND__c.Start_Contract__c}
+&amp;00N0N00000APHfJ={!GND__c.End_Contract__c}
+&amp;00N0N00000APHfG={!GND__c.OwnerFullName}
+&amp;00N0N00000APHfI={!GND__c.Job_Title_EIL__c}
+&amp;00N0N00000APHfE={!GND__c.Address_EIL__c}
+&amp;00N0N00000APHfH={!GND__c.Phone_EIL__c}
+&amp;00N0N00000APHfF={!GND__c.Email_EIL__c}
+&amp;00N0N00000APHf2={!GND__c.Corporate_Client_Representative__c}
+&amp;00N0N00000APHf4={!GND__c.Job_Title_CCR__c}
+&amp;00N0N00000APHf0={!GND__c.Address_AR__c}
+&amp;00N0N00000APHf3={!GND__c.Phone_CCR__c}
+&amp;00N0N00000APHf1={!GND__c.Email_CCR__c}
+&amp;00N0N00000APHes={!GND__c.Authorised_Representative_Name__c}
+&amp;00N0N00000APHeu={!GND__c.Job_Title_AR__c}
+&amp;00N0N00000APHeq={!GND__c.Address_AR__c}
+&amp;00N0N00000APHet={!GND__c.Phone_AR__c}
+&amp;00N0N00000APHer={!GND__c.Fax_AR__c}
+&amp;00N0N00000APHfB={!GND__c.BP_Discount_Offered__c}</url>
+</WebLink>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_must_have_Corp_Tracking_London</fullName>
+    <active>true</active>
+    <errorConditionFormula>!($User.B2b_Bypass_Validation_Rules__c)
+&amp;&amp;
+ISNEW()
+&amp;&amp;
+((
+RecordType.DeveloperName = &#39;Corporate&#39;
+&amp;&amp;
+ISBLANK( AccountId__r.FCE_London__c)
+&amp;&amp;
+ISBLANK( AccountId__r.Corporate_Code__c)
+&amp;&amp;
+ISBLANK ( AccountId__r.GND_BE_London__c)
+&amp;&amp;
+ISBLANK ( AccountId__r.GND_NL_London__c)
+))</errorConditionFormula>
+    <errorMessage>If there’s a new Contract of the record type “London”, at least one of these fields on the Business Account must have a value: GND_NL_London__c, GND_BE_London__c, FCE_London__c, Corporate_Code__c</errorMessage>
+</ValidationRule>

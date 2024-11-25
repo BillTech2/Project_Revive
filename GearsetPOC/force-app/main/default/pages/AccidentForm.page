@@ -1,0 +1,91 @@
+<apex:page showHeader="false" standardController="Accident__c" extensions="AccidentController">
+<apex:pageMessages />
+<apex:form id="accidentForm">
+
+<apex:image value="{!IF(lang=='fr','https://eurostar--c.eu2.content.force.com/servlet/servlet.ImageServer?id=015b0000003IQvx&oid=00Db0000000aXu7',
+    'https://eurostar--c.eu2.content.force.com/servlet/servlet.ImageServer?id=015b0000003IQvw&oid=00Db0000000aXu7')}" width="25%" height="25%" />
+
+    
+    <apex:pageBlock title="{!$Label.Safety_Incident_Accident_Title}">
+       <apex:pageBlockButtons >
+            <apex:commandButton value="Submit" action="{!save}"/>
+        </apex:pageBlockButtons> 
+ 
+        <apex:pageBlockSection title="{!$Label.Safety_Incident_S1_Accident}" columns="3">
+                <apex:inputField value="{!Accident__c.Accident_Victim_status__c}" required="true"/>
+              <!--    <apex:outputText value=""/>   -->
+             <!-- <apex:inputField value="{! Accident__c.Accident_Gender__c }" required="true"/> -->
+                <apex:outputText value=""/>
+                 <apex:outputText value=""/>
+            
+                <apex:inputField value="{!Accident__c.Accident_Full_Name__c}" required="true"/> 
+                <apex:outputLabel style="font-style:italic" value="{!$Label.Safety_Incident_under_18}"/>
+                <apex:inputField value="{! Accident__c.Accident_DOB_pax__c }"/> 
+                  
+
+                <apex:inputField value="{!Accident__c.Accident_Work_location__c}"/>
+                <apex:inputField value="{!Accident__c.Accident_Job_Title__c}"/>
+                <apex:inputField value="{!Accident__c.Accident_Company_Name__c}"/>
+                <apex:inputField value="{!Accident__c.Case_Language__c}" required="true"/>
+                
+                <apex:inputField value="{!Accident__c.Accident_line_mgr__c}" required="true"/>
+                                <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="{!$Label.Safety_Incident_Investigating_Manager}"></apex:outputLabel>
+                    <apex:outputPanel styleClass="requiredInput" layout="block" >
+                                        <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                    <apex:selectList value="{!selectedIM}"  multiselect="false" size="1" required="true" label="Investigating Manager">
+                                <apex:selectOptions value="{!users_id}"/>
+                        </apex:selectList>
+                    </apex:outputPanel>
+                
+                </apex:pageBlockSectionItem>
+        </apex:pageBlockSection>
+
+        <apex:pageBlockSection title="{!$Label.Safety_Incident_S2_Accident}" columns="3">
+                <apex:inputField value="{!Accident__c.Accident_Event_Date__c}" required="true"/>
+                <apex:inputField value="{!Accident__c.Accident_Event_Time__c}" required="true"/>
+                <apex:inputField value="{!Accident__c.Accident_Location__c}" required="true"/>
+                        <apex:outputText value=""/>
+         </apex:pageBlockSection> 
+        <apex:pageBlockSection columns="3">
+                <apex:inputField value="{!Accident__c.Accident_Event_Type__c}"/>
+                <apex:inputField value="{!Accident__c.Accident_Exact_location__c}" required="true"/>
+                <apex:outputText value=""/>
+
+        </apex:pageBlockSection>
+        <apex:pageBlockSection columns="3">  
+                <apex:inputField value="{!Accident__c.Accident_Fatality__c}"/>              
+        </apex:pageBlockSection>
+        <apex:pageBlockSection columns="1">
+                <apex:outputText style="font-style:italic" value="{!$Label.Safety_Incident_Accident_Detail}"/>
+                                         
+        </apex:pageBlockSection>
+        <apex:pageBlockSection columns="1">
+                <apex:inputField value="{!Accident__c.Accident_Detailed_Description__c}" required="true"/>              
+        </apex:pageBlockSection>
+        <apex:pageBlockSection columns="2">
+                <apex:inputField value="{!Accident__c.Accident_cctv__c}"/> <apex:outputText value=""/>
+                <apex:inputField value="{! Accident__c.Accident_Photos__c }"/>
+                <apex:inputFile value="{!attachment1.body}" filename="{!attachment1.name}"/>
+                <apex:inputField value="{! Accident__c.Accident_witness_statement__c }"/> 
+                <apex:inputFile value="{!attachment2.body}" filename="{!attachment2.name}"/>
+        </apex:pageBlockSection>
+        <apex:pageBlockSection columns="1">
+            <apex:inputField value="{!Accident__c.Accident_type__c}" required="true"/> 
+            <apex:inputField value="{!Accident__c.Accident_Other_type__c}"/>
+         </apex:pageBlockSection> 
+        <apex:pageBlockSection title="{!$Label.Safety_Incident_S3_Accident}" columns="1">
+            <apex:inputField value="{!Accident__c.Accident_corrective_action__c}" required="true"/>
+            <apex:inputField value="{!Accident__c.Accident_by_whom__c}" required="true"/>
+            <apex:inputField value="{!Accident__c.Accident_ca_when__c}" required="true"/>
+         </apex:pageBlockSection>  
+        <p style="font-size:22px">
+            <b>{!$Label.Safety_Incident_Contact_CRE} </b>  
+        </p>
+         <p style="font-size:16px">
+        <b>{!IF(lang=='fr',$Label.Safety_Incident_HR_Accident,"")}
+        </b>  
+        </p>        
+</apex:pageBlock> 
+</apex:form>
+</apex:page>

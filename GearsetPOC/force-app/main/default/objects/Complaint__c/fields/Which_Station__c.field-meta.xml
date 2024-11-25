@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Which_Station__c</fullName>
+    <label>Which Station?</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Type_of_Complaint__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>St Pancras</fullName>
+                <default>false</default>
+                <label>St Pancras</label>
+            </value>
+            <value>
+                <fullName>Ebbsfleet International</fullName>
+                <default>false</default>
+                <label>Ebbsfleet International</label>
+            </value>
+            <value>
+                <fullName>Ashford International</fullName>
+                <default>false</default>
+                <label>Ashford International</label>
+            </value>
+            <value>
+                <fullName>Paris Gare Du Nord</fullName>
+                <default>false</default>
+                <label>Paris Gare Du Nord</label>
+            </value>
+            <value>
+                <fullName>Calais Frethun</fullName>
+                <default>false</default>
+                <label>Calais Frethun</label>
+            </value>
+            <value>
+                <fullName>Lille Europe</fullName>
+                <default>false</default>
+                <label>Lille Europe</label>
+            </value>
+            <value>
+                <fullName>Brussels Midi</fullName>
+                <default>false</default>
+                <label>Brussels Midi</label>
+            </value>
+            <value>
+                <fullName>Marne-la-Vallée</fullName>
+                <default>false</default>
+                <label>Marne-la-Vallée</label>
+            </value>
+            <value>
+                <fullName>Aime La Plagne</fullName>
+                <default>false</default>
+                <label>Aime La Plagne</label>
+            </value>
+            <value>
+                <fullName>Moutier</fullName>
+                <default>false</default>
+                <label>Moutier</label>
+            </value>
+            <value>
+                <fullName>Bourg St Maurice</fullName>
+                <default>false</default>
+                <label>Bourg St Maurice</label>
+            </value>
+            <value>
+                <fullName>Avignon</fullName>
+                <default>false</default>
+                <label>Avignon</label>
+            </value>
+            <value>
+                <fullName>Marseille</fullName>
+                <default>false</default>
+                <label>Marseille</label>
+            </value>
+            <value>
+                <fullName>Lyon</fullName>
+                <default>false</default>
+                <label>Lyon</label>
+            </value>
+            <value>
+                <fullName>Amsterdam</fullName>
+                <default>false</default>
+                <label>Amsterdam</label>
+            </value>
+            <value>
+                <fullName>Rotterdam</fullName>
+                <default>false</default>
+                <label>Rotterdam</label>
+            </value>
+            <value>
+                <fullName>Kent Stations Closure</fullName>
+                <default>false</default>
+                <label>Kent Stations Closure</label>
+            </value>
+            <value>
+                <fullName>Ski Stations</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Ski Stations</label>
+            </value>
+            <value>
+                <fullName>South of France Stations</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>South of France Stations</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Stations</controllingFieldValue>
+            <valueName>St Pancras</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Stations</controllingFieldValue>
+            <valueName>Ebbsfleet International</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Stations</controllingFieldValue>
+            <valueName>Ashford International</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Stations</controllingFieldValue>
+            <valueName>Paris Gare Du Nord</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Stations</controllingFieldValue>
+            <valueName>Calais Frethun</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Stations</controllingFieldValue>
+            <valueName>Lille Europe</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Stations</controllingFieldValue>
+            <valueName>Brussels Midi</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Stations</controllingFieldValue>
+            <valueName>Marne-la-Vallée</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Stations</controllingFieldValue>
+            <valueName>Aime La Plagne</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Stations</controllingFieldValue>
+            <valueName>Moutier</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Stations</controllingFieldValue>
+            <valueName>Bourg St Maurice</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Stations</controllingFieldValue>
+            <valueName>Avignon</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Stations</controllingFieldValue>
+            <valueName>Marseille</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Stations</controllingFieldValue>
+            <valueName>Lyon</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Stations</controllingFieldValue>
+            <valueName>Amsterdam</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Stations</controllingFieldValue>
+            <valueName>Rotterdam</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Stations</controllingFieldValue>
+            <valueName>Kent Stations Closure</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

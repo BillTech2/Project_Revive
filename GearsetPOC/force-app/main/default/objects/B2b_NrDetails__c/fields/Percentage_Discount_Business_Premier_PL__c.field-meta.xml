@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Percentage_Discount_Business_Premier_PL__c</fullName>
+    <label>Percentage Discount Business Premier</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>B2b_Route__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>UK-Paris-Lille-Brussels 6%</fullName>
+                <default>false</default>
+                <label>UK-Paris-Lille-Brussels 6%</label>
+            </value>
+            <value>
+                <fullName>UK-Paris-Lille-Brussels 8%</fullName>
+                <default>false</default>
+                <label>UK-Paris-Lille-Brussels 8%</label>
+            </value>
+            <value>
+                <fullName>UK-Paris-Lille-Brussels 9%</fullName>
+                <default>false</default>
+                <label>UK-Paris-Lille-Brussels 9%</label>
+            </value>
+            <value>
+                <fullName>UK-Paris-Lille-Brussels 10%</fullName>
+                <default>false</default>
+                <label>UK-Paris-Lille-Brussels 10%</label>
+            </value>
+            <value>
+                <fullName>UK-Paris-Lille-Brussels 11%</fullName>
+                <default>false</default>
+                <label>UK-Paris-Lille-Brussels 11%</label>
+            </value>
+            <value>
+                <fullName>UK-Paris-Lille-Brussels 12%</fullName>
+                <default>false</default>
+                <label>UK-Paris-Lille-Brussels 12%</label>
+            </value>
+            <value>
+                <fullName>UK-Paris-Lille-Brussels 13%</fullName>
+                <default>false</default>
+                <label>UK-Paris-Lille-Brussels 13%</label>
+            </value>
+            <value>
+                <fullName>UK-Paris-Lille-Brussels 14%</fullName>
+                <default>false</default>
+                <label>UK-Paris-Lille-Brussels 14%</label>
+            </value>
+            <value>
+                <fullName>UK-Paris-Lille-Brussels 15%</fullName>
+                <default>false</default>
+                <label>UK-Paris-Lille-Brussels 15%</label>
+            </value>
+            <value>
+                <fullName>UK-Paris-Lille-Brussels 16%</fullName>
+                <default>false</default>
+                <label>UK-Paris-Lille-Brussels 16%</label>
+            </value>
+            <value>
+                <fullName>UK-Paris-Lille-Brussels 17%</fullName>
+                <default>false</default>
+                <label>UK-Paris-Lille-Brussels 17%</label>
+            </value>
+            <value>
+                <fullName>UK-Paris-Lille-Brussels 18%</fullName>
+                <default>false</default>
+                <label>UK-Paris-Lille-Brussels 18%</label>
+            </value>
+            <value>
+                <fullName>UK-Paris-Lille-Brussels 19%</fullName>
+                <default>false</default>
+                <label>UK-Paris-Lille-Brussels 19%</label>
+            </value>
+            <value>
+                <fullName>UK-Paris-Lille-Brussels 20%</fullName>
+                <default>false</default>
+                <label>UK-Paris-Lille-Brussels 20%</label>
+            </value>
+            <value>
+                <fullName>UK-Paris-Lille-Brussels 21%</fullName>
+                <default>false</default>
+                <label>UK-Paris-Lille-Brussels 21%</label>
+            </value>
+            <value>
+                <fullName>UK-Paris-Lille-Brussels 22%</fullName>
+                <default>false</default>
+                <label>UK-Paris-Lille-Brussels 22%</label>
+            </value>
+            <value>
+                <fullName>UK-Paris-Lille-Brussels 23%</fullName>
+                <default>false</default>
+                <label>UK-Paris-Lille-Brussels 23%</label>
+            </value>
+            <value>
+                <fullName>UK-Paris-Lille-Brussels 24%</fullName>
+                <default>false</default>
+                <label>UK-Paris-Lille-Brussels 24%</label>
+            </value>
+            <value>
+                <fullName>UK-Paris-Lille-Brussels 25%</fullName>
+                <default>false</default>
+                <label>UK-Paris-Lille-Brussels 25%</label>
+            </value>
+            <value>
+                <fullName>UK-Paris-Lille-Brussels 26%</fullName>
+                <default>false</default>
+                <label>UK-Paris-Lille-Brussels 26%</label>
+            </value>
+            <value>
+                <fullName>UK-Paris-Lille-Brussels 27%</fullName>
+                <default>false</default>
+                <label>UK-Paris-Lille-Brussels 27%</label>
+            </value>
+            <value>
+                <fullName>UK-Paris-Lille-Brussels 28%</fullName>
+                <default>false</default>
+                <label>UK-Paris-Lille-Brussels 28%</label>
+            </value>
+            <value>
+                <fullName>UK-Paris-Lille-Brussels 29%</fullName>
+                <default>false</default>
+                <label>UK-Paris-Lille-Brussels 29%</label>
+            </value>
+            <value>
+                <fullName>UK-Amsterdam-Rotterdam 6%</fullName>
+                <default>false</default>
+                <label>UK-Amsterdam-Rotterdam 6%</label>
+            </value>
+            <value>
+                <fullName>UK-Amsterdam-Rotterdam 8%</fullName>
+                <default>false</default>
+                <label>UK-Amsterdam-Rotterdam 8%</label>
+            </value>
+            <value>
+                <fullName>UK-Amsterdam-Rotterdam 9%</fullName>
+                <default>false</default>
+                <label>UK-Amsterdam-Rotterdam 9%</label>
+            </value>
+            <value>
+                <fullName>UK-Amsterdam-Rotterdam 10%</fullName>
+                <default>false</default>
+                <label>UK-Amsterdam-Rotterdam 10%</label>
+            </value>
+            <value>
+                <fullName>UK-Amsterdam-Rotterdam 11%</fullName>
+                <default>false</default>
+                <label>UK-Amsterdam-Rotterdam 11%</label>
+            </value>
+            <value>
+                <fullName>UK-Amsterdam-Rotterdam 12%</fullName>
+                <default>false</default>
+                <label>UK-Amsterdam-Rotterdam 12%</label>
+            </value>
+            <value>
+                <fullName>UK-Amsterdam-Rotterdam 13%</fullName>
+                <default>false</default>
+                <label>UK-Amsterdam-Rotterdam 13%</label>
+            </value>
+            <value>
+                <fullName>UK-Amsterdam-Rotterdam 14%</fullName>
+                <default>false</default>
+                <label>UK-Amsterdam-Rotterdam 14%</label>
+            </value>
+            <value>
+                <fullName>UK-Amsterdam-Rotterdam 15%</fullName>
+                <default>false</default>
+                <label>UK-Amsterdam-Rotterdam 15%</label>
+            </value>
+            <value>
+                <fullName>UK-Amsterdam-Rotterdam 16%</fullName>
+                <default>false</default>
+                <label>UK-Amsterdam-Rotterdam 16%</label>
+            </value>
+            <value>
+                <fullName>UK-Amsterdam-Rotterdam 17%</fullName>
+                <default>false</default>
+                <label>UK-Amsterdam-Rotterdam 17%</label>
+            </value>
+            <value>
+                <fullName>UK-Amsterdam-Rotterdam 18%</fullName>
+                <default>false</default>
+                <label>UK-Amsterdam-Rotterdam 18%</label>
+            </value>
+            <value>
+                <fullName>UK-Amsterdam-Rotterdam 19%</fullName>
+                <default>false</default>
+                <label>UK-Amsterdam-Rotterdam 19%</label>
+            </value>
+            <value>
+                <fullName>UK-Amsterdam-Rotterdam 20%</fullName>
+                <default>false</default>
+                <label>UK-Amsterdam-Rotterdam 20%</label>
+            </value>
+            <value>
+                <fullName>UK-Amsterdam-Rotterdam 21%</fullName>
+                <default>false</default>
+                <label>UK-Amsterdam-Rotterdam 21%</label>
+            </value>
+            <value>
+                <fullName>UK-Amsterdam-Rotterdam 22%</fullName>
+                <default>false</default>
+                <label>UK-Amsterdam-Rotterdam 22%</label>
+            </value>
+            <value>
+                <fullName>UK-Amsterdam-Rotterdam 23%</fullName>
+                <default>false</default>
+                <label>UK-Amsterdam-Rotterdam 23%</label>
+            </value>
+            <value>
+                <fullName>UK-Amsterdam-Rotterdam 24%</fullName>
+                <default>false</default>
+                <label>UK-Amsterdam-Rotterdam 24%</label>
+            </value>
+            <value>
+                <fullName>UK-Amsterdam-Rotterdam 25%</fullName>
+                <default>false</default>
+                <label>UK-Amsterdam-Rotterdam 25%</label>
+            </value>
+            <value>
+                <fullName>UK-Amsterdam-Rotterdam 26%</fullName>
+                <default>false</default>
+                <label>UK-Amsterdam-Rotterdam 26%</label>
+            </value>
+            <value>
+                <fullName>UK-Amsterdam-Rotterdam 27%</fullName>
+                <default>false</default>
+                <label>UK-Amsterdam-Rotterdam 27%</label>
+            </value>
+            <value>
+                <fullName>UK-Amsterdam-Rotterdam 28%</fullName>
+                <default>false</default>
+                <label>UK-Amsterdam-Rotterdam 28%</label>
+            </value>
+            <value>
+                <fullName>UK-Amsterdam-Rotterdam 29%</fullName>
+                <default>false</default>
+                <label>UK-Amsterdam-Rotterdam 29%</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>London - Rotterdam</controllingFieldValue>
+            <controllingFieldValue>London - Amsterdam</controllingFieldValue>
+            <valueName>UK-Amsterdam-Rotterdam 6%</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>London - Rotterdam</controllingFieldValue>
+            <controllingFieldValue>London - Amsterdam</controllingFieldValue>
+            <valueName>UK-Amsterdam-Rotterdam 8%</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>London - Rotterdam</controllingFieldValue>
+            <controllingFieldValue>London - Amsterdam</controllingFieldValue>
+            <valueName>UK-Amsterdam-Rotterdam 9%</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>London - Rotterdam</controllingFieldValue>
+            <controllingFieldValue>London - Amsterdam</controllingFieldValue>
+            <valueName>UK-Amsterdam-Rotterdam 10%</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>London - Rotterdam</controllingFieldValue>
+            <controllingFieldValue>London - Amsterdam</controllingFieldValue>
+            <valueName>UK-Amsterdam-Rotterdam 11%</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>London - Rotterdam</controllingFieldValue>
+            <controllingFieldValue>London - Amsterdam</controllingFieldValue>
+            <valueName>UK-Amsterdam-Rotterdam 12%</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>London - Rotterdam</controllingFieldValue>
+            <controllingFieldValue>London - Amsterdam</controllingFieldValue>
+            <valueName>UK-Amsterdam-Rotterdam 13%</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>London - Rotterdam</controllingFieldValue>
+            <controllingFieldValue>London - Amsterdam</controllingFieldValue>
+            <valueName>UK-Amsterdam-Rotterdam 14%</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>London - Rotterdam</controllingFieldValue>
+            <controllingFieldValue>London - Amsterdam</controllingFieldValue>
+            <valueName>UK-Amsterdam-Rotterdam 15%</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>London - Rotterdam</controllingFieldValue>
+            <controllingFieldValue>London - Amsterdam</controllingFieldValue>
+            <valueName>UK-Amsterdam-Rotterdam 16%</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>London - Rotterdam</controllingFieldValue>
+            <controllingFieldValue>London - Amsterdam</controllingFieldValue>
+            <valueName>UK-Amsterdam-Rotterdam 17%</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>London - Rotterdam</controllingFieldValue>
+            <controllingFieldValue>London - Amsterdam</controllingFieldValue>
+            <valueName>UK-Amsterdam-Rotterdam 18%</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>London - Rotterdam</controllingFieldValue>
+            <controllingFieldValue>London - Amsterdam</controllingFieldValue>
+            <valueName>UK-Amsterdam-Rotterdam 19%</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>London - Rotterdam</controllingFieldValue>
+            <controllingFieldValue>London - Amsterdam</controllingFieldValue>
+            <valueName>UK-Amsterdam-Rotterdam 20%</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>London - Rotterdam</controllingFieldValue>
+            <controllingFieldValue>London - Amsterdam</controllingFieldValue>
+            <valueName>UK-Amsterdam-Rotterdam 21%</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>London - Rotterdam</controllingFieldValue>
+            <controllingFieldValue>London - Amsterdam</controllingFieldValue>
+            <valueName>UK-Amsterdam-Rotterdam 22%</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>London - Rotterdam</controllingFieldValue>
+            <controllingFieldValue>London - Amsterdam</controllingFieldValue>
+            <valueName>UK-Amsterdam-Rotterdam 23%</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>London - Rotterdam</controllingFieldValue>
+            <controllingFieldValue>London - Amsterdam</controllingFieldValue>
+            <valueName>UK-Amsterdam-Rotterdam 24%</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>London - Rotterdam</controllingFieldValue>
+            <controllingFieldValue>London - Amsterdam</controllingFieldValue>
+            <valueName>UK-Amsterdam-Rotterdam 25%</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>London - Rotterdam</controllingFieldValue>
+            <controllingFieldValue>London - Amsterdam</controllingFieldValue>
+            <valueName>UK-Amsterdam-Rotterdam 26%</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>London - Rotterdam</controllingFieldValue>
+            <controllingFieldValue>London - Amsterdam</controllingFieldValue>
+            <valueName>UK-Amsterdam-Rotterdam 27%</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>London - Rotterdam</controllingFieldValue>
+            <controllingFieldValue>London - Amsterdam</controllingFieldValue>
+            <valueName>UK-Amsterdam-Rotterdam 28%</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>London - Rotterdam</controllingFieldValue>
+            <controllingFieldValue>London - Amsterdam</controllingFieldValue>
+            <valueName>UK-Amsterdam-Rotterdam 29%</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>London - Brussels</controllingFieldValue>
+            <controllingFieldValue>London - Lille</controllingFieldValue>
+            <controllingFieldValue>London - Paris</controllingFieldValue>
+            <valueName>UK-Paris-Lille-Brussels 6%</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>London - Brussels</controllingFieldValue>
+            <controllingFieldValue>London - Lille</controllingFieldValue>
+            <controllingFieldValue>London - Paris</controllingFieldValue>
+            <valueName>UK-Paris-Lille-Brussels 8%</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>London - Brussels</controllingFieldValue>
+            <controllingFieldValue>London - Lille</controllingFieldValue>
+            <controllingFieldValue>London - Paris</controllingFieldValue>
+            <valueName>UK-Paris-Lille-Brussels 9%</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>London - Brussels</controllingFieldValue>
+            <controllingFieldValue>London - Lille</controllingFieldValue>
+            <controllingFieldValue>London - Paris</controllingFieldValue>
+            <valueName>UK-Paris-Lille-Brussels 10%</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>London - Brussels</controllingFieldValue>
+            <controllingFieldValue>London - Lille</controllingFieldValue>
+            <controllingFieldValue>London - Paris</controllingFieldValue>
+            <valueName>UK-Paris-Lille-Brussels 11%</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>London - Brussels</controllingFieldValue>
+            <controllingFieldValue>London - Lille</controllingFieldValue>
+            <controllingFieldValue>London - Paris</controllingFieldValue>
+            <valueName>UK-Paris-Lille-Brussels 12%</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>London - Brussels</controllingFieldValue>
+            <controllingFieldValue>London - Lille</controllingFieldValue>
+            <controllingFieldValue>London - Paris</controllingFieldValue>
+            <valueName>UK-Paris-Lille-Brussels 13%</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>London - Brussels</controllingFieldValue>
+            <controllingFieldValue>London - Lille</controllingFieldValue>
+            <controllingFieldValue>London - Paris</controllingFieldValue>
+            <valueName>UK-Paris-Lille-Brussels 14%</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>London - Brussels</controllingFieldValue>
+            <controllingFieldValue>London - Lille</controllingFieldValue>
+            <controllingFieldValue>London - Paris</controllingFieldValue>
+            <valueName>UK-Paris-Lille-Brussels 15%</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>London - Brussels</controllingFieldValue>
+            <controllingFieldValue>London - Lille</controllingFieldValue>
+            <controllingFieldValue>London - Paris</controllingFieldValue>
+            <valueName>UK-Paris-Lille-Brussels 16%</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>London - Brussels</controllingFieldValue>
+            <controllingFieldValue>London - Lille</controllingFieldValue>
+            <controllingFieldValue>London - Paris</controllingFieldValue>
+            <valueName>UK-Paris-Lille-Brussels 17%</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>London - Brussels</controllingFieldValue>
+            <controllingFieldValue>London - Lille</controllingFieldValue>
+            <controllingFieldValue>London - Paris</controllingFieldValue>
+            <valueName>UK-Paris-Lille-Brussels 18%</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>London - Brussels</controllingFieldValue>
+            <controllingFieldValue>London - Lille</controllingFieldValue>
+            <controllingFieldValue>London - Paris</controllingFieldValue>
+            <valueName>UK-Paris-Lille-Brussels 19%</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>London - Brussels</controllingFieldValue>
+            <controllingFieldValue>London - Lille</controllingFieldValue>
+            <controllingFieldValue>London - Paris</controllingFieldValue>
+            <valueName>UK-Paris-Lille-Brussels 20%</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>London - Brussels</controllingFieldValue>
+            <controllingFieldValue>London - Lille</controllingFieldValue>
+            <controllingFieldValue>London - Paris</controllingFieldValue>
+            <valueName>UK-Paris-Lille-Brussels 21%</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>London - Brussels</controllingFieldValue>
+            <controllingFieldValue>London - Lille</controllingFieldValue>
+            <controllingFieldValue>London - Paris</controllingFieldValue>
+            <valueName>UK-Paris-Lille-Brussels 22%</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>London - Brussels</controllingFieldValue>
+            <controllingFieldValue>London - Lille</controllingFieldValue>
+            <controllingFieldValue>London - Paris</controllingFieldValue>
+            <valueName>UK-Paris-Lille-Brussels 23%</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>London - Brussels</controllingFieldValue>
+            <controllingFieldValue>London - Lille</controllingFieldValue>
+            <controllingFieldValue>London - Paris</controllingFieldValue>
+            <valueName>UK-Paris-Lille-Brussels 24%</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>London - Brussels</controllingFieldValue>
+            <controllingFieldValue>London - Lille</controllingFieldValue>
+            <controllingFieldValue>London - Paris</controllingFieldValue>
+            <valueName>UK-Paris-Lille-Brussels 25%</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>London - Brussels</controllingFieldValue>
+            <controllingFieldValue>London - Lille</controllingFieldValue>
+            <controllingFieldValue>London - Paris</controllingFieldValue>
+            <valueName>UK-Paris-Lille-Brussels 26%</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>London - Brussels</controllingFieldValue>
+            <controllingFieldValue>London - Lille</controllingFieldValue>
+            <controllingFieldValue>London - Paris</controllingFieldValue>
+            <valueName>UK-Paris-Lille-Brussels 27%</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>London - Brussels</controllingFieldValue>
+            <controllingFieldValue>London - Lille</controllingFieldValue>
+            <controllingFieldValue>London - Paris</controllingFieldValue>
+            <valueName>UK-Paris-Lille-Brussels 28%</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>London - Brussels</controllingFieldValue>
+            <controllingFieldValue>London - Lille</controllingFieldValue>
+            <controllingFieldValue>London - Paris</controllingFieldValue>
+            <valueName>UK-Paris-Lille-Brussels 29%</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

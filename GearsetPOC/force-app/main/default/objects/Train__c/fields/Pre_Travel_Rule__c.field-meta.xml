@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pre_Travel_Rule__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <description>Link to the Pre-TRavel compensation rule</description>
+    <inlineHelpText>This is a reference to the pre-travel  evoucher rule applicable to this train</inlineHelpText>
+    <label>Pre-Travel Rule</label>
+    <referenceTo>Additional_Compensation_Rules__c</referenceTo>
+    <relationshipLabel>Trains (Pre-Travel Rule)</relationshipLabel>
+    <relationshipName>PreTravelTrains</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

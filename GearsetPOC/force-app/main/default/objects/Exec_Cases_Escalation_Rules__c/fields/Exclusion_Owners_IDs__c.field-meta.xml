@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Exclusion_Owners_IDs__c</fullName>
+    <description>List of case owners IDs whose cases NOT supposed to be escalated to Exec queue. Case IDs can be accompanied with any helpful text info, for example with user names to help to distinguish them. Extra info must be as short as possible to avoid field size limit crossing (which is 255 symbols max).</description>
+    <externalId>false</externalId>
+    <label>Exclusion Owners IDs</label>
+    <length>255</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

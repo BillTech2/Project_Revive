@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fields</fullName>
+    <columns>DeveloperName</columns>
+    <columns>Block__c</columns>
+    <columns>FieldLabelEn__c</columns>
+    <columns>FieldNum__c</columns>
+    <columns>Type__c</columns>
+    <columns>BlockOrderSetting__c</columns>
+    <columns>FieldApiName__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>fields</label>
+    <language>en_US</language>
+</ListView>

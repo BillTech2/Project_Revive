@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_Required_For_Completed_Requests</fullName>
+    <active>true</active>
+    <description>Makes the Closed Reason field mandatory if request is Closed or Rejected</description>
+    <errorConditionFormula>OR(
+ISPICKVAL(Status__c,&quot;Closed&quot;),
+ISPICKVAL(Status__c,&quot;Rejected&quot;)
+)
+&amp;&amp;
+OR(ISBLANK(TEXT(Closed_Reason__c)),ISBLANK(TEXT(Outcome_Category__c)))</errorConditionFormula>
+    <errorMessage>Please choose a reason and outcome for ticket closure or rejection</errorMessage>
+</ValidationRule>

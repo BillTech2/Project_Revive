@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Closing_E320</fullName>
+    <active>true</active>
+    <description>currently same rule as for &quot;awaiting closure&quot; except that Siemens attribution must match EIL attribution</description>
+    <errorConditionFormula>AND(
+ ISPICKVAL( EIL_Status__c ,&quot;Closed&quot;),
+ ISPICKVAL( Fleet__c ,&quot;E320&quot;),
+OR(
+ISBLANK( Name),
+ISBLANK( Incident_Date__c),
+ISBLANK( Incident_Title__c),
+ISBLANK( Initial_Report__c),
+ISBLANK( Diagram__c),
+ISBLANK( Delay_Minutes__c),
+ISBLANK( Location__c),
+LEN(Fault_Codes__c) = 0,
+LEN(EQX_Work_Reports__c) = 0,
+LEN(Crew_Report_Summary__c) = 0,
+LEN(Unit_History__c) = 0,
+ISPICKVAL( Primary_Code__c,&quot;&quot;), 
+ISPICKVAL( Secondary_Code__c ,&quot;&quot;),
+ISPICKVAL( Leading_Half_Set__c ,&quot;&quot;),
+ISPICKVAL( Trailing_Half_Set__c ,&quot;&quot;),
+ISBLANK( Root_Cause__c),
+ISBLANK( Root_Cause_non_technical__c),
+ISPICKVAL( Avoidable__c,&quot;&quot;),
+LEN(Remedial_Action_Taken__c) = 0,
+LEN(Recommendations__c) = 0,
+Inform_Siemens__c=FALSE ,
+ISBLANK(EIL_Lead_Investigator__c),
+LEN(EIL_Summary_Conclusion__c) = 0,
+ISBLANK( Siemens_Lead_Investigator__c ),
+LEN(Siemens_Summary_Conclusion__c) = 0,
+ISPICKVAL( Siemens_Attribution__c ,&quot;&quot;),
+ISPICKVAL( Reasonable_Time__c ,&quot;&quot;),
+ISPICKVAL( Follow_Up_Actions__c, &quot;&quot;),
+ISBLANK( Follow_Up_References__c ),
+ISPICKVAL( Final_Attribution__c ,&quot;&quot;),
+TEXT(Siemens_Attribution__c) != TEXT (Final_Attribution__c)
+))</errorConditionFormula>
+    <errorMessage>Please ensure all sections are completed, and select a Follow up Action and a Final Attribution. The Siemens Attribution must match the EIL Attribution</errorMessage>
+</ValidationRule>

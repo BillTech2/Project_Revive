@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer_Struggle__c</fullName>
+    <label>Customer Struggle</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Seating Issues</fullName>
+                <default>false</default>
+                <label>Seating Issues</label>
+            </value>
+            <value>
+                <fullName>Couldn&#39;t Find</fullName>
+                <default>false</default>
+                <label>Couldn&#39;t Find</label>
+            </value>
+            <value>
+                <fullName>Didn&#39;t Receive A Confirmation</fullName>
+                <default>false</default>
+                <label>Didn&#39;t Receive A Confirmation</label>
+            </value>
+            <value>
+                <fullName>Don&#39;t Understand How To Do This Online</fullName>
+                <default>false</default>
+                <label>Don&#39;t Understand How To Do This Online</label>
+            </value>
+            <value>
+                <fullName>Don&#39;t Want To Do This Online</fullName>
+                <default>false</default>
+                <label>Don&#39;t Want To Do This Online</label>
+            </value>
+            <value>
+                <fullName>No Access To Website</fullName>
+                <default>false</default>
+                <label>No Access To Website</label>
+            </value>
+            <value>
+                <fullName>Eurostar Error</fullName>
+                <default>false</default>
+                <label>Eurostar Error</label>
+            </value>
+            <value>
+                <fullName>Form Of Payment Not Online</fullName>
+                <default>false</default>
+                <label>Form Of Payment Not Online</label>
+            </value>
+            <value>
+                <fullName>Need More Information</fullName>
+                <default>false</default>
+                <label>Need More Information</label>
+            </value>
+            <value>
+                <fullName>Not An Online Product Or Not Refundable Online</fullName>
+                <default>false</default>
+                <label>Not An Online Product Or Not Refundable Online</label>
+            </value>
+            <value>
+                <fullName>Outside Booking Horizon</fullName>
+                <default>false</default>
+                <label>Outside Booking Horizon</label>
+            </value>
+            <value>
+                <fullName>Website error</fullName>
+                <default>false</default>
+                <label>Website error</label>
+            </value>
+            <value>
+                <fullName>Loyalty issue</fullName>
+                <default>false</default>
+                <label>Loyalty issue</label>
+            </value>
+            <value>
+                <fullName>Customer error</fullName>
+                <default>false</default>
+                <label>Customer error</label>
+            </value>
+            <value>
+                <fullName>AOP issue</fullName>
+                <default>false</default>
+                <label>AOP issue</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

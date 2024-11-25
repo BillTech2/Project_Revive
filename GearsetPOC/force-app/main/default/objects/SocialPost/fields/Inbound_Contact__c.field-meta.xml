@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Inbound_Contact__c</fullName>
+    <formula>(NOT(Handle = &quot;Eurostar&quot;)
+||
+NOT(Handle = &quot;EurostarUK&quot;)
+||
+NOT(Handle = &quot;eurostarfr&quot;))
+&amp;&amp;
+(NOT(
+CONTAINS(Name,  &quot;from: Eurostar&quot;)
+||
+CONTAINS(Name,  &quot;From: Eurostar&quot;)
+||
+CONTAINS(Name,  &quot;from EurostarUK&quot;)
+||
+CONTAINS(Name,  &quot;from Eurostar&quot;)
+||
+CONTAINS (Name, &quot;FROM: Eurostar&quot;)
+||
+CONTAINS (Name, &quot;from eurostarfr&quot;)))</formula>
+    <label>Inbound Contact</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

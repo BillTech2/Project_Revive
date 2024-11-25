@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>Timesheet__c</columns>
+    <columns>NAME</columns>
+    <columns>Type_of_Day__c</columns>
+    <columns>End__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>Timesheet_Finance_team</group>
+        <group>Timesheet_Manager</group>
+    </sharedTo>
+</ListView>

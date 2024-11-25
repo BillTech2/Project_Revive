@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cash_Exchange_fields_become_mandatory</fullName>
+    <active>false</active>
+    <description>Cash Exchange fields become mandatory once the Cash Exchange option is selected from Action dropdown</description>
+    <errorConditionFormula>(RecordType.Name = &quot;Insurance Exchange&quot;) &amp;&amp;
+ISBLANK(  New_Train_Reference__c )</errorConditionFormula>
+    <errorMessage>Please enter the Cash Exchange information</errorMessage>
+</ValidationRule>

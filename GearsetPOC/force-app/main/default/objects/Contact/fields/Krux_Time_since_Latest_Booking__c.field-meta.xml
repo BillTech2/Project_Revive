@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Krux_Time_since_Latest_Booking__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(TODAY() - Latest_Booking_Date__c &lt;= 7,   &quot;1-7 days ago&quot;,
+IF(TODAY() - Latest_Booking_Date__c &lt;= 14,  &quot;8-14 days ago&quot;,
+IF(TODAY() - Latest_Booking_Date__c &lt;= 30,  &quot;15-30 days ago&quot;,
+IF(TODAY() - Latest_Booking_Date__c &lt;= 60,  &quot;1-2 months ago&quot;,
+IF(TODAY() - Latest_Booking_Date__c &lt;= 90,  &quot;2-3 months ago&quot;,
+IF(TODAY() - Latest_Booking_Date__c &lt;= 120, &quot;3-4 months ago&quot;,
+IF(TODAY() - Latest_Booking_Date__c &lt;= 150, &quot;4-5 months ago&quot;,
+IF(TODAY() - Latest_Booking_Date__c &lt;= 180, &quot;5-6 months ago&quot;,
+IF(TODAY() - Latest_Booking_Date__c &lt;= 365, &quot;6 months to 1 year ago&quot;,
+IF(TODAY() - Latest_Booking_Date__c &lt;= 730, &quot;1-2 years ago&quot;,
+IF(TODAY() - Latest_Booking_Date__c &gt; 730,  &quot;More than 2 years ago&quot;,&quot;&quot;
+)))))))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Krux Time since Latest Booking</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

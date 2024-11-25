@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Departure_Time_Ret__c</fullName>
+    <description>Departure Time of the Return Journey</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Departure Time of the Return Journey</inlineHelpText>
+    <label>Departure Time (Return)</label>
+    <length>5</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

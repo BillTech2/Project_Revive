@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Accident_exacerbating_factors__c</fullName>
+    <label>Exacerbating factors</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Age</fullName>
+                <default>false</default>
+                <label>Age</label>
+            </value>
+            <value>
+                <fullName>Gender</fullName>
+                <default>false</default>
+                <label>Gender</label>
+            </value>
+            <value>
+                <fullName>Sexuality</fullName>
+                <default>false</default>
+                <label>Sexuality</label>
+            </value>
+            <value>
+                <fullName>Race</fullName>
+                <default>false</default>
+                <label>Race</label>
+            </value>
+            <value>
+                <fullName>Religion</fullName>
+                <default>false</default>
+                <label>Religion</label>
+            </value>
+            <value>
+                <fullName>Disability</fullName>
+                <default>false</default>
+                <label>Disability</label>
+            </value>
+            <value>
+                <fullName>Alcohol/drugs</fullName>
+                <default>false</default>
+                <label>Alcohol/drugs</label>
+            </value>
+            <value>
+                <fullName>Disruption</fullName>
+                <default>false</default>
+                <label>Disruption</label>
+            </value>
+            <value>
+                <fullName>Lack of services on board</fullName>
+                <default>false</default>
+                <label>Lack of services on board</label>
+            </value>
+            <value>
+                <fullName>Lack of Business Premier access</fullName>
+                <default>false</default>
+                <label>Lack of Business Premier access</label>
+            </value>
+            <value>
+                <fullName>Lack of luggage assistance/stowage</fullName>
+                <default>false</default>
+                <label>Lack of luggage assistance/stowage</label>
+            </value>
+            <value>
+                <fullName>Late boarding</fullName>
+                <default>false</default>
+                <label>Late boarding</label>
+            </value>
+            <value>
+                <fullName>Ticket/fare dispute</fullName>
+                <default>false</default>
+                <label>Ticket/fare dispute</label>
+            </value>
+            <value>
+                <fullName>Other - please state</fullName>
+                <default>false</default>
+                <label>Other - please state</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

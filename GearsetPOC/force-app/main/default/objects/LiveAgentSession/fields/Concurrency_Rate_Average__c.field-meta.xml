@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Concurrency_Rate_Average__c</fullName>
+    <externalId>false</externalId>
+    <formula>Chats_Taken_Per_Hours_Average__c /(Minutes_Spent_In_Chats__c/60)</formula>
+    <inlineHelpText>Chats Per Hour / Hours Spent In Chats</inlineHelpText>
+    <label>Concurrency Rate (Average)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>1</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

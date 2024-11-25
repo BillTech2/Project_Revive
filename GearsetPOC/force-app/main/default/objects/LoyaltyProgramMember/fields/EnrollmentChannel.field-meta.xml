@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EnrollmentChannel</fullName>
+    <description>it represents the channel through which a new member is enrolled.</description>
+    <inlineHelpText>it represents the channel through which a new member is enrolled.</inlineHelpText>
+    <trackHistory>false</trackHistory>
+</CustomField>

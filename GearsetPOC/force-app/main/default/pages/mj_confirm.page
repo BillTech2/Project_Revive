@@ -1,0 +1,137 @@
+<apex:page controller="mj_class" docType="html-5.0" language="{!selectedLanguageCode}" sidebar="false" showheader="false" standardStylesheets="false"  applyHtmlTag="false" >
+<html>
+<head>
+    
+     
+        <c:css ></c:css>
+       
+        <c:cssdwm ></c:cssdwm>
+        <apex:stylesheet value="{!URLFOR($Resource.styles, 'css/cssoveride.css')}" />
+  
+    
+    
+     <title>{!$Label.MJ_confirm_title}</title>
+    <style>
+                  .nohover:hover {
+                      text-decoration:none; 
+                      cursor:auto;  
+                      color: black;
+                    }
+                  </style>
+    </head>    
+    
+    <body>
+        <c:disruption_webform_header ></c:disruption_webform_header>
+        
+                
+                
+                
+          <div class="container" >
+                    <apex:pageMessages />  <!-- this is where the error messages will appear -->   
+              <h4>
+                  {!$Label.MJ_confirm_title} {!volunteer.FirstName__c}
+              </h4>
+              {!$Label.MJ_confirm_line1}
+              <b>{!timeslot.Station__c} @ {!timeslot.Time__c}</b> 
+              {!$Label.MJ_confirm_line2}<br/><br/>
+             	
+			<h4>
+                  {!$Label.mj_confirm_heading1}
+            </h4>              
+            <apex:outputText rendered="{!IF(CONTAINS(timeslot.Station__c, 'Carmen'),false,true)}" >
+                <!-- It is London St Pancras -->
+                <apex:outputText rendered="{!IF(CONTAINS(timeslot.Station__c, 'London'),true,false)}" >
+              <ul>	
+                  <li class="nohover"><b>*</b> {!$Label.MJ_confirm_station1}</li>
+                  <li class="nohover"><b>*</b> {!$Label.MJ_confirm_station2}</li>
+                  <li class="nohover"><b>*</b> {!$Label.MJ_confirm_station3}</li>                 
+              </ul>
+                </apex:outputText>
+                 <!-- Ashford -->
+                <apex:outputText rendered="{!IF(CONTAINS(timeslot.Station__c, 'Ashford'),true,false)}" >
+              <ul>	
+                  <li class="nohover"><b>*</b> {!$Label.MJ_confirm_station_ashford}</li>
+                  <li class="nohover"><b>*</b> {!$Label.MJ_confirm_station2}</li>
+                  <li class="nohover"><b>*</b> {!$Label.MJ_confirm_station3}</li>                 
+              </ul>
+                </apex:outputText>
+                <!-- Ebbsfleet -->
+                <apex:outputText rendered="{!IF(CONTAINS(timeslot.Station__c, 'Ebbsfleet'),true,false)}" >
+              <ul>	
+                  <li class="nohover"><b>*</b> {!$Label.MJ_confirm_station_ashford}</li> <!-- Same copy as Ashford for now -->
+                  <li class="nohover"><b>*</b> {!$Label.MJ_confirm_station2}</li>
+                  <li class="nohover"><b>*</b> {!$Label.MJ_confirm_station3}</li>                 
+              </ul>
+                </apex:outputText>
+                <!-- Paris -->
+                <apex:outputText rendered="{!IF(CONTAINS(timeslot.Station__c, 'Paris'),true,false)}" >
+              <ul>	
+                  <li class="nohover"><b>*</b> {!$Label.MJ_confirm_station_paris}</li>
+                  <li class="nohover"><b>*</b> {!$Label.MJ_confirm_station2}</li>
+                  <li class="nohover"><b>*</b> {!$Label.MJ_confirm_station3}</li>                 
+              </ul>
+                </apex:outputText>
+                <!-- Brussels -->
+                <apex:outputText rendered="{!IF(CONTAINS(timeslot.Station__c, 'Brussels'),true,false)}" >
+              <ul>	
+                  <li class="nohover"><b>*</b> {!$Label.MJ_confirm_station_brussels}</li>
+                  <li class="nohover"><b>*</b> {!$Label.MJ_confirm_station2}</li>
+                  <li class="nohover"><b>*</b> {!$Label.MJ_confirm_station3}</li>                 
+              </ul>
+                </apex:outputText>
+                <!-- Lille -->
+                <apex:outputText rendered="{!IF(CONTAINS(timeslot.Station__c, 'Lille'),true,false)}" >
+              <ul>	
+                  <li class="nohover"><b>*</b> {!$Label.MJ_confirm_station_lille}</li>
+                  <li class="nohover"><b>*</b> {!$Label.MJ_confirm_station2}</li>
+                  <li class="nohover"><b>*</b> {!$Label.MJ_confirm_station3}</li>                 
+              </ul>
+                </apex:outputText>
+                <!-- Calais -->
+                <apex:outputText rendered="{!IF(CONTAINS(timeslot.Station__c, 'Calais'),true,false)}" >
+              <ul>	
+                  <li class="nohover"><b>*</b> {!$Label.MJ_confirm_station_calais}</li>
+                  <li class="nohover"><b>*</b> {!$Label.MJ_confirm_station2}</li>
+                  <li class="nohover"><b>*</b> {!$Label.MJ_confirm_station3}</li>                 
+              </ul>
+                </apex:outputText>
+                <!-- Disney -->
+                <apex:outputText rendered="{!IF(CONTAINS(timeslot.Station__c, 'Disneyland'),true,false)}" >
+              <ul>	
+                  <li class="nohover"><b>*</b> {!$Label.MJ_confirm_station_disney}</li>
+                  <li class="nohover"><b>*</b> {!$Label.MJ_confirm_station2}</li>
+                  <li class="nohover"><b>*</b> {!$Label.MJ_confirm_station3}</li>                 
+              </ul>
+                </apex:outputText>
+             
+					<!-- If you wish to volunteer for an additional timeslot please <a href="/mjform/">click here</a> -->
+             </apex:outputText>
+              
+              <apex:outputText rendered="{!IF(CONTAINS(timeslot.Station__c, 'Carmen'),true,false)}" >
+                    <ul>
+                      <li class="nohover"><b>*</b> {!$Label.MJ_confirm_carmen1} <a href="http://eurostar.my.salesforce.com/" target="_new">Salesforce</a></li>
+                      <li class="nohover"><b>*</b> {!$Label.MJ_confirm_carmen2}</li>
+                      <li class="nohover"><b>*</b> {!$Label.MJ_confirm_carmen3} <a href="https://eurostar.box.com/s/d9l0sckufu7fpixoe5fpvfnnjmpj6yi4" target="_new">https://eurostar.box.com/s/d9l0sckufu7fpixoe5fpvfnnjmpj6yi4</a></li>
+              		</ul>
+              </apex:outputText>
+              <br/><br/>
+              <h4>
+                  {!$Label.mj_confirm_heading2}
+              </h4>
+              <b>{!$Label.MJ_confirm_name}</b> {!volunteer.FirstName__c} {!volunteer.Surname__c}<br/>
+              	<b>{!$Label.MJ_confirm_mobile}</b> {!volunteer.Phone__c}<br/>
+              	<b>{!$Label.MJ_confirm_email}</b> {!volunteer.Email__c}<br/>
+              	<b>{!$Label.MJ_confirm_station}</b> {!timeslot.Station__c} @ {!timeslot.Time__c}<br/>
+                
+              </div>
+       
+        		
+        		  
+        <c:footer_mj ></c:footer_mj>
+        <c:js ></c:js>
+    </body>
+    
+    
+    
+</html>
+</apex:page>

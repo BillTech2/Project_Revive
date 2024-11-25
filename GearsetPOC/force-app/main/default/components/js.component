@@ -1,0 +1,157 @@
+<apex:component >
+<!-- PACKAGED JS OLD SOURCES
+jQuery (necessary for Bootstrap's JavaScript plugins) 
+https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js 
+http://masonry.desandro.com/js/masonry-docs.min.js
+
+HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries:
+http://html5shiv.googlecode.com/svn/trunk/html5.js
+<!--[if lt IE 9]>
+http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js
+-->
+
+<!-- PACKAGED JS FROM JSCRIPT RESOURCE -->
+    <!-- <apex:includeScript value="{!URLFOR($Resource.jscript,'js/jquery.min.js')}"/> -->
+    <!-- apex:includeScript value="{!URLFOR($Resource.jscript,'js/masonry-docs.min.js')}"/ -->
+    <!-- apex:includeScript value="{!URLFOR($Resource.jscript,'js/masonry.pkgd.min.js')}"/ --> 
+    
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+    
+<script src="{!URLFOR($Resource.jscript,'js/jquery.min.js')}"> </script>  
+<script src="{!URLFOR($Resource.bootstrap, 'dist/js/bootstrap.min.js')}"> </script>   
+<script type='text/javascript' src="{!URLFOR($Resource.ie, 'css3-mediaqueries.js')}"></script>
+<script type='text/javascript' src="{!URLFOR($Resource.jscript, 'js/html5.js')}"></script>    
+<!--[if lt IE 9]>
+<script type='text/javascript' src="{!URLFOR($Resource.jscript, 'js/respond.js')}"></script>
+<![endif]-->
+
+<!-- Javascript -->
+<script type='text/javascript' src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.7.1/modernizr.min.js"></script>
+
+<!-- SCRIPT TAKEN FROM //getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js --> 
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script type="text/javascript">
+/*!
+ * IE10 viewport hack for Surface/desktop Windows 8 bug
+ * Copyright 2014 Twitter, Inc.
+ * Licensed under the Creative Commons Attribution 3.0 Unported License. For
+ * details, see http://creativecommons.org/licenses/by/3.0/.
+ */
+
+// See the Getting Started docs for more information:
+// http://getbootstrap.com/getting-started/#support-ie10-width
+
+(function () {
+  'use strict';
+  if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+    var msViewportStyle = document.createElement('style')
+    msViewportStyle.appendChild(
+      document.createTextNode(
+        '@-ms-viewport{width:auto!important}'
+      )
+    )
+    document.querySelector('head').appendChild(msViewportStyle)
+  }
+})();
+ </script>
+    
+<!-- SCRIPT TAKEN FROM getbootstrap.com/examples/offcanvas/offcanvas.js -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+  $('[data-toggle="offcanvas"]').click(function () {
+    $('.row-offcanvas').toggleClass('active')
+  });
+});
+    </script>
+    
+<!--****** STICKY SEARCHBAR ******-->
+      <script type="text/javascript">
+$(document).ready(function(){
+    $(window).scroll(function(){
+        var scrollTop = 100;
+        var bodyelm = document.getElementsByTagName('body');
+        if (!bodyelm[0].classList.contains('esr-livechat-scroll-fix')) {
+            if($(window).scrollTop() >= scrollTop){
+                $('#searchbar').css({
+                    position : 'fixed',
+                    top : '0',
+                });
+            }
+            if($(window).scrollTop() < scrollTop){
+                $('#searchbar').removeAttr('style');
+            }
+        }
+    })
+})</script>
+          <script type="text/javascript">
+$(document).ready(function(){
+    $(window).scroll(function(){
+        var scrollTop = 100;
+        if($(window).scrollTop() >= scrollTop){
+            $('.ui-autocomplete').css({
+                top: '69px',
+            });
+            
+        }
+        if($(window).scrollTop() < scrollTop){
+            $('.ui-autocomplete').removeAttr('style');    
+        }
+    })
+})</script>
+<!--***** /STICKY SEARCHBAR *****-->
+
+<!--***** MASONRY *****-->
+<script type="text/javascript">    
+    var card = document.querySelector('#card');
+var msnry = new Masonry( card, {
+  // options
+
+  itemSelector: '.card-item'
+});
+</script>
+<!--***** /MASONRY *****-->
+
+    <!-- Auto Complete   columnWidth: 150, -->
+    <!-- <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script> -->  
+    <!--     <script type="text/javascript"> 
+            //$(function() { 
+        
+            //var apexAccountList  = [
+            //<apex:repeat value="{!MostViewedArticles}" var="article">
+            //   "{!article.title}",            
+            // </apex:repeat>
+            //];
+
+            //autocomplete
+            // $("#autocomplete").autocomplete({
+            //    appendTo: $("#autocomplete").parent(),
+            //    source: apexAccountList,
+            //    minLength: 3
+            //    
+            //});  
+            
+            //$("#autocomplete").autocomplete({ 
+            //maxResults: 5,
+            //minLength: 3,
+            //source: Visualforce.remoting.Manager.invokeAction(
+            //'{!$RemoteAction.FAQSearchController.PerformSearch}',
+            //request.term, 
+            //'{!language}',
+            //function(result, event){
+            //   if (event.status) {
+            //   	
+            //    }
+            //}
+            // );
+                
+                //source: function(request, response) {
+                //    var results = $.ui.autocomplete.filter(apexAccountList, request.term);
+                //    
+                //    response(results.slice(0, this.options.maxResults));
+                //}
+            //});
+            //});
+        </script> -->
+    <!-- /Auto Complete -->  
+     
+</apex:component>

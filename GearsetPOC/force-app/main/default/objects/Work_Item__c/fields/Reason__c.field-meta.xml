@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(ISPICKVAL(Type__c,&quot;Case&quot;), Case_Number__r.Reason_Code_formula__c,
+IF(ISPICKVAL(Type__c,&quot;Blue &amp; Green Voucher Booking&quot;), &quot;UK Based Staff Travel Booking&quot;,
+IF(ISPICKVAL(Type__c,&quot;CS Letter&quot;), &quot;CS Letter&quot;,
+IF(ISPICKVAL(Type__c,&quot;Fault Log&quot;), &quot;Fault Log&quot;,
+IF(ISPICKVAL(Type__c,&quot;Insurance Refund&quot;), &quot;Insurance Refund&quot;,
+IF(ISPICKVAL(Type__c,&quot;Sense of Occasion&quot;), &quot;Sense of Occasion Booking&quot;,
+IF(ISPICKVAL(Type__c,&quot;Voucher Booking&quot;), &quot;Overseas Staff Travel Booking&quot;,
+IF(ISPICKVAL(Type__c,&quot;Write Off/Service Fee Override&quot;), &quot;Write Off/Service Fee Override&quot;,
+IF(ISPICKVAL(Type__c,&quot;Email&quot;), Case_Number__r.Reason_Code_formula__c,NULL
+)
+)
+)
+)
+)
+)
+)
+)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Reason</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

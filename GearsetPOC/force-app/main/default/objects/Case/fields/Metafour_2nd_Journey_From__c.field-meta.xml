@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Metafour_2nd_Journey_From__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>Drop off Station(Second)</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Stations__c.Metafour_Compatible__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </filterItems>
+        <isOptional>true</isOptional>
+    </lookupFilter>
+    <referenceTo>Stations__c</referenceTo>
+    <relationshipLabel>Cases (Drop off Station(Second))</relationshipLabel>
+    <relationshipName>CasesJSSl</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

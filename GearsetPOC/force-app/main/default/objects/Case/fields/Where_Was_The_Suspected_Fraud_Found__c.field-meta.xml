@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Where_Was_The_Suspected_Fraud_Found__c</fullName>
+    <label>Where Was The Suspected Fraud Found</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Facebook Profile</fullName>
+                <default>false</default>
+                <label>Facebook Profile</label>
+            </value>
+            <value>
+                <fullName>Facebook Group/Page</fullName>
+                <default>false</default>
+                <label>Facebook Group/Page</label>
+            </value>
+            <value>
+                <fullName>KelBillet</fullName>
+                <default>false</default>
+                <label>KelBillet</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

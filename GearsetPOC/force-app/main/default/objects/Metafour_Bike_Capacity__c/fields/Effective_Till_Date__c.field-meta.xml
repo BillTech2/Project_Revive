@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Effective_Till_Date__c</fullName>
+    <description>Date till which the configuration is  effective</description>
+    <inlineHelpText>Date till which the configuration is  effective</inlineHelpText>
+    <label>Effective Till</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

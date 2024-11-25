@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ruxanda_Dumitrescu</fullName>
+    <columns>Owner</columns>
+    <columns>CreatedDate</columns>
+    <columns>Name</columns>
+    <columns>Case</columns>
+    <columns>Account</columns>
+    <columns>StartTime</columns>
+    <columns>EndTime</columns>
+    <columns>WaitTime</columns>
+    <columns>ChatDuration</columns>
+    <columns>OperatorMessageCount</columns>
+    <columns>VisitorMessageCount</columns>
+    <columns>EndedBy</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Owner</field>
+        <operation>contains</operation>
+        <value>Ruxanda</value>
+    </filters>
+    <filters>
+        <field>CreatedDate</field>
+        <operation>greaterThan</operation>
+        <value>10/11/2016 12:00 AM</value>
+    </filters>
+    <label>Ruxanda Dumitrescu</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>ECC_Webhelp_Escalation_Queue_Management</group>
+        <group>Webhelp_TLs</group>
+    </sharedTo>
+</ListView>

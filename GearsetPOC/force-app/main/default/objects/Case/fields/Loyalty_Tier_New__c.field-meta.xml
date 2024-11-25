@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Loyalty_Tier_New__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(TEXT(Account.DELTA_Loyalty_Member__r.MemberStatus) = &#39;Active&#39; &amp;&amp; ISPICKVAL(Account.Delta_Loyalty_Tier__c, &quot;Elite&quot;), 
+150,
+IF(TEXT(Account.DELTA_Loyalty_Member__r.MemberStatus) = &#39;Active&#39; &amp;&amp; ISPICKVAL(Account.Delta_Loyalty_Tier__c, &quot;Etoile&quot;),
+100,
+IF(TEXT(Account.DELTA_Loyalty_Member__r.MemberStatus) = &#39;Active&#39; &amp;&amp; ISPICKVAL(Account.Delta_Loyalty_Tier__c, &quot;Carte blanche&quot;),
+60,
+IF(TEXT(Account.DELTA_Loyalty_Member__r.MemberStatus) = &#39;Active&#39; &amp;&amp; ISPICKVAL(Account.Delta_Loyalty_Tier__c, &quot;Avantage&quot;),
+40,
+IF(TEXT(Account.DELTA_Loyalty_Member__r.MemberStatus) = &#39;Active&#39; &amp;&amp; ISPICKVAL(Account.Delta_Loyalty_Tier__c, &quot;Classique&quot;),
+20,
+0)))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Loyalty Tier</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PassingPoint_Delay_Reason__c</fullName>
+    <label>Delay Reason</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>due to a cable theft</fullName>
+                <default>false</default>
+                <label>due to a cable theft</label>
+            </value>
+            <value>
+                <fullName>due to a case of force majeure</fullName>
+                <default>false</default>
+                <label>due to a case of force majeure</label>
+            </value>
+            <value>
+                <fullName>due to a delay in the food and beverage supply</fullName>
+                <default>false</default>
+                <label>due to a delay in the food and beverage supply</label>
+            </value>
+            <value>
+                <fullName>due to a failure of the rolling materiel</fullName>
+                <default>false</default>
+                <label>due to a failure of the rolling materiel</label>
+            </value>
+            <value>
+                <fullName>due to a strike</fullName>
+                <default>false</default>
+                <label>due to a strike</label>
+            </value>
+            <value>
+                <fullName>due to a technical incident</fullName>
+                <default>false</default>
+                <label>due to a technical incident</label>
+            </value>
+            <value>
+                <fullName>due to an accident involving people</fullName>
+                <default>false</default>
+                <label>due to an accident involving people</label>
+            </value>
+            <value>
+                <fullName>due to an alarm signal</fullName>
+                <default>false</default>
+                <label>due to an alarm signal</label>
+            </value>
+            <value>
+                <fullName>due to an incident on the infrastructure</fullName>
+                <default>false</default>
+                <label>due to an incident on the infrastructure</label>
+            </value>
+            <value>
+                <fullName>due to an unplanned strike</fullName>
+                <default>false</default>
+                <label>due to an unplanned strike</label>
+            </value>
+            <value>
+                <fullName>due to bad weather conditions</fullName>
+                <default>false</default>
+                <label>due to bad weather conditions</label>
+            </value>
+            <value>
+                <fullName>due to difficulties in coordination</fullName>
+                <default>false</default>
+                <label>due to difficulties in coordination</label>
+            </value>
+            <value>
+                <fullName>due to the intervention of the authorities</fullName>
+                <default>false</default>
+                <label>due to the intervention of the authorities</label>
+            </value>
+            <value>
+                <fullName>due to the presence of a suspicious object</fullName>
+                <default>false</default>
+                <label>due to the presence of a suspicious object</label>
+            </value>
+            <value>
+                <fullName>due to the presence of an obstacle on the tracks</fullName>
+                <default>false</default>
+                <label>due to the presence of an obstacle on the tracks</label>
+            </value>
+            <value>
+                <fullName>due to the presence of animals on the tracks</fullName>
+                <default>false</default>
+                <label>due to the presence of animals on the tracks</label>
+            </value>
+            <value>
+                <fullName>due to the presence of people on the tracks</fullName>
+                <default>false</default>
+                <label>due to the presence of people on the tracks</label>
+            </value>
+            <value>
+                <fullName>due to track works</fullName>
+                <default>false</default>
+                <label>due to track works</label>
+            </value>
+            <value>
+                <fullName>due to traffic problems</fullName>
+                <default>false</default>
+                <label>due to traffic problems</label>
+            </value>
+            <value>
+                <fullName>due to vandalism</fullName>
+                <default>false</default>
+                <label>due to vandalism</label>
+            </value>
+            <value>
+                <fullName>Magical incident type</fullName>
+                <default>false</default>
+                <label>Magical incident type</label>
+            </value>
+            <value>
+                <fullName>DB</fullName>
+                <default>false</default>
+                <label>DB</label>
+            </value>
+            <value>
+                <fullName>NS</fullName>
+                <default>false</default>
+                <label>NS</label>
+            </value>
+            <value>
+                <fullName>SNCB</fullName>
+                <default>false</default>
+                <label>SNCB</label>
+            </value>
+            <value>
+                <fullName>SNCF</fullName>
+                <default>false</default>
+                <label>SNCF</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

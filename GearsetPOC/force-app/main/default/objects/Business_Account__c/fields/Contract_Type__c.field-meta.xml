@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contract_Type__c</fullName>
+    <label>Contract Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>TMC Pan European</fullName>
+                <default>false</default>
+                <label>TMC Pan European</label>
+            </value>
+            <value>
+                <fullName>Internal BAF</fullName>
+                <default>false</default>
+                <label>Internal BAF</label>
+            </value>
+            <value>
+                <fullName>Reward Redemption</fullName>
+                <default>false</default>
+                <label>Reward Redemption</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Corporate</fullName>
+                <default>false</default>
+                <label>Corporate</label>
+            </value>
+            <value>
+                <fullName>UK Distributor</fullName>
+                <default>false</default>
+                <label>UK Distributor</label>
+            </value>
+            <value>
+                <fullName>Non-UK Distributor</fullName>
+                <default>false</default>
+                <label>Non-UK Distributor</label>
+            </value>
+            <value>
+                <fullName>IATA Ticketing Authority</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>IATA Ticketing Authority</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

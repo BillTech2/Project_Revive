@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LOG_Info_And_Advice_Mandatory_fields</fullName>
+    <active>false</active>
+    <description>When the initial reason for contact is Information or Advice then the Category, Topic, and What is the Question? fields are all mandatory</description>
+    <errorConditionFormula>ISPICKVAL(Initial_Reason_For_Contact__c,&quot;Info or Advice or Confirmation&quot;)
+&amp;&amp;
+NOT(ISPICKVAL(Category__c, &quot;Club Eurostar&quot;))
+&amp;&amp;
+OR(
+ISBLANK(TEXT(Category__c)),
+ISBLANK(TEXT(Topic__c)),
+ISBLANK(TEXT(What_Is_The_Question__c))
+)</errorConditionFormula>
+    <errorDisplayField>What_Is_The_Question__c</errorDisplayField>
+    <errorMessage>Please select options from the &quot;Category&quot;, &quot;Topic&quot;, and &quot;What Is The Question?&quot; fields to continue</errorMessage>
+</ValidationRule>

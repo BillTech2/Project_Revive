@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Approved_Bank_Transfer_Pending_payment</fullName>
+    <columns>CREATED_DATE</columns>
+    <columns>NAME</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>Compensation_Type__c</columns>
+    <columns>Comp_Approval_Status__c</columns>
+    <columns>Payment_Amount__c</columns>
+    <columns>Payment_Currency__c</columns>
+    <columns>Reason_Code__c</columns>
+    <columns>Bank_Account_Name__c</columns>
+    <columns>Bank_Account_Number__c</columns>
+    <columns>Bank_Sort_Code__c</columns>
+    <columns>Swift_Sort_Code__c</columns>
+    <columns>IBAN_Account_Number__c</columns>
+    <columns>Claimed_Compensation_Type__c</columns>
+    <columns>Claimed_Date__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Comp_Approval_Status__c</field>
+        <operation>equals</operation>
+        <value>Approved</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Compensation__c.Bank_Transfer</value>
+    </filters>
+    <filters>
+        <field>Sent_For_Payment__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Approved Bank Transfer (Pending payment)</label>
+    <language>en_US</language>
+</ListView>

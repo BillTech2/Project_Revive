@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_374ImprovementPlan</fullName>
+    <columns>NAME</columns>
+    <columns>X374IP_Title__c</columns>
+    <columns>X374IP_Date_created__c</columns>
+    <columns>X374IP_Status__c</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>X374IP_Primary_code__c</columns>
+    <columns>X374IP_Reference_number__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>

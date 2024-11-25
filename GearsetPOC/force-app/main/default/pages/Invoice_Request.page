@@ -1,0 +1,661 @@
+<apex:page sidebar="false"  standardStyleSheets="false"  controller="Invoice_RequestController" docType="html-5.0">
+    <script type="text/javascript">
+    
+                
+      </script>
+    <style type="text/css">
+      .detailList {
+      table-layout: fixed;
+      }
+      .labelCol {
+      text-align: right!important;
+      width: 30% !important;
+      max-width: 30% !important;
+      font-weight: normal !important;
+      }       
+      .accordionPanel .ui-accordion .ui-accordion-content{padding:0 0 ;border:0}
+      .odd {background-color: #FCF7F7;}
+      .even {background-color: #E3DCDB;}
+      
+      .headerStyle {
+           font-family: "Calibri", Georgia, Serif;
+           font-size:15px;
+           color:white;
+           background-color:#1975A3;
+       }
+   </style>
+    <apex:form id="form" >
+        <html>
+            <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+                <title>EUROSTAR</title>
+                <apex:stylesheet value="{!URLFOR($Resource.customCSS, 'customCSS/css/jquery-ui.css')}"/>
+                <apex:stylesheet value="{!URLFOR($Resource.customCSS, 'customCSS/css/reset.css')}"/>
+                <apex:stylesheet value="{!URLFOR($Resource.customCSS, 'customCSS/css/style.css')}"/>
+            </head>
+            <body>
+                <div class="container">
+                    <div class="mid-panel">
+                        <div class="bread-crums">
+                            <div class="bread-crums"><a href="#">Invoice Request Tool</a> <i>&gt;</i> <a href="#" class="underline">Invoice Request</a></div>
+                        </div>
+                        <div class="form-panel">
+                            <dl>
+                                <apex:pageMessages />
+                            </dl>
+                            <div class="accordionPanel row margin-top0">
+                                <div id="accordion" class="ui-accordion ui-widget ui-helper-reset">
+                                    <h3 class="ui-accordion-header ui-helper-reset ui-state-default ui-accordion-icons ui-corner-top ui-accordion-header-active ui-state-active">
+                                        <span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-s"></span>
+                              General Details
+                           
+                                    </h3>
+                                    <div class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom ui-accordion-content-active">
+                                        <!--fOR Existing CUSTOMER-->
+                                        <!--If u update anything here in block 1a update block 1b also-->
+                                        <apex:repeat value="{!Customer}" var="cus" rendered="{!existcus}">
+                                            <apex:pageBlock id="Block1">
+                                                <apex:pageBlockSection id="Section0" columns="2" >
+                                                    <apex:pageBlockSectionItem id="item0_1" helptext="Customer Name">
+                                                        <apex:outputLabel value="Customer Name  " id="cusNameLbl" />
+                                                        <apex:outputText value="{!cus.Customer_Name__c}"  id="cusNameVal" style="width:200px" />
+                                                    </apex:pageBlockSectionItem>
+                                                    <apex:pageBlockSectionItem id="item0_2" helptext="Contact person">
+                                                        <apex:outputLabel value="Contact Name " id="cuscontactLbl" />
+                                                        <apex:outputText value="{!cus.Customer_ContactName__c}"  id="cuscontactVal" style="width:200px" />
+                                                    </apex:pageBlockSectionItem>
+                                                </apex:pageBlockSection>
+                                                <apex:pageBlockSection id="Section1" columns="2">
+                                                    <apex:pageBlockSectionItem id="item1_1" helptext="Customer Address" >
+                                                        <apex:outputLabel value="Customer Address" id="cusadressLbl" />
+                                                        <apex:outputText value="{!cus.Customer_Address__c}"  id="cusaddressVal" style="width:200px" />
+                                                    </apex:pageBlockSectionItem>
+                                                    <apex:pageBlockSectionItem id="item1_2" helptext="Email">
+                                                        <apex:outputLabel value="Contact Email" id="cusemailLbl" />
+                                                        <apex:outputText value="{!cus.Customer_ContactEmail__c}"  id="cusemailVal" style="width:200px" />
+                                                    </apex:pageBlockSectionItem>
+                                                </apex:pageBlockSection>
+                                                <apex:pageBlockSection id="Section2" columns="2">
+                                                    <apex:pageBlockSectionItem id="item2_1" helptext="Phone Number">
+                                                        <apex:outputLabel value="Phone Number :" id="phnNoLbl" />
+                                                        <apex:outputText value="{!cus.Customer_ContactPhno__c}"  id="cusphnoVal" style="width:200px" />
+                                                    </apex:pageBlockSectionItem>
+                                                    <apex:pageBlockSectionItem id="item2_2" helptext="Account Number">
+                                                        <apex:outputLabel value="Account Number" id="cusaccountLbl" />
+                                                        <apex:outputText value="{!cus.Customer_AccountNumber__c}"  id="cusaccountVal" style="width:200px" />
+                                                    </apex:pageBlockSectionItem>
+                                                </apex:pageBlockSection>
+                                                <apex:pageBlockSection id="Section3" columns="2">
+                                                    <apex:pageBlockSectionItem id="item3_1" helptext="Vat No">
+                                                        <apex:outputLabel value="VAT Number" id="vatnoLbl" />
+                                                        <apex:outputText value="{!cus.Customer_VatRegNo__c}"  id="vatnoVal" style="width:200px" />
+                                                    </apex:pageBlockSectionItem>
+                                                    <apex:pageBlockSectionItem id="item3_2" helptext="Payment Terms">
+                                                        <apex:outputLabel value="Payment Terms" id="paymentLbl" />
+                                                        <apex:outputText value="{!cus.Customer_PaymentTerms__c}"  id="paymentVal" style="width:200px" />
+                                                    </apex:pageBlockSectionItem>
+                                                </apex:pageBlockSection>
+                                            </apex:pageBlock>
+                                        </apex:repeat>
+                                        <!--For new customer-->
+                                        <!--Just make sure u have updated both the block 1a and 1b-->
+                                        <apex:pageBlock id="Block1b" rendered="{!newcus}">
+                                            <apex:pageBlockSection id="Section0" columns="2">
+                                                <apex:pageBlockSectionItem id="item0_1" helptext="Customer Name" >
+                                                    <apex:outputLabel value="Customer Name*" id="cusNameLbl" />
+                                                    <apex:inputField value="{!Request.suppname__c}"  id="cusNameVal" style="width:200px" />
+                                                </apex:pageBlockSectionItem>
+                                                <apex:pageBlockSectionItem id="item0_2" helptext="Contact Person">
+                                                    <apex:outputLabel value="Contact Name*" id="cuscontactLbl" />
+                                                    <apex:inputField value="{!Request.contactname__c}"  id="cuscontactVal" style="width:200px" />
+                                                </apex:pageBlockSectionItem>
+                                            </apex:pageBlockSection>
+                                            <apex:pageBlockSection id="Section1" columns="2">
+                                                <apex:pageBlockSectionItem id="item1_1" helptext="Customer Address">
+                                                    <apex:outputLabel value="Customer Address*" id="cusadressLbl" />
+                                                    <apex:inputField value="{!Request.coraddress__c}"  id="cusaddressVal" style="width:200px" />
+                                                </apex:pageBlockSectionItem>
+                                                <apex:pageBlockSectionItem id="item1_2" helptext="Email" >
+                                                    <apex:outputLabel value="Contact Email*" id="cusemailLbl" />
+                                                    <apex:inputField value="{!Request.contactemail__c}"  id="cusphnoVal" style="width:200px" />
+                                                </apex:pageBlockSectionItem>
+                                            </apex:pageBlockSection>
+                                            <apex:pageBlockSection id="Section2" columns="2">
+                                                <apex:pageBlockSectionItem id="item2_1" helptext="Phone Number">
+                                                    <apex:outputLabel value="Phone Number*" id="phnNoLbl" />
+                                                    <apex:inputField value="{!Request.corphone__c}"  id="phnNoVal" style="width:200px" />
+                                                </apex:pageBlockSectionItem>
+
+                                            </apex:pageBlockSection>
+                                            <apex:pageBlockSection id="Section3" columns="2">
+                                                <apex:pageBlockSectionItem id="item3_1" helptext="VAT No">
+                                                    <apex:outputLabel value="VAT Number*" id="vatnoLbl" />
+                                                    <apex:inputField value="{!Request.vatregno__c}"  id="vatnoVal" style="width:200px" />
+                                                </apex:pageBlockSectionItem>
+                                                <apex:pageBlockSectionItem id="item3_2" helptext="Payment Terms">
+                                                    <apex:outputLabel value="Payment Terms" id="paymentLbl" />
+                                                    <apex:selectList disabled="{!submitDisabled}" size="1" id="currencyVal" value="{!Request.paymentterms__c}">
+                                                        <apex:selectOptions value="{!PaymentTermsOptions}" />
+                                                    </apex:selectList>
+                                                   <!-- <apex:inputField value="{!Request.paymentterms__c}"  id="paymentVal" style="width:200px" /> -->
+                                                </apex:pageBlockSectionItem>
+                                            </apex:pageBlockSection>
+                                        </apex:pageBlock>
+                                    </div>
+                                </div>
+                                <div id="accordion" class="ui-accordion ui-widget ui-helper-reset">
+                                    <h3 class="ui-accordion-header ui-helper-reset ui-state-default ui-accordion-icons ui-corner-top ui-accordion-header-active ui-state-active">
+                                        <span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-s"></span>
+                              Invoice Details
+                           
+                                    </h3>
+                                    <div class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom ui-accordion-content-active">
+                                        <apex:pageBlock id="Block2">
+                                         
+                                            <apex:pageBlockSection id="Section4" columns="2">
+                                                <apex:pageBlockSectionItem id="item4_1a" helpText="Currency" >
+                                                    <apex:outputLabel value="Currency*" id="currencyLbl" />
+                                                    <apex:selectList disabled="{!submitDisabled}" size="1" id="currencyVal" value="{!Request.paycurr__c}">
+                                                        <apex:selectOptions value="{!CurrencyOptions}" />
+                                                    </apex:selectList>
+                                                </apex:pageBlockSectionItem>
+                                                    <apex:pageBlockSectionItem id="item4_1b" helptext="PO Number">
+                                                    <apex:outputLabel value="Purchase Order" id="ponoLbl" />
+                                                    <apex:inputField value="{!Request.PONumber__c}"  id="ponoVal" style="width:200px" />
+                                                </apex:pageBlockSectionItem>
+                                                 </apex:pageBlockSection>
+                                               
+                                                                                            
+                                                <apex:pageBlockSection id="Section5"  columns="2" rendered="{!displayInputText}" >                                            
+                                                <apex:pageBlockSectionItem id="item5_1" helpText="Upload Bank Details" >
+                                                    <apex:outputLabel value="Attach Bank Details" for="file" />
+                                                    <apex:inputFile fileName="{!fileName}" contentType="{!contentType}" value="{!bankFile}" id="file"  />
+                                                </apex:pageBlockSectionItem> 
+                                             
+                                                <apex:pageBlockSectionItem id="item5_2" helpText="Files already Uploaded" rendered="{!fileUpload}">
+                                                <apex:outputLabel value="Uploaded Bank File's Name" />                    
+                                                    <apex:outputText value="{!fileName}" />
+                                                </apex:pageBlockSectionItem>
+                                                </apex:pageBlockSection>
+                                            
+                                               <apex:pageBlockSection id="Section6" columns="2">
+                                               <apex:pageBlockSectionItem id="item6_1" helpText="Invoice supporting documents">
+                                                    <apex:outputLabel value="Invoice supporting documents" for="file"  />
+                                                    <apex:inputFile fileName="{!invoiceFileName}" contentType="{!invoicecontentType}" value="{!invoiceFile}" id="file" />
+                                               </apex:pageBlockSectionItem>
+                                               
+                                             <apex:pageBlockSectionItem id="item6_2" helpText="Files already Uploaded" rendered="{!invoicefileUpload}">
+                                                 <apex:outputLabel value="Uploaded Invoice File's Name" />           
+                                                    <apex:outputText value="{!invoiceFileName}" />
+                                                </apex:pageBlockSectionItem>
+                                            </apex:pageBlockSection> 
+                                                
+                                            
+                                             <apex:pageBlockSection id="Section7" columns="2">
+                                                <apex:pageBlockSectionItem id="item7_1" helpText="Select Cost Centre so that Account Code & Project code will be modified in accordance ">
+                                                    <apex:outputLabel value="CostCentre*" id="costCentreLbl"/>
+                                                    
+                                                     <apex:actionRegion >
+                                                                                                         
+                                                        <apex:selectList disabled="{!submitDisabled}" size="1" id="costCentreVal" value="{!CostCentreSelected}">
+                                                            <apex:actionSupport event="onchange" reRender="accountCodeVal"/>
+                                                            <apex:selectOptions value="{!CostCentreOptions}"/>
+                                                        </apex:selectList>
+                                                    </apex:actionRegion>
+                                                    
+                                                </apex:pageBlockSectionItem>
+                                         
+                                                <!---->
+
+                                                <apex:pageBlockSectionItem id="item7_2" helpText="Account Code">
+
+                                                    <apex:outputLabel value="Account Code*" id="accountCodeLbl"  />
+                                                    <apex:actionRegion >
+                                                    <apex:selectList disabled="{!submitDisabled}" size="1" id="accountCodeVal" value="{!AccountCodeSelected}">
+                                                  <apex:actionSupport event="onchange" reRender="projectCodeVal"/>
+                                                     <apex:selectOptions value="{!AccountCodeOptions}"/>
+                                                    </apex:selectList>
+                                                   </apex:actionRegion>
+                                                </apex:pageBlockSectionItem>
+                                              </apex:pageBlockSection>
+                                                 
+                                                <apex:actionRegion > 
+                                                                                              
+                                                <apex:pageBlockSection id="Section8" columns="2">
+                                                <apex:pageBlockSectionItem id="item8_1" helpText="Project Code">
+                                                    <apex:outputLabel value="Project Code*" id="projectCodeLbl"  />                                                  
+                                                    <apex:selectList disabled="{!submitDisabled}" id="projectCodeVal" Size="1" value="{!ProjectCodeSelected}" >
+                                                    <apex:actionSupport event="onchange"  rerender="copyvalues"   />  
+                                                        <apex:selectOptions value="{!ProjectCodeOptions}" />
+                                                    </apex:selectList>
+                                                 
+                                                </apex:pageBlockSectionItem>
+                                                
+                                                <apex:pageBlockSectionItem id="item8_2" helpText="Select if you dont want to update code cominations automatically in Merchandise Details" >
+                                                    <apex:outputLabel value="Copy Code combination to all lines" id="counterpartyLbl"/>
+                                                  <apex:actionRegion >
+                                                        <apex:inputcheckbox disabled="{!submitDisabled}"  id="copyvalues" value="{!chkBx}" label="codechkVal">
+                                                            <apex:actionSupport event="onclick" action="{!click1}" rerender="costcentreVal1,accountcodeVal1,projectcodeVal1,
+                                                                                                                             costcentreVal2,accountcodeVal2,projectcodeVal2,
+                                                                                                                             costcentreVal3,accountcodeVal3,projectcodeVal3,
+                                                                                                                             costcentreVal4,accountcodeVal4,projectcodeVal4,
+                                                                                                                             costcentreVal5,accountcodeVal5,projectcodeVal5,
+                                                                                                                             costcentreVal6,accountcodeVal6,projectcodeVal6,
+                                                                                                                             costcentreVal7,accountcodeVal7,projectcodeVal7,
+                                                                                                                             costcentreVal8,accountcodeVal8,projectcodeVal8,
+                                                                                                                             costcentreVal9,accountcodeVal9,projectcodeVal9,
+                                                                                                                             costcentreVal10,accountcodeVal10,projectcodeVal10"  />
+                                                        </apex:inputcheckbox>
+                                                    </apex:actionRegion>
+                                                    </apex:pageBlockSectionItem>                                                    
+                                                 </apex:pageBlockSection> 
+                                                 
+                                                <apex:pageBlockSection id="section9">
+                                                <apex:pageBlockSectionItem id="item9_1" helpText="Counter Party" >
+                                                    <apex:outputLabel value="Counter Party" id="counterpartyLbl"/>
+                                                  <apex:outputText value="{!counterparty}" />
+                                                </apex:pageBlockSectionItem>
+                                               </apex:pageBlockSection>
+                                                
+                                            </apex:actionRegion>                                           
+                                            
+                                        </apex:pageBlock>
+                                    </div>
+                                </div>
+                                
+                                
+                                <div id="accordion" class="ui-accordion ui-widget ui-helper-reset">
+                                    <h3 class="ui-accordion-header ui-helper-reset ui-state-default ui-accordion-icons ui-corner-top ui-accordion-header-active ui-state-active">
+                                        <span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-s"></span>
+                              Merchandise Details
+                           
+                                    </h3>
+                                    <div class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom ui-accordion-content-active">
+                                        <apex:pageBlock id="Block3">  
+                                        
+                                           <apex:pageBlockSection id="Section9" columns="7">
+                                                <apex:pageBlockSectionitem id="item9_2">
+                                                    <apex:outputLabel value="Description *" id="descriptionLbl"/>
+                                                </apex:pageBlockSectionItem>
+                                                <apex:pageBlockSectionitem id="item19_0">
+                                                </apex:pageBlockSectionItem>
+                                                <apex:pageBlockSectionitem id="item9_3">
+                                                    <apex:outputLabel value="Amount Excl VAT *" id="amountLbl"/>
+                                                </apex:pageBlockSectionItem>
+                                                <apex:pageBlockSectionitem id="item9_4" >
+                                                    <apex:outputLabel value="Cost Centre*" id="costcentreLbl" style="width:80px"/>
+                                                </apex:pageBlockSectionItem>
+                                                <apex:pageBlockSectionitem id="item9_5">
+                                                    <apex:outputLabel value="Account  Code*" id="accountcodeLbl"  style="width:80px"/>
+                                                </apex:pageBlockSectionItem>
+                                                <apex:pageBlockSectionitem id="item9_6">
+                                                    <apex:outputLabel value="Project Code*" id="projectcodeLbl"  style="width:80px"/>
+                                                </apex:pageBlockSectionItem>
+                                                <apex:pageBlockSectionitem id="item9_7">
+                                                <apex:outputLabel value="Counter Party" id="counterpartyLbl1"  style="width:80px"/>
+                                                </apex:pageBlockSectionItem>
+                                            </apex:pageBlockSection> 
+                                       
+                                            <!--for 1st item -->
+                                            <apex:pageBlockSection id="Section10" columns="7">
+                                                <apex:pageBlockSectionitem id="item10_2">
+                                                    <apex:inputField id="descriptionVal1" value="{!InvoiceLineRequest1.Description__c}"    style="width:250px" />
+                                                </apex:pageBlockSectionItem>
+                                                <apex:pageBlockSectionitem id="item10_0">
+                                                </apex:pageBlockSectionItem>
+                                                <apex:pageBlockSectionitem id="item10_3">
+                                                <apex:actionRegion >                                                   
+                                                  <apex:inputField id="amountVal1" value="{!InvoiceLineRequest1.Amount__c}" style="width:80px">                                                                                         
+                                                    <apex:actionSupport action="{!updatecc}" event="onchange" reRender="calc,costcentreVal1, accountcodeVal1, projectcodeVal1 ">                                                    
+                                                    <apex:param name="lineNumber" value="1"/> 
+                                                    </apex:actionSupport>
+                                                     </apex:inputField>
+                                                     </apex:actionRegion>
+                                                </apex:pageBlockSectionItem>
+                                                <apex:pageBlockSectionitem id="item10_4">
+                                                    <apex:inputField id="costcentreVal1" value="{!InvoiceLineRequest1.CostCentre__c}" style="width:80px"/>
+                                                </apex:pageBlockSectionItem>
+                                                <apex:pageBlockSectionitem id="item10_5">
+                                                    <apex:inputField id="accountcodeVal1" value="{!InvoiceLineRequest1.AccountCode__c}" style="width:80px"/>
+                                                </apex:pageBlockSectionItem>
+                                                <apex:pageBlockSectionitem id="item10_6">
+                                                   <apex:inputField id="projectcodeVal1" value="{!InvoiceLineRequest1.ProjectCode__c}" style="width:80px"/>
+                                                </apex:pageBlockSectionItem>
+                                                 <apex:pageBlockSectionItem id="item10_7" helpText="Counter Party" >                                                    
+                                                  <apex:outputText value="{!counterparty}" style="width:80px"/>
+                                                </apex:pageBlockSectionItem>
+                                            </apex:pageBlockSection>
+                                            <!--for 2nd item -->
+                                            <apex:pageBlockSection id="Section11" columns="7">
+                                                <apex:pageBlockSectionitem id="item11_1" >
+                                                    <apex:inputField id="descriptionVal2" value="{!InvoiceLineRequest2.Description__c}" style="width:250px" />
+                                                </apex:pageBlockSectionItem>
+                                                <apex:pageBlockSectionitem id="item11_2">
+                                                </apex:pageBlockSectionItem>
+                                                <apex:pageBlockSectionitem id="item11_3">
+                                                <apex:actionRegion >
+                                                    <apex:inputField id="amountVal2" value="{!InvoiceLineRequest2.Amount__c}" style="width:80px">
+                                                    
+                                                    <apex:actionSupport action="{!updatecc}" event="onchange" reRender="calc,costcentreVal2, accountcodeVal2, projectcodeVal2 ">                                                    
+                                                    <apex:param name="lineNumber" value="2"/> 
+                                                    </apex:actionSupport>
+                                                    
+                                                     </apex:inputField>
+                                                     </apex:actionRegion>
+                                                </apex:pageBlockSectionItem>
+                                                <apex:pageBlockSectionitem id="item11_4">
+                                                    <apex:inputField id="costcentreVal2" value="{!InvoiceLineRequest2.CostCentre__c}" style="width:80px"/>
+                                                </apex:pageBlockSectionItem>
+                                                <apex:pageBlockSectionitem id="item11_5">
+                                                    <apex:inputField id="accountcodeVal2" value="{!InvoiceLineRequest2.AccountCode__c}" style="width:80px"/>
+                                                </apex:pageBlockSectionItem>
+                                                <apex:pageBlockSectionitem id="item11_6">
+                                                    <apex:inputField id="projectcodeVal2" value="{!InvoiceLineRequest2.ProjectCode__c}" style="width:80px"/>
+                                                </apex:pageBlockSectionItem>
+                                                 <apex:pageBlockSectionItem id="item11_7">                                                    
+                                                  <apex:outputText value="{!counterparty}" style="width:80px"/>
+                                                </apex:pageBlockSectionItem>
+                                            </apex:pageBlockSection>
+                                            <!--for 3rd item -->
+                                            <apex:pageBlockSection id="Section12" columns="7">
+                                                <apex:pageBlockSectionitem id="item12_1">
+                                                    <apex:inputField id="descriptionVal3" value="{!InvoiceLineRequest3.Description__c}"  style="width:250px"/>
+                                                </apex:pageBlockSectionItem>
+                                                <apex:pageBlockSectionitem id="item12_2">
+                                                </apex:pageBlockSectionItem>
+                                                <apex:pageBlockSectionitem id="item12_3">
+                                                        <apex:actionRegion >                                                   
+                                                  <apex:inputField id="amountVal3" value="{!InvoiceLineRequest3.Amount__c}" style="width:80px">                                                                                                
+                                                    <apex:actionSupport action="{!updatecc}" event="onchange" reRender="calc,costcentreVal3, accountcodeVal3, projectcodeVal3 ">                                                    
+                                                    <apex:param name="lineNumber" value="3"/> 
+                                                    </apex:actionSupport>                                                   
+                                                     </apex:inputField>
+                                                     </apex:actionRegion>
+                                                </apex:pageBlockSectionItem>
+                                                <apex:pageBlockSectionitem id="item12_4">
+                                                    <apex:inputField id="costcentreVal3" value="{!InvoiceLineRequest3 .CostCentre__c}" style="width:80px"/>
+                                                </apex:pageBlockSectionItem>
+                                                <apex:pageBlockSectionitem id="item12_5">
+                                                    <apex:inputField id="accountcodeVal3" value="{!InvoiceLineRequest3.AccountCode__c}" style="width:80px"/>
+                                                </apex:pageBlockSectionItem>
+                                                <apex:pageBlockSectionitem id="item12_6">
+                                                    <apex:inputField id="projectcodeVal3" value="{!InvoiceLineRequest3.ProjectCode__c}" style="width:80px"/>
+                                                </apex:pageBlockSectionItem>
+                                                 <apex:pageBlockSectionItem id="item12_7">                                                    
+                                                  <apex:outputText value="{!counterparty}" style="width:80px"/>
+                                                </apex:pageBlockSectionItem>
+                                            </apex:pageBlockSection>
+                                            <!--for 4rth item -->
+                                            <apex:pageBlockSection id="Section13" columns="7">
+                                                <apex:pageBlockSectionitem id="item13_1">
+                                                    <apex:inputField id="descriptionVal4" value="{!InvoiceLineRequest4.Description__c}" style="width:250px" />
+                                                </apex:pageBlockSectionItem>
+                                                <apex:pageBlockSectionitem id="item13_2">
+                                                </apex:pageBlockSectionItem>
+                                                <apex:pageBlockSectionitem id="item13_3">
+                                                      <apex:actionRegion >                                                   
+                                                  <apex:inputfield id="amountVal4" value="{!InvoiceLineRequest4.Amount__c}" style="width:80px">                                                                                                
+                                                    <apex:actionSupport action="{!updatecc}" event="onchange" reRender="calc,costcentreVal4, accountcodeVal4, projectcodeVal4 ">                                                    
+                                                    <apex:param name="lineNumber" value="4"/> 
+                                                    </apex:actionSupport>                                                    
+                                                     </apex:inputfield>
+                                                     </apex:actionRegion>
+                                                </apex:pageBlockSectionItem>
+                                                <apex:pageBlockSectionitem id="item13_4">
+                                                    <apex:inputField id="costcentreVal4" value="{!InvoiceLineRequest4.CostCentre__c}" style="width:80px"/>
+                                                </apex:pageBlockSectionItem>
+                                                <apex:pageBlockSectionitem id="item13_5">
+                                                    <apex:inputField id="accountcodeVal4" value="{!InvoiceLineRequest4.AccountCode__c}" style="width:80px"/>
+                                                </apex:pageBlockSectionItem>
+                                                <apex:pageBlockSectionitem id="item13_6">
+                                                    <apex:inputField id="projectcodeVal4" value="{!InvoiceLineRequest4.ProjectCode__c}" style="width:80px"/>
+                                                </apex:pageBlockSectionItem>
+                                                 <apex:pageBlockSectionItem id="item13_7">                                                    
+                                                  <apex:outputText value="{!counterparty}" style="width:80px"/>
+                                                </apex:pageBlockSectionItem>
+                                            </apex:pageBlockSection>
+                                            <!--for 5th item -->
+                                            <apex:pageBlockSection id="Section14" columns="7">
+                                                <apex:pageBlockSectionitem >
+                                                    <apex:inputField id="descriptionVal5" value="{!InvoiceLineRequest5.Description__c}"  style="width:250px"/>
+                                                </apex:pageBlockSectionItem>
+                                                <apex:pageBlockSectionitem >
+                                                </apex:pageBlockSectionItem>
+                                                <apex:pageBlockSectionitem >
+                                                     <apex:actionRegion >                                                   
+                                                  <apex:inputField id="amountVal5" value="{!InvoiceLineRequest5.Amount__c}" style="width:80px">                                                                                                
+                                                    <apex:actionSupport action="{!updatecc}" event="onchange" reRender="calc,costcentreVal5, accountcodeVal5, projectcodeVal5 ">                                                    
+                                                    <apex:param name="lineNumber" value="5"/> 
+                                                    </apex:actionSupport>                                                  
+                                                     </apex:inputField>
+                                                     </apex:actionRegion>
+                                                </apex:pageBlockSectionItem>
+                                                <apex:pageBlockSectionitem >
+                                                    <apex:inputField id="costcentreVal5" value="{!InvoiceLineRequest5.CostCentre__c}" style="width:80px"/>
+                                                </apex:pageBlockSectionItem>
+                                                <apex:pageBlockSectionitem >
+                                                    <apex:inputField id="accountcodeVal5" value="{!InvoiceLineRequest5.AccountCode__c}" style="width:80px"/>
+                                                </apex:pageBlockSectionItem>
+                                                <apex:pageBlockSectionitem >
+                                                    <apex:inputField id="projectcodeVal5" value="{!InvoiceLineRequest5.ProjectCode__c}" style="width:80px"/>
+                                                </apex:pageBlockSectionItem>
+                                                 <apex:pageBlockSectionItem >                                                    
+                                                  <apex:outputText value="{!counterparty}" style="width:80px"/>
+                                                </apex:pageBlockSectionItem>
+                                            </apex:pageBlockSection>
+                                            <!--for 6th item -->
+                                            <apex:pageBlockSection id="Section15" columns="7">
+                                                <apex:pageBlockSectionitem >
+                                                    <apex:inputField id="descriptionVal6" value="{!InvoiceLineRequest6.Description__c}"  style="width:250px"/>
+                                                </apex:pageBlockSectionItem>
+                                                <apex:pageBlockSectionitem >
+                                                </apex:pageBlockSectionItem>
+                                                <apex:pageBlockSectionitem >
+                                                   <apex:actionRegion >                                                   
+                                                  <apex:inputField id="amountVal6" value="{!InvoiceLineRequest6.Amount__c}" style="width:80px">                                                                                                
+                                                    <apex:actionSupport action="{!updatecc}" event="onchange" reRender="calc,costcentreVal6, accountcodeVal6, projectcodeVal6 ">                                                    
+                                                    <apex:param name="lineNumber" value="6"/> 
+                                                    </apex:actionSupport>                                                 
+                                                     </apex:inputField>
+                                                     </apex:actionRegion>
+                                                </apex:pageBlockSectionItem>
+                                                <apex:pageBlockSectionitem >
+                                                    <apex:inputField id="costcentreVal6" value="{!InvoiceLineRequest6.CostCentre__c}" style="width:80px"/>
+                                                </apex:pageBlockSectionItem>
+                                                <apex:pageBlockSectionitem >
+                                                    <apex:inputField id="accountcodeVal6" value="{!InvoiceLineRequest6.AccountCode__c}" style="width:80px"/>
+                                                </apex:pageBlockSectionItem>
+                                                <apex:pageBlockSectionitem >
+                                                    <apex:inputField id="projectcodeVal6" value="{!InvoiceLineRequest6.ProjectCode__c}" style="width:80px"/>
+                                                </apex:pageBlockSectionItem>
+                                                 <apex:pageBlockSectionItem >                                                    
+                                                  <apex:outputText value="{!counterparty}" style="width:80px"/>
+                                                </apex:pageBlockSectionItem>
+                                            </apex:pageBlockSection>
+                                            <!--for 7th item -->
+                                            <apex:pageBlockSection id="Section16" columns="7">
+                                                <apex:pageBlockSectionitem >
+                                                    <apex:inputField id="descriptionVal7" value="{!InvoiceLineRequest7.Description__c}"  style="width:250px"/>
+                                                </apex:pageBlockSectionItem>
+                                                <apex:pageBlockSectionitem >
+                                                </apex:pageBlockSectionItem>
+                                                <apex:pageBlockSectionitem >
+                                                     <apex:actionRegion >                                                   
+                                                  <apex:inputField id="amountVal7" value="{!InvoiceLineRequest7.Amount__c}" style="width:80px">                                                                                                
+                                                    <apex:actionSupport action="{!updatecc}" event="onchange" reRender="calc,costcentreVal7, accountcodeVal7, projectcodeVal7 ">                                                    
+                                                    <apex:param name="lineNumber" value="7"/> 
+                                                    </apex:actionSupport>                                                
+                                                     </apex:inputField>
+                                                     </apex:actionRegion>
+                                                </apex:pageBlockSectionItem>
+                                                <apex:pageBlockSectionitem >
+                                                    <apex:inputField id="costcentreVal7" value="{!InvoiceLineRequest7.CostCentre__c}" style="width:80px"/>
+                                                </apex:pageBlockSectionItem>
+                                                <apex:pageBlockSectionitem >
+                                                    <apex:inputField id="accountcodeVal7" value="{!InvoiceLineRequest7.AccountCode__c}" style="width:80px"/>
+                                                </apex:pageBlockSectionItem>
+                                                <apex:pageBlockSectionitem >
+                                                    <apex:inputField id="projectcodeVal7" value="{!InvoiceLineRequest7.ProjectCode__c}" style="width:80px"/>
+                                                </apex:pageBlockSectionItem>
+                                                 <apex:pageBlockSectionItem >                                                    
+                                                  <apex:outputText value="{!counterparty}" style="width:80px"/>
+                                                </apex:pageBlockSectionItem>
+                                            </apex:pageBlockSection>
+                                            <!--for 8th item -->
+                                            <apex:pageBlockSection id="Section17" columns="7">
+                                                <apex:pageBlockSectionitem >
+                                                    <apex:inputField id="descriptionVal8" value="{!InvoiceLineRequest8.Description__c}"  style="width:250px"/>
+                                                </apex:pageBlockSectionItem>
+                                                <apex:pageBlockSectionitem >
+                                                </apex:pageBlockSectionItem>
+                                                <apex:pageBlockSectionitem >
+                                                    <apex:actionRegion >                                                   
+                                                  <apex:inputField id="amountVal8" value="{!InvoiceLineRequest8.Amount__c}" style="width:80px">                                                                                                
+                                                    <apex:actionSupport action="{!updatecc}" event="onchange" reRender="calc,costcentreVal8, accountcodeVal8, projectcodeVal8 ">                                                    
+                                                    <apex:param name="lineNumber" value="8"/> 
+                                                    </apex:actionSupport>                                                   
+                                                     </apex:inputField>
+                                                     </apex:actionRegion>
+                                                </apex:pageBlockSectionItem>
+                                                <apex:pageBlockSectionitem >
+                                                    <apex:inputField id="costcentreVal8" value="{!InvoiceLineRequest8.CostCentre__c}" style="width:80px"/>
+                                                </apex:pageBlockSectionItem>
+                                                <apex:pageBlockSectionitem >
+                                                    <apex:inputField id="accountcodeVal8" value="{!InvoiceLineRequest8.AccountCode__c}" style="width:80px"/>
+                                                </apex:pageBlockSectionItem>
+                                                <apex:pageBlockSectionitem >
+                                                    <apex:inputField id="projectcodeVal8" value="{!InvoiceLineRequest8.ProjectCode__c}" style="width:80px"/>
+                                                </apex:pageBlockSectionItem>
+                                                 <apex:pageBlockSectionItem >                                                    
+                                                  <apex:outputText value="{!counterparty}" style="width:80px"/>
+                                                </apex:pageBlockSectionItem>
+                                            </apex:pageBlockSection>
+                                            <!--for 9th item -->
+                                            <apex:pageBlockSection id="Section18" columns="7">
+                                                <apex:pageBlockSectionitem >
+                                                    <apex:inputField id="descriptionVal9" value="{!InvoiceLineRequest9.Description__c}"  style="width:250px"/>
+                                                </apex:pageBlockSectionItem>
+                                                <apex:pageBlockSectionitem >
+                                                </apex:pageBlockSectionItem>
+                                                <apex:pageBlockSectionitem >
+                                                       <apex:actionRegion >                                                   
+                                                  <apex:inputField id="amountVal9" value="{!InvoiceLineRequest9.Amount__c}" style="width:80px">                                                                                                
+                                                    <apex:actionSupport action="{!updatecc}" event="onchange" reRender="calc,costcentreVal9, accountcodeVal9, projectcodeVal9 ">                                                    
+                                                    <apex:param name="lineNumber" value="9"/> 
+                                                    </apex:actionSupport>                                                   
+                                                     </apex:inputField>
+                                                     </apex:actionRegion>
+                                                </apex:pageBlockSectionItem>
+                                                <apex:pageBlockSectionitem >
+                                                    <apex:inputField id="costcentreVal9" value="{!InvoiceLineRequest9.CostCentre__c}" style="width:80px"/>
+                                                </apex:pageBlockSectionItem>
+                                                <apex:pageBlockSectionitem >
+                                                    <apex:inputField id="accountcodeVal9" value="{!InvoiceLineRequest9.AccountCode__c}" style="width:80px"/>
+                                                </apex:pageBlockSectionItem>
+                                                <apex:pageBlockSectionitem >
+                                                    <apex:inputField id="projectcodeVal9" value="{!InvoiceLineRequest9.ProjectCode__c}" style="width:80px"/>
+                                                </apex:pageBlockSectionItem>
+                                                 <apex:pageBlockSectionItem >                                                    
+                                                  <apex:outputText value="{!counterparty}" style="width:80px"/>
+                                                </apex:pageBlockSectionItem>
+                                            </apex:pageBlockSection>
+                                            <!--for 10th item -->
+                                           
+                                           <apex:pageBlockSection id="Section19" columns="7">
+                                                <apex:pageBlockSectionitem >
+                                                    <apex:inputField id="descriptionVal10" value="{!InvoiceLineRequest10.Description__c}"  style="width:250px"/>
+                                                </apex:pageBlockSectionItem>
+                                                <apex:pageBlockSectionitem >
+                                                </apex:pageBlockSectionItem>
+                                                <apex:pageBlockSectionitem >
+                                                    <apex:actionRegion >                                                   
+                                                  <apex:inputField id="amountVal10" value="{!InvoiceLineRequest10.Amount__c}" style="width:80px">                                                                                                
+                                                    <apex:actionSupport action="{!updatecc}" event="onchange" reRender="calc,costcentreVal10, accountcodeVal10, projectcodeVal10 ">                                                    
+                                                    <apex:param name="lineNumber" value="10"/> 
+                                                    </apex:actionSupport>                                                  
+                                                     </apex:inputField>
+                                                     </apex:actionRegion>
+                                                </apex:pageBlockSectionItem>
+                                                <apex:pageBlockSectionitem >
+                                                    <apex:inputField id="costcentreVal10" value="{!InvoiceLineRequest10.CostCentre__c}" style="width:80px"/>
+                                                </apex:pageBlockSectionItem>
+                                                <apex:pageBlockSectionitem >
+                                                    <apex:inputField id="accountcodeVal10" value="{!InvoiceLineRequest10.AccountCode__c}" style="width:80px"/>
+                                                </apex:pageBlockSectionItem>
+                                                <apex:pageBlockSectionitem >
+                                                    <apex:inputField id="projectcodeVal10" value="{!InvoiceLineRequest10.ProjectCode__c}" style="width:80px"/>
+                                                </apex:pageBlockSectionItem>
+                                                 <apex:pageBlockSectionItem >                                                    
+                                                  <apex:outputText value="{!counterparty}" style="width:80px"/>
+                                                </apex:pageBlockSectionItem>
+                                            </apex:pageBlockSection>
+                                            
+                                            <apex:pageBlockSection id="Section19b" columns="3">
+                                                 <apex:pageBlockSectionItem >
+                                                 
+                                                 </apex:pageBlockSectionItem>
+                                                   
+                                                                                                 
+                                                    
+                                                     
+                                                </apex:pageBlockSection> 
+                                               
+                                                <p>The appropriate rate of VAT will be calculated by Finance Team</p>                                                   
+                                        </apex:pageBlock>
+                                    </div>
+                                </div>
+                                 <div id="accordion" class="ui-accordion ui-widget ui-helper-reset">
+                                    <h3 class="ui-accordion-header ui-helper-reset ui-state-default ui-accordion-icons ui-corner-top ui-accordion-header-active ui-state-active">
+                                        <span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-s"></span>
+                                                
+                                Additional Details
+                                            </h3>
+                                <!--<div class="bottomMsg"> -->
+                                <apex:pageBlock id="Block5">
+                                    <apex:pageBlockSection id="Section20" columns="2">
+                                        <apex:pageBlockSectionItem id="item20_1" helpText="Add any information that you think procurement needs to understand about this request, i.e what products/services will be provided, which vendors have you consulted as part of the selection process and why you have selected this one. Not doing so will only delay the approval process.">
+                                            <apex:outputLabel value="Comments " id="commentsLbl" />
+                                            <apex:inputTextarea disabled="{!submitDisabled}" value="{!Request.comments__c}" id="commentsVal" style="width:400px" rows="5"/>
+                                        </apex:pageBlockSectionItem>
+                                    </apex:pageBlockSection>
+                                </apex:pageBlock>
+                                </div>
+                                 <div id="accordion" class="ui-accordion ui-widget ui-helper-reset">
+                                    <h3 class="ui-accordion-header ui-helper-reset ui-state-default ui-accordion-icons ui-corner-top ui-accordion-header-active ui-state-active">
+                                        <span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-s"></span>
+                                                
+                                Approval History
+                                            </h3>
+                                            <div class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom ui-accordion-content-active">
+                                                <div class="row">
+                                            <!-- <div class="bottomMsg"> -->
+                                            <apex:dataTable value="{!Trial}" var="audittrial"  border="2" rendered="{!Trial.size>0}" style="table-layout:fixed;width:830px;" columns="4" columnsWidth="15%,15%,15%,55%" rowClasses="odd,even">
+                                                <!-- <apex:column value="{!audittrial.name}" headerValue="Audit Id" headerClass="headerStyle" id="AuditTrialIdLbl" style="word-wrap:break-word" styleClas="cell" /> -->
+                                                <apex:column value="{!audittrial.Actioned_Date__c}" headerValue="Date" headerClass="headerStyle" style="word-wrap:break-word" styleClass="cell" width="8%"/>
+                                                <apex:column value="{!audittrial.Action__c}" headerValue="Action"  headerClass="headerStyle" style="word-wrap:break-word" styleClass="cell" />
+                                                <apex:column value="{!audittrial.Actioned_By_User__r.Firstname} {!audittrial.Actioned_By_User__r.Lastname}" headerValue="Actioned By" headerClass="headerStyle" style="word-wrap:break-word" styleClass="cell"/>
+                                                <apex:column value="{!audittrial.Long_Comment__c }" headerValue="Comments" headerClass="headerStyle" style="word-wrap:break-word" width="10%" styleClass="cell"/>
+                                            </apex:dataTable>
+                                            <!-- </div> -->
+                                                </div>
+                                                </div>
+                                    </div>
+                                
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom-button text-align-center">
+                    <apex:commandButton disabled="{!submitDisabled}"  onclick="if(!confirm('Are you sure?')){return false;}"  action="{!saveOrUpdate}" value="Submit" />
+                    <apex:commandButton action="{!formselection}" immediate="true" value="Cancel" html-formnovalidate="formnovalidate"/>
+                </div>
+                <apex:includeScript value="{!URLFOR($Resource.customCSS, 'customCSS/js/jquery-1.10.2.js')}"/>
+                <apex:includeScript value="{!URLFOR($Resource.customCSS, 'customCSS/js/jquery-ui.js')}"/>
+                <apex:includeScript value="{!URLFOR($Resource.customCSS, 'customCSS/js/custom.js')}"/>
+            </body>
+        </html>
+        
+    </apex:form>
+</apex:page>

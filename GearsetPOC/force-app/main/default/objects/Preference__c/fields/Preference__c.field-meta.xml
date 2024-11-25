@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Preference__c</fullName>
+    <description>The type of marketing communication to receive.</description>
+    <label>Preference</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Trains_opt_in__c</fullName>
+                <default>false</default>
+                <label>Trains</label>
+            </value>
+            <value>
+                <fullName>Hotels_opt_in__c</fullName>
+                <default>false</default>
+                <label>Hotels</label>
+            </value>
+            <value>
+                <fullName>Trips_opt_in__c</fullName>
+                <default>false</default>
+                <label>Trips</label>
+            </value>
+            <value>
+                <fullName>Club_Eurostar_opt_in__c</fullName>
+                <default>false</default>
+                <label>Club Eurostar</label>
+            </value>
+            <value>
+                <fullName>EnrichmentAndProfiling_opt_in__c</fullName>
+                <default>false</default>
+                <label>Enrichment And Profiling</label>
+            </value>
+            <value>
+                <fullName>Preferred_Language__pc</fullName>
+                <default>false</default>
+                <label>Language</label>
+            </value>
+            <value>
+                <fullName>Unsubscribed_all_opt_in__c</fullName>
+                <default>false</default>
+                <label>Unsubscribed all</label>
+            </value>
+            <value>
+                <fullName>Business_travel_opt_in__c</fullName>
+                <default>false</default>
+                <label>Business travel</label>
+            </value>
+            <value>
+                <fullName>Newsletter THI</fullName>
+                <default>false</default>
+                <label>Newsletter THI</label>
+            </value>
+            <value>
+                <fullName>Survey</fullName>
+                <default>false</default>
+                <label>Survey</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

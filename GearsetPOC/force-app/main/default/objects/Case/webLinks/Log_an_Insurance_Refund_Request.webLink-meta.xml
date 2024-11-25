@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Log_an_Insurance_Refund_Request</fullName>
+    <availability>online</availability>
+    <displayType>link</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Log an Insurance Refund Request</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>https://eurostar.my.salesforce.com/
+a6V/e?
+CF00Nb0000009xWZ1={!Case.Account}
+&amp;00Nb0000009xWZ6={!Case.PNR__c}
+&amp;retURL={!Case.Id}</url>
+</WebLink>

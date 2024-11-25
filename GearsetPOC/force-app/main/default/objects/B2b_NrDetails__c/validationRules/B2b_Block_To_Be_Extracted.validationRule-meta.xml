@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>B2b_Block_To_Be_Extracted</fullName>
+    <active>true</active>
+    <description>If Start Date is empty you can&#39;t pass the status to &quot;To be extracted&quot;.</description>
+    <errorConditionFormula>AND(
+NOT($User.B2b_Bypass_Validation_Rules__c),
+NOT($Permission.Sales_Admin),
+ISPICKVAL(B2b_Status__c, &#39;To be Extracted&#39;),
+ISCHANGED(B2b_Status__c),
+ISBLANK(B2b_RouteStartDate__c)
+)</errorConditionFormula>
+    <errorMessage>If Start Date is empty you can&#39;t pass the status to &quot;To be extracted&quot;.</errorMessage>
+</ValidationRule>

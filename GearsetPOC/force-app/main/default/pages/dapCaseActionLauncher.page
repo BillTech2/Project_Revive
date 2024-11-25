@@ -1,0 +1,5 @@
+<apex:page standardController="Case"
+  recordSetVar="accs"
+  extensions="plauti.dapActionLauncherRedirectController"
+  action="{!redirectToLC}">
+</apex:page>

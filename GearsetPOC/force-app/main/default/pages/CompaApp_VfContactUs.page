@@ -1,0 +1,543 @@
+<apex:page showHeader="false" sidebar="false" language="{!JSENCODE(selectedLanguageCode)}" controller="CompApp_CtrlContactUs" standardStylesheets="false" applyHtmlTag="false" applyBodyTag="false">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/3.4.5/select2.css" />
+        <style>
+            #app-root .select2-choice {
+                width: 98%;
+                display: inline-block;
+                padding-top: 13px;
+                padding-bottom: 13px;
+            }
+            #app-root .select2-choice:hover {
+                text-decoration: none;
+            }
+            #app-root .select2-drop {
+                margin-top: -5px;
+            }
+            #app-root .select2-container {
+                width: 100%;
+            }
+            body {
+                position: initial!important;
+            }
+        </style>
+
+
+        <apex:remoteObjects >
+            <apex:remoteObjectModel name="Reason_Code__c" jsShorthand="reasonCodeSFDC" fields="Id,nl_Label__c,en_Label__c,fr_Label__c,Available_Online__c,Contact_Us_Order__c,Active__c,en_Explanation_Message__c,fr_Explanation_Message__c,nl_Explanation_Message__c" />
+        </apex:remoteObjects>
+
+        <div id="contact-us-wrapper">
+
+            <h1 class="row">{!$label.CompApp_ContactUs}</h1>
+
+            <div class="row p1">{!$label.CompApp_Ask_Question}</div>
+
+            <div class="row p1">
+                <span>{!$label.CompApp_StartMessage1}</span>
+                <a href="{!$label.CompApp_COVID_Fill_LinkPart2}">
+                    <span style="color: #24b5c9;">{!$label.CompApp_COVID_Fill_HighlightedPart2}</span>
+                </a>
+                <span>{!$label.CompApp_StartMessage2}</span>
+            </div>
+            <div class="row p1">
+                <span>{!$label.CompApp_StartMessage3}</span>
+                <a href="{!$label.CompApp_COVID_Fill_LinkPart}">
+                    <span style="color: #24b5c9;">{!$label.CompApp_COVID_Fill_HighlightedPart}</span>
+                </a>
+                <span>{!$label.CompApp_StartMessage4}</span>
+            </div>
+
+            <div class="row p1">{!$label.CompApp_required_fields}</div>
+
+            <h2 class="row">{!$label.CompApp_Traveller_details}</h2>
+
+            <div class="row {{formManager.firstNameValdity | validityClass}}">
+                <label for="first-name" class="cell-label">{!$label.CompApp_First_name}</label>
+                <div class="input-wrapper validity-sign cell-input">
+                    <input
+                        placeholder="{!$label.CompApp_Traveller_First_Name}"
+                        id="first-name"
+                        ng-pattern="USER_NAME_REGEX"
+                        ng-change="formManager.firstNameValdity = !! $angularState.personalInfo.firstName"
+                        ng-model="$angularState.personalInfo.firstName"
+                    />
+                    <div class="error-message">{!$label.CompApp_enterFirstNameContactUs}</div>
+                </div>
+            </div>
+
+            <div class="row {{formManager.lastNameValdity | validityClass}}">
+                <label for="surname" class="cell-label">{!$label.CompApp_Surname}</label>
+                <div class="input-wrapper validity-sign cell-input">
+                    <input
+                        placeholder="{!$label.CompApp_Traveller_Surname}"
+                        id="surname"
+                        ng-pattern="USER_NAME_REGEX"
+                        ng-change="formManager.lastNameValdity = !! $angularState.personalInfo.lastName"
+                        ng-model="$angularState.personalInfo.lastName"
+                    />
+                    <div class="error-message">{!$label.CompApp_enterLastNameContactUs}</div>
+                </div>
+            </div>
+
+            <div class="row {{formManager.primaryEmailValdity | validityClass}}">
+                <label for="email" class="cell-label">{!$label.CompApp_email}</label>
+                <div class="input-wrapper validity-sign cell-input">
+                    <input type="email"
+                        placeholder="{!$label.CompApp_Traveller_Email}"
+                        id="email"
+                        ng-change="formManager.primaryEmailValdity = isPrimaryEmailValid()"
+                        ng-model="formManager.primaryEmail"
+                    />
+                    <div class="error-message">{!$label.CompApp_enterEmail}</div>
+                </div>
+            </div>
+
+            <div class="row {{formManager.secondaryEmailValdity | validityClass}}">
+                <label for="email" class="cell-label">{!$label.CompApp_Confirm_email}</label>
+                <div class="input-wrapper validity-sign cell-input">
+                    <input type="email"
+                        placeholder="{!$label.CompApp_Traveller_Email}"
+                        id="email"
+                        ng-paste="preventPaste($event)"
+                        ng-change="formManager.secondaryEmailValdity = isSecondaryEmailValid()"
+                        ng-model="formManager.secondaryEmail"
+                    />
+                    <div class="error-message">{!$label.CompApp_confirmEmail}</div>
+                </div>
+            </div>
+
+            <div class="row {{formManager.phoneValidity | validityClass}}">
+                <label for="phone" class="cell-label">{!$label.CompApp_phone}</label>
+                <div class="input-wrapper validity-sign cell-input">
+                    <input type="text"
+                        placeholder="{!$label.CompApp_Traveller_Phone}"
+                        id="phone"
+                        ng-change="formManager.phoneValidity = isPhoneValid()"
+                        ng-model="formManager.phone"
+                    />
+                    <div class="error-message">{!$label.CompApp_enterPhone}</div>
+                </div>
+            </div>
+
+            <h2 class="row">{!$label.CompApp_yourEnquiry}</h2>
+
+            <div class="row {{formManager.categoryValidity | validityClass}}" style="margin-bottom:0px">
+                <label for="category" class="cell-label">{!$label.CompApp_Category}</label>
+                <div class="input-wrapper validity-sign cell-input">
+                    <ui-select
+                            ng-model="$angularState.enquiryInfo.category"
+                            ng-change="formManager.categoryValidity == categoryChanged()"
+                            open="true"
+                            theme="select2"
+                            ng-disabled="disabled"
+                            title="Choose a Category"
+                    >
+                        <ui-select-match placeholder="{!$Label.CompApp_SelectCategoryByName}">{{ $select.selected.value }}</ui-select-match>
+                        <ui-select-choices repeat="category in categoryList | filter: {value: $select.search}">
+                            <div ng-bind-html="category.value"></div>
+                        </ui-select-choices>
+                    </ui-select>
+
+                    <div class="error-message">{!$label.CompApp_enterCategory}</div>
+                </div>
+            </div>
+
+            <div class="row {{formManager.bookingQuestionValidity | validityClass}}" ng-show="formController.questionRequired">
+                <label ng-show="!formController.feedbackLabelRequired" for="bookingQuestion" class="cell-label">{!$label.CompApp_Booking_Question}</label>
+                <label ng-show="formController.feedbackLabelRequired" for="bookingQuestion" class="cell-label">{!$label.CompApp_Feedback_Question}</label>
+                <div class="input-wrapper validity-sign cell-input">
+                    <ui-select
+                            ng-model="$angularState.questionSelections.category"
+                            ng-change="formManager.bookingQuestionValidity == bookingQuestionChanged()"
+                            open="true"
+                            theme="select2"
+                            ng-disabled="disabled"
+                            title="Choose a Category"
+                    >
+                        <ui-select-match placeholder="{!$Label.CompApp_SelectQuestionByName}">{{ $select.selected.question }}</ui-select-match>
+                        <ui-select-choices repeat="question in questionLabels | filter: {value: $select.search}">
+                            <div ng-bind-html="question.question"></div>
+                        </ui-select-choices>
+                    </ui-select>
+                    <div class="error-message">{!$label.CompApp_enterBookingQuestion}</div>
+                </div>
+            </div>
+
+            <div class="row"
+                 ng-show="formController.loyaltyMessage"
+                 style="resize:none;height:6em;overflow-y:auto;padding:0px 5px 0px 0px;border:none;text-align:justify;font-family:Tahoma;font-weight:normal;font-size:14px;"
+            >
+                {!$label.CompApp_Loyalty_Message}
+                <br/>
+            </div>
+
+            <div class="row"
+                 ng-show="formController.retimedLabelFirst"
+                 style="resize:none;height:6em;overflow-y:auto;padding:0px 5px 0px 0px;border:none;text-align:justify;font-family:Tahoma;font-weight:normal;font-size:14px;"
+            >
+                {!$label.CompApp_Retimed_First}
+                <br/>
+            </div>
+
+            <div class="row"
+                 ng-show="formController.retimedLabelSecond"
+                 style="resize:none;height:6em;overflow-y:auto;padding:0px 5px 0px 0px;border:none;text-align:justify;font-family:Tahoma;font-weight:normal;font-size:14px;"
+            >
+                {!$label.CompApp_Retimed_Second}
+                <br/>
+            </div>
+
+            <div class="row {{formManager.memberNumberValidity | validityClass}}" ng-show="formController.loyaltyMessage">
+                <label for="number" class="cell-label">{!$label.CompApp_Loyalty_Membership_Number}</label>
+                <div class="input-wrapper validity-sign cell-input">
+                    <input
+                        id="number"
+                        ng-change="formManager.memberNumberValidity = memberNumberChanged()"
+                        ng-model="$angularState.enquiryInfo.memberNumber"
+                    />
+                    <div class="error-message">{!$label.CompApp_Invalid_Membership_Number}</div>
+                </div>
+            </div>
+
+            <div class="row {{formManager.birthDayValidity | validityClass}}" ng-show="formController.loyaltyMessage">
+                <label for="birth" class="cell-label">{!$label.CompApp_Loyalty_Birth}</label>
+                <div class="input-wrapper validity-sign cell-input">
+                    <input
+                        type="date"
+                        id="birth"
+                        min="1899-01-01"
+                        max="2099-12-31"
+                        ng-model="$angularState.enquiryInfo.birthDate"
+                        ng-change="formManager.birthDayValidity = birthDayChanged()"
+                    />
+                    <div class="error-message">{!$label.CompApp_enterValidBirthday}</div>
+                </div>
+            </div>
+
+            <div class="row {{formManager.loyaltyValidity | validityClass}}" ng-show="formController.loyaltyQuestions">
+                <label for="bookingQuestion" class="cell-label">{!$label.CompApp_Booking_Question}</label>
+                <div class="input-wrapper validity-sign cell-input">
+                    <ui-select
+                            ng-model="$angularState.questionSelections.loyalty"
+                            ng-change="formManager.loyaltyValidity == loyaltyQuestionChanged()"
+                            open="true"
+                            theme="select2"
+                            ng-disabled="disabled"
+                            title="Choose a Category"
+                    >
+                        <ui-select-match placeholder="{!$Label.CompApp_SelectQuestionByName}">{{ $select.selected.question }}</ui-select-match>
+                        <ui-select-choices repeat="question in loyaltyLabels | filter: {value: $select.search}">
+                            <div ng-bind-html="question.question"></div>
+                        </ui-select-choices>
+                    </ui-select>
+                    <div class="error-message">{!$label.CompApp_enterBookingQuestion}</div>
+                </div>
+            </div>
+
+        <div class="row tooltip" ng-show="formController.websiteErrorRequired">
+            <label for="pnr" class="cell-label">{!$label.CompApp_Website_Error}</label>
+            <div class="input-wrapper validity-sign cell-input">
+                <textarea
+                    class="rich-area"
+                    id="pnr"
+                    ng-change="isWebsiteError()"
+                    ng-model="$angularState.enquiryInfo.errorMessage"
+                />
+            </div>
+        </div>
+
+        <div class="row {{formManager.onboardValidity | validityClass}}"
+            ng-show="formController.onBoardQuestionRequired">
+            <label for="direction-type" class="cell-label" style="margin-top:0px;">{!$label.CompApp_If_PNR_Exist}</label>
+            <div id="direction-type" class="input-wrapper cell-input">
+                <label>
+                    <input type="checkbox"
+                           ng-model="$angularState.questionSelections.onboardTrue"
+                           ng-change="formManager.onboardValidity = toggleOnboardChoice(1)"
+                    />
+                        {!$label.CompApp_Yes}
+                </label><br/>
+                <label>
+                    <input type="checkbox"
+                           ng-model="$angularState.questionSelections.onboardFalse"
+                           ng-change="formManager.onboardValidity = toggleOnboardChoice(2)"
+                    />
+                        {!$label.CompApp_No}
+                </label>
+                <span ng-show="!formManager.onboardValidity">
+                    <div class="error-message">{!$label.CompApp_enterOnboardVariant}</div>
+                </span>
+            </div>
+        </div>
+
+        <div style="display: flex;"  ng-show="formController.hotelRequired">
+            <div class="row tooltip {{formManager.hotelValidity | validityClass}}">
+                <label for="hbr" class="cell-label">{!$label.CompApp_Hotel_Booking_reference_ContactUs}</label>
+                <div class="input-wrapper validity-sign cell-input">
+                    <input
+                        id="hbr"
+                        ng-change="formManager.hotelValidity = hotelReferenceChanged()"
+                        ng-model="$angularState.enquiryInfo.hotelReference"
+                    />
+                        <div class="error-message">{!$label.CompApp_enterHotelReference}</div>
+                </div>
+            </div>
+
+            <div style=" padding-left:20px;">
+                <div id="direction-type" class="input-wrapper cell-input" style="padding-top:26%;">
+                    <label>
+                        <input type="checkbox"
+                            ng-model="$angularState.questionSelections.hotelUnknown"
+                            ng-change="formManager.hotelUnknown = hotelUnknownChanged()"
+                        />
+                            {!$label.CompApp_Booking_Reference_Dont_Know}
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div style="display: flex;"  ng-show="formController.PNRRequired">
+            <div class="row tooltip {{formManager.PNRValdity | validityClass}}">
+                <label for="pnr" class="cell-label">{!$label.CompApp_Booking_reference_ContactUs}</label>
+                <div class="input-wrapper validity-sign cell-input">
+                    <input
+                        placeholder="{!$label.CompApp_six_letter_booking}"
+                        id="pnr"
+                        ng-change="$angularState.enquiryInfo.PNR = $angularState.enquiryInfo.PNR.toUpperCase(); formManager.PNRValdity = isPNRValid()"
+                        ng-model="$angularState.enquiryInfo.PNR"
+                    />
+                    <a class="tooltip-sign" id="pnr-tooltip"></a>
+                    <div class="error-message">{!$label.CompApp_PNR_Validation_Error}</div>
+                </div>
+            </div>
+            <div style=" padding-left:20px;" ng-show="!formController.PNRKnown">
+                <div id="direction-type" class="input-wrapper cell-input" style="padding-top:26%;">
+                    <label>
+                        <input type="checkbox"
+                            ng-model="$angularState.questionSelections.PNRUnknown"
+                            ng-change="formManager.PNRUnknown = PNRUnknownChanged()"
+                        />
+                            {!$label.CompApp_Booking_Reference_Dont_Know}
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom-label"
+             ng-show="formController.GDPRLinkRequired"
+             style="resize:none;height:6em;overflow-y:auto;padding:0px 5px 0px 0px;border:none;text-align:justify;font-family:Tahoma;font-weight:normal;font-size:14px;"
+        >
+            <a href="{!$label.CompApp_GDPR_Link}">{!$label.CompApp_GDPR_Link_Text}</a>
+        </div>
+
+        <div class="row tooltip {{formManager.checkInValidity | validityClass}}" ng-show="formController.checkDates">
+            <label for="birth" class="cell-label">{!$label.CompApp_Check_In_Date}</label>
+            <div class="input-wrapper validity-sign cell-input">
+                <input
+                    type="date"
+                    id="birth"
+                    ng-model="$angularState.enquiryInfo.checkInDate"
+                />
+            </div>
+            <span ng-show="!formManager.checkInValidity">
+                <div class="error-message">{!$label.CompApp_enterCheckDates}</div>
+            </span>
+        </div>
+
+        <div class="row tooltip {{formManager.checkOutValidity | validityClass}}" ng-show="formController.checkDates">
+            <label for="birth" class="cell-label">{!$label.CompApp_Check_Out_Date}</label>
+            <div class="input-wrapper validity-sign cell-input">
+                <input
+                    type="date"
+                    id="birth"
+                    ng-model="$angularState.enquiryInfo.checkOutDate"
+                />
+            </div>
+            <span ng-show="!formManager.checkOutValidity">
+                <div class="error-message">{!$label.CompApp_enterCheckDates}</div>
+            </span>
+        </div>
+            
+        <div class="row {{formManager.directionValidity | validityClass}}"
+            ng-show="formController.directionRequired">
+            <label for="direction-type" class="cell-label" style="margin-top:0px;">{!$label.CompApp_Direction_Types}</label>
+            <div id="direction-type" class="input-wrapper cell-input">
+                <label>
+                    <input type="checkbox"
+                           ng-model="$angularState.enquiryInfo.directionOutbound"
+                           ng-change="formManager.directionValidity = toggleDirectionChoice(1)"
+                    />
+                        {!$label.CompApp_Direction_Outbound}
+                </label><br/>
+                <label>
+                    <input type="checkbox"
+                           ng-model="$angularState.enquiryInfo.directionReturn"
+                           ng-change="formManager.directionValidity = toggleDirectionChoice(2)"
+                    />
+                        {!$label.CompApp_Direction_Return}
+                </label><br/>
+                <label>
+                    <input type="checkbox"
+                           ng-model="$angularState.enquiryInfo.directionBoth"
+                           ng-change="formManager.directionValidity = toggleDirectionChoice(3)"
+                    />
+                        {!$label.CompApp_Direction_Both}
+                </label><br/>
+                <label>
+                    <input type="checkbox"
+                           ng-model="$angularState.enquiryInfo.directionNone"
+                           ng-change="formManager.directionValidity = toggleDirectionChoice(4)"
+                    />
+                        {!$label.CompApp_Direction_Dont_Know}
+                </label>
+                <span ng-show="!formManager.directionValidity">
+                    <div class="error-message">{!$label.CompApp_Choose_Direction}</div>
+                </span>
+            </div>
+        </div>
+
+        <div class="row {{formManager.feedbackValidity | validityClass}}"
+            ng-show="formController.feedbackRequired">
+            <label for="direction-type" class="cell-label" style="margin-top:0px;">{!$label.CompApp_Feedback_Question_Type}</label>
+            <div id="direction-type" class="input-wrapper cell-input">
+                <label>
+                    <input type="checkbox"
+                           ng-model="$angularState.enquiryInfo.feedbackPraise"
+                           ng-change="formManager.feedbackValidity = toggleFeedbackChoice(1)"
+                    />
+                        {!$label.CompApp_Feedback_Question_Praise}
+                </label><br/>
+                <label>
+                    <input type="checkbox"
+                           ng-model="$angularState.enquiryInfo.feedbackCompliant"
+                           ng-change="formManager.feedbackValidity = toggleFeedbackChoice(2)"
+                    />
+                        {!$label.CompApp_Feedback_Question_Compliant}
+                </label><br/>
+                <label>
+                    <input type="checkbox"
+                           ng-model="$angularState.enquiryInfo.feedbackNeutral"
+                           ng-change="formManager.feedbackValidity = toggleFeedbackChoice(3)"
+                    />
+                        {!$label.CompApp_Feedback_Question_Neutral}
+                </label>
+                <span ng-show="!formManager.feedbackValidity">
+                    <div class="error-message">{!$label.CompApp_enterFeedback}</div>
+                </span>
+            </div>
+        </div>
+
+        <div class="row free-message"
+             ng-bind-html="formController.freeMessageHTML"
+             ng-show="formController.messageRequired"
+             style="resize:none;color:rgb(65, 65, 65);overflow-y:auto;padding:0px 5px 30px 0px;border:none;text-align:justify;font-family:Tahoma;font-weight:normal;font-size:14px;"
+        >
+        </div>
+
+        <div class="row tooltip" ng-show="formController.freeQuestionRequired">
+            <label ng-show="!formController.feedbackLabelRequired" for="pnr" class="cell-label">{!$label.CompApp_Free_Form_Question}</label>
+            <label ng-show="formController.feedbackLabelRequired" for="pnr" class="cell-label">{!$label.CompApp_Feedback_Free_Question}</label>
+            <div class="input-wrapper validity-sign cell-input">
+                <textarea
+                    class="rich-area"
+                    id="pnr"
+                    ng-change="isFreeQuestionChanged()"
+                    ng-model="$angularState.enquiryInfo.Description"
+                />
+            </div>
+        </div>
+
+            
+            <div class="row {{formManager.selectedFileValidity | validityClass}}" ng-show="formController.submitRequired">
+                <label for="fileInput" class="cell-label">{!$label.CompApp_fileUpload}</label>
+                <div class="input-wrapper cell-input">
+                    <div class="input-file-wrapper">
+                        <input type="file" id="fileInput" class="hidden" style="outline: none;visibility: hidden;"
+                            onchange="angular.element(this).scope().addAttachment(this)"
+                        />
+                        <label for="fileInput" class="btn secondary">{!$label.CompApp_chooseFile}</label>
+                        <span class="hint">{!$label.CompApp_maxUpload}</span>
+                    </div>
+                    <div class="error-message">{!$label.CompApp_fileTooBig}</div>
+                </div>
+            </div>
+
+
+            <div class="row" ng-repeat="selectedFile in selectedFileList" ng-show="formController.submitRequired">
+                <label class="cell-label" style="width:{{ $angularState.system.maxLabelWidth }}px;">&nbsp;</label>
+                <div class="cell-input">
+                    <div>
+                        <img ng-click="removeAttachment(selectedFile);" style="display: inline-block; cursor: pointer;" src="{!URLFOR($Resource.CompApp_Res, '/res/BigRedX.png')}" width="14" height="14"/>
+                        <span style="display: inline-block; vertical-align: 10%;">&nbsp;&nbsp;{{ selectedFile.name }}</span>
+                    </div>
+                    <div class="error-message">{!$label.CompApp_pleaseSelectGoodSize}</div>
+                </div>
+            </div>
+
+            <div class="row {{ formManager.captchaValdity | validityClass }}" ng-show="formController.submitRequired">
+                <label for="recaptcha" class="cell-label" >{!$label.CompApp_robot_question}</label>
+                <div class="cell-input">
+                    <no-captcha
+                        g-recaptcha-response="captchaResponse"
+                        theme='light'
+                        language="{!JSENCODE(selectedLanguageCode)}"
+                        control="noCaptchaControl"
+                        site-key="{!GOOGLE_CAPTCHA_SITE_KEY}"
+                    >
+                    </no-captcha>
+                    <div class="error-message">{!$label.CompApp_Validate_not_robot}</div>
+                </div>
+            </div>
+            <div class="row commands-section" ng-show="formController.submitRequired">
+                <a href="" class="btn primary" ng-class="{ 'disable-link-activity' : isSubmitDisabled }" ng-click="createCaseHandler();">{!$label.CompApp_Submit}</a>
+                <p style="color: red !important;" ng-hide="formManager.noErrors">{!$label.CompApp_incorrectData}</p>
+                <div class="lds-spinner" style="margin-left: -15px;" ng-hide="formManager.hideSpinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+            </div> 
+
+            <script>
+                var GLOBAL_REMOTE_USER_IP = '{!USER_IP}';
+            </script>
+        </div>
+
+
+        <div id="pnr-tooltip-images-template" style="display:none;">
+            <div class="images-wrapper">
+                <img src="" /> <img src="" /> <img src="" /> <img src="" />
+            </div>
+        </div>
+        <script>function imgLoaded(img) { console.log('img loaded', img.src); }</script>
+        <script>function imgError(img)  { console.log('img error',  img.src); }</script>
+        <script>
+            $(function () {
+
+                var isDesktop = window.isDesktop = $(window).width() > 960,
+                    pnr = (isDesktop ? [
+                        "{! URLFOR($Resource.CompApp_Eurostar_Ticket_Examples, '/img/PNR-desktop-0.jpg') }",
+                        "{! URLFOR($Resource.CompApp_Eurostar_Ticket_Examples, '/img/PNR-desktop-1.jpg') }",
+                        "{! URLFOR($Resource.CompApp_Eurostar_Ticket_Examples, '/img/PNR-desktop-2.jpg') }",
+                        "{! URLFOR($Resource.CompApp_Eurostar_Ticket_Examples, '/img/PNR-desktop-3.jpg') }"
+                    ] : [
+                        "{! URLFOR($Resource.CompApp_Eurostar_Ticket_Examples, '/img/PNR-tablet-0.jpg') }",
+                        "{! URLFOR($Resource.CompApp_Eurostar_Ticket_Examples, '/img/PNR-tablet-1.jpg') }",
+                        "{! URLFOR($Resource.CompApp_Eurostar_Ticket_Examples, '/img/PNR-tablet-2.jpg') }",
+                        "{! URLFOR($Resource.CompApp_Eurostar_Ticket_Examples, '/img/PNR-tablet-3.jpg') }"
+                    ]),
+                    $pnrImagesWrapper = $('#pnr-tooltip-images-template > div');
+
+                $pnrImagesWrapper.
+                    find('img').
+                    each(function (i, img) { img.src = pnr[i] || ''; });
+
+                $('#pnr-tooltip').click(openTooltip.bind(null, {
+                    title: "{!$label.CompApp_find_booking_reference}",
+                    text: [
+                        "{!$label.CompApp_different_booking_reference}",
+                        $pnrImagesWrapper,
+                        "{!$label.CompApp_locate_ticket_number} <a target='_blank' href='http://eurostarhelp.force.com/faq/?language=uk-en'>{!$label.CompApp_Help_Centre}</a>"
+                    ]
+                }));
+
+            });
+        </script>
+
+</apex:page>

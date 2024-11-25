@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TCN_Check</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>TCN Check</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/22.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/support/console/28.0/integration.js&quot;)}
+
+// set up the array for storing all the compensation records
+var updateRecord = new Array();
+var TCNString = &quot;&quot;;
+
+var InTCN = &quot;{!Compensation__c.TCN__c}&quot;;
+if( InTCN != &quot;&quot;) {TCNString = TCNString + &quot;&#39;&quot;+InTCN+&quot;&#39;,&quot;;}
+var InTCN = &quot;{!Compensation__c.TCN_1__c}&quot;;
+if( InTCN != &quot;&quot;) {TCNString = TCNString + &quot;&#39;&quot;+InTCN +&quot;&#39;,&quot;;}
+var InTCN = &quot;{!Compensation__c.TCN_2__c}&quot;;
+if( InTCN != &quot;&quot;) {TCNString = TCNString + &quot;&#39;&quot;+InTCN +&quot;&#39;,&quot;;}
+var InTCN = &quot;{!Compensation__c.TCN_3__c}&quot;;
+if( InTCN != &quot;&quot;) {TCNString = TCNString + &quot;&#39;&quot;+InTCN +&quot;&#39;,&quot;;}
+var InTCN = &quot;{!Compensation__c.TCN_4__c}&quot;;
+if( InTCN != &quot;&quot;) {TCNString = TCNString + &quot;&#39;&quot;+InTCN +&quot;&#39;,&quot;;}
+var InTCN = &quot;{!Compensation__c.TCN_5__c}&quot;;
+if( InTCN != &quot;&quot;) {TCNString = TCNString + &quot;&#39;&quot;+InTCN +&quot;&#39;,&quot;;}
+var InTCN = &quot;{!Compensation__c.TCN_6__c}&quot;;
+if( InTCN != &quot;&quot;) {TCNString = TCNString + &quot;&#39;&quot;+InTCN +&quot;&#39;,&quot;;}
+var InTCN = &quot;{!Compensation__c.TCN_7__c}&quot;;
+if( InTCN != &quot;&quot;) {TCNString = TCNString + &quot;&#39;&quot;+InTCN +&quot;&#39;,&quot;;}
+var InTCN = &quot;{!Compensation__c.TCN_8__c}&quot;;
+if( InTCN != &quot;&quot;) {TCNString = TCNString + &quot;&#39;&quot;+InTCN +&quot;&#39;,&quot;;}
+var InTCN = &quot;{!Compensation__c.TCN_9__c}&quot;;
+if( InTCN != &quot;&quot;) {TCNString = TCNString + &quot;&#39;&quot;+InTCN +&quot;&#39;,&quot;;}
+var InTCN = &quot;{!Compensation__c.TCN_10__c}&quot;;
+if( InTCN != &quot;&quot;) {TCNString = TCNString + &quot;&#39;&quot;+InTCN +&quot;&#39;,&quot;;}
+TCNString = TCNString + &quot;&#39;end&#39;&quot;;
+// added the above line to enable a comma to be added to every concatenated record
+
+var myquery = &quot;SELECT RecordType.Name,TCN__c,Case__c FROM Compensation__c WHERE (RecordType.Name &lt;&gt; &#39;Reasons and Tickets&#39; OR Case__c = &#39;500b0000003D2Dr&#39;) AND Case__c &lt;&gt; &#39;{!Compensation__c.CaseId__c}&#39; AND (TCN_1__c IN(&quot;+TCNString+&quot;) OR TCN_2__c IN(&quot;+TCNString+&quot;) OR TCN_3__c IN(&quot;+TCNString+&quot;) OR TCN_4__c IN(&quot;+TCNString+&quot;) OR TCN_5__c IN(&quot;+TCNString+&quot;) OR TCN_6__c IN(&quot;+TCNString+&quot;) OR TCN_7__c IN(&quot;+TCNString+&quot;) OR TCN_8__c IN(&quot;+TCNString+&quot;) OR TCN_9__c IN(&quot;+TCNString+&quot;) OR TCN_10__c IN(&quot;+TCNString+&quot;)) &quot;; 
+ 
+
+// execute the query and store the record(s) 
+var result = sforce.connection.query(myquery); 
+var recordss = result.getArray(&quot;records&quot;);
+
+
+//Updating TCN Duplicate and Record Lock Check
+
+var tempCase = &quot;select Approval_Status__c  from case where Id =&#39;{!Case.Id}&#39; &quot;;
+var cslckresult = sforce.connection.query(tempCase );
+
+var records = cslckresult .getArray(&quot;records&quot;); 
+for (var i=0; i&lt; records .length; i++)
+    {
+    var rrecord = records[i];
+    tempCase=rrecord.Approval_Status__c  ;
+    }
+if(tempCase==&#39;Approvedd&#39;)
+{
+ alert(&quot;Record Is Locked Cannot Update&quot;);
+ tempCase=&quot;&quot;;
+}
+else
+{
+ var casse=&quot;select Id from Compensation__c  where Name=&#39;{!Compensation__c.Name}&#39; &quot;;
+ var csresult = sforce.connection.query(casse);
+ var records = csresult.getArray(&quot;records&quot;); 
+ for (var i=0; i&lt; records .length; i++)
+    {
+    var rrecord = records[i];
+    var tempCopm = new sforce.SObject(&quot;Compensation__c&quot;);
+    tempCopm.id=rrecord.Id;
+    tempCopm.TCN_Duplicate__c=recordss.length;
+    var caseresult=sforce.connection.update([tempCopm ]);
+    }
+ window.location.reload();
+}
+
+// Refresh the Primary Tab
+
+ var refreshPrimaryTab = function showTabId(result) {
+        var tabId = result.id;
+        sforce.console.refreshPrimaryTabById(tabId, true);
+    };
+if (sforce.console.isInConsole()) {
+    sforce.console.getEnclosingTabId(function(enclosingResult){
+        sforce.console.getEnclosingPrimaryTabId(refreshPrimaryTab);
+    });
+}</url>
+</WebLink>

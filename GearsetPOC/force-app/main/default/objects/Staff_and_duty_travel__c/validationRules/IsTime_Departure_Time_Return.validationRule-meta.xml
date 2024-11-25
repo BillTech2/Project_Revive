@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IsTime_Departure_Time_Return</fullName>
+    <active>true</active>
+    <errorConditionFormula>NOT(
+ OR(
+  ISBLANK(Departure_Time_Return__c),
+
+  AND(
+   IF(ISNUMBER( MID(Departure_Time_Return__c, 1, 2)    ), VALUE(MID(Departure_Time_Return__c, 1, 2))  &lt;24,FALSE),
+   IF(ISNUMBER( MID(Departure_Time_Return__c, 4, 2) ), VALUE(MID(Departure_Time_Return__c, 4, 2))&lt;60, FALSE),
+   CONTAINS(Departure_Time_Return__c, &quot;:&quot;)
+  )  
+ ) 
+)</errorConditionFormula>
+    <errorDisplayField>Departure_Time_Return__c</errorDisplayField>
+    <errorMessage>The time must written in the following format HH:MM</errorMessage>
+</ValidationRule>

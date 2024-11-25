@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Insurance_Reference_Format</fullName>
+    <active>true</active>
+    <errorConditionFormula>NOT(
+CONTAINS(Name, &quot;ESTGB&quot;)
+||
+CONTAINS(Name, &quot;ESTFR&quot;)
+||
+CONTAINS(Name, &quot;ESTBE&quot;)
+||
+CONTAINS(Name, &quot;ESTNL&quot;)
+||
+CONTAINS(Name, &quot;ESPBE&quot;)
+||
+CONTAINS(Name, &quot;ESPGB&quot;)
+||
+CONTAINS(Name, &quot;ESPFR&quot;)
+||
+CONTAINS(Name, &quot;ESPNL&quot;)
+)</errorConditionFormula>
+    <errorMessage>Incorrect format for Insurance Reference. The reference must start with either:
+&quot;ESTGB&quot;
+&quot;ESTFR&quot;
+&quot;ESTBE&quot;
+&quot;ESTNL&quot;
+&quot;ESPBE&quot;
+&quot;ESPGB&quot;
+&quot;ESPFR&quot;
+&quot;ESPNL&quot;</errorMessage>
+</ValidationRule>

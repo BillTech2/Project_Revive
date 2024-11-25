@@ -1,0 +1,264 @@
+<apex:page id="e4aWebform" showHeader="false" standardStylesheets="false"
+           sidebar="false" applyHtmlTag="false" applyBodyTag="false" docType="html-5.0"
+           controller="cu_MainCtrl" language="{!selectedLanguageCode}">
+
+  <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="{!selectedLanguageCode}">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <link rel="shortcut icon" href="{!URLFOR($Resource.EurostarFavIcon)}"/>
+    <apex:slds />
+    <apex:includeLightning />
+  </head>
+
+  <style type="text/css">
+  @font-face {
+    font-family: 'Arial';
+    src: url({!URLFOR($Resource.PreferenceCenterPageFonts, '/PreferenceCenterPageFonts/Arial.ttf')});
+  }
+  @font-face {
+    font-family: 'Aspect-Bold';
+    src: url({!URLFOR($Resource.PreferenceCenterPageFonts, '/PreferenceCenterPageFonts/Aspect-Bold/aspect-bold.ttf')}) format('truetype');
+
+  }
+  @font-face {
+    font-family: 'Aspect-Light';
+    src: url({!URLFOR($Resource.PreferenceCenterPageFonts, '/PreferenceCenterPageFonts/Aspect-Light/aspect-light.woff2')});
+  }
+  @font-face {
+    font-family: 'Pembroke-Regular';
+    src: url({!URLFOR($Resource.PreferenceCenterPageFonts, 'PreferenceCenterPageFonts/PembrokeWeb-Regular/pembrokeweb-regular.ttf')}) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Pembroke-Bold';
+    src: url({!URLFOR($Resource.PreferenceCenterPageFonts, 'PreferenceCenterPageFonts/PembrokeWeb-Bold/pembrokeweb-bold.eot')});
+    src: url({!URLFOR($Resource.PreferenceCenterPageFonts, 'PreferenceCenterPageFonts/PembrokeWeb-Bold/pembrokeweb-bold.eot')}) format('embedded-opentype'),
+         url({!URLFOR($Resource.PreferenceCenterPageFonts, 'PreferenceCenterPageFonts/PembrokeWeb-Bold/pembrokeweb-bold.woff')}) format('woff'),
+         url({!URLFOR($Resource.PreferenceCenterPageFonts, 'PreferenceCenterPageFonts/PembrokeWeb-Bold/pembrokeweb-bold.ttf')}) format('truetype'),
+         url({!URLFOR($Resource.PreferenceCenterPageFonts, 'PreferenceCenterPageFonts/PembrokeWeb-Bold/pembrokeweb-bold.svg')}) format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Dummy-IECompat';
+    src: url({!URLFOR($Resource.PreferenceCenterPageFonts, '/PreferenceCenterPageFonts/Aspect-Bold/aspect-bold.woff2')});
+  }
+
+  .text-align-center-vf { text-align: center; }
+  .inner-background-vf { background: #FFFFFF; }
+  .link-label { color: #24B5C9; cursor: pointer;}
+  .emblem-slot { width: 200px; border: none; display: block; }
+  .header-main-brush { height: 95px; background: #07193E; }
+  .header-underline-brush { height: 7px; background: #4BB9CB; }
+  .height-inheritance { height: inherit; }
+  .footer-text-params {
+    font-size: 14px;
+    line-height: 18px;
+    font-family: 'Pembroke-Regular', 'Arial', 'Sans-Serif';
+    color: #55565A;
+  }
+
+  @media all and (max-width: 600px) {
+    .footer-text-params {
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+  @media all and (max-width: 400px) {
+    .footer-text-params {
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+  @media all and (max-width: 340px) {
+    .footer-text-params {
+      font-size: 10px;
+      line-height: 14px;
+    }
+  }
+  </style>
+
+  <style>
+    select {
+        border:0px;
+        outline:0px;
+        color:white;
+        background:transparent;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        -o-appearance: none;
+    }
+
+    select::-ms-expand {
+        display: none;
+    }
+
+    select option{
+        color:white;
+        background:transparent;
+        background-color:#07193E;
+    }
+
+  </style>
+
+  <style>
+    .arrow {
+      margin-left: -35px;
+      display: inline-block;
+                     margin-top: 12px;
+    }
+
+    .arrow i {
+        width: 0;
+        height: 0;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 5px solid white;
+        /*margin-top: -7px;*/
+        display: block;
+    }
+
+    select.choose_state {
+        /*border: 1px solid #000;*/
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        -o-appearance: none;
+        -webkit-border-radius: 0px;
+        outline: none;
+        margin-right: 15px;
+        /*font-size: 1.4em;*/
+        padding-right: 20px; /*Important*/
+        display: inline-block; /*Important*/
+    }
+    select.pembroke {
+        font-family: 'Pembroke-Regular','Arial','Sans-Serif';
+        font-size: 18px;
+        /*line-height: 20px;*/
+    }
+    option.pembroke {
+        font-family: 'Pembroke-Regular','Arial','Sans-Serif';
+    }
+
+    #auraErrorMessage,
+    span[id="org.ajax4jsf.oncomplete"] {
+      display: none !important;
+    }
+
+  </style>
+
+  <script type="text/javascript">
+
+     Visualforce.remoting.Manager.invokeAction(
+        'cu_MainCtrl.getLanguagePreference',
+        function (result, event) {
+           if (event.status) {
+              var sel = document.getElementById('e4aWebform:formTop:pageLang');
+              var opts = sel.options;
+              for (let [index, opt] of [...opts].entries()) {
+                 if (opt.value == "{!selectedLanguageCode}") {
+                    sel.selectedIndex = index;
+                    break;
+                 }
+              }
+              forceChangePageLanguage(result);
+           } else if (event.type === "exception") {
+              console.log('failed to get id');
+           }
+        },
+        {escape: true}
+     );
+
+  </script>
+
+  <apex:form id="formTop">
+    <header class="slds-scope" id="app-header-template">
+      <div class="header-main-brush">
+        <div class="slds-grid slds-align_absolute-center height-inheritance">
+          <div class="slds-col slds-size_8-of-12 slds-small-size_8-of-12 slds-medium-size_8-of-12 slds-large-size_4-of-12">
+            <img src="{!URLFOR($Resource.PreferenceCenterPageFonts, 'PreferenceCenterPageFonts/Images/eurostar-emblem.png')}"
+                 class="slds-p-horizontal--medium emblem-slot slds-align-bottom"/>
+          </div>
+          <div class="slsd-col" style="float:right">
+            <div class="slds-grid">
+              <apex:selectList id="pageLang" styleClass="slds-text-color_inverse choose_state pembroke" value="{!selectedLanguageCode}" size="1" >
+                <apex:selectoptions id="LANG" value="{!AvailableLanguageCodes}"/>
+                <apex:actionSupport event="onchange" action="{!incrementCounter}" onComplete="renderComponent();" reRender="formTop,formMain"/>
+              </apex:selectlist>
+              <div class="arrow"><i></i></div>
+            </div>
+            <apex:actionFunction name="forceChangePageLanguage" action="{!enforceLanguage}" onComplete="renderComponent();" reRender="formMain">
+              <apex:param value="" name="lang"/>
+            </apex:actionFunction>
+          </div>
+        </div>
+      </div>
+      <div class="header-underline-brush"/>
+    </header>
+  </apex:form>
+  
+  <apex:outputPanel id="formMain">
+    <body>
+        <div class="slds-scope" id="content"/>
+    </body>
+
+    <script>
+       function renderComponent() {
+            document.addEventListener('lightning__showtoast', event => {
+              sforce.one.showToast(event.toastAttributes);
+            });
+            $Lightning.use("c:e4aWebformLightningApp",
+             function () {
+                $Lightning.createComponent("c:e4aWebformPage",
+                   {
+                      pageLanguageCode: "{!selectedLanguageCode}"
+                   },
+                   "content",
+                   function (cmp) {}
+                );
+             }
+          );
+        }
+    </script>
+
+    <script type="text/javascript">
+
+       window.goToPrivatePolicy = function() {
+           window.open('{! $Label.cu_PrivatePolicyLink }');
+       };
+
+       window.goToContactUs = function() {
+           window.open('{! $Label.cu_ContactUsLink }');
+       };
+
+    </script>
+
+    <footer class="inner-background-vf footer-text-params slds-p-top--x-large slds-p-bottom--large">
+
+      <div class="slds-grid slds-grid_align-center">
+        <div class="slds-col slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_12-of-12 slds-large-size_6-of-12">
+          <div>
+            <div class="text-align-center-vf">{! $Label.cu_EurostarAddress }</div>
+            <div class="slds-m-top--medium text-align-center-vf">{! $Label.cu_EurostarLTD }</div>
+            <div class="slds-m-top--medium text-align-center-vf">
+              <a href="#" onclick="goToPrivatePolicy();" class="link-label">{! $Label.cu_PrivatePolicyLinkText }</a>
+              &nbsp;&#124;&nbsp;
+              <a href="#" onclick="goToContactUs();" class="link-label">{! $Label.cu_ContactUs }</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </footer>
+
+  </apex:outputPanel>
+
+  </html>
+
+</apex:page>

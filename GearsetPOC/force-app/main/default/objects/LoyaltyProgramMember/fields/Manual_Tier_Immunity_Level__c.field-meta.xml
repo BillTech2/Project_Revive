@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Manual_Tier_Immunity_Level__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>It represents the tier in which immunity from downgrade has been applied.</description>
+    <inlineHelpText>It represents the tier in which immunity from downgrade has been applied.</inlineHelpText>
+    <label>Manual Tier Immunity Level</label>
+    <referenceTo>LoyaltyTier</referenceTo>
+    <relationshipLabel>Loyalty Program Members</relationshipLabel>
+    <relationshipName>Loyalty_Program_Members</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

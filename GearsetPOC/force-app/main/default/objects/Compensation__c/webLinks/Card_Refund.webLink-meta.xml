@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Card_Refund</fullName>
+    <availability>online</availability>
+    <displayType>massActionButton</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Card Refund</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <requireRowSelection>true</requireRowSelection>
+    <url>{!REQUIRESCRIPT(&quot;/support/console/28.0/integration.js&quot;)}
+
+var newURL = window.location.protocol + &quot;//&quot; + window.location.host + &quot;/&quot;;
+
+var case1=&#39;{!Case.Reason_1__c}&#39;;
+var case1=encodeURIComponent(case1);
+
+var case2=&#39;{!Case.Reason_2__c}&#39;;
+var case2=encodeURIComponent(case2);
+
+var case3=&#39;{!Case.Reason_3__c}&#39;;
+var case3=encodeURIComponent(case3);
+
+var name=&#39;{!JSENCODE(Contact.Name)}&#39;;
+var name=name.replace(/&#39;/g, &quot;%27&quot;);
+
+var redirectUrl = newURL+&#39;a00/e?retURL=%2F{!Case.Id}&amp;CF00Nb0000006ga6O=&#39;+name+&#39;&amp;CF00Nb0000006ga6O_lkid={!Case.ContactId}&amp;CF00Nb0000005Wtod={!Case.CaseNumber}&amp;CF00Nb0000005Wtod_lkid={!Case.Id}&amp;00Nb0000006gbZT={!Case.PNR__c}&amp;00Nb0000007MkQ0=&#39;+case1+&#39;&amp;00Nb0000007MkQ1=&#39;+case2+&#39;&amp;00Nb0000007MkQ2=&#39;+case3+&#39;&amp;00Nb0000007Mkez={!Case.Location__c}&amp;00Nb0000007Mkey={!Case.Incident_Date__c}&amp;RecordType=012b0000000LnyZ&amp;ent=01Ib0000000JLMV&#39;;
+
+if (sforce.console.isInConsole()) {
+    sforce.console.getEnclosingTabId(function(enclosingResult){
+        sforce.console.getEnclosingPrimaryTabId(function(primaryResult){
+            sforce.console.openSubtab(primaryResult.id, redirectUrl, true, &#39;&#39;, null);
+        });
+    });
+}
+else {
+    window.open(redirectUrl,&#39;_self&#39;);
+}</url>
+</WebLink>

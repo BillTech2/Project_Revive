@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_Time_format</fullName>
+    <active>true</active>
+    <errorConditionFormula>NOT(REGEX(LEFT(FPU_Avail_Departure_Time__c,8), &quot;[0-9]{2}:[0-9]{2}:[0-9]{2}&quot;))</errorConditionFormula>
+    <errorDisplayField>FPU_Avail_Departure_Time__c</errorDisplayField>
+    <errorMessage>Please Check the Time format. It should be hh:mm:ss</errorMessage>
+</ValidationRule>

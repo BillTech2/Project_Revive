@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_bookings</fullName>
+    <columns>CREATEDBY_USER.ALIAS</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>NAME</columns>
+    <columns>Associated_account__c</columns>
+    <columns>Type_of_booking__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>From_Outward_Aria__c</columns>
+    <columns>To_Outward_Aria__c</columns>
+    <columns>Departure_Date_Outward__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All bookings</label>
+    <language>en_US</language>
+</ListView>

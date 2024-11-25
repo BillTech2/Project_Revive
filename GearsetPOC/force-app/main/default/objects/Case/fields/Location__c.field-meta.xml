@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Location__c</fullName>
+    <label>Location</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>London St Pancras</fullName>
+                <default>false</default>
+                <label>London St Pancras</label>
+            </value>
+            <value>
+                <fullName>Ebbsfleet Station</fullName>
+                <default>false</default>
+                <label>Ebbsfleet Station</label>
+            </value>
+            <value>
+                <fullName>Ashford Station</fullName>
+                <default>false</default>
+                <label>Ashford Station</label>
+            </value>
+            <value>
+                <fullName>Calais Station</fullName>
+                <default>false</default>
+                <label>Calais Station</label>
+            </value>
+            <value>
+                <fullName>Lille</fullName>
+                <default>false</default>
+                <label>Lille</label>
+            </value>
+            <value>
+                <fullName>Brussels Midi</fullName>
+                <default>false</default>
+                <label>Brussels Midi</label>
+            </value>
+            <value>
+                <fullName>Paris Gare Du Nord</fullName>
+                <default>false</default>
+                <label>Paris Gare Du Nord</label>
+            </value>
+            <value>
+                <fullName>Marne La Vallee</fullName>
+                <default>false</default>
+                <label>Marne La Vallee</label>
+            </value>
+            <value>
+                <fullName>French Ski</fullName>
+                <default>false</default>
+                <label>French Ski</label>
+            </value>
+            <value>
+                <fullName>Avignon</fullName>
+                <default>false</default>
+                <label>Avignon</label>
+            </value>
+            <value>
+                <fullName>SNCF station</fullName>
+                <default>false</default>
+                <label>SNCF station</label>
+            </value>
+            <value>
+                <fullName>UK domestic station</fullName>
+                <default>false</default>
+                <label>UK domestic station</label>
+            </value>
+            <value>
+                <fullName>German station</fullName>
+                <default>false</default>
+                <label>German station</label>
+            </value>
+            <value>
+                <fullName>Other station</fullName>
+                <default>false</default>
+                <label>Other station</label>
+            </value>
+            <value>
+                <fullName>Lyon Part Dieu</fullName>
+                <default>false</default>
+                <label>Lyon Part Dieu</label>
+            </value>
+            <value>
+                <fullName>Marseille St Charles</fullName>
+                <default>false</default>
+                <label>Marseille St Charles</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

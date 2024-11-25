@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>THA_Compensation_Sub_Category__c</fullName>
+    <description>To capture legacy Compensation sub category from old Thango system</description>
+    <inlineHelpText>To capture legacy Compensation sub category from old Thango system</inlineHelpText>
+    <label>Compensation Sub Category</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Catering - No meal</fullName>
+                <default>false</default>
+                <label>Catering - No meal</label>
+            </value>
+            <value>
+                <fullName>Catering - Incomplete meal</fullName>
+                <default>false</default>
+                <label>Catering - Incomplete meal</label>
+            </value>
+            <value>
+                <fullName>Comfort (Airco)</fullName>
+                <default>false</default>
+                <label>Comfort (Airco)</label>
+            </value>
+            <value>
+                <fullName>Stand up journey</fullName>
+                <default>false</default>
+                <label>Stand up journey</label>
+            </value>
+            <value>
+                <fullName>Wifi dysfunction</fullName>
+                <default>false</default>
+                <label>Wifi dysfunction</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

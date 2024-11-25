@@ -1,0 +1,37 @@
+<apex:page sidebar="false" controller="Vendor_Dispfiles" docType="html-5.0">
+    <apex:form >
+     <apex:pageMessages />
+     <apex:outputLabel value="Date From (yyyy-mm-dd)" id="datefromLbl" />
+     <apex:inputText value="{!fromdate}" size="10" id="demo" onfocus="DatePicker.pickDate(false, this , false);" />    
+       <apex:outputLabel value="Date To (yyyy-mm-dd)" id="datetoLbl" />
+     <apex:inputText value="{!todate}" size="10" id="demo1" onfocus="DatePicker.pickDate(false, this , false);" />                    
+        <apex:commandButton value="GO" action="{!fetch}"/>
+        
+    <apex:pageblock >
+    </apex:pageblock>
+       <apex:pageblock id="Requests" title="Requests" >
+       
+            <apex:pageblockTable value="{!Request}" var="req">
+            
+            <apex:column headerValue="Request Id" id="RequestID">
+            <apex:outputField value="{!req.name}"/>  
+            </apex:column>
+            <apex:column headerValue="Request Type" id="reqtype">
+            <apex:outputField value="{!req.reqtype__c}"/>  
+            </apex:column>
+                       <apex:column headerValue="Supplier Name" id="Suppname">
+            <apex:outputField value="{!req.suppname__c}"/>  
+            </apex:column>
+            <apex:column headerValue="Submitter" id="submitter">
+            <apex:outputField value="{!req.oraclesuppno__c}"/>  
+            </apex:column>
+          
+                    <apex:column headerValue="File Name" id="filenameId">
+            <apex:outputField value="{!req.bank_details__c}"/>  
+             </apex:column>                
+                  
+</apex:pageblockTable> 
+        </apex:pageblock>
+           
+    </apex:form>
+</apex:page>

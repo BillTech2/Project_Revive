@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Group_Booking_Arr_Time_Out_Validation</fullName>
+    <active>true</active>
+    <description>Check if the format of the arrival time Outward</description>
+    <errorConditionFormula>AND
+(
+	NOT(ISBLANK(Arrival_Time_Ret__c)),
+	OR
+	(
+		VALUE(LEFT(Arrival_Time_Out__c   ,2)) &gt;= 24,
+		VALUE(RIGHT(Arrival_Time_Out__c   ,2)) &gt;= 60,
+		RIGHT(LEFT(Arrival_Time_Out__c  ,3) ,1)&lt;&gt;&quot;:&quot;
+	)
+)</errorConditionFormula>
+    <errorDisplayField>Arrival_Time_Out__c</errorDisplayField>
+    <errorMessage>Time format: HH:MM</errorMessage>
+</ValidationRule>

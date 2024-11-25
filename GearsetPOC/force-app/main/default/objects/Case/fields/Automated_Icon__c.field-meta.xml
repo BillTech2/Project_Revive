@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Automated_Icon__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(ISPICKVAL(Processing_Type__c, &#39;Automation&#39;) || ISPICKVAL(Processing_Type__c, &#39;Automation - Backlog&#39;) || ISPICKVAL(Processing_Type__c, &#39;Batch&#39;) ,Image(&quot;/servlet/servlet.FileDownload?file=&quot; &amp; $Setup.Images__c.Automated_Icon__c,&quot;Automated&quot; ,20,20),
+Image(&quot;/servlet/servlet.FileDownload?file=&quot; &amp; $Setup.Images__c.Manual_Icon__c,&quot;Manual&quot;,20,20))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Automated</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

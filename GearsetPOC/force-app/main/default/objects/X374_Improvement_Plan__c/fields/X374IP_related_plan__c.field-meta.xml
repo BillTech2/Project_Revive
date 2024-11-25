@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X374IP_related_plan__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>link to a related improvement plan</description>
+    <label>Related IP</label>
+    <referenceTo>X374_Improvement_Plan__c</referenceTo>
+    <relationshipName>X374_Improvement_Plans</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

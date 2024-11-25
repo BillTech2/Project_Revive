@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>User_Names_For_Email_Address_Unscramble__c</fullName>
+    <description>List of User names (from Name field of User object) for which their email addresses need to be unscrambled after sandbox refresh
+One per line.</description>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>User Names For Email Address Unscramble</label>
+    <length>512</length>
+    <type>LongTextArea</type>
+    <visibleLines>5</visibleLines>
+</CustomField>

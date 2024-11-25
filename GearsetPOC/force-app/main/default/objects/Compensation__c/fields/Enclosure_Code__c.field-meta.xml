@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Enclosure_Code__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF ( RecordType.Name == &#39;Bank Transfer&#39;, 336,  IF (RecordType.Name == &#39;Paypal&#39;,468,0))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>System parameter automatically generated for Kyriba
+- 336 for Bank Transfers
+- 468 for Paypal</inlineHelpText>
+    <label>Kyriba Enclosure Code</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>French_translation__c</fullName>
+    <description>French translation of the help preference
+Will be displayed on the french version of the disruption webform if the checkbox &quot;visible&quot; is checked</description>
+    <externalId>false</externalId>
+    <inlineHelpText>French translation of the help preference
+Will be displayed on the french version of the disruption webform if the checkbox &quot;visible&quot; is checked</inlineHelpText>
+    <label>French translation</label>
+    <length>255</length>
+    <required>true</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

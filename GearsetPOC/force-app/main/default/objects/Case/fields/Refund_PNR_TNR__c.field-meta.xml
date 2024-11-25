@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Refund_PNR_TNR__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Enter a reference here if the refund was not processed on the original PNR</inlineHelpText>
+    <label>Refund PNR / TNR</label>
+    <length>255</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

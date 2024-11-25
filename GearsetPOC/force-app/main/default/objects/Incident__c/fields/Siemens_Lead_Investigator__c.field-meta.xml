@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Siemens_Lead_Investigator__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <inlineHelpText>select user from Siemens leading the investigation.</inlineHelpText>
+    <label>Siemens Lead Investigator</label>
+    <lookupFilter>
+        <active>true</active>
+        <booleanFilter>1</booleanFilter>
+        <filterItems>
+            <field>User.CompanyName</field>
+            <operation>equals</operation>
+            <value>Siemens</value>
+        </filterItems>
+        <isOptional>true</isOptional>
+    </lookupFilter>
+    <referenceTo>User</referenceTo>
+    <relationshipName>Reliability_Incidents</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

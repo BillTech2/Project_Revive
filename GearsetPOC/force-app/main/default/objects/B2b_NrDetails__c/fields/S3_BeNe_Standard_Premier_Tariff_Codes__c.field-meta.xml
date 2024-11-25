@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>S3_BeNe_Standard_Premier_Tariff_Codes__c</fullName>
+    <label>S3 &amp; BeNe Standard Premier Tariff Codes</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Percentage_Discount_Standard_Premier_PL__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>H01C03ARBE - H01C03ARBG - H01C03ASBE - H01C03ASBG - H03C03ARBE - H03C03ARBG - H03C03ASBE - H03C03ASBG</fullName>
+                <default>false</default>
+                <label>H01C03ARBE - H01C03ARBG - H01C03ASBE - H01C03ASBG - H03C03ARBE - H03C03ARBG - H03C03ASBE - H03C03ASBG</label>
+            </value>
+            <value>
+                <fullName>H01C04ARBE - H01C04ARBG - H01C04ASBE - H01C04ASBG - H03C04ARBE - H03C04ARBG - H03C04ASBE - H03C04ASBG</fullName>
+                <default>false</default>
+                <label>H01C04ARBE - H01C04ARBG - H01C04ASBE - H01C04ASBG - H03C04ARBE - H03C04ARBG - H03C04ASBE - H03C04ASBG</label>
+            </value>
+            <value>
+                <fullName>H01C05ARBE - H01C05ARBG - H01C05ASBE - H01C05ASBG - H03C05ARBE - H03C05ARBG - H03C05ASBE - H03C05ASBG</fullName>
+                <default>false</default>
+                <label>H01C05ARBE - H01C05ARBG - H01C05ASBE - H01C05ASBG - H03C05ARBE - H03C05ARBG - H03C05ASBE - H03C05ASBG</label>
+            </value>
+            <value>
+                <fullName>H01C03ARAE - H01C03ARAG - H01C03ASAE - H01C03ASAG - H03C03ARAE - H03C03ARAG - H03C03ASAE - H03C03ASAG</fullName>
+                <default>false</default>
+                <label>H01C03ARAE - H01C03ARAG - H01C03ASAE - H01C03ASAG - H03C03ARAE - H03C03ARAG - H03C03ASAE - H03C03ASAG</label>
+            </value>
+            <value>
+                <fullName>H01C04ARAE - H01C04ARAG - H01C04ASAE - H01C04ASAG - H03C04ARAE - H03C04ARAG - H03C04ASAE - H03C04ASAG</fullName>
+                <default>false</default>
+                <label>H01C04ARAE - H01C04ARAG - H01C04ASAE - H01C04ASAG - H03C04ARAE - H03C04ARAG - H03C04ASAE - H03C04ASAG</label>
+            </value>
+            <value>
+                <fullName>H01C05ARAE - H01C05ARAG - H01C05ASAE - H01C05ASAG - H03C05ARAE - H03C05ARAG - H03C05ASAE - H03C05ASAG</fullName>
+                <default>false</default>
+                <label>H01C05ARAE - H01C05ARAG - H01C05ASAE - H01C05ASAG - H03C05ARAE - H03C05ARAG - H03C05ASAE - H03C05ASAG</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>UK-Paris-Lille-Brussels 3%</controllingFieldValue>
+            <valueName>H01C03ARBE - H01C03ARBG - H01C03ASBE - H01C03ASBG - H03C03ARBE - H03C03ARBG - H03C03ASBE - H03C03ASBG</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>UK-Paris-Lille-Brussels 4%</controllingFieldValue>
+            <valueName>H01C04ARBE - H01C04ARBG - H01C04ASBE - H01C04ASBG - H03C04ARBE - H03C04ARBG - H03C04ASBE - H03C04ASBG</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>UK-Paris-Lille-Brussels 5%</controllingFieldValue>
+            <valueName>H01C05ARBE - H01C05ARBG - H01C05ASBE - H01C05ASBG - H03C05ARBE - H03C05ARBG - H03C05ASBE - H03C05ASBG</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>UK-Amsterdam-Rotterdam 3%</controllingFieldValue>
+            <valueName>H01C03ARAE - H01C03ARAG - H01C03ASAE - H01C03ASAG - H03C03ARAE - H03C03ARAG - H03C03ASAE - H03C03ASAG</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>UK-Amsterdam-Rotterdam 4%</controllingFieldValue>
+            <valueName>H01C04ARAE - H01C04ARAG - H01C04ASAE - H01C04ASAG - H03C04ARAE - H03C04ARAG - H03C04ASAE - H03C04ASAG</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>UK-Amsterdam-Rotterdam 5%</controllingFieldValue>
+            <valueName>H01C05ARAE - H01C05ARAG - H01C05ASAE - H01C05ASAG - H03C05ARAE - H03C05ARAG - H03C05ASAE - H03C05ASAG</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

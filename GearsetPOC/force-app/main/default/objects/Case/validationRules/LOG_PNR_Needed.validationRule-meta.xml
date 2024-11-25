@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LOG_PNR_Needed</fullName>
+    <active>false</active>
+    <description>If certain outcomes are selected, the PNR field becomes mandatory</description>
+    <errorConditionFormula>OR(
+ISPICKVAL(Outcome__c, &quot;Completed Request (PNR Required)&quot;),
+ISPICKVAL(Outcome__c, &quot;Completed Request - Goodwill Gesture (PNR Required)&quot;)
+)
+&amp;&amp;
+ISBLANK(PNR__c)</errorConditionFormula>
+    <errorDisplayField>PNR__c</errorDisplayField>
+    <errorMessage>Please enter the PNR of the booking</errorMessage>
+</ValidationRule>

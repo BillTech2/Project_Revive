@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Live_Chat_Surveys</fullName>
+    <columns>NAME</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>Contact__c</columns>
+    <columns>User__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Survey__c</field>
+        <operation>equals</operation>
+        <value>Feedback</value>
+    </filters>
+    <filters>
+        <field>CREATED_DATE</field>
+        <operation>greaterOrEqual</operation>
+        <value>10/11/2016 12:00 AM</value>
+    </filters>
+    <label>Live Chat Surveys</label>
+    <language>en_US</language>
+</ListView>

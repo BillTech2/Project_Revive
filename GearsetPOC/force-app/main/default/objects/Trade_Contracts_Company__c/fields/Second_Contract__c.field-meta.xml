@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Second_Contract__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>Second Contract</label>
+    <referenceTo>Trade_Contracts_Company__c</referenceTo>
+    <relationshipLabel>Trade Contracts Companies</relationshipLabel>
+    <relationshipName>Trade_Contracts_Companies</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

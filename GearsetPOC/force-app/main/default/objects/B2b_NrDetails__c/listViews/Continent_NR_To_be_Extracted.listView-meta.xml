@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Continent_NR_To_be_Extracted</fullName>
+    <columns>B2b_Account__c</columns>
+    <columns>NAME</columns>
+    <columns>B2b_Route__c</columns>
+    <columns>B2b_Status__c</columns>
+    <columns>B2b_RouteStartDate__c</columns>
+    <columns>B2b_RouteEndDate__c</columns>
+    <columns>Extract_Requested__c</columns>
+    <columns>RECORDTYPE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>B2b_NrDetails__c.Negotiated_Rate_Continent</value>
+    </filters>
+    <filters>
+        <field>B2b_Status__c</field>
+        <operation>equals</operation>
+        <value>To be Extracted</value>
+    </filters>
+    <label>Continent NR To be Extracted</label>
+</ListView>

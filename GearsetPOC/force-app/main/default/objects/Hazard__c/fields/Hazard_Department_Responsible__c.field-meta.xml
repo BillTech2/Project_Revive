@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Hazard_Department_Responsible__c</fullName>
+    <label>Department Responsible</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Ashford International</fullName>
+                <default>false</default>
+                <label>Ashford International</label>
+            </value>
+            <value>
+                <fullName>Catering</fullName>
+                <default>false</default>
+                <label>Catering</label>
+            </value>
+            <value>
+                <fullName>Chief Executive</fullName>
+                <default>false</default>
+                <label>Chief Executive</label>
+            </value>
+            <value>
+                <fullName>Commercial Director</fullName>
+                <default>false</default>
+                <label>Commercial Director</label>
+            </value>
+            <value>
+                <fullName>Corporate Communications</fullName>
+                <default>false</default>
+                <label>Corporate Communications</label>
+            </value>
+            <value>
+                <fullName>Customer Experience</fullName>
+                <default>false</default>
+                <label>Customer Experience</label>
+            </value>
+            <value>
+                <fullName>Director of Customer Services</fullName>
+                <default>false</default>
+                <label>Director of Customer Services</label>
+            </value>
+            <value>
+                <fullName>e320 Engineering</fullName>
+                <default>false</default>
+                <label>e320 Engineering</label>
+            </value>
+            <value>
+                <fullName>Ebbsfleet</fullName>
+                <default>false</default>
+                <label>Ebbsfleet</label>
+            </value>
+            <value>
+                <fullName>EDC</fullName>
+                <default>false</default>
+                <label>EDC</label>
+            </value>
+            <value>
+                <fullName>Energy &amp; Environment</fullName>
+                <default>false</default>
+                <label>Energy &amp; Environment</label>
+            </value>
+            <value>
+                <fullName>Eurostar Buisness Support Centre</fullName>
+                <default>false</default>
+                <label>Eurostar Buisness Support Centre</label>
+            </value>
+            <value>
+                <fullName>Finance</fullName>
+                <default>false</default>
+                <label>Finance</label>
+            </value>
+            <value>
+                <fullName>Fleet Strategy</fullName>
+                <default>false</default>
+                <label>Fleet Strategy</label>
+            </value>
+            <value>
+                <fullName>Gare de Lille Europe</fullName>
+                <default>false</default>
+                <label>Gare de Lille Europe</label>
+            </value>
+            <value>
+                <fullName>International Fleet Performance</fullName>
+                <default>false</default>
+                <label>International Fleet Performance</label>
+            </value>
+            <value>
+                <fullName>Internet development - E Commerce</fullName>
+                <default>false</default>
+                <label>Internet development - E Commerce</label>
+            </value>
+            <value>
+                <fullName>IS</fullName>
+                <default>false</default>
+                <label>IS</label>
+            </value>
+            <value>
+                <fullName>IS Customer Systems</fullName>
+                <default>false</default>
+                <label>IS Customer Systems</label>
+            </value>
+            <value>
+                <fullName>IS Director</fullName>
+                <default>false</default>
+                <label>IS Director</label>
+            </value>
+            <value>
+                <fullName>IS Distribution</fullName>
+                <default>false</default>
+                <label>IS Distribution</label>
+            </value>
+            <value>
+                <fullName>IS Operations</fullName>
+                <default>false</default>
+                <label>IS Operations</label>
+            </value>
+            <value>
+                <fullName>IS Sales Systems</fullName>
+                <default>false</default>
+                <label>IS Sales Systems</label>
+            </value>
+            <value>
+                <fullName>IS Service Delivery</fullName>
+                <default>false</default>
+                <label>IS Service Delivery</label>
+            </value>
+            <value>
+                <fullName>IS Technology</fullName>
+                <default>false</default>
+                <label>IS Technology</label>
+            </value>
+            <value>
+                <fullName>Legal</fullName>
+                <default>false</default>
+                <label>Legal</label>
+            </value>
+            <value>
+                <fullName>Marketing</fullName>
+                <default>false</default>
+                <label>Marketing</label>
+            </value>
+            <value>
+                <fullName>On Board Service</fullName>
+                <default>false</default>
+                <label>On Board Service</label>
+            </value>
+            <value>
+                <fullName>Operations</fullName>
+                <default>false</default>
+                <label>Operations</label>
+            </value>
+            <value>
+                <fullName>Operations Control</fullName>
+                <default>false</default>
+                <label>Operations Control</label>
+            </value>
+            <value>
+                <fullName>Operations Management</fullName>
+                <default>false</default>
+                <label>Operations Management</label>
+            </value>
+            <value>
+                <fullName>Ops Strategy Group</fullName>
+                <default>false</default>
+                <label>Ops Strategy Group</label>
+            </value>
+            <value>
+                <fullName>Organisational Development</fullName>
+                <default>false</default>
+                <label>Organisational Development</label>
+            </value>
+            <value>
+                <fullName>Other - contractor</fullName>
+                <default>false</default>
+                <label>Other - contractor</label>
+            </value>
+            <value>
+                <fullName>Other French Terminals</fullName>
+                <default>false</default>
+                <label>Other French Terminals</label>
+            </value>
+            <value>
+                <fullName>OTMs</fullName>
+                <default>false</default>
+                <label>OTMs</label>
+            </value>
+            <value>
+                <fullName>Paris Nord Terminal</fullName>
+                <default>false</default>
+                <label>Paris Nord Terminal</label>
+            </value>
+            <value>
+                <fullName>People</fullName>
+                <default>false</default>
+                <label>People</label>
+            </value>
+            <value>
+                <fullName>Performance and Planning</fullName>
+                <default>false</default>
+                <label>Performance and Planning</label>
+            </value>
+            <value>
+                <fullName>Procurement</fullName>
+                <default>false</default>
+                <label>Procurement</label>
+            </value>
+            <value>
+                <fullName>Product</fullName>
+                <default>false</default>
+                <label>Product</label>
+            </value>
+            <value>
+                <fullName>Property and Facilities</fullName>
+                <default>false</default>
+                <label>Property and Facilities</label>
+            </value>
+            <value>
+                <fullName>Relationship Marketing (EFT)</fullName>
+                <default>false</default>
+                <label>Relationship Marketing (EFT)</label>
+            </value>
+            <value>
+                <fullName>Revenue Management</fullName>
+                <default>false</default>
+                <label>Revenue Management</label>
+            </value>
+            <value>
+                <fullName>Safety &amp; REX Team</fullName>
+                <default>false</default>
+                <label>Safety &amp; REX Team</label>
+            </value>
+            <value>
+                <fullName>Security</fullName>
+                <default>false</default>
+                <label>Security</label>
+            </value>
+            <value>
+                <fullName>Service &amp; People</fullName>
+                <default>false</default>
+                <label>Service &amp; People</label>
+            </value>
+            <value>
+                <fullName>Service Desk</fullName>
+                <default>false</default>
+                <label>Service Desk</label>
+            </value>
+            <value>
+                <fullName>Service Development Team</fullName>
+                <default>false</default>
+                <label>Service Development Team</label>
+            </value>
+            <value>
+                <fullName>SNCF &amp; SNCB Drivers &amp; Traction Inspectors</fullName>
+                <default>false</default>
+                <label>SNCF &amp; SNCB Drivers &amp; Traction Inspectors</label>
+            </value>
+            <value>
+                <fullName>St Pancras</fullName>
+                <default>false</default>
+                <label>St Pancras</label>
+            </value>
+            <value>
+                <fullName>TMI Air Con Team</fullName>
+                <default>false</default>
+                <label>TMI Air Con Team</label>
+            </value>
+            <value>
+                <fullName>TMI Comfort Team</fullName>
+                <default>false</default>
+                <label>TMI Comfort Team</label>
+            </value>
+            <value>
+                <fullName>TMI Engineering Specialist Equipment</fullName>
+                <default>false</default>
+                <label>TMI Engineering Specialist Equipment</label>
+            </value>
+            <value>
+                <fullName>TMI Fleet Management</fullName>
+                <default>false</default>
+                <label>TMI Fleet Management</label>
+            </value>
+            <value>
+                <fullName>TMI Heavy Maintenance A</fullName>
+                <default>false</default>
+                <label>TMI Heavy Maintenance A</label>
+            </value>
+            <value>
+                <fullName>TMI Heavy Maintenance B</fullName>
+                <default>false</default>
+                <label>TMI Heavy Maintenance B</label>
+            </value>
+            <value>
+                <fullName>TMI Heavy Maintenance C</fullName>
+                <default>false</default>
+                <label>TMI Heavy Maintenance C</label>
+            </value>
+            <value>
+                <fullName>TMI Heavy Maintenance D</fullName>
+                <default>false</default>
+                <label>TMI Heavy Maintenance D</label>
+            </value>
+            <value>
+                <fullName>TMI Infrastructure Team</fullName>
+                <default>false</default>
+                <label>TMI Infrastructure Team</label>
+            </value>
+            <value>
+                <fullName>TMI In House Repair Team</fullName>
+                <default>false</default>
+                <label>TMI In House Repair Team</label>
+            </value>
+            <value>
+                <fullName>TMI Maintenance Teams</fullName>
+                <default>false</default>
+                <label>TMI Maintenance Teams</label>
+            </value>
+            <value>
+                <fullName>TMI Management Team</fullName>
+                <default>false</default>
+                <label>TMI Management Team</label>
+            </value>
+            <value>
+                <fullName>TMI Materials Management</fullName>
+                <default>false</default>
+                <label>TMI Materials Management</label>
+            </value>
+            <value>
+                <fullName>TMI Permanent Nights B</fullName>
+                <default>false</default>
+                <label>TMI Permanent Nights B</label>
+            </value>
+            <value>
+                <fullName>TMI Permanent Nights D</fullName>
+                <default>false</default>
+                <label>TMI Permanent Nights D</label>
+            </value>
+            <value>
+                <fullName>TMI Procurement Team</fullName>
+                <default>false</default>
+                <label>TMI Procurement Team</label>
+            </value>
+            <value>
+                <fullName>TMI Product Implementation Team</fullName>
+                <default>false</default>
+                <label>TMI Product Implementation Team</label>
+            </value>
+            <value>
+                <fullName>TMI Production Management</fullName>
+                <default>false</default>
+                <label>TMI Production Management</label>
+            </value>
+            <value>
+                <fullName>TMI Project Team</fullName>
+                <default>false</default>
+                <label>TMI Project Team</label>
+            </value>
+            <value>
+                <fullName>TMI Quality</fullName>
+                <default>false</default>
+                <label>TMI Quality</label>
+            </value>
+            <value>
+                <fullName>TMI Service Shed A1</fullName>
+                <default>false</default>
+                <label>TMI Service Shed A1</label>
+            </value>
+            <value>
+                <fullName>TMI Service Shed A2</fullName>
+                <default>false</default>
+                <label>TMI Service Shed A2</label>
+            </value>
+            <value>
+                <fullName>TMI Service Shed B1</fullName>
+                <default>false</default>
+                <label>TMI Service Shed B1</label>
+            </value>
+            <value>
+                <fullName>TMI Service Shed B2</fullName>
+                <default>false</default>
+                <label>TMI Service Shed B2</label>
+            </value>
+            <value>
+                <fullName>TMI Service Shed C1</fullName>
+                <default>false</default>
+                <label>TMI Service Shed C1</label>
+            </value>
+            <value>
+                <fullName>TMI Service Shed C2</fullName>
+                <default>false</default>
+                <label>TMI Service Shed C2</label>
+            </value>
+            <value>
+                <fullName>TMI Service Shed D1</fullName>
+                <default>false</default>
+                <label>TMI Service Shed D1</label>
+            </value>
+            <value>
+                <fullName>TMI Service Shed D2</fullName>
+                <default>false</default>
+                <label>TMI Service Shed D2</label>
+            </value>
+            <value>
+                <fullName>TMI Stores</fullName>
+                <default>false</default>
+                <label>TMI Stores</label>
+            </value>
+            <value>
+                <fullName>TMI Technical Engineers</fullName>
+                <default>false</default>
+                <label>TMI Technical Engineers</label>
+            </value>
+            <value>
+                <fullName>TMI Technical Team (TPT)</fullName>
+                <default>false</default>
+                <label>TMI Technical Team (TPT)</label>
+            </value>
+            <value>
+                <fullName>TMI Training Team</fullName>
+                <default>false</default>
+                <label>TMI Training Team</label>
+            </value>
+            <value>
+                <fullName>Train Managers France and Belgium</fullName>
+                <default>false</default>
+                <label>Train Managers France and Belgium</label>
+            </value>
+            <value>
+                <fullName>Train Managers UK</fullName>
+                <default>false</default>
+                <label>Train Managers UK</label>
+            </value>
+            <value>
+                <fullName>UK Drivers and Traction Inspectors</fullName>
+                <default>false</default>
+                <label>UK Drivers and Traction Inspectors</label>
+            </value>
+            <value>
+                <fullName>UK Sales</fullName>
+                <default>false</default>
+                <label>UK Sales</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

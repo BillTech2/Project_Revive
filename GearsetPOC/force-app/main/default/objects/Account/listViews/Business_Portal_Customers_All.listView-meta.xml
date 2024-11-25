@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Business_Portal_Customers_All</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Company_Registration_No_B__c</columns>
+    <columns>Company_Name_B__c</columns>
+    <columns>Industry_Sector_B__c</columns>
+    <columns>Business_travel_opt_in__c</columns>
+    <columns>Trains_opt_in__c</columns>
+    <columns>Is_Admin_Account_B__c</columns>
+    <columns>Is_Business_Account_B__c</columns>
+    <columns>BusinessID_B__c</columns>
+    <columns>ACCOUNT.CREATED_DATE</columns>
+    <columns>ACCOUNT.LAST_UPDATE</columns>
+    <columns>Country_B__c</columns>
+    <columns>PC_EMAIL</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>BusinessID_B__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <label>Business Portal Customers - All</label>
+    <language>en_US</language>
+</ListView>

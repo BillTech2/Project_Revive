@@ -1,0 +1,4 @@
+<apex:component controller="DLT_VFTextBodiesController" access="global">
+<apex:attribute name="CaseId" type="Id" assignTo="{!caseRecordId}" description="Case Id for the email template"/>
+<apex:outputText value="{!messageBody}" escape="false"/>
+</apex:component>

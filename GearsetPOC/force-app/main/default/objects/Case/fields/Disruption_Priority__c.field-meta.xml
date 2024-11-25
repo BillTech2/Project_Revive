@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Disruption_Priority__c</fullName>
+    <description>Look at the Priority of the disruption preference, multiply it by 100 000 000 and add the number of the case. 
+Then you have a number that we will use to filter data:
+If you filter asc, you will get first cases related to the Number 1 priority (by order of creation date, thanks to the case number), then all cases related to the Number 2 priority (by order of  date), etc...</description>
+    <externalId>false</externalId>
+    <formula>Disruption_Preference__r.Priority__c  * 100000000 +   VALUE(CaseNumber)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Disruption Priority</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Set_Language_Dutch</fullName>
+    <availability>online</availability>
+    <displayType>link</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Set Language: Dutch (CC Only)</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/22.0/connection.js&quot;)} 
+
+var updateRecord = new Array(); 
+var myquery = &quot;SELECT Id FROM Case WHERE Id = &#39;{!Case.Id}&#39; limit 1&quot;; 
+
+result = sforce.connection.query(myquery); 
+records = result.getArray(&quot;records&quot;); 
+
+if(records[0]) 
+{ 
+var update_Case = records[0]; 
+update_Case.Preferred_Language__c = &quot;Dutch&quot;; 
+update_Case.OwnerId = &quot;00Gb00000041w0h&quot;; 
+updateRecord.push(update_Case); 
+} 
+
+result = sforce.connection.update(updateRecord); 
+parent.location.href = parent.location.href;</url>
+</WebLink>

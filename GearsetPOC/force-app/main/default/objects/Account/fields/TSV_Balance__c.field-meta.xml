@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TSV_Balance__c</fullName>
+    <description>This field shows a calculation - taking the total calculation minus the override</description>
+    <externalId>false</externalId>
+    <formula>((TSV_Allocation__c -  Aria_TSV_Used__c) - TSV_Override__c) +  Tickets_Refunded_Staff__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>TSV Balance</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

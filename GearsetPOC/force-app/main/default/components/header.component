@@ -1,0 +1,121 @@
+<apex:component >
+    <apex:attribute name="chosenLanguageISO" description="chosenLanguageISO" type="String" required="false"/>
+    <apex:attribute name="site" description=".com/E4A/Mobile" type="String" required="false"/>
+    
+                            <apex:variable value="" var="friendlyURL"/>
+                            <apex:outputpanel rendered="{!chosenLanguageISO==null}">
+                               <apex:variable value="UK" var="friendlyURL"/>
+                            </apex:outputpanel>
+                            <apex:outputpanel rendered="{!chosenLanguageISO!=null && CONTAINS(chosenLanguageISO,'en')}">
+                                <apex:variable value="UK" var="friendlyURL"/>
+                            </apex:outputpanel>
+                            <apex:outputpanel rendered="{!chosenLanguageISO!=null && CONTAINS(chosenLanguageISO,'fr')}">
+                                <apex:variable value="FR" var="friendlyURL"/>
+                            </apex:outputpanel>
+                            <apex:outputpanel rendered="{!chosenLanguageISO!=null && CONTAINS(chosenLanguageISO,'nl')}">
+                                <apex:variable value="NL" var="friendlyURL"/>
+                            </apex:outputpanel>
+                            <apex:outputpanel rendered="{!chosenLanguageISO!=null && CONTAINS(chosenLanguageISO,'de')}">
+                                <apex:variable value="DE" var="friendlyURL"/>
+                            </apex:outputpanel>
+    
+    
+
+
+
+        <!-- If site is normal .com FAQs -->
+    <apex:outputText rendered="{!IF(site != 'e4a',true,false)}">
+        <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+            <div class="navbar-brand-mob">
+                <a href="http://www.eurostar.com">
+             <img src="{!URLFOR($Resource.FAQ_Mockup, 'Eurostar_Logo.png')}"/>
+            </a>
+                <a href="/faq/?language={!chosenLanguageISO}&site={!site}">
+             <img src="{!URLFOR($Resource.FAQ_Mockup, 'Help_Centre_Logo.png')}"/>
+            </a>
+            </div> 
+    </div>
+            <!-- right hand side links-->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <div class="navbar-brand">
+              <a href="http://www.eurostar.com">
+             <img src="{!URLFOR($Resource.FAQ_Mockup, 'Eurostar_Logo.png')}"/>
+            </a>
+                <a href="/faq/?language={!chosenLanguageISO}&site={!site}">
+             <img src="{!URLFOR($Resource.FAQ_Mockup, 'Help_Centre_Logo.png')}"/>
+            </a>
+            </div> 
+      <ul class="nav navbar-nav navbar-right">
+        <li style="font-size: 18px;"><a href="http://www.eurostar.com">Eurostar.com</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{!$Label.FAQ_LABEL_CHOOSE_LANGUAGE} <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu" style="top: 100%; background-color: #06183d; margin-top: -5px; background-image: none;">
+              <li><a href="/faq/?language=uk-en">English</a></li>
+              <li><a href="/faq/?language=be-en">Belgium English</a></li>
+              <li><a href="/faq/?language=fr-fr">Français</a></li>
+              <li><a href="/faq/?language=be-fr">Belgique français</a></li>
+              <li><a href="/faq/?language=be-nl">België Nederlands</a></li>
+              <li><a href="/faq/?language=nl-nl">Nederland</a></li>
+              <li><a href="/faq/?language=de-de">Deutsch</a></li>
+          </ul>
+        </li>
+      </ul>
+      </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+</nav>
+    </apex:outputText>
+
+    
+    
+    
+    
+      <!-- If site is E4A -->
+    <apex:outputText rendered="{!IF(site == 'e4a',true,false)}">
+        <nav class="navbar navbar-default" style="background:#00adcf;">
+  <div class="container-fluid"> 
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+            <div class="navbar-brand-mob">
+                <a href="/faq/?language={!chosenLanguageISO}&site={!site}" style="display:block;">
+             <img src="{!URLFOR($Resource.E4A_Logo)}"/>
+                <!-- Per Language Image -->
+                 <!--<img src="{!URLFOR($Resource.FAQ_Mockup, 'Eurostar_Help_Logo_Negative_NO_ICON_' + friendlyURL + '.png')}"/> -->
+                <!-- /Per Language Image -->
+               
+            </a>
+            </div> 
+    </div>
+         <!-- right hand side links-->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="background:#00abcf;">
+            <div class="navbar-brand" >
+           <a href="/faq/?language={!chosenLanguageISO}&site={!site}" style="display:block;">
+             <img src="{!URLFOR($Resource.E4A_Logo)}"/>
+               <!--<img style="width: 210px; height: 74px;" src="http://static.flockler.com/assets/eurostar_agents/images/agents_logo-5dd2f0aaa8ea638fe1bb5b6b40aa2801.png"/>
+            -->
+                </a>
+            </div> 
+      <ul class="nav navbar-nav navbar-right">
+        <li style="font-size: 18px;"><a href="http://www.eurostar4agents.com">Back to eurostar4agents.com</a></li>
+      </ul>
+      </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+</nav>
+    </apex:outputText>
+    
+  </apex:component>

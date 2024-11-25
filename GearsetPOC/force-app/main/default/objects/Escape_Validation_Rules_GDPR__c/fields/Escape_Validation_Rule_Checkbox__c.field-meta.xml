@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Escape_Validation_Rule_Checkbox__c</fullName>
+    <defaultValue>false</defaultValue>
+    <label>Escape Validation Rule Checkbox</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

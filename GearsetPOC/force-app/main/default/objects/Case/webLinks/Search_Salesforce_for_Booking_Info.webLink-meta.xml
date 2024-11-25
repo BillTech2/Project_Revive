@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Search_Salesforce_for_Booking_Info</fullName>
+    <availability>online</availability>
+    <displayType>link</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Search Salesforce for Booking Info</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>https://eurostar.my.salesforce.com/_ui/search/ui/UnifiedSearchResults?searchType=2&amp;str={!Case.PNR__c}</url>
+</WebLink>

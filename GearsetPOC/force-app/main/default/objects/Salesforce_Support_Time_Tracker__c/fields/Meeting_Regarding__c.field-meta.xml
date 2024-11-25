@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Meeting_Regarding__c</fullName>
+    <label>Meeting Regarding</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>All Staff Meeting</fullName>
+                <default>false</default>
+                <label>All Staff Meeting</label>
+            </value>
+            <value>
+                <fullName>Amsterdam Booking Form</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Amsterdam Booking Form</label>
+            </value>
+            <value>
+                <fullName>Anthony (CRM Management) Or His Interns</fullName>
+                <default>false</default>
+                <label>Anthony (CRM Management) Or His Interns</label>
+            </value>
+            <value>
+                <fullName>Aria</fullName>
+                <default>false</default>
+                <label>Aria</label>
+            </value>
+            <value>
+                <fullName>Carmen</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Carmen</label>
+            </value>
+            <value>
+                <fullName>Club Eurostar - Returned Cards</fullName>
+                <default>false</default>
+                <label>Club Eurostar - Returned Cards</label>
+            </value>
+            <value>
+                <fullName>CodeSwat</fullName>
+                <default>false</default>
+                <label>CodeSwat</label>
+            </value>
+            <value>
+                <fullName>Digital Genius</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Digital Genius</label>
+            </value>
+            <value>
+                <fullName>Disruption / ICT</fullName>
+                <default>false</default>
+                <label>Disruption / ICT</label>
+            </value>
+            <value>
+                <fullName>Eureka</fullName>
+                <default>false</default>
+                <label>Eureka</label>
+            </value>
+            <value>
+                <fullName>Eurostar Signature Service</fullName>
+                <default>false</default>
+                <label>Eurostar Signature Service</label>
+            </value>
+            <value>
+                <fullName>Future Loyalty Project</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Future Loyalty Project</label>
+            </value>
+            <value>
+                <fullName>GDPR</fullName>
+                <default>false</default>
+                <label>GDPR</label>
+            </value>
+            <value>
+                <fullName>Groups Upsell</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Groups Upsell</label>
+            </value>
+            <value>
+                <fullName>Junior Traveller</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Junior Traveller</label>
+            </value>
+            <value>
+                <fullName>Junior Travellers</fullName>
+                <default>false</default>
+                <label>Junior Travellers</label>
+            </value>
+            <value>
+                <fullName>Mobile App Feedback Page</fullName>
+                <default>false</default>
+                <label>Mobile App Feedback Page</label>
+            </value>
+            <value>
+                <fullName>Overbooking</fullName>
+                <default>false</default>
+                <label>Overbooking</label>
+            </value>
+            <value>
+                <fullName>Packages</fullName>
+                <default>false</default>
+                <label>Packages</label>
+            </value>
+            <value>
+                <fullName>Personal Meetings</fullName>
+                <default>false</default>
+                <label>Personal Meetings</label>
+            </value>
+            <value>
+                <fullName>PRR</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>PRR</label>
+            </value>
+            <value>
+                <fullName>QA / I&amp;I</fullName>
+                <default>false</default>
+                <label>QA / I&amp;I</label>
+            </value>
+            <value>
+                <fullName>Salesforce</fullName>
+                <default>false</default>
+                <label>Salesforce</label>
+            </value>
+            <value>
+                <fullName>Skills</fullName>
+                <default>false</default>
+                <label>Skills</label>
+            </value>
+            <value>
+                <fullName>Social</fullName>
+                <default>false</default>
+                <label>Social</label>
+            </value>
+            <value>
+                <fullName>Staff Travel</fullName>
+                <default>false</default>
+                <label>Staff Travel</label>
+            </value>
+            <value>
+                <fullName>StellaConnect</fullName>
+                <default>false</default>
+                <label>StellaConnect</label>
+            </value>
+            <value>
+                <fullName>Traveller Care</fullName>
+                <default>false</default>
+                <label>Traveller Care</label>
+            </value>
+            <value>
+                <fullName>Webhelp</fullName>
+                <default>false</default>
+                <label>Webhelp</label>
+            </value>
+            <value>
+                <fullName>Westwood Integration</fullName>
+                <default>false</default>
+                <label>Westwood Integration</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

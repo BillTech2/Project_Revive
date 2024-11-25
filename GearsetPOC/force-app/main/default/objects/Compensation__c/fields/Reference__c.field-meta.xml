@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reference__c</fullName>
+    <displayFormat>{0000000000}</displayFormat>
+    <externalId>false</externalId>
+    <inlineHelpText>This is used as an external reference field for the Oracle interface to find and update records to show they have been sent to Oracle. Unique ID. Integer. ENCLOSURE_COMP_IDs are unique and will be processed once only. Might not be used anymore by Kyriba?</inlineHelpText>
+    <label>Kyriba Reference</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>AutoNumber</type>
+</CustomField>

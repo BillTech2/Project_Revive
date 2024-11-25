@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ContactId</fullName>
+    <description>The ID of the contact with which the loyalty program member is associated.  This is a relationship field.</description>
+    <inlineHelpText>The ID of the contact with which the loyalty program member is associated.  This is a relationship field.</inlineHelpText>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

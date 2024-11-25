@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Carrier_Flag__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(Carrier__c = &quot;Blue&quot;, &quot;London &quot;,
+IF(Carrier__c = &quot;Red&quot;, &quot;Continental &quot;,
+IF(Carrier__c = &quot;Purple&quot;, &quot;Both &quot;, &quot;&quot;)
+)
+) +
+IF(
+NOT(ISBLANK(Carrier__c)),
+IMAGE(
+&quot;/resource/train/train/colors/train_&quot; +
+IF(
+  Carrier__c = &quot;Red&quot;,
+  &quot;red.png&quot;,
+  IF(
+    Carrier__c = &quot;Blue&quot;,
+    &quot;blue.png&quot;,
+    IF(
+      Carrier__c = &quot;Purple&quot;,
+      &quot;black.png&quot;,
+      &quot;&quot;
+    )
+  )
+),
+&quot;Ticket color image&quot;
+),
+&quot;&quot;
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Carrier Flag</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Which_Tool__c</fullName>
+    <label>Which Function</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Impacted_Application__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Language IO</fullName>
+                <default>false</default>
+                <label>Language IO</label>
+            </value>
+            <value>
+                <fullName>Call Pop Up</fullName>
+                <default>false</default>
+                <label>Call Pop Up</label>
+            </value>
+            <value>
+                <fullName>Queues</fullName>
+                <default>false</default>
+                <label>Queues</label>
+            </value>
+            <value>
+                <fullName>Cases</fullName>
+                <default>false</default>
+                <label>Cases</label>
+            </value>
+            <value>
+                <fullName>Booking</fullName>
+                <default>false</default>
+                <label>Booking</label>
+            </value>
+            <value>
+                <fullName>Exchanging</fullName>
+                <default>false</default>
+                <label>Exchanging</label>
+            </value>
+            <value>
+                <fullName>Cancelling</fullName>
+                <default>false</default>
+                <label>Cancelling</label>
+            </value>
+            <value>
+                <fullName>Evoucher tool</fullName>
+                <default>false</default>
+                <label>Evoucher tool</label>
+            </value>
+            <value>
+                <fullName>Club Eurostar</fullName>
+                <default>false</default>
+                <label>Club Eurostar</label>
+            </value>
+            <value>
+                <fullName>Inbound or outbound calls</fullName>
+                <default>false</default>
+                <label>Inbound or outbound calls</label>
+            </value>
+            <value>
+                <fullName>Payment</fullName>
+                <default>false</default>
+                <label>Payment</label>
+            </value>
+            <value>
+                <fullName>Logging calls</fullName>
+                <default>false</default>
+                <label>Logging calls</label>
+            </value>
+            <value>
+                <fullName>Knowledge</fullName>
+                <default>false</default>
+                <label>Knowledge</label>
+            </value>
+            <value>
+                <fullName>FAQ</fullName>
+                <default>false</default>
+                <label>FAQ</label>
+            </value>
+            <value>
+                <fullName>App</fullName>
+                <default>false</default>
+                <label>App</label>
+            </value>
+            <value>
+                <fullName>Eurostar.com</fullName>
+                <default>false</default>
+                <label>Eurostar.com</label>
+            </value>
+            <value>
+                <fullName>Something else</fullName>
+                <default>false</default>
+                <label>Something else</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Voyager</controllingFieldValue>
+            <valueName>Booking</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Voyager</controllingFieldValue>
+            <valueName>Exchanging</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Voyager</controllingFieldValue>
+            <valueName>Cancelling</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Voyager</controllingFieldValue>
+            <valueName>Evoucher tool</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Voyager</controllingFieldValue>
+            <valueName>Club Eurostar</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Voyager</controllingFieldValue>
+            <controllingFieldValue>Vonage</controllingFieldValue>
+            <controllingFieldValue>Others</controllingFieldValue>
+            <controllingFieldValue>Salesforce</controllingFieldValue>
+            <valueName>Something else</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vonage</controllingFieldValue>
+            <valueName>Inbound or outbound calls</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vonage</controllingFieldValue>
+            <valueName>Payment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vonage</controllingFieldValue>
+            <valueName>Logging calls</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Others</controllingFieldValue>
+            <valueName>Knowledge</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Others</controllingFieldValue>
+            <valueName>FAQ</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Others</controllingFieldValue>
+            <valueName>App</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Others</controllingFieldValue>
+            <valueName>Eurostar.com</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Salesforce</controllingFieldValue>
+            <valueName>Language IO</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Salesforce</controllingFieldValue>
+            <valueName>Call Pop Up</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Salesforce</controllingFieldValue>
+            <valueName>Queues</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Salesforce</controllingFieldValue>
+            <valueName>Cases</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,12 @@
+<apex:page standardcontroller="Staff_and_duty_travel__c" extensions="StaffAndDutyTravel_extension">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:outputtext value="Thank you. Your travel demand will be treated shortly and we'll come back to you." />
+            
+            
+            <!-- _________________ Button Section ____________________ -->
+            <apex:commandButton action="{!newTravel}" value="New Travel" id="theButton"/>
+            <!-- _________________ /Button Section ____________________ --> 
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

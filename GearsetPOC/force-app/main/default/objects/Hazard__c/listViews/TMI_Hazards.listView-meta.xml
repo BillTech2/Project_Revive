@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TMI_Hazards</fullName>
+    <columns>NAME</columns>
+    <columns>Hazard_Priority__c</columns>
+    <columns>Hazard_Date_of_Occurance__c</columns>
+    <columns>Hazard_Description__c</columns>
+    <columns>Hazard_Key_Manager_EIL__c</columns>
+    <columns>Hazard_Key_Manager_Contractor__c</columns>
+    <columns>OWNER.ALIAS</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Location__c</field>
+        <operation>equals</operation>
+        <value>TMI</value>
+    </filters>
+    <label>TMI Hazards</label>
+    <language>en_US</language>
+</ListView>

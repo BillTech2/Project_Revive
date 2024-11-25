@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Creation_Channel__c</fullName>
+    <description>This field gets populated once when the online account is initially created. It allows to understand from which parts of the site/apps accounts were created from.</description>
+    <label>Creation Channel</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Accounts</fullName>
+                <default>false</default>
+                <label>Accounts</label>
+            </value>
+            <value>
+                <fullName>BPA</fullName>
+                <default>false</default>
+                <label>BPA</label>
+            </value>
+            <value>
+                <fullName>Mobile App</fullName>
+                <default>false</default>
+                <label>Mobile App</label>
+            </value>
+            <value>
+                <fullName>Packages</fullName>
+                <default>false</default>
+                <label>Packages</label>
+            </value>
+            <value>
+                <fullName>Shop</fullName>
+                <default>false</default>
+                <label>Shop</label>
+            </value>
+            <value>
+                <fullName>SNAP</fullName>
+                <default>false</default>
+                <label>SNAP</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

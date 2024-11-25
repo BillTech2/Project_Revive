@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_passenger_6_a_dependent_child__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>This field will be used to check if the sixth passenger is a dependent child</description>
+    <inlineHelpText>Children can be included when they reach the age of 4 only when the main traveller is either the employee to whom the voucher is issued or the spouse/equivalent.
+They are considered dependants provided they remain in full time education to the age of 24.</inlineHelpText>
+    <label>Is passenger 6 a dependent child?</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDF_Travel_Proof_From_Email__c</fullName>
+    <defaultValue>&quot;casereply@eurostar.com&quot;</defaultValue>
+    <description>The Org-Wide email address uses for the Travel Proof emails/documents.
+
+Metadata: PDF_Generator_Travel_Proof.page, DLT_TravelProofBatch.cls.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The Org-Wide email address uses for the Travel Proof emails/documents.</inlineHelpText>
+    <label>PDF Travel Proof From Email</label>
+    <length>255</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

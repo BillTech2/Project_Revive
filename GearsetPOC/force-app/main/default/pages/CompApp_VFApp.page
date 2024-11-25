@@ -1,0 +1,277 @@
+<apex:page showHeader="false" sidebar="false" controller="CompApp_CtrlApp" language="{!selectedLanguageCode}" standardStylesheets="false" applyHtmlTag="false" applyBodyTag="false" docType="html-5.0">
+
+    <apex:variable var="mobileToScreenSize"  value="{! '42.983em' }" />
+
+    <apex:variable var="tabletFromScreenSize" value="{! '43em' }" />
+    <apex:variable var="tabletToScreenSize"   value="{! '59.93em' }" />
+
+    <html data-ieuglyhack="en">
+    <head>
+        <script>
+            var __SFDC_LABELS__ = {
+                'CompApp_terribleBrowserDetected': '{! JSENCODE($Label.Comp_oldBrowserMsgHeader) }',
+                'CompApp_terribleBrowser':         '{! JSENCODE($Label.Comp_oldBrowserMsgBody) }',
+                'CompApp_Close':                   '{! JSENCODE($Label.CompApp_Close) }',
+                'CompApp_Upgrade':                 '{! JSENCODE($Label.CompApp_Upgrade) }',
+                'Other':                           '{! JSENCODE($Label.CompApp_Other) }',
+                'Popular_Destinations':            '{! JSENCODE($Label.CompApp_GroupDestination) }'
+            };
+            var __SFDC_DOMAINS__ = JSON.parse('{!domainRouting}');
+
+        </script>
+
+        <meta name="viewport" content="width=device-width" />
+
+        <title>{!$Label.CompApp_BrowserTabTitle}</title>
+        <link rel="shortcut icon" href="{!URLFOR($Resource.EurostarFavIcon)}"/>
+        <!-- Styles -->
+        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.CompApp_Res, '/res/all-prembrokeWeb.css')}"/>
+
+        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.CompApp_Res, '/css/12-cols-grid.css')}"/>
+        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.CompApp_Res, '/css/no-grid.css')}" />
+        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.CompApp_Res, '/css/angular-date-picker.css')}"/>
+        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.CompApp_Res, '/css/select2-3.4.5.css')}"/>
+
+        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.CompApp_Res, '/css/elements.css')}"/>
+        <link rel="stylesheet" type="text/css" media="only screen and (max-width: {! mobileToScreenSize })" href="{!URLFOR($Resource.CompApp_Res, '/css/elements-mobile.css')}"/>
+        <link rel="stylesheet" type="text/css" media="only screen and (min-width: {! tabletFromScreenSize }) and (max-width: {! tabletToScreenSize })" href="{!URLFOR($Resource.CompApp_Res, '/css/elements-tablet.css')}"/>
+
+        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.CompApp_Res, '/css/template-base.css')}"/>
+        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.CompApp_Eurostar_Ticket_Examples, '/ticket-examples.css')}"/>
+
+        <!-- Loading jQuery, angular -->
+        <script src="{!URLFOR($Resource.CompApp_Res, '/vendor/jquery2.1.3.js')}"></script>
+        <script src="{!URLFOR($Resource.CompApp_Res, '/vendor/jquery.query-object.js')}"></script>
+
+        <script src="{!URLFOR($Resource.CompApp_Res, '/vendor/angular1.3.15.js')}"></script>
+        <script src="{!URLFOR($Resource.CompApp_Res, '/vendor/angular-route.1.4.4.js')}"></script>
+        <script src="{!URLFOR($Resource.CompApp_Res, '/vendor/angular-sanitize.1.4.4.js')}"></script>
+        <script src="{!URLFOR($Resource.CompApp_Res, '/vendor/nocaptchRecaptcha.angular.js')}"></script>
+        <script src="{!URLFOR($Resource.CompApp_Res, '/vendor/angularjs-autocomplete.min.js')}"></script>
+        <script src="{!URLFOR($Resource.CompApp_Res, '/js/angular-date-picker.js')}"></script>
+
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-select/0.13.1/select.min.css"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-select/0.13.1/select.min.js"></script>
+
+        <!-- Loading Angular Controllers-->
+        <script src="{!URLFOR($Resource.CompApp_Res, '/js/browser-info.js')}"></script>
+        <script src="{!URLFOR($Resource.CompApp_Res, '/js/app.js')}"></script>
+        <script src="{!URLFOR($Resource.CompApp_Res, '/js/make-claim-ctrl.js')}"></script>
+        <script src="{!URLFOR($Resource.CompApp_Res, '/js/tfl-form-ctrl.js')}"></script>
+        <script src="{!URLFOR($Resource.CompApp_Res, '/js/mice-delegate-reg-form.js')}"></script>
+        <script src="{!URLFOR($Resource.CompApp_Res, '/js/mice-spec-rate-ctrl.js')}"></script>
+        <script src="{!URLFOR($Resource.CompApp_Res, '/js/select-comp-ctrl.js')}"></script>
+        <script src="{!URLFOR($Resource.CompApp_Res, '/js/gdpr-form-ctrl.js')}"></script>
+        <script src="{!URLFOR($Resource.CompApp_Res, '/js/soft-error.js')}"></script>
+        <script src="{!URLFOR($Resource.CompApp_Res, '/js/comp-details-ctrl.js')}"></script>
+        <script src="{!URLFOR($Resource.CompApp_Res, '/js/group-booking-ctrl.js')}"></script>
+        <script src="{!URLFOR($Resource.CompApp_Res, '/js/contact-us-ctrl.js')}"></script>
+
+
+        <!-- Miscellenous -->
+        <script src="{!URLFOR($Resource.CompApp_Res, '/js/pop-in-api.js')}"></script>
+        <script src="{!URLFOR($Resource.CompApp_Res, '/js/template.js')}"></script>
+        <script src="{!URLFOR($Resource.CompApp_Res, '/js/browser-assert.js')}"></script>
+
+
+
+        <!--intl-tel library initialization for TFL registration form-->
+        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.CompApp_Res, '/intl-tel/css/intlTelInput.css')}"/>
+        <style>
+            .iti-flag {background-image: url("{!URLFOR($Resource.CompApp_Res, '/intl-tel/img/flags.png')}");}
+
+            @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+                .iti-flag {background-image: url("{!URLFOR($Resource.CompApp_Res, '/intl-tel/img/flags@2x.png')}");}
+            }
+        </style>
+        <script src="{!URLFOR($Resource.CompApp_Res, '/intl-tel/js/intlTelInput.min.js')}"></script>
+        <script src="{!URLFOR($Resource.CompApp_Res, '/intl-tel/js/utils.js')}"></script>
+
+        <!-- country selector initialization for TFL registration form-->
+        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.CompApp_Res, '/country-selector/css/countrySelect.css')}"/>
+        <script src="{!URLFOR($Resource.CompApp_Res, '/country-selector/js/countrySelect.min.js')}"></script>
+
+        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.CompApp_Res, '/css/tfl-form.css')}"/>
+
+        <script>
+            (function() {
+                'strict mode';
+                angular
+                        .module('compApp')
+                        .constant('excludedEmailDomains',{
+                            domainList: JSON.parse('{!emailExcludeDomains}')
+                        });
+            })();
+        </script>
+
+        <!-- The images are too big to zip with other resources -->
+        <style>
+            .ng-cloak, .x-ng-cloak {
+                display: none !important;
+            }
+
+            a:hover {
+                cursor: pointer;
+            }
+
+            #app-footer-template-image {
+                background-color: #00286A;
+            }
+
+
+            #app-root .valid .input-wrapper::before   { background-image: url("{!URLFOR($Resource.CompApp_Res, '/res/SVGS/tick_correct.svg')}"); }
+            #app-root .invalid .input-wrapper::before { background-image: url("{!URLFOR($Resource.CompApp_Res, '/res/SVGS/exclaimation_mark.svg')}"); }
+            #app-root .tooltip-sign  { background-image: url("{!URLFOR($Resource.CompApp_Res, '/res/SVGS/helpFilled.svg')}"); }
+
+
+            @media only screen and (min-width: {! tabletFromScreenSize } and max-width: {! tabletToScreenSize }) {
+                #app-footer-template-image {
+                    background-color: #00286A;
+                }
+            }
+
+            @media only screen and (max-width: {! mobileToScreenSize }) {
+                #app-footer-template-image {
+                    background-color: #00286A;
+                }
+            }
+        </style>
+
+        <header id="app-header-template">
+            <div id="app-header-template-top-section">
+                <!-- <img id="top-section-logo" src="{!URLFOR($Resource.CompApp_Res, '/res/SVGS/eurostar_logo.svg')}" alt="logo" height="30" width="100"/> -->
+                <div id="top-section-logo"></div>
+                
+                <div id="top-section-lang-select-box">
+                    <div id="select-box-selected-lang">{!$Label.CompApp_english}</div>
+                    <img id="select-box-arrow" src="{!URLFOR($Resource.CompApp_Res, '/res/SVGS/arrow_down.svg')}" height="14" width="14" onclick="showLanguageSelectionMenu();"/>
+                </div>
+                <div id="top-section-title">
+                    {!$Label.HelpCentreHeader}
+                </div>
+            </div>
+            <div id="app-header-template-lang-selection-menu">
+                <h6 id="lang-selection-menu-description" style="margin-bottom: 10px; color: #FCF5D8;">{!$Label.CompApp_selectLang}</h6>
+                <div id="app-header-template-line"></div>
+                <div id="app-header-template-options">
+                    <a class="options-button" hreflang="en">{!$Label.CompApp_english}</a>
+                    <br/>
+                    <a class="options-button" hreflang="fr">{!$Label.CompApp_Francias}</a>
+                    <br/>
+                    <a class="options-button" hreflang="nl">{!$Label.CompApp_Nederlands}</a>
+                    <br/>
+                    <a class="options-button" hreflang="de">{!$Label.CompApp_German}</a>
+                </div>
+            </div>
+        </header>
+
+
+    </head>
+
+    <body>
+    <div id="app-root" ng-app="compApp">
+        <div class="ng-view" id="ng-view"></div>
+        <div class="blanket" id="blanket" hidden="hidden">
+            <div class="messagebox" id="messagebox" style="padding-right:2rem;" >
+                <div class="cntnr" id="cntnr" style="border-radius: .5rem; height: 3rem;">
+                    <div class="msgs" id="msgs" style="padding-left:2rem; padding-right:2rem; background-color: #1b808e; border-radius: .5rem; padding-bottom: 1rem">
+                        <div><div class="lds-spinner" style="margin-left: -2.2rem; position:relative!important; height:0"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>
+                        <p style="margin-top:1rem; margin-left: 1rem; color:white;">Please wait for confirmation for your request. Thank you...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dialog" id="dialog">
+            <section id="modal-window-section">
+                <header>
+                    <a class="close" id="dialog-close-button">X {! HTMLENCODE($Label.CompApp_Close) }</a>
+                </header>
+                <h2 id="dialog-heading">Heading</h2>
+                <h3 id="dialog-description"></h3>
+                <footer id="dialog-commands">
+                    <a href="#" class="btn primary">Ok</a>
+                    <a href="#" class="btn secondary">Cancel</a>
+                </footer>
+            </section>
+        </div>
+
+        <div class="preview-modal" id="preview-modal">
+            <section>
+                <header>
+                    <a class="close" id="dialog-close-button-preview">X {! HTMLENCODE($Label.CompApp_Close) }</a>
+                </header>
+                <img id="ticket-preview" class="preview" src=""/>
+            </section>
+        </div>
+    </div>
+
+
+    <footer id="app-footer-template">
+        <div id="app-footer-template-image">
+            <div id="app-footer-template-content">
+                <p id="app-footer-template-image-description" >{!$Label.CompApp_HelpCentre}</p>
+                <a class="primary" href="{!$Setup.HelpCentre__c.URL__c}">{!$Label.CompApp_Help_Centre}</a>
+            </div>
+        </div>
+        <p id="app-footer-template-copyright">© {!YEAR(TODAY())} {!$Label.CompApp_EurostarRights} <a id="app-footer-template-link" href="http://www.eurostar.com">{!$Label.CompApp_eurostar_site}</a></p>
+    </footer>
+
+    <script>
+        sfdc_prevent_message_warning = true;
+        if (!window.jQuery) {
+            var message = [
+                '{! JSENCODE($Label.CompApp_ie8Error) }'
+            ].join('\n');
+            location.href = confirm(message) ? 'http://windows.microsoft.com/en-gb/internet-explorer/download-ie' : 'http://www.eurostar.com/';
+        }
+
+        $(function(){
+            checkBrowserSupport();
+            $('#select-box-selected-lang').text($('#app-header-template-options .options-button[hreflang="{!JSENCODE(selectedLanguageCode)}"]').text());
+        });
+
+        var APP_HEADER_TEMPLATE_LANG_SELECTION_MENU = {
+            OPEN:  "{! URLFOR($Resource.CompApp_Res, '/res/SVGS/arrow_up.svg') }",
+            CLOSE: "{! URLFOR($Resource.CompApp_Res, '/res/SVGS/arrow_down.svg') }",
+        }
+        var GLOBAL_REMOTE_USER_IP = '{!USER_IP}';
+        var SFDC_SITE_PREFIX = '{!$Site.Prefix}' === ''? '/apex':'{!$Site.Prefix}';
+
+        // TODO: Michael 06.10.15 - iOS not supported event  window.onbeforeunload
+        // window.onpagehide = function (e) {
+        //     return '{!$Label.CompApp_refresh_page_message}';
+        // }
+
+        window.onbeforeunload = function (e) {
+            if (!sfdc_prevent_message_warning){
+                var e = e || window.event;
+                // For IE and Firefox
+                if (e) {
+                    e.returnValue = '{!$Label.CompApp_refresh_page_message}';
+                }
+                // For Safari & Chrome
+                return '{!$Label.CompApp_refresh_page_message}';
+            }
+        };
+    </script>
+    </body>
+
+    <script type="text/javascript">
+        var marketLanguage = "{!if(selectedLanguageCode = 'en', 'uk-en', if(selectedLanguageCode = 'de', 'de-de',if(selectedLanguageCode = 'fr', 'fr-fr', if(selectedLanguageCode = 'nl', 'nl-nl', 'uk-en'))))}";
+        var utag_data = {
+            "marketLanguage" : marketLanguage
+        };
+    </script>
+
+    <!-- Loading script asynchronously -->
+    <script type="text/javascript">
+        (function(a,b,c,d)
+
+                { a='{!$Setup.Tealium_Analytics_Settings__c.API__c}'; b=document;c='script';d=b.createElement(c);d.src=a;d.type='text/java'+c;d.async=true; a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a); }
+        )();
+    </script>
+    <script src="https://www.eurostar.com/static/cookie-banner.js?language={!if(or(selectedLanguageCode = 'en', selectedLanguageCode = 'fr', selectedLanguageCode = 'nl', selectedLanguageCode = 'de'), selectedLanguageCode, 'en')}"></script>
+
+    </html>
+</apex:page>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Carrier__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( AND(NOT( ISBLANK( Train__c )), NOT( ISBLANK( Train__r.Carrier__c )), NOT(Train__r.Carrier__c == &#39;Purple&#39;))  , 
+Train__r.Carrier__c, 
+IF( AND(NOT( ISBLANK(  Ticket__c )) ,NOT( TEXT( Ticket__r.Carrier__c ) == &#39;&#39;), NOT(TEXT(Ticket__r.Carrier__c) == &#39;Purple&#39;))  , 
+TEXT(Ticket__r.Carrier__c), 
+IF( AND(NOT( ISBLANK(  Case__c )) ,NOT( TEXT( Case__r.Carrier__c ) == &#39;&#39;), NOT(TEXT(Case__r.Carrier__c) == &#39;Purple&#39;))  , 
+TEXT(Case__r.Carrier__c), 
+IF( AND(NOT( ISBLANK(  CreatedById )) , NOT( TEXT( CreatedBy.Train_Service__c  ) == &#39;&#39;),  NOT(TEXT(CreatedBy.Train_Service__c ) == &#39;Purple&#39;)) ,
+TEXT(CreatedBy.Train_Service__c ),
+&#39;Blue&#39;))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Carrier</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

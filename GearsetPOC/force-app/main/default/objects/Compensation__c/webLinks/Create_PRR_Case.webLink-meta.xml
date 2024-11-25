@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Create_PRR_Case</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <hasMenubar>false</hasMenubar>
+    <hasScrollbars>true</hasScrollbars>
+    <hasToolbar>false</hasToolbar>
+    <height>600</height>
+    <isResizable>true</isResizable>
+    <linkType>url</linkType>
+    <masterLabel>Create PRR Case</masterLabel>
+    <openType>newWindow</openType>
+    <position>none</position>
+    <protected>false</protected>
+    <showsLocation>false</showsLocation>
+    <showsStatus>false</showsStatus>
+    <url>https://eurostar.my.salesforce.com/
+
+500/o?
+
+&amp;retURL=%2F500%2Fo
+
+&amp;CF00Nb000000A3IKv={!Compensation__c.Ticket_Read_Only__c}
+
+&amp;00Nb00000069BY7={!Compensation__c.PNR__c}
+
+&amp;00Nb000000A3IKZ={!Compensation__c.Payment_Currency__c}
+
+&amp;00Nb000000A9yTT={!Compensation__c.PRR_Amount__c}
+
+&amp;00Nb000000A3IKX={!Compensation__c.Compensate_My_Existing_Card__c}
+
+&amp;00Nb000000A3IKR={!Compensation__c.Bank_Account_Number__c}
+
+&amp;00Nb000000A3IKS={!Compensation__c.Bank_Sort_Code__c}
+
+&amp;00Nb000000A3IKu={!Compensation__c.Swift_Sort_Code__c}
+
+&amp;00Nb000000A3IKi={!Compensation__c.IBAN_Account_Number__c}
+
+&amp;00Nb000000A3IKo={!Compensation__c.Paypal_email__c}
+
+&amp;RecordType=012b0000000g3XE
+
+&amp;ent=Case</url>
+</WebLink>

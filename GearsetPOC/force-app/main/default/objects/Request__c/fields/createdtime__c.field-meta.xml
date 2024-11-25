@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>createdtime__c</fullName>
+    <description>Request created time</description>
+    <inlineHelpText>Request  createdtime</inlineHelpText>
+    <label>createdtime</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

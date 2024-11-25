@@ -1,0 +1,130 @@
+<apex:page showHeader="false" sidebar="false" controller="JuniorTraveller_Controller" language="{!selectedLanguageCode}" standardStylesheets="false" applyHtmlTag="false" applyBodyTag="false" docType="html-5.0">
+<html lang="en" ng-app="juniorTraveller" ng-controller="RootController">
+
+<head>
+  <meta name="viewport" content="width=device-width"/>
+  <title>Eurostar - Junior Traveller</title>  
+<!--  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>  -->
+   <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.junior_traveller, '/junior_traveller/css/font-awesome.min.css')}"/>
+   
+  <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.junior_traveller, '/junior_traveller/css/bootstrap/bootstrap.css')}"/>
+  <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.junior_traveller, '/junior_traveller/css/main.css')}"/>
+  <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.junior_traveller, '/junior_traveller/css/angular/angular-date-picker.css')}"/>
+  <script src="{!URLFOR($Resource.junior_traveller, '/junior_traveller/js/angular/angular1.3.15.js')}"></script>
+ <!-- <script src="https://cdn.rawgit.com/angular-translate/bower-angular-translate/2.5.0/angular-translate.js"></script>  -->
+  <script src="{!URLFOR($Resource.junior_traveller, '/junior_traveller/js/angular/angular-translate.js')}"></script>
+  
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="{!URLFOR($Resource.junior_traveller, '/junior_traveller/js/angular/angular-date-picker.js')}"></script>
+  
+ <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>  -->
+ <script src="{!URLFOR($Resource.junior_traveller, '/junior_traveller/js/popper.min.js')}"></script>
+ 
+  <script src="{!URLFOR($Resource.junior_traveller, '/junior_traveller/js/bootstrap/bootstrap.min.js')}"></script>   
+  <script src="{!URLFOR($Resource.junior_traveller, '/junior_traveller/js/bluebird.min.js')}"></script>  
+  <script src="{!URLFOR($Resource.junior_traveller, '/junior_traveller/app/app.js')}"></script>  
+  
+  
+          <!-- Loading Angular Controllers-->
+        <script src="{!URLFOR($Resource.junior_traveller, '/junior_traveller/app/app.js')}"></script>
+    <script>
+            (function() {
+                'strict mode';
+                angular
+                    .module('juniorTraveller')
+                    
+                    });
+            })();
+        </script>
+        
+        <script type="text/javascript">    
+        
+         $(window ).ready(function() {
+
+         var tempValue = '{!$CurrentPage.parameters.lang}';                  
+                  
+                  var elem = angular.element(document.querySelector('[ng-app]'));
+                         var injector = elem.injector();
+                         var $rootScope = injector.get('$rootScope');  
+                           $rootScope.$apply(function(){
+                           
+                           $rootScope.translationLang = tempValue;
+                           
+                        });    
+
+       
+         });
+        </script>
+</head> 
+<body>
+
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+                                         <img src="{!URLFOR($Resource.junior_traveller, '/junior_traveller/images/logo.png')}" alt="logo"/>
+                                  </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+          aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                          </button>
+
+ 
+      </div>
+      <!-- container -->
+    </nav>
+
+  </header>
+  
+
+  <div class="wrapper">
+       <!-- container   -->
+   
+    <!-- searchResults -->
+    
+
+       <div class="detailsSection">
+      <div class="container">
+        <div class="row m-0 justify-content-center">
+          <div class="col-6 thankyouBox p-0">
+            <div class="row">
+              <div class="col-12 ">
+                <div class="font-weight-bold bg-yellow p-4">
+ <p>{{'message5' | translate}}</p>
+                 </div>
+              </div>
+
+              <div class="col-12 thankyouBox__quote text-center">
+                <p>{{'message6' | translate}}</p> </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer__wrapper">
+        <div class="container">
+          <div class="col-12 pt-4 pb-4">
+            <p>Eurostar International Limited is an Appointed Representative of Mondial Assistance(UK) Limited (trading as Allianz
+              Global Assistance) which is authorised and regulated by the Financial Conduct Authority (FCA). Mondial Assistance
+              (UK) Limited FCA registration number is 311909. FCA authorisation can be checked on the FCA register at <i>http://www.fsa.gov.uk/register/</i></p>
+            <span class="companydetails">© 2018 Eurostar International Ltd. All Rights Reserved.</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+ 
+  <div class="s249g23-0 hbxyLF" ng-if="showLoader">
+    <div class="s249g23-1 vxJor">
+      <img height="100" src="images/train-loader.svg" width="100"/>
+    </div>
+  </div>
+  <!-- wrapper -->
+  </body>
+    
+</html>
+</apex:page>

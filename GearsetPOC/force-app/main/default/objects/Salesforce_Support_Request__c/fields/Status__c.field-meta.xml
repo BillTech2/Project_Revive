@@ -12,18 +12,13 @@
             <sorted>false</sorted>
             <value>
                 <fullName>New</fullName>
-                <default>true</default>
+                <default>false</default>
                 <label>New</label>
             </value>
             <value>
                 <fullName>In progress</fullName>
                 <default>false</default>
                 <label>In progress</label>
-            </value>
-            <value>
-                <fullName>Test Value</fullName>
-                <default>false</default>
-                <label>Test Value</label>
             </value>
             <value>
                 <fullName>Referred to Requester</fullName>
@@ -74,46 +69,6 @@
                 <fullName>Delta Freeze</fullName>
                 <default>false</default>
                 <label>Delta Freeze</label>
-            </value>
-            <value>
-                <fullName>Pending Internal Information</fullName>
-                <default>false</default>
-                <label>Pending Internal Information</label>
-            </value>
-            <value>
-                <fullName>Pending Team Resource</fullName>
-                <default>false</default>
-                <label>Pending Team Resource</label>
-            </value>
-            <value>
-                <fullName>Completed</fullName>
-                <default>false</default>
-                <label>Completed</label>
-            </value>
-            <value>
-                <fullName>Rejected - other</fullName>
-                <default>false</default>
-                <label>Rejected - other</label>
-            </value>
-            <value>
-                <fullName>Rejected - request inaccurate</fullName>
-                <default>false</default>
-                <label>Rejected - request inaccurate</label>
-            </value>
-            <value>
-                <fullName>Rejected - already exists</fullName>
-                <default>false</default>
-                <label>Rejected - already exists</label>
-            </value>
-            <value>
-                <fullName>Rejected - duplicate</fullName>
-                <default>false</default>
-                <label>Rejected - duplicate</label>
-            </value>
-            <value>
-                <fullName>Rejected - inaccurate</fullName>
-                <default>false</default>
-                <label>Rejected - inaccurate</label>
             </value>
         </valueSetDefinition>
     </valueSet>

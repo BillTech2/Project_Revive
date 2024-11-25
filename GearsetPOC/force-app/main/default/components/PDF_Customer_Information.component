@@ -1,0 +1,31 @@
+<apex:component language="en">
+    <!-- Attribute Definitions -->
+    <apex:attribute name="companyName" description="This is the value for the component." type="String" required="true"/>
+    <apex:attribute name="salutation" description="This is the value for the component." type="String" required="true"/>
+    <apex:attribute name="lastname" description="This is the value for the component." type="String" required="true"/>
+    <apex:attribute name="firstname" description="This is the value for the component." type="String" required="true"/>
+    <apex:attribute name="mailingStreet" description="This is the value for the component." type="String" required="true"/>
+    <apex:attribute name="mailingAdditionalStreet" description="This is the value for the component." type="String" required="true"/>
+    <apex:attribute name="mailingPostalCode" description="This is the value for the component." type="String" required="true"/>
+    <apex:attribute name="mailingCity" description="This is the value for the component." type="String" required="true"/>
+    <apex:attribute name="mailingCountry" description="This is the value for the component." type="String" required="true"/>
+    <apex:attribute name="showSalutation" description="This is the value for the component." type="Boolean" required="true"/>
+
+    <!-- Component Definition -->
+
+    <div class="slds-p-around_none slds-m-around_none"><apex:outputText style="font-size: 12pt;" value="{!companyName}" rendered="{! IF(companyName != '', true, false)}"/></div>
+
+    <div class="slds-p-around_none slds-m-around_none"><apex:outputText style="font-size: 12pt;" value="{!salutation} " rendered="{! IF(companyName == '' && showSalutation == true, true, false)}"/>
+    <apex:outputText style="font-size: 12pt;" value="{!firstname}" rendered="{! IF(companyName == '', true, false)}"/>
+    <apex:outputText style="font-size: 12pt;" value="{!lastname} " rendered="{! IF(companyName == '', true, false)}"/></div>
+
+    <div class="slds-p-around_none slds-m-around_none"><apex:outputText style="font-size: 12pt;" value="{!mailingStreet}"/></div>
+
+    <div class="slds-p-around_none slds-m-around_none"><apex:outputText style="font-size: 12pt;" value="{!mailingAdditionalStreet}" rendered="{! IF(mailingAdditionalStreet != '', true, false)}"/></div>
+
+    <div class="slds-p-around_none slds-m-around_none"><apex:outputText style="font-size: 12pt;" value="{!mailingPostalCode}"/>
+    <apex:outputText style="font-size: 12pt;" value="{!mailingCity}"/></div>
+
+    <div class="slds-p-around_none slds-m-around_none"><apex:outputText style="font-size: 12pt;" value="{!mailingCountry}"/></div>
+
+</apex:component>

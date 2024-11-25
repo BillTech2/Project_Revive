@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>Invoice__c</columns>
+    <columns>Start_Date__c</columns>
+    <columns>End_Date__c</columns>
+    <columns>Member__c</columns>
+    <columns>Payment_Method__c</columns>
+    <columns>Status__c</columns>
+    <columns>Subscription_Confirm_Date__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Active,Inactive,Pending Payment,Not Started,Cancelled,Expired,New</value>
+    </filters>
+    <label>All</label>
+</ListView>

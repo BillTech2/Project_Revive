@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Base_Compensation__c</fullName>
+    <description>Ticket Price * Base % (Custom Setting - % depends on delay time)</description>
+    <externalId>false</externalId>
+    <inlineHelpText>This is compensation amount based on the ticket delay
+Base Compensation = Ticket Price * Base % (Custom Setting - % depends on delay time)</inlineHelpText>
+    <label>Base Compensation</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

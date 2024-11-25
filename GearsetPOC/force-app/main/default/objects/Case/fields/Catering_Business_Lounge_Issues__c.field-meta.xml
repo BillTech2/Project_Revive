@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Catering_Business_Lounge_Issues__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>Tick this box if the main reason for contact was not related to Catering and/or the Business Lounge but the customer has still raised an issue about either of them</inlineHelpText>
+    <label>Catering / Business Lounge Issue</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

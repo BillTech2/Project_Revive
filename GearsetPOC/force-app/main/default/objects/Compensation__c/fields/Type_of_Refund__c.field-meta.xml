@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type_of_Refund__c</fullName>
+    <label>Type of Refund</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>PRR</fullName>
+                <default>false</default>
+                <label>PRR</label>
+            </value>
+            <value>
+                <fullName>Expenses</fullName>
+                <default>false</default>
+                <label>Expenses</label>
+            </value>
+            <value>
+                <fullName>Other (Please Explain in Comments)</fullName>
+                <default>false</default>
+                <label>Other (Please Explain in Comments)</label>
+            </value>
+            <value>
+                <fullName>Delay compensation</fullName>
+                <default>false</default>
+                <label>Delay compensation</label>
+            </value>
+            <value>
+                <fullName>Comfort compensation</fullName>
+                <default>false</default>
+                <label>Comfort compensation</label>
+            </value>
+            <value>
+                <fullName>COVID compensation - New</fullName>
+                <default>false</default>
+                <label>COVID compensation - New</label>
+            </value>
+            <value>
+                <fullName>COVID compensation - Replacement</fullName>
+                <default>false</default>
+                <label>COVID compensation - Replacement</label>
+            </value>
+            <value>
+                <fullName>Failed voyager voucher</fullName>
+                <default>false</default>
+                <label>Failed voyager voucher</label>
+            </value>
+            <value>
+                <fullName>Fraud replacement</fullName>
+                <default>false</default>
+                <label>Fraud replacement</label>
+            </value>
+            <value>
+                <fullName>Goodwill</fullName>
+                <default>false</default>
+                <label>Goodwill</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

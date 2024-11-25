@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Related_Currency__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(RecordType.Name = &quot;Service Recovery&quot;, TEXT(Compensation__r.Payment_Currency__c),
+ IF(RecordType.Name = &quot;DotCom&quot;, Promotional_eVoucher_rule__r.Currency__c,
+  IF(RecordType.Name = &quot;Partner&quot;, Promotional_eVoucher_rule__r.Currency__c,
+    IF(RecordType.Name = &quot;Promotional&quot; &amp;&amp; ISBLANK(TEXT(Custom_Currency__c)), Promotional_eVoucher_rule__r.Currency__c,
+      IF(
+        (RecordType.Name = &quot;Promotional&quot;
+        || RecordType.Name = &quot;Eurostar Voucher&quot;
+        || RecordType.Name = &quot;MITIE Voucher&quot;
+        || RecordType.Name = &quot;Momentum Voucher&quot;
+        || RecordType.Name = &quot;DotCom&quot;
+        || RecordType.Name = &quot;Retiree Voucher&quot;)
+        &amp;&amp; NOT(ISBLANK(TEXT(Custom_Currency__c))),
+        TEXT(Custom_Currency__c),
+        &quot;&quot;
+      )
+    )
+  )
+))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Final Amount requested by Boomi to Datacash - will change depending on the Record Type, and on the value of Custom_Currency__c</inlineHelpText>
+    <label>Requested Currency</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

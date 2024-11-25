@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Address_Populated__c</fullName>
+    <formula>IF(
+   NOT(ISBLANK(PersonMailingPostalCode)) ||
+   NOT(ISBLANK(PersonOtherPostalCode)) ||
+   NOT(ISBLANK(ShippingPostalCode)) ||
+   NOT(ISBLANK(BillingPostalCode)),
+   true,false
+)</formula>
+    <inlineHelpText>Will be True if any postcode field is filled in on the Customer profile</inlineHelpText>
+    <label>Address Populated</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

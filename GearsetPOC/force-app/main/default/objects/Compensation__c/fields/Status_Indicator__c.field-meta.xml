@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status_Indicator__c</fullName>
+    <externalId>false</externalId>
+    <formula>IMAGE(IF(
+TEXT(Claim_Status__c) = &#39;Claimed&#39; &amp;&amp; TEXT(Integration_Status__c) = &#39;Success&#39;, 
+&quot;/img/msg_icons/confirm16.png&quot;, 
+       IF(
+TEXT(Integration_Status__c) = &#39;Failed&#39;, 
+&quot;/img/msg_icons/error16.png&quot;, 
+
+
+IF(TEXT(Claim_Status__c) = &#39;Not Started&#39; &amp;&amp; TEXT(Integration_Status__c) = &#39;Not Claimed&#39;,&quot;/img/checkbox_unchecked.gif&quot;,&quot;/img/icon/flag16.png&quot;)
+
+)
+         ),&quot;Status Ind&quot;
+      )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Status Indicator</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

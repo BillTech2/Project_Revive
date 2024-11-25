@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Eurostar_Internal_System</fullName>
+    <active>true</active>
+    <description>Developed on a specific platform, usually by a specific supplier</description>
+    <label>Eurostar Internal System</label>
+    <picklistValues>
+        <picklist>Business_Areas__c</picklist>
+        <values>
+            <fullName>Business Continuity Team</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CRE Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Commercial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Company Wide</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ECC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Engineering</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Operations Control</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>IS_Team_Responsible__c</picklist>
+        <values>
+            <fullName>Corp %26 Op Systems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Systems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>InfoSec Team</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Infrastructure Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sales Systems</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type__c</picklist>
+        <values>
+            <fullName>Core</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Critical</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Standard</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TIGRE_code__c</fullName>
+    <description>select the most relevant TIGRE code (373 only)</description>
+    <inlineHelpText>select the most relevant TIGRE code (373 only)</inlineHelpText>
+    <label>TIGRE code</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>1- Control Systems</fullName>
+                <default>false</default>
+                <label>1- Control Systems</label>
+            </value>
+            <value>
+                <fullName>2- Power Systems</fullName>
+                <default>false</default>
+                <label>2- Power Systems</label>
+            </value>
+            <value>
+                <fullName>3- Comfort</fullName>
+                <default>false</default>
+                <label>3- Comfort</label>
+            </value>
+            <value>
+                <fullName>4- Body</fullName>
+                <default>false</default>
+                <label>4- Body</label>
+            </value>
+            <value>
+                <fullName>5- Doors</fullName>
+                <default>false</default>
+                <label>5- Doors</label>
+            </value>
+            <value>
+                <fullName>6- Traction / Braking</fullName>
+                <default>false</default>
+                <label>6- Traction / Braking</label>
+            </value>
+            <value>
+                <fullName>7- Safety Systems</fullName>
+                <default>false</default>
+                <label>7- Safety Systems</label>
+            </value>
+            <value>
+                <fullName>8- Pneumatic Systems</fullName>
+                <default>false</default>
+                <label>8- Pneumatic Systems</label>
+            </value>
+            <value>
+                <fullName>9- Running Gear</fullName>
+                <default>false</default>
+                <label>9- Running Gear</label>
+            </value>
+            <value>
+                <fullName>10- Computer Networks</fullName>
+                <default>false</default>
+                <label>10- Computer Networks</label>
+            </value>
+            <value>
+                <fullName>N/A</fullName>
+                <default>false</default>
+                <label>N/A</label>
+            </value>
+            <value>
+                <fullName>5- Doors / Traction</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>5- Doors / Traction</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

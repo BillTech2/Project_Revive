@@ -1,0 +1,1564 @@
+<apex:page sidebar="false" showHeader="true" standardStyleSheets="true" standardController="Case" extensions="Metafour_SearchController" lightningStylesheets="false" docType="html-5.0">
+
+
+ <script type="text/javascript">
+ 
+window.onload = setFocus1;
+    function setFocus1() {
+window.scrollTo(0,0);
+        }
+
+  var busyCursorOn = function() {
+    j$('body').addClass('wait');
+  };
+
+  var busyCursorOff = function() {
+    j$('body').removeClass('wait');
+  };
+  
+  
+  
+
+    function FetchData()
+    {
+     //alert('Trains');
+    //  alert(this.options[this.selectedIndex].text );
+    if(this.options[this.selectedIndex].text == 'Luggage')
+
+    {
+ //alert('luggage');
+    document.getElementById('j_id0:form:Block1:Trains').style.display = 'none';
+
+    }
+
+   else
+{
+
+ document.getElementById('j_id0:form:Block1:Luggage').style.display = 'block';
+
+}                                         
+    
+    }
+    </script>
+
+
+ <style type="text/css">
+.detailList {
+    table-layout: fixed;
+}
+
+.dateFormat{
+   visibility:hidden; 
+}
+
+
+.labelCol {
+    text-align: right !important; 
+    max-width: 30% !important;
+    font-weight: normal !important;
+}
+
+.accordionPanel .ui-accordion .ui-accordion-content {
+    padding: 0 0;
+    border: 0
+}
+
+ body .pbBody table.list tr.dataRow th, body .pbBody table.list tr.dataRow td {
+    border-width: 0.8px 0.8px 0.8px 0.8px;
+    border-color: black;
+    vertical-align: middle;
+}   
+
+.odd {
+    background-color: #FCF7F7;  
+}
+
+.even {
+    background-color: #E3DCDB; 
+}
+
+.headerStyle {
+    font-family: "Calibri", Georgia, Serif;
+    font-size: 15px;
+    color: white;
+    background-color: #1975A3;
+} 
+
+body.wait, body.wait * { cursor: wait !important; }
+</style>
+
+   
+
+    <apex:form id="form">
+
+        <html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>EUROSTAR</title>
+<apex:stylesheet value="{!URLFOR($Resource.customCSS, 'customCSS/css/jquery-ui.css')}" />
+<apex:stylesheet value="{!URLFOR($Resource.customCSS, 'customCSS/css/reset.css')}" />
+<apex:stylesheet value="{!URLFOR($Resource.customCSS, 'customCSS/css/style.css')}" />
+</head>
+
+<body>
+    <div class="container" style="display:{!if(showSearchScreen,'block','none')};">
+        <div class="mid-panel" style="width: 1200px">
+            <div class="bread-crums">
+               <!-- <a href="#">Metafour</a> <i>&gt;</i> <a href="#" class="underline">Search 1st Journey 
+                </a> -->
+                
+                <b>Metafour > Search 1st Journey </b>
+                
+            </div>
+            <div class="form-panel">
+                <dl>
+                     <apex:pageMessages escape="false"/> 
+
+
+                </dl>
+
+
+                <div class="accordionPanel row margin-top0">
+                    <div id="accordion" class="ui-accordion ui-widget ui-helper-reset">
+                        <h3
+                            class="ui-accordion-header ui-helper-reset ui-state-default ui-accordion-icons ui-corner-top ui-accordion-header-active ui-state-active">
+                            <span
+                                class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-s"></span>
+                            Search
+                        </h3>
+                        <div
+                            class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom ui-accordion-content-active">
+
+                            <apex:pageBlock id="Block1">
+
+                                <apex:pageBlockSection id="Section0" columns="2">
+
+         
+
+                                </apex:pageBlockSection>
+
+                                <apex:pageBlockSection id="Section1" columns="2">
+
+                                    <apex:pageBlockSectionItem id="item1_1" >
+                                        <apex:outputLabel value="Travel Date" />
+                                        <apex:inputField value="{!Case.Departure_DATE_O__c}" />
+                                    </apex:pageBlockSectionItem>
+                                    
+                                    
+                                     <apex:pageBlockSectionItem id="item1_2">
+                                        <apex:outputLabel value="Case Type" />
+                                        <apex:selectList size="1" id="CaseTypeId" value="{!selectedCaseType}" >
+                                            <apex:selectOptions value="{!CaseType}" />
+                                   <!--  <apex:actionSupport event="onchange" reRender="form" action="{!changeToLuggageBooking}" status="busyCursor"/>  -->
+                                     <apex:actionsupport event="onchange" rerender="Block1,form:Block1:Trains"  status="busycursor"/>  
+                                    <apex:actionStatus id="busyCursor" onStart="busyCursorOn()" onStop="busyCursorOff()"/>
+                                        </apex:selectList>
+
+                                    </apex:pageBlockSectionItem>
+
+                              
+
+                                </apex:pageBlockSection>
+
+
+                                <apex:pageBlockSection id="Section2" columns="2">
+
+                                    <apex:pageBlockSectionItem id="item2_1">
+                                        <!--<apex:outputLabel value="Collection Station" /> -->
+                                        <apex:outputLabel value="Drop off Station" />
+                                        <apex:inputField value="{!Case.Metafour_1st_Journey_From__c}" id="destn" />
+                                    </apex:pageBlockSectionItem>
+                                    
+                                       <apex:pageBlockSectionItem id="item2_2" rendered="{!IF(selectedCaseType='Bike' && showSearchScreen, true, false)}" >
+                                        <apex:outputLabel value="Boxed Bikes" />
+                                        <apex:inputField value="{!Case.Metafour_1st_Journey_Boxed_Bikes__c}" />
+                                    </apex:pageBlockSectionItem>
+                                    
+                                    <apex:pageBlockSectionItem id="item2_2_1" rendered="{!IF(selectedCaseType='Luggage', true, false)}" >
+                                        <apex:outputLabel value="Excess Luggage <85cm" />
+                                        <apex:inputField value="{!Case.Metafour_1st_Journey_Excess_Lugg_less_85__c}" />
+                                    </apex:pageBlockSectionItem>
+
+                             
+
+                                </apex:pageBlockSection>
+
+
+                                <apex:pageBlockSection id="Section3" columns="2">
+
+                                    <apex:pageBlockSectionItem id="item3_1">
+                                       <!-- <apex:outputLabel value="Drop off Station" /> -->
+                                        <apex:outputLabel value="Collection Station" />
+                                        <apex:inputField value="{!Case.Metafour_1st_Journey_To__c}"
+                                            id="destn" />
+                                    </apex:pageBlockSectionItem>
+                                    
+                                     <apex:pageBlockSectionItem id="item3_2" rendered="{!IF(selectedCaseType='Bike', true, false)}" > 
+                                        <apex:outputLabel value="Assembled Bikes" />
+                                        <apex:inputField value="{!Case.Metafour_1st_Journey_Assembled_Bikes__c}" />
+                                    </apex:pageBlockSectionItem> 
+                                    
+                                    <apex:pageBlockSectionItem id="item3_2_1" rendered="{!IF(selectedCaseType='Luggage', true, false)}" >
+                                        <apex:outputLabel value="Excess Luggage >85cm" />
+                                        <apex:inputField value="{!Case.Metafour_1st_Jrny_Excess_Lugg_greater_85__c}" />
+                                    </apex:pageBlockSectionItem>
+                                    
+                                </apex:pageBlockSection>
+                                 
+                                
+                                <apex:pageBlockSection id="Section5" columns="2">
+
+                                    <apex:pageBlockSectionItem id="item5_1" >
+                                        <apex:outputLabel value="Is Cycling UK Member" />
+                                         <apex:inputCheckbox value="{!isUKtraveller}" />
+                                    </apex:pageBlockSectionItem>
+                                    
+                                    
+                                    <apex:pageBlockSectionItem id="item5_2_1" rendered="{!IF(selectedCaseType='Luggage', true, false)}" >
+                                        <apex:outputLabel value="Group Luggage" />
+                                        <apex:inputField value="{!Case.Metafour_1st_Journey_Group_Luggage__c}" />
+                                    </apex:pageBlockSectionItem>
+
+                                </apex:pageBlockSection>
+                                
+                             <apex:pageBlockSection id="Section6" columns="2">
+
+                                    <apex:pageBlockSectionItem id="item6_1">
+                                     
+                                    </apex:pageBlockSectionItem>
+                                    
+                                    
+                                    <apex:pageBlockSectionItem id="item6_2_1" rendered="{!IF(selectedCaseType='Luggage', true, false)}" >
+                                        <apex:outputLabel value="VIP Services" />
+                                        <apex:inputField value="{!Case.Metafour_1st_Journey_VIP_Services__c}" />
+                                    </apex:pageBlockSectionItem>
+
+                                </apex:pageBlockSection>
+
+                     
+
+                                <apex:pageBlockSection id="Section7" columns="2">
+
+                                    <apex:pageBlockSectionItem id="item7_1">
+                                        <apex:commandButton value="Search" action="{!searchFirstJourney}" />
+                                    </apex:pageBlockSectionItem>
+
+                                </apex:pageBlockSection>
+
+
+                            </apex:pageBlock>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordionPanel row margin-top0">
+                    <div id="accordion" class="ui-accordion ui-widget ui-helper-reset">
+                        <h3
+                            class="ui-accordion-header ui-helper-reset ui-state-default ui-accordion-icons ui-corner-top ui-accordion-header-active ui-state-active">
+                            <span
+                                class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-s"></span>
+                            Search Result
+                        </h3>
+                        <div
+                            class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom ui-accordion-content-active">
+                        </div>
+                    </div>
+                </div>
+
+
+                <apex:pageblock id="Trains" title="Trains" rendered="{!IF(selectedCaseType='Bike', true, false)}"   >
+
+                    <apex:pageblockTable value="{!search1Result}" var="trn">
+
+                        <apex:column headerValue="Select " style="width:10px">
+                     
+                            <apex:outputPanel layout="block"  >
+                            <apex:inputcheckbox label="select" value="{!trn.isSelected}" disabled="{!trn.ispartialSuccess}">
+                            </apex:inputcheckbox>                           
+                            </apex:outputPanel>
+                     
+
+                        </apex:column>
+                        
+                        <apex:column headerValue="Train#" id="RequestID" style="width:30px">
+                           <!-- <apex:outputLink value="/{!trn.trainId}"  target="_blank">{!trn.trainNumber}</apex:outputLink> -->
+                            {!trn.trainNumber}
+                            
+                        </apex:column>
+                        <apex:column headerValue="Date" style="width:40px">
+                            {!trn.trainDate}
+                        </apex:column>
+                        <apex:column style="width:10px">
+                            <apex:facet name="header">
+                                Available <br/> Boxed
+                            </apex:facet>
+                            {!trn.availableSpaceBoxed}
+                        </apex:column>
+                        
+                         <apex:column headerValue="Boxed#" style="width:10px" > 
+                            <apex:outputPanel layout="block" rendered="{!trn.ispartialSuccess == false}">
+                                <apex:inputText value="{!trn.NoSelectBoxed}" style="width:20px" />
+                            </apex:outputPanel>
+                            
+                            <apex:outputPanel layout="block" rendered="{!trn.ispartialSuccess == true}">
+                            {!trn.NoSelectBoxed}
+                            </apex:outputPanel>
+                        </apex:column>
+
+                        <apex:column style="width:10px" >
+                            <apex:facet name="header">
+                                Unit <br/> Price<br/>Boxed
+                            </apex:facet>
+                           {!trn.PricePerBoxed}
+                        </apex:column>
+
+                        <apex:column style="width:10px" >
+                            <apex:facet name="header">
+                                Available <br/> Asmbld
+                            </apex:facet>
+                            {!trn.availableSpaceAssembled}
+                        </apex:column>
+                        
+                        <apex:column headerValue="Asmbld#" style="width:10px" > 
+                            <apex:outputPanel layout="block" rendered="{!trn.ispartialSuccess == false}">
+                            <apex:inputText value="{!trn.NoSelectAssembled}" style="width:20px" />
+                            </apex:outputPanel>
+                            
+                            <apex:outputPanel layout="block" rendered="{!trn.ispartialSuccess == true}">
+                            {!trn.NoSelectAssembled}
+                            </apex:outputPanel>
+                            
+                        </apex:column>
+
+                        <apex:column style="width:10px" >
+                            <apex:facet name="header">
+                                Unit <br/> Price<br/>Asmbld
+                            </apex:facet>
+                            {!trn.pricePerAssembled}
+                        </apex:column>
+                        
+                         <apex:column style="width:10px" >
+                             <apex:facet name="header">
+                                Total <br/> Available<br/> 
+                            </apex:facet>
+                            {!trn.availableNow}
+                        </apex:column>
+                        
+                        <apex:column style="width:10px" >
+                            <apex:facet name="header">
+                                Dept <br/> Time<br/> 
+                            </apex:facet>
+                           <!-- <apex:outputPanel layout="block">
+                            <apex:inputText value="{!trn.depTime}" style="width:60px" disabled="{!trn.ispartialSuccess}" /> 
+                            </apex:outputPanel>  -->
+
+                            <apex:outputPanel layout="block" rendered="{!trn.ispartialSuccess == false}">
+                                <apex:inputText value="{!trn.depTime}" style="width:60px"/>
+                            </apex:outputPanel>
+                            
+                            <apex:outputPanel layout="block" rendered="{!trn.ispartialSuccess == true}">
+                            {!trn.depTime}
+                            </apex:outputPanel>
+                            
+                        </apex:column>
+
+                       <!-- <apex:column style="width:20px" >
+                            <apex:facet name="header">
+                                Drop off <br/> Station<br/> 
+                            </apex:facet>
+                            {!trn.origin}
+                        </apex:column>
+
+                        <apex:column style="width:20px" >
+                            <apex:facet name="header">
+                                Collection <br/> Station<br/> 
+                            </apex:facet>
+                            {!trn.destination}
+                        </apex:column> -->
+
+                    </apex:pageblockTable>
+
+                    <apex:commandButton value="Select Another Journey"
+                        action="{!searchReturnTrain}" />
+                    <apex:commandButton value="Continue" action="{!newBooking1}"/>
+
+                </apex:pageblock>
+                
+                
+                <!-- Luggage Table  start-->
+                
+                
+                 <apex:pageblock id="Luggage" title="Trains" rendered="{!IF(selectedCaseType='Luggage', true, false)}" >
+
+                    <apex:pageblockTable value="{!search1Result}" var="trn">
+
+                        <apex:column headerValue="Select " style="width:10px">
+                     
+                            <apex:outputPanel layout="block"  >
+                            <apex:inputcheckbox label="select" value="{!trn.isSelected}" disabled="{!trn.ispartialSuccess}">
+                            </apex:inputcheckbox>                           
+                            </apex:outputPanel>
+                     
+
+                        </apex:column>
+                        
+                        <apex:column headerValue="Train#" id="RequestID" style="width:30px">
+                           <!-- <apex:outputLink value="/{!trn.trainId}"  target="_blank">{!trn.trainNumber}</apex:outputLink> -->
+                            {!trn.trainNumber}
+                         </apex:column>
+                         
+                          <apex:column style="width:10px" >
+                             <apex:facet name="header">
+                                Total <br/> Available
+                            </apex:facet>
+                            {!trn.availableNow_luggage}
+                        </apex:column> 
+                        <!-- <apex:column headerValue="Date" style="width:40px">
+                            {!trn.trainDate}
+                        </apex:column> -->
+                        <apex:column style="width:10px">
+                            <apex:facet name="header">
+                                Available <br/>Excess <br/>Luggage <br/>under85cm
+                            </apex:facet>
+                            {!trn.availableSpaceELUnder85cm}
+                        </apex:column>
+                        
+                         <apex:column style="width:10px" >
+                            <apex:facet name="header">
+                                Excess <br/>Luggage <br/>under85cm#
+                            </apex:facet>
+                            
+                            <apex:outputPanel layout="block" rendered="{!trn.ispartialSuccess == false}">
+                                <apex:inputText value="{!trn.NoSelectELUnder85cm}" style="width:20px" />
+                            </apex:outputPanel>
+                            
+                            <apex:outputPanel layout="block" rendered="{!trn.ispartialSuccess == true}">
+                            {!trn.NoSelectELUnder85cm}
+                            </apex:outputPanel>
+                        </apex:column>
+
+                        <apex:column style="width:10px" >
+                            <apex:facet name="header">
+                                Unit <br/> Price<br/>Excess <br/>Luggage <br/>under85cm
+                            </apex:facet>
+                           {!trn.PricePerELUnder85cm}
+                        </apex:column>
+
+                        <apex:column style="width:10px" >
+                            <apex:facet name="header">
+                                Available <br/> Excess <br/>Luggage <br/>over85cm
+                            </apex:facet>
+                            {!trn.availableSpaceELOver85cm}
+                        </apex:column>
+                        
+                        <apex:column style="width:10px" >
+                            <apex:facet name="header">
+                                Excess <br/>Luggage <br/>over85cm#
+                            </apex:facet>                       
+                            <apex:outputPanel layout="block" rendered="{!trn.ispartialSuccess == false}">
+                            <apex:inputText value="{!trn.NoSelectELOver85cm}" style="width:20px" />
+                            </apex:outputPanel>
+                            
+                            <apex:outputPanel layout="block" rendered="{!trn.ispartialSuccess == true}">
+                            {!trn.NoSelectELOver85cm}
+                            </apex:outputPanel>
+                            
+                        </apex:column>
+
+                        <apex:column style="width:10px" >
+                            <apex:facet name="header">
+                                Unit <br/> Price<br/>Excess <br/>Luggage <br/>over85cm
+                            </apex:facet>
+                            {!trn.PricePerELOver85cm}
+                        </apex:column>
+                        
+                           <apex:column style="width:10px" >
+                            <apex:facet name="header">
+                                Available <br/> VIP <br/>Services
+                            </apex:facet>
+                            {!trn.availableSpaceVIPServices}
+                        </apex:column>
+                        
+                        <apex:column headerValue="VIP Services#" style="width:10px" > 
+                            <apex:outputPanel layout="block" rendered="{!trn.ispartialSuccess == false}">
+                            <apex:inputText value="{!trn.NoSelectVIPServices}" style="width:20px" />
+                            </apex:outputPanel>
+                            
+                            <apex:outputPanel layout="block" rendered="{!trn.ispartialSuccess == true}">
+                            {!trn.NoSelectVIPServices}
+                            </apex:outputPanel>
+                            
+                        </apex:column>
+
+                        <apex:column style="width:10px" >
+                            <apex:facet name="header">
+                                Unit <br/> Price<br/>VIP <br/>Services
+                            </apex:facet>
+                            {!trn.PricePerVIPServices}
+                        </apex:column>
+                        
+                           <apex:column style="width:10px" >
+                            <apex:facet name="header">
+                                Available <br/>Group <br/>Luggage
+                            </apex:facet>
+                            {!trn.availableSpaceGroupLuggage}
+                        </apex:column>
+                        
+                        <apex:column headerValue="Group Luggage#" style="width:10px" > 
+                            <apex:outputPanel layout="block" rendered="{!trn.ispartialSuccess == false}">
+                            <apex:inputText value="{!trn.NoSelectGroupLuggage}" style="width:20px" />
+                            </apex:outputPanel>
+                            
+                            <apex:outputPanel layout="block" rendered="{!trn.ispartialSuccess == true}">
+                            {!trn.NoSelectGroupLuggage}
+                            </apex:outputPanel>
+                            
+                        </apex:column>
+
+                        <apex:column style="width:10px" >
+                            <apex:facet name="header">
+                                Unit <br/> Price<br/>Group <br/>Luggage
+                            </apex:facet>
+                            {!trn.PricePerGroupLuggage}
+                        </apex:column>
+                        
+                        
+                        
+                        
+                        
+                        <apex:column style="width:10px" >
+                            <apex:facet name="header">
+                                Dept <br/> Time<br/> 
+                            </apex:facet>
+                         
+
+                            <apex:outputPanel layout="block" rendered="{!trn.ispartialSuccess == false}">
+                                <apex:inputText value="{!trn.depTime}" style="width:60px"/>
+                            </apex:outputPanel>
+                            
+                            <apex:outputPanel layout="block" rendered="{!trn.ispartialSuccess == true}">
+                            {!trn.depTime}
+                            </apex:outputPanel>
+                            
+                        </apex:column>
+
+               
+
+                    </apex:pageblockTable>
+
+                    <apex:commandButton value="Select Another Journey"
+                        action="{!searchReturnTrain}" />
+                    <apex:commandButton value="Continue" action="{!newBooking1}"/>
+
+                </apex:pageblock>
+                <!-- Luggage Table  end-->
+            </div>
+        </div>
+    </div>
+
+    <div class="container" style="display:{!if(showSearchScreen2,'block','none')};">
+        <div class="mid-panel" style="width: 1200px">
+            <div class="bread-crums">
+               <!-- <a href="#">Metafour</a> <i>&gt;</i> <a href="#" class="underline">Search 2nd Journey
+                </a>  --> 
+                <b>Metafour > Search 2nd Journey </b>
+            </div>
+            <div class="form-panel">
+            
+            <dl>
+                <apex:pageMessages escape="false"/> 
+
+                </dl>
+      
+                <div class="accordionPanel row margin-top0">
+                    <div id="accordion" class="ui-accordion ui-widget ui-helper-reset">
+                        <h3
+                            class="ui-accordion-header ui-helper-reset ui-state-default ui-accordion-icons ui-corner-top ui-accordion-header-active ui-state-active">
+                            <span
+                                class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-s"></span>
+                            Search
+                        </h3>
+                        <div
+                            class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom ui-accordion-content-active">
+
+                            <apex:pageBlock id="Block1_r" >
+
+                                <apex:pageBlockSection id="Section0_r" columns="2"> 
+
+                                </apex:pageBlockSection>
+
+                                <apex:pageBlockSection id="Section1_r" columns="2">
+
+                                    <apex:pageBlockSectionItem id="item1_1_r">
+                                        <apex:outputLabel value="Travel Date" />
+                                        <apex:inputField value="{!Case.Departure_DATE_R__c}" />  
+                                    </apex:pageBlockSectionItem>
+                                    
+                                    
+                                     <apex:pageBlockSectionItem id="item1_2_r">
+                                        <apex:outputLabel value="Case Type" />
+                                        <apex:selectList size="1" id="CaseTypeId_r"
+                                            value="{!selectedCaseType}" disabled="true">
+                                            <apex:selectOptions value="{!CaseType}" />
+                                        </apex:selectList>
+                                    </apex:pageBlockSectionItem>
+
+                               
+                                </apex:pageBlockSection>
+
+
+                                <apex:pageBlockSection id="Section2_r" columns="2">
+
+                                    <apex:pageBlockSectionItem id="item2_1_r">
+                                        <!-- <apex:outputLabel value="Collection station" /> -->
+                                         <apex:outputLabel value="Drop off station" />
+                                         <apex:inputField value="{!Case.Metafour_2nd_Journey_From__c}"
+                                            id="destn_r" />  
+                                    </apex:pageBlockSectionItem>
+                                    
+                                       <apex:pageBlockSectionItem id="item2_2_r" rendered="{!IF(selectedCaseType='Bike', true, false)}">
+                                        <apex:outputLabel value="Boxed Bikes" />
+                                        <apex:inputField value="{!Case.Metafour_2nd_Journey_Boxed_Bikes__c}" /> 
+                                    </apex:pageBlockSectionItem>
+
+                                  <apex:pageBlockSectionItem id="item2_2_1_r" rendered="{!IF(selectedCaseType='Luggage', true, false)}" >
+                                        <apex:outputLabel value="Excess Luggage <85cm" />
+                                        <apex:inputField value="{!Case.Metafour_2nd_Journey_Excess_Lugg_less_85__c}" />
+                                    </apex:pageBlockSectionItem>
+
+                                </apex:pageBlockSection>
+
+
+                                <apex:pageBlockSection id="Section3_r" columns="2">
+
+                                    <apex:pageBlockSectionItem id="item3_1_r">
+                                       <!-- <apex:outputLabel value="Drop off station" /> -->
+                                         <apex:outputLabel value="Collection station" />
+                                         <apex:inputField value="{!Case.Metafour_2nd_Journey_To__c}"
+                                            id="destn_r" />
+                                    </apex:pageBlockSectionItem>
+                                    
+                                     <apex:pageBlockSectionItem id="item3_2_r" rendered="{!IF(selectedCaseType='Bike', true, false)}">
+                                        <apex:outputLabel value="Assembled Bikes" />
+                                        <apex:inputField value="{!Case.Metafour_2nd_Journey_Assembled_Bikes__c}" />
+                                    </apex:pageBlockSectionItem>
+
+                                    <apex:pageBlockSectionItem id="item3_2_1_r" rendered="{!IF(selectedCaseType='Luggage', true, false)}" >
+                                        <apex:outputLabel value="Excess Luggage >85cm" />
+                                        <apex:inputField value="{!Case.Metafour_2nd_Jrny_Excess_Lugg_greater_85__c}" />
+                                    </apex:pageBlockSectionItem>
+                                    
+                                     </apex:pageBlockSection> 
+                                     
+                                      <apex:pageBlockSection id="Section5_r" columns="2">
+
+                                    <apex:pageBlockSectionItem id="item5_1_r" rendered="{!IF(selectedCaseType='Luggage', true, false)}" >
+                                   
+                                    
+                                    </apex:pageBlockSectionItem>
+                                    
+                                    
+                                    <apex:pageBlockSectionItem id="item5_2_1_r" rendered="{!IF(selectedCaseType='Luggage', true, false)}" >
+                                        <apex:outputLabel value="Group Luggage" />
+                                        <apex:inputField value="{!Case.Metafour_2nd_Journey_Group_Luggage__c}" />
+                                    </apex:pageBlockSectionItem>
+
+                                </apex:pageBlockSection>
+            
+                             <apex:pageBlockSection id="Section6_r" columns="2">
+
+                                    <apex:pageBlockSectionItem id="item6_1_r">
+                                    
+                                    </apex:pageBlockSectionItem>
+                                    
+                                    
+                                    <apex:pageBlockSectionItem id="item6_2_1_r" rendered="{!IF(selectedCaseType='Luggage', true, false)}" >
+                                        <apex:outputLabel value="VIP Services" />
+                                        <apex:inputField value="{!Case.Metafour_2nd_Journey_VIP_Services__c}" />
+                                    </apex:pageBlockSectionItem>
+
+                                </apex:pageBlockSection>
+                                 
+
+                                
+                                <apex:pageBlockSection id="Section7_r" columns="2">
+
+                                    <apex:pageBlockSectionItem id="item7_1_r">
+                                        <apex:commandButton value="Search" action="{!searchSecondJourney}" />
+                                        <!-- <apex:commandButton value="Back" action="{!BackToSeatch1}" /> -->
+                                    </apex:pageBlockSectionItem>
+
+                                </apex:pageBlockSection>
+
+
+                            </apex:pageBlock>
+                            
+                            
+               
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordionPanel row margin-top0">
+                    <div id="accordion" class="ui-accordion ui-widget ui-helper-reset">
+                        <h3
+                            class="ui-accordion-header ui-helper-reset ui-state-default ui-accordion-icons ui-corner-top ui-accordion-header-active ui-state-active">
+                            <span
+                                class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-s"></span>
+                            Search Result
+                        </h3>
+                        <div
+                            class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom ui-accordion-content-active">
+                        </div>
+                    </div>
+                </div>
+
+
+                <apex:pageblock id="Trains_r" title="Trains"  rendered="{!IF(selectedCaseType='Bike'&&showSearchScreen2 , true, false)}" > 
+
+                     <apex:pageblockTable style="width:100%" value="{!search2Result}" var="trn">
+
+                     <apex:column headerValue="Select " style="width:10px">
+                           
+                            
+                            <apex:outputPanel layout="block">
+                                <apex:inputcheckbox label="select"  value="{!trn.isSelected}" disabled="{!trn.ispartialSuccess}">
+                            </apex:inputcheckbox>                           
+                            </apex:outputPanel>
+                        </apex:column>
+                        
+                        <apex:column headerValue="Train#" id="RequestID" style="width:30px">
+                           <!-- <apex:outputLink value="/{!trn.trainId}"  target="_blank">{!trn.trainNumber}</apex:outputLink> -->
+                            {!trn.trainNumber}
+                        </apex:column>
+                        <apex:column headerValue="Date" style="width:40px">
+                            {!trn.trainDate}
+                        </apex:column>
+                        <apex:column style="width:10px">
+                            <apex:facet name="header">
+                                Available <br/> Boxed
+                            </apex:facet>
+                            {!trn.availableSpaceBoxed}
+                        </apex:column>
+                        
+                         <apex:column headerValue="Boxed#" style="width:10px" >          
+
+                            <apex:outputPanel layout="block" rendered="{!trn.ispartialSuccess == false}">
+                                <apex:inputText value="{!trn.NoSelectBoxed}" style="width:20px"/>
+                            </apex:outputPanel>
+                            
+                            <apex:outputPanel layout="block" rendered="{!trn.ispartialSuccess == true}">
+                            {!trn.NoSelectBoxed}
+                            </apex:outputPanel>
+                            
+                        </apex:column>
+
+                        <apex:column style="width:10px" >
+                            <apex:facet name="header">
+                                Unit <br/> Price<br/>Boxed
+                            </apex:facet>
+                           {!trn.PricePerBoxed}
+                        </apex:column>
+
+                        <apex:column style="width:10px" >
+                            <apex:facet name="header">
+                                Available <br/> Asmbld
+                            </apex:facet>
+                            {!trn.availableSpaceAssembled}
+                        </apex:column>
+                        
+                        <apex:column headerValue="Asmbld#" style="width:10px" > 
+                            
+                            <apex:outputPanel layout="block" rendered="{!trn.ispartialSuccess == false}">
+                            <apex:inputText value="{!trn.NoSelectAssembled}" style="width:20px" />
+                            </apex:outputPanel>
+                            
+                            <apex:outputPanel layout="block" rendered="{!trn.ispartialSuccess == true}">
+                            {!trn.NoSelectAssembled}
+                            </apex:outputPanel>
+                            
+                        </apex:column>
+
+                        <apex:column style="width:10px" >
+                            <apex:facet name="header">
+                                Unit <br/> Price<br/>Asmbld
+                            </apex:facet>
+                            {!trn.pricePerAssembled}
+                        </apex:column>
+                        
+                         <apex:column style="width:10px" >
+                             <apex:facet name="header">
+                                Total <br/> Available<br/> 
+                            </apex:facet>
+                            {!trn.availableNow}
+                        </apex:column>
+                        
+                        <apex:column style="width:10px" >
+                            <apex:facet name="header">
+                                Dept <br/> Time<br/> 
+                            </apex:facet> 
+                            
+                            <apex:outputPanel layout="block" rendered="{!trn.ispartialSuccess == false}">
+                                <apex:inputText value="{!trn.depTime}" style="width:60px"/>
+                            </apex:outputPanel>
+                            
+                            <apex:outputPanel layout="block" rendered="{!trn.ispartialSuccess == true}">
+                            {!trn.depTime}
+                            </apex:outputPanel>
+                        </apex:column>
+
+
+                        <!-- <apex:column headerValue="Drop off Station">
+                            {!trn.origin}
+                        </apex:column>
+
+                        <apex:column headerValue="Collection Station">
+                            {!trn.destination}
+                        </apex:column> -->
+
+                    </apex:pageblockTable>
+   
+                    <apex:commandButton value="Continue" action="{!newBooking2}"/>
+                    <apex:commandButton value="Cancel" action="{!CancelBooking1}"/>
+
+                </apex:pageblock>
+                
+                 <!-- Luggage Table  start-->
+                
+                
+                 <apex:pageblock id="Luggage_r" title="Trains" rendered="{!IF(selectedCaseType='Luggage'&&showSearchScreen2 , true, false)}" >
+
+                    <apex:pageblockTable value="{!search2Result}" var="trn">
+
+                        <apex:column headerValue="Select " style="width:10px">
+                     
+                            <apex:outputPanel layout="block"  >
+                            <apex:inputcheckbox label="select" value="{!trn.isSelected}" disabled="{!trn.ispartialSuccess}">
+                            </apex:inputcheckbox>                           
+                            </apex:outputPanel>
+                     
+
+                        </apex:column>
+                        
+                        <apex:column headerValue="Train#" id="RequestID" style="width:30px">
+                           <!-- <apex:outputLink value="/{!trn.trainId}"  target="_blank">{!trn.trainNumber}</apex:outputLink> -->
+                            {!trn.trainNumber}
+                         </apex:column>
+                         
+                         <apex:column style="width:10px" >
+                             <apex:facet name="header">
+                                Total <br/> Available
+                            </apex:facet>
+                            {!trn.availableNow_luggage}
+                        </apex:column> 
+                         
+                        <!-- <apex:column headerValue="Date" style="width:40px">
+                            {!trn.trainDate}
+                        </apex:column> -->
+                        <apex:column style="width:10px">
+                            <apex:facet name="header">
+                                Available <br/>Excess <br/>Luggage <br/>under85cm
+                            </apex:facet>
+                            {!trn.availableSpaceELUnder85cm}
+                        </apex:column>
+                        
+                         <apex:column style="width:10px" >
+                            <apex:facet name="header">
+                                Excess <br/>Luggage <br/>under85cm#
+                            </apex:facet>
+                            
+                            <apex:outputPanel layout="block" rendered="{!trn.ispartialSuccess == false}">
+                                <apex:inputText value="{!trn.NoSelectELUnder85cm}" style="width:20px" />
+                            </apex:outputPanel>
+                            
+                            <apex:outputPanel layout="block" rendered="{!trn.ispartialSuccess == true}">
+                            {!trn.NoSelectELUnder85cm}
+                            </apex:outputPanel>
+                        </apex:column>
+
+                        <apex:column style="width:10px" >
+                            <apex:facet name="header">
+                                Unit <br/> Price<br/>Excess <br/>Luggage <br/>under85cm
+                            </apex:facet>
+                           {!trn.PricePerELUnder85cm}
+                        </apex:column>
+
+                        <apex:column style="width:10px" >
+                            <apex:facet name="header">
+                                Available <br/> Excess <br/>Luggage <br/>over85cm
+                            </apex:facet>
+                            {!trn.availableSpaceELOver85cm}
+                        </apex:column>
+                        
+                        <apex:column style="width:10px" >
+                            <apex:facet name="header">
+                                Excess <br/>Luggage <br/>over85cm#
+                            </apex:facet>                       
+                            <apex:outputPanel layout="block" rendered="{!trn.ispartialSuccess == false}">
+                            <apex:inputText value="{!trn.NoSelectELOver85cm}" style="width:20px" />
+                            </apex:outputPanel>
+                            
+                            <apex:outputPanel layout="block" rendered="{!trn.ispartialSuccess == true}">
+                            {!trn.NoSelectELOver85cm}
+                            </apex:outputPanel>
+                            
+                        </apex:column>
+
+                        <apex:column style="width:10px" >
+                            <apex:facet name="header">
+                                Unit <br/> Price<br/>Excess <br/>Luggage <br/>over85cm
+                            </apex:facet>
+                            {!trn.PricePerELOver85cm}
+                        </apex:column>
+                        
+                           <apex:column style="width:10px" >
+                            <apex:facet name="header">
+                                Available <br/> VIP <br/>Services
+                            </apex:facet>
+                            {!trn.availableSpaceVIPServices}
+                        </apex:column>
+                        
+                        <apex:column headerValue="VIP Services#" style="width:10px" > 
+                            <apex:outputPanel layout="block" rendered="{!trn.ispartialSuccess == false}">
+                            <apex:inputText value="{!trn.NoSelectVIPServices}" style="width:20px" />
+                            </apex:outputPanel>
+                            
+                            <apex:outputPanel layout="block" rendered="{!trn.ispartialSuccess == true}">
+                            {!trn.NoSelectVIPServices}
+                            </apex:outputPanel>
+                            
+                        </apex:column>
+
+                        <apex:column style="width:10px" >
+                            <apex:facet name="header">
+                                Unit <br/> Price<br/>VIP <br/>Services
+                            </apex:facet>
+                            {!trn.PricePerVIPServices}
+                        </apex:column>
+                        
+                           <apex:column style="width:10px" >
+                            <apex:facet name="header">
+                                Available <br/>Group <br/>Luggage
+                            </apex:facet>
+                            {!trn.availableSpaceGroupLuggage}
+                        </apex:column>
+                        
+                        <apex:column headerValue="Group Luggage#" style="width:10px" > 
+                            <apex:outputPanel layout="block" rendered="{!trn.ispartialSuccess == false}">
+                            <apex:inputText value="{!trn.NoSelectGroupLuggage}" style="width:20px" />
+                            </apex:outputPanel>
+                            
+                            <apex:outputPanel layout="block" rendered="{!trn.ispartialSuccess == true}">
+                            {!trn.NoSelectGroupLuggage}
+                            </apex:outputPanel>
+                            
+                        </apex:column>
+
+                        <apex:column style="width:10px" >
+                            <apex:facet name="header">
+                                Unit <br/> Price<br/>Group <br/>Luggage
+                            </apex:facet>
+                            {!trn.PricePerGroupLuggage}
+                        </apex:column>
+                        
+                        
+                        
+                       
+                        
+                        <apex:column style="width:10px" >
+                            <apex:facet name="header">
+                                Dept <br/> Time<br/> 
+                            </apex:facet>
+                         
+
+                            <apex:outputPanel layout="block" rendered="{!trn.ispartialSuccess == false}">
+                                <apex:inputText value="{!trn.depTime}" style="width:60px"/>
+                            </apex:outputPanel>
+                            
+                            <apex:outputPanel layout="block" rendered="{!trn.ispartialSuccess == true}">
+                            {!trn.depTime}
+                            </apex:outputPanel>
+                            
+                        </apex:column>
+
+               
+
+                    </apex:pageblockTable>
+
+                  
+                     <apex:commandButton value="Continue" action="{!newBooking2}"/>
+                    <apex:commandButton value="Cancel" action="{!CancelBooking1}"/>
+
+                </apex:pageblock>
+                <!-- Luggage Table  end-->
+
+            </div>
+        </div>
+    </div>
+
+ 
+ 
+ 
+  <div class="container" id="Booking" style="display:{!if(showBookingScreen,'block','none')};">
+        <div class="mid-panel" style="width:1200px">
+            <div class="bread-crums">
+               <!-- <a href="#">Metafour</a> <i>&gt;</i> <a href="#" class="underline">New
+                    Booking</a> -->
+                    <b>Metafour > Create Booking</b>
+            </div>
+            <div class="form-panel">
+                <dl>
+                    <apex:pageMessages escape="false"/> 
+
+                </dl>                  
+
+                <div class="accordionPanel row margin-top0">
+                    <div id="accordion" class="ui-accordion ui-widget ui-helper-reset">
+                        <h3 class="ui-accordion-header ui-helper-reset ui-state-default ui-accordion-icons ui-corner-top ui-accordion-header-active ui-state-active">
+                            <span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-s"></span>
+                            First Journey Details
+                        </h3>
+                        <div
+                            class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom ui-accordion-content-active">
+                            <apex:pageBlock id="Block1_b">
+                                <apex:pageBlockButtons location="bottom" id="theButtons"  html-align="right">
+                                    <apex:commandButton value="Search"  action="{!getPaxDetails}"  id="theSearchButton" /> 
+                                </apex:pageBlockButtons>
+                                <apex:pageBlockSection id="Section1_b" columns="2" >
+                                    <apex:pageBlockSectionItem id="item1_1_b" >
+                                        <apex:outputLabel value="TCN " id="pnrnumLbl" /> 
+                                        <apex:inputField value="{!Case.TCN__c}" id="TCNVal" style="width:100px" /> 
+                                    </apex:pageBlockSectionItem> 
+                                    <apex:pageBlockSectionItem id="item3_1_b">
+                                        <apex:outputLabel value="Pax Journey Date" id="journeydateoutwardLbl" /> 
+                                        <apex:inputField id="trainnumreturnVal" value="{!Case.Metafour_Departure_Date_Outward__c}" style="width:100px" />  
+                                    </apex:pageBlockSectionItem> 
+                                </apex:pageBlockSection> 
+                            </apex:pageBlock>
+                            <apex:pageBlock id="Block2_b">
+                            
+                               <apex:pageBlockSection id="Section1_b_1" columns="2" >
+                                    <apex:pageBlockSectionItem id="item1_1_b" >
+                                        <apex:outputLabel value="PNR Number " id="pnrnumLbl" /> 
+                                        <apex:inputField value="{!Case.PNR__c}" id="pnrnumVal" style="width:100px" /> 
+                                    </apex:pageBlockSectionItem> 
+                                </apex:pageBlockSection> 
+                            
+                                <apex:pageBlockSection id="Section1_c" columns="2" >
+                                    <apex:pageBlockSectionItem id="item2_1_b" >
+                                        <apex:outputLabel value="Pax  Name" id="PaxNameJourney1lbl" />
+                                        <apex:inputField id="PaxNameJourney1" value="{!Case.Drop_Lname_Outward__c}" style="width:250px" />                                        
+                                    </apex:pageBlockSectionItem>
+                                    <apex:pageBlockSectionItem id="item2_1_c" >
+                                        <apex:outputLabel value="Email *" id="PaxEmailJourney1lbl" />
+                                        <apex:inputField id="PaxEmailJourney1" value="{!Case.Drop_Email_Outward__c}" style="width:250px" />                                        
+                                    </apex:pageBlockSectionItem>
+                                </apex:pageBlockSection>
+                                <apex:pageBlockSection id="Section1_d" columns="2" >
+                                    <apex:pageBlockSectionItem id="item2_1_b" >
+                                        <apex:outputLabel value="Pax  Train#" id="trainnumoutwardVallbl" />
+                                        <apex:inputField id="trainnumoutwardVal" value="{!Case.Train_Outbound__c}" style="width:100px" />                                        
+                                    </apex:pageBlockSectionItem>
+                                    <apex:pageBlockSectionItem id="item2_1_c" >
+                                        <apex:outputLabel value="Phone" id="PhoneJourney1Lbl" />
+                                        <apex:inputField id="PhoneJourney1Val" value="{!Case.Drop_Phno_Outward__c}" style="width:150px" />                                        
+                                    </apex:pageBlockSectionItem>
+                                </apex:pageBlockSection>  
+                             
+                            </apex:pageBlock>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- <div class="container" style="display:{!if(setReturn,'block','none')};"> -->
+
+                <div class="accordionPanel row margin-top0" style="display:{!if(setReturn,'block','none')};">
+                    <div id="accordion" class="ui-accordion ui-widget ui-helper-reset">
+                        <h3
+                            class="ui-accordion-header ui-helper-reset ui-state-default ui-accordion-icons ui-corner-top ui-accordion-header-active ui-state-active">
+                            <span
+                                class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-s"></span>
+                            Second Journey Details
+                        </h3>
+                        <div
+                            class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom ui-accordion-content-active">
+                            <apex:pageBlock id="Block1_c">
+                                <apex:pageBlockButtons location="bottom" id="theButtons"  html-align="right">
+                                    <apex:commandButton value="Search"  action="{!getPaxDetails2}"  id="theSearchButton" /> 
+                                </apex:pageBlockButtons>
+                                <apex:pageBlockSection id="Section1_c" columns="2">
+                                    <apex:pageBlockSectionItem id="item1_1_c"  >
+                                       <apex:outputLabel value="TCN " id="pnrnumLbl" />                                   
+                                         <apex:inputField value="{!Case.Metafour_Second_TCN__c}" id="pnrnumVal" style="width:100px" />                                        
+                                    </apex:pageBlockSectionItem>
+                                        <apex:pageBlockSectionItem id="item3_1_b">
+                                            <apex:outputLabel value="Pax Journey Date" id="journeydatereturnLbl" /> 
+                                            <apex:inputField id="trainnumreturnVal"  value="{!Case.Metafour_Departure_Date_Return__c}" style="width:100px" />  
+                                        </apex:pageBlockSectionItem>     
+                                </apex:pageBlockSection>
+                            </apex:pageBlock>
+                            <apex:pageBlock id="Block2_c">  
+                             <apex:pageBlockSection id="Section1_c_1" columns="2">
+                                    <apex:pageBlockSectionItem id="item1_1_c"  >
+                                       <apex:outputLabel value="PNR Number " id="pnrnumLbl" />                                   
+                                         <apex:inputField value="{!Case.Metafour_PNR_Number_2nd_journey__c}" id="pnrnumVal" style="width:100px" />                                        
+                                    </apex:pageBlockSectionItem>
+                                       
+                                </apex:pageBlockSection>
+                                <apex:pageBlockSection id="Section2_c" columns="2" >
+                                    <apex:pageBlockSectionItem id="item2_1_b" >
+                                        <apex:outputLabel value="Pax  Name" id="PaxNameJourney1lbl" />
+                                        <apex:inputField id="PaxNameJourney2" value="{!Case.Drop_Lname_Return__c}" style="width:250px" />                                        
+                                    </apex:pageBlockSectionItem>
+                                    <apex:pageBlockSectionItem id="item2_1_c" >
+                                        <apex:outputLabel value="Email" id="PaxEmailJourney1lbl" />
+                                        <apex:inputField id="PaxEmailJourney2" value="{!Case.Drop_Email_Return__c}" style="width:250px" />                                        
+                                    </apex:pageBlockSectionItem>
+                                </apex:pageBlockSection>
+                                <apex:pageBlockSection id="Section2_d" columns="2">                               
+                                    <apex:pageBlockSectionItem id="item2_2_c">
+                                        <apex:outputLabel value="Pax Train#"
+                                            id="trainnumreturnLbl" />
+                                        <apex:inputField id="trainnumreturnVal"
+                                            value="{!Case.Train_Inbound__c}" style="width:100px" />
+                                    </apex:pageBlockSectionItem>
+                                     <apex:pageBlockSectionItem id="item2_1_c" >
+                                        <apex:outputLabel value="Phone" id="PhoneJourney2Lbl" />
+                                        <apex:inputField id="PhoneJourney2Val" value="{!Case.Drop_Phno_Return__c}" style="width:150px" />                                        
+                                    </apex:pageBlockSectionItem>                                     
+                                </apex:pageBlockSection>
+ 
+                            </apex:pageBlock>
+                        </div>
+                    </div>
+                </div>
+                <!-- </div>-->
+                <div class="accordionPanel row margin-top0">
+                    <div id="accordion" class="ui-accordion ui-widget ui-helper-reset">
+                        <h3
+                            class="ui-accordion-header ui-helper-reset ui-state-default ui-accordion-icons ui-corner-top ui-accordion-header-active ui-state-active">
+                            <span
+                                class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-s"></span>
+                            Special Instructions
+                        </h3>
+                        <div
+                            class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom ui-accordion-content-active">
+                            <div class="row">
+                                <apex:pageBlock id="Block2">   
+                                        <apex:pageBlockSection id="Section9" columns="1"> 
+                                            <apex:pageBlockSectionItem id="item9_2">
+                                                <apex:outputLabel value="Special Instructions" id="specinstLbl" />
+                                                <apex:inputTextarea cols="45" rows="10"  value="{!Case.Metafour_Special_Instructions__c}" style="width:800px"/> 
+                                            </apex:pageBlockSectionItem>
+                                        </apex:pageBlockSection>  
+                                </apex:pageBlock>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordionPanel row margin-top0">
+                    <div id="accordion" class="ui-accordion ui-widget ui-helper-reset">
+                        <h3
+                            class="ui-accordion-header ui-helper-reset ui-state-default ui-accordion-icons ui-corner-top ui-accordion-header-active ui-state-active">
+                            <span
+                                class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-s"></span>
+                            Map Details
+                        </h3>
+                        <div
+                            class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom ui-accordion-content-active">
+                            <div class="row">
+                            
+                            <apex:pageBlock id="Block6">
+                            <apex:pageBlockSection id="Section6" columns="2">
+
+                                    <apex:pageBlockSectionItem id="item4_1">
+                                        <apex:outputLabel value="Choose Maps" />
+                                        <apex:selectList value="{!selectedMaps}" multiselect="true" label="Maps" id="Maps" >
+                                          <apex:selectOptions value="{!mapType}" />  
+                                        </apex:selectList>
+                                    </apex:pageBlockSectionItem>
+                               </apex:pageBlockSection>
+                               </apex:pageBlock>
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+
+                <div class="accordionPanel row margin-top0">
+                    <div id="accordion" class="ui-accordion ui-widget ui-helper-reset">
+                        <h3
+                            class="ui-accordion-header ui-helper-reset ui-state-default ui-accordion-icons ui-corner-top ui-accordion-header-active ui-state-active">
+                            <span
+                                class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-s"></span>
+                            Pricing And Train Details
+                        </h3>
+                        <div
+                            class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom ui-accordion-content-active">
+                            <div class="row">
+                        <apex:pageBlock title="First Journey Details" id="Block4">
+                                    
+                                    
+                        <apex:pageblockTable value="{!search1selected}" var="trn" rendered="{!IF(selectedCaseType='Bike', true, false)}">
+   
+                        <apex:column headerValue="Train#" id="RequestID">
+                           <!-- <apex:outputLink value="/{!trn.trainId}"  target="_blank">{!trn.trainNumber}</apex:outputLink> -->
+                            {!trn.trainNumber}
+                        </apex:column>
+                        <apex:column headerValue="Date" style="width:30px">
+                            {!trn.trainDate} 
+                        </apex:column>
+                       
+                        
+                         <apex:column headerValue="Drop off Station">
+                            {!trn.origin}
+                        </apex:column>
+
+                        <apex:column headerValue="Collection Station">
+                            {!trn.destination}
+                        </apex:column>
+                        
+                        <apex:column headerValue="Drop off  address">
+                          {!trn.DropOffAddress}
+                        </apex:column>
+                        
+                        <apex:column headerValue="Collection address">
+                          {!trn.CollectionAddress}
+                        </apex:column>
+
+                        
+                         <apex:column headerValue="Boxed#" >
+                            {!trn.NoSelectBoxed}
+                        </apex:column>
+
+                        <apex:column >
+                            <apex:facet name="header">
+                                Unit Price<br/>Boxed
+                            </apex:facet>
+                           {!trn.PricePerBoxed}
+                        </apex:column>
+
+                      
+                        <apex:column headerValue="Assembled#">
+                            {!trn.NoSelectAssembled}
+                        </apex:column>
+
+                        <apex:column >
+                            <apex:facet name="header">
+                                Unit Price<br/>Asmbld
+                            </apex:facet>
+                            {!trn.pricePerAssembled}
+                        </apex:column>
+                        
+                        
+                        <apex:column >
+                             <apex:facet name="header">
+                                Total Price<br/> (GBP)
+                            </apex:facet>
+                            {!trn.total} 
+                        </apex:column>
+                       
+
+                    </apex:pageblockTable>
+                    
+                    <!-- Luggage details -->
+                    <apex:pageblockTable value="{!search1selected}" var="trn" rendered="{!IF(selectedCaseType='Luggage', true, false)}">
+   
+                        <apex:column headerValue="Train#" id="RequestID">
+                            {!trn.trainNumber}
+                        </apex:column>
+                        
+                        <apex:column headerValue="Date" style="width:30px">
+                            {!trn.trainDate} 
+                        </apex:column>
+                       
+                        
+                         <apex:column headerValue="Drop off Station">
+                            {!trn.origin}
+                        </apex:column>
+
+                        <apex:column headerValue="Collection Station">
+                            {!trn.destination}
+                        </apex:column>
+                        
+                        <apex:column headerValue="Drop off  address">
+                          {!trn.DropOffAddress}
+                        </apex:column>
+                        
+                        <apex:column headerValue="Collection address">
+                          {!trn.CollectionAddress}
+                        </apex:column>
+
+                        
+                         <apex:column headerValue="EL under85#" >
+                            {!trn.NoSelectELUnder85cm}
+                        </apex:column>
+
+                        <apex:column >
+                            <apex:facet name="header">
+                                Unit Price<br/>EL under85
+                            </apex:facet>
+                           {!trn.PricePerELUnder85cm}
+                        </apex:column>
+
+                      
+                        <apex:column headerValue="EL over85#">
+                            {!trn.NoSelectELOver85cm}
+                        </apex:column>
+
+                        <apex:column >
+                            <apex:facet name="header">
+                                Unit Price<br/>EL over85
+                            </apex:facet>
+                            {!trn.PricePerELOver85cm}
+                        </apex:column>
+                        
+                           <apex:column headerValue="Group Luggage#" >
+                            {!trn.NoSelectGroupLuggage}
+                        </apex:column>
+
+                        <apex:column >
+                            <apex:facet name="header">
+                                Unit Price<br/>Group Luggage
+                            </apex:facet>
+                           {!trn.PricePerGroupLuggage}
+                        </apex:column>
+
+                      
+                        <apex:column headerValue="VIP Services#">
+                            {!trn.NoSelectVIPServices}
+                        </apex:column>
+
+                        <apex:column >
+                            <apex:facet name="header">
+                                Unit Price<br/>VIP Services 
+                            </apex:facet>
+                            {!trn.PricePerVIPServices}
+                        </apex:column>
+                        
+                        <apex:column >
+                             <apex:facet name="header">
+                                Total Price<br/> (GBP)
+                            </apex:facet>
+                            {!trn.total} 
+                        </apex:column>
+                       
+
+                    </apex:pageblockTable>
+                                    <div style="background-color: #E0E0E0">
+                                        
+                                    </div>
+                       </apex:pageBlock>
+                                
+                                
+                        <apex:pageBlock title="Second Journey Details" id="Block5" rendered="{!IF(setReturn = true, true, false)}">
+                                    
+                                    
+                        <apex:pageblockTable value="{!search2selected}" var="trn" rendered="{!IF(selectedCaseType='Bike', true, false)}">
+   
+                        <apex:column headerValue="Train#" id="RequestID">
+                           <!-- <apex:outputLink value="/{!trn.trainId}"  target="_blank">{!trn.trainNumber}</apex:outputLink> -->
+                            {!trn.trainNumber}
+                        </apex:column>
+                        <apex:column headerValue="Date" style="width:30px">
+                            {!trn.trainDate}
+                        </apex:column>
+                       
+                        
+                         <apex:column headerValue="Drop off Station">
+                            {!trn.origin}
+                        </apex:column>
+
+                        <apex:column headerValue="Collection Station">
+                            {!trn.destination}
+                        </apex:column>
+                        
+                        <apex:column headerValue="Drop off  address">
+                            {!trn.DropOffAddress}
+                        </apex:column>
+                        
+                        <apex:column headerValue="Collection address">
+                            {!trn.CollectionAddress}
+                        </apex:column>
+
+                         <!-- <apex:column headerValue="Available Space Boxed">
+                            {!trn.availableSpaceBoxed}
+                        </apex:column> -->
+                        
+                         <apex:column headerValue="Boxed#">
+                            {!trn.NoSelectBoxed}
+                        </apex:column>
+
+                        <apex:column headerValue="Price per boxed bike">
+                            <apex:facet name="header">
+                                Unit Price<br/>Boxed
+                            </apex:facet>
+                           {!trn.PricePerBoxed}
+                        </apex:column>
+
+                       <!--  <apex:column headerValue="Available Space-Assembled">
+                            {!trn.availableSpaceAssembled}
+                        </apex:column> -->
+                        
+                        <apex:column headerValue="Assembled#">
+                            {!trn.NoSelectAssembled}
+                        </apex:column>
+
+                        <apex:column >
+                            <apex:facet name="header">
+                                Unit Price<br/>Asmbld
+                            </apex:facet>
+                            {!trn.pricePerAssembled}
+                        </apex:column>
+                        <apex:column >
+                            <apex:facet name="header">
+                                Total Price<br/> (GBP)
+                            </apex:facet>
+                            {!trn.total}
+                        </apex:column>
+                       
+
+                    </apex:pageblockTable>
+                    
+                    <!--  Luggage details -->
+                     <apex:pageblockTable value="{!search2selected}" var="trn"  rendered="{!IF(selectedCaseType='Luggage', true, false)}">
+   
+                        <apex:column headerValue="Train#" id="RequestID">
+                           <!-- <apex:outputLink value="/{!trn.trainId}"  target="_blank">{!trn.trainNumber}</apex:outputLink> -->
+                            {!trn.trainNumber}
+                        </apex:column>
+                        <apex:column headerValue="Date" style="width:30px">
+                            {!trn.trainDate}
+                        </apex:column>
+                       
+                        
+                         <apex:column headerValue="Drop off Station">
+                            {!trn.origin}
+                        </apex:column>
+
+                        <apex:column headerValue="Collection Station">
+                            {!trn.destination}
+                        </apex:column>
+                        
+                        <apex:column headerValue="Drop off  address">
+                            {!trn.DropOffAddress}
+                        </apex:column>
+                        
+                        <apex:column headerValue="Collection address">
+                            {!trn.CollectionAddress}
+                        </apex:column>
+
+                        <apex:column headerValue="EL under85#" >
+                            {!trn.NoSelectELUnder85cm}
+                        </apex:column>
+
+                        <apex:column >
+                            <apex:facet name="header">
+                                Unit Price<br/>EL under85
+                            </apex:facet>
+                           {!trn.PricePerELUnder85cm}
+                        </apex:column>
+
+                      
+                        <apex:column headerValue="EL over85#">
+                            {!trn.NoSelectELOver85cm}
+                        </apex:column>
+
+                        <apex:column >
+                            <apex:facet name="header">
+                                Unit Price<br/>EL over85
+                            </apex:facet>
+                            {!trn.PricePerELOver85cm}
+                        </apex:column>
+                        
+                           <apex:column headerValue="Group Luggage#" >
+                            {!trn.NoSelectGroupLuggage}
+                        </apex:column>
+
+                        <apex:column >
+                            <apex:facet name="header">
+                                Unit Price<br/>Group Luggage
+                            </apex:facet>
+                           {!trn.PricePerGroupLuggage}
+                        </apex:column>
+
+                      
+                        <apex:column headerValue="VIP Services#">
+                            {!trn.NoSelectVIPServices}
+                        </apex:column>
+
+                        <apex:column >
+                            <apex:facet name="header">
+                                Unit Price<br/>VIP Services 
+                            </apex:facet>
+                            {!trn.PricePerVIPServices}
+                        </apex:column>
+                        
+                        
+                        <apex:column >
+                            <apex:facet name="header">
+                                Total Price<br/> (GBP)
+                            </apex:facet>
+                            {!trn.total}
+                        </apex:column>
+                       
+
+                    </apex:pageblockTable>
+                    
+                    
+                               
+                                </apex:pageBlock>
+                            </div>
+                            
+                            <div align="right">
+                            <h1> Grand Total: GBP {!GrandTotal }</h1> 
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bottom-button text-align-left">
+                    <apex:commandButton disabled="{!submitDisabled}" onclick="if(!confirm('Are you sure?')){return false;}" 
+                        value="Create Booking" action="{!createCase}" status="actStatusId" rerender="form"/>
+                        
+<apex:actionStatus id="actStatusId">
+<apex:facet name="start">
+<!-- <center>
+<img src="/img/loading32.gif" />
+</center> -->
+
+ <div style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.75; z-index: 1000; background-color: grey;">
+ &nbsp;
+  </div>
+ <div style="position: fixed; left: 0; top: 0; bottom: 0; right: 0; z-index: 1001; margin: 22% 42%">
+  <img src="/img/loading32.gif" / >
+ </div>
+
+
+</apex:facet>
+</apex:actionStatus>
+
+                    
+                    <apex:commandButton action="{!formselection}" immediate="true"
+                        value="New Booking" html-formnovalidate="formnovalidate" disabled="{!newBookingDisabled}"/>
+                        
+                    <apex:commandButton disabled="{!submitDisabled}" value="Cancel" action="{!CancelBooking1}"/>
+
+                </div>
+                <apex:includeScript value="{!URLFOR($Resource.customCSS, 'customCSS/js/jquery-1.10.2.js')}" />
+                <apex:includeScript value="{!URLFOR($Resource.customCSS, 'customCSS/js/jquery-ui.js')}" />
+                <apex:includeScript value="{!URLFOR($Resource.customCSS, 'customCSS/js/custom.js')}" />
+
+            </div>
+        </div>
+    </div>
+ 
+</body>
+
+        </html>
+    </apex:form>
+</apex:page>

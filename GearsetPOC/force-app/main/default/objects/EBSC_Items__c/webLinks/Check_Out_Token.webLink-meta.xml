@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_Out_Token</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Check Out Token</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/22.0/connection.js&quot;)} 
+
+
+var updateRecord = new Array(); 
+var myquery = &quot;SELECT Id FROM RSA_Token__c WHERE ID = {!EBSC_Items__c.Id}&quot;; 
+
+
+result = sforce.connection.query(myquery); 
+records = result.getArray(&quot;records&quot;); 
+
+if(records[0]) 
+{ 
+var update_Case = records[0]; 
+update_Check_Out_Token__c = &#39;TRUE&#39;; 
+updateRecord.push(update_Case); 
+} 
+
+result = sforce.connection.update(updateRecord); 
+parent.location.href = parent.location.href;</url>
+</WebLink>

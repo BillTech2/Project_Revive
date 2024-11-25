@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MICE__c</fullName>
+    <label>MICE</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Event Organiser</fullName>
+                <default>false</default>
+                <label>Event Organiser</label>
+            </value>
+            <value>
+                <fullName>Event Agency</fullName>
+                <default>false</default>
+                <label>Event Agency</label>
+            </value>
+            <value>
+                <fullName>TMC M&amp;I</fullName>
+                <default>false</default>
+                <label>TMC M&amp;I</label>
+            </value>
+            <value>
+                <fullName>PCO</fullName>
+                <default>false</default>
+                <label>PCO</label>
+            </value>
+            <value>
+                <fullName>DMC</fullName>
+                <default>false</default>
+                <label>DMC</label>
+            </value>
+            <value>
+                <fullName>Supplier partner</fullName>
+                <default>false</default>
+                <label>Supplier partner</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

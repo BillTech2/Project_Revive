@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Point_Type__c</fullName>
+    <label>Point Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Active Points for Redemption</fullName>
+                <default>false</default>
+                <label>Active Points for Redemption</label>
+            </value>
+            <value>
+                <fullName>Affiliate Active Points</fullName>
+                <default>false</default>
+                <label>Affiliate Active Points</label>
+            </value>
+            <value>
+                <fullName>Affiliate Pending Points</fullName>
+                <default>false</default>
+                <label>Affiliate Pending Points</label>
+            </value>
+            <value>
+                <fullName>Member Active Points for Redemption</fullName>
+                <default>false</default>
+                <label>Member Active Points for Redemption</label>
+            </value>
+            <value>
+                <fullName>Member Pending Points</fullName>
+                <default>false</default>
+                <label>Member Pending Points</label>
+            </value>
+            <value>
+                <fullName>Pending Points</fullName>
+                <default>false</default>
+                <label>Pending Points</label>
+            </value>
+            <value>
+                <fullName>Special Bonus Points for Redemption</fullName>
+                <default>false</default>
+                <label>Special Bonus Points for Redemption</label>
+            </value>
+            <value>
+                <fullName>Tier Points this MEMSHPYR</fullName>
+                <default>false</default>
+                <label>Tier Points this MEMSHPYR</label>
+            </value>
+            <value>
+                <fullName>Promotional Points for Redemption</fullName>
+                <default>false</default>
+                <label>Promotional Points for Redemption</label>
+            </value>
+            <value>
+                <fullName>Reward Points for Redemption</fullName>
+                <default>false</default>
+                <label>Reward Points for Redemption</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Employee_cannot_change_the_Status</fullName>
+    <active>true</active>
+    <description>Status (excluding New and Amended) can only be changed by Manager or Finance</description>
+    <errorConditionFormula>($Permission.Fire_Validated_checkbox_cannot_be_ticked_validation &amp;&amp; ISNEW() &amp;&amp; TEXT(Status__c)&lt;&gt;&quot;New&quot;)
+ || ($Permission.Fire_Validated_checkbox_cannot_be_ticked_validation  &amp;&amp; ISCHANGED(Status__c)  &amp;&amp; TEXT(Status__c)&lt;&gt;&quot;Amended&quot;)</errorConditionFormula>
+    <errorDisplayField>Status__c</errorDisplayField>
+    <errorMessage>Status can only be changed by Manager or Finance</errorMessage>
+</ValidationRule>

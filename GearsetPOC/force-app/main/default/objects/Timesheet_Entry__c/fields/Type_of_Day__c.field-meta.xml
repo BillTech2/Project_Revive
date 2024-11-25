@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type_of_Day__c</fullName>
+    <label>Type of Day</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Congés CP</fullName>
+                <default>false</default>
+                <label>Congés CP</label>
+            </value>
+            <value>
+                <fullName>Congés 1/2 CP</fullName>
+                <default>false</default>
+                <label>Congés 1/2 CP</label>
+            </value>
+            <value>
+                <fullName>Congés RTT</fullName>
+                <default>false</default>
+                <label>Congés RTT</label>
+            </value>
+            <value>
+                <fullName>Congés 1/2 RTT</fullName>
+                <default>false</default>
+                <label>Congés 1/2 RTT</label>
+            </value>
+            <value>
+                <fullName>Arrét maladie</fullName>
+                <default>false</default>
+                <label>Arrét maladie</label>
+            </value>
+            <value>
+                <fullName>CET</fullName>
+                <default>false</default>
+                <label>CET</label>
+            </value>
+            <value>
+                <fullName>Offsite/Expense</fullName>
+                <default>false</default>
+                <label>Offsite/Expense</label>
+            </value>
+            <value>
+                <fullName>Récupération</fullName>
+                <default>false</default>
+                <label>Récupération</label>
+            </value>
+            <value>
+                <fullName>Maternité</fullName>
+                <default>false</default>
+                <label>Maternité</label>
+            </value>
+            <value>
+                <fullName>RDV maternité</fullName>
+                <default>false</default>
+                <label>RDV maternité</label>
+            </value>
+            <value>
+                <fullName>Paternité</fullName>
+                <default>false</default>
+                <label>Paternité</label>
+            </value>
+            <value>
+                <fullName>Congé sans solde</fullName>
+                <default>false</default>
+                <label>Congé sans solde</label>
+            </value>
+            <value>
+                <fullName>Congé conv</fullName>
+                <default>false</default>
+                <label>Congé conv</label>
+            </value>
+            <value>
+                <fullName>Congé sabbatique</fullName>
+                <default>false</default>
+                <label>Congé sabbatique</label>
+            </value>
+            <value>
+                <fullName>Congé parental</fullName>
+                <default>false</default>
+                <label>Congé parental</label>
+            </value>
+            <value>
+                <fullName>Formation/Réunion</fullName>
+                <default>false</default>
+                <label>Formation/Réunion</label>
+            </value>
+            <value>
+                <fullName>WE et/ou férié travaillés</fullName>
+                <default>false</default>
+                <label>WE et/ou férié travaillés</label>
+            </value>
+            <value>
+                <fullName>Horaires décalés</fullName>
+                <default>false</default>
+                <label>Horaires décalés</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

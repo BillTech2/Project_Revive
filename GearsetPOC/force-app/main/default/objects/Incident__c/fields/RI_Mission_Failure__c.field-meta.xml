@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RI_Mission_Failure__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>tick if the incident is counted as a mission failure</inlineHelpText>
+    <label>Mission Failure</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,201 @@
+<apex:page id="OutOfOfficeManagement" controller="OutOfOfficeCtrl" showQuickActionVfHeader="false" >
+    <script>
+        function showHideWarning(source) {
+             let x = document.getElementById("idWarning");
+             if (source.checked && !{!OOOSavedState}) {
+                 //x.style.display = "block";
+                 x.className = "warning";
+             } else {
+                 x.className = "warningHide";
+             }
+        }
+    </script>
+    <style>
+        .warning {
+            font-weight: normal;
+            font-size: 15px;
+            line-height: 20px;
+            text-align: left;
+            color: #06183d;
+            margin-bottom:0.5rem;
+        }
+        .warningHide {
+            display:none;
+        }
+        .centeredHeader{
+            text-align:center;
+        }
+        thead {
+            background:black;
+            color:white;
+            position:sticky;
+            top:0px;
+            height:1.5rem;
+        }
+        th {
+            background:black;
+            color:white;
+            position:sticky;
+            position: -webkit-sticky; /* Safari */
+            top:0px;
+            height:1.5rem;
+        }
+        tr {
+            white-space: nowrap;
+        }
+        tbody {
+            top:2.2rem;
+        }
+        .warningShow {
+            border-style:solid;
+            border-width:3px;
+            border-color:black;
+            padding-left:2rem;
+            padding-right:2rem;
+            background-color: white;
+            border-radius: .5rem;
+            padding-bottom: 1rem;
+            position:fixed;
+            top:3rem;
+            z-index: 10;
+        }
+        #blanket {
+            display: none;
+            position: fixed;
+            text-align: center;
+            width: 100%;
+            top: 1px;
+            left: 0;
+            z-index: 3;
+            padding-bottom: 40px;
+            height: calc(100vh - 70px);
+        }
+
+        #blanket::before {
+            display: block;
+            content: "";
+            opacity: .6;
+            background-color: #000;
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 10;
+        }
+
+    </style>
+
+    <apex:form >
+        <div id="idWarning" class="warningHide">Please note: When you set your out of office - all your open cases will be returned to their original queue.</div>
+            <label for="oooStatus">Out Of Office</label>
+            <apex:inputCheckbox id="oooStatus" value="{!OOOState}" onChange="showHideWarning(this)"></apex:inputCheckbox>
+        <br/>
+
+        <div style="display: flex; flex-direction: row; margin-bottom:0.5rem">
+            <div style="flex:22%">
+                <apex:commandButton id="idSubmit" value="Update Status" action="{!updateStatus}" />
+            </div>
+            <div style="flex:78%">
+                <div style="margin-top:0.25rem">
+                <apex:outputText value="Out of Office now set" rendered="{!updatedToOut}"></apex:outputText>
+                <apex:outputText value="Out of Office now disabled" rendered="{!updatedToIn}"></apex:outputText>
+                </div>
+            </div>
+        </div>
+        <div style="margin-bottom:1.6rem">
+            <span>You currently have {!casesOwned} open Cases assigned to you</span>
+        </div>
+        <!--br/><br/-->
+    </apex:form>
+
+
+    <div class="blanket" id="blanket" hidden="hidden">
+        <div class="warningHide" id="warningMessage">
+            <p id="messageBody" style="margin-top:1rem; margin-left: 1rem; color:black;">Please note: When you set your out of office - all your open cases will be returned to their original queue.</p>
+            <div align="center" >
+                <apex:form >
+                    <apex:commandButton value="Proceed" onclick="submitChange(idToFlip,currentScrollPos);" onComplete="hideBlanketAndMessage(true)" rerender="table"></apex:commandButton>
+                    <input class = "btn" type="button" value="Cancel" onclick="hideBlanketAndMessage(false)"></input>
+                </apex:form>
+            </div>
+        </div>
+    </div>
+
+    <apex:outputPanel rendered="{!hasTeamMembers}">
+        <apex:form >
+            <div align="center">
+                <p style="margin-top:0px;margin-bottom:0.1rem"><b>TEAM MEMBERS OUT OF OFFICE STATUS</b></p>
+            </div>
+            <apex:actionFunction action="{!flipStatus}" onComplete="hideBlanketAndMessage(true)" name="submitChange" rerender="table">
+                <apex:param name="firstParam" assignTo="{!statusChangedOfID}" value="" />
+                <apex:param name="secondParam" assignTo="{!scrollPosition}" value="" />
+            </apex:actionFunction>
+        </apex:form>
+        <apex:outputPanel styleClass="scrolledElement" id="table" layout="block" style="overflow:auto;height:145px;width: max-content;margin:auto;">
+            <apex:datatable value="{!decoratedTeamMembers}" var="nextMember" styleClass="tableClass">
+                <apex:column headerValue="Name" headerClass="centeredHeader" style="text-align:inherit;padding-left:1rem;padding-right:1rem;">
+                    <apex:outputText value="{!nextMember.teamMember.Name}"/>
+                </apex:column>
+                <apex:column headerValue="Status" headerClass="centeredHeader" style="text-align:center;padding-left:3px;padding-right:3px;width:100px">
+                    <apex:outputText value="{!IF (nextMember.teamMember.Out_Of_Office__c, 'Out Of Office', 'Active')}"/>
+                </apex:column>
+                <apex:column headerValue="Cases owned" headerClass="centeredHeader" style="text-align:center;padding-left:3px;padding-right:3px;">
+                    <apex:outputText value="{!nextMember.caseCount}"/>
+                </apex:column>
+                <apex:column style="text-align:center;padding-left:1rem;padding-right:1rem;">
+                    <input
+                        class = "btn"
+                        type="button"
+                        value="Change Status"
+                        onclick="confirmAndSubmit('{!nextMember.teamMember.Id}',{!nextMember.teamMember.Out_Of_Office__c},{!nextMember.caseCount},'{!nextMember.teamMember.Name}')"
+                    />
+                </apex:column>
+            </apex:datatable>
+            <span id="scrollPositionHolder" hidden="hidden">{!scrollPosition}</span>
+        </apex:OutputPanel>
+    </apex:outputPanel>
+
+
+
+
+    <script>
+        var idToFlip = '';
+        var currentScrollPos;
+
+        function confirmAndSubmit(userId, isSet, caseCount, ownerName) {
+
+            let table = document.querySelector('.scrolledElement');
+            currentScrollPos = Math.trunc(table.scrollTop);
+
+            if (!isSet && caseCount > 0) {
+                let x = document.getElementById("warningMessage");
+                let msgCtrl = document.getElementById("messageBody");
+                msgCtrl.innerHTML = "Please note: When you set " + ownerName + " out of office - " + caseCount +
+                                    " open cases will be returned to their original queue. Are you sure?"
+                x.className = "warningShow";
+                 idToFlip = userId;
+                let blanketCtrl = document.getElementById("blanket");
+                blanketCtrl.removeAttribute("hidden");
+                blanketCtrl.style.display = "block";
+            } else {
+                submitChange(userId, currentScrollPos);
+            }
+        }
+
+        function hideBlanketAndMessage(restoreScrollPos) {
+            document.getElementById('warningMessage').className = 'warningHide'
+            let blanketCtrl = document.getElementById("blanket");
+            blanketCtrl.style.display = "none";
+            if (restoreScrollPos) {
+                let table = document.querySelector('.scrolledElement');
+                let holder = document.getElementById("scrollPositionHolder");
+                if (holder) {
+                    table.scrollTop = holder.innerHTML
+                    currentScrollPos = Math.trunc(table.scrollTop);
+                }
+            }
+        }
+    </script>
+
+</apex:page>

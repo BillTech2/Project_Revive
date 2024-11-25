@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Accident_Event_Type__c</fullName>
+    <label>Event Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>AT - Workplace accident</fullName>
+                <default>false</default>
+                <label>AT - Workplace accident</label>
+            </value>
+            <value>
+                <fullName>AJ - Commuting Accident (continental based employee only)</fullName>
+                <default>false</default>
+                <label>AJ - Commuting Accident (continental based employee only)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sessions_from_10th</fullName>
+    <columns>Agent</columns>
+    <columns>Name</columns>
+    <columns>LoginTime</columns>
+    <columns>LogoutTime</columns>
+    <columns>Minutes_Spent_Online__c</columns>
+    <columns>Concurrency_Rate_Average__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CreatedDate</field>
+        <operation>equals</operation>
+        <value>1/10/2017 12:00 AM</value>
+    </filters>
+    <label>Sessions from 10th</label>
+    <language>en_US</language>
+</ListView>

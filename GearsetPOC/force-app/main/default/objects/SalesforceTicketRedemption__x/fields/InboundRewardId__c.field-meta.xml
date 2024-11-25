@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>InboundRewardId__c</fullName>
+    <description>InboundRewardId</description>
+    <externalDeveloperName>InboundRewardId</externalDeveloperName>
+    <isFilteringDisabled>false</isFilteringDisabled>
+    <isNameField>false</isNameField>
+    <isSortingDisabled>false</isSortingDisabled>
+    <label>Inbound Reward id</label>
+    <length>128</length>
+    <referenceTo>SalesforceTicketReward__x</referenceTo>
+    <relationshipLabel>Salesforce Ticket Redemption</relationshipLabel>
+    <relationshipName>SalesforceTicketRedemption</relationshipName>
+    <type>ExternalLookup</type>
+</CustomField>

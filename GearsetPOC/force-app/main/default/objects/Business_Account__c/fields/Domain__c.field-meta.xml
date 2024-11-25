@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Domain__c</fullName>
+    <label>Domain</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Business Gifts</fullName>
+                <default>false</default>
+                <label>Business Gifts</label>
+            </value>
+            <value>
+                <fullName>Catering</fullName>
+                <default>false</default>
+                <label>Catering</label>
+            </value>
+            <value>
+                <fullName>Event Partners</fullName>
+                <default>false</default>
+                <label>Event Partners</label>
+            </value>
+            <value>
+                <fullName>Hotels</fullName>
+                <default>false</default>
+                <label>Hotels</label>
+            </value>
+            <value>
+                <fullName>Meeting rooms</fullName>
+                <default>false</default>
+                <label>Meeting rooms</label>
+            </value>
+            <value>
+                <fullName>Restaurants</fullName>
+                <default>false</default>
+                <label>Restaurants</label>
+            </value>
+            <value>
+                <fullName>Taxis</fullName>
+                <default>false</default>
+                <label>Taxis</label>
+            </value>
+            <value>
+                <fullName>Teambuilding</fullName>
+                <default>false</default>
+                <label>Teambuilding</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

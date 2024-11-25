@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Groups_Deposit_Reference__c</fullName>
+    <description>Reference of the deposit regarding the Group Booking.
+The reference may change if some amendments are made to the booking (causing amendments to the deposit)</description>
+    <inlineHelpText>Reference of the deposit regarding the Group Booking.
+The reference may change if some amendments are made to the booking (causing amendments to the deposit)</inlineHelpText>
+    <label>Deposit Reference</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

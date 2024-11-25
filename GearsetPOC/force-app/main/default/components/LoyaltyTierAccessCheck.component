@@ -1,0 +1,16 @@
+<apex:component id="LoyaltyTierAccessCheck" controller="LoyaltyTierAccessCheckCtrl">
+    <apex:attribute name="accessedButtonName" type="String" assignTo="{!accessedButton}" description="Loyalty button to access."/>
+    <apex:attribute name="recordIdValue" type="Id" assignTo="{!recordId}" description="Id to return back."/>
+    <apex:form rendered="{!NOT(isAccessAllowed)}">
+        <apex:pageBlock title="{!$ObjectType.SalesforceCriteriaBasedTicketLink__x.Label} Edit" mode="edit">
+            <div style="font-style: italic; font-weight: bold; color: red; padding-top: 1rem; padding-left: 3rem;">
+                {!$Label.Loyalty_Insufficient_Permissions}
+            </div>
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!back}" value="Back"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+
+    <apex:componentBody rendered="{!isAccessAllowed}" />
+</apex:component>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Hazard_Risk_Rating__c</fullName>
+    <description>Risk=severity*priority</description>
+    <externalId>false</externalId>
+    <formula>VALUE(LEFT(TEXT(Hazard_Probability__c),1)) *  VALUE(LEFT(TEXT(Hazard_Severity__c),1))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Risk Rating</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

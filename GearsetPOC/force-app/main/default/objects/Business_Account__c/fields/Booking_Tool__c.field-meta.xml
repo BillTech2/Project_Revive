@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Booking_Tool__c</fullName>
+    <label>Booking Tool</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>AETM</fullName>
+                <default>false</default>
+                <label>AETM</label>
+            </value>
+            <value>
+                <fullName>COB SNCB</fullName>
+                <default>false</default>
+                <label>COB SNCB</label>
+            </value>
+            <value>
+                <fullName>CONCUR</fullName>
+                <default>false</default>
+                <label>CONCUR</label>
+            </value>
+            <value>
+                <fullName>Cytric</fullName>
+                <default>false</default>
+                <label>Cytric</label>
+            </value>
+            <value>
+                <fullName>KDS</fullName>
+                <default>false</default>
+                <label>KDS</label>
+            </value>
+            <value>
+                <fullName>Onesto</fullName>
+                <default>false</default>
+                <label>Onesto</label>
+            </value>
+            <value>
+                <fullName>Portal Enterprises</fullName>
+                <default>false</default>
+                <label>Portal Enterprises</label>
+            </value>
+            <value>
+                <fullName>NS Portal</fullName>
+                <default>false</default>
+                <label>NS Portal</label>
+            </value>
+            <value>
+                <fullName>Albatros</fullName>
+                <default>false</default>
+                <label>Albatros</label>
+            </value>
+            <value>
+                <fullName>Portail VCS</fullName>
+                <default>false</default>
+                <label>Portail VCS</label>
+            </value>
+            <value>
+                <fullName>R&amp;M Book</fullName>
+                <default>false</default>
+                <label>R&amp;M Book</label>
+            </value>
+            <value>
+                <fullName>Traveldoo</fullName>
+                <default>false</default>
+                <label>Traveldoo</label>
+            </value>
+            <value>
+                <fullName>Rydoo</fullName>
+                <default>false</default>
+                <label>Rydoo</label>
+            </value>
+            <value>
+                <fullName>Voyager</fullName>
+                <default>false</default>
+                <label>Voyager</label>
+            </value>
+            <value>
+                <fullName>API</fullName>
+                <default>false</default>
+                <label>API</label>
+            </value>
+            <value>
+                <fullName>Groups department</fullName>
+                <default>false</default>
+                <label>Groups department</label>
+            </value>
+            <value>
+                <fullName>Amadeus</fullName>
+                <default>false</default>
+                <label>Amadeus</label>
+            </value>
+            <value>
+                <fullName>Sabre</fullName>
+                <default>false</default>
+                <label>Sabre</label>
+            </value>
+            <value>
+                <fullName>Galileo</fullName>
+                <default>false</default>
+                <label>Galileo</label>
+            </value>
+            <value>
+                <fullName>Eurostar for Business</fullName>
+                <default>false</default>
+                <label>Eurostar for Business</label>
+            </value>
+            <value>
+                <fullName>PAO</fullName>
+                <default>false</default>
+                <label>PAO</label>
+            </value>
+            <value>
+                <fullName>GDS Rail</fullName>
+                <default>false</default>
+                <label>GDS Rail</label>
+            </value>
+            <value>
+                <fullName>Atris</fullName>
+                <default>false</default>
+                <label>Atris</label>
+            </value>
+            <value>
+                <fullName>Trainline</fullName>
+                <default>false</default>
+                <label>Trainline</label>
+            </value>
+            <value>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <label>Others</label>
+            </value>
+            <value>
+                <fullName>Eurostar.com</fullName>
+                <default>false</default>
+                <label>Eurostar.com</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

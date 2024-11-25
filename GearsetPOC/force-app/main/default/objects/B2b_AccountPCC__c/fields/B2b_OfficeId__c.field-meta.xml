@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>B2b_OfficeId__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>PCC Code</label>
+    <referenceTo>B2b_PCC__c</referenceTo>
+    <relationshipLabel>Account PCC&#39;s</relationshipLabel>
+    <relationshipName>Account_PCC_s</relationshipName>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

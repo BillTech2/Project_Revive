@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>B2b_Block_NRD_Update_Status</fullName>
+    <active>true</active>
+    <description>You must change the Negotiated Rate status from NEW to TO BE EXTRACTED.</description>
+    <errorConditionFormula>AND(
+NOT($User.B2b_Bypass_Validation_Rules__c),
+NOT($Permission.Sales_Admin),
+!ISNEW(),
+ISCHANGED(B2b_Status__c),
+ISPICKVAL(PRIORVALUE(B2b_Status__c), &#39;New - Default&#39;),
+!ISPICKVAL(B2b_Status__c, &#39;To be Extracted&#39;),
+!ISPICKVAL(B2b_Status__c, &#39;To be Approved&#39;),
+ISBLANK(B2b_ParentNrDetail__c)
+)</errorConditionFormula>
+    <errorDisplayField>B2b_Status__c</errorDisplayField>
+    <errorMessage>You must change the Negotiated Rate status from NEW to TO BE EXTRACTED.</errorMessage>
+</ValidationRule>

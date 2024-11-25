@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Alphanumberic_PNR</fullName>
+    <active>true</active>
+    <errorConditionFormula>NOT( 
+  OR( 
+    LEN ( PNR__c ) = 0, 
+    REGEX( PNR__c , &quot;[a-zA-Z0-9]+&quot;) 
+  ) 
+)</errorConditionFormula>
+    <errorDisplayField>PNR__c</errorDisplayField>
+    <errorMessage>PNR can only contain alphanumeric characters</errorMessage>
+</ValidationRule>

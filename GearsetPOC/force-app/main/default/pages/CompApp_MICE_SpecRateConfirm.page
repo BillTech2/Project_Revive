@@ -1,0 +1,11 @@
+<apex:page id="CompApp_MICE_SpecRateConfirm" showHeader="false" sidebar="false" language="{!selectedLanguageCode}" controller="CompApp_CtrlApp" standardStylesheets="false" applyHtmlTag="false" applyBodyTag="false" showChat="false">
+    <div>
+        <h2 class="row">
+            You have successfully registered the form
+        </h2>
+
+        <div class="row p2">
+            Your application has been submitted and we will contact you shortly
+        </div>
+    </div>
+</apex:page>

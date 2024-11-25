@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Action__c</fullName>
+    <label>Action</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Target_Group__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Agency visit</fullName>
+                <default>false</default>
+                <label>Agency visit</label>
+            </value>
+            <value>
+                <fullName>Client visit</fullName>
+                <default>false</default>
+                <label>Client visit</label>
+            </value>
+            <value>
+                <fullName>Contact e-mail/phone</fullName>
+                <default>false</default>
+                <label>Contact e-mail/phone</label>
+            </value>
+            <value>
+                <fullName>Customer Visit</fullName>
+                <default>false</default>
+                <label>Customer Visit</label>
+            </value>
+            <value>
+                <fullName>Eductour</fullName>
+                <default>false</default>
+                <label>Eductour</label>
+            </value>
+            <value>
+                <fullName>Event/Networking</fullName>
+                <default>false</default>
+                <label>Event/Networking</label>
+            </value>
+            <value>
+                <fullName>Follow up on SLA / PAC</fullName>
+                <default>false</default>
+                <label>Follow up on SLA / PAC</label>
+            </value>
+            <value>
+                <fullName>Sending Contract</fullName>
+                <default>false</default>
+                <label>Sending Contract</label>
+            </value>
+            <value>
+                <fullName>Sending Proposal</fullName>
+                <default>false</default>
+                <label>Sending Proposal</label>
+            </value>
+            <value>
+                <fullName>Speed Meeting</fullName>
+                <default>false</default>
+                <label>Speed Meeting</label>
+            </value>
+            <value>
+                <fullName>Sponsoring</fullName>
+                <default>false</default>
+                <label>Sponsoring</label>
+            </value>
+            <value>
+                <fullName>Tradefair</fullName>
+                <default>false</default>
+                <label>Tradefair</label>
+            </value>
+            <value>
+                <fullName>Training</fullName>
+                <default>false</default>
+                <label>Training</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Client Corporate</controllingFieldValue>
+            <controllingFieldValue>TMC</controllingFieldValue>
+            <controllingFieldValue>AGV Loisirs/TO/MICE</controllingFieldValue>
+            <controllingFieldValue>Distributeur</controllingFieldValue>
+            <controllingFieldValue>Partenaire</controllingFieldValue>
+            <controllingFieldValue>Prospect</controllingFieldValue>
+            <valueName>Contact e-mail/phone</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Client Corporate</controllingFieldValue>
+            <controllingFieldValue>Prospect</controllingFieldValue>
+            <valueName>Customer Visit</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Client Corporate</controllingFieldValue>
+            <controllingFieldValue>TMC</controllingFieldValue>
+            <controllingFieldValue>AGV Loisirs/TO/MICE</controllingFieldValue>
+            <controllingFieldValue>Partenaire</controllingFieldValue>
+            <valueName>Eductour</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Client Corporate</controllingFieldValue>
+            <controllingFieldValue>TMC</controllingFieldValue>
+            <controllingFieldValue>AGV Loisirs/TO/MICE</controllingFieldValue>
+            <controllingFieldValue>Partenaire</controllingFieldValue>
+            <controllingFieldValue>Prospect</controllingFieldValue>
+            <valueName>Event/Networking</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Client Corporate</controllingFieldValue>
+            <valueName>Sending Contract</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Client Corporate</controllingFieldValue>
+            <valueName>Sending Proposal</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>TMC</controllingFieldValue>
+            <controllingFieldValue>AGV Loisirs/TO/MICE</controllingFieldValue>
+            <valueName>Agency visit</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>TMC</controllingFieldValue>
+            <valueName>Speed Meeting</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>TMC</controllingFieldValue>
+            <controllingFieldValue>AGV Loisirs/TO/MICE</controllingFieldValue>
+            <controllingFieldValue>Partenaire</controllingFieldValue>
+            <valueName>Tradefair</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>TMC</controllingFieldValue>
+            <controllingFieldValue>AGV Loisirs/TO/MICE</controllingFieldValue>
+            <controllingFieldValue>Distributeur</controllingFieldValue>
+            <valueName>Training</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Distributeur</controllingFieldValue>
+            <valueName>Follow up on SLA / PAC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Partenaire</controllingFieldValue>
+            <valueName>Sponsoring</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

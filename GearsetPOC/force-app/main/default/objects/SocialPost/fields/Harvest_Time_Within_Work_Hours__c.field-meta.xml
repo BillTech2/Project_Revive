@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Harvest_Time_Within_Work_Hours__c</fullName>
+    <formula>IF( WEEKDAY(DATEVALUE(HarvestDate)) = 7, /*Saturday*/
+   IF((HOUR(TIMEVALUE(HarvestDate)) + 1) &gt;= 9 &amp;&amp; (HOUR(TIMEVALUE(HarvestDate)) + 1) &lt; 18, 
+      HarvestDate, /*Post was harvested during working time of day*/
+            IF((HOUR(TIMEVALUE(HarvestDate)) + 1)&gt;= 18 &amp;&amp; (HOUR(TIMEVALUE(HarvestDate)) + 1) &lt;= 24,  
+               /*!!!RESULTING TIMES MUST BE AN HOUR EARLIER FROM DESIRED AS THEY ACTUALLY TREATED AS GREENWICH TIMES!!!*/
+               DATETIMEVALUE(TEXT(DATEVALUE(HarvestDate + 1)) &amp; &#39; 8:00:00&#39;) , /*Post was harvested past working time of day. 8:00:00 - greenwich  9:00:00 - current zone */
+               DATETIMEVALUE(TEXT(DATEVALUE(HarvestDate))&amp;&#39; 8:00:00&#39;) /*Post was harvested before working time of day*/
+            )
+   ),
+
+   IF( WEEKDAY(DATEVALUE(HarvestDate)) = 1, /*Sunday*/
+      IF((HOUR(TIMEVALUE(HarvestDate)) + 1) &gt;= 9 &amp;&amp; (HOUR(TIMEVALUE(HarvestDate)) + 1) &lt; 18,
+         HarvestDate,
+               IF((HOUR(TIMEVALUE(HarvestDate)) + 1) &gt;= 18 &amp;&amp; (HOUR(TIMEVALUE(HarvestDate)) + 1) &lt;= 24,    
+                  DATETIMEVALUE(TEXT(DATEVALUE(HarvestDate + 1)) &amp; &#39; 7:00:00&#39;) ,
+                   DATETIMEVALUE(TEXT(DATEVALUE(HarvestDate)) &amp; &#39; 8:00:00&#39;)
+               )
+      ),
+
+      IF( WEEKDAY(DATEVALUE(HarvestDate)) = 6, /*Friday*/
+         IF((HOUR(TIMEVALUE(HarvestDate)) + 1) &gt;= 8 &amp;&amp; (HOUR(TIMEVALUE(HarvestDate)) + 1) &lt; 20,
+            HarvestDate,
+                  IF((HOUR(TIMEVALUE(HarvestDate)) + 1) &gt;= 20 &amp;&amp; (HOUR(TIMEVALUE(HarvestDate)) + 1) &lt;= 24, 
+                     DATETIMEVALUE(TEXT(DATEVALUE(HarvestDate + 1)) &amp; &#39; 8:00:00&#39;) ,
+                     DATETIMEVALUE(TEXT(DATEVALUE(HarvestDate)) &amp; &#39; 7:00:00&#39;)
+                  )
+         ),
+      
+         /*Monday, Tuesday, Wednesday, Thursday*/
+
+         IF((HOUR(TIMEVALUE(HarvestDate)) + 1) &gt;= 8 &amp;&amp; (HOUR(TIMEVALUE(HarvestDate)) + 1) &lt; 20, 
+            HarvestDate,
+                  IF((HOUR(TIMEVALUE(HarvestDate)) + 1) &gt;= 20 &amp;&amp; (HOUR(TIMEVALUE(HarvestDate)) + 1) &lt;= 24, 
+                     DATETIMEVALUE(TEXT(DATEVALUE(HarvestDate+ 1)) &amp; &#39; 7:00:00&#39;), 
+                     DATETIMEVALUE(TEXT(DATEVALUE(HarvestDate)) &amp; &#39; 7:00:00&#39;)
+                  )
+         )
+      )
+   )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Harvest Time Within Work Hours</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>DateTime</type>
+</CustomField>

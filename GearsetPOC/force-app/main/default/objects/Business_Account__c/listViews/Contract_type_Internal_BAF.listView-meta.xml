@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contract_type_Internal_BAF</fullName>
+    <columns>NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Contract_Type__c</field>
+        <operation>equals</operation>
+        <value>Internal BAF</value>
+    </filters>
+    <label>Contract type ~ Internal BAF</label>
+    <sharedTo>
+        <role>Trade_Team</role>
+    </sharedTo>
+</ListView>

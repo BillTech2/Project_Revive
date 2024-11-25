@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_1__c</fullName>
+    <label>Reason 1</label>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>After booking enquiry</fullName>
+                <default>false</default>
+                <label>After booking enquiry</label>
+            </value>
+            <value>
+                <fullName>Groups</fullName>
+                <default>false</default>
+                <label>Groups</label>
+            </value>
+            <value>
+                <fullName>Pre-Sale Info and Booking</fullName>
+                <default>false</default>
+                <label>Pre-Sale Info and Booking</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

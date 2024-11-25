@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TC_ALL</fullName>
+    <columns>NAME</columns>
+    <columns>Type__c</columns>
+    <columns>Currency__c</columns>
+    <columns>Delay_Start__c</columns>
+    <columns>Delay_End__c</columns>
+    <columns>FBC__c</columns>
+    <columns>Points__c</columns>
+    <columns>Voucher__c</columns>
+    <columns>isValidRule__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>OBJECT_ID</columns>
+    <columns>LAST_UPDATE</columns>
+    <filterScope>Everything</filterScope>
+    <label>TC ALL</label>
+    <language>en_US</language>
+</ListView>

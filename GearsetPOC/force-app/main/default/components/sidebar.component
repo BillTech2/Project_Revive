@@ -1,0 +1,179 @@
+<apex:component >
+
+<apex:attribute name="chosenLanguageISO" description="chosenLanguageISO" type="String" required="true"/>
+<apex:attribute name="FAQQuickLinks" description="FAQQuickLinks" type="FAQ_QuickLinks__c[]" required="true"/>
+<apex:attribute name="FAQContactUsLinks" description="FAQContactUsLinks" type="FAQ_Contact_us__c[]" required="true"/>
+<apex:attribute name="LiveChatSettings" description="LiveChatSettings" type="FAQ_Live_Chat_Settings__c[]" required="true"/>
+<apex:attribute name="MostViewedArticles" description="MostViewedArticles" type="Knowledge__kav[]" required="true"/>
+<apex:attribute name="DisplayLiveChat" description="DisplayLiveChat" type="Boolean" required="false"/>
+<!--<apex:attribute name="$Page.FAQ_Article" description="$Page.FAQ_Article" type="Page" required="true"/ -->
+
+    <!-- Styles -->
+    <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.CompApp_Res, '/res/all-prembrokeWeb.css')}"/>
+    <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.CompApp_Res, '/css/12-cols-grid.css')}"/>
+    <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.CompApp_Res, '/css/no-grid.css')}" />
+    <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.CompApp_Res, '/css/angular-date-picker.css')}"/>
+    <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.CompApp_Res, '/css/select2-3.4.5.css')}"/>
+    <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.CompApp_Res, '/css/elements.css')}"/>
+    <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.CompApp_Res, '/css/template-base.css')}"/>
+    <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.CompApp_Eurostar_Ticket_Examples, '/ticket-examples.css')}"/>
+
+    <style>
+    #app-root{
+        margin: 0px !important;
+        padding-top: 0px !important;
+        margin-top: 0px !important;
+    }
+
+    #app-root a{
+        color: #0D57CC !important;
+    }
+
+    .topmob{
+        background-color: #ffffff;
+        border-style: none;
+        margin-bottom: 2%;
+        margin-top: 5px;
+        padding-top: 0;
+    }
+
+    .list-group-item{
+        width:100%;
+    }
+    h2{
+        font-family: "ABCSocial-Bold";
+        font-weight: normal;
+        font-size: 28px;
+        line-height: 28px;
+        text-align: left;
+        color: #00286A;
+        margin: 0;
+    }
+
+    .form-group{
+        display: flex;
+}
+.form-control{
+    width: 100% !important;
+}
+    
+    </style>
+
+<!-- Desktop sidebar View-->
+<div id="app-root" class="well topmob" >
+                <h2>{!$Label.FAQ_LABEL_QUICK_LINKS}:</h2>
+     				<apex:repeat value="{!FAQQuickLinks}" var="faqLinkUK" rendered="{!chosenLanguageISO==null}">
+                     <a href="{!SUBSTITUTE(faqLinkUK.url_UK__c, 'FAQLANGUAGE','uk-en')}" class="list-group-item"><p style="margin-bottom:0; font-size:16px;">{!faqLinkUK.English_Text__c} </p></a> 
+                    </apex:repeat>
+				  <apex:repeat value="{!FAQQuickLinks}" var="faqLinkUK" rendered="{!chosenLanguageISO!=null && CONTAINS(chosenLanguageISO,'en')}">
+                    <a href="{!SUBSTITUTE(faqLinkUK.url_UK__c, 'FAQLANGUAGE',chosenLanguageISO)}" class="list-group-item"><p style="margin-bottom:0; font-size:16px;">{!faqLinkUK.English_Text__c} </p></a> 
+                  </apex:repeat>
+                  <apex:repeat value="{!FAQQuickLinks}" var="faqLinkFR" rendered="{!chosenLanguageISO!=null && CONTAINS(chosenLanguageISO,'fr')}">
+                    <a href="{!SUBSTITUTE(faqLinkFR.url_FR__c, 'FAQLANGUAGE',chosenLanguageISO)}" class="list-group-item"><p style="margin-bottom:0; font-size:16px;">{!faqLinkFR.French_Text__c} </p></a> 
+                  </apex:repeat>
+                  <apex:repeat value="{!FAQQuickLinks}" var="faqLinkNL" rendered="{!chosenLanguageISO!=null && CONTAINS(chosenLanguageISO,'nl')}">
+                    <a href="{!SUBSTITUTE(faqLinkNL.url_NL__c, 'FAQLANGUAGE',chosenLanguageISO)}" class="list-group-item"><p style="margin-bottom:0; font-size:16px;">{!faqLinkNL.Dutch_Text__c} </p></a> 
+                  </apex:repeat>
+                  <apex:repeat value="{!FAQQuickLinks}" var="faqLinkNL" rendered="{!chosenLanguageISO!=null && CONTAINS(chosenLanguageISO,'de')}">
+                    <a href="{!SUBSTITUTE(faqLinkNL.url_DE__c, 'FAQLANGUAGE',chosenLanguageISO)}" class="list-group-item"><p style="margin-bottom:0; font-size:16px;">{!faqLinkNL.German_Text__c} </p></a> 
+                  </apex:repeat>
+</div>
+  
+   <!-- Most Popular Articles -->
+    <div class="well topmob" id="app-root">
+        <h2>{!$Label.FAQ_LABEL_MOST_POPULAR}:</h2>
+     <apex:repeat value="{!MostViewedArticles}" var="article" rows="5">
+        	 <apex:variable value="" var="friendlyURL"/>
+                           <apex:outputpanel rendered="{!chosenLanguageISO==null}">
+                               <apex:variable value="/faq/uk-en/question/{!article.urlname}" var="friendlyURL"/>
+                            </apex:outputpanel>
+                            <apex:outputpanel rendered="{!chosenLanguageISO!=null && CONTAINS(chosenLanguageISO,'en')}">
+                                <apex:variable value="/faq/{!chosenLanguageISO}/question/{!article.urlname}" var="friendlyURL"/>
+                            </apex:outputpanel>
+                            <apex:outputpanel rendered="{!chosenLanguageISO!=null && CONTAINS(chosenLanguageISO,'fr')}">
+                                <apex:variable value="/faq/{!chosenLanguageISO}/question/{!article.urlname}" var="friendlyURL"/>
+                            </apex:outputpanel>
+                            <apex:outputpanel rendered="{!chosenLanguageISO!=null && CONTAINS(chosenLanguageISO,'nl')}">
+                                <apex:variable value="/faq/{!chosenLanguageISO}/vraag/{!article.urlname}" var="friendlyURL"/>
+                            </apex:outputpanel>         
+                            <apex:outputpanel rendered="{!chosenLanguageISO!=null && CONTAINS(chosenLanguageISO,'de')}">
+                                <apex:variable value="/faq/{!chosenLanguageISO}/frage/{!article.urlname}" var="friendlyURL"/>
+                            </apex:outputpanel>  
+         <a href="{!friendlyURL}" class="list-group-item"><p style="margin-bottom:0; font-size:16px;">{!article.title}</p></a>
+                  
+     </apex:repeat>
+      </div>
+    <!-- // Most Popular Articles -->     
+ 
+<div class="topmob" >
+                <h2>{!$Label.FAQ_LABEL_CONTACT_US}:</h2>
+    
+    <!--
+    				<apex:repeat value="{!LiveChatSettings}" var="tmpLiveChatSettings" rows="1" rendered="{!chosenLanguageISO==null || CONTAINS(chosenLanguageISO,'en') && DisplayLiveChat == True}"> 
+                        <apex:variable value="{!tmpLiveChatSettings.UK_ID__c}" var="UK_Chat_ID"/>
+                        <apex:variable value="{!tmpLiveChatSettings.UK_Offline_Link__c}" var="UK_Offline_Link"/>
+    					<div id="liveagent_button_online_{!UK_Chat_ID}" style="display: none;">
+    						<a href="#" onclick="liveagent.startChat('{!UK_Chat_ID}')" target="_blank" role="button" class="btn btn-info" data-toggle="modal" 
+                               style="background:#298A08; 
+  background-image: -webkit-gradient(linear,bottom,top 100%,from(#298A08),to(#84b274)); */
+  background-image: -webkit-linear-gradient(bottom,#298A08 0,#84b274 100%);
+  background: -moz-linear-gradient(left, #298A08 1%, #84b274 100%);
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(1%,#298A08), color-stop(100%,#84b274));
+  background: -webkit-linear-gradient(bottom, #298A08 1%,#84b274 100%);
+  background: -o-linear-gradient(top, #298A08 1%,#84b274 100%);
+  background: -ms-linear-gradient(top, #298A08 1%,#84b274 100%);
+  background: linear-gradient(to top, #298A08 1%,#84b274 100%);
+  background: linear-gradient(to top, #298A08 1%,#84b274 100%); 
+         border-color: #298A08;"
+                               ><i class="fa fa-comments-o" style="color:#ffffff; margin-right:5%;"></i>{!$Label.FAQ_LABEL_LIVE_CHAT}</a>				
+    					</div>
+                    	<div id="liveagent_button_offline_{!UK_Chat_ID}" style="display: none;">
+                       		<a href="{!UK_Offline_Link}" role="button" target="_blank" class="btn btn-info" data-toggle="modal"><i class="fa fa-comments-o" style="color:#ffffff; margin-right:5%;"></i>{!$Label.FAQ_LABEL_LIVE_CHAT_NOT_AVAILABLE}</a>	
+    					</div>
+    				</apex:repeat>
+    				<apex:repeat value="{!LiveChatSettings}" var="tmpLiveChatSettings" rows="1" rendered="{!CONTAINS(chosenLanguageISO,'fr')}">
+                        <apex:variable value="{!tmpLiveChatSettings.FR_ID__c}" var="FR_Chat_ID"/>
+                        <apex:variable value="{!tmpLiveChatSettings.FR_Offline_Link__c}" var="FR_Offline_Link"/>
+    					<div id="liveagent_button_online_{!FR_Chat_ID}" style="display: none;">
+    						<a href="#" onclick="liveagent.startChat('{!FR_Chat_ID}')" target="_blank" role="button" class="btn btn-info" data-toggle="modal"><i class="fa fa-comments-o" style="color:#ffffff; margin-right:5%;"></i>{!$Label.FAQ_LABEL_LIVE_CHAT}</a>				
+    					</div>
+                    	<div id="liveagent_button_offline_{!FR_Chat_ID}" style="display: none;">
+                       		<a href="{!FR_Offline_Link}" role="button" target="_blank" class="btn btn-info" data-toggle="modal"><i class="fa fa-comments-o" style="color:#ffffff; margin-right:5%;"></i>{!$Label.FAQ_LABEL_LIVE_CHAT_NOT_AVAILABLE}</a>	
+    					</div>
+    				</apex:repeat>
+    				<apex:repeat value="{!LiveChatSettings}" var="tmpLiveChatSettings" rows="1" rendered="{!CONTAINS(chosenLanguageISO,'nl')}">
+                        <apex:variable value="{!tmpLiveChatSettings.NL_ID__c}" var="NL_Chat_ID"/>
+                        <apex:variable value="{!tmpLiveChatSettings.NL_Offline_Link__c}" var="NL_Offline_Link"/>
+    					<div id="liveagent_button_online_{!NL_Chat_ID}" style="display: none;">
+    						<a href="#" onclick="liveagent.startChat('{!NL_Chat_ID}')" target="_blank" role="button" class="btn btn-info" data-toggle="modal"><i class="fa fa-comments-o" style="color:#ffffff; margin-right:5%;"></i>{!$Label.FAQ_LABEL_LIVE_CHAT}</a>				
+    					</div>
+                    	<div id="liveagent_button_offline_{!NL_Chat_ID}" style="display: none;">
+                       		<a href="{!NL_Offline_Link}" role="button" target="_blank" class="btn btn-info" data-toggle="modal"><i class="fa fa-comments-o" style="color:#ffffff; margin-right:5%;"></i>{!$Label.FAQ_LABEL_LIVE_CHAT_NOT_AVAILABLE}</a>	
+    					</div>
+    				</apex:repeat>
+
+-->
+    				<br/>
+    
+    				<apex:repeat value="{!FAQContactUsLinks}" var="ContactUsLinks" rendered="{!chosenLanguageISO==null}">
+                     <a href="{!SUBSTITUTE(ContactUsLinks.url_UK__c, 'FAQLANGUAGE','uk-en')}"  role="button" class="primary" style="width:75%; box-sizing: content-box; color:#ffffff !important;" data-toggle="modal"><i class="fa fa-{!ContactUsLinks.icon__c}" style="color:#ffffff; margin-right:5%;"></i>{!ContactUsLinks.English_Text__c}</a><br/><br/>
+                    </apex:repeat>
+    				<apex:repeat value="{!FAQContactUsLinks}" var="ContactUsLinks" rendered="{!chosenLanguageISO!=null && CONTAINS(chosenLanguageISO,'en')}">
+                     <a href="{!SUBSTITUTE(ContactUsLinks.url_UK__c, 'FAQLANGUAGE', chosenLanguageISO)}"  role="button" class="primary"  style="width:75%; box-sizing: content-box; color:#ffffff !important;" data-toggle="modal"><i class="fa fa-{!ContactUsLinks.icon__c}" style="color:#ffffff; margin-right:5%;"></i>{!ContactUsLinks.English_Text__c}</a><br/><br/>
+                    </apex:repeat>
+    				<apex:repeat value="{!FAQContactUsLinks}" var="ContactUsLinks" rendered="{!chosenLanguageISO!=null && CONTAINS(chosenLanguageISO,'fr')}">
+                     <a href="{!SUBSTITUTE(ContactUsLinks.url_FR__c, 'FAQLANGUAGE', chosenLanguageISO)}"  role="button" class="primary"  style="width:75%; box-sizing: content-box; color:#ffffff !important;" data-toggle="modal"><i class="fa fa-{!ContactUsLinks.icon__c}" style="color:#ffffff; margin-right:5%;"></i>{!ContactUsLinks.French_Text__c}</a><br/><br/>
+                    </apex:repeat>
+    				<apex:repeat value="{!FAQContactUsLinks}" var="ContactUsLinks" rendered="{!chosenLanguageISO!=null && CONTAINS(chosenLanguageISO,'nl')}">
+                     <a href="{!SUBSTITUTE(ContactUsLinks.url_NL__c, 'FAQLANGUAGE', chosenLanguageISO)}"  role="button" class="primary"  style="width:75%; box-sizing: content-box; color:#ffffff !important;" data-toggle="modal"><i class="fa fa-{!ContactUsLinks.icon__c}" style="color:#ffffff; margin-right:5%;"></i>{!ContactUsLinks.Dutch_Text__c}</a><br/><br/>
+                    </apex:repeat>
+                    <apex:repeat value="{!FAQContactUsLinks}" var="ContactUsLinks" rendered="{!chosenLanguageISO!=null && CONTAINS(chosenLanguageISO,'de')}">
+                     <a href="{!SUBSTITUTE(ContactUsLinks.url_DE__c, 'FAQLANGUAGE', chosenLanguageISO)}"  role="button" class="primary"  style="width:75%; box-sizing: content-box; color:#ffffff !important;" data-toggle="modal"><i class="fa fa-{!ContactUsLinks.icon__c}" style="color:#ffffff; margin-right:5%;"></i>{!ContactUsLinks.German_Text__c}</a><br/><br/>
+                    </apex:repeat>
+
+</div>
+    
+    
+
+    
+</apex:component>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Assists_to_alleviate_the_effects_of_a_he__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Assists to alleviate the effects of a hearing impairment</description>
+    <label>Assists to alleviate hearing impairment</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

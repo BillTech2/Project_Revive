@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Old_Reason_Codes_New_Trains</fullName>
+    <columns>NAME</columns>
+    <columns>Reason_Code_1__c</columns>
+    <columns>Reason_Code_2__c</columns>
+    <columns>Reason_Code_3__c</columns>
+    <columns>Available_Online__c</columns>
+    <columns>Active__c</columns>
+    <columns>nl_Label__c</columns>
+    <columns>en_Label__c</columns>
+    <columns>fr_Label__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Reason_Code_1__c</field>
+        <operation>contains</operation>
+        <value>New Trains</value>
+    </filters>
+    <filters>
+        <field>CREATED_DATE</field>
+        <operation>lessOrEqual</operation>
+        <value>9/1/2016 12:00 AM</value>
+    </filters>
+    <label>Old Reason Codes (New Trains)</label>
+    <language>en_US</language>
+</ListView>

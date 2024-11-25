@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Origin__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+   CONTAINS(TEXT(Origin), &quot;Email&quot;), Image(&quot;/servlet/servlet.FileDownload?file=015b0000000KFiH&quot;,&quot;Email&quot;,25,25),
+   Case(Origin,
+      &quot;Mobile Feedback&quot;,Image(&quot;/servlet/servlet.FileDownload?file=015b0000000KFiH&quot;,&quot;Email&quot;   ,25,25),
+      &quot;Web&quot;         ,Image(&quot;/servlet/servlet.FileDownload?file=015b0000000KFi2&quot;,&quot;Web&quot;     ,25,25),
+      &quot;Disruption Web&quot;, Image(&quot;/servlet/servlet.FileDownload?file=015b0000001YPDx&quot;,&quot;Disruption Web&quot;     ,25,25),
+      &quot;Letter&quot;      ,Image(&quot;/servlet/servlet.FileDownload?file=015b0000000KFiv&quot;,&quot;Letter&quot;  ,25,25),
+      &quot;Phone&quot;       ,Image(&quot;/servlet/servlet.FileDownload?file=015b0000000KFhn&quot;,&quot;Phone&quot;   ,25,25),
+      &quot;Facebook&quot;    ,Image(&quot;/servlet/servlet.FileDownload?file=015b0000000KFgB&quot;,&quot;Facebook&quot;,25,25),
+      &quot;Twitter&quot;     ,Image(&quot;/servlet/servlet.FileDownload?file=015b0000000KHkq&quot;,&quot;Twitter&quot; ,25,25),
+      &quot;Qubit&quot;       ,Image(&quot;/servlet/servlet.FileDownload?file=015b0000000KHkW&quot;,&quot;Qubit&quot;   ,25,25),
+      &quot;Chat&quot;        ,Image(&quot;/servlet/servlet.FileDownload?file=015b00000024vKQ&quot;,&quot;Chat&quot;   ,25,25),
+      &quot;Commercial Support&quot;,Image(&quot;/servlet/servlet.FileDownload?file=015b0000000KFiH&quot;,&quot;Email&quot;,25,25),
+      null
+   )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Origin</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

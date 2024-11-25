@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Workflow_evaluate_step__c</fullName>
+    <description>This field is used to trigger workflow steps after evaluation.  Conflict with new records on types where workflows do not run meant a second workflow is required.</description>
+    <externalId>false</externalId>
+    <label>Workflow evaluate step</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

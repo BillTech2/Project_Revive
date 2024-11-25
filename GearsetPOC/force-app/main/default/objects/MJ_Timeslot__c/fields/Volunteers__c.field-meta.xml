@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Volunteers__c</fullName>
+    <description>The Amount of volunteers applied for this timeslot</description>
+    <inlineHelpText>The Amount of volunteers applied for this timeslot</inlineHelpText>
+    <label># Volunteers</label>
+    <summaryForeignKey>MJ_Volunteer__c.MJ_Timeslot__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

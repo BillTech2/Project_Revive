@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Blank_code_cannot_be_active</fullName>
+    <active>true</active>
+    <description>A code can’t be active if it doesn’t exist: If a “code active” checkbox is TRUE, the text/lookup field for its code must not be blank.</description>
+    <errorConditionFormula>!($User.B2b_Bypass_Validation_Rules__c)
+&amp;&amp;
+(
+(FCE_Continent_Active__c &amp;&amp; ISBLANK (FCE_Continent__c))
+||
+(GND_BE_Continent_Active__c  &amp;&amp; ISBLANK (GND_BE_Continent__c))
+||
+(GND_NL_Continent_Active__c &amp;&amp; ISBLANK (GND_NL_Continent__c))
+||
+(GDS_Code_Active__c &amp;&amp; ISBLANK (GDS_Code__c))
+||
+(FCE_London_Active__c &amp;&amp; ISBLANK (FCE_London__c))
+||
+(GND_BE_London_Active__c &amp;&amp; ISBLANK (GND_BE_London__c))
+||
+(GND_NL_London_Active__c &amp;&amp; ISBLANK (GND_NL_London__c))
+||
+(Corporate_Code_Active__c &amp;&amp; ISBLANK (Corporate_Code__c))
+)</errorConditionFormula>
+    <errorMessage>A Tracking Code cannot be active if it is empty. Please enter a correct code or remove the “active” checkbox.</errorMessage>
+</ValidationRule>

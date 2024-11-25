@@ -1,0 +1,789 @@
+<apex:page controller="LiveChatClass" sidebar="false" showheader="false" standardStylesheets="false" docType="html-5.0" applyHtmlTag="false" action="{!startScheduler}" language="{!userLang}">
+<html>
+<head profile="http://www.w3.org/2005/10/profile">
+    
+    <link rel="icon" type="image/png" href="{!$Resource.EurostarFavIcon}" />
+    <link rel="shortcut icon" href="{!$Resource.EurostarFavIcon}" type="image/x-icon"/>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<!--     <meta name="viewport" content="width=device-width, initial-scale=1"/> -->
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="description" content="Eurostar Live Chat"/>
+    <meta name="author" content="Eurostar International Limited"/>
+
+    <title>{!$Label.Live_Chat_Label_PreChat_Title}</title>
+
+    <apex:outputText rendered="{!IF(CONTAINS(userAgent, 'MSIE 8.0'),false,true)}">
+
+    <apex:stylesheet value="{!URLFOR($Resource.LiveAgent, '/lib/normalize.css')}" />
+
+
+
+<!--         <apex:stylesheet value="{!URLFOR($Resource.bootstrap, 'dist/css/bootstrap.min.css')}" />
+      <apex:stylesheet value="{!URLFOR($Resource.fontawesome, 'font-awesome-4.3.0/css/font-awesome.min.css')}" /> -->
+        <!-- <c:cssoveride ></c:cssoveride> -->
+
+        <c:csschat ></c:csschat>
+        <apex:stylesheet value="{!URLFOR($Resource.LiveAgent, '/lib/eurostar_style_guide.min.css')}" />
+    </apex:outputText>
+
+    <apex:outputText rendered="{!IF(CONTAINS(userAgent, 'MSIE 8.0'),true,false)}">
+        <c:cssiechat ></c:cssiechat>
+    </apex:outputText>
+
+    <style>
+        html{
+            height: 100%;
+            width: 100%;
+            /*overflow: hidden; */
+        }
+        body{
+            height: 100%;
+            width: 100%;
+            /*overflow: hidden;*/
+            /*position: relative;*/
+
+        }
+
+        .loader-wrapper {
+            display: none;
+            height: 100%;
+            left: 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+        .loader {
+            position: absolute;
+            top: -20px;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            margin: auto;
+            display: block;
+        }
+
+        .eurostar-prechat-wrapper {
+            display: block;
+            height: 100%;
+            overflow: auto;
+            /*-webkit-overflow-scrolling: touch;*/
+        }
+
+        .eurostar-loading .loader-wrapper {
+            display: block;
+        }
+
+        .eurostar-loading .eurostar-prechat-wrapper {
+            display: none;
+        }
+
+        h1 {
+            font-size: 23px;
+        }
+
+        p {
+            line-height: 1.25em;
+            margin-bottom: 0.5em;
+        }
+
+        .secondary {
+            color: #999999;
+            font-size: 14px;
+        }
+
+        .eurostar-prechat {
+            padding: 16px 16px 0;
+        }
+
+        .eurostar-prechat__request {
+            margin-top: 20px;
+            padding: 8px 30px;
+            width: 100%;
+            font-size: 15px;
+            font-weight: normal;
+        }
+
+        .prechat-form {
+            padding: 0 16px 16px 16px;
+            position: relative;
+            width: 100%;
+            margin-bottom: 30px;
+            background: #ffffff;
+        }
+
+        .prechat-form-wrapper{
+            width: 100%;
+            height: 100%;
+            /*-webkit-overflow-scrolling: touch;*/
+            background: #ffffff;
+        }
+        .eurostar-prechat__request{
+            margin-bottom: 15px;
+        }
+
+        .prechat-input-wrapper {
+            position: relative;
+        }
+
+        .prechat-input {
+            border: 1px solid #109fb3;
+            border-radius: 4px;
+            padding: 4px;
+        }
+
+        .prechat-input-check {
+            background-image: url('{!URLFOR($Resource.LiveAgent, 'icons/input-check.svg')}');
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            background-size: 16px 12px;
+            display: none;
+            position: absolute;
+            height: 12px;
+            margin-top: -6px;
+            right: 10px;
+            top: 50%;
+            width: 16px;
+        }
+
+        .prechat-field-wrapper.valid .prechat-input {
+            padding-right: 30px;
+        }
+
+        .prechat-field-wrapper.valid .prechat-input + .prechat-input-check {
+            display: inline-block;
+        }
+
+        .prechat-form.submitted .prechat-field-wrapper.invalid .prechat-input {
+            background-color: #ffcdd2;
+            border-color: #cc0000;
+        }
+
+        .prechat-error {
+            color: #cc0000;
+            display: none;
+        }
+
+        .prechat-form.submitted .prechat-field-wrapper.invalid .prechat-error {
+            display: block;
+        }
+
+        .g-recaptcha-response {
+            visibility: hidden;
+        }
+
+        .hidden {
+            visibility: hidden;
+        }
+
+    </style>
+    
+    <script type="text/javascript" src="{!URLFOR($Resource.jsPDF,'/jsPDF-1.2.60/examples/js/jquery/jquery-1.7.1.min.js')}"></script>
+    <script type='text/javascript' src='{!$Setup.LiveChat__c.Deployment_URL__c}/deployment.js'></script>
+    <script type='text/javascript' src='{!$Setup.LiveChat__c.Deployment_URL__c}/prechat.js'></script>
+</head>
+
+<body class="eurostar-loading">
+    
+
+    <!-- <div class="banner" style="width:100%; float:left;">
+        <img src="{!URLFOR($Resource.livechatbranding,'live-chat-brand.png')}"/>
+    </div> -->
+<!-- <c:live_chat_header ></c:live_chat_header>-->
+<div class="loader-wrapper">
+    <img class="loader" src="{!URLFOR($Resource.livechatbranding,'loader-new.gif')}" width="64" height="64" />
+</div>
+
+<div class="eurostar-prechat-wrapper">
+    <div class="eurostar-prechat">
+        <h1>{!$Label.Live_Chat_Label_PreChat_Welcome}</h1>
+        <p>{!$Label.Live_Chat_Label_Input_Invitation_Message}</p>
+    </div>
+
+    <form method="post" id="prechatForm" class="prechat-form" novalidate="true"> <!-- onsubmit="return liveChatSubmit()" -->
+        <!-- Customer detail inputs -->
+        <div class="prechat-form-wrapper">
+            <div class="prechat-field-wrapper">
+                <label for="firstName">{!$Label.Live_Chat_Label_PreChat_FirstName}</label>
+                <div class="prechat-input-wrapper">
+                    <input class="prechat-input" type="text" id="firstName" name="liveagent.prechat:ContactFirstName" maxlength="40" minlength="1" validate-as="Name"/>
+                    <i class="prechat-input-check"></i>
+                </div>
+                <div class="prechat-error"></div>
+                <span id="firstNameError" style="display: none;"></span>
+            </div>
+            <div class="prechat-field-wrapper">
+                <label for="lastName">{!$Label.Live_Chat_Label_PreChat_LastName}</label>
+                <div class="prechat-input-wrapper">
+                    <input class="prechat-input" type="text" id="lastName" name="liveagent.prechat:ContactLastName" maxlength="80" minlength="1" validate-as="Name"/>
+                    <i class="prechat-input-check"></i>
+                </div>
+                <div class="prechat-error"></div>
+                <span id="lastNameError" style="display: none;"></span>
+            </div>
+            <div class="prechat-field-wrapper">
+                <label for="email">{!$Label.Live_Chat_Label_PreChat_Email}</label>
+                <div class="prechat-input-wrapper">
+                    <input class="prechat-input" type="text"  id="email" name="liveagent.prechat:ContactEmail" placeholder="example@email.com" maxlength="80" minlength="6" validate-as="Email"/>
+                    <i class="prechat-input-check"></i>
+                </div>
+                <div class="prechat-error"></div>
+                <span id="emailError" style="display: none;">{!$Label.Live_Chat_Label_PreChat_Invalid_Email}</span>
+            </div>
+
+            <!-- Create a Case every time -->
+
+            <input type="hidden" name="liveagent.prechat.name" id="prechat_field_name"/>
+
+            <input type="hidden" name="liveagent.prechat.findorcreate.map:Contact" value="FirstName,ContactFirstName;LastName,ContactLastName;Email,ContactEmail" />
+            <input type="hidden" name="liveagent.prechat.findorcreate.map.doFind:Contact" value="Email,true" />
+
+            <input type="hidden" name="liveagent.prechat.findorcreate.saveToTranscript:Contact" value="Contact" />
+            <input type="hidden" name="liveagent.prechat.findorcreate.showOnCreate:Contact" value="true" />
+
+            <input type="hidden" name="liveagent.prechat:caseOrigin" value="Chat" />
+
+            <input type="hidden" name="liveagent.prechat.findorcreate.map:Case" value="Origin,caseOrigin;SuppliedEmail,ContactEmail;Contact,Contact;Reason,caseReason;SuppliedCompany,ContactFirstName;SuppliedName,ContactLastName"/>
+            <input type="hidden" name="liveagent.prechat.findorcreate.map.doCreate:Case" value="Origin,true;Contact,true;SuppliedEmail,true;Reason,true;SuppliedCompany,true;SuppliedName,true"/>
+            <input type="hidden" name="liveagent.prechat.findorcreate.saveToTranscript:Case" value="Case" />
+            <input type="hidden" name="liveagent.prechat.findorcreate.showOnCreate:Case" value="true" />
+            <!-- <input type="submit" value="Request Chat" id="prechat_submit" /> -->
+
+            <input type= "hidden" name="liveagent.prechat.findorcreate.linkToEntity:Contact" value="Case,ContactId" />
+
+            <!--input type="hidden" name="liveagent.prechat.findorcreate.map:Contact" value="FirstName,ContactFirstName;LastName,ContactLastName;Email,ContactEmail" />
+            <input type="hidden" name="liveagent.prechat.findorcreate.map.doFind:Contact" value="Email,true" />
+
+            <input type="hidden" name= "liveagent.prechat.findorcreate.saveToTranscript:Contact" value= "ContactId" /-->
+
+            <input type="hidden" id="hostUrlHiddenInput" name="liveagent.prechat:hostUrl" value="Chat" />
+            <input type="hidden" name="orgid" value="00Dg0000006SviM"/>
+
+
+
+   <button class="component c-action c-action--primary eurostar-prechat__request" type="submit" onclick="setName()">{!$Label.Live_Chat_Label_PreChat_Request_Chat}</button>
+
+            <p id="country-phone"/>
+            <script type="text/javascript">
+                var validated = false;
+                function setName() {
+                  
+                    document.getElementById("prechat_field_name").value = document.getElementById("firstName").value;
+
+                }
+            </script>
+
+        </div>
+    </form>
+</div>
+
+<c:esrCookies ></c:esrCookies>
+<c:esrMessages ></c:esrMessages>
+<script type="text/javascript">
+
+    jQuery(function($) {
+        var $form = $('#prechatForm');
+        var EMAIL_EXCLUDE_DOMAINS = JSON.parse('{!emailExcludeDomains}');
+
+        init();
+
+        function init() {
+            $form.on('submit', function(event) {
+                $form.addClass('submitted');
+
+                if (validateAll()) {
+                    if (esrPageParams.newWindow === 'true') {
+                        ESR.beforeRedirect();
+                    }
+                    var endpointMatcher = new RegExp("[\\?\\&]endpoint=([^&#]*)");
+                    $form.attr('action', decodeURIComponent(endpointMatcher.exec(document.location.search)[1]));
+                } else {
+                    event.preventDefault();
+                }
+            });
+
+            $('.prechat-input', $form).on('input blur', function() {
+                validateInput(this);
+            });
+
+            setInterval(function() {
+                validateAll();
+            }, 500);
+        }
+
+        function validateAll() {
+            var valid = true;
+            $('.prechat-input', $form).each(function() {
+                valid = validateInput(this) && valid;
+            });
+
+
+            //enter captcha validation here
+
+
+            return valid;
+        }
+
+
+
+        function validateEmail($input) {
+            var email = $input.val().trim();
+            var regex = /^(([a-zA-Z0-9!#$%&'*+-\/=?^_`{|}~]+)[\.]{0,1}([a-zA-Z0-9!#$%&'*+-\/=?^_`{|}~]*)|(\"[a-zA-Z0-9!#$%&'*+-\/=?^_`{|}~]+\"))@([a-zA-Z0-9-]+\.)+([a-zA-Z0-9])+$/;
+            if (!regex.test(email)) {
+                return '{!$Label.Live_Chat_Label_PreChat_Need_Valid_Email}';
+            } else if (!isEmailDomainValid(email)) {
+                return '{!$Label.Live_Chat_Label_PreChat_Need_Valid_Email}';
+            }
+        }
+
+        function isEmailDomainValid(email) {
+            return EMAIL_EXCLUDE_DOMAINS.indexOf(email.substring(email.indexOf('@')+1)) > -1 ? false : true;
+        }
+
+        function validateInput(input) {
+            var $input = $(input);
+            var $fieldWrapper = $input.closest('.prechat-field-wrapper');
+            var $error = $('.prechat-error', $fieldWrapper);
+            var type = $input.attr('validate-as');
+            var error;
+
+            ({
+                Email: [
+                    //validateLength,
+                    validateEmail
+                ],
+                Name: [
+                    validateLength
+                ]
+            })[type].forEach(function(validator) {
+                if (!error) {
+                    error = validator($input, type);
+                }
+            });
+
+            if (error) {
+                $error.html(error);
+                $fieldWrapper.removeClass('valid');
+                $fieldWrapper.addClass('invalid');
+                return false;
+            } else {
+                $error.html('');
+                $fieldWrapper.removeClass('invalid');
+                $fieldWrapper.addClass('valid');
+                return true;
+            }
+        }
+
+
+
+        function validateLength($input, type) {
+            var value = $input.val().trim();
+
+            var minlength = $input.attr('minlength') || '1';
+            minlength = parseInt(minlength, 10);
+            if (value.length < minlength) {
+                var longerMessage = '{!$Label.Live_Chat_Label_PreChat_Must_Be_Longer}';
+                var outMessage = type + longerMessage.replace('%d', minlength);
+                if (type == 'Name') outMessage = '{!$Label.Live_Chat_Label_PreChat_Name} ' + longerMessage.replace('%d', minlength);
+                if (type == 'Email') outMessage = '{!$Label.Live_Chat_Label_PreChat_Email} ' + longerMessage.replace('%d', minlength);
+                return outMessage;
+            }
+
+            var maxlength = $input.attr('maxlength') || '80';
+            maxlength = parseInt(maxlength, 10);
+            if (value.length > maxlength) {
+                var shorterMessage = '{!$Label.Live_Chat_Label_PreChat_Must_Be_Shorter}';
+                var outMessage = type + shorterMessage.replace('%d', maxlength);
+                if (type == 'Name') outMessage = '{!$Label.Live_Chat_Label_PreChat_Name} ' + shorterMessage.replace('%d', maxlength);
+                if (type == 'Email') outMessage = '{!$Label.Live_Chat_Label_PreChat_Email} ' + shorterMessage.replace('%d', maxlength);
+                return outMessage;
+            }
+        }
+    });
+    liveagent.addCustomDetail('lang', 'tets');
+</script>
+
+<script type="text/javascript">
+
+
+
+    function validateName(x, elementId, maxlength){
+      var strName;
+      if(elementId){
+        var element = document.getElementById(elementId);
+        var strName = element.value;
+
+        if(strName) {
+            strName = strName.trim();
+        } else {
+            strName = '';
+        }
+
+        element.value = strName;
+
+        //var regEx = /[A-Za-z -']$/;
+        var results = {};
+        if (x == 'finalcheck' && (strName.length <= 0 || strName.length > maxlength)) {
+         // Name is too short , less than 1 characters
+            results.background ='#FFCDD2';
+            results.display = "block";
+            results.value = false;
+
+        } else if (strName.length < 0) {
+            results.background ='#FFFFFF';
+            results.display = "none";
+            results.value = false;
+        } else {
+            results.background ='#DCEDC8';
+            results.display = "none";
+            results.value = true;
+        }
+
+        if(!results.value){
+            //results.text = 'Name must be '
+            if(strName.length <= 0){
+                //results.text += 'longer than 1 character.';
+                results.text = '{!$Label.Live_Chat_Label_PreChat_Name_Must_Be_Longer}';
+            } else if(strName.length > maxlength){
+                var pattern = '{!$Label.Live_Chat_Label_PreChat_Name_Must_Be_Shorter}';
+                results.text = pattern.replace('%d', maxlength);
+            } else {
+                results.text = '{!$Label.Live_Chat_Label_PreChat_Name_Invalid_Value}';
+            }
+        }
+
+        var errorSpan = document.getElementById(elementId + 'Error');
+        document.getElementById(elementId).style.background =results.background;//'#FFCDD2';
+        errorSpan.style.display = results.display;
+        errorSpan.innerHTML = results.text;
+        return results.value;
+     }
+    }
+
+    function validateEmail(x, maxlength){
+        var element = document.getElementById('email');
+        var strEmail = element.value;
+
+        if(strEmail) {
+            strEmail = strEmail.trim();
+        } else {
+            strEmail = '';
+        }
+        element.value = strEmail;
+        var regEx = /^(([a-zA-Z0-9!#$%&'*+-\/=?^_`{|}~]+)[\.]{0,1}([a-zA-Z0-9!#$%&'*+-\/=?^_`{|}~]*)|(\"[a-zA-Z0-9!#$%&'*+-\/=?^_`{|}~]+\"))@([a-zA-Z0-9]+\.)+([a-zA-Z0-9])+$/;
+        var results = {};
+
+        if (x == 'finalcheck' && (strEmail.length < 6 || strEmail.length > maxlength)) {
+           // Email is too short , less than 3 characters
+            results.background ='#FFCDD2';
+            results.display = "block";
+            results.value = false;
+        } else if (strEmail.length < 6) {
+            results ='#FFFFFF';
+            results.display = "none";
+            results.value = false;
+        } else if (x == 'finalcheck' && regEx.test(strEmail) == false) {
+            // Not valid, alpha-numeric
+            results.background ='#FFCDD2';
+            results.display = "block";
+            results.value = false;
+        } else if (regEx.test(strEmail) == false) {
+            // Not valid, alpha-numeric
+            results.background ='#FFFFFF';
+            results.display = "none";
+            results.value = false;
+        } else {
+            results.background ='#DCEDC8';
+            results.display = "none";
+            results.value = true;
+        }
+
+        if(!results.value){
+            /*
+            results.text = 'Email must be '
+            if(strEmail.length < 6){
+                results.text += 'longer than 6 characters.';
+            } else if(strEmail.length > maxlength){
+                results.text += 'less than ' + maxlength + ' characters.';
+            } else {
+                results.text = 'We need a valid email address';
+            }
+            */
+            results.text = '{!$Label.Live_Chat_Label_PreChat_Need_Valid_Email}';
+        }
+        var errorSpan = document.getElementById('emailError');
+        document.getElementById('email').style.background = results.background;//'#FFCDD2';
+        errorSpan.style.display = results.display;
+        errorSpan.innerHTML = results.text;
+        return results.value;
+
+    }
+
+
+    function liveChatSubmit()
+    {
+        var firstNameValidation = validateName('finalcheck','firstName',40) == true;
+        var lastNameValidation = validateName('finalcheck','lastName',80) == true;
+        var emailValidation = validateEmail('finalcheck',80) == true;
+
+        if (firstNameValidation &&
+                lastNameValidation &&
+                emailValidation) {
+            var endpointMatcher = new RegExp("[\\?\\&]endpoint=([^&#]*)");
+            document.getElementById('prechatForm').setAttribute('action',
+            decodeURIComponent(endpointMatcher.exec(document.location.search)[1]));
+            return true;
+        }
+        return false;
+    }
+
+    /**
+    * Live agent host url. Site where widget is installed
+    */
+    var hostUrl = '';
+    var esrPageParams = {};
+    var messenger;
+
+    /**
+    * Handle posting messages and params to vidget
+    */
+    // function postEventMessage(event, payload){
+    //     var postEventWindow = esrPageParams.newWindow === 'true' ? window.opener : window.parent;
+    //     //if(esrPageParams.newWindow !== 'true'){
+    //     if (postEventWindow && hostUrl != '') {
+    //         postEventWindow.postMessage({
+    //             event: event,
+    //             payload: payload
+    //         }, hostUrl);
+    //     }
+    //     //}
+    // }
+    //liveagent.init('https://d.la1-c2cs-lon.salesforceliveagent.com/chat', '572b0000000LADR', '00D8E0000004XXH');
+
+    function isNewWindow() {
+        return esrPageParams.newWindow === 'true';
+    }
+
+    var preChatReady = false;
+    /**
+    * This function handles passing parameters from wrapping environment
+    */
+    function onPreChatInit(args){
+        if (!preChatReady) {
+            if(Array.isArray(args.customDetails)){
+                args.customDetails.forEach(function(detail){
+                    esrPageParams[detail.label] = detail.value;
+                })
+                var chasitorUrl = esrPageParams['hostUrl'];
+                //debugger;
+                if(chasitorUrl){
+                    hostUrl = chasitorUrl;
+                    var hiddenInput = document.getElementById('hostUrlHiddenInput');
+                    hiddenInput.value = hostUrl;
+                }
+                messenger = ESR.Messenger(esrPageParams.newWindow === 'true', esrPageParams.instanceId, hostUrl);
+
+                var contactFirstName = esrPageParams['contactFirstName'];
+                var contactLastName = esrPageParams['contactLastName'];
+                var contactEmail = esrPageParams['contactEmail'];
+                initContactInfo({
+                    firstName:contactFirstName,
+                    lastName:contactLastName,
+                    email:contactEmail
+                });
+
+                //SFDC-1255: Removal of Loyalty specific wording on pre chat form
+                //Task from Eleanor Brown
+                // Visualforce.remoting.Manager.invokeAction(
+                //     '{!$RemoteAction.LiveChatClass.getPhoneMessage}', esrPageParams['location'],
+                //     function(result, event){
+                //         var message = '{!$Label.Live_Chat_Label_PreChat_Phone_Message}';
+                //         document.getElementById('country-phone').innerHTML = message.replace('%phone%', result);
+                //     },
+                //     {escape: true}
+                // );
+            }
+
+            // initIos();//add check if chat open in new window
+
+            if (esrPageParams.newWindow === 'true') {
+                checkAlreadyOpen();
+
+            } else {
+                $('body').removeClass('eurostar-loading');
+            }
+
+            messenger.postEventMessage('preChatLoad', {height: document.body.scrollHeight});
+            preChatReady = true;
+        }
+    }
+
+
+
+
+    function setInputValue(elementId,value){
+        if(elementId && value) {
+           var inputElement = document.getElementById(elementId);
+           inputElement.value = value;
+        }
+    }
+
+    function initContactInfo(contact){
+        if(contact){
+            //debugger;
+            if (contact.firstName) {
+                setInputValue('firstName',contact.firstName);
+            }
+
+            if (contact.lastName) {
+                setInputValue('lastName',contact.lastName);
+            }
+
+            if (contact.email) {
+                setInputValue('email',contact.email);
+            }
+        }
+    }
+
+    function checkAlreadyOpen() {
+        var checks = {
+            index: 0,
+            max: 10
+        };
+
+        checkCookie();
+
+        ///
+
+        function checkCookie() {
+            if (getCookie(ESR.cookies.running) || checks.index === checks.max) {
+                messenger.postEventMessage('chatAlreadyOpen');
+            } else if (getCookie(ESR.cookies.loading) && checks.index < checks.max) {
+                setTimeout(function() {
+                    checkCookie();
+                }, 1000);
+            } else {
+                ESR.afterRedirect();
+                $('body').removeClass('eurostar-loading');
+            }
+
+            ++checks.index;
+        }
+    }
+
+    var userAgent = window.navigator.userAgent;
+
+    if (userAgent.match(/iPhone/i)) {
+
+        $(document).on('focusin','input', function(){
+            parent.postMessage({body_fixed: true}, '*');
+        });
+
+        $(document).on('blur','input', function(e){
+            parent.postMessage({body_fixed: false}, '*');
+        });
+    }
+
+    window.addEventListener("beforeunload", function(args){
+        if(isNewWindow()){
+            ESR.beforeUnload();
+        }
+    });
+
+
+    /*window.addEventListener("unload", function(args){
+        console.log('unload');
+        console.log(args);
+        if(esrPageParams.newWindow === 'true'){
+           postEventMessage('postChatFinished', { status: window.closed });
+        }
+    });
+
+    window.addEventListener("blur", function(args){
+        console.log('blur');
+        postEventMessage('chatWindowMinimized', { status: window.closed });
+    });
+
+    window.addEventListener("focus", function(args){
+        console.log('focus');
+        console.log(args);
+        postEventMessage('chatWindowFocused', {status: window.closed});
+    });*/
+    /**
+    * Delegates passed parameters from wrapping environment to onPreChatInit function
+    */
+    liveagent.details.preChatInit('{!$Setup.LiveChat__c.Live_Agent_Chat_Url__c}', 'onPreChatInit');
+
+</script>
+
+<script type="text/javascript">
+    /**
+    * Handles events broadcasted from wrapping site or page
+    */
+    var ChatContextEventHandler = function (liveagent){
+        var chatEventNamespace = 'ESR__';
+        var self = this;
+        var eventMap = {};
+        self.liveagent = liveagent;
+        self.getSecureEventName = function(evt){
+            return chatEventNamespace + evt;
+        }
+
+        window.addEventListener('message', function(args){
+            var payload = args.data;
+            if(payload && payload.event){
+                var secureEvt = self.getSecureEventName(payload.event);
+                var handlers = eventMap[secureEvt];
+                var payloadData = payload.payload;
+                if(Array.isArray(handlers)){
+                    handlers.forEach(function (item) {
+                        item(payloadData, self.liveagent);
+                    });
+                }
+                console.log(payload);
+            }
+
+        });
+
+        /**
+        * Adds event handler to listen events from wrapping site
+        */
+        self.addEventListener = function(evt, handler){
+            var secureEvt = self.getSecureEventName(evt);
+
+            var handlers = eventMap[secureEvt];
+
+            if(handlers){
+                handlers.push(handler);
+            } else {
+                eventMap[secureEvt] = [handler];
+            }
+        }
+    }
+
+    var eventHandler = new ChatContextEventHandler(liveagent);
+
+    eventHandler.addEventListener('contextClose', function(data, liveagent){
+        closeChat();
+    });
+
+    function closeChat() {
+        if(liveagent.chasitor.isChatEstablished()){
+            if (isNewWindow()) {
+                ESR.beforeRedirect();
+            }
+            liveagent.chasitor.endChat();
+        } else {
+            liveagent.chasitor.cancelChat();
+        }
+    }
+</script>
+
+    <!-- GA Tracking -->
+    <site:googleAnalyticsTracking />
+</body>
+</html>
+
+</apex:page>

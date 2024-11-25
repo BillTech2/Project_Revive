@@ -1,0 +1,113 @@
+<apex:component >
+	<apex:attribute name="lang" description="Language of the component." type="String" required="true"/>
+    <apex:stylesheet value="{!URLFOR($Resource.mc_header_language,'css/header.css')}" />
+    <c:mc_css_override ></c:mc_css_override>
+        
+    
+        <header class="header" role="banner">
+
+      <div class="header__container">
+
+        <div class="header__logo">
+          <a class="header__logo__link" href="http://www.eurostar.com">
+          </a>
+        </div>
+
+
+        <nav class="header__navigation">
+
+          <a href="#header__navigation__content" id="header__navigation__toggle" aria-controls="header__navigation__content" class="button button--icon header__navigation__toggle js-collapsable-menu">
+              <!--<img class="button__icon" src="{!URLFOR($Resource.mc_eurostar_header,'images/icon_menu.svg')}" alt="Menu"/>-->
+              <button class="navbar-toggle collapsed" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+          </a>
+
+          <div aria-labelledby="header__navigation__toggle" id="header__navigation__content" class="header__navigation__content">
+
+            <div class="header__navigation__block header__user">
+              <ul class="menu menu--user">
+                <li class="menu__item">
+                  <a class="menu__label" href="http://eurostar.com/fr-fr/frequently-asked-questions">Aidez-moi</a>
+                </li>
+                <li class="menu__item">
+                  <a class="menu__label" href="http://eurostar.com/fr-fr/manage-booking">Gérer une réservation</a>
+                </li>
+                <li class="menu__item">
+                  <a class="menu__label" href="http://eurostar.com/fr-fr/login">Connexion/Inscription</a>
+                </li>
+                  <li class="menu__item">
+                   <div class="dropdown" id="bootstrap-overrides">  
+                		<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">{!lang}<span class="caret"></span></button>
+                      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                          <li><a href="?language=uk-en" id="uk-EN" data-value="English">United Kingdom</a></li>
+                          <li><a href="?language=fr-fr" id="fr-FR" data-value="Fran&ccedil;ais">Fran&ccedil;ais</a></li>
+                          <li><a href="?language=be-nl" id="nl-NL" data-value="Nederland">Nederland</a></li>
+                      </ul>
+                  </div>
+                  </li>    
+              </ul>
+
+            </div>
+
+            <div class="header__navigation__block header__primary">
+
+              <ul class="menu menu--a">
+                <li class="menu__item">
+                  <a class="menu__label" href="http://eurostar.com/fr-fr/trains">Trains</a>
+                </li>
+                <li class="menu__item">
+                  <a class="menu__label" href="http://eurostar.com/fr-fr/temphotels">Hôtels</a>
+                </li>
+                <li class="menu__item">
+                  <a class="menu__label" href="http://eurostar.com/fr-fr/car-hire">Location de voiture</a>
+                </li>
+                <li class="menu__item">
+                  <a class="menu__label" href="http://eurostar.com/fr-fr/insurance">Assurance</a>
+                </li>
+              </ul>
+
+            </div>
+
+            <div class="header__navigation__block header__secondary">
+
+                <ul class="menu menu--b">
+                  <li class="menu__item">
+                    <a class="menu__label" href="http://newtrains.eurostar.com">Nouveaux trains</a>
+                  </li>
+                  <li class="menu__item">
+                    <a class="menu__label" href="http://www.eurostar.com/uk-en/city-breaks">City breaks</a>
+                  </li>
+                  <li class="menu__item">
+                    <a class="menu__label" href="http://eurostar.com/fr-fr/eurostar-deals">Offres Eurostar</a>
+                  </li>
+                  <li class="menu__item">
+                    <a class="menu__label" href="http://eurostar.com/fr-fr/travel-info">Informations de voyage</a>
+                  </li>
+                  <li class="menu__item">
+                    <a class="menu__label" href="http://eurostar.com/fr-fr/destinations">Destinations</a>
+                  </li>
+                  <li class="menu__item">
+                    <a class="menu__label" href="http://eurostar.com/fr-fr/loyalty-programmes">Programmes de fidélisation</a>
+                  </li>
+                </ul>
+
+              </div>
+
+            </div>
+
+        
+
+        </nav>
+
+      </div>
+              <apex:includeScript value="{!URLFOR($Resource.mc_header_language,'js/jquery.min.js')}" />          
+<apex:includeScript value="{!URLFOR($Resource.mc_header_language,'js/vendor.js')}" />
+            <apex:includeScript value="{!URLFOR($Resource.mc_header_language,'js/navigation.js')}" />
+            <script>(function(){ var nav = new Navigation(); }())</script>
+
+    </header>
+</apex:component>

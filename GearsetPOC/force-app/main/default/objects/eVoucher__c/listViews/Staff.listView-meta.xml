@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Staff</fullName>
+    <columns>LAST_UPDATE</columns>
+    <columns>NAME</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <columns>Amount__c</columns>
+    <columns>Currency__c</columns>
+    <columns>Balance__c</columns>
+    <columns>Alias__c</columns>
+    <columns>Customer__c</columns>
+    <columns>Email__c</columns>
+    <columns>RECORDTYPE</columns>
+    <columns>Aria_Company__c</columns>
+    <columns>Expiring_date__c</columns>
+    <columns>Integration_Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>eVoucher__c.Eurostar_Voucher,eVoucher__c.MITIE_Voucher,eVoucher__c.Momentum_Voucher,eVoucher__c.Retiree_Voucher</value>
+    </filters>
+    <label>Staff</label>
+    <language>en_US</language>
+</ListView>

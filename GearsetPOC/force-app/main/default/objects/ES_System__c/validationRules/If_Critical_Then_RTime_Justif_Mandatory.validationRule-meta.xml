@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>If_Critical_Then_RTime_Justif_Mandatory</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISPICKVAL(Type__c, &quot;Critical&quot;) &amp;&amp; ISBLANK(Target_Recovery_Time_Justification__c)</errorConditionFormula>
+    <errorDisplayField>Target_Recovery_Time_Justification__c</errorDisplayField>
+    <errorMessage>As this system is critical, it is mandatory to enter a minimum recovery time target justification.</errorMessage>
+</ValidationRule>

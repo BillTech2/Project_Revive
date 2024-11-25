@@ -1,0 +1,493 @@
+<apex:page standardController="Knowledge__kav" language="{!chosenLanguageISO}" extensions="basicViewArticleController"  sidebar="false" showheader="false" standardStylesheets="false" docType="html-5.0" applyHtmlTag="false">
+
+
+    <html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="description" content="{!theArticle.Summary}"/>
+        <meta name="keywords" content=""/>
+        <meta name="author" content="Eurostar International Limited"/>
+        <!-- Styles -->
+        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.CompApp_Res, '/res/all-prembrokeWeb.css')}"/>
+        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.CompApp_Res, '/css/12-cols-grid.css')}"/>
+        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.CompApp_Res, '/css/no-grid.css')}" />
+        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.CompApp_Res, '/css/angular-date-picker.css')}"/>
+        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.CompApp_Res, '/css/select2-3.4.5.css')}"/>
+        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.CompApp_Res, '/css/elements.css')}"/>
+        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.CompApp_Res, '/css/template-base.css')}"/>
+        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.CompApp_Eurostar_Ticket_Examples, '/ticket-examples.css')}"/>
+
+        <!-- Loading jQuery, angular -->
+        <script src="{!URLFOR($Resource.CompApp_Res, '/vendor/jquery2.1.3.js')}"></script>
+        <script src="{!URLFOR($Resource.CompApp_Res, '/vendor/jquery.query-object.js')}"></script>
+        <script src="{!URLFOR($Resource.CompApp_Res, '/vendor/angular1.3.15.js')}"></script>
+        <script src="{!URLFOR($Resource.CompApp_Res, '/vendor/angular-route.1.4.4.js')}"></script>
+        <script src="{!URLFOR($Resource.CompApp_Res, '/vendor/angular-sanitize.1.4.4.js')}"></script>
+        <script src="{!URLFOR($Resource.CompApp_Res, '/vendor/nocaptchRecaptcha.angular.js')}"></script>
+        <script src="{!URLFOR($Resource.CompApp_Res, '/vendor/angularjs-autocomplete.min.js')}"></script>
+        <script src="{!URLFOR($Resource.CompApp_Res, '/js/angular-date-picker.js')}"></script>
+
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-select/0.13.1/select.min.css"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-select/0.13.1/select.min.js"></script>
+
+
+        
+        <link rel="alternate" href="http://www.eurostar.com/faq/uk-en" hreflang="uk-en" />
+        <link rel="alternate" href="http://www.eurostar.com/faq/us-en" hreflang="us-en" />
+        <link rel="alternate" href="http://www.eurostar.com/faq/be-en" hreflang="be-en" />
+        <link rel="alternate" href="http://www.eurostar.com/faq/rw-en" hreflang="rw-en" />
+        <link rel="alternate" href="http://www.eurostar.com/faq/fr-fr" hreflang="fr-fr" />
+        <link rel="alternate" href="http://www.eurostar.com/faq/be-fr" hreflang="be-fr" />
+        <link rel="alternate" href="http://www.eurostar.com/faq/be-nl" hreflang="be-nl" />
+        <link rel="alternate" href="http://www.eurostar.com/faq/nl-nl" hreflang="nl-nl" />
+        <link rel="alternate" href="http://www.eurostar.com/faq/de-de" hreflang="de-de" />
+
+        <link rel="icon" type="image/png" href="{!$Resource.Favicon}" />
+        <apex:outputText rendered="{!IF(CONTAINS(userAgent, 'MSIE 8.0'),false,true)}" >
+            <c:css ></c:css>
+            <apex:stylesheet value="{!URLFOR($Resource.styles, 'css/cssoveride.css')}" />
+        </apex:outputText>
+
+        <apex:outputText rendered="{!IF(CONTAINS(userAgent, 'MSIE 8.0'),true,false)}">
+            <c:cssie ></c:cssie>
+        </apex:outputText>
+
+        <!-- DK (18/08/15): Inclusion of E4A Logic -->
+        <apex:outputText rendered="{!IF(site == 'e4a',true,false)}">
+            <title>{!theArticle.title} - Eurostar 4 Agents Help Centre</title>
+        </apex:outputText>
+        <apex:outputText rendered="{!IF(site != 'e4a',true,false)}">
+            <title>{!theArticle.title} - Eurostar Help Centre</title>
+        </apex:outputText>
+
+
+        <apex:variable value="" var="friendlyURL"/>
+        <apex:outputpanel rendered="{!language==null}">
+            <apex:variable value="/faq/uk-en/question/{!theArticle.urlname}" var="friendlyURL"/>
+        </apex:outputpanel>
+        <apex:outputpanel rendered="{!language!=null && CONTAINS(language,'en')}">
+            <apex:variable value="/faq/{!language}/question/{!theArticle.urlname}" var="friendlyURL"/>
+        </apex:outputpanel>
+        <apex:outputpanel rendered="{!language!=null && CONTAINS(language,'fr')}">
+            <apex:variable value="/faq/{!language}/question/{!theArticle.urlname}" var="friendlyURL"/>
+        </apex:outputpanel>
+        <apex:outputpanel rendered="{!language!=null && CONTAINS(language,'nl')}">
+            <apex:variable value="/faq/{!language}/vraag/{!theArticle.urlname}" var="friendlyURL"/>
+        </apex:outputpanel>
+        <apex:outputpanel rendered="{!language!=null && CONTAINS(language,'de')}">
+            <apex:variable value="/faq/{!language}/frage/{!theArticle.urlname}" var="friendlyURL"/>
+        </apex:outputpanel>
+
+        <link rel="canonical" href="https://help.eurostar.com{!friendlyURL}" />
+
+        <apex:outputpanel rendered="{!language==null}">
+            <script type="text/javascript">window.liveChat = {enabled: true, language: "en"};</script>
+        </apex:outputpanel>
+        <apex:outputpanel rendered="{!language!=null && CONTAINS(language,'en')}">
+            <script type="text/javascript">window.liveChat = {enabled: true, language: "en"};</script>
+        </apex:outputpanel>
+        <apex:outputpanel rendered="{!language!=null && CONTAINS(language,'fr')}">
+            <script type="text/javascript">window.liveChat = {enabled: true, language: "fr"};</script>
+        </apex:outputpanel>
+
+        <style>
+        
+        footer{
+            padding: 0px;
+        }
+
+        .primary{
+            box-sizing: content-box;
+        }
+
+        #app-footer-template-copyright{
+            font-size: 16px;
+            margin-bottom: 0px;
+        }
+
+        .button-yes{
+            width: 50px;
+            border-radius: 0px;
+        }
+
+        .button-no{
+            width: 35px;
+            border-radius: 0px;
+        }
+
+        #top-section-title{
+            line-height: unset;
+        }
+
+        .list-group-item-heading{
+            font-family: "ABCSocial-Bold";
+            font-weight: normal;
+            font-size: 36px;
+            line-height: 38px;
+            text-align: left;
+            color: #00286A 
+        }
+
+        .list-group-item-text{
+            font-family: ABCSocial-Regular;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 20px;
+            text-align: left;
+            color: #1C1C1A;
+            font-size: 16px;
+        }
+
+        a {
+            font-family: ABCSocial-regular;
+            font-weight: normal;
+            line-height: 20px;
+            text-align: left;
+            color: #0D57CC ;
+            text-decoration: none;
+
+            display: inline-block;
+
+            cursor: pointer;
+        }
+
+                a:visited {
+            color: #06183d !important;
+            text-decoration: none;
+        }
+
+                a:hover {
+            color: #06183d !important;
+            text-decoration: underline;
+        }
+
+                a:active {
+            color: #0096b2 !important;
+            text-decoration: underline;
+        }    
+
+        #app-header-template-top-section{
+            position: relative !important;
+        }       
+
+        h3{
+            font-family: "ABCSocial-Bold";
+            font-weight: normal;
+            font-size: 28px;
+            line-height: 28px;
+            text-align: left;
+            color: #00286A;
+
+            margin: 0;
+        }
+        h4{
+            font-size: 20px !important;
+            line-height: 28px !important;
+            color: #00286A !important;
+
+            margin: 0;
+        }
+        .form-group{
+
+        }
+        </style>
+
+        <!-- Fix for Tealium Privacy Manager -->
+        <style>
+            #bs-example-navbar-collapse-1 {
+                z-index: 1 !important;
+            }
+        </style>
+    </head>
+
+    <body style="max-height:10000vh;">
+    <!-- GDPR Cookie Script -->
+    <apex:outputpanel rendered="{!language==null}">
+        <script src="https://www.eurostar.com/static/cookie-banner.js?language=en"></script>
+    </apex:outputpanel>
+    <apex:outputpanel rendered="{!language!=null && CONTAINS(language,'en')}">
+        <script src="https://www.eurostar.com/static/cookie-banner.js?language=en"></script>
+    </apex:outputpanel>
+    <apex:outputpanel rendered="{!language!=null && CONTAINS(language,'fr')}">
+        <script src="https://www.eurostar.com/static/cookie-banner.js?language=fr"></script>
+    </apex:outputpanel>
+    <apex:outputpanel rendered="{!language!=null && CONTAINS(language,'nl')}">
+        <script src="https://www.eurostar.com/static/cookie-banner.js?language=nl"></script>
+    </apex:outputpanel>
+    <apex:outputpanel rendered="{!language!=null && CONTAINS(language,'de')}">
+        <script src="https://www.eurostar.com/static/cookie-banner.js?language=de"></script>
+    </apex:outputpanel>
+    <!-- // GDPR Cookie Script -->
+
+    <!-- Tealium -->
+    <script type="text/javascript">
+        var marketLanguage = '{!language}';
+        var utag_data = {
+            "marketLanguage" : marketLanguage
+        };
+    </script>
+
+    <!-- Loading script asynchronously -->
+    <script type="text/javascript">
+        (function(a,b,c,d)
+                { a='{!$Setup.Tealium_Analytics_Settings__c.API__c}'; b=document;c='script';d=b.createElement(c);d.src=a;d.type='text/java'+c;d.async=true; a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a); }
+        )();
+    </script>
+
+    <!-- <apex:form>-->
+
+
+    <header id="app-header-template">
+        <div id="app-header-template-top-section">
+            <!-- <img id="top-section-logo" src="{!URLFOR($Resource.CompApp_Res, '/res/SVGS/eurostar_logo.svg')}" alt="logo" height="30" width="100"/> -->
+            <div id="top-section-logo"></div>
+            
+            <div id="top-section-lang-select-box">
+                <div id="select-box-selected-lang">{!$Label.CompApp_english}</div>
+                <img id="select-box-arrow" src="{!URLFOR($Resource.CompApp_Res, '/res/SVGS/arrow_down.svg')}" height="14" width="14" onclick="showLanguageSelectionMenu();"/>
+            </div>
+            <div id="top-section-title">
+                {!$Label.HelpCentreHeader}
+            </div>
+        </div>
+        <div id="app-header-template-lang-selection-menu">
+            <h6 id="lang-selection-menu-description" style="margin-bottom: 10px; color: #FCF5D8;">{!$Label.CompApp_selectLang}</h6>
+            <div id="app-header-template-line"></div>
+            <div id="app-header-template-options">
+                <a class="options-button" hreflang="en">{!$Label.CompApp_english}</a>
+                <br/>
+                <a class="options-button" hreflang="fr">{!$Label.CompApp_Francias}</a>
+                <br/>
+                <a class="options-button" hreflang="nl">{!$Label.CompApp_Nederlands}</a>
+                <br/>
+                <a class="options-button" hreflang="de">{!$Label.CompApp_German}</a>
+            </div>
+        </div>
+    </header>    <c:search chosenLanguageISO="{!language}" site="{!site}" ></c:search>
+
+    <div class="container">
+        <!-- <c:alert ></c:alert> -->
+        <div class="row row-offcanvas row-offcanvas-right">
+
+            <div class="col-xs-12 col-sm-9">
+
+                <c:breadcrumb chosenLanguageISO="{!language}" pageid="Article" pagetitle="{!theArticle.title}" site="{!site}" ></c:breadcrumb>
+
+                <!-- Search Results attempt #2 -->
+                <div class="row">
+                    <div id="SearchResultOutput">
+                        <!--<div class="searchresult">-->
+                        <!--</div>-->
+                    </div>
+                </div>
+                <!-- END OF Search Results attempt #2 -->
+
+                <div class="list-group" id="article-content">
+                    <div class="list-header"  style="background:none;">
+                        <h3 class="list-group-item-heading">{!theArticle.title}</h3>
+                    </div>
+
+                    <p class="list-group-item-text" style="margin-bottom:15px;">
+                        <!-- DK (23/07/15) : Fix linking back to .com -->
+                        <apex:variable var="FAQAnswer" value="{!SUBSTITUTE(theArticle.The_Knowledge_Answer__c, '/uk-en/', '/' + language + '/')}" />
+                        <apex:variable var="FAQAnswer" value="{!SUBSTITUTE(FAQAnswer, '/be-en/', '/' + language + '/')}" />
+                        <apex:variable var="FAQAnswer" value="{!SUBSTITUTE(FAQAnswer, '/us-en/', '/' + language + '/')}" />
+                        <apex:variable var="FAQAnswer" value="{!SUBSTITUTE(FAQAnswer, '/rw-en/', '/' + language + '/')}" />
+                        <apex:variable var="FAQAnswer" value="{!SUBSTITUTE(FAQAnswer, '/fr-fr/', '/' + language + '/')}" />
+                        <apex:variable var="FAQAnswer" value="{!SUBSTITUTE(FAQAnswer, '/be-fr/', '/' + language + '/')}" />
+                        <apex:variable var="FAQAnswer" value="{!SUBSTITUTE(FAQAnswer, '/be-nl/', '/' + language + '/')}" />
+                        <apex:variable var="FAQAnswer" value="{!SUBSTITUTE(FAQAnswer, '/nl-nl/', '/' + language + '/')}" />
+                        <apex:variable var="FAQAnswer" value="{!SUBSTITUTE(FAQAnswer, '/de-de/', '/' + language + '/')}" />
+                        <apex:variable var="FAQAnswer" value="{!SUBSTITUTE(FAQAnswer, 'FAQLanguage', language)}" />
+                        <apex:variable var="FAQAnswer" value="{!SUBSTITUTE(FAQAnswer, 'FAQLANGUAGE', language)}" />
+                        <apex:outputText escape="false" value="{!FAQAnswer}"></apex:outputText>
+
+                    </p>
+                </div>
+                <!-- WAS THIS ARTICLE USEFUL -->
+                <!--<div id="WasArticleUsefulStart">-->
+                <apex:outputPanel rendered="{!NOT(hasUserRatedThisQuestion)}" layout="none">
+                    <div class="list-group" style="background: #eeeff1; padding: 10px;margin-top:40px; border-radius:5px;">
+                        <div class="list-header"  style="background:none;">
+                            <h4 class="list-group-item-heading">{!$Label.FAQ_LABEL_WAS_ANSWER_HELPFUL}</h4>
+                        </div>
+
+                        <!-- *** IF BUTTONS NEED TO BE input WITH SCRIPT INCLUDED *** -->
+                        <input class="btn button-yes" type="button" id="yesbutton" name="answer" value="{!$Label.FAQ_LABEL_YES}" onClick="registerUserFeedback(true)"/>
+                        <input class="btn button-no" type="button" id="nobutton" name="answer" value="{!$Label.FAQ_LABEL_NO}" onclick="showDiv()"/>
+                        <div id="thankyoufeedback" style="display:none;">
+                                {!$Label.FAQ_LABEL_THANKYOU_FEEDBACK}
+                        </div>
+                        <div id="comments" style="display:none;">
+                            <label class="comments-box">
+                                <textarea rows="3" class="form-control" id="userComments" placeholder="{!$Label.FAQ_LABEL_FEEDBACK_COMMENTS}" style="width:100%; border:1px solid #ccc; border-radius:4px; display:block !important;"></textarea>
+                                <input type="button" onClick="registerUserFeedback(false)"  class="btn button-send" value="{!$Label.FAQ_LABEL_FEEDBACK_SEND}" />
+                            </label>
+                        </div>
+                        <script>
+                            function getCookie(cname) {
+                                var name = cname + "=";
+                                var ca = document.cookie.split(';');
+                                for(var i=0; i<ca.length; i++) {
+                                    var c = ca[i];
+                                    while (c.charAt(0)==' ') c = c.substring(1);
+                                    if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
+                                }
+                                return "";
+                            }
+                            var UserFeedback=getCookie("FeedbackCaptured");
+                            //alert(UserFeedback);
+                            if (UserFeedback=='{!theArticle.id}') {
+                                //alert("Already done feedback");
+                            }
+                            function showDiv() {
+                                //document.getElementById('yesbutton').style.display = "none";
+                                //document.getElementById('nobutton').style.display = "none";
+                                document.getElementById('comments').style.display = "block";
+                            }
+                            function FeedbackCaptured() {
+                                document.cookie="FeedbackCaptured={!theArticle.id}";
+                                document.getElementById('yesbutton').style.display = "none";
+                                document.getElementById('nobutton').style.display = "none";
+                                document.getElementById('thankyoufeedback').style.display = "block";
+                                document.getElementById('comments').style.display = "none";
+                            }
+
+                        </script>
+                        <!-- *** END - IF BUTTONS NEED TO BE input WITH SCRIPT INCLUDED *** -->
+
+                    </div>
+                </apex:outputPanel>
+                <!--</div>-->
+                <br/>
+                <!-- END OF WAS THIS ARTICLE USEFUL-->
+
+            </div><!--/.col-xs-12.col-sm-9-->
+
+            <!-- START OF THE SIDEBAR -->
+            <!-- START OF THE SIDEBAR -->
+
+            <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
+
+                <c:sidebar chosenLanguageISO="{!language}" FAQQuickLinks="{!FAQQuickLinks}" LiveChatSettings="{!LiveChatSettings}" FAQContactUsLinks="{!FAQContactUsLinks}" MostViewedArticles="{!MostViewedArticles}" DisplayLiveChat="{!IF(site != 'e4a',true,false)}"></c:sidebar>
+
+            </div><!--/.sidebar-offcanvas-->
+
+        </div><!--/row row-offcanvas row-offcanvas-right-->
+
+        <c:basebar chosenLanguageISO="{!language}" FAQQuickLinks="{!FAQQuickLinks}" LiveChatSettings="{!LiveChatSettings}" FAQContactUsLinks="{!FAQContactUsLinks}" MostViewedArticles="{!MostViewedArticles}" DisplayLiveChat="{!IF(site != 'e4a',true,false)}"></c:basebar>
+
+    </div><!--/.container-->
+
+    <footer id="app-footer-template">
+        <div id="app-footer-template-image" style="height:0px;">
+            <div id="app-footer-template-content">
+            </div>
+        </div>
+        <p id="app-footer-template-copyright">© {!YEAR(TODAY())} {!$Label.CompApp_EurostarRights} <a id="app-footer-template-link" href="http://www.eurostar.com" style="color:white !important">{!$Label.CompApp_eurostar_site}</a></p>
+    </footer>
+    <c:js ></c:js>
+
+    <script type="text/javascript">
+
+        $(function(){
+            let langhref = "{!chosenLanguageISO}" == "en_US" ? "en" : "{!chosenLanguageISO}" == "fr" ? "fr" : "{!chosenLanguageISO}" == "de" ? "de" : "{!chosenLanguageISO}" == "nl_NL" ? "nl" : "en";
+            $('#select-box-selected-lang').text($('#app-header-template-options .options-button[hreflang="' + langhref + '"]').text());
+        });
+            var APP_HEADER_TEMPLATE_LANG_SELECTION_MENU = {
+            OPEN:  "{! URLFOR($Resource.CompApp_Res, '/res/SVGS/arrow_up.svg') }",
+            CLOSE: "{! URLFOR($Resource.CompApp_Res, '/res/SVGS/arrow_down.svg') }",
+            }
+
+            function showLanguageSelectionMenu() {
+                document.getElementById("app-header-template-lang-selection-menu").classList.add('open');
+                document.getElementById("select-box-arrow").addEventListener('click',hideLanguageSelectionMenu);
+                document.getElementById("select-box-arrow").src = APP_HEADER_TEMPLATE_LANG_SELECTION_MENU.OPEN;
+
+                $(document).bind('scroll', hideLanguageSelectionMenu);
+            }
+
+            function hideLanguageSelectionMenu() {
+                document.getElementById("app-header-template-lang-selection-menu").classList.remove('open');
+                document.getElementById("select-box-arrow").removeEventListener('click',hideLanguageSelectionMenu);
+                document.getElementById("select-box-arrow").addEventListener('click',showLanguageSelectionMenu);
+                document.getElementById("select-box-arrow").src = APP_HEADER_TEMPLATE_LANG_SELECTION_MENU.CLOSE;
+
+                $(document).unbind('scroll', hideLanguageSelectionMenu);
+            }
+
+            $(document).on('click', '#app-header-template-options .options-button', function (e) {
+                if (! e.target.hreflang)
+                    return true;
+                    var urlWrapper = (function searchObj() {
+                    var queryObj = Object.create(null);
+                    window.location.search.replace(/([^?=&]+)(=([^&]*))?/g, function($0, $1, $2, $3) { queryObj[$1] = $3; });
+
+                    return {
+                        queryData: queryObj,
+                        get: function(str){
+                            return queryObj[str];
+                        },
+                        toString: function () {
+                            return Object.keys(queryObj).map(function (k) { return k + '=' + queryObj[k]; }).join('&');
+                        },
+                        set: function(paramName, paramVal){
+                            queryObj[paramName] = paramVal;
+                            return this;
+                        },
+                    };
+                })();
+                sfdc_prevent_message_warning = true;
+                var choseLang = (e.target.hreflang == 'en') ?  'uk-en' : (e.target.hreflang == 'fr') ? 'fr-fr' : (e.target.hreflang == 'nl') ? 'nl-nl' : (e.target.hreflang == 'de') ? 'de-de' : 'uk-en';
+                window.location.search = urlWrapper.set('language', choseLang).toString();
+                window.onbeforeunload = function(){};
+                e.preventDefault();
+                return false;
+            });
+    </script>
+
+
+    <!-- User Feedback -->
+    <script type="text/javascript">
+        function registerUserFeedback(wasArticleUseful) {
+            //var wasArticleUseful = false;
+            var userFeedbackText = document.getElementById("userComments").value;
+            var ArticleID = "{!theArticle.id}";
+            var market = "{!language}";
+
+            Visualforce.remoting.Manager.invokeAction(
+                    '{!$RemoteAction.basicViewArticleController.registerUserFeedback}',
+                    wasArticleUseful,
+                    userFeedbackText,
+                    ArticleID,
+                    market,
+
+                    function(result, event){
+                        if (event.status) {
+                            FeedbackCaptured();
+                        } else if (event.type === 'exception') {
+                            console.log ('error');
+                        } else {
+                            console.log ( event.message);
+                            alert ('error: ' + event.message);
+                        }
+                    }
+
+            );
+
+
+
+        }
+    </script>
+
+    <!-- GA Tracking -->
+    <!-- <site:googleAnalyticsTracking /> -->
+
+
+    <!-- </apex:form>-->
+    </body>
+    </html>
+
+</apex:page>

@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>market_code__c</fullName>
+    <label>Market Code</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>market__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>88-BELGIUM</fullName>
+                <default>false</default>
+                <label>88-BELGIUM</label>
+            </value>
+            <value>
+                <fullName>70-GREAT BRITAIN</fullName>
+                <default>false</default>
+                <label>70-GREAT BRITAIN</label>
+            </value>
+            <value>
+                <fullName>RW-REST OF THE WORLD</fullName>
+                <default>false</default>
+                <label>RW-REST OF THE WORLD</label>
+            </value>
+            <value>
+                <fullName>87-FRANCE</fullName>
+                <default>false</default>
+                <label>87-FRANCE</label>
+            </value>
+            <value>
+                <fullName>OS-OVERSEAS</fullName>
+                <default>false</default>
+                <label>OS-OVERSEAS</label>
+            </value>
+            <value>
+                <fullName>GDS MARKET</fullName>
+                <default>false</default>
+                <label>GDS MARKET</label>
+            </value>
+            <value>
+                <fullName>80-GERMANY</fullName>
+                <default>false</default>
+                <label>80-GERMANY</label>
+            </value>
+            <value>
+                <fullName>83-ITALY</fullName>
+                <default>false</default>
+                <label>83-ITALY</label>
+            </value>
+            <value>
+                <fullName>84-NETHERLANDS</fullName>
+                <default>false</default>
+                <label>84-NETHERLANDS</label>
+            </value>
+            <value>
+                <fullName>84-HOLLAND</fullName>
+                <default>false</default>
+                <label>84-HOLLAND</label>
+            </value>
+            <value>
+                <fullName>86-DENMARK</fullName>
+                <default>false</default>
+                <label>86-DENMARK</label>
+            </value>
+            <value>
+                <fullName>60-IRELAND</fullName>
+                <default>false</default>
+                <label>60-IRELAND</label>
+            </value>
+            <value>
+                <fullName>SF-WESTERN EUROPE</fullName>
+                <default>false</default>
+                <label>SF-WESTERN EUROPE</label>
+            </value>
+            <value>
+                <fullName>71-SPAIN</fullName>
+                <default>false</default>
+                <label>71-SPAIN</label>
+            </value>
+            <value>
+                <fullName>51-POLAND</fullName>
+                <default>false</default>
+                <label>51-POLAND</label>
+            </value>
+            <value>
+                <fullName>RE-REST OF EUROPE</fullName>
+                <default>false</default>
+                <label>RE-REST OF EUROPE</label>
+            </value>
+            <value>
+                <fullName>NC-NEUTRAL COUNTRIES</fullName>
+                <default>false</default>
+                <label>NC-NEUTRAL COUNTRIES</label>
+            </value>
+            <value>
+                <fullName>SC-EASTERN EUROPE</fullName>
+                <default>false</default>
+                <label>SC-EASTERN EUROPE</label>
+            </value>
+            <value>
+                <fullName>20-RUSSIA</fullName>
+                <default>false</default>
+                <label>20-RUSSIA</label>
+            </value>
+            <value>
+                <fullName>82-LUXEMBOURG</fullName>
+                <default>false</default>
+                <label>82-LUXEMBOURG</label>
+            </value>
+            <value>
+                <fullName>85-SWITZERLAND</fullName>
+                <default>false</default>
+                <label>85-SWITZERLAND</label>
+            </value>
+            <value>
+                <fullName>94-PORTUGAL</fullName>
+                <default>false</default>
+                <label>94-PORTUGAL</label>
+            </value>
+            <value>
+                <fullName>73-GREECE</fullName>
+                <default>false</default>
+                <label>73-GREECE</label>
+            </value>
+            <value>
+                <fullName>DT-DOMTOM</fullName>
+                <default>false</default>
+                <label>DT-DOMTOM</label>
+            </value>
+            <value>
+                <fullName>02-USA</fullName>
+                <default>false</default>
+                <label>02-USA</label>
+            </value>
+            <value>
+                <fullName>REST OF WORLD</fullName>
+                <default>false</default>
+                <label>REST OF WORLD</label>
+            </value>
+            <value>
+                <fullName>AW-INDIA</fullName>
+                <default>false</default>
+                <label>AW-INDIA</label>
+            </value>
+            <value>
+                <fullName>ARGENTINA</fullName>
+                <default>false</default>
+                <label>ARGENTINA</label>
+            </value>
+            <value>
+                <fullName>75-TURKEY</fullName>
+                <default>false</default>
+                <label>75-TURKEY</label>
+            </value>
+            <value>
+                <fullName>SA-AFRICA</fullName>
+                <default>false</default>
+                <label>SA-AFRICA</label>
+            </value>
+            <value>
+                <fullName>AC-SOUTH AFRICA</fullName>
+                <default>false</default>
+                <label>AC-SOUTH AFRICA</label>
+            </value>
+            <value>
+                <fullName>NIGERIA</fullName>
+                <default>false</default>
+                <label>NIGERIA</label>
+            </value>
+            <value>
+                <fullName>77-MEXICO</fullName>
+                <default>false</default>
+                <label>77-MEXICO</label>
+            </value>
+            <value>
+                <fullName>33-CHINA</fullName>
+                <default>false</default>
+                <label>33-CHINA</label>
+            </value>
+            <value>
+                <fullName>SD-MIDDLE EAST</fullName>
+                <default>false</default>
+                <label>SD-MIDDLE EAST</label>
+            </value>
+            <value>
+                <fullName>35-NEW ZEALAND</fullName>
+                <default>false</default>
+                <label>35-NEW ZEALAND</label>
+            </value>
+            <value>
+                <fullName>34-AUSTRALASIA</fullName>
+                <default>false</default>
+                <label>34-AUSTRALASIA</label>
+            </value>
+            <value>
+                <fullName>SB-ASIA</fullName>
+                <default>false</default>
+                <label>SB-ASIA</label>
+            </value>
+            <value>
+                <fullName>SE-SOUTH AMERICA</fullName>
+                <default>false</default>
+                <label>SE-SOUTH AMERICA</label>
+            </value>
+            <value>
+                <fullName>71 - GREAT BRITAIN</fullName>
+                <default>false</default>
+                <label>71 - GREAT BRITAIN</label>
+            </value>
+            <value>
+                <fullName>NC-NEUTR</fullName>
+                <default>false</default>
+                <label>NC-NEUTR</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>USA</controllingFieldValue>
+            <controllingFieldValue>NORTH AMERICA</controllingFieldValue>
+            <valueName>02-USA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>BELGIUM</controllingFieldValue>
+            <valueName>88-BELGIUM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ROW</controllingFieldValue>
+            <valueName>RW-REST OF THE WORLD</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ROW</controllingFieldValue>
+            <valueName>OS-OVERSEAS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ROW</controllingFieldValue>
+            <controllingFieldValue>GERMANY</controllingFieldValue>
+            <valueName>80-GERMANY</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ROW</controllingFieldValue>
+            <controllingFieldValue>NON-CORE EUROPE</controllingFieldValue>
+            <valueName>20-RUSSIA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ROW</controllingFieldValue>
+            <valueName>REST OF WORLD</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ROW</controllingFieldValue>
+            <valueName>AW-INDIA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ROW</controllingFieldValue>
+            <valueName>ARGENTINA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ROW</controllingFieldValue>
+            <valueName>75-TURKEY</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ROW</controllingFieldValue>
+            <valueName>SA-AFRICA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ROW</controllingFieldValue>
+            <valueName>AC-SOUTH AFRICA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ROW</controllingFieldValue>
+            <valueName>NIGERIA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ROW</controllingFieldValue>
+            <valueName>77-MEXICO</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ROW</controllingFieldValue>
+            <valueName>33-CHINA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ROW</controllingFieldValue>
+            <valueName>SD-MIDDLE EAST</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ROW</controllingFieldValue>
+            <valueName>35-NEW ZEALAND</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ROW</controllingFieldValue>
+            <valueName>34-AUSTRALASIA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ROW</controllingFieldValue>
+            <valueName>SB-ASIA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ROW</controllingFieldValue>
+            <valueName>SE-SOUTH AMERICA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FRANCE</controllingFieldValue>
+            <valueName>87-FRANCE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GDS MARKET</controllingFieldValue>
+            <valueName>GDS MARKET</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ITALY</controllingFieldValue>
+            <valueName>83-ITALY</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NETHERLANDS</controllingFieldValue>
+            <valueName>84-NETHERLANDS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NON-CORE EUROPE</controllingFieldValue>
+            <valueName>86-DENMARK</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NON-CORE EUROPE</controllingFieldValue>
+            <valueName>60-IRELAND</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NON-CORE EUROPE</controllingFieldValue>
+            <valueName>SF-WESTERN EUROPE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NON-CORE EUROPE</controllingFieldValue>
+            <controllingFieldValue>SPAIN</controllingFieldValue>
+            <valueName>71-SPAIN</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NON-CORE EUROPE</controllingFieldValue>
+            <valueName>51-POLAND</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NON-CORE EUROPE</controllingFieldValue>
+            <valueName>RE-REST OF EUROPE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NON-CORE EUROPE</controllingFieldValue>
+            <valueName>NC-NEUTRAL COUNTRIES</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NON-CORE EUROPE</controllingFieldValue>
+            <valueName>SC-EASTERN EUROPE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NON-CORE EUROPE</controllingFieldValue>
+            <valueName>82-LUXEMBOURG</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NON-CORE EUROPE</controllingFieldValue>
+            <valueName>85-SWITZERLAND</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NON-CORE EUROPE</controllingFieldValue>
+            <valueName>94-PORTUGAL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NON-CORE EUROPE</controllingFieldValue>
+            <valueName>73-GREECE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NON-CORE EUROPE</controllingFieldValue>
+            <valueName>DT-DOMTOM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>UK</controllingFieldValue>
+            <valueName>70-GREAT BRITAIN</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

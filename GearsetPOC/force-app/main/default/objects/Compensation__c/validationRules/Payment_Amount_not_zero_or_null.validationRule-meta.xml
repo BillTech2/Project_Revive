@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Payment_Amount_not_zero_or_null</fullName>
+    <active>true</active>
+    <errorConditionFormula>(ISBLANK(Payment_Amount__c) || Payment_Amount__c == 0) &amp;&amp; RecordType.DeveloperName == &#39;Voucher&#39; &amp;&amp; ISNEW()</errorConditionFormula>
+    <errorDisplayField>Payment_Amount__c</errorDisplayField>
+    <errorMessage>Payment amount could not be empty or zero</errorMessage>
+</ValidationRule>

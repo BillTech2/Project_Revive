@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Inform_Siemens</fullName>
+    <active>true</active>
+    <description>only applies to E320</description>
+    <errorConditionFormula>OR(
+AND( Inform_Siemens__c=TRUE , NOT(ISPICKVAL( Fleet__c , &quot;E320&quot;)))
+,
+
+AND( Inform_Siemens__c=TRUE ,
+ISPICKVAL( Fleet__c , &quot;E320&quot;),
+ISBLANK(  EIL_Lead_Investigator__c )
+)
+)</errorConditionFormula>
+    <errorDisplayField>Inform_Siemens__c</errorDisplayField>
+    <errorMessage>To inform Siemens, you must select the E320 fleet AND and EIL Lead Investigator</errorMessage>
+</ValidationRule>

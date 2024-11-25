@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Insurance_Exchange</fullName>
+    <active>true</active>
+    <label>Insurance Exchange</label>
+    <picklistValues>
+        <picklist>Action__c</picklist>
+        <values>
+            <fullName>Cash Exchange</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Refund</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Reason_For_Refund__c</picklist>
+        <values>
+            <fullName>Flexible Package</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other %28Please Put Reason In Notes Section%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Train cancelledTrain Cancelled%2FHotel Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Train departure date amended</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Train departure time amended</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Refund_Currency__c</picklist>
+        <values>
+            <fullName>EUR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GBP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>USD</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

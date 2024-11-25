@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dynamic_Package_Refund_Reference</fullName>
+    <active>true</active>
+    <description>Reference of payment PNR must be entered if it is different than the original payment PNR</description>
+    <errorConditionFormula>OR( 
+ISPICKVAL(Reason_For_Contact_Dynamic_Package__c,&quot;Package Hotel Refund&quot;), 
+ISPICKVAL(Reason_For_Contact_Dynamic_Package__c,&quot;Standalone Hotel Refund&quot;), 
+ISPICKVAL(Reason_For_Contact_Dynamic_Package__c,&quot;Assistance Package Refund&quot;)
+) 
+
+&amp;&amp; 
+
+AND(
+Refund_processed_on_original_PNR__c = FALSE,
+ISBLANK(Refund_PNR_TNR__c)
+)</errorConditionFormula>
+    <errorDisplayField>Refund_PNR_TNR__c</errorDisplayField>
+    <errorMessage>Please enter the reference that the refund has been processed under</errorMessage>
+</ValidationRule>

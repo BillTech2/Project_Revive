@@ -1,0 +1,30 @@
+<apex:page showHeader="false" sidebar="false" language="{!selectedLanguageCode}" controller="CompApp_CtrlAppClone" standardStylesheets="false" applyHtmlTag="false" applyBodyTag="false" showChat="false">
+
+    <div>
+        <div class="grid-row grid-group">
+            <h1 class="grid-col grid-col-span_12_of_12">{!$label.CompApp_Corona_Virus_Error_Message_Header}</h1>
+            <!--h1 class="grid-col grid-col-span_12_of_12" ng-bind-html="$root.$angularState.system.softErrorMessageHeader">{!$label.CompApp_Corona_Virus_Error_Message_Header}</h1-->
+        </div>
+
+        <div class="grid-row grid-group">
+            <div class="grid-col grid-col-span_12_of_12 p1" ng-bind-html="$root.$angularState.system.softErrorMessageBody"></div>
+            <div class="grid-col grid-col-span_12_of_12 p1" style="color: red !important;" ng-show="$root.$angularState.system.isDuplicateRequest">{!$label.CompApp_Corona_Virus_Duplicate_Request}</div>
+            <div class="grid-col grid-col-span_12_of_12 p1" style="color: red !important;" ng-show="$root.$angularState.system.isInvalidPNR">{!$label.CompApp_Corona_Virus_No_Booking_Found}</div>
+            <div class="grid-col grid-col-span_12_of_12 p1" style="color: red !important;" ng-show="$root.$angularState.system.isNotEligible">{!$label.CompApp_Corona_Virus_Not_Eligible}</div>
+            <div class="grid-col grid-col-span_12_of_12 p1" style="color: red !important;" ng-show="$root.$angularState.system.isNoTicketsInScope">{!$label.CompApp_Corona_Virus_No_Tickets_In_Scope}</div>
+            <div class="grid-col grid-col-span_12_of_12 p1" style="color: red !important;" ng-show="$root.$angularState.system.isNoDisneyTicketsInScope">{!$label.CompApp_Corona_Virus_No_Disney_Tickets_In_Scope}</div>
+            <div class="grid-col grid-col-span_12_of_12 p1" style="color: red !important;" ng-show="$root.$angularState.system.isNoTicketsIn60DaysScope">{!$label.CompApp_Corona_Virus_No_Tickets_In_60_Days_Scope}</div>
+            <div class="grid-col grid-col-span_12_of_12 p1" style="color: red !important;" ng-show="$root.$angularState.system.isClaimedPastThresholdDate">{!$label.CompApp_Corona_Virus_Claimed_Past_Threshold_Date}</div>
+            <div class="grid-col grid-col-span_12_of_12 p1" style="color: red !important;" ng-show="$root.$angularState.system.isPackageBookingPastTheScope">{!$label.CompApp_Corona_Virus_Package_Booking_Past_The_Scope}</div>
+            <div class="grid-col grid-col-span_12_of_12 p1" style="color: red !important;" ng-show="$root.$angularState.system.isCancelledTrainsPastTheScope">{!$label.CompApp_Corona_Virus_Cancelled_Trains_Past_The_Scope}</div>
+            <div class="grid-col grid-col-span_12_of_12 p1" style="color: red !important;" ng-show="$root.$angularState.system.isClaimEmailMismatch">{!$label.CompApp_Corona_Virus_Claim_Email_Mismatch}</div>
+            <div class="grid-col grid-col-span_12_of_12 p1" style="color: red !important;" ng-show="$root.$angularState.system.isIdentityNotConfirmed">{!$label.CompApp_Corona_Virus_Identity_Not_confirmed}</div>
+            <div class="grid-col grid-col-span_12_of_12 p1" style="" ng-show="$root.$angularState.system.isRedirectionToMYBRequired">{!$label.CompApp_Corona_Virus_Go_To_MYB_Part1} <a href="{!$label.CompApp_Corona_Virus_Go_To_MYB_Link}" style="text-decoration: underline;" target="_blank" ng-click="">{!$label.CompApp_Corona_Virus_Go_To_MYB_Highlighted}</a> {!$label.CompApp_Corona_Virus_Go_To_MYB_Part2}</div>
+        </div>
+        <section>
+            <div class="row commands-section">
+                <a ref="#/" class="btn secondary" onclick="javascript:history.back()">{!$label.CompApp_Corona_Virus_Return_To_Claim_Form}</a>
+            </div>
+        </section>
+    </div>
+</apex:page>

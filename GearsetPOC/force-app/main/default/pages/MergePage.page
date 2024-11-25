@@ -1,0 +1,101 @@
+<apex:page controller="MergePageController" tabstyle="Account">
+<script type="text/javascript">
+    var account = {};
+    account["Id"] = "{!firstAcc.Id}";
+    console.log('account["Id"] = ' + account["Id"]);
+    
+    function mergeAccs(){
+        if (account.Name) {
+            delete account.Name
+        }    
+        var JsonStr = JSON.stringify(account);
+        var firstId = "{!firstAcc.Id}";
+        var secondtId = "{!secondAcc.Id}";
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.MergePageController.mergeAccounts}',
+            JsonStr, firstId, secondtId,
+            function(result, event){
+                if (result) {
+                    window.location.href = '/' + result;
+                } else {
+                    alert('{!$Label.MergeAccounts_UnknownError}');
+                }
+            }
+        );
+    }
+    
+    function setLeft(){
+        account["Id"] = "{!firstAcc.Id}";
+        for(var name in account) {
+            var item = document.getElementById("l"+name);
+            if (item) {
+                item.checked = true;
+                account[name] = item.value;
+            }
+        }
+    }
+    
+    function setRight(){
+        account["Id"] = "{!secondAcc.Id}";
+        for(var name in account) {
+            var item = document.getElementById("r"+name);
+            if (item) {
+                item.checked = true;
+                account[name] = item.value;
+            }
+        }
+    }
+</script>
+<apex:form >
+  <apex:pageMessages />
+  <apex:pageBlock title="{!$Label.MergeAccounts_CustomersToMerge}">
+    <table class="list" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+            <th>Master</th>
+            <td>
+              <input type="radio" name="Master" value="{!firstAcc.Id}" checked="checked" onchange="account['Id'] = this.value; console.log(account['Id']); setLeft();">
+                {!firstAcc.Name}
+              </input>
+            </td>
+            <td>
+              <input type="radio" name="Master" value="{!secondAcc.Id}" onchange="account['Id'] = this.value; console.log(account['Id']);  setRight();">
+                {!secondAcc.Name}
+              </input>
+            </td>
+        </tr>
+      <apex:repeat value="{!$ObjectType.Account.FieldSets.MergeFields}" var="f">
+        <apex:outputPanel rendered="{!f != 'Name' && !(firstAcc[f] == null && secondAcc[f] == null)}">
+        <tr>
+        <script type="text/javascript">
+          console.log("{!f.Label}");
+        </script>
+            <th>{!f.Label}</th>
+            <td>
+              <input type="radio" name="{!f}" id="l{!f}" value="{!firstAcc[f]}" checked="checked" onchange="account['{!f}'] = this.value; console.log(account['{!f}'])">
+                {!firstAcc[f]}
+                <script type="text/javascript">
+                account['{!f}'] = "{!firstAcc[f]}";
+                console.log(account['{!f}']);
+              </script>
+              </input>
+
+            </td>
+            <td>
+              <input type="radio" name="{!f}" id="r{!f}" value="{!secondAcc[f]}" onchange="account['{!f}'] = this.value; console.log(account['{!f}'])">
+                {!secondAcc[f]}
+              </input>
+            </td>
+        </tr>
+		</apex:outputPanel>
+      </apex:repeat>
+    </table>
+    <div align="center">
+    <apex:commandButton onclick="var conf =  confirm('{!$Label.MergeAccounts_ProceedConfirmation}'); if(conf) {mergeAccs();}" value="{!$Label.MergeAccounts_Merge}" rerender="none" style="width:10%; height:25px"/>
+    </div>
+  </apex:pageBlock>
+</apex:form>
+<script type="text/javascript">
+   var JsonStr = JSON.stringify(account);
+    console.log(JsonStr);
+</script>
+</apex:page>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Add_details_for_travel_policy_Other</fullName>
+    <active>true</active>
+    <description>When a user selects the value “other” in the multi-picklist “Travel Policy”, the text field “Further Policy Details” is required.</description>
+    <errorConditionFormula>AND(
+  INCLUDES(Travel_Policy__c , &#39;Other&#39;),
+  ISBLANK(Further_Policy_Details__c)
+)</errorConditionFormula>
+    <errorDisplayField>Further_Policy_Details__c</errorDisplayField>
+    <errorMessage>As you selected “Other” as Travel Policy, please specify “Further Policy Details”.</errorMessage>
+</ValidationRule>

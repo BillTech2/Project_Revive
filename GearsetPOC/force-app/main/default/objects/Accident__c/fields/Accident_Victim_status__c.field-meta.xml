@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Accident_Victim_status__c</fullName>
+    <label>Victim status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Employee - UK</fullName>
+                <default>false</default>
+                <label>Employee - UK</label>
+            </value>
+            <value>
+                <fullName>Employee - Continent</fullName>
+                <default>false</default>
+                <label>Employee - Continent</label>
+            </value>
+            <value>
+                <fullName>Contractor - UK</fullName>
+                <default>false</default>
+                <label>Contractor - UK</label>
+            </value>
+            <value>
+                <fullName>Contractor - Continent</fullName>
+                <default>false</default>
+                <label>Contractor - Continent</label>
+            </value>
+            <value>
+                <fullName>Passenger - UK</fullName>
+                <default>false</default>
+                <label>Passenger - UK</label>
+            </value>
+            <value>
+                <fullName>Passenger - Continent</fullName>
+                <default>false</default>
+                <label>Passenger - Continent</label>
+            </value>
+            <value>
+                <fullName>Other (visitors etc) - UK</fullName>
+                <default>false</default>
+                <label>Other (visitors etc) - UK</label>
+            </value>
+            <value>
+                <fullName>Other (visitors etc) - Continent</fullName>
+                <default>false</default>
+                <label>Other (visitors etc) - Continent</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

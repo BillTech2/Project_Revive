@@ -1,0 +1,433 @@
+<apex:page Controller="mc_image_controller" language="{!mc_LanguageISO}" showHeader="false" sidebar="false" standardStylesheets="false" docType="html" applyHtmlTag="false" >
+ 
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Eurostar Media 
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+   
+    <c:mc_styles ></c:mc_styles>
+    <!-- Add jQuery library -->
+    <apex:includeScript value="https://code.jquery.com/jquery-latest.min.js" />
+    <!-- Add fancyBox main JS and CSS files -->
+    
+    <style type="text/css">
+        .fancybox-custom .fancybox-skin {
+            box-shadow: 0 0 50px #222;
+        
+        }
+        .content .inside.financial .details h3,
+        .content .inside.contact .details h3 {
+        font-size: 24px;
+        padding: 0;
+        font-weight: bold;
+        color: #333;
+        margin: 0 0 15px 0;
+        line-height: 150%;
+        }
+        
+        .content .inside.financial .details .date,
+        .content .inside.contact .details .date {
+            font-size: 14px;
+            font-weight: normal;
+            font-family:pembroke; 
+        
+        }
+        
+        img {
+        height: auto;
+        max-width: 100%;
+        object-fit: contain;
+        object-fit: contain;
+        }
+    </style>
+
+</head>
+<body>
+
+    <!-- header starts -->
+
+    <!-- header ends -->
+
+    
+
+    <!-- content wrapper starts -->
+    <div class="row">
+        <div class="container content">
+
+           
+
+
+            <div class="row inside financial">
+
+                <!-- content specific for financial -->
+                <div class="row inner" style="padding-bottom:0">
+
+                    <!-- news detail column starts -->
+                    <div class="col-sm-12 details" align="centre">
+                        
+                    </div>
+                            <apex:outputPanel >
+                                <img src="{!image.Article_Media_Formats__r[0].Media_URL__c}" alt="" class="iframe-img" align="centre"/>
+
+                                <button class="selectsize">
+                                
+                                    <i class="fa fa-download"></i> &nbsp;Download
+                                 
+                                    <span>                                  
+                                        <apex:repeat value="{!image.Article_Media_Formats__r}" var="format">                                        
+                                            <a href="{!format.Media_URL__c}" download="{!format.Media_URL__c}">{!format.Name}</a>                                   
+                                        </apex:repeat>                            
+                                    </span>
+                                </button>
+                            </apex:outputPanel> 
+                    
+                            <!--apex:outputPanel rendered="{!isArticle_Image_1}">
+                                <img src="{!valArticle_Image_1}" alt="" class="iframe-img" align="centre"/>
+
+                                <button class="selectsize">
+                                 <i class="fa fa-download"></i> &nbsp;Download
+                                 <span>
+                                <apex:repeat value="{!Image_download_link_1}" first="0" rows="1" var="dl">
+                                    <a href="{!dl}" download="{!dl}">Lo-res</a>
+                                </apex:repeat>
+                                
+                                <apex:repeat value="{!Image_download_link_1}" first="1" rows="1" var="dl">
+                                    <a href="{!dl}" download="{!dl}">Medium</a>
+                                </apex:repeat>
+                                
+                                <apex:repeat value="{!Image_download_link_1}" first="2" rows="1" var="dl">
+                                    <a href="{!dl}" download="{!dl}">Hi-res</a>
+                                </apex:repeat>
+                                    </span>
+                                </button>
+                            </apex:outputPanel> 
+                            <apex:outputPanel rendered="{!isArticle_Image_2}">
+                                <img src="{!valArticle_Image_2}" alt="" class="iframe-img" align="centre"/>
+
+                                <button class="selectsize">
+                                 <i class="fa fa-download"></i> &nbsp;Download
+                                 <span>
+                                <apex:repeat value="{!Image_download_link_2}" first="0" rows="1" var="dl">
+                                    <a href="{!dl}" download="{!dl}">Lo-res</a>
+                                </apex:repeat>
+                                
+                                <apex:repeat value="{!Image_download_link_2}" first="1" rows="1" var="dl">
+                                    <a href="{!dl}" download="{!dl}">Medium</a>
+                                </apex:repeat>
+                                
+                                <apex:repeat value="{!Image_download_link_2}" first="2" rows="1" var="dl">
+                                    <a href="{!dl}" download="{!dl}">Hi-res</a>
+                                </apex:repeat>
+                                    </span>
+                                </button>
+                            </apex:outputPanel> 
+                            <apex:outputPanel rendered="{!isArticle_Image_3}">
+                                <img src="{!valArticle_Image_3}" alt="" class="iframe-img" align="centre"/>
+
+                                <button class="selectsize">
+                                 <i class="fa fa-download"></i> &nbsp;Download
+                                 <span>
+                                <apex:repeat value="{!Image_download_link_3}" first="0" rows="1" var="dl">
+                                    <a href="{!dl}" download="{!dl}">Lo-res</a>
+                                </apex:repeat>
+                                
+                                <apex:repeat value="{!Image_download_link_3}" first="1" rows="1" var="dl">
+                                    <a href="{!dl}" download="{!dl}">Medium</a>
+                                </apex:repeat>
+                                
+                                <apex:repeat value="{!Image_download_link_3}" first="2" rows="1" var="dl">
+                                    <a href="{!dl}" download="{!dl}">Hi-res</a>
+                                </apex:repeat>
+                                    </span>
+                                </button>
+                            </apex:outputPanel> 
+                            <apex:outputPanel rendered="{!isArticle_Image_4}">
+                                <img src="{!valArticle_Image_4}" alt="" class="iframe-img" align="centre"/>
+
+                                <button class="selectsize">
+                                 <i class="fa fa-download"></i> &nbsp;Download
+                                 <span>
+                                <apex:repeat value="{!Image_download_link_4}" first="0" rows="1" var="dl">
+                                    <a href="{!dl}" download="{!dl}">Lo-res</a>
+                                </apex:repeat>
+                                
+                                <apex:repeat value="{!Image_download_link_4}" first="1" rows="1" var="dl">
+                                    <a href="{!dl}" download="{!dl}">Medium</a>
+                                </apex:repeat>
+                                
+                                <apex:repeat value="{!Image_download_link_4}" first="2" rows="1" var="dl">
+                                    <a href="{!dl}" download="{!dl}">Hi-res</a>
+                                </apex:repeat>
+                                    </span>
+                                </button>
+                            </apex:outputPanel> 
+                            <apex:outputPanel rendered="{!isArticle_Image_5}">
+                                <img src="{!valArticle_Image_5}" alt="" class="iframe-img" align="centre"/>
+
+                                <button class="selectsize">
+                                 <i class="fa fa-download"></i> &nbsp;Download
+                                 <span>
+                                <apex:repeat value="{!Image_download_link_5}" first="0" rows="1" var="dl">
+                                    <a href="{!dl}" download="{!dl}">Lo-res</a>
+                                </apex:repeat>
+                                
+                                <apex:repeat value="{!Image_download_link_5}" first="1" rows="1" var="dl">
+                                    <a href="{!dl}" download="{!dl}">Medium</a>
+                                </apex:repeat>
+                                
+                                <apex:repeat value="{!Image_download_link_5}" first="2" rows="1" var="dl">
+                                    <a href="{!dl}" download="{!dl}">Hi-res</a>
+                                </apex:repeat>
+                                    </span>
+                                </button>
+                            </apex:outputPanel> 
+                            <apex:outputPanel rendered="{!isArticle_Image_6}">
+                                <img src="{!valArticle_Image_6}" alt="" class="iframe-img" align="centre"/>
+
+                                <button class="selectsize">
+                                 <i class="fa fa-download"></i> &nbsp;Download
+                                 <span>
+                                <apex:repeat value="{!Image_download_link_6}" first="0" rows="1" var="dl">
+                                    <a href="{!dl}" download="{!dl}">Lo-res</a>
+                                </apex:repeat>
+                                
+                                <apex:repeat value="{!Image_download_link_6}" first="1" rows="1" var="dl">
+                                    <a href="{!dl}" download="{!dl}">Medium</a>
+                                </apex:repeat>
+                                
+                                <apex:repeat value="{!Image_download_link_6}" first="2" rows="1" var="dl">
+                                    <a href="{!dl}" download="{!dl}">Hi-res</a>
+                                </apex:repeat>
+                                    </span>
+                                </button>
+                            </apex:outputPanel> 
+                            <apex:outputPanel rendered="{!isArticle_Image_7}">
+                                <img src="{!valArticle_Image_7}" alt="" class="iframe-img" align="centre"/>
+
+                                <button class="selectsize">
+                                 <i class="fa fa-download"></i> &nbsp;Download
+                                 <span>
+                                <apex:repeat value="{!Image_download_link_7}" first="0" rows="1" var="dl">
+                                    <a href="{!dl}" download="{!dl}">Lo-res</a>
+                                </apex:repeat>
+                                
+                                <apex:repeat value="{!Image_download_link_7}" first="1" rows="1" var="dl">
+                                    <a href="{!dl}" download="{!dl}">Medium</a>
+                                </apex:repeat>
+                                
+                                <apex:repeat value="{!Image_download_link_7}" first="2" rows="1" var="dl">
+                                    <a href="{!dl}" download="{!dl}">Hi-res</a>
+                                </apex:repeat>
+                                    </span>
+                                </button>
+                            </apex:outputPanel> 
+                            <apex:outputPanel rendered="{!isArticle_Image_8}">
+                                <img src="{!valArticle_Image_8}" alt="" class="iframe-img" align="centre"/>
+
+                                <button class="selectsize">
+                                 <i class="fa fa-download"></i> &nbsp;Download
+                                 <span>
+                                <apex:repeat value="{!Image_download_link_8}" first="0" rows="1" var="dl">
+                                    <a href="{!dl}" download="{!dl}">Lo-res</a>
+                                </apex:repeat>
+                                
+                                <apex:repeat value="{!Image_download_link_8}" first="1" rows="1" var="dl">
+                                    <a href="{!dl}" download="{!dl}">Medium</a>
+                                </apex:repeat>
+                                
+                                <apex:repeat value="{!Image_download_link_8}" first="2" rows="1" var="dl">
+                                    <a href="{!dl}" download="{!dl}">Hi-res</a>
+                                </apex:repeat>
+                                    </span>
+                                </button>
+                            </apex:outputPanel> 
+                            <apex:outputPanel rendered="{!isArticle_Image_9}">
+                                <img src="{!valArticle_Image_9}" alt="" class="iframe-img" align="centre"/>
+
+                                <button class="selectsize">
+                                 <i class="fa fa-download"></i> &nbsp;Download
+                                 <span>
+                                <apex:repeat value="{!Image_download_link_9}" first="0" rows="1" var="dl">
+                                    <a href="{!dl}" download="{!dl}">Lo-res</a>
+                                </apex:repeat>
+                                
+                                <apex:repeat value="{!Image_download_link_9}" first="1" rows="1" var="dl">
+                                    <a href="{!dl}" download="{!dl}">Medium</a>
+                                </apex:repeat>
+                                
+                                <apex:repeat value="{!Image_download_link_9}" first="2" rows="1" var="dl">
+                                    <a href="{!dl}" download="{!dl}">Hi-res</a>
+                                </apex:repeat>
+                                    </span>
+                                </button>
+                            </apex:outputPanel> 
+                            <apex:outputPanel rendered="{!isArticle_Image_10}">
+                                <img src="{!valArticle_Image_10}" alt="" class="iframe-img" align="centre"/>
+
+                                <button class="selectsize">
+                                 <i class="fa fa-download"></i> &nbsp;Download
+                                 <span>
+                                <apex:repeat value="{!Image_download_link_10}" first="0" rows="1" var="dl">
+                                    <a href="{!dl}" download="{!dl}">Lo-res</a>
+                                </apex:repeat>
+                                
+                                <apex:repeat value="{!Image_download_link_10}" first="1" rows="1" var="dl">
+                                    <a href="{!dl}" download="{!dl}">Medium</a>
+                                </apex:repeat>
+                                
+                                <apex:repeat value="{!Image_download_link_10}" first="2" rows="1" var="dl">
+                                    <a href="{!dl}" download="{!dl}">Hi-res</a>
+                                </apex:repeat>
+                                    </span>
+                                </button>
+                            </apex:outputPanel> 
+                            <apex:outputPanel rendered="{!isArticle_Image_11}">
+                                <img src="{!valArticle_Image_11}" alt="" class="iframe-img" align="centre"/>
+
+                                <button class="selectsize">
+                                 <i class="fa fa-download"></i> &nbsp;Download
+                                 <span>
+                                <apex:repeat value="{!Image_download_link_11}" first="0" rows="1" var="dl">
+                                    <a href="{!dl}" download="{!dl}">Lo-res</a>
+                                </apex:repeat>
+                                
+                                <apex:repeat value="{!Image_download_link_11}" first="1" rows="1" var="dl">
+                                    <a href="{!dl}" download="{!dl}">Medium</a>
+                                </apex:repeat>
+                                
+                                <apex:repeat value="{!Image_download_link_11}" first="2" rows="1" var="dl">
+                                    <a href="{!dl}" download="{!dl}">Hi-res</a>
+                                </apex:repeat>
+                                    </span>
+                                </button>
+                            </apex:outputPanel> 
+                            <apex:outputPanel rendered="{!isArticle_Image_12}">
+                                <img src="{!valArticle_Image_12}" alt="" class="iframe-img" align="centre"/>
+
+                                <button class="selectsize">
+                                 <i class="fa fa-download"></i> &nbsp;Download
+                                 <span>
+                                <apex:repeat value="{!Image_download_link_12}" first="0" rows="1" var="dl">
+                                    <a href="{!dl}" download="{!dl}">Lo-res</a>
+                                </apex:repeat>
+                                
+                                <apex:repeat value="{!Image_download_link_12}" first="1" rows="1" var="dl">
+                                    <a href="{!dl}" download="{!dl}">Medium</a>
+                                </apex:repeat>
+                                
+                                <apex:repeat value="{!Image_download_link_12}" first="2" rows="1" var="dl">
+                                    <a href="{!dl}" download="{!dl}">Hi-res</a>
+                                </apex:repeat>
+                                    </span>
+                                </button>
+                            </apex:outputPanel> 
+                            <apex:outputPanel rendered="{!isArticle_Image_13}">
+                                <img src="{!valArticle_Image_13}" alt="" class="iframe-img" align="centre"/>
+
+                                <button class="selectsize">
+                                 <i class="fa fa-download"></i> &nbsp;Download
+                                 <span>
+                                <apex:repeat value="{!Image_download_link_13}" first="0" rows="1" var="dl">
+                                    <a href="{!dl}" download="{!dl}">Lo-res</a>
+                                </apex:repeat>
+                                
+                                <apex:repeat value="{!Image_download_link_13}" first="1" rows="1" var="dl">
+                                    <a href="{!dl}" download="{!dl}">Medium</a>
+                                </apex:repeat>
+                                
+                                <apex:repeat value="{!Image_download_link_13}" first="2" rows="1" var="dl">
+                                    <a href="{!dl}" download="{!dl}">Hi-res</a>
+                                </apex:repeat>
+                                    </span>
+                                </button>
+                            </apex:outputPanel> 
+                            <apex:outputPanel rendered="{!isArticle_Image_14}">
+                                <img src="{!valArticle_Image_14}" alt="" class="iframe-img" align="centre"/>
+
+                                <button class="selectsize">
+                                 <i class="fa fa-download"></i> &nbsp;Download
+                                 <span>
+                                <apex:repeat value="{!Image_download_link_14}" first="0" rows="1" var="dl">
+                                    <a href="{!dl}" download="{!dl}">Lo-res</a>
+                                </apex:repeat>
+                                
+                                <apex:repeat value="{!Image_download_link_14}" first="1" rows="1" var="dl">
+                                    <a href="{!dl}" download="{!dl}">Medium</a>
+                                </apex:repeat>
+                                
+                                <apex:repeat value="{!Image_download_link_14}" first="2" rows="1" var="dl">
+                                    <a href="{!dl}" download="{!dl}">Hi-res</a>
+                                </apex:repeat>
+                                    </span>
+                                </button>
+                            </apex:outputPanel> 
+                            <apex:outputPanel rendered="{!isArticle_Image_15}">
+                                <img src="{!valArticle_Image_15}" alt="" class="iframe-img" align="centre"/>
+
+                                <button class="selectsize">
+                                 <i class="fa fa-download"></i> &nbsp;Download
+                                 <span>
+                                <apex:repeat value="{!Image_download_link_15}" first="0" rows="1" var="dl">
+                                    <a href="{!dl}" download="{!dl}">Lo-res</a>
+                                </apex:repeat>
+                                
+                                <apex:repeat value="{!Image_download_link_15}" first="1" rows="1" var="dl">
+                                    <a href="{!dl}" download="{!dl}">Medium</a>
+                                </apex:repeat>
+                                
+                                <apex:repeat value="{!Image_download_link_15}" first="2" rows="1" var="dl">
+                                    <a href="{!dl}" download="{!dl}">Hi-res</a>
+                                </apex:repeat>
+                                    </span>
+                                </button>
+                            </apex:outputPanel!--> 
+                            
+                </div>
+                
+                <div style="margin-top:-10px">
+                    <h2 style="color:#094C77">Embed code</h2>
+                    <textarea class="embed-code" readonly="readonly" rows="3" style="width: 100%;"></textarea>
+                </div>
+                <!-- end content specific for financial -->
+
+            </div>
+
+        </div>
+    </div>
+    <!-- content wrapper ends -->
+
+    
+
+    <script src="{!URLFOR($Resource.mc_lightbox_resources,'dist/js/lightbox-plus-jquery.min.js')}"></script>
+    
+    <script src="https://code.jquery.com/jquery-2.1.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script>
+        (function($) {
+            $(".dropdown").hover(function() {
+                $(".dropdown .dropdown-menu").toggle();
+            });
+            
+            if ($(window).width() <= 767) {
+                var x = $(".menu .dropdown-menu").clone();
+                $(".collapse").append(x);
+                $("li.dropdown").click(function() {
+                    $(".collapse .dropdown-menu:last-of-type").toggle();
+                });
+            }
+            
+            $(document).ready(function() {
+                // Add the text area for embedding the image.
+                var $image = $('img.iframe-img');
+                var imageUrl = $image.attr('src');
+                
+                var embedHtml = '<img src="' + imageUrl + '" />';
+                $('textarea.embed-code').val(embedHtml);
+            });
+        })(jQuery);
+    </script>
+</body>
+</html>
+</apex:page>

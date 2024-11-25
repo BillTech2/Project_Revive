@@ -1,0 +1,56 @@
+<apex:page controller="ArticleMediaWizardController" showHeader="false" sidebar="false" standardStylesheets="true">
+    <style>
+        .hidden {
+            display: none;
+        }
+        .shortColumn {
+            width: 130px;
+        }
+        .tinyColumn {
+            width: 60px;
+        }
+        .formatTable {
+            border: none;
+        }
+        td.formatTable {
+            border: none;
+        }
+    </style>
+    <apex:form >
+        <apex:pageBlock title="{!mediaTypeRecordType.Name}s" mode="detail">
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!showCreateMainObject}" value="New {!mediaTypeRecordType.Name}"/>
+                <apex:commandButton value="Close" onclick="window.top.close();"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockTable value="{!mainObjectList}" var="vid" headerClass="hidden">
+                <apex:column styleClass="shortColumn">
+                    <apex:commandLink action="{!showEditMainObject}" value="Edit"> 
+                        <apex:param name="mainObjectId" value="{!vid['Id']}" assignTo="{!mainObjectId}"/>
+                    </apex:commandLink>&nbsp;|&nbsp;                       
+                    <apex:commandLink action="{!deleteMainObject}" value="Del">
+                        <apex:param name="mainObjectId" value="{!vid['Id']}" assignTo="{!mainObjectId}"/>
+                    </apex:commandLink>&nbsp;|&nbsp;
+                    <apex:commandLink action="{!showCreateChildObject}" value="Add format">
+                        <apex:param name="mainObjectId" value="{!vid['Id']}" assignTo="{!mainObjectId}"/>
+                    </apex:commandLink>
+                </apex:column>
+                <apex:column value="{!vid['name']}"/>
+                <apex:column >
+                  <apex:pageBlockTable value="{!vid['Article_Media_Formats__r']}" var="format" title="Formats" headerClass="hidden" styleClass="formatTable">
+                      <apex:column styleClass="tinyColumn">
+                          <apex:commandLink action="{!showEditChildObject}" value="Edit">
+                              <apex:param name="childObjectId" value="{!format['Id']}" assignTo="{!childObjectId}"/>
+                          </apex:commandLink>&nbsp;|&nbsp;
+                          <apex:commandLink action="{!deleteChildObject}" value="Del">
+                              <apex:param name="childObjectId" value="{!format['Id']}" assignTo="{!childObjectId}"/>
+                          </apex:commandLink>
+                      </apex:column>
+                      <apex:column styleClass="shortColumn" value="{!format['name']}"/>
+                      <apex:column value="{!format[childObjectDisplayFieldName]}" />          
+                    </apex:pageBlockTable>
+             </apex:column>
+    
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

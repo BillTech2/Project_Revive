@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ilinca_Moldoveanu</fullName>
+    <columns>Agent</columns>
+    <columns>Name</columns>
+    <columns>LoginTime</columns>
+    <columns>LogoutTime</columns>
+    <columns>Minutes_Spent_Online__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Agent</field>
+        <operation>contains</operation>
+        <value>Moldoveanu</value>
+    </filters>
+    <label>Ilinca Moldoveanu</label>
+    <language>en_US</language>
+</ListView>

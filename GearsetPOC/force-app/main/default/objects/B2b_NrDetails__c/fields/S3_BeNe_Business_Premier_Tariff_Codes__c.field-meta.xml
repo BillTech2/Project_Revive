@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>S3_BeNe_Business_Premier_Tariff_Codes__c</fullName>
+    <label>S3 &amp; BeNe Business Premier Tariff Codes</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Percentage_Discount_Business_Premier_PL__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>A01C06ARAE - A01C06ARAG - A01C06ASAE - A01C06ASAG</fullName>
+                <default>false</default>
+                <label>A01C06ARAE - A01C06ARAG - A01C06ASAE - A01C06ASAG</label>
+            </value>
+            <value>
+                <fullName>A01C06ARBE - A01C06ARBG - A01C06ASBE - A01C06ASBG</fullName>
+                <default>false</default>
+                <label>A01C06ARBE - A01C06ARBG - A01C06ASBE - A01C06ASBG</label>
+            </value>
+            <value>
+                <fullName>A01C08ARAE - A01C08ARAG - A01C08ASAE - A01C08ASAG</fullName>
+                <default>false</default>
+                <label>A01C08ARAE - A01C08ARAG - A01C08ASAE - A01C08ASAG</label>
+            </value>
+            <value>
+                <fullName>A01C08ARBE - A01C08ARBG - A01C08ASBE - A01C08ASBG</fullName>
+                <default>false</default>
+                <label>A01C08ARBE - A01C08ARBG - A01C08ASBE - A01C08ASBG</label>
+            </value>
+            <value>
+                <fullName>A01C09ARAE - A01C09ARAG - A01C09ASAE - A01C09ASAG</fullName>
+                <default>false</default>
+                <label>A01C09ARAE - A01C09ARAG - A01C09ASAE - A01C09ASAG</label>
+            </value>
+            <value>
+                <fullName>A01C09ARBE - A01C09ARBG - A01C09ASBE - A01C09ASBG</fullName>
+                <default>false</default>
+                <label>A01C09ARBE - A01C09ARBG - A01C09ASBE - A01C09ASBG</label>
+            </value>
+            <value>
+                <fullName>A01C10ARAE - A01C10ARAG - A01C10ASAE - A01C10ASAG</fullName>
+                <default>false</default>
+                <label>A01C10ARAE - A01C10ARAG - A01C10ASAE - A01C10ASAG</label>
+            </value>
+            <value>
+                <fullName>A01C10ARBE - A01C10ARBG - A01C10ASBE - A01C10ASBG</fullName>
+                <default>false</default>
+                <label>A01C10ARBE - A01C10ARBG - A01C10ASBE - A01C10ASBG</label>
+            </value>
+            <value>
+                <fullName>A01C11ARAE - A01C11ARAG - A01C11ASAE - A01C11ASAG</fullName>
+                <default>false</default>
+                <label>A01C11ARAE - A01C11ARAG - A01C11ASAE - A01C11ASAG</label>
+            </value>
+            <value>
+                <fullName>A01C11ARBE - A01C11ARBG - A01C11ASBE - A01C11ASBG</fullName>
+                <default>false</default>
+                <label>A01C11ARBE - A01C11ARBG - A01C11ASBE - A01C11ASBG</label>
+            </value>
+            <value>
+                <fullName>A01C12ARAE - A01C12ARAG - A01C12ASAE - A01C12ASAG</fullName>
+                <default>false</default>
+                <label>A01C12ARAE - A01C12ARAG - A01C12ASAE - A01C12ASAG</label>
+            </value>
+            <value>
+                <fullName>A01C12ARBE -  A01C12ARBG -  A01C12ASBE -  A01C12ASBG</fullName>
+                <default>false</default>
+                <label>A01C12ARBE -  A01C12ARBG -  A01C12ASBE -  A01C12ASBG</label>
+            </value>
+            <value>
+                <fullName>A01C13ARAE - A01C13ARAG - A01C13ASAE - A01C13ASAG</fullName>
+                <default>false</default>
+                <label>A01C13ARAE - A01C13ARAG - A01C13ASAE - A01C13ASAG</label>
+            </value>
+            <value>
+                <fullName>A01C13ARBE - A01C13ARBG - A01C13ASBE - A01C13ASBG</fullName>
+                <default>false</default>
+                <label>A01C13ARBE - A01C13ARBG - A01C13ASBE - A01C13ASBG</label>
+            </value>
+            <value>
+                <fullName>A01C14ARAE - A01C14ARAG - A01C14ASAE - A01C14ASAG</fullName>
+                <default>false</default>
+                <label>A01C14ARAE - A01C14ARAG - A01C14ASAE - A01C14ASAG</label>
+            </value>
+            <value>
+                <fullName>A01C14ARBE - A01C14ARBG - A01C14ASBE - A01C14ASBG</fullName>
+                <default>false</default>
+                <label>A01C14ARBE - A01C14ARBG - A01C14ASBE - A01C14ASBG</label>
+            </value>
+            <value>
+                <fullName>A01C15ARAE - A01C15ARAG - A01C15ASAE - A01C15ASAG</fullName>
+                <default>false</default>
+                <label>A01C15ARAE - A01C15ARAG - A01C15ASAE - A01C15ASAG</label>
+            </value>
+            <value>
+                <fullName>A01C15ARBE - A01C15ARBG - A01C15ASBE - A01C15ASBG</fullName>
+                <default>false</default>
+                <label>A01C15ARBE - A01C15ARBG - A01C15ASBE - A01C15ASBG</label>
+            </value>
+            <value>
+                <fullName>A01C16ARAE - A01C16ARAG - A01C16ASAE - A01C16ASAG</fullName>
+                <default>false</default>
+                <label>A01C16ARAE - A01C16ARAG - A01C16ASAE - A01C16ASAG</label>
+            </value>
+            <value>
+                <fullName>A01C16ARBE - A01C16ARBG - A01C16ASBE - A01C16ASBG</fullName>
+                <default>false</default>
+                <label>A01C16ARBE - A01C16ARBG - A01C16ASBE - A01C16ASBG</label>
+            </value>
+            <value>
+                <fullName>A01C17ARAE - A01C17ARAG - A01C17ASAE - A01C17ASAG</fullName>
+                <default>false</default>
+                <label>A01C17ARAE - A01C17ARAG - A01C17ASAE - A01C17ASAG</label>
+            </value>
+            <value>
+                <fullName>A01C17ARBE - A01C17ARBG - A01C17ASBE - A01C17ASBG</fullName>
+                <default>false</default>
+                <label>A01C17ARBE - A01C17ARBG - A01C17ASBE - A01C17ASBG</label>
+            </value>
+            <value>
+                <fullName>A01C18ARAE - A01C18ARAG - A01C18ASAE - A01C18ASAG</fullName>
+                <default>false</default>
+                <label>A01C18ARAE - A01C18ARAG - A01C18ASAE - A01C18ASAG</label>
+            </value>
+            <value>
+                <fullName>A01C18ARBE - A01C18ARBG - A01C18ASBE - A01C18ASBG</fullName>
+                <default>false</default>
+                <label>A01C18ARBE - A01C18ARBG - A01C18ASBE - A01C18ASBG</label>
+            </value>
+            <value>
+                <fullName>A01C19ARAE - A01C19ARAG - A01C19ASAE - A01C19ASAG</fullName>
+                <default>false</default>
+                <label>A01C19ARAE - A01C19ARAG - A01C19ASAE - A01C19ASAG</label>
+            </value>
+            <value>
+                <fullName>A01C19ARBE - A01C19ARBG - A01C19ASBE - A01C19ASBG</fullName>
+                <default>false</default>
+                <label>A01C19ARBE - A01C19ARBG - A01C19ASBE - A01C19ASBG</label>
+            </value>
+            <value>
+                <fullName>A01C20ARAE - A01C20ARAG - A01C20ASAE - A01C20ASAG</fullName>
+                <default>false</default>
+                <label>A01C20ARAE - A01C20ARAG - A01C20ASAE - A01C20ASAG</label>
+            </value>
+            <value>
+                <fullName>A01C20ARBE - A01C20ARBG - A01C20ASBE - A01C20ASBG</fullName>
+                <default>false</default>
+                <label>A01C20ARBE - A01C20ARBG - A01C20ASBE - A01C20ASBG</label>
+            </value>
+            <value>
+                <fullName>A01C21ARAE - A01C21ARAG - A01C21ASAE - A01C21ASAG</fullName>
+                <default>false</default>
+                <label>A01C21ARAE - A01C21ARAG - A01C21ASAE - A01C21ASAG</label>
+            </value>
+            <value>
+                <fullName>A01C21ARBE - A01C21ARBG - A01C21ASBE - A01C21ASBG</fullName>
+                <default>false</default>
+                <label>A01C21ARBE - A01C21ARBG - A01C21ASBE - A01C21ASBG</label>
+            </value>
+            <value>
+                <fullName>A01C22ARAE - A01C22ARAG - A01C22ASAE - A01C22ASAG</fullName>
+                <default>false</default>
+                <label>A01C22ARAE - A01C22ARAG - A01C22ASAE - A01C22ASAG</label>
+            </value>
+            <value>
+                <fullName>A01C22ARBE - A01C22ARBG - A01C22ASBE - A01C22ASBG</fullName>
+                <default>false</default>
+                <label>A01C22ARBE - A01C22ARBG - A01C22ASBE - A01C22ASBG</label>
+            </value>
+            <value>
+                <fullName>A01C23ARAE - A01C23ARAG - A01C23ASAE - A01C23ASAG</fullName>
+                <default>false</default>
+                <label>A01C23ARAE - A01C23ARAG - A01C23ASAE - A01C23ASAG</label>
+            </value>
+            <value>
+                <fullName>A01C23ARBE - A01C23ARBG - A01C23ASBE - A01C23ASBG</fullName>
+                <default>false</default>
+                <label>A01C23ARBE - A01C23ARBG - A01C23ASBE - A01C23ASBG</label>
+            </value>
+            <value>
+                <fullName>A01C24ARAE - A01C24ARAG - A01C24ASAE - A01C24ASAG</fullName>
+                <default>false</default>
+                <label>A01C24ARAE - A01C24ARAG - A01C24ASAE - A01C24ASAG</label>
+            </value>
+            <value>
+                <fullName>A01C24ARBE - A01C24ARBG - A01C24ASBE - A01C24ASBG</fullName>
+                <default>false</default>
+                <label>A01C24ARBE - A01C24ARBG - A01C24ASBE - A01C24ASBG</label>
+            </value>
+            <value>
+                <fullName>A01C25ARAE - A01C25ARAG - A01C25ASAE - A01C25ASAG</fullName>
+                <default>false</default>
+                <label>A01C25ARAE - A01C25ARAG - A01C25ASAE - A01C25ASAG</label>
+            </value>
+            <value>
+                <fullName>A01C25ARBE - A01C25ARBG - A01C25ASBE - A01C25ASBG</fullName>
+                <default>false</default>
+                <label>A01C25ARBE - A01C25ARBG - A01C25ASBE - A01C25ASBG</label>
+            </value>
+            <value>
+                <fullName>A01C26ARAE - A01C26ARAG - A01C26ASAE - A01C26ASAG</fullName>
+                <default>false</default>
+                <label>A01C26ARAE - A01C26ARAG - A01C26ASAE - A01C26ASAG</label>
+            </value>
+            <value>
+                <fullName>A01C26ARBE - A01C26ARBG - A01C26ASBE - A01C26ASBG</fullName>
+                <default>false</default>
+                <label>A01C26ARBE - A01C26ARBG - A01C26ASBE - A01C26ASBG</label>
+            </value>
+            <value>
+                <fullName>A01C27ARAE - A01C27ARAG - A01C27ASAE - A01C27ASAG</fullName>
+                <default>false</default>
+                <label>A01C27ARAE - A01C27ARAG - A01C27ASAE - A01C27ASAG</label>
+            </value>
+            <value>
+                <fullName>A01C27ARBE - A01C27ARBG - A01C27ASBE - A01C27ASBG</fullName>
+                <default>false</default>
+                <label>A01C27ARBE - A01C27ARBG - A01C27ASBE - A01C27ASBG</label>
+            </value>
+            <value>
+                <fullName>A01C28ARAE - A01C28ARAG - A01C28ASAE - A01C28ASAG</fullName>
+                <default>false</default>
+                <label>A01C28ARAE - A01C28ARAG - A01C28ASAE - A01C28ASAG</label>
+            </value>
+            <value>
+                <fullName>A01C28ARBE - A01C28ARBG - A01C28ASBE - A01C28ASBG</fullName>
+                <default>false</default>
+                <label>A01C28ARBE - A01C28ARBG - A01C28ASBE - A01C28ASBG</label>
+            </value>
+            <value>
+                <fullName>A01C29ARAE - A01C29ARAG - A01C29ASAE - A01C29ASAG</fullName>
+                <default>false</default>
+                <label>A01C29ARAE - A01C29ARAG - A01C29ASAE - A01C29ASAG</label>
+            </value>
+            <value>
+                <fullName>A01C29ARBE - A01C29ARBG - A01C29ASBE - A01C29ASBG</fullName>
+                <default>false</default>
+                <label>A01C29ARBE - A01C29ARBG - A01C29ASBE - A01C29ASBG</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>UK-Paris-Lille-Brussels 28%</controllingFieldValue>
+            <valueName>A01C28ARBE - A01C28ARBG - A01C28ASBE - A01C28ASBG</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>UK-Amsterdam-Rotterdam 27%</controllingFieldValue>
+            <valueName>A01C27ARAE - A01C27ARAG - A01C27ASAE - A01C27ASAG</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>UK-Paris-Lille-Brussels 29%</controllingFieldValue>
+            <valueName>A01C29ARBE - A01C29ARBG - A01C29ASBE - A01C29ASBG</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>UK-Amsterdam-Rotterdam 28%</controllingFieldValue>
+            <valueName>A01C28ARAE - A01C28ARAG - A01C28ASAE - A01C28ASAG</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>UK-Amsterdam-Rotterdam 6%</controllingFieldValue>
+            <valueName>A01C06ARAE - A01C06ARAG - A01C06ASAE - A01C06ASAG</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>UK-Amsterdam-Rotterdam 29%</controllingFieldValue>
+            <valueName>A01C29ARAE - A01C29ARAG - A01C29ASAE - A01C29ASAG</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>UK-Amsterdam-Rotterdam 8%</controllingFieldValue>
+            <valueName>A01C08ARAE - A01C08ARAG - A01C08ASAE - A01C08ASAG</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>UK-Amsterdam-Rotterdam 9%</controllingFieldValue>
+            <valueName>A01C09ARAE - A01C09ARAG - A01C09ASAE - A01C09ASAG</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>UK-Amsterdam-Rotterdam 10%</controllingFieldValue>
+            <valueName>A01C10ARAE - A01C10ARAG - A01C10ASAE - A01C10ASAG</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>UK-Amsterdam-Rotterdam 11%</controllingFieldValue>
+            <valueName>A01C11ARAE - A01C11ARAG - A01C11ASAE - A01C11ASAG</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>UK-Amsterdam-Rotterdam 12%</controllingFieldValue>
+            <valueName>A01C12ARAE - A01C12ARAG - A01C12ASAE - A01C12ASAG</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>UK-Amsterdam-Rotterdam 13%</controllingFieldValue>
+            <valueName>A01C13ARAE - A01C13ARAG - A01C13ASAE - A01C13ASAG</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>UK-Amsterdam-Rotterdam 14%</controllingFieldValue>
+            <valueName>A01C14ARAE - A01C14ARAG - A01C14ASAE - A01C14ASAG</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>UK-Paris-Lille-Brussels 16%</controllingFieldValue>
+            <valueName>A01C16ARBE - A01C16ARBG - A01C16ASBE - A01C16ASBG</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>UK-Amsterdam-Rotterdam 15%</controllingFieldValue>
+            <valueName>A01C15ARAE - A01C15ARAG - A01C15ASAE - A01C15ASAG</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>UK-Paris-Lille-Brussels 17%</controllingFieldValue>
+            <valueName>A01C17ARBE - A01C17ARBG - A01C17ASBE - A01C17ASBG</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>UK-Amsterdam-Rotterdam 16%</controllingFieldValue>
+            <valueName>A01C16ARAE - A01C16ARAG - A01C16ASAE - A01C16ASAG</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>UK-Paris-Lille-Brussels 18%</controllingFieldValue>
+            <valueName>A01C18ARBE - A01C18ARBG - A01C18ASBE - A01C18ASBG</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>UK-Amsterdam-Rotterdam 17%</controllingFieldValue>
+            <valueName>A01C17ARAE - A01C17ARAG - A01C17ASAE - A01C17ASAG</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>UK-Paris-Lille-Brussels 19%</controllingFieldValue>
+            <valueName>A01C19ARBE - A01C19ARBG - A01C19ASBE - A01C19ASBG</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>UK-Amsterdam-Rotterdam 18%</controllingFieldValue>
+            <valueName>A01C18ARAE - A01C18ARAG - A01C18ASAE - A01C18ASAG</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>UK-Paris-Lille-Brussels 20%</controllingFieldValue>
+            <valueName>A01C20ARBE - A01C20ARBG - A01C20ASBE - A01C20ASBG</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>UK-Amsterdam-Rotterdam 19%</controllingFieldValue>
+            <valueName>A01C19ARAE - A01C19ARAG - A01C19ASAE - A01C19ASAG</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>UK-Paris-Lille-Brussels 21%</controllingFieldValue>
+            <valueName>A01C21ARBE - A01C21ARBG - A01C21ASBE - A01C21ASBG</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>UK-Amsterdam-Rotterdam 20%</controllingFieldValue>
+            <valueName>A01C20ARAE - A01C20ARAG - A01C20ASAE - A01C20ASAG</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>UK-Paris-Lille-Brussels 22%</controllingFieldValue>
+            <valueName>A01C22ARBE - A01C22ARBG - A01C22ASBE - A01C22ASBG</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>UK-Amsterdam-Rotterdam 21%</controllingFieldValue>
+            <valueName>A01C21ARAE - A01C21ARAG - A01C21ASAE - A01C21ASAG</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>UK-Paris-Lille-Brussels 23%</controllingFieldValue>
+            <valueName>A01C23ARBE - A01C23ARBG - A01C23ASBE - A01C23ASBG</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>UK-Amsterdam-Rotterdam 22%</controllingFieldValue>
+            <valueName>A01C22ARAE - A01C22ARAG - A01C22ASAE - A01C22ASAG</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>UK-Paris-Lille-Brussels 24%</controllingFieldValue>
+            <valueName>A01C24ARBE - A01C24ARBG - A01C24ASBE - A01C24ASBG</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>UK-Paris-Lille-Brussels 25%</controllingFieldValue>
+            <valueName>A01C25ARBE - A01C25ARBG - A01C25ASBE - A01C25ASBG</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>UK-Paris-Lille-Brussels 6%</controllingFieldValue>
+            <valueName>A01C06ARBE - A01C06ARBG - A01C06ASBE - A01C06ASBG</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>UK-Paris-Lille-Brussels 8%</controllingFieldValue>
+            <valueName>A01C08ARBE - A01C08ARBG - A01C08ASBE - A01C08ASBG</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>UK-Paris-Lille-Brussels 9%</controllingFieldValue>
+            <valueName>A01C09ARBE - A01C09ARBG - A01C09ASBE - A01C09ASBG</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>UK-Paris-Lille-Brussels 10%</controllingFieldValue>
+            <valueName>A01C10ARBE - A01C10ARBG - A01C10ASBE - A01C10ASBG</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>UK-Paris-Lille-Brussels 11%</controllingFieldValue>
+            <valueName>A01C11ARBE - A01C11ARBG - A01C11ASBE - A01C11ASBG</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>UK-Paris-Lille-Brussels 12%</controllingFieldValue>
+            <valueName>A01C12ARBE -  A01C12ARBG -  A01C12ASBE -  A01C12ASBG</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>UK-Paris-Lille-Brussels 13%</controllingFieldValue>
+            <valueName>A01C13ARBE - A01C13ARBG - A01C13ASBE - A01C13ASBG</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>UK-Paris-Lille-Brussels 14%</controllingFieldValue>
+            <valueName>A01C14ARBE - A01C14ARBG - A01C14ASBE - A01C14ASBG</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>UK-Paris-Lille-Brussels 15%</controllingFieldValue>
+            <valueName>A01C15ARBE - A01C15ARBG - A01C15ASBE - A01C15ASBG</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>UK-Amsterdam-Rotterdam 23%</controllingFieldValue>
+            <valueName>A01C23ARAE - A01C23ARAG - A01C23ASAE - A01C23ASAG</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>UK-Amsterdam-Rotterdam 24%</controllingFieldValue>
+            <valueName>A01C24ARAE - A01C24ARAG - A01C24ASAE - A01C24ASAG</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>UK-Paris-Lille-Brussels 26%</controllingFieldValue>
+            <valueName>A01C26ARBE - A01C26ARBG - A01C26ASBE - A01C26ASBG</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>UK-Amsterdam-Rotterdam 25%</controllingFieldValue>
+            <valueName>A01C25ARAE - A01C25ARAG - A01C25ASAE - A01C25ASAG</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>UK-Paris-Lille-Brussels 27%</controllingFieldValue>
+            <valueName>A01C27ARBE - A01C27ARBG - A01C27ASBE - A01C27ASBG</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>UK-Amsterdam-Rotterdam 26%</controllingFieldValue>
+            <valueName>A01C26ARAE - A01C26ARAG - A01C26ASAE - A01C26ASAG</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>B2b_Prevent_Manual_Editing</fullName>
+    <active>true</active>
+    <description>No manual updates can be performed except under the following conditions:
+- Status is set to &quot;New - Default&quot; or &quot;To be Extracted&quot;
+- User has Sales Admin Permission Set or Bypass Validation Rules checkbox enabled on the user record</description>
+    <errorConditionFormula>AND(
+NOT(Skip_Validation__c),
+NOT($User.B2b_Bypass_Validation_Rules__c),
+NOT($Permission.Sales_Admin),
+NOT(ISPICKVAL(PRIORVALUE(B2b_Status__c), &quot;New&quot;)),
+NOT(ISPICKVAL(PRIORVALUE(B2b_Status__c), &quot;To be Extracted&quot;)),
+OR(
+ISCHANGED(B2b_Approved__c),
+ISCHANGED(B2b_ApprovalInProgress__c),
+ISCHANGED(B2b_EudoNetExternalId__c),
+ISCHANGED(B2b_Bene_Extract__c),
+ISCHANGED(B2b_BeneLastExtractionDate__c),
+ISCHANGED(ContractID__c),
+ISCHANGED(B2b_Extract_Date__c),
+ISCHANGED(B2b_GDS3_Extract__c),
+ISCHANGED(GDS_Air_Extract__c),
+ISCHANGED(B2b_GDS3LastExtractionDate__c),
+ISCHANGED(B2b_LastExtractionDate__c),
+ISCHANGED(B2b_NegotiatedRateDetailCode__c),
+ISCHANGED(B2b_ParentNrDetail__c),
+ISCHANGED(PCC_Extract__c),
+ISCHANGED(B2b_PercentageDiscountBp__c),
+ISCHANGED(B2b_Percentage_Discount_Comfort__c),
+ISCHANGED(B2b_Percentage_Discount_Premium__c),
+ISCHANGED(B2b_Percentage_Discount_Standard__c),
+ISCHANGED(B2b_PercentageDiscountSp__c),
+ISCHANGED(B2b_PercentagePossibleComfort__c),
+ISCHANGED(B2b_PercentagePossibleFirst__c),
+ISCHANGED(B2b_PercentagePossibleStandard__c),
+ISCHANGED(B2b_PercentageTGN__c),
+ISCHANGED(B2b_Route__c),
+ISCHANGED(B2b_RouteStartDate__c),
+ISCHANGED(S3_Extract__c),
+ISCHANGED(B2b_Status__c),
+ISCHANGED(B2b_TicketsComfort__c),
+ISCHANGED(B2b_TicketsFirst__c),
+ISCHANGED(B2b_TicketsStandard__c),
+ISCHANGED(B2b_TurnoverComfort__c),
+ISCHANGED(B2b_TurnoverFirst__c),
+ISCHANGED(B2b_TurnoverStandard__c)
+)
+)</errorConditionFormula>
+    <errorMessage>The current status does not allow manual editing of the record.</errorMessage>
+</ValidationRule>

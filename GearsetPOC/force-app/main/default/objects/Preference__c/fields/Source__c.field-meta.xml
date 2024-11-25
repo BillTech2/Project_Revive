@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Source__c</fullName>
+    <description>Where the consent was made from.</description>
+    <label>Source</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>preference center</fullName>
+                <default>false</default>
+                <label>preference center</label>
+            </value>
+            <value>
+                <fullName>agent</fullName>
+                <default>false</default>
+                <label>agent</label>
+            </value>
+            <value>
+                <fullName>Eurostar.com-Accounts</fullName>
+                <default>false</default>
+                <label>Eurostar.com-Accounts</label>
+            </value>
+            <value>
+                <fullName>Eurostar.com-Booking Path</fullName>
+                <default>false</default>
+                <label>Eurostar.com-Booking Path</label>
+            </value>
+            <value>
+                <fullName>Eurostar.com-BPA In Path Dropouts</fullName>
+                <default>false</default>
+                <label>Eurostar.com-BPA In Path Dropouts</label>
+            </value>
+            <value>
+                <fullName>Eurostar.com-Newsletter Signups</fullName>
+                <default>false</default>
+                <label>Eurostar.com-Newsletter Signups</label>
+            </value>
+            <value>
+                <fullName>Eurostar.com-Disney Competition</fullName>
+                <default>false</default>
+                <label>Eurostar.com-Disney Competition</label>
+            </value>
+            <value>
+                <fullName>Snap.Eurostar.com</fullName>
+                <default>false</default>
+                <label>Snap.Eurostar.com</label>
+            </value>
+            <value>
+                <fullName>Vouchers.Eurostar.com</fullName>
+                <default>false</default>
+                <label>Vouchers.Eurostar.com</label>
+            </value>
+            <value>
+                <fullName>Mobile App-Accounts</fullName>
+                <default>false</default>
+                <label>Mobile App-Accounts</label>
+            </value>
+            <value>
+                <fullName>Onboard Entertainment</fullName>
+                <default>false</default>
+                <label>Onboard Entertainment</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

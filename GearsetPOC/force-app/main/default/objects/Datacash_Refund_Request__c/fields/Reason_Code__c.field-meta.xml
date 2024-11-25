@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_Code__c</fullName>
+    <label>Reason Code</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>PRR compensation</fullName>
+                <default>false</default>
+                <label>PRR compensation</label>
+            </value>
+            <value>
+                <fullName>SNAP ticket refund</fullName>
+                <default>false</default>
+                <label>SNAP ticket refund</label>
+            </value>
+            <value>
+                <fullName>Refund of insurance</fullName>
+                <default>false</default>
+                <label>Refund of insurance</label>
+            </value>
+            <value>
+                <fullName>Error online (Please enter the incident number below)</fullName>
+                <default>false</default>
+                <label>Error online (Please enter the incident number below)</label>
+            </value>
+            <value>
+                <fullName>Train cancelled-refund of unused ticket(s)</fullName>
+                <default>false</default>
+                <label>Train cancelled-refund of unused ticket(s)</label>
+            </value>
+            <value>
+                <fullName>Duplicate booking</fullName>
+                <default>false</default>
+                <label>Duplicate booking</label>
+            </value>
+            <value>
+                <fullName>Overcharged for exchange</fullName>
+                <default>false</default>
+                <label>Overcharged for exchange</label>
+            </value>
+            <value>
+                <fullName>Refund of exchange fees</fullName>
+                <default>false</default>
+                <label>Refund of exchange fees</label>
+            </value>
+            <value>
+                <fullName>Double booking</fullName>
+                <default>false</default>
+                <label>Double booking</label>
+            </value>
+            <value>
+                <fullName>Refund of credit card fees</fullName>
+                <default>false</default>
+                <label>Refund of credit card fees</label>
+            </value>
+            <value>
+                <fullName>GWG (Please include more details below)</fullName>
+                <default>false</default>
+                <label>GWG (Please include more details below)</label>
+            </value>
+            <value>
+                <fullName>Other (Please include more details below)</fullName>
+                <default>false</default>
+                <label>Other (Please include more details below)</label>
+            </value>
+            <value>
+                <fullName>1</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>1</label>
+            </value>
+            <value>
+                <fullName>2</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>2</label>
+            </value>
+            <value>
+                <fullName>3</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>3</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

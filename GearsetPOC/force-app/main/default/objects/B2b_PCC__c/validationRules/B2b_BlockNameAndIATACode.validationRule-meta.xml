@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>B2b_BlockNameAndIATACode</fullName>
+    <active>true</active>
+    <description>Once the IATA Code and Name are filled they can&#39;t be modified</description>
+    <errorConditionFormula>AND(
+NOT($User.B2b_Bypass_Validation_Rules__c),
+!ISNEW(),
+OR(
+ISCHANGED(B2b_IATACode__c),
+ISCHANGED(Name)
+)
+)</errorConditionFormula>
+    <errorMessage>Once the IATA Code and Name are filled they can&#39;t be modified</errorMessage>
+</ValidationRule>

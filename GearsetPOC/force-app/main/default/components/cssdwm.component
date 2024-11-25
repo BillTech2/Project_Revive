@@ -1,0 +1,339 @@
+<apex:component >
+  <style>
+.container{
+        padding-top:0;
+        }
+        
+        .pageBlockSection, .inputField {
+        display:block;
+        }
+        
+        body .bPageBlock, body #bodyCell .bResource .secondaryPalette, body .secondaryPalette.bPageBlock, body .individualPalette .secondaryPalette.bPageBlock, body .bodyDiv .genericTable, body .genericPageBlockTable, body .bodyDiv .bSubBlock, body .bComponentBlock .bPageBlock, body .bMyDashboard .bPageBlock, body.rlHoverFrame .bPageBlock, body.subjectSelectionPopup, div.choicesBox, body.lookupTab, .secondaryPalette.bPageBlock, body.popupTab, .secondaryPalette.bPageBlock, body.UserTagStatsPage, .secondaryPalette.bPageBlock {
+		border: none;
+		-moz-border-radius: none;
+		-webkit-border-radius: none;
+		border-radius: none;
+		}
+        
+        body .bRelatedList .pbTitle h3, body .bPageBlock .pbTitle h2, body .bPageBlock .pbTitle h3, body .bSubBlock h3.lbHeader {
+		color: #06183D;
+		font-size: 36px !important;
+		font-weight: 400;
+		line-height: 1em;
+		font-family: "eurostarsansregular","Tahoma","Geneva",sans-serif;
+		}
+        
+        body .bEditBlock .pbHeader, body .bLayoutBlock .pbHeader, body .apexp .bPageBlock.apexDefaultPageBlock .pbHeader,.bEditBlock .pbHeader>table, .apexp .bPageBlock.apexDefaultPageBlock .pbHeader>table, #ep.bLayoutBlock .pbHeader>table 
+        {
+border-bottom: none;
+}
+        
+        .bEditBlock .pbHeader>table>tbody>tr>td, .bPageBlock .pbHeader>table>tbody>tr>td, .bLayoutBlock .pbHeader>table>tbody>tr>td, .bEditBlock .pbBottomButtons>table>tbody>tr>td, .bPageBlock .pbBottomButtons>table>tbody>tr>td, .bLayoutBlock .pbBottomButtons>table>tbody>tr>td 
+        {
+padding: 0;
+}
+        
+        body .bEditBlock .pbBody .pbSubheader, body .bWizardBlock .pbBody .pbSubheader, .pbSubheader,.pbSubsection 
+        {
+        background-image:none;
+        background-color:none !important;
+		border-width: 0;
+		color: #333;
+		border-top: none;
+        padding:0 20px;
+}
+        
+        body .bPageBlock .pbBody .pbSubheader h3, body .bWizardBlock .bPageBlock .pbBody .pbSubheader label 
+        {
+font-family: "eurostarsansregular","Tahoma","Geneva",sans-serif;
+color: #06183D!important;
+font-weight: 400;
+font-size: 18px;
+}
+        
+        label {
+display: inline-block;
+max-width: 100%;
+margin-bottom: 0;
+font-weight: 700;
+margin-left: 10px;
+color: #06183D!important;
+font-size:14px;
+}
+        
+		.labelCol {width: 20%;
+  color: #06183D;
+  text-align: right;
+  padding-right: 15px;}
+   
+        input[type=radio], input[type=checkbox] {
+margin: 0;
+margin-top:0;
+line-height: normal;
+width:auto !important;
+}
+        
+                .bEditBlock input, .bEditBlock select, .bEditBlock img, .quickCreateModule input, .quickCreateModule select, .quickCreateModule img 
+        {
+vertical-align: top !important;
+margin-top:3px;
+margin-right: 0;
+border: 1px solid #ccc;
+border-radius: 4px;
+padding: 6px 12px;
+}
+
+        .bEditBlock .requiredLegend {
+display:none;
+}
+
+        .bPageBlock .pbTitle {width:100%;}
+        .btnGo, .btnImportant, .btnSharing, .btnDisabled, .btn, .bEditBlock .btnGo, .bEditBlock .btnImportant, .bEditBlock .btnSharing, .bEditBlock .btnDisabled, .bEditBlock .btn, .btnCustomAction, .btnOverriddenAction 
+        {
+margin: 5px 20px;
+}
+        
+		.pbBody {
+background-color: #fff;
+        padding-bottom:30px;
+}
+
+        body .bPageBlock, body #bodyCell .bResource .secondaryPalette, body .secondaryPalette.bPageBlock, body .individualPalette .secondaryPalette.bPageBlock, body .bodyDiv .genericTable, body .genericPageBlockTable, body .bodyDiv .bSubBlock, body .bComponentBlock .bPageBlock, body .bMyDashboard .bPageBlock, body.rlHoverFrame .bPageBlock, body.subjectSelectionPopup div.choicesBox, body.lookupTab .secondaryPalette.bPageBlock, body.popupTab .secondaryPalette.bPageBlock, body.UserTagStatsPage .secondaryPalette.bPageBlock 
+        {
+background-color: #fff;
+border-bottom: none;
+border-left: none;
+border-right: none;
+-moz-border-radius: 0;
+-webkit-border-radius: 0;
+border-radius: 0;
+}
+
+		.form-para {width: 100%;
+background-color: #fff;padding-bottom: 20px;}
+        
+        
+		.errorM3 h4, .error, .errorMsg, .messageTable {
+color:#cc0000;
+font-family: ABCSocial-Regular;
+font-weight: bold;
+font-size: 18px;
+line-height: 20px;
+text-align: center;
+}
+
+.errorM3 h4 {margin-bottom: 0;}  
+        .errorMsg {margin-bottom: 10px;}
+        
+        .lang {margin:5px;line-height: 19px;padding-left: 22px;color:#fff; height:40px; width:40px;border: 1px solid #999; border-radius:40px !important; -moz-border-radius:40px !important; -webkit-border-radius:40px !important;}
+        .lang-group {float:right; padding-top:25px;margin-left: 35px;}
+        .lang a {color:#fff;}
+        .lang img {margin-top:10px;  margin-left: -17px;}
+        .lang:hover, .lang:focus, .lang.focus, .lang:after, btn lang:active {background-color:#666 !important;}
+  
+        @media (max-width: 320px) {
+        .container {padding-top: 0;}
+        label {width: 82%;
+		margin-left: 6px;
+		margin-top: 2px;}
+        .bEditBlock input, .bEditBlock select, .bEditBlock img, .quickCreateModule input, .quickCreateModule select, .quickCreateModule img {
+padding: 5px;
+}
+                .lang-group {float:left; width:100%; margin: 10px 0;padding-top: 0;}
+        
+}
+        
+        input[type=radio], input[type=checkbox] {width:auto !important;}
+        .data2Col input, .bEditBlock input {
+        width: 100%;
+        margin: 5px 0;
+        }
+        input[type=submit] {
+        width: 40%;
+        margin-left: 2%;
+        margin-top: 10px;
+        }  
+      
+      	.container {margin-top:15px;}
+        .lang {margin:5px;line-height: 19px;padding-left: 22px;color:#fff; height:40px; width:40px;border: 1px solid #999; border-radius:40px !important; -moz-border-radius:40px !important; -webkit-border-radius:40px !important;}
+        .lang-group {float:right; padding-top:25px;margin-left: 35px;}
+        .lang a {color:#fff;}
+        .lang img {margin-top:10px;  margin-left: -17px;}
+        .lang:hover, .lang:focus, .lang.focus, .lang:after, btn lang:active {background-color:#666 !important;}
+
+      
+      	/* MULTIPLE WIDTH BREAKPOINTS */
+        @media (max-width: 320px) {
+        .container {padding-top: 0;}
+        label {width: 82%;
+		margin-left: 6px;
+		margin-top: 2px;
+      	}
+        .bEditBlock input, .bEditBlock select, .bEditBlock img, .quickCreateModule input, .quickCreateModule select, .quickCreateModule img {
+padding: 5px;
+		}
+        input[type=radio], input[type=checkbox] {width:auto !important;}
+        .data2Col input, .bEditBlock input {
+        width: 100%;
+        margin: 5px 0;
+        }
+        input[type=submit] {
+        width: 85%;
+        margin-left: 6%;
+        margin-top: 10px;
+        }
+      	.lang-group {float:left; width:100%; margin: 10px 0;padding-top: 0;}
+      	}
+      
+      @media (min-width: 320px) and (max-width: 338px) {
+        .container {padding-top: 0;}
+        label {width: 82%;
+		margin-left: 6px;
+		margin-top: 2px;}
+        bEditBlock input, .bEditBlock select, .bEditBlock img, .quickCreateModule input, .quickCreateModule select, .quickCreateModule img {
+		padding: 5px;
+		}
+        input[type=radio], input[type=checkbox] {width:auto !important;}
+        .data2Col input, .bEditBlock input {
+        width: 100%;
+        margin: 5px 0;
+        }
+        input[type=submit] {
+        width: 85%;
+        margin-left: 6%;
+        margin-top: 10px;
+        }
+      	.navbar-brand-mob img{
+        height: 55px;
+        margin-top:5px;
+        }
+      	.lang-group {float:left; width:100%; margin: 10px 0;padding-top: 0;}
+        }
+      
+      @media (min-width: 339px) and (max-width: 562px) {
+        .container {padding-top: 0;}
+        label {width: 82%;
+		margin-left: 6px;
+		margin-top: 2px;
+      	}
+        input[type=radio], input[type=checkbox] {width:auto !important;}
+        .data2Col input, .bEditBlock input {
+        width: 100%;
+        margin: 5px 0;
+        }
+        input[type=submit] {
+        width: 90%;
+        margin-left: 4%;
+        margin-top: 10px;
+        }
+        .navbar-brand-mob img{
+                height: 55px;
+                margin-top: 5px;
+                }
+      	.lang-group {float:left; width:100%; margin: 10px 0;padding-top: 0;}
+            }
+      
+      @media (min-width: 562px) and (max-width: 768px) {
+        .container {padding-top: 0;}
+         .navbar-brand-mob img{
+                height: 60px;
+                margin-top: 8px;
+                }
+      .lang-group {float:left; width:100%; margin: 10px 0;padding-top: 0;}
+      .data2Col input, .bEditBlock input {
+  		width: 50%;
+  		margin: 5px 0;
+		} 
+        }
+      @media (min-width: 768px) {
+      .data2Col input, .bEditBlock input {
+  		width: 50%;
+  		margin: 5px 0;
+		} 
+      }
+      
+      #button-send, input.btn {
+        font-weight: 400;
+        background-color:#24b5c9;
+        color:#fff  !important;
+        padding:1% 0;
+        font-size:1.1em;
+        width:33.3333%;
+        text-shadow: 1px 1px 1px #11455A;
+        /* background-image: -webkit-gradient(linear,left top,left 100%,from(#24b5c9),to(#004c76)); */
+        background-image: -webkit-linear-gradient(top,#24b5c9 0,#004c76 100%); 
+         /*gradient background color */
+    background: #0071a0; /* Old browsers */
+    background: -moz-linear-gradient(left,  #24b5c9 1%, #004c76 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(1%,#24b5c9), color-stop(100%,#004c76)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left,  #24b5c9 1%,#004c76 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #24b5c9 1%,#004c76 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #24b5c9 1%,#004c76 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #24b5c9 1%,#004c76 100%); /* W3C */
+    background: linear-gradient(to bottom,  #24b5c9 1%,#004c76 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#24b5c9', endColorstr='#004c76',GradientType=1 );
+            }
+            .button-yes:hover,
+            .button-yes:focus,
+            .button-no:hover,
+            .button-no:focus,
+            #button-send:hover, input.btn:hover,
+            #button-send:focus, input.btn:focus {
+                color: #fff !important;
+                text-decoration: underline;
+                outline: 0;
+            }
+      #button-send, input.btn {
+                color: #fff;
+                margin: 5px 0;
+
+            }
+              input[type=submit] {
+margin:15px 20px 35px 20px;
+color:#fff;
+width:auto;
+background-color: #24b5c9;
+padding: 6px 40px;
+font-size: 1.1em;
+text-shadow: 1px 1px 1px #11455A;
+background-image: -webkit-gradient(linear,left top,left 100%,from(#24b5c9),to(#004c76));
+background-image: -webkit-linear-gradient(top,#24b5c9 0,#004c76 100%);
+background: #0071a0;
+background: -moz-linear-gradient(left, #24b5c9 1%, #004c76 100%);
+background: -webkit-gradient(linear, left top, right top, color-stop(1%,#24b5c9), color-stop(100%,#004c76));
+background: -webkit-linear-gradient(left, #24b5c9 1%,#004c76 100%);
+background: -o-linear-gradient(top, #24b5c9 1%,#004c76 100%);
+background: -ms-linear-gradient(top, #24b5c9 1%,#004c76 100%);
+background: linear-gradient(to bottom, #24b5c9 1%,#004c76 100%);
+background: linear-gradient(to bottom, #24b5c9 1%,#004c76 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#24b5c9', endColorstr='#004c76',GradientType=1 );
+-webkit-border-radius: 7px;
+-moz-border-radius: 7px;
+border-radius: 7px;
+border-color: #24b5c9;
+}
+    .paymentOpt {
+  cursor: pointer;
+  height: 100%;
+  border: 1px solid #ccc;
+  width:auto;
+  border-radius:8px;
+  -moz-border-radius:8px;
+  border-bottom: none;
+}
+
+    .paymentOpt td {
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+  background: #fff;
+  outline: 0;
+  padding: 10px 20px;
+}
+  .paymentOpt label {cursor: pointer;}  
+  .paymentOpt tr td:hover {background: #fff;}
+  .highlight {
+        color:#fff !important;
+    </style>
+</apex:component>

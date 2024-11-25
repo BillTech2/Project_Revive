@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>true</sorted>
+    <standardValue>
+        <fullName>Customer Case</fullName>
+        <default>false</default>
+        <label>Customer Case</label>
+    </standardValue>
+    <standardValue>
+        <fullName>GENERAL - Check-In Feedback</fullName>
+        <default>false</default>
+        <label>GENERAL - Check-In Feedback</label>
+    </standardValue>
+    <standardValue>
+        <fullName>GENERAL - Compensation / Past Disruption</fullName>
+        <default>false</default>
+        <label>GENERAL - Compensation / Past Disruption</label>
+    </standardValue>
+    <standardValue>
+        <fullName>GENERAL - Enthusiasm</fullName>
+        <default>false</default>
+        <label>GENERAL - Enthusiasm</label>
+    </standardValue>
+    <standardValue>
+        <fullName>GENERAL - General Feedback</fullName>
+        <default>false</default>
+        <label>GENERAL - General Feedback</label>
+    </standardValue>
+    <standardValue>
+        <fullName>GENERAL - Staff Feedback</fullName>
+        <default>false</default>
+        <label>GENERAL - Staff Feedback</label>
+    </standardValue>
+    <standardValue>
+        <fullName>GENERAL - Strike Related Contact</fullName>
+        <default>false</default>
+        <label>GENERAL - Strike Related Contact</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Inquiry</fullName>
+        <default>false</default>
+        <label>Inquiry</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ISSUE - Customer Booked Wrong Dates/Times</fullName>
+        <default>false</default>
+        <label>ISSUE - Customer Booked Wrong Dates/Times</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ISSUE - Delayed en route to Station</fullName>
+        <default>false</default>
+        <label>ISSUE - Delayed en route to Station</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ISSUE - Failed Payment Online</fullName>
+        <default>false</default>
+        <label>ISSUE - Failed Payment Online</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ISSUE - Spelling Error on Booking</fullName>
+        <default>false</default>
+        <label>ISSUE - Spelling Error on Booking</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ISSUE - Website Related Issue</fullName>
+        <default>false</default>
+        <label>ISSUE - Website Related Issue</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Lead</fullName>
+        <default>false</default>
+        <label>Lead</label>
+    </standardValue>
+    <standardValue>
+        <fullName>NEW LOYALTY - Changeover queries</fullName>
+        <default>false</default>
+        <label>NEW LOYALTY - Changeover queries</label>
+    </standardValue>
+    <standardValue>
+        <fullName>NEW LOYALTY - Feedback on program and tier names</fullName>
+        <default>false</default>
+        <label>NEW LOYALTY - Feedback on program and tier names</label>
+    </standardValue>
+    <standardValue>
+        <fullName>NEW LOYALTY - New benefits</fullName>
+        <default>false</default>
+        <label>NEW LOYALTY - New benefits</label>
+    </standardValue>
+    <standardValue>
+        <fullName>NEW LOYALTY - New redemption fares</fullName>
+        <default>false</default>
+        <label>NEW LOYALTY - New redemption fares</label>
+    </standardValue>
+    <standardValue>
+        <fullName>NEW LOYALTY - Tier attainability</fullName>
+        <default>false</default>
+        <label>NEW LOYALTY - Tier attainability</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Outreach</fullName>
+        <default>false</default>
+        <label>Outreach</label>
+    </standardValue>
+    <standardValue>
+        <fullName>PROACTIVE ENGAGEMENT</fullName>
+        <default>false</default>
+        <label>PROACTIVE ENGAGEMENT</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Product Review</fullName>
+        <default>false</default>
+        <label>Product Review</label>
+    </standardValue>
+    <standardValue>
+        <fullName>QUESTION - Amsterdam</fullName>
+        <default>false</default>
+        <label>QUESTION - Amsterdam</label>
+    </standardValue>
+    <standardValue>
+        <fullName>QUESTION - Connections</fullName>
+        <default>false</default>
+        <label>QUESTION - Connections</label>
+    </standardValue>
+    <standardValue>
+        <fullName>QUESTION - Current Disruption</fullName>
+        <default>false</default>
+        <label>QUESTION - Current Disruption</label>
+    </standardValue>
+    <standardValue>
+        <fullName>QUESTION - General</fullName>
+        <default>false</default>
+        <label>QUESTION - General</label>
+    </standardValue>
+    <standardValue>
+        <fullName>QUESTION - Loyalty or Online Account</fullName>
+        <default>false</default>
+        <label>QUESTION - Loyalty or Online Account</label>
+    </standardValue>
+    <standardValue>
+        <fullName>QUESTION - Luggage</fullName>
+        <default>false</default>
+        <label>QUESTION - Luggage</label>
+    </standardValue>
+    <standardValue>
+        <fullName>QUESTION - Seating</fullName>
+        <default>false</default>
+        <label>QUESTION - Seating</label>
+    </standardValue>
+    <standardValue>
+        <fullName>QUESTION - Ticket Collection</fullName>
+        <default>false</default>
+        <label>QUESTION - Ticket Collection</label>
+    </standardValue>
+    <standardValue>
+        <fullName>QUESTION - Ticket Conditions</fullName>
+        <default>false</default>
+        <label>QUESTION - Ticket Conditions</label>
+    </standardValue>
+    <standardValue>
+        <fullName>QUESTION - Timetable &amp; Availability</fullName>
+        <default>false</default>
+        <label>QUESTION - Timetable &amp; Availability</label>
+    </standardValue>
+    <standardValue>
+        <fullName>REQUEST - Letter or Confirmation</fullName>
+        <default>false</default>
+        <label>REQUEST - Letter or Confirmation</label>
+    </standardValue>
+    <standardValue>
+        <fullName>REQUEST - Override Ticket Conditions</fullName>
+        <default>false</default>
+        <label>REQUEST - Override Ticket Conditions</label>
+    </standardValue>
+    <standardValue>
+        <fullName>SNAP - Booking Error</fullName>
+        <default>false</default>
+        <label>SNAP - Booking Error</label>
+    </standardValue>
+    <standardValue>
+        <fullName>SNAP - Confirmation Request</fullName>
+        <default>false</default>
+        <label>SNAP - Confirmation Request</label>
+    </standardValue>
+    <standardValue>
+        <fullName>SNAP - Payment Problem</fullName>
+        <default>false</default>
+        <label>SNAP - Payment Problem</label>
+    </standardValue>
+    <standardValue>
+        <fullName>SNAP - Question</fullName>
+        <default>false</default>
+        <label>SNAP - Question</label>
+    </standardValue>
+    <standardValue>
+        <fullName>SNAP - Ticket Conditions</fullName>
+        <default>false</default>
+        <label>SNAP - Ticket Conditions</label>
+    </standardValue>
+    <standardValue>
+        <fullName>SNAP - Wrong Date</fullName>
+        <default>false</default>
+        <label>SNAP - Wrong Date</label>
+    </standardValue>
+    <standardValue>
+        <fullName>SNAP - Wrong Way Round</fullName>
+        <default>false</default>
+        <label>SNAP - Wrong Way Round</label>
+    </standardValue>
+</StandardValueSet>

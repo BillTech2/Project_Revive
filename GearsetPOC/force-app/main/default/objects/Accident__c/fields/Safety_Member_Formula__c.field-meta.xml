@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Safety_Member_Formula__c</fullName>
+    <description>Field to concatenate the 2 Safety member continent fields for the purpose of email template addressing</description>
+    <externalId>false</externalId>
+    <formula>IF(  ISBLANK( Safety_Member_Continent__c ),(IF(ISBLANK( Safety_Member_Continent_2__c ),&quot;&quot;,  Safety_Member_Continent_2__r.FirstName &amp; &quot; &quot; &amp;  Safety_Member_Continent_2__r.LastName )),(IF(ISBLANK( Safety_Member_Continent_2__c ), Safety_Member_Continent__r.FirstName &amp; &quot; &quot; &amp;  Safety_Member_Continent__r.LastName, Safety_Member_Continent__r.FirstName &amp; &quot; &quot; &amp;  Safety_Member_Continent__r.LastName &amp;&quot; / &quot;&amp; Safety_Member_Continent_2__r.FirstName &amp; &quot; &quot; &amp;  Safety_Member_Continent_2__r.LastName  )))</formula>
+    <label>Safety Member Formula</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

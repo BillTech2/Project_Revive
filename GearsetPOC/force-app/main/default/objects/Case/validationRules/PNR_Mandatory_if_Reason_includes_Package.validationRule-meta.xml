@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PNR_Mandatory_if_Reason_includes_Package</fullName>
+    <active>true</active>
+    <errorConditionFormula>OR(
+ISPICKVAL(Reason_For_Contact_Dynamic_Package__c,&quot;Package Hotel Exchange&quot;),
+ISPICKVAL(Reason_For_Contact_Dynamic_Package__c,&quot;Package Hotel Refund&quot;),
+ISPICKVAL(Reason_For_Contact_Dynamic_Package__c,&quot;Package Hotel Query&quot;))
+&amp;&amp;
+ISBLANK(PNR__c)</errorConditionFormula>
+    <errorDisplayField>PNR__c</errorDisplayField>
+    <errorMessage>Please enter the booking PNR</errorMessage>
+</ValidationRule>

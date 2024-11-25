@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Discount_Type__c</fullName>
+    <label>Discount Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Fixed Value</fullName>
+                <default>false</default>
+                <label>Fixed Value</label>
+            </value>
+            <value>
+                <fullName>Percentage</fullName>
+                <default>true</default>
+                <label>Percentage</label>
+            </value>
+            <value>
+                <fullName>Extra Miles</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Extra Miles</label>
+            </value>
+            <value>
+                <fullName>Validity Extend</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Validity Extend</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

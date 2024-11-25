@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>COVID_Error_Category__c</fullName>
+    <label>COVID Error Category</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Invalid Claim Email - incorrect email</fullName>
+                <default>false</default>
+                <label>Invalid Claim Email - incorrect email</label>
+            </value>
+            <value>
+                <fullName>Group Bookings</fullName>
+                <default>false</default>
+                <label>Group Bookings</label>
+            </value>
+            <value>
+                <fullName>Package Bookings</fullName>
+                <default>false</default>
+                <label>Package Bookings</label>
+            </value>
+            <value>
+                <fullName>RDG Interlining Bookings</fullName>
+                <default>false</default>
+                <label>RDG Interlining Bookings</label>
+            </value>
+            <value>
+                <fullName>Zero Value Bookings</fullName>
+                <default>false</default>
+                <label>Zero Value Bookings</label>
+            </value>
+            <value>
+                <fullName>No Exclusion</fullName>
+                <default>false</default>
+                <label>No Exclusion</label>
+            </value>
+            <value>
+                <fullName>Partial Bookings</fullName>
+                <default>false</default>
+                <label>Partial Bookings</label>
+            </value>
+            <value>
+                <fullName>Out of Scope</fullName>
+                <default>false</default>
+                <label>Out of Scope</label>
+            </value>
+            <value>
+                <fullName>PNR Not Valid</fullName>
+                <default>false</default>
+                <label>PNR Not Valid</label>
+            </value>
+            <value>
+                <fullName>Unsupported Currency</fullName>
+                <default>false</default>
+                <label>Unsupported Currency</label>
+            </value>
+            <value>
+                <fullName>No Email on Booking</fullName>
+                <default>false</default>
+                <label>No Email on Booking</label>
+            </value>
+            <value>
+                <fullName>Interlining Bookings</fullName>
+                <default>false</default>
+                <label>Interlining Bookings</label>
+            </value>
+            <value>
+                <fullName>Duplicate</fullName>
+                <default>false</default>
+                <label>Duplicate</label>
+            </value>
+            <value>
+                <fullName>Red Queue</fullName>
+                <default>false</default>
+                <label>Red Queue</label>
+            </value>
+            <value>
+                <fullName>Already Compensated</fullName>
+                <default>false</default>
+                <label>Already Compensated</label>
+            </value>
+            <value>
+                <fullName>No Exclusion - Eligible</fullName>
+                <default>false</default>
+                <label>No Exclusion - Eligible</label>
+            </value>
+            <value>
+                <fullName>RIT Bookings</fullName>
+                <default>false</default>
+                <label>RIT Bookings</label>
+            </value>
+            <value>
+                <fullName>Non Eurostar POS</fullName>
+                <default>false</default>
+                <label>Non Eurostar POS</label>
+            </value>
+            <value>
+                <fullName>Wheelchair Bookings</fullName>
+                <default>false</default>
+                <label>Wheelchair Bookings</label>
+            </value>
+            <value>
+                <fullName>Invalid Claim Email</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Invalid Claim Email</label>
+            </value>
+            <value>
+                <fullName>Invalid Claim Email - no booking email</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Invalid Claim Email - no booking email</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

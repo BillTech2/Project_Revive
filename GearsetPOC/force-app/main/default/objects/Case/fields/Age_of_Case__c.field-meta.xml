@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Age_of_Case__c</fullName>
+    <label>Webhelp Escalation SLA</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Within SLA</fullName>
+                <default>false</default>
+                <label>Within SLA</label>
+            </value>
+            <value>
+                <fullName>Approaching SLA Limit (1 - 2 Hours)</fullName>
+                <default>false</default>
+                <label>Approaching SLA Limit (1 - 2 Hours)</label>
+            </value>
+            <value>
+                <fullName>Over SLA (2 hours+)</fullName>
+                <default>false</default>
+                <label>Over SLA (2 hours+)</label>
+            </value>
+            <value>
+                <fullName>Approaching SLA Limit (18 - 24 Hours)</fullName>
+                <default>false</default>
+                <label>Approaching SLA Limit (18 - 24 Hours)</label>
+            </value>
+            <value>
+                <fullName>Over SLA (24 hours+)</fullName>
+                <default>false</default>
+                <label>Over SLA (24 hours+)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,141 @@
+<apex:page sidebar="false" standardStyleSheets="false" controller="Invoice_CustomerController" docType="html-5.0">
+
+<script type="text/javascript">
+  function noenter(e){
+    if(window.event){
+    key = window.event.keyCode; //IE
+    } else{
+    key = e.which; //firefox
+    }
+    if(key == 13) {
+    var ele=document.getElementById('{!$Component.form.Block1.item10.item10_4.search}');
+    ele.click();
+    return false;
+    } else{
+    return true;
+    }
+   }
+</script>
+
+
+   <style type="text/css">
+      .detailList {
+      table-layout: fixed;
+      }
+      .labelCol {
+      text-align: right!important;
+      width: 30% !important;
+      max-width: 30% !important;
+      font-weight: normal !important;
+      }       
+      .accordionPanel .ui-accordion .ui-accordion-content{padding:0 0 ;border:0}
+      .odd {background-color: #FCF7F7;}
+      .even {background-color: #E3DCDB;}
+      
+      .headerStyle {
+           font-family: "Calibri", Georgia, Serif;
+           font-size:15px;
+           color:white;
+           background-color:#1975A3;
+       }
+   </style>
+
+
+<apex:form id="form" >
+      <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+      <script type="text/javascript">
+        
+      </script>
+      <html>
+         <head>
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+            <title>EUROSTAR</title>
+            <apex:stylesheet value="{!URLFOR($Resource.customCSS, 'customCSS/css/jquery-ui.css')}"/>
+            <apex:stylesheet value="{!URLFOR($Resource.customCSS, 'customCSS/css/reset.css')}"/>
+            <apex:stylesheet value="{!URLFOR($Resource.customCSS, 'customCSS/css/style.css')}"/>
+         </head>
+         <body>
+            <div class="container">
+               <div class="mid-panel">
+                <div class="bread-crums"><a href="#">Invoice Request Tool</a> <i>&gt;</i> <a href="#" class="underline">Customer Search</a></div>
+                  <div class="form-panel">
+                     <dl>
+                        <apex:pageMessages />
+                     </dl>
+                     <div class="accordionPanel row margin-top0">
+                      <div id="accordion" class="ui-accordion ui-widget ui-helper-reset">
+                           <h3 class="ui-accordion-header ui-accordion-icons ui-corner-top ui-accordion-header-active ui-state-active">
+                           Customer Search
+                           </h3>
+                     <div id="accordion" class="button">     
+
+<apex:pageBlock id="Block1">
+<apex:pageBlockSection id="item10" columns="4">
+<apex:pageBlockSectionItem id="item10_1"> 
+<apex:commandButton id="RecentCustomers" value="Recent Customers" action="{!show}" style="width:120px" />
+</apex:pageBlockSectionItem>
+<apex:pageblockSectionItem id="item10_2" >
+<apex:commandButton value="New Customer" action="{!add}" style="width:120px"/>
+<apex:param id="radio" value="new"/>
+</apex:pageblockSectionItem>
+<apex:pageBlockSectionItem id="item10_3" >
+<apex:outputLabel value="Customer Name" />
+<apex:inputText id="enteredvalue" value="{!enteredvalue}"  style="width:100px" onkeypress="return noenter(event);"/>
+</apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem id="item10_4" >
+<apex:commandButton id="search" value="Search"  action="{!fetch}" style="width:100px"/>
+</apex:pageBlockSectionItem>
+
+</apex:pageBlockSection>
+</apex:pageBlock>
+</div>
+ <h3 class="ui-accordion-header ui-accordion-icons ui-corner-top ui-accordion-header-active ui-state-active">
+                              Customer Search Results
+                           </h3>
+                           <div class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom ui-accordion-content-active">
+            <apex:pageBlock id="Block2">
+            
+            <apex:pageBlockTable value="{!Customer}" var="cus">
+            
+            <apex:column headerValue="Action"> 
+              
+            <input type="radio" name="radio" value="{!cus.name}"/> 
+            <!--<apex:param id="radio" value="{!cus.name}"/>-->
+            <apex:actionSupport event="onclick" action="{!CustomerDetail}"/>
+                
+            </apex:column>      
+            <apex:column headerValue="Account Number " id="AccountNumber">
+            <apex:outputField value="{!cus.Customer_AccountNumber__c}"/>  
+            </apex:column>
+            <!--<apex:column headerValue="Customer ID" id="CustomerID">
+            <apex:outputField value="{!cus.name}"/>  
+            </apex:column> -->
+            <apex:column headerValue="Customer Name" id="CustomerName">
+            <apex:outputField value="{!cus.Customer_Name__c}"/>  
+            </apex:column>
+            <apex:column headerValue="Customer Address" id="CustomerAddress">
+            <apex:outputField value="{!cus.Customer_Address__c}"/>  
+            </apex:column>
+            <apex:column headerValue="Contact Name" id="CustomerContactName">
+            <apex:outputField value="{!cus.Customer_ContactName__c}"/>  
+            </apex:column>            
+            <apex:column headerValue="Email" id="CustomerContactEmail">
+            <apex:outputField value="{!cus.Customer_ContactEmail__c}"/>  
+            </apex:column>
+                       
+           
+            </apex:pageBlockTable>
+            
+            </apex:pageBlock>
+             </div>
+       
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+      </html>
+</apex:form>
+</apex:page>

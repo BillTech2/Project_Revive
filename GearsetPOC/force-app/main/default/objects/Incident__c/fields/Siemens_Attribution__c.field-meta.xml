@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Siemens_Attribution__c</fullName>
+    <inlineHelpText>select the agreed Siemens attribution coding</inlineHelpText>
+    <label>Siemens Attribution</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>0- not a technical incident</fullName>
+                <default>false</default>
+                <label>0- not a technical incident</label>
+            </value>
+            <value>
+                <fullName>2- train crew handling</fullName>
+                <default>false</default>
+                <label>2- train crew handling</label>
+            </value>
+            <value>
+                <fullName>2D- train driver handling</fullName>
+                <default>false</default>
+                <label>2D- train driver handling</label>
+            </value>
+            <value>
+                <fullName>2T- train manager handling</fullName>
+                <default>false</default>
+                <label>2T- train manager handling</label>
+            </value>
+            <value>
+                <fullName>3O- fleet management (operations)</fullName>
+                <default>false</default>
+                <label>3O- fleet management (operations)</label>
+            </value>
+            <value>
+                <fullName>3M- fleet management (maintenance)</fullName>
+                <default>false</default>
+                <label>3M- fleet management (maintenance)</label>
+            </value>
+            <value>
+                <fullName>4I- infrastructure management</fullName>
+                <default>false</default>
+                <label>4I- infrastructure management</label>
+            </value>
+            <value>
+                <fullName>4E- external influene (out of control)</fullName>
+                <default>false</default>
+                <label>4E- external influence (out of control)</label>
+            </value>
+            <value>
+                <fullName>5T- reliability (technical)</fullName>
+                <default>false</default>
+                <label>5T- reliability (technical)</label>
+            </value>
+            <value>
+                <fullName>5TS- reliability (technical) siemens</fullName>
+                <default>false</default>
+                <label>5TS- reliability (technical) siemens</label>
+            </value>
+            <value>
+                <fullName>5Q- reliability (quality)</fullName>
+                <default>false</default>
+                <label>5Q- reliability (quality)</label>
+            </value>
+            <value>
+                <fullName>5QS- reliability (quality) siemens</fullName>
+                <default>false</default>
+                <label>5QS- reliability (quality) siemens</label>
+            </value>
+            <value>
+                <fullName>5R- reliability (repeat)</fullName>
+                <default>false</default>
+                <label>5R- reliability (repeat)</label>
+            </value>
+            <value>
+                <fullName>5RS- reliability (repeat) siemens</fullName>
+                <default>false</default>
+                <label>5RS- reliability (repeat) siemens</label>
+            </value>
+            <value>
+                <fullName>6T- availability (technical)</fullName>
+                <default>false</default>
+                <label>6T- availability (technical)</label>
+            </value>
+            <value>
+                <fullName>6TS- availability (technical) siemens</fullName>
+                <default>false</default>
+                <label>6TS- availability (technical) siemens</label>
+            </value>
+            <value>
+                <fullName>6Q- availability (quality)</fullName>
+                <default>false</default>
+                <label>6Q- availability (quality)</label>
+            </value>
+            <value>
+                <fullName>6QS- availability (quality) siemens</fullName>
+                <default>false</default>
+                <label>6QS- availability (quality) siemens</label>
+            </value>
+            <value>
+                <fullName>6M- availability (maintenance)</fullName>
+                <default>false</default>
+                <label>6M- availability (maintenance)</label>
+            </value>
+            <value>
+                <fullName>6R- availability (repeat)</fullName>
+                <default>false</default>
+                <label>6R- availability (repeat)</label>
+            </value>
+            <value>
+                <fullName>6RS- availability (repeat) siemens</fullName>
+                <default>false</default>
+                <label>6RS- availability (repeat) siemens</label>
+            </value>
+            <value>
+                <fullName>6O- availability (other)</fullName>
+                <default>false</default>
+                <label>6O- availability (other)</label>
+            </value>
+            <value>
+                <fullName>6OS- availability (other) siemens</fullName>
+                <default>false</default>
+                <label>6OS- availability (other) siemens</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

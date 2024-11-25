@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BAF_Adjustment_Approvers_BAF_Adjustment_Request</fullName>
+    <filterScope>Queue</filterScope>
+    <label>BAF Adjustment Approvers</label>
+    <queue>BAF_Adjustment_Approvers</queue>
+    <sharedTo>
+        <allInternalUsers />
+    </sharedTo>
+</ListView>

@@ -1,0 +1,1528 @@
+<apex:page showHeader="false" controller="LiveChatClass" standardStylesheets="false" applyHtmlTag="false" language="{!userLang}">
+    <html>
+        <head profile="http://www.w3.org/2005/10/profile">
+        
+
+            <link rel="icon" type="image/png" href="{!$Resource.EurostarFavIcon}" />
+            <link rel="shortcut icon" href="{!$Resource.EurostarFavIcon}" type="image/x-icon"/>
+            <meta name="viewport" content="width=device-width, height=device-height, user-scalable=no, initial-scale=1, maximum-scale=1"/>
+            <script type="text/javascript" src="{!URLFOR($Resource.jsPDF,'/jsPDF-1.2.60/dist/jspdf.min.js')}"></script>
+            <script type="text/javascript" src="{!URLFOR($Resource.jsPDF,'/jsPDF-1.2.60/examples/js/jquery/jquery-1.7.1.min.js')}"></script>
+            <apex:outputpanel rendered="{!IF(CONTAINS(userAgent, 'MSIE 8.0'),false,true)}">
+                <c:css ></c:css>
+                <c:cssoveride ></c:cssoveride>
+                <c:csschat ></c:csschat>
+            </apex:outputpanel>
+
+            <apex:outputpanel rendered="{!IF(CONTAINS(userAgent, 'MSIE 8.0'),true,false)}">
+                <c:cssiechat ></c:cssiechat>
+            </apex:outputpanel>
+
+            <apex:stylesheet value="{!URLFOR($Resource.LiveAgent, '/lib/normalize.css')}" />
+            <apex:stylesheet value="{!URLFOR($Resource.LiveAgent, '/lib/eurostar_style_guide.min.css')}" />
+        </head>
+<body>
+
+
+
+<style>
+html, body {
+    height: auto;
+    min-height: 100%;
+}
+
+ body.iphone{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+body {
+    font-size: 14px;
+    line-height: 1.42857143;
+    position: absolute;
+    width: 100%;
+}
+.iphone #chat_box_container{
+    height: 100%;
+}
+
+#chat_box_container {
+    display: none;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+.new-window #chat_box_container{
+    height: 100%;
+}
+
+#chat_box_container.open {
+    display: block;
+}
+
+.chat-container {
+    height: 100%;
+    padding-bottom: 125px;
+    position: absolute;
+    width: 100%;
+}
+
+/*.ext-mac .chat-container{
+    padding-bottom: 160px;
+    height: 100vh;
+}*/
+
+.file_transfer_requested .chat-container {
+    padding-bottom: 191px;
+}
+/*.ext-mac .file_transfer_requested .chat-container {
+    padding-bottom: 230px;
+}*/
+
+
+.chat-body {
+    height: 100%;
+    padding: 10px;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+    overflow: auto;
+}
+
+
+#liveAgentChatLog {
+    height: auto;
+    position: relative;
+}
+
+#liveAgentChatLogText span {
+    padding: 10px 100px 10px 10px;
+    position: relative;
+}
+
+#liveAgentChatLogText .name {
+    background-image: url('{!URLFOR($Resource.LiveAgent, 'icons/agent.svg')}');
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: 13px 20px;
+    display: none;
+    font-size: 0;
+    height: 20px;
+    left: 0;
+    padding: 0;
+    position: absolute;
+    top: 20px;
+    width: 20px;
+}
+
+#liveAgentChatLogText .messageText {
+    background-color: #ffffff;
+    border: 1px solid #afafaf;
+    border-radius: 4px;
+    display: block;
+    padding: 10px 20px;
+    position: relative;
+    word-wrap: break-word;
+}
+
+#liveAgentChatLogText .messageText:before,
+#liveAgentChatLogText .messageText:after {
+    border: 6px solid transparent;
+    border-right: 6px solid #afafaf;
+    content: '';
+    left: -12px;
+    position: absolute;
+    top: 14px;
+}
+
+#liveAgentChatLogText .messageText:after {
+    border-right: 6px solid #ffffff;
+    left: -11px;
+}
+
+#liveAgentChatLogText span.client {
+    padding-left: 100px;
+    padding-right: 10px;
+}
+
+#liveAgentChatLogText .client .name {
+    background-image: url('{!URLFOR($Resource.LiveAgent, 'icons/user.svg')}');
+    left: auto;
+    right: 0;
+    top: 21px;
+}
+
+#liveAgentChatLogText .client .messageText {
+    background-color: #3d547e;
+    color: #ffffff;
+}
+
+#liveAgentChatLogText .client .messageText:before,
+#liveAgentChatLogText .client .messageText:after {
+    border-left: 6px solid #afafaf;
+    border-right: none;
+    left: auto;
+    right: -6px;
+}
+
+#liveAgentChatLogText .client .messageText:after {
+    border-left: 6px solid #3d547e;
+    border-right: none;
+    right: -5px;
+}
+
+#liveAgentChatLogText span.system {
+    padding: 10px 33px 10px 33px;
+}
+
+#liveAgentChatLogText span.system:before {
+    background-image: url('{!URLFOR($Resource.LiveAgent, 'icons/check.svg')}');
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: 20px 15px;
+    content: ' ';
+    display: inline-block;
+    height: 15px;
+    left: 0;
+    margin-top: -7.5px;
+    position: absolute;
+    top: 50%;
+    width: 20px;
+}
+
+#liveAgentChatLogText .system em {
+    font-style: normal;
+}
+
+/* input form */
+
+.message-input-outer {
+    background: #ecefef;
+    bottom: 0;
+    padding: 10px;
+    position: absolute;
+    width: 100%;
+}
+.message-input-outer.fixed{
+    position: fixed;
+    width: 100%;
+}
+
+/*.ext-mac .message-input-outer{
+    position: fixed;
+    bottom: 0;
+}*/
+
+.message-input {
+    position: relative;
+}
+
+.message-input .log {
+    background-image: url('{!URLFOR($Resource.LiveAgent, 'icons/log.svg')}');
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: 30px 33px;
+    display: inline-block;
+    height: 33px;
+    left: 0;
+    position: absolute;
+    top: 5px;
+    width: 30px;
+}
+
+.message-input .text-container {
+    padding-left: 10px;
+    padding-right: 52px;
+}
+
+#liveAgentClientChat form {
+    display: block;
+    padding: 0;
+}
+
+#liveAgentClientChat .liveAgentChatInput {
+    border: none !important;
+    border-radius: 0;
+    float: none;
+    padding: 0 !important;
+}
+
+#liveAgentClientChat textarea#liveAgentChatTextArea {
+    border: 1px solid #c9cbcb;
+    border-radius: 4px;
+    font-family: "Pembroke Regular","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 12px;
+    height: 70px !important;
+    padding: 10px;
+    resize: none;
+}
+
+#liveAgentClientChat .liveAgentSendButton {
+    background-color: #109fb3;
+    background-image: url('{!URLFOR($Resource.LiveAgent, 'icons/submit.svg')}');
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: 30px 40px;
+    border: 0;
+    border-radius: 4px;
+    box-shadow: 0 2px 0 0 #0d7e8e,0 3px 2px 0 rgba(0,0,0,.2);
+    cursor: pointer;
+    display: inline-block;
+    font-size: 0;
+    height: calc(100% - 2px);
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    width: 40px;
+}
+
+/* system message */
+
+#liveAgentMessageStatus {
+    background-color: #fffde5;
+    padding: 10px 10px 10px 80px;
+    position: relative;
+}
+
+#liveAgentMessageStatus:before {
+    background-image: url('{!URLFOR($Resource.LiveAgent, 'icons/siren.svg')}');
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: 50px 50px;
+    content: ' ';
+    display: inline-block;
+    height: 50px;
+    left: 15px;
+    margin-top: -25px;
+    position: absolute;
+    top: 50%;
+    width: 50px;
+}
+
+/* file upload */
+
+.file_transfer {
+    background-color: #d4f1f5;
+    bottom: 125px;
+    display: none;
+}
+
+/*.ext-mac .file_transfer{
+    position: fixed;
+    bottom: 90px;
+}*/
+
+.file_transfer_requested .file_transfer {
+    display: block;
+}
+
+.file_transfer_requested #liveAgentChatFileTransfer {
+    position: relative;
+}
+
+.liveAgentFileDragArea {
+    float: none;
+    width: 100%;
+    padding-right: 16px;
+}
+
+.file_upload #fileSelectInput {
+    display: none;
+}
+
+#fileSendButton {
+    display: none;
+}
+
+.file_selected #fileSendButton {
+    display: inline-block;
+}
+
+#fileDragMask {
+    position: absolute !important;
+}
+
+#fileDragLabel,
+#fileDropLabel,
+#fileNameLabel {
+    display: block;
+    float: none;
+    line-height: 25px;
+    margin: 0;
+    padding-left: 35px;
+    padding-right: 25px;
+    position: relative;
+    text-align: left;
+}
+
+#fileDragLabel,
+#fileDropLabel {
+    padding-bottom: 25px;
+}
+
+#fileDragLabel:before,
+#fileDropLabel:before,
+#fileNameLabel:before {
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    content: ' ';
+    display: inline-block;
+    height: 25px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 25px;
+}
+
+#fileDragLabel:before,
+#fileDropLabel:before {
+    background-image: url('{!URLFOR($Resource.LiveAgent, 'icons/file-clip.svg')}');
+    background-size: 25px 25px;
+}
+
+#fileNameLabel:before {
+    background-image: url('{!URLFOR($Resource.LiveAgent, 'icons/file-upload.svg')}');
+    background-size: 20px 25px;
+}
+
+#fileDragLabel a {
+    margin: 0;
+}
+
+@keyframes progress {
+  0% { background-position: 0 0; }
+  100% { background-position: 25px 25px; }
+}
+
+#fileTransferProgress{
+    height: 12px;
+    position: relative;
+    z-index: 999;
+    background-size: 50px 50px;
+    background-image: linear-gradient(-45deg,
+     #4CB7C7 25%, #119FB3 25%,
+     #119FB3 50%, #4CB7C7 50%,
+     #4CB7C7 75%, #119FB3 75%);
+    animation: progress 1s linear infinite;
+    border-radius: 6px;
+}
+
+.liveAgentFileCancelButton {
+    background-image: url('{!URLFOR($Resource.LiveAgent, 'icons/file-cancel.svg')}');
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: 12px 12px;
+    border: none;
+    border-radius: 0;
+    display: inline-block;
+    float: none;
+    font-size: 0;
+    height: 12px;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 12px;
+}
+
+.liveAgentFileSendButton {
+    background-color: #109fb3;
+    background-image: none;
+    border: 0;
+    border-radius: 4px;
+    box-shadow: 0 1px 0 0 #0d7e8e;
+    display: inline-block;
+    font-size: 11px;
+    margin: 0;
+    padding: 5px 10px;
+    text-shadow: none;
+    text-transform: uppercase;
+}
+
+/* ... */
+
+#waitingMessage {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 300;
+}
+
+.waiting-message__p {
+    display: block;
+    text-align: center;
+    margin: 25px auto 20px;
+}
+
+.queue-position {
+    font-weight: bold;
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 1.2em;
+    color: #d4b90a;
+}
+.agent-rate{
+    position: relative;
+    margin: 0 10px;
+    height: 35px;
+}
+.agent-rate p{
+    width: 100%;
+    padding-right: 65px;
+    color: #6C7577;
+    line-height: 1.15;
+    display: table-cell;
+    vertical-align: middle;
+    margin-bottom: 0;
+    height: 35px;
+    position: relative;
+    top: -4px;
+    overflow: hidden;
+}
+.agent-rate-smiles{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.agent-rate-smile{
+    display: inline-block;
+    transition: transform .15s;
+}
+/*.agent-rate-smile-happy svg path{
+    fill: #ECBC00;
+}*/
+.agent-rate-smile-sad svg path, .agent-rate-smile-happy svg path{
+    fill: #B3B3B3;
+}
+
+.agent-rate-smile-sad.clicked svg path{
+    fill: #2BAABB;
+}
+
+.agent-rate-smile-happy.clicked svg path{
+    fill: #ECBC00;
+}
+.agent-rate-smile-sad.clicked, .agent-rate-smile-happy.clicked{
+    transform: scale(1.1);
+}
+
+.agent-rate-smile:first-child{
+    margin-right: 8px;
+}
+.agent-rate-smile:hover{
+    cursor: pointer;
+    /*transform: scale(1.1);*/
+}
+.c-action--small{
+    display: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.new-window .c-action--small{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 9999; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+.modal-content .close{
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    z-index: 1;
+}
+
+</style>
+
+    <liveAgent:clientchat >
+
+        <!---------------------------------------------->
+        <!--  SAVE BUTTON / END BUTTON                -->
+        <!---------------------------------------------->
+        <div class="esr_row" style="background: #0f1a45; padding-bottom: 5px; display: none;">
+            <liveAgent:clientChatSaveButton label="{!$Label.Live_Chat_Label_Save_Chat}"/>
+            <button id="chatLog" onclick="testGetChatLog();">{!$Label.Live_Chat_Label_Get_Log}</button>
+            <liveAgent:clientChatEndButton id="Endbutton" label="{!$Label.Live_Chat_Label_End_chat_button}"/>
+        </div>
+        <!---------------------------------------------->
+        <!--  SAVE BUTTON / END BUTTON                -->
+        <!---------------------------------------------->
+
+        <div class="chat_error" style="display: none;">
+            <liveAgent:clientChatAlertMessage agentsUnavailableLabel="{!$Label.Live_Chat_Label_Agents_Unavailable}"
+            connectionErrorLabel="{!$Label.Live_Chat_Label_Connection_Error}"
+            dismissLabel="{!$Label.Live_Chat_Label_Dismiss}"
+            noCOokiesLabel="{!$Label.Live_Chat_Label_No_Cookies}"
+            noFlashLabel="{!$Label.Live_Chat_Label_No_Flash}" />
+        </div>
+
+        <table id="waitingMessage" cellpadding="0" cellspacing="0">
+            <tr>
+                <td class="t-tx-center">
+
+                    <p class="waiting-message__p">
+                        {!$Label.Live_Chat_Label_Waiting_Message}
+                    </p>
+
+                    <p id="estr_queue_message" class="waiting-message__p"></p>
+                    <!--<apex:outputText value="{0, text, {!$Label.Live_Chat_Label_Queue_Place}}">
+                        <apex:param value="1"/> 
+                    </apex:outputText>-->
+
+                    <img class="waiting-message__p" src="{!URLFOR($Resource.livechatbranding,'loader-new.gif')}"/>
+                    <button type="button" class="component c-action c-action--small c-action--secondary" onclick="closeChat()">{!$Label.Live_Chat_Label_Cancel_Button}</button>
+                </td>
+            </tr>
+        </table>
+
+
+        <!---------------------------------------------->
+        <!--   CHAT TRANSCRIPT SETUP / ALERT MESSAGE  -->
+        <!---------------------------------------------->
+        <div id="chat_box_container">
+            <div id="chat_container" class="chat-container">
+                <style type="text/css">
+                    .esr-chat__header {
+                        display: none;
+                        height: 51px;
+                        background-color: #06183e;
+                        border-radius: 3px 3px 0 0;
+                        position: fixed;
+                        width: 100%;
+                        top: 0;
+                        left: 0;
+                        z-index: 1;
+                    }
+
+                    .new-window .esr-chat__header {
+                        display: block;
+                        position: absolute;
+                    }
+
+                    .new-window .chat-container {
+                        padding-top: 51px;
+                    }
+
+                    .esr-chat__icon {
+                        display: inline-block;
+                        width: 33px;
+                        height: 29px;
+                        position: absolute;
+                        top: 12px;
+                        left: 12px;
+                    }
+
+                    .esr-chat__heading {
+                        font-family: "Aspect Light";
+                        color: white;
+                        line-height: 51px;
+                        padding: 0 0 0 60px;
+                        position: absolute;
+                        z-index: 1;
+                    }
+
+                    @media (max-width: 299px) {
+                        .esr-chat__heading {
+                            visibility: hidden;
+                        }
+                    }
+
+                    .esr-chat__close {
+                        position: absolute;
+                        top: 5px;
+                        right: 5px;
+                        font-size: 14px;
+                        padding: 10px 20px;
+                        box-shadow: 0 2px 0 0 #0d7e8e;
+                        z-index: 2;
+                    }
+                    .message-input-outer.focused{
+                        top: 0;
+                    }
+                </style>
+                <div class="esr-chat__header">
+                    <svg class="esr-chat__icon" version="1.1" id="Layer_1" xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;"
+                     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="56.729px"
+                     height="48.728px" viewBox="0 0 56.729 48.728" enable-background="new 0 0 56.729 48.728" xml:space="preserve">
+                    <metadata>
+                        <sfw  xmlns="&ns_sfw;">
+                            <slices></slices>
+                            <sliceSourceBounds  height="48.728" width="56.729" x="269" y="396.272" bottomLeftOrigin="true"></sliceSourceBounds>
+                        </sfw>
+                    </metadata>
+                    <g>
+                        <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FAE800" points="15.991,0 56.729,0 56.729,28.517 51.84,28.517
+                            51.84,37.479 44.508,28.517 15.991,28.517 15.991,0   "/>
+                        <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#40BAD1" points="13.796,11.249 0,11.249 0,39.765 4.467,39.765
+                            4.467,48.728 11.168,39.765 37.227,39.765 37.227,30.432 13.796,30.432 13.796,11.249  "/>
+                    </g>
+                    </svg>
+                    <div class="esr-chat__heading t-tx--center">{!$Label.Live_Chat_Label_Heading}</div>
+                    <a class="component c-action c-action--secondary esr-chat__close" onclick="closeChat()">{!$Label.Live_Chat_Label_End_chat_button}</a>
+                </div>
+
+                <div id="chat_body" class="chat-body">
+                    <div class="chat-body-inner">
+                        <liveAgent:clientChatLog id="Chatlog" 
+                        agentTypingLabel="{!$Label.Live_Chat_Label_Agent_Typing}" 
+                        chatEndedByAgentLabel="{!$Label.Live_Chat_Label_Chat_Ended_By_Agent}" 
+                        chatTransferredLabel="{!$Label.Live_Chat_Label_Chat_Transferred}" 
+                        visitornameLabel="{!$Label.Live_Chat_Label_Visitor_Name}"/>
+
+                        <liveAgent:clientChatStatusMessage reconnectingLabel="{!$Label.Live_Chat_Label_Reconnecting_Label}" />
+                    </div>
+                </div>
+
+                <!---------------------------------------------->
+                <!--              FILE TRANSFER               -->
+                <!---------------------------------------------->
+                <div id="file_transfer" class="file_transfer">
+                    <liveAgent:clientChatFileTransfer filetransferCanceledLabel="{!$Label.Live_Chat_Label_File_Transfer_Canceled}"
+                    filetransferCancelFileLabel="{!$Label.Live_Chat_Label_File_Transfer_Cancel_File}"
+                    filetransferDropFileLabel="{!$Label.Live_Chat_Label_File_Transfer_Drop_File}"
+                    filetransferFailedLabel="{!$Label.Live_Chat_Label_File_Transfer_Failed}"
+                    filetransferSendFileLabel="{!$Label.Live_Chat_Label_File_Transfer_Send_File}"
+                    filetransferSuccessfulLabel="{!$Label.Live_Chat_Label_File_Transfer_Successful}"
+                    filetransferUploadLabel="{!$Label.Live_Chat_Label_File_Transfer_Upload}"/>
+                </div>
+                <!---------------------------------------------->
+                <!--             /FILE TRANSFER               -->
+                <!---------------------------------------------->
+            </div>
+
+            <div class="message-input-outer">
+                <div class="agent-rate">
+                    <p>{!$Label.Live_Chat_Label_Chat_Is_Helpful_Query}</p>
+                    <div class="agent-rate-smiles">
+                        <span class="agent-rate-smile agent-rate-smile-happy">
+                            <svg id="positiveSmile" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 51.2 51.2" onclick="positiveRate(this)"><metadata><sfw xmlns="http://ns.adobe.com/SaveForWeb/1.0/"><sliceSourceBounds height="51.2" width="51.2" bottomLeftOrigin="true" y="568.8" x="396"/></sfw></metadata><path d="M25.6 0C11.5 0 0 11.5 0 25.6c0 14.1 11.5 25.6 25.6 25.6 14.1 0 25.6-11.5 25.6-25.6C51.2 11.5 39.7 0 25.6 0L25.6 0zM25.6 48C13.3 48 3.2 38 3.2 25.6S13.3 3.2 25.6 3.2 48 13.3 48 25.6 38 48 25.6 48L25.6 48z" class="a"/><path d="M19.9 17.1c0 1.9-1.6 3.5-3.5 3.5s-3.5-1.6-3.5-3.5c0-1.9 1.6-3.5 3.5-3.5S19.9 15.2 19.9 17.1L19.9 17.1z" class="a"/><path d="M38.3 17.1c0 1.9-1.6 3.5-3.5 3.5 -1.9 0-3.5-1.6-3.5-3.5 0-1.9 1.6-3.5 3.5-3.5C36.7 13.6 38.3 15.2 38.3 17.1L38.3 17.1z" class="a"/><path d="M42 29.3c-0.8-0.3-1.7 0.2-2 1.1 0 0.1-3 9.6-14.4 9.6 -11.4 0-14.3-9.2-14.4-9.6 -0.3-0.8-1.2-1.3-2-1.1 -0.8 0.3-1.3 1.1-1.1 2 0 0.1 3.7 11.8 17.5 11.8 13.8 0 17.5-11.7 17.5-11.8C43.4 30.4 42.9 29.5 42 29.3L42 29.3z" class="a"/></svg>
+                        </span>
+                        <span class="agent-rate-smile agent-rate-smile-sad">
+                            <svg id="negativeSmile" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 51.2 51.2" onclick="negativeRate(this)"><metadata><sfw xmlns="http://ns.adobe.com/SaveForWeb/1.0/"><sliceSourceBounds height="51.2" width="51.2" bottomLeftOrigin="true" y="568.8" x="395"/></sfw></metadata><path d="M25.6 0C11.5 0 0 11.5 0 25.6c0 14.1 11.5 25.6 25.6 25.6 14.1 0 25.6-11.5 25.6-25.6C51.2 11.5 39.7 0 25.6 0L25.6 0zM25.6 48C13.3 48 3.2 38 3.2 25.6S13.3 3.2 25.6 3.2 48 13.3 48 25.6 38 48 25.6 48L25.6 48z" class="a"/><path d="M19.9 17.1c0 1.9-1.6 3.5-3.5 3.5s-3.5-1.6-3.5-3.5c0-1.9 1.6-3.5 3.5-3.5S19.9 15.2 19.9 17.1L19.9 17.1z" class="a"/><path d="M38.3 17.1c0 1.9-1.6 3.5-3.5 3.5 -1.9 0-3.5-1.6-3.5-3.5 0-1.9 1.6-3.5 3.5-3.5C36.7 13.6 38.3 15.2 38.3 17.1L38.3 17.1z" class="a"/><path d="M25.6 29.3c-7.8 0-11.5 5.5-12.4 8.4 -0.2 0.8 0.2 1.7 1.1 2 0.2 0 0.3 0.1 0.5 0.1 0.7 0 1.3-0.4 1.5-1.1 0.1-0.2 2-6.1 9.3-6.1 7.3 0 9.2 5.8 9.3 6.1 0.2 0.7 0.8 1.1 1.5 1.1 0.1 0 0.3 0 0.5-0.1 0.8-0.3 1.3-1.1 1.1-2C37.1 34.8 33.4 29.3 25.6 29.3L25.6 29.3z" class="a"/></svg>
+                        </span>
+                    </div>
+                </div>
+                <div class="message-input">
+                    <!--<a class="log" id="esr_chat_log_link" target="_blank" ></a>-->
+                    <div class="text-container">
+                        <liveagent:clientChatInput useMultiline="true"/>
+                    </div>
+                    <liveAgent:clientChatSendButton label="{!$Label.Live_Chat_Label_Send}"/>
+                </div>
+            </div>
+        </div>
+        <!---------------------------------------------->
+        <!--  /CHAT TRANSCRIPT SETUP / ALERT MESSAGE  -->
+        <!---------------------------------------------->
+
+        <div style="display:none">
+            <liveAgent:clientChatQueuePosition />
+        </div>
+    </liveAgent:clientchat>
+
+<c:esrCookies ></c:esrCookies>
+<c:esrMessages ></c:esrMessages>
+<script type="text/javascript">
+    //var hostUrl = 'https://esr-chat.herokuapp.com/'
+
+    var userAgent = window.navigator.userAgent;
+    var isAndroid = userAgent.toLowerCase().indexOf("android") > -1;
+    
+    if (userAgent.indexOf("Edge") > -1) {
+        var textInput = document.getElementById('liveAgentChatTextArea');
+        var flag = false;
+        textInput.addEventListener('input', function(){
+            if(!flag){
+                
+                setTimeout(function(){
+                    textInput.focus();
+                },0)
+                
+                textInput.addEventListener('input', function(){
+                    this.focus();
+                    flag = true;
+                });
+            }
+        });
+    }
+
+    if (userAgent.match(/iPhone/i) || userAgent.match(/iPad/i) ) {
+
+        $('body').addClass('iphone');
+
+        var chatBody = document.getElementById('chat_body');
+        
+        $(document).on('focusin', 'textarea', function(){
+            scrollDown();
+            if (!$('body').hasClass('new-window') && userAgent.match(/iPhone/i)){
+                parent.postMessage({body_fixed: true}, '*');
+            }else{
+                $('body').css('position', 'absolute');
+            }
+            if (userAgent.match(/iPad/i) && !$('body').hasClass('new-window')){
+                parent.postMessage({ipadChatFocus: true}, '*');
+            }
+        });
+
+        $(document).on('blur', 'textarea', function(e){ 
+            setTimeout(function(){document.body.scrollTop = 0;}, 0);
+            setTimeout(function(){chatBody.scrollTop = chatBody.scrollHeight}, 400);
+            if (!$('body').hasClass('new-window') && userAgent.match(/iPhone/i)){
+                parent.postMessage({body_fixed: false}, '*');
+            }else{
+                setTimeout(function(){
+                    $('body').css('position', '');
+                }, 400)
+                
+            }
+            if (userAgent.match(/iPad/i) && !$('body').hasClass('new-window')){
+                parent.postMessage({ipadChatFocus: false}, '*');
+            }
+        });
+    }
+
+
+
+    $('.agent-rate-smile').on('click touch', function(){
+        if ($(this).hasClass('clicked')){
+            $(this).removeClass('clicked')
+        }else{
+            $(this).siblings('.agent-rate-smile').removeClass('clicked');
+            $(this).addClass('clicked');
+        }
+    });
+    
+    if(isAndroid) {
+        $(document).on('click', '.liveAgentSendButton', function(){
+            setTimeout(function(){
+                scrollDown();
+                console.log('button clicked');
+            }, 1000);
+        });
+    }
+
+    $(document).on('click','.close', function(){
+        $('.modal').hide();
+    });
+
+    //file upload progress
+    (function() {
+        var $chatContainer = $('#liveAgentClientChatSettings');
+        var $fileCancel = $('#fileCancelButton');
+        var $fileDragArea = $('#fileDragArea');
+        var $fileProgress = $('#fileTransferProgress');
+        var $fileSelect = $('#fileSelectInput');
+        var $fileSend = $('#fileSendButton');
+
+        $fileDragArea.on('drop', function(e) {
+            console.log(e.originalEvent.dataTransfer.files[0].size);
+            if (e.originalEvent.dataTransfer.files[0].size > 5242880){
+                e.preventDefault();
+                setTimeout(function(){
+                    $fileCancel.trigger('click');
+                }, 0);
+                $('.modal').show();
+                
+            }else{
+                $chatContainer.addClass('file_selected');
+            }
+        });
+
+        $fileSelect.on('change', function(e) {  
+            console.log(this.files[0].size);
+            if(this.files[0].size > 5242880){
+                setTimeout(function(){
+                    $fileCancel.trigger('click');
+                }, 0);
+                $('.modal').show();
+            }else{
+                $chatContainer.addClass('file_selected');
+            }
+        });
+
+        $fileSend.on('click', function() {
+            $chatContainer.removeClass('file_selected');
+            $chatContainer.addClass('file_upload');
+            $fileCancel.css({
+                'display': 'inline-block'
+            });
+
+            $fileProgress.css({
+                'display': 'block'
+            });
+            setTimeout(function() {
+                if ($fileProgress.css('width') === '0px') {
+                    $fileProgress.css({
+                        'width': '100%'
+                    });
+                }
+            }, 5000);
+        });
+
+        $fileCancel.on('click', function() {
+            $chatContainer.removeClass('file_selected');
+            $chatContainer.removeClass('file_upload');
+        });
+    })();
+
+    var textarea = document.getElementById('chat_box_container');
+    textarea.scrollTop = textarea.scrollHeight;
+
+    // if ($("#fileDragLabel").is(':hidden')) {
+    //     $("#liveAgentChatLog").addClass("chat_box_container_big");
+    // } else {}
+    console.log(liveagent.testVar);
+    var chasitor = liveagent.chasitor;
+    var esrPageParams = {};
+    var chatReady = false;
+    var chatDisconnected = false;
+    var messenger;
+
+    function parsePageParams() {
+        var details = chasitor.getDetails();
+        if(details && Array.isArray(details.customDetails)){
+            details.customDetails.forEach(function(detail){
+                esrPageParams[detail.label] = detail.value;
+            })
+        }
+        if(details && Array.isArray(details.prechatDetails)){
+            details.prechatDetails.forEach(function(detail){
+                esrPageParams['prechat_' + detail.label] = detail.value;
+            })
+        }
+        console.log('esrPageParams >> ' + JSON.stringify(esrPageParams, null, 4));
+
+        var chasitorUrl = esrPageParams['prechat_hostUrl'] || esrPageParams['hostUrl'];
+        if(chasitorUrl){
+          hostUrl = chasitorUrl;
+        }
+
+        if (isNewWindow()) {
+            ESR.afterRedirect();
+            $('body').addClass('new-window');
+        }
+
+        if (esrPageParams['isFromOuterLink'] == 'true'){
+            $('body').addClass('chatsys');
+        }
+        messenger = ESR.Messenger(isNewWindow(), esrPageParams.instanceId, hostUrl);
+        chatReady = true;
+    }
+
+    function isNewWindow() {
+        var isOuterLink = false;
+        if (esrPageParams && esrPageParams['isFromOuterLink'] && esrPageParams['isFromOuterLink'] == 'true') {
+                isOuterLink = true;
+            }
+        return (esrPageParams.prechat_newWindow || esrPageParams.newWindow) === 'true' || isOuterLink;
+    }
+
+    function setHostUrl(chasitor){
+        if (!chatReady) {
+            parsePageParams();
+        }
+    }
+
+
+
+    function setQueuePosition(chasitor, isUpdateQueue){
+        var queuePosition = chasitor.getQueuePosition();
+        console.log('queuePosition = ' + queuePosition);
+        var queueMessage = '{!$Label.Live_Chat_Label_Queue_Place}'
+        if(queuePosition || queuePosition === 0){
+            if (isUpdateQueue != null) {
+                queuePosition++;
+                //;
+                document.getElementById('estr_queue_message').innerHTML = queueMessage.replace('%position',  '<span class="queue-position">' + queuePosition + '</span>') ;
+            } else {
+                document.getElementById('estr_queue_message').innerHTML = queueMessage.replace('%position',  '<span class="queue-position">' + queuePosition + '</span>');
+            }
+
+        } else {
+            document.getElementById('estr_queue_message').innerHTML = '';
+        }
+    }
+    var isPositive;
+    var isNegative;
+    function positiveRate(element) {
+        if (isPositive === true) {
+            isPositive = false;
+        } else {isPositive = true; isNegative = false;}
+        createRate();
+    }
+    
+    function negativeRate(element) {
+        if (isNegative === true) {
+            isNegative = false;
+        } else {isNegative = true; isPositive = false;}
+        console.log('isNegative = ' + isNegative + 'isPositive = ' + isPositive);
+        createRate();
+    }
+    function createRate() {
+        var agentRate;
+        if (isNegative == true) {agentRate = -1;} else if (isPositive == true) {agentRate = 1;} else {agentRate = 0;}
+        createAgentRate(agentRate, false);
+        liveagent.chasitor.sendCustomEvent("setRate", agentRate.toString());
+    }
+    
+    function createAgentRate(element, isStart) {
+        console.log('createAgentRate');   
+        console.log('liveagent.chasitor.getChatKey() = ' + liveagent.chasitor.getChatKey());
+        console.log('parseInt(element) = ' + parseInt(element));
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.LiveChatClass.createAgentRate}', liveagent.chasitor.getChatKey(), parseInt(element), isStart,
+            function(result, event) {},
+            {escape: true}
+        );
+    }
+
+    function postEventMessage(event, payload) {
+        messenger && messenger.postEventMessage(event, payload);
+    }
+
+    function createMessage(args){
+        return {
+            content :args.getContent(),
+            userId: args.getUserId(),
+            timestamp: args.getTimestamp(),
+            name: args.getName(),
+            type: args.getType()
+        }
+    }
+
+    chasitor.addEventListener(chasitor.Events.AGENT_CHAT_ENDED,function(args){
+        postEventMessage('chasitorAgentChatEnded', args);
+        setQueuePosition(chasitor);
+        scrollDown();
+    });
+
+    chasitor.addEventListener(chasitor.Events.AGENT_CHAT_MESSAGE,function(args){
+        saveMessage(args);
+        postEventMessage('chasitorAgentChatMessage', createMessage(args));
+        setQueuePosition(chasitor);
+        scrollDown();
+    });
+
+    chasitor.addEventListener(chasitor.Events.AGENT_CHAT_TRANSFERRED,function(args){
+        postEventMessage('chasitorAgentChatTransferred', args);
+        setQueuePosition(chasitor);
+        scrollDown();
+    });
+
+    chasitor.addEventListener(chasitor.Events.AGENT_CHAT_TRANSFER_TO_BUTTON_INITIATED,function(args){
+        postEventMessage('transferToButtonInitiated', args);
+        setQueuePosition(chasitor);
+        scrollDown();
+    });
+    
+    chasitor.addEventListener(chasitor.Events.AGENT_DISCONNECTED,function(args){
+        chatDisconnected = true;
+        postEventMessage('chasitorAgentDisconnected', args);
+        setQueuePosition(chasitor);
+        scrollDown();
+    });
+
+    chasitor.addEventListener(chasitor.Events.AGENT_JOINED_CONFERENCE,function(args){
+        postEventMessage('chasitorAgentJoinedConference', args);
+        setQueuePosition(chasitor);
+        scrollDown();
+    });
+
+    chasitor.addEventListener(chasitor.Events.AGENT_LEFT_CONFERENCE,function(args){
+        postEventMessage('chasitorAgentLeftConference', args);
+        setQueuePosition(chasitor);
+        scrollDown();
+    });
+
+    chasitor.addEventListener(chasitor.Events.AGENT_TYPING_UPDATE,function(args){
+    // false
+        postEventMessage('chasitorAgentTypingUpdate', args);
+        setQueuePosition(chasitor);
+        scrollDown();
+    });
+
+    chasitor.addEventListener(chasitor.Events.CHASITOR_CHAT_CANCELED,function(args){
+        postEventMessage('chasitorChasitorChatCanceled',  createMessage(args));
+    });
+
+    chasitor.addEventListener(chasitor.Events.CHASITOR_CHAT_ENDED,function(args){
+        postEventMessage('chasitorChasitorChatEnded', args);
+        setQueuePosition(chasitor);
+        scrollDown();
+    });
+
+    chasitor.addEventListener(chasitor.Events.CHASITOR_CHAT_MESSAGE,function(args){
+        saveMessage(args);
+        postEventMessage('chasitorChasitorChatMessage', createMessage(args));
+        //updateTranscripts();
+        setQueuePosition(chasitor);
+        if(isAndroid) {
+            setTimeout(function(){
+                scrollDown();
+            }, 100);
+        }
+        scrollDown();
+    });
+
+    chasitor.addEventListener(chasitor.Events.CHASITOR_IDLE_TIMEOUT,function(args){
+        postEventMessage('chasitorIdleTimeout', args);
+        setQueuePosition(chasitor);
+        scrollDown();
+    });
+
+    chasitor.addEventListener(chasitor.Events.CHAT_ESTABLISHED,function(args){
+        chatDisconnected = false;
+        $('#chat_box_container').addClass('open');
+        postEventMessage('chasitorChatEstablished', args);
+        setQueuePosition(chasitor);
+        scrollDown();
+        createAgentRate(0, true);
+    });
+
+    chasitor.addEventListener(chasitor.Events.CHAT_REQUEST_FAILED,function(args){
+    // "Unavailable"
+        //debugger;
+        setHostUrl(chasitor);
+      // initLogURL('esr_chat_log_link');
+        postEventMessage('chasitorChatRequestFailed', args);
+        setQueuePosition(chasitor);
+        scrollDown();
+    });
+
+    chasitor.addEventListener(chasitor.Events.CHAT_REQUEST_SUCCESSFUL,function(args){
+    // 1
+        //debugger;
+        setHostUrl(chasitor);
+        //initLogURL('esr_chat_log_link');
+        postEventMessage('chasitorChatRequestSuccessful', {args:args, chatkey:liveagent.chasitor.getChatKey()});
+        setQueuePosition(chasitor);
+        scrollDown();
+    });
+
+    chasitor.addEventListener(chasitor.Events.CLEAR_CHASITOR_IDLE_TIMEOUT,function(args){
+        postEventMessage('clearChasitorIdleTimeout', args);
+        setQueuePosition(chasitor);
+        scrollDown();
+    });
+
+    chasitor.addEventListener(chasitor.Events.CONNECTION_ERROR,function(args){
+        postEventMessage('chasitorConnectionError', args);
+        setQueuePosition(chasitor);
+        scrollDown();
+    });
+
+    chasitor.addEventListener(chasitor.Events.DEPLOYMENT_SETTINGS,function(args){
+    // undefined
+        /*setHostUrl(chasitor);
+        postEventMessage('deploymentSettings', args);
+        setQueuePosition(chasitor);
+        scrollDown();*/
+    });
+
+    chasitor.addEventListener(chasitor.Events.FILE_TRANSFER_CANCELED,function(args){
+        postEventMessage('fileTransferCanceled', args);
+        $('#liveAgentClientChatSettings').removeClass('file_upload');
+        setQueuePosition(chasitor);
+        scrollDown();
+    });
+
+    chasitor.addEventListener(chasitor.Events.FILE_TRANSFER_FAILURE,function(args){
+        postEventMessage('fileTransferFailure', args);
+        $('#liveAgentClientChatSettings').removeClass('file_upload');
+        setQueuePosition(chasitor);
+        scrollDown();
+    });
+
+    chasitor.addEventListener(chasitor.Events.FILE_TRANSFER_REQUESTED,function(args){
+        postEventMessage('fileTransferRequested', args);
+        setQueuePosition(chasitor);
+    });
+
+    chasitor.addEventListener(chasitor.Events.FILE_TRANSFER_SUCCESS,function(args){
+        postEventMessage('fileTransferSuccess', args);
+        $('#liveAgentClientChatSettings').removeClass('file_upload');
+        setQueuePosition(chasitor);
+        scrollDown();
+    });
+
+    chasitor.addEventListener(chasitor.Events.POST_CHAT,function(args){
+    // Object
+        var message = {
+            attachedRecords: JSON.stringify(args.getAttachedRecords()),
+            errorReason: args.getErrorReason(),
+            type: args.getType(),
+            url: args.getUrl(),
+        };
+        postEventMessage('postChat', message);
+        setQueuePosition(chasitor);
+        scrollDown();
+    });
+
+    chasitor.addEventListener(chasitor.Events.QUEUE_UPDATE,function(args){
+    // 0
+        postEventMessage('chasitorQueueUpdate', args);
+        setQueuePosition(chasitor,true);
+        scrollDown();
+    });
+
+    chasitor.addEventListener(chasitor.Events.RECONNECTING,function(args){
+        postEventMessage('chasitorReconnecting', args);
+        setQueuePosition(chasitor);
+        scrollDown();
+    });
+
+    chasitor.addEventListener(chasitor.Events.RESET_CHAT_MESSAGES,function(args){
+        postEventMessage('resetChatMessages', args);
+        //updateTranscripts();
+        setQueuePosition(chasitor);
+        scrollDown();
+    });
+
+    chasitor.addEventListener(chasitor.Events.START_CHASITOR_IDLE_TIMEOUT_WARNING,function(args){
+        postEventMessage('startChasitorIdleWarning', args);
+        setQueuePosition(chasitor);
+        scrollDown();
+    });
+
+    chasitor.addEventListener(chasitor.Events.UPDATE_CHASITOR_IDLE_TIMEOUT_WARNING,function(args){
+        postEventMessage('updateChasitorIdleWarning', args);
+        setQueuePosition(chasitor);
+        scrollDown();
+    });
+
+    function appendTrailZero(digit){
+        return digit >= 10? digit: '0'+digit;
+    }
+    function createMessageDate(){
+        var today = new Date();
+        return [[appendTrailZero(today.getDate()),
+            appendTrailZero(today.getMonth() + 1),
+            today.getFullYear()].join('/'),
+            [appendTrailZero(today.getHours()),
+            appendTrailZero(today.getMinutes()),
+            appendTrailZero(today.getSeconds())].join(':')
+            ].join(' ');
+    }
+    function createChatMessage(args){
+        var newItem = {};
+
+        var today = new Date();
+
+        newItem.textMessage = args.getContent();
+        newItem.nameUser = args.getName();
+        newItem.timeMessage = createMessageDate();
+        newItem.timeMessageStamp = new Date().getTime();
+        newItem.typeUser =args.getType();
+        newItem.chatKey = liveagent.chasitor.getChatKey();
+
+        return newItem;
+    }
+
+
+    function saveMessage(args){
+        var chatLogs = getChatLogs();
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.LiveChatClass.saveChatMessage}', JSON.stringify(createChatMessage(args)),
+            function(result, event){
+                if (result == 'ok') {
+
+                }
+            },
+            {escape: true}
+        );
+    }
+
+    function getChatLogs() {
+        function ChatLog() {
+            this.textMessage = null;
+            this.nameUser = null;
+            this.timeMessage = null;
+            this.typeUser = null;
+            this.chatKey = null;
+        }
+        var chatLogs = [];
+
+        var chatBody = liveagent.chasitor.getChatMessages();
+
+        for (var i=0; i < chatBody.length; i++) {
+            var newItem = new ChatLog();
+            //debugger;
+            var today = new Date();
+            newItem.textMessage = chatBody[i].getContent();
+            newItem.nameUser = chatBody[i].getName();
+            newItem.timeMessage = [
+            [today.getDate(),
+            today.getMonth() > 10?
+            today.getMonth():'0' + today.getMonth(),
+            today.getFullYear()].join('/'),
+            [today.getHours(),today.getMinutes(),today.getSeconds()].join(':')
+            ].join(' ');//chatBody[i].getTimestamp();
+            console.log(newItem.timeMessage);
+            newItem.timeMessageStamp = new Date(newItem.timeMessage).getTime();
+            newItem.typeUser = chatBody[i].getType();
+            newItem.chatKey = liveagent.chasitor.getChatKey();
+            chatLogs.push(newItem);
+        }
+
+        return chatLogs;
+    }
+
+    function updateTranscripts(){
+        /*var chatLogs = getChatLogs();
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.LiveChatClass.getSavedTranscript}', JSON.stringify(chatLogs),
+            function(result, event){
+
+                if (result == 'ok') {
+
+                }
+            },
+            {escape: true}
+        );*/
+    }
+
+    /**
+    * Handles events broadcasted from wrapping site or page
+    */
+    var ChatContextEventHandler = function (liveagent){
+        var chatEventNamespace = 'ESR__';
+        var self = this;
+        var eventMap = {};
+        self.liveagent = liveagent;
+        self.getSecureEventName = function(evt){
+            return chatEventNamespace + evt;
+        }
+
+        window.addEventListener('message', function(args){
+            var payload = args.data;
+            if(payload && payload.event){
+                var secureEvt = self.getSecureEventName(payload.event);
+                var handlers = eventMap[secureEvt];
+                var payloadData = payload.payload;
+                if(Array.isArray(handlers)){
+                    handlers.forEach(function (item) {
+                        item(payloadData, self.liveagent);
+                    });
+                }
+                console.log(payload);
+            }
+
+        });
+
+        /**
+        * Adds event handler to listen events from wrapping site
+        */
+        self.addEventListener = function(evt, handler){
+            var secureEvt = self.getSecureEventName(evt);
+
+            var handlers = eventMap[secureEvt];
+
+            if(handlers){
+                handlers.push(handler);
+            } else {
+                eventMap[secureEvt] = [handler];
+            }
+        }
+    }
+
+    var eventHandler = new ChatContextEventHandler(liveagent);
+
+    eventHandler.addEventListener('contextClose', function(data, liveagent){
+        closeChat();
+    });
+
+    function closeChat() {
+         // debugger;
+        if(liveagent.chasitor.isChatEstablished()){
+            if (isNewWindow()) {
+                ESR.beforeRedirect();
+               
+            }
+            liveagent.chasitor.endChat();
+        } else {
+            liveagent.chasitor.cancelChat();
+            if (esrPageParams.isFromOuterLink){
+                parent.postMessage({reinitChatSys: true}, '*');
+            } else if (chatDisconnected && !isNewWindow()) {
+                postEventMessage('resetChat');
+            }
+        }
+    }
+    
+    /*
+    eventHandler.addEventListener('resetRate', function(data, liveagent){
+        console.log('--------- RECEIVED ------------');
+        isNegative = true;
+        isNegative = false;
+        createRate();
+    });
+    */
+
+    eventHandler.addEventListener('deleteLiveChatLog', function(data, liveagent){
+        deleteLiveChatLog();
+    });
+
+    function scrollDown() {
+        var messages = document.querySelector('#chat_body');
+        messages.scrollTop = messages.scrollHeight;
+    }
+
+    function getContent() {
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.LiveChatClass.getContent}', liveagent.chasitor.getChatKey(),
+            function(result, event){
+                var contentType = 'text/pdf';
+                postEventMessage('chatLogSaved', result) /*b64toBlob(result, contentType);*/
+            },
+            {escape: true}
+        );
+    }
+
+    function getContentURL(elementId) {
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.LiveChatClass.getContentURL}', liveagent.chasitor.getChatKey(),
+            function(result, event){
+              //initLogURL(elementId,result) /*b64toBlob(result, contentType);*/
+            },
+            {escape: true}
+        );
+    }
+
+    /*function initLogURL(elementId){
+       // debugger;
+        var link = '{!chatPdfLinkTemplate}' + liveagent.chasitor.getChatKey();
+        //debugger;
+        document.getElementById(elementId).href = link;
+    }
+
+    initLogURL('esr_chat_log_link');*/
+
+    /*function b64toBlob(b64Data, contentType, sliceSize) {
+        contentType = contentType || '';
+        sliceSize = sliceSize || 512;
+
+        var byteCharacters = atob(b64Data);
+        var byteArrays = [];
+
+        for (var offset = 0; offset < byteCharacters.length; offset += sliceSize) {
+            var slice = byteCharacters.slice(offset, offset + sliceSize);
+
+            var byteNumbers = new Array(slice.length);
+            for (var i = 0; i < slice.length; i++) {
+              byteNumbers[i] = slice.charCodeAt(i);
+            }
+
+            var byteArray = new Uint8Array(byteNumbers);
+
+            byteArrays.push(byteArray);
+        }
+
+        var blob = new Blob(byteArrays, {type: contentType});
+        var a = document.createElement("a");
+        document.body.appendChild(a);
+        a.style = "display: none";
+        url = window.URL.createObjectURL(blob);
+        a.href = url;
+        a.download = fileName;
+        a.click();
+    }*/
+    //window.onbeforeunload = function() { return "realy? omg! You are about to leave!"};
+    //window.onunload = function() { return "realy? omg! You are about to leave!"};
+
+    var fileName = "LiveChat.pdf";
+
+    function deleteLiveChatLog() {
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.LiveChatClass.deleteLiveChatLog}', liveagent.chasitor.getChatKey(),
+            function(result, event){
+                console.log('deleteLogLiveChat');
+                //window.open(result,'_blank');
+            },
+            {escape: true}
+        );
+    }
+
+    window.addEventListener("beforeunload", function(){
+        console.log('beforeunload');
+        if(isNewWindow()){
+            ESR.beforeUnload();
+        }
+    });
+
+    window.addEventListener("pageshow", function(args){
+        console.log('pageshow');
+        console.log(args);
+        if(esrPageParams.newWindow === 'true'){
+            //debugger;
+            postEventMessage('chatWindowFocused',{status: window.closed});
+        }
+    });
+
+    window.addEventListener("focus", function(args){
+        console.log('focus');
+        console.log(args);
+        if(esrPageParams.newWindow === 'true'){
+            //debugger;
+            postEventMessage('chatWindowFocused',{status: window.closed});
+        }
+    });
+
+    window.addEventListener("blur", function(args){
+        console.log('blur');
+        // if (Object.keys(messenger).length === 0 && messenger.constructor === Object) {
+        //     postEventMessage('chatWindowMinimized',{status:'OK'});
+        // }
+        if (Object.keys(messenger).length === 0) {
+            postEventMessage('chatWindowMinimized',{status:'OK'});
+        }
+    });
+
+
+    console.log(location.href);
+
+    $('.modal .close').on('click', function(){
+        $('.modal').hide();
+    });
+
+    </script>
+
+     <!-- GA Tracking -->
+    <site:googleAnalyticsTracking />
+
+    <div id="file_size_modal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">x</span>
+        <p>{!$Label.Live_Chat_Label_Error_File_Limit}</p>
+      </div>
+    </div>
+
+</body>
+</html>
+</apex:page>

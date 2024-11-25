@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Errors</fullName>
+    <columns>NAME</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>Error_Message__c</columns>
+    <columns>Bug__c</columns>
+    <columns>RECORDTYPE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Fault_Logging__c.Dotcom_Error,Fault_Logging__c.GDS_Error,Fault_Logging__c.Mobile_Error,Fault_Logging__c.Opera_Elgar_Error</value>
+    </filters>
+    <label>All Errors</label>
+    <language>en_US</language>
+</ListView>

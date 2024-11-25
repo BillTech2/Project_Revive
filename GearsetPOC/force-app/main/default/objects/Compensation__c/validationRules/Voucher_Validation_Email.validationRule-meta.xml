@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Voucher_Validation_Email</fullName>
+    <active>true</active>
+    <description>Voucher Email required</description>
+    <errorConditionFormula>ISBLANK(Voucher_email__c) &amp;&amp; RecordType.Name == &quot;Voucher&quot; &amp;&amp; ISNEW()</errorConditionFormula>
+    <errorDisplayField>Voucher_email__c</errorDisplayField>
+    <errorMessage>Voucher Email required</errorMessage>
+</ValidationRule>

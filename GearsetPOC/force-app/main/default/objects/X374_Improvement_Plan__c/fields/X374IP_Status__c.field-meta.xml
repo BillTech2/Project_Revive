@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X374IP_Status__c</fullName>
+    <inlineHelpText>Select the status of the record based upon its stage in the process</inlineHelpText>
+    <label>Status</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>New</fullName>
+                <default>true</default>
+                <label>New</label>
+            </value>
+            <value>
+                <fullName>Investigation</fullName>
+                <default>false</default>
+                <label>Investigation</label>
+            </value>
+            <value>
+                <fullName>Solution identified</fullName>
+                <default>false</default>
+                <label>Solution identified</label>
+            </value>
+            <value>
+                <fullName>Solution agreed</fullName>
+                <default>false</default>
+                <label>Solution agreed</label>
+            </value>
+            <value>
+                <fullName>Implementation</fullName>
+                <default>false</default>
+                <label>Implementation</label>
+            </value>
+            <value>
+                <fullName>Monitoring</fullName>
+                <default>false</default>
+                <label>Monitoring</label>
+            </value>
+            <value>
+                <fullName>On hold- future development</fullName>
+                <default>false</default>
+                <label>On hold- future development</label>
+            </value>
+            <value>
+                <fullName>Future wishlist</fullName>
+                <default>false</default>
+                <label>Future wishlist</label>
+            </value>
+            <value>
+                <fullName>Closed</fullName>
+                <default>false</default>
+                <label>Closed</label>
+            </value>
+            <value>
+                <fullName>Closure proposed</fullName>
+                <default>false</default>
+                <label>Closure proposed</label>
+            </value>
+            <value>
+                <fullName>Awaiting software update</fullName>
+                <default>false</default>
+                <label>Awaiting software update</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

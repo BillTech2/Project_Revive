@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X374IP_Primary_code__c</fullName>
+    <description>The salesforce database reference number</description>
+    <inlineHelpText>The salesforce database reference number</inlineHelpText>
+    <label>Primary code</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>A- Air Production</fullName>
+                <default>false</default>
+                <label>A- Air Production</label>
+            </value>
+            <value>
+                <fullName>B- Brakes</fullName>
+                <default>false</default>
+                <label>B- Brakes</label>
+            </value>
+            <value>
+                <fullName>C- Car Body</fullName>
+                <default>false</default>
+                <label>C- Car Body</label>
+            </value>
+            <value>
+                <fullName>E- Auxiliary Supplies</fullName>
+                <default>false</default>
+                <label>E- Auxiliary Supplies</label>
+            </value>
+            <value>
+                <fullName>G- Collector Equipment and Roof Electrical</fullName>
+                <default>false</default>
+                <label>G- Collector Equipment and Roof Electrical</label>
+            </value>
+            <value>
+                <fullName>H- Heating and Air Conditioning</fullName>
+                <default>false</default>
+                <label>H- Heating and Air Conditioning</label>
+            </value>
+            <value>
+                <fullName>I- Interiors</fullName>
+                <default>false</default>
+                <label>I- Interiors</label>
+            </value>
+            <value>
+                <fullName>J- Cab</fullName>
+                <default>false</default>
+                <label>J- Cab</label>
+            </value>
+            <value>
+                <fullName>K- Catering Equipment</fullName>
+                <default>false</default>
+                <label>K- Catering Equipment</label>
+            </value>
+            <value>
+                <fullName>M- WHOLE SET</fullName>
+                <default>false</default>
+                <label>M- Miscellaneous</label>
+            </value>
+            <value>
+                <fullName>N- INFORMATIQUE SYSTEM INC CARDS</fullName>
+                <default>false</default>
+                <label>N- Train Control</label>
+            </value>
+            <value>
+                <fullName>O- Doors</fullName>
+                <default>false</default>
+                <label>O- Doors</label>
+            </value>
+            <value>
+                <fullName>P- Electric Traction and Power Equipment</fullName>
+                <default>false</default>
+                <label>P- Electric Traction and Power Equipment</label>
+            </value>
+            <value>
+                <fullName>S- Safety Systems</fullName>
+                <default>false</default>
+                <label>S- Safety Systems</label>
+            </value>
+            <value>
+                <fullName>T- Transmission</fullName>
+                <default>false</default>
+                <label>T- Transmission</label>
+            </value>
+            <value>
+                <fullName>U- Underframe, Bogies and Couplers</fullName>
+                <default>false</default>
+                <label>U- Underframe, Bogies and Couplers</label>
+            </value>
+            <value>
+                <fullName>W- Water and Toilet Systems</fullName>
+                <default>false</default>
+                <label>W- Water and Toilet Systems</label>
+            </value>
+            <value>
+                <fullName>X- Communication and Information Systems</fullName>
+                <default>false</default>
+                <label>X- Communication and Information Systems</label>
+            </value>
+            <value>
+                <fullName>Z- Fire and Emergency Equipment</fullName>
+                <default>false</default>
+                <label>Z- Fire and Emergency Equipment</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

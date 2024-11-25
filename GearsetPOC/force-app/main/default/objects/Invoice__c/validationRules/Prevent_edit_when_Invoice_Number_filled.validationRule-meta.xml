@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_edit_when_Invoice_Number_filled</fullName>
+    <active>true</active>
+    <description>When the Invoice_Number__c is populated
+
+Then edits by a User in the User Interface should be prevented. 
+
+AND The Subscription Lamda Users should still be able to update the Invoice Status to Cancelled.</description>
+    <errorConditionFormula>AND(  
+NOT(ISBLANK(PRIORVALUE(Invoice_Number__c))), 
+NOT(ISNEW() ),
+NOT(ISBLANK(Invoice_Number__c)),
+NOT(
+$Permission.Lambda_Integration_User)
+)</errorConditionFormula>
+    <errorMessage>Only Subscription Lamda Users are able to update Invoice when Invoice Number is populated.</errorMessage>
+</ValidationRule>

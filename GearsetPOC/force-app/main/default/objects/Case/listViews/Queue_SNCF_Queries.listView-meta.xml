@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Queue_SNCF_Queries</fullName>
+    <columns>CASES.CASE_NUMBER</columns>
+    <columns>NAME</columns>
+    <columns>Days_Since_Last_Contact__c</columns>
+    <columns>Days_Since_Last_Modified__c</columns>
+    <columns>CASES.SUBJECT</columns>
+    <columns>CASES.STATUS</columns>
+    <columns>CASES.PRIORITY</columns>
+    <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <filterScope>Queue</filterScope>
+    <filters>
+        <field>CASES.STATUS</field>
+        <operation>notEqual</operation>
+        <value>Closed</value>
+    </filters>
+    <label>~ Queue ~ SNCF Queries</label>
+    <queue>SNCF_Queries</queue>
+    <sharedTo>
+        <group>EBSC_Departmental_Managers</group>
+        <group>EBSC_Frequent_Traveller_Team</group>
+        <group>EBSC_Traveller_Care</group>
+        <group>Temp_SNCF_Query_Queue</group>
+    </sharedTo>
+</ListView>

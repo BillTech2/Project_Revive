@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FPU_Avail_FPU_AvailCount__c</fullName>
+    <description>Available number of seats</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Available number of seats</inlineHelpText>
+    <label>FPU_Avail_FPU_AvailCount</label>
+    <precision>6</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

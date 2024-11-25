@@ -1,0 +1,104 @@
+<apex:page sidebar="false" showHeader="true" controller="CheckInLounge_Ctrl">
+    <script>
+        var lock = false;
+
+        function proceed() {
+            if (lock == false) {
+
+                var extract = document.getElementById('{!$Component.block1.form.extract}');
+
+                if (extract.value.length == 19) {
+                    lock = true;
+                    window.setTimeout(submitFunction,100);
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .customTable td, .customTable th, .customTable tr {
+            padding: 15px;
+            text-align: middle;
+            background-color: #eeeeee;
+        }
+
+         .customBig {
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+
+    <apex:pageBlock id="block1" title="Business Lounge Check In">
+        <apex:form id="form">
+            <apex:inputText id="extract" value="{!codeExtract}" maxlength="19" onkeypress="proceed();"/>
+            <apex:actionFunction action="{!retrieveRecord}" name="submitFunction"/>
+       </apex:form>
+    </apex:pageBlock>
+
+    <apex:pageBlock title="Authorisation for Business Lounge">
+        <apex:pageBlockSection rendered="{!granted}">
+            <apex:image value="/img/msg_icons/confirm32.png" rendered="{!firstAccess}"/>
+            <apex:image value="/img/msg_icons/warning32.png" rendered="{!NOT(firstAccess)}"/>
+            <apex:outputText value="{!errorMessage}" styleClass="customBig"/>
+        </apex:pageBlockSection>
+        <apex:pageBlockSection rendered="{!NOT(granted)}">
+            <apex:image value="/img/msg_icons/error32.png"/>
+            <apex:outputText value="{!errorMessage}" styleClass="customBig"/>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+
+    <apex:pageBlock title="Passenger Information">
+        <span class="customBig">
+        <apex:pageBlockSection rendered="{!recordFound}">
+                <apex:outputField value="{!record.Full_Name__c}"/>
+                <apex:outputField value="{!record.Train_Number__c}"/>
+                <apex:outputField value="{!record.Class_of_Service__c}"/>
+                <apex:outputField value="{!record.Travel_DateTime__c}"/>
+        </apex:pageBlockSection>
+        </span>
+
+        <apex:pageBlockSection rendered="{!NOT(recordFound)}">
+            No Ticket found.
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+
+    <apex:pageBlock title="Option to Override Check-in" rendered="{!(recordFound && !granted)}">
+         <apex:form >
+            <apex:outputLabel value="Override Justification (mandatory): " for="reason"/>
+            <apex:selectRadio id="reason" value="{!overrideReason}" layout="lineDirection" styleClass="customTable">
+                <apex:selectOptions value="{!reasons}"/>
+            </apex:selectRadio>
+            <apex:commandButton action="{!overrideCheckIn}" value="Override"/>
+        </apex:form>
+   </apex:pageBlock>
+
+    <apex:pageBlock title="Ticket and Booker Details">
+        <apex:pageBlockSection rendered="{!recordFound}">
+            <apex:outputField value="{!record.Booker__c}"/>
+            <apex:outputField value="{!record.Origin__c}"/>
+            <apex:outputField value="{!record.Membership_Number__c}"/>
+            <apex:outputField value="{!record.Destination__c}"/>
+            <apex:outputField value="{!record.Cancelled__c}"/>
+            <apex:outputField value="{!record.PNR__c}"/>
+            <apex:outputField value="{!record.Cancelled_By_Customer__c}"/>
+            <apex:outputField value="{!record.Name}"/>
+            <br/><br/>
+        </apex:pageBlockSection>
+
+        <apex:pageBlockSection rendered="{!recordFound}">
+            <apex:outputField value="{!record.Booker__r.Salutation}"/>
+            <apex:outputField value="{!record.Booker__r.Loyalty_Status__pc}"/>
+            <apex:outputField value="{!record.Booker__r.FirstName}"/>
+            <apex:outputField value="{!record.Booker__r.Market_Preference__pc}"/>
+            <apex:outputField value="{!record.Booker__r.LastName}"/>
+            <apex:outputField value="{!record.Booker__r.Meal_Preference__pc}"/>
+            <apex:outputField value="{!record.Booker__r.Preferred_Language__pc}"/>
+            <apex:outputField value="{!record.Booker__r.Seat_Preference__pc}"/>
+        </apex:pageBlockSection>
+
+        <apex:pageBlockSection rendered="{!NOT(recordFound)}">
+            No Ticket found.
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+
+</apex:page>

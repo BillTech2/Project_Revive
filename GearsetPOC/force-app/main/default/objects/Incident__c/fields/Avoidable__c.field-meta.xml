@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Avoidable__c</fullName>
+    <description>select the reason for the failure being avoided</description>
+    <inlineHelpText>select the reason for the failure being avoided</inlineHelpText>
+    <label>Avoidable</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>No</fullName>
+                <default>false</default>
+                <label>No</label>
+            </value>
+            <value>
+                <fullName>Repeat fault code following previous intervention</fullName>
+                <default>false</default>
+                <label>Repeat fault code following previous intervention</label>
+            </value>
+            <value>
+                <fullName>Repeat fault code no intervention</fullName>
+                <default>false</default>
+                <label>Repeat fault code no intervention</label>
+            </value>
+            <value>
+                <fullName>Repeat incident following previous investigation</fullName>
+                <default>false</default>
+                <label>Repeat incident following previous investigation</label>
+            </value>
+            <value>
+                <fullName>Repeat incident no intervention</fullName>
+                <default>false</default>
+                <label>Repeat incident no intervention</label>
+            </value>
+            <value>
+                <fullName>Non quality process</fullName>
+                <default>false</default>
+                <label>Non quality process</label>
+            </value>
+            <value>
+                <fullName>Non quality maintenance</fullName>
+                <default>false</default>
+                <label>Non quality maintenance</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,77 @@
+<apex:component >
+	<apex:attribute name="uniqueCategoryName" description="The API name of the Data Category" type="String" required="true"/>
+	
+    <apex:outputpanel layout="none" rendered="{!uniqueCategoryName=='General'}">
+    	{!$Label.FAQ_CATEGORY_DESCRIPTION_GENERAL}
+    </apex:outputpanel>
+
+    <apex:outputpanel layout="none" rendered="{!uniqueCategoryName=='Loyalty_Programmes'}">
+    	{!$Label.FAQ_CATEGORY_DESCRIPTION_LOYALTY_PROGRAMMES}
+    </apex:outputpanel>
+    <apex:outputpanel layout="none" rendered="{!uniqueCategoryName=='Luggage'}">
+            {!$Label.FAQ_CATEGORY_DESCRIPTION_LUGGAGE}
+    </apex:outputpanel>
+    <apex:outputpanel layout="none" rendered="{!uniqueCategoryName=='Eurostar_For_Business'}">
+            {!$Label.FAQ_CATEGORY_DESCRIPTION_EUROSTAR_FOR_BUSINESS}
+    </apex:outputpanel>
+
+
+    <apex:outputpanel layout="none" rendered="{!uniqueCategoryName=='Stations'}">
+    	{!$Label.FAQ_CATEGORY_DESCRIPTION_STATIONS}
+    </apex:outputpanel>
+    <apex:outputpanel layout="none" rendered="{!uniqueCategoryName=='Your_Booking'}">
+    	{!$Label.FAQ_CATEGORY_DESCRIPTION_YOUR_BOOKING}
+    </apex:outputpanel>
+    <apex:outputpanel layout="none" rendered="{!uniqueCategoryName=='Your_Destination'}">
+    	{!$Label.FAQ_CATEGORY_DESCRIPTION_YOUR_DESTINATION}
+    </apex:outputpanel>
+    <apex:outputpanel layout="none" rendered="{!uniqueCategoryName=='Your_Trip'}">
+    	{!$Label.FAQ_CATEGORY_YOUR_TRIP}
+    </apex:outputpanel>
+    
+    <apex:outputpanel layout="none" rendered="{!uniqueCategoryName=='Connections'}">
+    	{!$Label.FAQ_CATEGORY_DESCRIPTION_CONNECTIONS}
+    </apex:outputpanel>
+    <apex:outputpanel layout="none" rendered="{!uniqueCategoryName=='Mobile'}">
+    	{!$Label.FAQ_CATEGORY_DESCRIPTION_MOBILE}
+    </apex:outputpanel>
+    <apex:outputpanel layout="none" rendered="{!uniqueCategoryName=='Making_a_booking'}">
+    	{!$Label.FAQ_CATEGORY_DESCRIPTION_MAKING_A_BOOKING}
+    </apex:outputpanel>
+    <apex:outputpanel layout="none" rendered="{!uniqueCategoryName=='Compensation'}">
+    	{!$Label.FAQ_CATEGORY_DESCRIPTION_COMPENSATION}
+    </apex:outputpanel>
+    <apex:outputpanel layout="none" rendered="{!uniqueCategoryName=='Onboard'}">
+    	{!$Label.FAQ_CATEGORY_DESCRIPTION_ONBOARD}
+    </apex:outputpanel>
+    <apex:outputpanel layout="none" rendered="{!uniqueCategoryName=='Hotels'}">
+    	{!$Label.FAQ_CATEGORY_DESCRIPTION_HOTELS}
+    </apex:outputpanel>
+    <apex:outputpanel layout="none" rendered="{!uniqueCategoryName=='Seating'}">
+    	{!$Label.FAQ_CATEGORY_DESCRIPTION_SEATING}
+    </apex:outputpanel>
+    <apex:outputpanel layout="none" rendered="{!uniqueCategoryName=='Parking'}">
+    	{!$Label.FAQ_CATEGORY_DESCRIPTION_PARKING}
+    </apex:outputpanel>
+    <apex:outputpanel layout="none" rendered="{!uniqueCategoryName=='Tickets'}">
+    	{!$Label.FAQ_CATEGORY_DESCRIPTION_TICKETS}
+    </apex:outputpanel>
+    <apex:outputpanel layout="none" rendered="{!uniqueCategoryName=='Exchanges'}">
+    	{!$Label.FAQ_CATEGORY_DESCRIPTION_EXCHANGES}
+    </apex:outputpanel>
+    <apex:outputpanel layout="none" rendered="{!uniqueCategoryName=='Special_Assistance'}">
+    	{!$Label.FAQ_CATEGORY_DESCRIPTION_SPECIAL_ASSISTANCE}
+    </apex:outputpanel>
+    <apex:outputpanel layout="none" rendered="{!uniqueCategoryName=='New_Fleet'}">
+    	{!$Label.FAQ_CATEGORY_DESCRIPTION_NEW_FLEET}
+    </apex:outputpanel>
+    
+    <apex:outputpanel layout="none" rendered="{!uniqueCategoryName=='Packages'}">
+    	{!$Label.FAQ_CATEGORY_DESCRIPTION_PACKAGES}
+    </apex:outputpanel>
+    <apex:outputpanel layout="none" rendered="{!uniqueCategoryName=='Your_Personal_Information'}">
+        {!$Label.FAQ_DESCRIPTION_CATEGORY_YOUR_PERSONAL_INFORMATION_Part1}
+        <a href="http://eurostarhelp.force.com/gdpr">{!$Label.FAQ_DESCRIPTION_CATEGORY_YOUR_PERSONAL_INFORMATION_Part2}</a>
+    </apex:outputpanel>
+    
+</apex:component>

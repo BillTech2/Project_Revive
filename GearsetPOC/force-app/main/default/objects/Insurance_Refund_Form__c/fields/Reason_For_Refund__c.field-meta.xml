@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_For_Refund__c</fullName>
+    <label>Reason For Refund / Exchange</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>14 Day Cool-Off</fullName>
+                <default>false</default>
+                <label>14 Day Cool-Off</label>
+            </value>
+            <value>
+                <fullName>Exchanged ticket</fullName>
+                <default>false</default>
+                <label>Exchanged ticket</label>
+            </value>
+            <value>
+                <fullName>Death In Family</fullName>
+                <default>false</default>
+                <label>Death In Family</label>
+            </value>
+            <value>
+                <fullName>Double Booking</fullName>
+                <default>false</default>
+                <label>Double Booking</label>
+            </value>
+            <value>
+                <fullName>Customer / System Error</fullName>
+                <default>false</default>
+                <label>Customer / System Error</label>
+            </value>
+            <value>
+                <fullName>Cooling off period</fullName>
+                <default>false</default>
+                <label>Cooling off period</label>
+            </value>
+            <value>
+                <fullName>Train departure date amended</fullName>
+                <default>false</default>
+                <label>Train departure date amended</label>
+            </value>
+            <value>
+                <fullName>Train amended: New price bracket</fullName>
+                <default>false</default>
+                <label>Train amended: New price bracket</label>
+            </value>
+            <value>
+                <fullName>Train departure time amended</fullName>
+                <default>false</default>
+                <label>Train departure time amended</label>
+            </value>
+            <value>
+                <fullName>Train cancelledTrain Cancelled/Hotel Closed</fullName>
+                <default>false</default>
+                <label>Train Cancelled/Hotel Closed</label>
+            </value>
+            <value>
+                <fullName>Package amended</fullName>
+                <default>false</default>
+                <label>Package amended</label>
+            </value>
+            <value>
+                <fullName>Duplicate booking</fullName>
+                <default>false</default>
+                <label>Duplicate booking</label>
+            </value>
+            <value>
+                <fullName>Name change</fullName>
+                <default>false</default>
+                <label>Name change</label>
+            </value>
+            <value>
+                <fullName>Flexible Package</fullName>
+                <default>false</default>
+                <label>Flexible Package</label>
+            </value>
+            <value>
+                <fullName>Other (Please Put Reason In Notes Section)</fullName>
+                <default>false</default>
+                <label>Other (Please Put Reason In Notes Section)</label>
+            </value>
+            <value>
+                <fullName>Train cancelled</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Train cancelled</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

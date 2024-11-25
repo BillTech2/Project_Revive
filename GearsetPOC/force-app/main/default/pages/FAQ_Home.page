@@ -1,0 +1,565 @@
+<apex:page controller="FAQ_Main_Class" sidebar="false" showheader="false" standardStylesheets="false" docType="html-5.0" language="{!chosenLanguageISO}" applyHtmlTag="false">
+
+    <html>
+    <head>
+
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="description" content="Eurostar Help Centre"/>
+        <meta name="author" content="Eurostar International Limited"/>
+
+        <!-- Styles -->
+        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.CompApp_Res, '/res/all-prembrokeWeb.css')}"/>
+        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.CompApp_Res, '/css/12-cols-grid.css')}"/>
+        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.CompApp_Res, '/css/no-grid.css')}" />
+        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.CompApp_Res, '/css/angular-date-picker.css')}"/>
+        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.CompApp_Res, '/css/select2-3.4.5.css')}"/>
+        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.CompApp_Res, '/css/elements.css')}"/>
+        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.CompApp_Res, '/css/template-base.css')}"/>
+        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.CompApp_Eurostar_Ticket_Examples, '/ticket-examples.css')}"/>
+        
+        <link rel="alternate" href="https://help.eurostar.com/faq/?language=uk-en" hreflang="uk-en" />
+        <link rel="alternate" href="https://help.eurostar.com/faq/?language=us-en" hreflang="us-en" />
+        <link rel="alternate" href="https://help.eurostar.com/faq/?language=be-en" hreflang="be-en" />
+        <link rel="alternate" href="https://help.eurostar.com/faq/?language=rw-en" hreflang="rw-en" />
+        <link rel="alternate" href="https://help.eurostar.com/faq/?language=fr-fr" hreflang="fr-fr" />
+        <link rel="alternate" href="https://help.eurostar.com/faq/?language=be-fr" hreflang="be-fr" />
+        <link rel="alternate" href="https://help.eurostar.com/faq/?language=be-nl" hreflang="be-nl" />
+        <link rel="alternate" href="https://help.eurostar.com/faq/?language=nl-nl" hreflang="nl-nl" />
+        <link rel="alternate" href="https://help.eurostar.com/faq/?language=de-de" hreflang="de-de" />
+        <link rel="icon" type="image/png" href="{!$Resource.Favicon}" />
+
+
+        <!-- Loading jQuery, angular -->
+        <script src="{!URLFOR($Resource.CompApp_Res, '/vendor/jquery2.1.3.js')}"></script>
+        <script src="{!URLFOR($Resource.CompApp_Res, '/vendor/jquery.query-object.js')}"></script>
+        <script src="{!URLFOR($Resource.CompApp_Res, '/vendor/angular1.3.15.js')}"></script>
+        <script src="{!URLFOR($Resource.CompApp_Res, '/vendor/angular-route.1.4.4.js')}"></script>
+        <script src="{!URLFOR($Resource.CompApp_Res, '/vendor/angular-sanitize.1.4.4.js')}"></script>
+        <script src="{!URLFOR($Resource.CompApp_Res, '/vendor/nocaptchRecaptcha.angular.js')}"></script>
+        <script src="{!URLFOR($Resource.CompApp_Res, '/vendor/angularjs-autocomplete.min.js')}"></script>
+        <script src="{!URLFOR($Resource.CompApp_Res, '/js/angular-date-picker.js')}"></script>
+
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-select/0.13.1/select.min.css"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-select/0.13.1/select.min.js"></script>
+
+
+
+
+        <apex:outputText rendered="{!IF(CONTAINS(userAgent, 'MSIE 8.0'),false,true)}" >
+            <c:css ></c:css>
+            <apex:stylesheet value="{!URLFOR($Resource.styles, 'css/cssoveride.css')}" />
+        </apex:outputText>
+
+        <apex:outputText rendered="{!IF(CONTAINS(userAgent, 'MSIE 8.0'),true,false)}">
+            <c:cssie ></c:cssie>
+        </apex:outputText>
+
+        <!-- DK (18/08/15): Inclusion of E4A Logic -->
+        <apex:outputText rendered="{!IF(site == 'e4a',true,false)}">
+            <title>Home | Eurostar 4 Agents Help Centre</title>
+        </apex:outputText>
+        <apex:outputText rendered="{!IF(site != 'e4a',true,false)}">
+            <title>Home | Eurostar Help Centre</title>
+        </apex:outputText>
+        <!-- Fix for Tealium Privacy Manager -->
+        <style>
+            #bs-example-navbar-collapse-1 {
+                z-index: 1 !important;
+            }
+        </style>
+    </head>
+
+    <body style="max-height:10000vh;">
+
+    <!-- GDPR Cookie Script -->
+    <apex:outputpanel rendered="{!language==null}">
+        <script src="https://www.eurostar.com/static/cookie-banner.js?language=en"></script>
+    </apex:outputpanel>
+    <apex:outputpanel rendered="{!language!=null && CONTAINS(language,'en')}">
+        <script src="https://www.eurostar.com/static/cookie-banner.js?language=en"></script>
+    </apex:outputpanel>
+    <apex:outputpanel rendered="{!language!=null && CONTAINS(language,'fr')}">
+        <script src="https://www.eurostar.com/static/cookie-banner.js?language=fr"></script>
+    </apex:outputpanel>
+    <apex:outputpanel rendered="{!language!=null && CONTAINS(language,'nl')}">
+        <script src="https://www.eurostar.com/static/cookie-banner.js?language=nl"></script>
+    </apex:outputpanel>
+    <apex:outputpanel rendered="{!language!=null && CONTAINS(language,'de')}">
+        <script src="https://www.eurostar.com/static/cookie-banner.js?language=de"></script>
+    </apex:outputpanel>
+
+    <style>
+        
+        footer{
+            padding: 0px;
+        }
+
+        .primary{
+            box-sizing: content-box;
+        }
+
+        #app-footer-template-copyright{
+            font-size: 16px;
+            margin-bottom: 0px;
+        }
+
+        .button-yes{
+            width: 50px;
+            border-radius: 0px;
+        }
+
+        .button-no{
+            width: 35px;
+            border-radius: 0px;
+        }
+
+        #top-section-title{
+            line-height: unset;
+        }
+
+        .list-group-item-heading{
+            font-family: "ABCSocial-Bold";
+            font-weight: normal;
+            font-size: 36px;
+            line-height: 38px;
+            text-align: left;
+            color: #00286A 
+        }
+
+        .list-group-item-text{
+            font-family: ABCSocial-Regular;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 20px;
+            text-align: left;
+            color: #1C1C1A;
+            font-size: 16px;
+        }
+
+        a {
+            font-family: ABCSocial-regular;
+            font-weight: normal;
+            line-height: 20px;
+            text-align: left;
+            color: #0D57CC ;
+            text-decoration: none;
+
+            display: inline-block;
+
+            cursor: pointer;
+        }
+
+                a:visited {
+            color: #06183d !important;
+            text-decoration: none;
+        }
+
+                a:hover {
+            color: #06183d !important;
+            text-decoration: none;
+        }
+
+                a:active {
+            color: #0096b2 !important;
+            text-decoration: none;
+        }    
+
+        #app-header-template-top-section{
+            position: relative !important;
+        }       
+
+        h3{
+            font-family: "ABCSocial-Bold";
+            font-weight: normal;
+            font-size: 28px;
+            line-height: 28px;
+            text-align: left;
+            color: #00286A;
+            margin: 0;
+        }
+        h4{
+            font-size: 20px !important;
+            line-height: 28px !important;
+            color: #00286A !important;
+            font-weight: normal;
+            margin: 0;
+        }
+        .pdesc{
+            font-family: ABCSocial-Regular;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 20px;
+            text-align: left;
+            color: #1C1C1A;
+            margin-top: 10px;
+        }
+
+        @media (min-width: 993px) {
+                .card-item {
+                    width: 30.3%;
+                    margin: 3% 3% 3% 0;
+                    height: auto;
+                    float: left;
+                    padding: 0px 1% 5%;
+                }
+            }
+            @media (min-width: 575px) and (max-width: 993px) {
+                .card-item {
+                    width: 45%;
+                    margin: 3% 3.5% 3% 0;
+                    height: auto;
+                    float: left;
+                    padding: 0 3% 2%;
+                }
+            }
+            @media (min-width: 414px) and (max-width: 575px) {
+                .card-item {
+                    width: 45%;
+                    margin: 3% 5% 3% 0;
+                    height: auto;
+                    float: left;
+                    padding: 0 1% 2%;
+                }
+            }
+			@media (max-width: 414px){
+                .card-item {
+                    width: 100%;
+                    margin: 3% 0;
+                    height: auto;
+                    float: left;
+                    padding-bottom: 30px;
+                }
+            }
+            @media (max-width:414px){
+            .col-xs-6{width:100%;height:240px!important}}
+
+            .card-content{
+                flex: 1;
+            }
+
+            #card{
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            .card-item {
+            display: flex; 
+            padding: 0.5em;
+            flex-direction: column;
+            }
+
+            @media screen and (max-width: 992px){
+            .row-offcanvas-right .sidebar-offcanvas {
+            display: none;
+    }
+    }
+            a :active :hover{
+                text-decoration: none;
+            }
+
+
+        </style>
+    
+    <!-- // GDPR Cookie Script -->
+
+    <!-- Tealium -->
+    <script type="text/javascript">
+        var marketLanguage = '{!language}';
+        var utag_data = {
+            "marketLanguage" : marketLanguage
+        };
+    </script>
+
+    <!-- Loading script asynchronously -->
+    <script type="text/javascript">
+        (function(a,b,c,d)
+                { a='{!$Setup.Tealium_Analytics_Settings__c.API__c}'; b=document;c='script';d=b.createElement(c);d.src=a;d.type='text/java'+c;d.async=true; a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a); }
+        )();
+    </script>
+
+    <!-- <apex:form>-->
+
+    <header id="app-header-template">
+        <div id="app-header-template-top-section">
+            <!-- <img id="top-section-logo" src="{!URLFOR($Resource.CompApp_Res, '/res/SVGS/eurostar_logo.svg')}" alt="logo" height="30" width="100"/> -->
+            <div id="top-section-logo"></div>
+            
+            <div id="top-section-lang-select-box">
+                <div id="select-box-selected-lang">{!$Label.CompApp_english}</div>
+                <img id="select-box-arrow" src="{!URLFOR($Resource.CompApp_Res, '/res/SVGS/arrow_down.svg')}" height="14" width="14" onclick="showLanguageSelectionMenu();"/>
+            </div>
+            <div id="top-section-title">
+                {!$Label.HelpCentreHeader}
+            </div>
+        </div>
+        <div id="app-header-template-lang-selection-menu">
+            <h6 id="lang-selection-menu-description" style="margin-bottom: 10px; color: #FCF5D8;">{!$Label.CompApp_selectLang}</h6>
+            <div id="app-header-template-line"></div>
+            <div id="app-header-template-options">
+                <a class="options-button" hreflang="en">{!$Label.CompApp_english}</a>
+                <br/>
+                <a class="options-button" hreflang="fr">{!$Label.CompApp_Francias}</a>
+                <br/>
+                <a class="options-button" hreflang="nl">{!$Label.CompApp_Nederlands}</a>
+                <br/>
+                <a class="options-button" hreflang="de">{!$Label.CompApp_German}</a>
+            </div>
+        </div>
+    </header>
+    <c:search chosenLanguageISO="{!language}" site="{!site}" ></c:search>
+
+    <div class="container">
+
+        <div class="row row-offcanvas row-offcanvas-right">
+            <!-- Remove quick links as right menu, content will be at bottom -->
+            <div class="col-xs-12 col-sm-9">
+                <div class="row">
+
+                    <c:breadcrumb chosenLanguageISO="{!language}" pageid="Home" site="{!site}" ></c:breadcrumb>
+                    <!--div class="col-xs-4">
+                        <c:breadcrumb chosenLanguageISO="{!language}" pageid="Home" site="{!site}" ></c:breadcrumb>
+                    </div>
+                    <div class="col-xs-8">
+                        <span><b>{!$label.FAQ_COVID19_Message_Paragraph1_Bold_part}</b></span>
+                        <span>{!$label.FAQ_COVID19_Message_Paragraph1_Regular_part}</span><br></br>
+                        <span><b><apex:outputText value="{!$Label.FAQ_COVID19_Message_Paragraph2_Bold_part}" rendered="{!NOT(CONTAINS(language,'fr'))}" /></b> </span>
+                        <apex:outputText value="{!$Label.FAQ_COVID19_Message_Paragraph2_Regular_part}" rendered="{!NOT(CONTAINS(language,'fr'))}" />
+                        <apex:outputText value="{!$Label.FAQ_COVID19_Message_Paragraph2_Regular_part}" rendered="{!CONTAINS(language,'fr')}" />
+                        <span><b><apex:outputText value="{!$Label.FAQ_COVID19_Message_Paragraph2_Bold_part}" rendered="{!CONTAINS(language,'fr')}" /></b> </span>
+                        <apex:outputText value="{!$Label.FAQ_COVID19_Message_Paragraph2_French_Only_part}" rendered="{!CONTAINS(language,'fr')}" />
+                        <a href="{!$label.FAQ_COVID19_Message_Link}">
+                            <span style="color: #0096b2;">{!$label.FAQ_COVID19_Message_Paragraph2_Link_Styled_part}</span>
+                        </a>
+
+                    </div-->
+                </div>
+                <!-- <c:alert ></c:alert> -->
+
+                <!-- Search Results attempt #2 -->
+                <div class="row">
+                    <div id="SearchResultOutput">
+
+                    </div>
+                </div>
+                <!-- END OF Search Results attempt #2 -->
+
+                <div class="row">
+
+                    <div id="card">
+
+                        <!-- FOR EACH CATEOGORY 1 style="display:block; float:left; margin:10px 0; height:460px;"-->
+                        <apex:repeat value="{!allCategoryNameList}" var="categoryName">
+                            <apex:variable value="{!customCategoryDataMap[categoryName]}" var="categoryRecord"/>
+
+                            <div class="card-item">
+                                <!-- Category friendly URL -->
+                                <apex:variable value="" var="CatfriendlyURL"/>
+                                <apex:outputpanel rendered="{!language==null}">
+                                    <apex:variable value="/faq/uk-en/category/{!SUBSTITUTE(categoryRecord.English_URL_Friendly_Name__c, 'mobile', 'Mobile')}" var="CatfriendlyURL"/>
+                                </apex:outputpanel>
+                                <apex:outputpanel rendered="{!language!=null && CONTAINS(language,'en')}">
+                                    <apex:variable value="/faq/{!language}/category/{!SUBSTITUTE(categoryRecord.English_URL_Friendly_Name__c, 'mobile', 'Mobile')}" var="CatfriendlyURL"/>
+                                </apex:outputpanel>
+                                <apex:outputpanel rendered="{!language!=null && CONTAINS(language,'fr')}">
+                                    <apex:variable value="/faq/{!language}/categorie/{!SUBSTITUTE(categoryRecord.French_URL_Friendly_Name__c, 'mobile', 'Mobile')}" var="CatfriendlyURL"/>
+                                </apex:outputpanel>
+                                <apex:outputpanel rendered="{!language!=null && CONTAINS(language,'nl')}">
+                                    <apex:variable value="/faq/{!language}/categorie/{!SUBSTITUTE(categoryRecord.Dutch_URL_Friendly_Name__c, 'mobile', 'Mobile')}" var="CatfriendlyURL"/>
+                                </apex:outputpanel>
+                                <apex:outputpanel rendered="{!language!=null && CONTAINS(language,'de')}">
+                                    <apex:variable value="/faq/{!language}/categorie/{!SUBSTITUTE(categoryRecord.German_URL_Friendly_Name__c, 'mobile', 'Mobile')}" var="CatfriendlyURL"/>
+                                </apex:outputpanel>
+
+
+                                <a style="display:inline" href="{!CatfriendlyURL}">
+                                    <img src="{!URLFOR($Resource.FAQ_Mockup, categoryRecord.Category_Image__c)}" width="100%" style="width: 80px; height: 80px; object-fit: contain; margin: auto; display: block;"/>
+                                    <div style="height:70px; align-items: center; display: flex; justify-content:center;">
+                                        <h4 style="text-align:center; font-family: LaPontaise-SemiBold !important;">
+                                        <c:FAQCategoryName uniqueCategoryName="{!categoryName}"/>
+                                    </h4>
+                                </div>
+                                </a>
+                                <div class="card-content">
+                                    <!-- Translated category description -->
+                                    <p class="pdesc"> <c:FAQCategoryDescription uniqueCategoryName="{!categoryName}"> </c:FAQCategoryDescription> </p>
+
+
+                                    <!-- ***** DISPLAY EACH ARTICLE within category (Max 3 articles) ***** -->
+                                    <ul>
+                                        <apex:repeat value="{!categoryName2Articles[categoryName]}" var="article" rows="3">
+                                            <li style="color:#00286A;">
+                                                <p style="list-style-position: outside;display:block;">
+                                                    <apex:variable value="" var="friendlyURL"/>
+                                                    <apex:outputpanel rendered="{!language==null}">
+                                                        <apex:variable value="/faq/uk-en/question/{!article.urlname}" var="friendlyURL"/>
+                                                    </apex:outputpanel>
+                                                    <apex:outputpanel rendered="{!language!=null && CONTAINS(language,'en')}">
+                                                        <apex:variable value="/faq/{!language}/question/{!article.urlname}" var="friendlyURL"/>
+                                                    </apex:outputpanel>
+                                                    <apex:outputpanel rendered="{!language!=null && CONTAINS(language,'fr')}">
+                                                        <apex:variable value="/faq/{!language}/question/{!article.urlname}" var="friendlyURL"/>
+                                                    </apex:outputpanel>
+                                                    <apex:outputpanel rendered="{!language!=null && CONTAINS(language,'nl')}">
+                                                        <apex:variable value="/faq/{!language}/vraag/{!article.urlname}" var="friendlyURL"/>
+                                                    </apex:outputpanel>
+                                                    <apex:outputpanel rendered="{!language!=null && CONTAINS(language,'de')}">
+                                                        <apex:variable value="/faq/{!language}/frage/{!article.urlname}" var="friendlyURL"/>
+                                                    </apex:outputpanel>
+                                                    <a href="{!friendlyURL}">{!article.title}</a><br/>
+                                                </p>
+                                            </li>
+                                        </apex:repeat>
+                                    </ul>
+                                </div>
+                                <!-- ***** END DISPLAY EACH ARTICLE ***** -->
+
+                                <a class="primary" style="margin-top:15px; width: 75%; box-sizing: content-box; color: #ffffff !important;" href="{!CatfriendlyURL}" role="button">{!$Label.FAQ_LABEL_SEE_MORE}</a>
+
+                            </div><!--/.col-lg-4 col-md-5 col-xs-6 - Card Item -->
+
+                        </apex:repeat>
+                        <!-- ***** END FOR EACH CATEOGORY 1 ***** -->
+                    </div> <!--/card-->
+
+                </div><!--/row-->
+            </div><!--/.col-xs-12.col-sm-9-->
+
+            <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
+
+                <c:sidebar chosenLanguageISO="{!language}" FAQQuickLinks="{!FAQQuickLinks}" LiveChatSettings="{!LiveChatSettings}" FAQContactUsLinks="{!FAQContactUsLinks}" MostViewedArticles="{!MostViewedArticles}"></c:sidebar>
+
+            </div><!--/.sidebar-offcanvas-->
+
+        </div><!--/row row-offcanvas row-offcanvas-right-->
+
+        <c:basebar chosenLanguageISO="{!language}" FAQQuickLinks="{!FAQQuickLinks}" LiveChatSettings="{!LiveChatSettings}" FAQContactUsLinks="{!FAQContactUsLinks}" MostViewedArticles="{!MostViewedArticles}"></c:basebar>
+
+
+    </div>
+    <!--***** /.container *****-->
+    <footer id="app-footer-template">
+        <div id="app-footer-template-image" style="height:0px;">
+            <div id="app-footer-template-content">
+            </div>
+        </div>
+        <p id="app-footer-template-copyright">© {!YEAR(TODAY())} {!$Label.CompApp_EurostarRights} <a id="app-footer-template-link" href="http://www.eurostar.com" style="color:white !important">{!$Label.CompApp_eurostar_site}</a></p>
+    </footer>
+
+    <c:js ></c:js>
+
+                    
+    <script type="text/javascript">
+
+        $(function(){
+            let langhref = "{!chosenLanguageISO}" == "en_US" ? "en" : "{!chosenLanguageISO}" == "fr" ? "fr" : "{!chosenLanguageISO}" == "de" ? "de" : "{!chosenLanguageISO}" == "nl_NL" ? "nl" : "en";
+            $('#select-box-selected-lang').text($('#app-header-template-options .options-button[hreflang="' + langhref + '"]').text());
+        });
+            var APP_HEADER_TEMPLATE_LANG_SELECTION_MENU = {
+            OPEN:  "{! URLFOR($Resource.CompApp_Res, '/res/SVGS/arrow_up.svg') }",
+            CLOSE: "{! URLFOR($Resource.CompApp_Res, '/res/SVGS/arrow_down.svg') }",
+            }
+
+            function showLanguageSelectionMenu() {
+                document.getElementById("app-header-template-lang-selection-menu").classList.add('open');
+                document.getElementById("select-box-arrow").addEventListener('click',hideLanguageSelectionMenu);
+                document.getElementById("select-box-arrow").src = APP_HEADER_TEMPLATE_LANG_SELECTION_MENU.OPEN;
+
+                $(document).bind('scroll', hideLanguageSelectionMenu);
+            }
+
+            function hideLanguageSelectionMenu() {
+                document.getElementById("app-header-template-lang-selection-menu").classList.remove('open');
+                document.getElementById("select-box-arrow").removeEventListener('click',hideLanguageSelectionMenu);
+                document.getElementById("select-box-arrow").addEventListener('click',showLanguageSelectionMenu);
+                document.getElementById("select-box-arrow").src = APP_HEADER_TEMPLATE_LANG_SELECTION_MENU.CLOSE;
+
+                $(document).unbind('scroll', hideLanguageSelectionMenu);
+            }
+
+            $(document).on('click', '#app-header-template-options .options-button', function (e) {
+                if (! e.target.hreflang)
+                    return true;
+                    var urlWrapper = (function searchObj() {
+                    var queryObj = Object.create(null);
+                    window.location.search.replace(/([^?=&]+)(=([^&]*))?/g, function($0, $1, $2, $3) { queryObj[$1] = $3; });
+
+                    return {
+                        queryData: queryObj,
+                        get: function(str){
+                            return queryObj[str];
+                        },
+                        toString: function () {
+                            return Object.keys(queryObj).map(function (k) { return k + '=' + queryObj[k]; }).join('&');
+                        },
+                        set: function(paramName, paramVal){
+                            queryObj[paramName] = paramVal;
+                            return this;
+                        },
+                    };
+                })();
+                sfdc_prevent_message_warning = true;
+                var choseLang = (e.target.hreflang == 'en') ?  'uk-en' : (e.target.hreflang == 'fr') ? 'fr-fr' : (e.target.hreflang == 'nl') ? 'nl-nl' : (e.target.hreflang == 'de') ? 'de-de' : 'uk-en';
+                window.location.search = urlWrapper.set('language', choseLang).toString();
+                window.onbeforeunload = function(){};
+                e.preventDefault();
+                return false;
+            });
+    </script>
+
+    
+
+    <!-- Auto Complete   columnWidth: 150, -->
+    <!-- <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script> -->
+    <!-- <script type="text/javascript">
+//          $(function() {
+//
+//          var apexAccountList  = [
+//          <apex:repeat value="{!MostViewedArticles}" var="article">
+//             "{!article.title}",
+//           </apex:repeat>
+//          ];
+//
+//          //autocomplete
+//           $("#autocomplete").autocomplete({
+//              appendTo: $("#autocomplete").parent(),
+//              source: apexAccountList,
+///              minLength: 3
+//
+//          });
+//
+//          $("#autocomplete").autocomplete({
+//          maxResults: 5,
+//          minLength: 3,
+//          source: Visualforce.remoting.Manager.invokeAction(
+//          '{!$RemoteAction.FAQSearchController.PerformSearch}',
+//          request.term,
+//          '{!language}',
+//          function(result, event){
+//             if (event.status) {
+///
+//}
+//          }
+//           );
+//
+//              source: function(request, response) {
+//                  var results = $.ui.autocomplete.filter(apexAccountList, request.term);
+//
+//                  response(results.slice(0, this.options.maxResults));
+//              }
+//          });
+//          });
+        </script> -->
+    <!-- /Auto Complete -->
+
+    <!-- GA Tracking -->
+    <!-- <site:googleAnalyticsTracking /> -->
+
+
+
+    <!-- </apex:form>-->
+
+    </body>
+    </html>
+</apex:page>

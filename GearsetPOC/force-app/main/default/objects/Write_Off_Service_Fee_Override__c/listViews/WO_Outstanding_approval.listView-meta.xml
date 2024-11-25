@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>WO_Outstanding_approval</fullName>
+    <booleanFilter>1 AND 2 AND 3 AND 4 AND 5 and 6</booleanFilter>
+    <columns>NAME</columns>
+    <columns>Case__c</columns>
+    <columns>Currency__c</columns>
+    <columns>Write_Off_Amount__c</columns>
+    <columns>Who_Gave_Vocal_Authorisation__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>CREATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Write_Off_Amount__c</field>
+        <operation>greaterThan</operation>
+        <value>100</value>
+    </filters>
+    <filters>
+        <field>Approval_Status__c</field>
+        <operation>notEqual</operation>
+        <value>approved,rejected,recalled</value>
+    </filters>
+    <filters>
+        <field>CREATED_DATE</field>
+        <operation>greaterOrEqual</operation>
+        <value>5/1/2019 12:00 AM</value>
+    </filters>
+    <filters>
+        <field>Write_Off_Amount__c</field>
+        <operation>lessThan</operation>
+        <value>250</value>
+    </filters>
+    <filters>
+        <field>Who_Gave_Vocal_Authorisation__c</field>
+        <operation>equals</operation>
+        <value>,Natasha Payne,Josh Bolsover</value>
+    </filters>
+    <filters>
+        <field>Advisor_Department__c</field>
+        <operation>equals</operation>
+        <value>Webhelp</value>
+    </filters>
+    <label>WO Outstanding Approval 100 - 250</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>Advisor_QA_Bucharest</group>
+        <group>Advisor_QA_Derby</group>
+        <group>Advisor_QA_ECC</group>
+        <group>Advisor_QA_QA_Team</group>
+        <group>Write_Off_Approvers_Ashford</group>
+        <group>Write_Off_Approvers_Bucharest</group>
+        <group>Write_Off_Approvers_Derby</group>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>No_Updates_If_Compensation_Approved</fullName>
+    <active>false</active>
+    <errorConditionFormula>NOT(ISNEW())
+&amp;&amp; TEXT(Comp_Approval_Status__c) == &#39;Approved&#39; 
+&amp;&amp; Approval_Method__c == &#39;MANUAL&#39;
+&amp;&amp; $Profile.Name != &#39;Integration Profile&#39;
+&amp;&amp; $Profile.Name != &#39;System Administrator&#39;
+&amp;&amp; (ISCHANGED(Case__c)
+|| ISCHANGED(CustomerC__c)
+|| ISCHANGED(Payment_Amount__c)
+|| ISCHANGED(Payment_Currency__c)
+|| ISCHANGED(Voucher_Type__c)
+|| ISCHANGED(Gift__c)
+|| ISCHANGED(Paypal_email__c)
+|| ISCHANGED(Points_Amount__c)
+|| ISCHANGED(Quantity__c)
+|| ISCHANGED(Bank_Account_Name__c)
+|| ISCHANGED(Bank_Sort_Code__c)
+|| ISCHANGED(Bank_Account_Number__c)
+|| ISCHANGED(IBAN_Account_Number__c)
+|| ISCHANGED(Swift_Sort_Code__c)
+)</errorConditionFormula>
+    <errorMessage>The Compensation has been Manually Approved and cannot be edited</errorMessage>
+</ValidationRule>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Does_the_dog_have_documents__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Does the dog have an Eu Pet passport, Animal Health certificate, or pet health certificate?</description>
+    <inlineHelpText>Does the dog have an Eu Pet passport, Animal Health certificate, or pet health certificate?</inlineHelpText>
+    <label>Does the dog have documents?</label>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Allow_Loyalty_Points__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Can the compensation compensation be claimed as points</description>
+    <inlineHelpText>Tick this if the compensation can be claimed in loyalty points. If this is unticked, loyalty points will not be calculated</inlineHelpText>
+    <label>Allow Loyalty Points</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

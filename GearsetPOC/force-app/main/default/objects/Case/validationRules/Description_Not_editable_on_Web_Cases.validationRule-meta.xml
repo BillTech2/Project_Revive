@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Description_Not_editable_on_Web_Cases</fullName>
+    <active>false</active>
+    <description>Description field not editable by Users</description>
+    <errorConditionFormula>NOT($User.Id = &quot;00526000009L6RZAA0&quot;) &amp;&amp;
+ NOT($User.Id = &quot;00526000009LcNyAAK&quot;) &amp;&amp; 
+AND
+(
+	 ISCHANGED( Description   ),
+	TEXT(Origin) = &quot;Web&quot;
+ 
+)</errorConditionFormula>
+    <errorDisplayField>Description</errorDisplayField>
+    <errorMessage>Please note the Description field cannot be updated . Kindly add comments in the Case comments</errorMessage>
+</ValidationRule>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Article_Media__c</fullName>
+    <label>Article Media</label>
+    <referenceTo>Article_Media__c</referenceTo>
+    <relationshipLabel>Article Media Formats</relationshipLabel>
+    <relationshipName>Article_Media_Formats</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

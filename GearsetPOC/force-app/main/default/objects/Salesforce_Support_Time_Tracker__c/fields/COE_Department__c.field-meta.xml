@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>COE_Department__c</fullName>
+    <label>COE / Department</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>CodeSwat</fullName>
+                <default>false</default>
+                <label>CodeSwat</label>
+            </value>
+            <value>
+                <fullName>Commercial Support</fullName>
+                <default>false</default>
+                <label>Commercial Support</label>
+            </value>
+            <value>
+                <fullName>CRE</fullName>
+                <default>false</default>
+                <label>CRE</label>
+            </value>
+            <value>
+                <fullName>Customer Care</fullName>
+                <default>false</default>
+                <label>Customer Care</label>
+            </value>
+            <value>
+                <fullName>D.o.N</fullName>
+                <default>false</default>
+                <label>D.o.N</label>
+            </value>
+            <value>
+                <fullName>EuroDespatch</fullName>
+                <default>false</default>
+                <label>EuroDespatch</label>
+            </value>
+            <value>
+                <fullName>Groups</fullName>
+                <default>false</default>
+                <label>Groups</label>
+            </value>
+            <value>
+                <fullName>Helpdesk</fullName>
+                <default>false</default>
+                <label>Helpdesk</label>
+            </value>
+            <value>
+                <fullName>HLC</fullName>
+                <default>false</default>
+                <label>HLC</label>
+            </value>
+            <value>
+                <fullName>IS Servicedesk</fullName>
+                <default>false</default>
+                <label>IS Servicedesk</label>
+            </value>
+            <value>
+                <fullName>Leadership</fullName>
+                <default>false</default>
+                <label>Leadership</label>
+            </value>
+            <value>
+                <fullName>Loyalty</fullName>
+                <default>false</default>
+                <label>Loyalty</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>QA / Insight</fullName>
+                <default>false</default>
+                <label>QA / Insight</label>
+            </value>
+            <value>
+                <fullName>Sales Team</fullName>
+                <default>false</default>
+                <label>Sales Team</label>
+            </value>
+            <value>
+                <fullName>Social</fullName>
+                <default>false</default>
+                <label>Social</label>
+            </value>
+            <value>
+                <fullName>The Hub</fullName>
+                <default>false</default>
+                <label>The Hub</label>
+            </value>
+            <value>
+                <fullName>Webhelp (Bucharest)</fullName>
+                <default>false</default>
+                <label>Webhelp (Bucharest)</label>
+            </value>
+            <value>
+                <fullName>Webhelp (Derby)</fullName>
+                <default>false</default>
+                <label>Webhelp (Derby)</label>
+            </value>
+            <value>
+                <fullName>Webhelp (Live Chat)</fullName>
+                <default>false</default>
+                <label>Webhelp (Live Chat)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

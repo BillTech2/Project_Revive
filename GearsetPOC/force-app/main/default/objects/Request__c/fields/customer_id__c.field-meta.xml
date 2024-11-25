@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>customer_id__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Look up for customer id in invoice customer</description>
+    <label>Invoice_Customer</label>
+    <referenceTo>Invoice_Customer__c</referenceTo>
+    <relationshipLabel>Vendor_Requests</relationshipLabel>
+    <relationshipName>Vendor_Requests</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

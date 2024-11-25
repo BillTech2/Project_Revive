@@ -1,0 +1,328 @@
+<apex:page title="PDF Generator" showHeader="false" sidebar="false" standardController="Invoice__c" extensions="PDF_Generator_Invoice_Ctrl" applyHtmlTag="false" applyBodyTag="false" renderAs="pdf" language="{!language}">
+    <head>
+        <apex:includeScript value="{!$Resource.webForm_IsoCountryCode}"/> <!-- just to create a dependency -->
+
+        <style>
+            @page {
+                margin-left: 20px;
+                margin-right: 20px;
+                margin-bottom: 0px;
+                margin-top: 0px;
+            }
+
+            body {
+                font-family: "Arial" "Sans-Serif";
+            }
+
+            footer {
+                position: fixed;
+                bottom: 5px;
+                font-size: 8pt;
+                text-align: center;
+            }
+
+            td {
+                width: 300px; 
+            }
+
+            #globalInfos {
+                margin-left: 60px;
+                margin-right: 60px;
+                margin-top: 20px;
+            }
+
+            #globalInfos tr { 
+                height: 64px;
+            }
+
+            #invoiceInformationTable tr {
+                height: 10px;
+            }
+
+            #vatInfos{
+                margin-top:20px;
+            }
+
+            #vatInfos tr {
+                height: 30px;
+            }
+
+            .td_padding {
+                padding-left: 3px;
+            }
+
+            .img {
+                margin-left: 65px;
+                margin-top: 5px;
+            }
+
+            #customerInfo {
+                margin-bottom: 30px;
+            }
+
+            #invoiceLabel, #invoiceInformation {
+                margin-top: 20px;
+            }
+
+            .subscription {
+                padding-top: 50px;
+                padding-bottom: 0px;
+            }
+        </style>
+    </head>
+
+    <header>
+        <p></p>
+    </header>
+    <table id="globalInfos">
+        <tr>
+            <td></td>
+            <td class="td_padding ft_size">
+                <div id = "customerInfo" style="margin-top: -15px;">
+                    <c:PDF_Customer_Information companyName="{! invoice.Company_Name__c}"
+                        salutation="{! invoice.Member__r.Salutation}"
+                        lastname="{! invoice.Subscription__r.Last_Name__c}"
+                        firstname="{! invoice.Subscription__r.First_Name__c} "
+                        mailingStreet="{! invoice.Invoice_Street_Number__c}"
+                        mailingAdditionalStreet="{! invoice.Inv_Additional_adress_information__c}"
+                        mailingPostalCode="{! invoice.Invoice_Postal_Code__c} "
+                        mailingCity="{! invoice.Invoice_City__c }"
+                        mailingCountry="{! invoice.Invoice_Country__c}"
+                        showSalutation="true"
+                    />
+                </div>
+            </td>
+        </tr>
+
+        <tr></tr>
+
+        <tr>
+            <td style="vertical-align:top;font-size: 12pt" class="td_padding" >
+                <div id="invoiceLabel">
+                    <b>
+                        <i>
+                            <apex:outputText style="border-bottom-width: 1px; border-bottom-style: solid;" value="{!$Label.PDF_invoice_Label}" rendered="{!isConfirmed}"/>
+                            <apex:outputText style="border-bottom-width: 1px; border-bottom-style: solid;" value="{!$Label.PDF_Pro_forma_Label}" rendered="{!isProforma}"/>
+                        </i>
+                    </b>
+                </div> 
+            </td>
+            <td class="td_padding">
+                <div id="invoiceInformation">
+                    <table id ="invoiceInformationTable">
+                        <tr>
+                            <td>
+                                <apex:outputText style="font-size: 11pt;" value="{!$Label.PDF_Request_Date} " />
+                            </td>
+                            <td>
+                                <apex:outputLabel style="font-size:11pt;">
+                                    <apex:outputText style="font-size:11pt;" value="{!requestDate}"/>
+                                </apex:outputLabel>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <apex:outputText style="font-size: 11pt;" value="{!$Label.PDF_Order_Number} " />
+                            </td> 
+                            <td>
+                                <apex:outputLabel style="font-size:11pt;">
+                                    <apex:outputField value="{!invoice.Order_Number__c}" />
+                                </apex:outputLabel>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <apex:outputText style="font-size: 11pt;" value="{!$Label.PDF_Invoice_Number}" rendered="{! !isProforma}" />
+                            </td>
+                            <td>
+                                <apex:outputLabel style="font-size:11pt;">
+                                    <apex:outputField value="{!invoice.Invoice_Number__c}" rendered="{! !isProforma}"/>
+                                </apex:outputLabel>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <apex:outputText style="font-size: 11pt; white-space: nowrap;" value="{!$Label.PDF_CIN}" rendered="{! IF(invoice.Subscription__r.CIN_V2__c != '', true, false)}"/>
+                            </td>
+                            <td>
+                                <apex:outputLabel style="font-size:11pt;">
+                                    <apex:outputField value="{!invoice.Subscription__r.CIN_V2__c}" rendered="{! IF(invoice.Subscription__r.CIN_V2__c != '', true, false)}"/>
+                                </apex:outputLabel>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <apex:outputText style="font-size: 11pt;" value="{!$Label.PDF_VAT_Number}" rendered="{! IF(invoice.VAT_Number__c != '', true, false)}"/>
+                            </td>
+                            <td>
+                                <apex:outputLabel style="font-size:11pt;" rendered="{! IF(invoice.VAT_Number__c != '', true, false)}">
+                                    <apex:outputField value="{!invoice.VAT_Number__c}" />
+                                </apex:outputLabel>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <apex:outputText style="font-size: 11pt;" value="{!$Label.PDF_External_Reference}" rendered="{! IF(invoice.Subscription__r.External_Reference__c != '',true,false)}"/>
+                            </td>
+                            <td>
+                                <apex:outputLabel style="font-size:11pt;" rendered="{! IF(invoice.Subscription__r.External_Reference__c != '',true,false)}">
+                                    <apex:outputField value="{!invoice.Subscription__r.External_Reference__c}" />
+                                </apex:outputLabel>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+        </tr>
+        <tr >
+            <td class="td_padding subscription">
+                <apex:pageBlock rendered="{!If(invoice.Status__c == 'Cancelled', true, false)}">
+                    <apex:outputText style="font-size: 11pt;" value=" {!$Label.Invoice_PDF_Cancellation}" />
+                    <apex:outputText style="font-size: 11pt;" value=" {!$Label.PDF_Invoice_Subscription_Category}" />
+                    <b>
+                        <apex:outputLabel style="font-size:11pt;">
+                            <apex:outputField value="{!invoice.Subscription__r.Subscription_Type_Name__c}" />
+                            <apex:outputText value=" Pass" />
+                        </apex:outputLabel>
+                    </b>
+                </apex:pageBlock>
+
+                <apex:pageBlock rendered="{!If(language == 'fr_FR' && invoice.Status__c != 'Cancelled', true, false)}">
+                    <b>
+                        <apex:outputText style="font-size: 11pt;" value="{!$Label.PDF_Invoice_Subscription_Category}" />
+                            <apex:outputLabel style="font-size:11pt;">
+                                <apex:outputField value="{!invoice.Subscription__r.Subscription_Type_Name__c}" />
+                            <apex:outputText value=" Pass" />
+                        </apex:outputLabel>
+                    </b>
+                </apex:pageBlock>
+
+                <apex:pageBlock rendered="{!If(language != 'fr_FR' && invoice.Status__c != 'Cancelled', true, false)}">
+                    <b>
+                        <apex:outputLabel style="font-size:11pt;">
+                            <apex:outputField value="{!invoice.Subscription__r.Subscription_Type_Name__c}" />
+                            <apex:outputText value=" Pass" />
+                        </apex:outputLabel> 
+                        <apex:outputText style="font-size: 11pt;" value=" {!$Label.PDF_Invoice_Subscription_Category}" />
+                    </b>
+                </apex:pageBlock>
+
+                <br/><br/>
+                <apex:outputText style="font-size: 11pt; line-height: 2;" value="{!$Label.PDF_Member_Name}" /> <br/>
+                <apex:outputText style="font-size: 11pt; line-height: 2;" value="{!$Label.PDF_Invoice_Duration}" /><br/>
+                <apex:outputText style="font-size: 11pt; line-height: 2;" value="{!$Label.PDF_Invoice_Start_Date}" /><br/>
+                <apex:outputText style="font-size: 11pt; line-height: 2;" value="{!$Label.PDF_Invoice_End_Date}" /><br/>
+
+                <apex:pageBlock rendered="{!if(invoice.Subscription__r.Discount_Value__c != null && (invoice.Subscription__r.Discount_Type__c == 'Percentage' || invoice.Subscription__r.Discount_Type__c == 'Fixed Value'), true, false)}">
+                    <apex:outputText style="font-size: 11pt; line-height: 2;" value="{!$Label.Invoice_PDF_Promo}" />
+                    <apex:outputText style="font-size: 11pt; line-height: 2;" value=" - {!invoice.Subscription__r.Discount_Value__c}" />
+                    <apex:outputText style="font-size: 11pt; line-height: 2;" value=" %" rendered="{!if(invoice.Subscription__r.Discount_Type__c == 'Percentage', true, false)}"/>
+                    <apex:outputText style="font-size: 11pt; line-height: 2;" value=" €" rendered="{!if(invoice.Subscription__r.Discount_Type__c == 'Fixed Value', true, false)}"/>
+                    <b>
+                        <apex:outputText style="font-size: 11pt; line-height: 2;" value=" {!$Label.Invoice_PDF_Discount}" />
+                    </b>
+                </apex:pageBlock>
+            </td>
+            <td class="td_padding subscription">
+                <div style="margin-top:37px;">
+                    <br/><br/>
+                    <b>
+                        <apex:outputText style="font-size: 11pt; line-height: 2;" value="{!invoice.Subscription__r.First_Name__c} " />
+                        <apex:outputText style="font-size: 11pt; line-height: 2;" value="{!invoice.Subscription__r.Last_Name__c}" />
+                        <br/>
+                        <apex:outputText style="font-size: 11pt; line-height: 2;" value="{!invoice.Duration__c} {!$Label.PDF_Month}" /> <br/>
+                        <apex:outputText style="font-size: 11pt; line-height: 2;" value="{!startDate} " /> <br/>
+                        <apex:outputText style="font-size: 11pt; line-height: 2;" value="{!endDate} " /> <br/>
+                    </b>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td class="td_padding">
+                <br/>
+                <table id="vatInfos">
+                    <tr>
+                        <td>
+                            <apex:outputText style="font-size: 11pt;" value="{!$Label.PDF_Total_Excl_VAT}" />
+                        </td>
+                        <td>
+                            <div style="width: 130px; text-align: right;  ">
+                                <apex:outputLabel style="font-size:11pt; {! IF(VatIsAtZero,'margin-right:6px;','')} ">
+                                    <b>
+                                        <apex:outputText value="{!amount_excl_VAT}" />
+                                    </b>
+                                </apex:outputLabel>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <apex:outputText style="font-size: 11pt;"  value="{!asterix}{!$Label.PDF_TVA_Label}" rendered="{!isExemptFromVAT}" />
+                            <apex:outputText style="font-size: 11pt;"  value="{!asterix}{!$Label.PDF_TVA_21_Label}" rendered="{! !isExemptFromVAT}" />
+                        </td>
+                        <td>
+                            <div style="width: 130px; text-align: right;">
+                                <apex:outputLabel style="font-size:11pt;">
+                                    <b>
+                                        <apex:outputText style="font-size: 11pt;" value="{!amount_VAT}" />
+                                        <apex:outputText value="*" rendered="{!invoice.TECH_isIntraCommunautaire__c}"/>
+                                    </b>
+                                </apex:outputLabel>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>
+                                <apex:outputText style="font-size: 11pt;"  value="{!$Label.PDF_Total_VAT}" rendered="{!isExemptFromVAT}"/>
+                                <apex:outputText style="font-size: 11pt;"  value="{!$Label.PDF_Total_Incl_VAT}" rendered="{!!isExemptFromVAT}"/>
+                            </b>
+                        </td>
+                        <td>
+                            <div style="width: 130px; text-align: right; ">
+                                <apex:outputLabel style="font-size:11pt; {! IF(VatIsAtZero,'margin-right:6px;','')}">
+                                    <b>
+                                        <apex:outputText value="{!amount_incl_VAT}" />
+                                    </b>
+                                </apex:outputLabel>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+
+        <div style="margin-top:32px; margin-left:70px">
+            <apex:pageBlock id="pleaseReferInfos" rendered="{! !isConfirmed}">
+                <apex:outputText style="font-size: 11pt;"  value="{!$Label.PDF_Please_Transfer}"/>
+                <br/>
+                <apex:outputText style="font-size: 11pt;"  value="{!$Label.PDF_IBAN_Number}"/>
+                <br/>
+                <apex:outputText style="font-size: 11pt;"  value="{!$Label.PDF_Bic_Number}"/>
+                <br/>
+                <apex:outputText style="font-size: 11pt;"  value="{!$Label.PDF_Mention_Reference}"/>
+                <apex:outputLabel style="font-size:11pt; font-weight: bold; font-style: italic;">
+                    <apex:outputField value=" {!invoice.Order_Number__c}" />
+                </apex:outputLabel>
+            </apex:pageBlock>
+
+            <apex:pageBlock rendered="{!isConfirmed}">
+                <apex:outputText style="font-size: 11pt;"  value="{!$Label.PDF_Invoice_paid}"/>
+            </apex:pageBlock>
+
+            <br/>
+
+            <apex:outputText style="font-size: 11pt; font-weight: bold; font-style: italic;"  value="{!$Label.PDF_Reverse_Charge}" rendered="{!invoice.TECH_isIntraCommunautaire__c}"/>
+        </div>
+
+        <div style="margin-top:20px; margin-left:70px margin-bottom:20px" >
+            <apex:outputText style="font-size: 10pt; font-style: italic;"  value="{!$Label.PDF_VAT_Article_Reference}" rendered="{!countryEU}"/>
+        </div>
+
+    </table>
+
+    <footer>
+        <c:PDF_Signature phoneNumber="{!phoneNumber}"/>
+    </footer>
+</apex:page>

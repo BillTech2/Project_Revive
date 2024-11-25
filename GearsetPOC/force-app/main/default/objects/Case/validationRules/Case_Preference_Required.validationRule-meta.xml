@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Case_Preference_Required</fullName>
+    <active>true</active>
+    <description>The customer has to chose a help preference if he wants to submit the disruption web form</description>
+    <errorConditionFormula>AND
+(
+	ISBLANK( Disruption_Preference__c      ),
+	TEXT(Origin) = &quot;Disruption Web&quot;
+)</errorConditionFormula>
+    <errorDisplayField>Disruption_Preference__c</errorDisplayField>
+    <errorMessage>Please chose a preference</errorMessage>
+</ValidationRule>

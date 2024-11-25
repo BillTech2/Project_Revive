@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>No_new_Entry_when_Validated_equals_true</fullName>
+    <active>true</active>
+    <description>User cannot create new Entry when the Timesheet has been Approved (Validated=true).</description>
+    <errorConditionFormula>AND(ISNEW(), Timesheet__r.Validated__c  = true)</errorConditionFormula>
+    <errorMessage>Please invalidate the Timesheet before creating new Entry</errorMessage>
+</ValidationRule>

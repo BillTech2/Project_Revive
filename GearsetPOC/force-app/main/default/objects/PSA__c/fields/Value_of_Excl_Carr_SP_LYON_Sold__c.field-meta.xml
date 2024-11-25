@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Value_of_Excl_Carr_SP_LYON_Sold__c</fullName>
+    <externalId>false</externalId>
+    <formula>(Exclusive_SP_Carriage_Lyon__c - A_Exclusive_SP_Carriage_Lyon__c) * 7032</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Value of Excl Carr SP LYON Sold</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

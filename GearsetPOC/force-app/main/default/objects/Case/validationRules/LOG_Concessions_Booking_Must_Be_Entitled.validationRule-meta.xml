@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LOG_Concessions_Booking_Must_Be_Entitled</fullName>
+    <active>false</active>
+    <description>Concessions based cases must be linked with a Trade Contract company that is entitled to concessions.</description>
+    <errorConditionFormula>OR(
+ISPICKVAL(Journey_Type_Product__c,&quot;Concession (Core)&quot;),
+ISPICKVAL(Journey_Type_Product__c,&quot;Concession (Other)&quot;)
+)
+&amp;&amp;
+OR(
+ISBLANK(Company_Name__c),
+Company_Name__r.Concessions_Approved_Y_N__c = FALSE
+)</errorConditionFormula>
+    <errorMessage>Concessions can only be booked by a company that is concessions approved</errorMessage>
+</ValidationRule>

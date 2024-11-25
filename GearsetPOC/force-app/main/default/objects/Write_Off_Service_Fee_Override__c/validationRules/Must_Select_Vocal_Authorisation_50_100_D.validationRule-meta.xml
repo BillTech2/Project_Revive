@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Must_Select_Vocal_Authorisation_50_100_D</fullName>
+    <active>true</active>
+    <description>If value is over between 50 - 100 an TL in Derby must be selected</description>
+    <errorConditionFormula>AND(
+AND($User.Department = &quot;Derby&quot;),
+
+AND( Write_Off_Amount__c &gt; 49.99 , 
+     Write_Off_Amount__c &lt; 100.01 ),
+
+TEXT(Who_Gave_Vocal_Authorisation__c)&lt;&gt; &quot;Phil Oxley&quot;,
+TEXT(Who_Gave_Vocal_Authorisation__c)&lt;&gt; &quot;Disruption&quot;,
+TEXT(Who_Gave_Vocal_Authorisation__c)&lt;&gt; &quot;Usmaan Ayub&quot;,
+TEXT(Who_Gave_Vocal_Authorisation__c)&lt;&gt; &quot;Carl Smith&quot;,
+TEXT(Who_Gave_Vocal_Authorisation__c)&lt;&gt; &quot;Matthew Carney&quot;,
+TEXT(Who_Gave_Vocal_Authorisation__c)&lt;&gt; &quot;Joshua Milner&quot;
+)</errorConditionFormula>
+    <errorMessage>Please select a TL in Derby</errorMessage>
+</ValidationRule>

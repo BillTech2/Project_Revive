@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Risk_rating_likelihood__c</fullName>
+    <description>Select the most appropriate risk rating (likelihood)</description>
+    <inlineHelpText>Select the most appropriate risk rating (likelihood)</inlineHelpText>
+    <label>Risk rating- likelihood</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>1- highly unlikely / remote (5 yearly / once in life)</fullName>
+                <default>false</default>
+                <label>1- highly unlikely / remote (5 yearly / once in life)</label>
+            </value>
+            <value>
+                <fullName>2- unlikely / possible (yearly / 5-yearly)</fullName>
+                <default>false</default>
+                <label>2- unlikely / possible (yearly / 5-yearly)</label>
+            </value>
+            <value>
+                <fullName>3- occasional (bi-monthly / yearly)</fullName>
+                <default>false</default>
+                <label>3- occasional (bi-monthly / yearly)</label>
+            </value>
+            <value>
+                <fullName>4- regular (weekly / monthly)</fullName>
+                <default>false</default>
+                <label>4- regular (weekly / monthly)</label>
+            </value>
+            <value>
+                <fullName>5- common (daily / weekly)</fullName>
+                <default>false</default>
+                <label>5- common (daily / weekly)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

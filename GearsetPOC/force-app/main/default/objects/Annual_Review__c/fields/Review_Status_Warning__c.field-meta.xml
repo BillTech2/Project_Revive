@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Review_Status_Warning__c</fullName>
+    <defaultValue>&#39;WARNING: Updating the Review Status and saving the record will update the Annual Review field on the main account record. This action cannot be undone.&#39;</defaultValue>
+    <label>Review Status Warning</label>
+    <length>32768</length>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>5</visibleLines>
+</CustomField>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Promotional_Rules_Partner</fullName>
+    <columns>CREATEDBY_USER</columns>
+    <columns>NAME</columns>
+    <columns>Evoucher_Value__c</columns>
+    <columns>Currency__c</columns>
+    <columns>Expiry_Date__c</columns>
+    <columns>Total_Money_Amount__c</columns>
+    <columns>Total_Number_of_Vouchers__c</columns>
+    <columns>Expired__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>NAME</field>
+        <operation>notEqual</operation>
+        <value>ServiceRecoveryRule</value>
+    </filters>
+    <filters>
+        <field>Partner__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <label>Promotional Rules (Partner)</label>
+    <language>en_US</language>
+</ListView>

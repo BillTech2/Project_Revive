@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Accident_Reps_group__c</fullName>
+    <inlineHelpText>Email notifications will be sent to this group</inlineHelpText>
+    <label>Reps group</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>AIT</fullName>
+                <default>false</default>
+                <label>AIT</label>
+            </value>
+            <value>
+                <fullName>ECC</fullName>
+                <default>false</default>
+                <label>ECC</label>
+            </value>
+            <value>
+                <fullName>EIT</fullName>
+                <default>false</default>
+                <label>EIT</label>
+            </value>
+            <value>
+                <fullName>OBS</fullName>
+                <default>false</default>
+                <label>OBS</label>
+            </value>
+            <value>
+                <fullName>SPI</fullName>
+                <default>false</default>
+                <label>SPI</label>
+            </value>
+            <value>
+                <fullName>TMI</fullName>
+                <default>false</default>
+                <label>TMI</label>
+            </value>
+            <value>
+                <fullName>Traction</fullName>
+                <default>false</default>
+                <label>Traction</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,452 @@
+<apex:page showHeader="false" sidebar="false" controller="Roadmap_Ctrl" standardStylesheets="false" applyHtmlTag="false" applyBodyTag="false" docType="html-5.0">
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+    <title>Roadmap 2016</title>
+</head>
+    
+    <script src="{!URLFOR($Resource.dhtmlxGantt, '/codebase/dhtmlxgantt.js')}" type="text/javascript" charset="utf-8"></script>
+    <script src="{!URLFOR($Resource.dhtmlxGantt, '/codebase/ext/dhtmlxgantt_marker.js')}" type="text/javascript" charset="utf-8"></script>
+    <script src="{!URLFOR($Resource.dhtmlxGantt, '/codebase/ext/dhtmlxgantt_tooltip.js')}" type="text/javascript" charset="utf-8"></script>
+     <script src="{!URLFOR($Resource.dhtmlxGantt, '/codebase/GanttToSF.js')}" type="text/javascript" charset="utf-8"></script>
+    
+    <link rel="stylesheet" href="{!URLFOR($Resource.dhtmlxGantt, '/codebase/dhtmlxgantt.css')}" type="text/css" media="screen" title="no title" charset="utf-8"/>
+
+    <style type="text/css">
+        html, body{ height:100%; padding:0px; margin:0px; overflow: hidden;}
+    </style>
+    
+<body>  
+        <div>
+        <button id="filters" type="button" style="position: absolute; z-index: 1; border: none; background: transparent; z-index: 999;">
+            <img src="{!URLFOR($Resource.dhtmlxGantt, '/codebase/img/cog.svg')}" style="height: 20px; width: 20px;"></img>
+        </button>
+        </div>
+        <!-- Div for the control bar containing the filters -->
+            <div class="controls_bar" id="controls_bar" style="font-family: Arial; font-size: 13px; padding-top:10px; padding-bottom:10px; width: 100%; display: none;position: absolute; z-index:1; background: #EEEEEE; ">
+                <span style="padding-left:60px;padding-right:60px"><b>Filters</b></span>
+                
+                <!-- Platform filter -->
+                    <div id="list1" class="dropdown-check-list" tabindex="100">
+                    <span class="anchor">Platforms</span>
+                    
+                     <!-- Get the values to filter from the dropdown  list in Salesforce -->
+                    <ul class="items" id="platforms_filter" style="position:absolute; z-index:1; background:#FFFFFF;">
+                        <script>
+                        var platforms = {!platforms};
+                            for(i = 0; i < platforms.length; i++){
+                                var label = document.createElement("label");
+                                label.appendChild(document.createTextNode(platforms[i]));
+                                label.htmlFor = "id";
+                                var li = document.createElement("li");        // Create a <li> element
+                                var checkbox = document.createElement("input");
+                                checkbox.type = "checkbox";
+                                checkbox.checked = "true";
+                                checkbox.id = platforms[i];
+                                checkbox.value = platforms[i];
+                                checkbox.appendChild(document.createTextNode(platforms[i]));
+                                document.getElementById("platforms_filter").appendChild(li);
+                                li.appendChild(checkbox);
+                                li.appendChild(label);
+                                }
+                    </script>
+                    </ul>
+                </div>
+
+                <!-- Owners filter -->
+                <div id="list2" class="dropdown-check-list" tabindex="100">    
+                    <span class="anchor">IS Teams</span>
+                    
+                    <!-- Get the values to filter from the dropdown  list in Salesforce -->
+                    <ul class="items" id="owners_filter" style="position:absolute; z-index:1; background:#FFFFFF;">
+                    <script>
+                        var IS_Teams = {!IS_Teams};
+                            for(i = 0; i < IS_Teams.length; i++){
+                                var label = document.createElement("label");
+                                label.appendChild(document.createTextNode(IS_Teams[i]));
+                                label.htmlFor = "id";
+                                var li = document.createElement("li");        // Create a <li> element
+                                var checkbox = document.createElement("input");
+                                checkbox.type = "checkbox";
+                                checkbox.checked = "true";
+                                checkbox.id = IS_Teams[i];
+                                checkbox.value = IS_Teams[i];
+                                checkbox.appendChild(document.createTextNode(IS_Teams[i]));
+                                document.getElementById("owners_filter").appendChild(li);
+                                li.appendChild(checkbox);
+                                li.appendChild(label);
+                                }
+                    </script>
+                    </ul>
+                </div>
+                
+                <span style="position: absolute; padding-right: 60px; padding-top: 5px; right: 0;"><a href="https://eurostar.my.salesforce.com/a5t/o"><b>Go to Projects</b></a></span>
+                
+            </div>
+
+    <div id="gantt_here" style='width:100%; height:100%;'></div>
+  
+
+    <script type="text/javascript">
+    //Display the checked values from the filters
+        var checkListPlatform = document.getElementById('list1');
+        checkListPlatform.getElementsByClassName('anchor')[0].onclick = function (evt) {
+            if (checkListPlatform.classList.contains('visible'))
+                checkListPlatform.classList.remove('visible');
+            else
+                checkListPlatform.classList.add('visible');
+        }
+
+        var checkListOwner = document.getElementById('list2');
+        checkListOwner.getElementsByClassName('anchor')[0].onclick = function (evt) {
+            if (checkListOwner.classList.contains('visible'))
+                checkListOwner.classList.remove('visible');
+            else
+                checkListOwner.classList.add('visible');
+        }
+
+    // Columns settings on the left panel
+        
+    gantt.config.columns = [
+        {name:"text",       label:"Project Name",  width:"*", tree:true },
+        {name:"status",  label:"Progress",      template:function(project){
+            switch (project.status){
+               case 'Red':
+                    return "<span style='color: rgb(229, 53, 50); font-weight: bold'>"+ project.status+"</span>"
+                              break; 
+               case 'Amber':
+                    return "<span style='color: rgb(229, 147, 59); font-weight: bold'>"+ project.status+"</span>"
+                              break;
+               case 'Green':
+                    return "<span style='color: rgb(57, 204, 28); font-weight: bold'>"+ project.status+"</span>"                    
+                              break;
+               default:
+                              return "<span style='color: rgb(57, 204, 28);font-weight: bold'>"+ project.status+"</span>"
+                              break;
+               }
+            //                       return "<span style='color: colour;'>"+ project.status+"</span>"
+        } },
+        
+                {name:"add",        label:"",           width:44 }
+    ];
+    
+    
+    
+    // Config scales and subscales, if you want to display days, months, years
+    gantt.config.subscales = [
+        {unit:"year", step:1, date:"%Y" }
+    ];
+    
+    gantt.config.scale_unit = "month";
+    gantt.config.date_scale = "%M"; 
+    gantt.config.scale_height = 3*28;
+    gantt.config.duration_unit = "month";
+    
+    //Disable progress on project/task
+    gantt.config.show_progress = false;
+    
+    // Config labels in creation pop-up (lightbox)
+    gantt.locale.labels.section_project_name = "Project Name";
+    gantt.locale.labels.section_owners = "Owner";
+    gantt.locale.labels.section_platform = "Platform";
+    gantt.locale.labels.section_branch = "Branch";
+    gantt.locale.labels.section_status = "Status";
+    
+
+    //Value of dropdowns in the lightbox    
+    var owners_list = {!IS_Teams};
+    var owners = [];
+        for(i = 0; i < owners_list.length; i++)
+            {
+                owners.push({key:owners_list[i], label:owners_list[i]});
+                };
+    
+ 
+    
+    var projects_status_list = {!projects_status};
+    var projects_status = [];
+        for(i = 0; i < projects_status_list.length; i++)
+            {
+                projects_status.push({key:projects_status_list[i], label:projects_status_list[i]});
+                };
+        
+    var platforms_list = {!platforms};
+    var platforms = [];
+        for(i = 0; i < platforms_list.length; i++)
+            {
+                platforms.push({key:platforms_list[i], label:platforms_list[i]});
+                };
+
+    var branches_list = {!branches};
+    var branches = [];
+        for(i = 0; i < branches_list.length; i++)
+            {
+                branches.push({key:branches_list[i], label:branches_list[i]});
+                };
+    
+    
+    //Name of the fields in the lightbox
+    gantt.config.lightbox.sections = [
+        {name: "project_name", height: 22, map_to: "text", type: "textarea", focus: true},
+        {name: "description", height: 38, map_to: "description", type: "textarea", focus: true},
+        {name: "owners", height: 22, map_to: "IS_Teams", type: "select", options:owners},
+        {name: "branch", height: 22, map_to: "branch", type: "select", options:branches},
+        {name: "platform", height: 22, map_to: "platform", type: "select", options:platforms},
+        {name: "time", type: "duration", map_to: "auto"},
+        {name: "status", height: 22, map_to: "status", type: "select", options:projects_status}
+    ];
+
+
+    // Vertical marker for today's date
+    
+    var date_to_str = gantt.date.date_to_str(gantt.config.task_date);
+
+    var id = gantt.addMarker({ start_date: new Date(), css: "today", title:date_to_str( new Date())});
+    
+    setInterval(function(){
+    
+    var today = gantt.getMarker(id);
+    today.start_date = new Date();
+    today.title = date_to_str(today.start_date);
+    gantt.updateMarker(id);
+    }, 1000*60);
+    
+    //Create dynamic date range
+               function addMonths(date, months) {
+                                date.setMonth(date.getMonth() + months);
+                                return date;
+                }
+    
+    // Load data    
+    var projectArray = [];
+    var project = {};
+    
+    var taskArray = [];
+    var task = {};
+      
+                
+    var allProjects = Roadmap_Ctrl.get_projects(
+    function(result){
+                    for(i = 0; i < result.length ; i++){
+                                                                                                                var date =  new Date(result[i].Start_Date__c);
+                            projectArray.push({"id":result[i].Name, "text":result[i].Project_Name__c, "start_date": date ,
+                                             "end_date": result[i].End_Date__c, "duration":result[i].Duration__c,
+                                             "progress":result[i].Progress__c, "open": result[i].Open__c,
+                                             "branch":result[i].Branch__c, "platform": result[i].Platform__c,
+                                             "IS_Teams": result[i].IS_Teams__c, "description": result[i].Description__c, "owner": result[i].Project_owner__c,
+                                             "status": result[i].Project_Status__c, "type": gantt.config.types.project});
+                            project.data = projectArray;
+                             gantt.init("gantt_here", addMonths(new Date(), -6), addMonths(new Date(), +10));
+                                             gantt.parse(project);
+                    }
+        }
+    );
+    
+    //"project_owners": result[i].Project_owner1__c,
+    
+    
+         var allTasks = Roadmap_Ctrl.get_tasks(
+         function(result){
+                    for(j = 0; j < result.length ; j++){
+                        var proj = result[j].Project__c;
+                        var date =  new Date(result[j].Start_Date__c);
+                        taskArray.push({"id":result[j].id__c.toString(), "text":result[j].Name, "start_date": date ,
+                                             "duration":result[j].Duration__c,
+                                             "branch":result[j].Branch__c, "platform": result[j].Platform__c,
+                                             "IS_Teams": result[j].IS_Teams__c, "description": "",
+                                              "status":result[j].Task_Status__c,
+                                             "project":result[j].Project__c, "type":gantt.config.types.task, "parent": result[j].Parent_id__c,
+                                       });
+                            task.data = taskArray;
+                             gantt.parse(task);
+                    }
+        }
+    );
+    
+    
+    //"project_owners": result[j].Owner1__c,
+
+       // Platform automatic coloration by branch
+    /*gantt.templates.task_class  = function(start, end, task){
+          switch (task.branch){
+            case 'Analytics':
+                task.color = "rgb(0,178,169)";
+                break; 
+            case 'Marketing':
+                task.color = "rgb(236,138,0)";
+                break;
+            case 'Sales':
+                task.color = "rgb(65,143,222)";
+                break;
+             case 'Service':
+                task.color = "rgb(149,59,188)";
+                break;    
+             case 'Others':
+                task.color = "rgb(0,24,113)";
+                break;
+            }
+        };*/
+        
+    // Platform automatic coloration by IS Team
+       gantt.templates.task_class  = function(start, end, task){
+          switch (task.IS_Teams){
+            case 'Corporate and Operations Systems':
+                task.color = "rgb(0,178,169)";
+                break; 
+            case 'Customer Systems':
+                task.color = "rgb(150,60,189)";
+                break;
+                case 'Sales Systems':
+                task.color = "rgb(65,143,222)";
+                break;
+             case 'IS Security':
+                task.color = "rgb(71,177,29)";
+                break;
+             case 'Infrastructure Services':
+                task.color = "rgb(0,24,113)";
+                break;
+             default:
+                task.color = "rgb(255,199,44)";
+                break;
+            }
+        };
+   
+    
+    
+    
+        // Add project_owner the project and task bar
+        gantt.templates.task_text=function(start,end,task){
+            return task.text.bold() +" - "+ task.owner;
+        };
+        gantt.templates.grid_row_class = gantt.templates.task_row_class = function(start, end, task){
+            return "custom_row";
+        };    
+    
+     
+
+        // Tooltips
+   
+        gantt.templates.tooltip_text = function(start,end,task){
+        return "<b>Description:</b> " + task.description;
+        };
+    
+        //Filtering
+    
+        var cbar = document.getElementById("controls_bar");
+        document.getElementById("filters").onclick = function() {
+            if(cbar.style.display == "none")
+                cbar.style.display = "block";
+            else
+                cbar.style.display = "none";
+        }
+
+        
+        var platform_filter_inputs = document.getElementById("platforms_filter").getElementsByTagName("li");
+        for (var j=0; j<platform_filter_inputs.length; j++) {
+            var platform_filter_input = platform_filter_inputs[j].getElementsByTagName("input")[0];
+        // attach event handler to update filters object and refresh data (so filters will be applied)
+            platform_filter_input.onchange = function() {
+            gantt.refreshData();
+            }
+        }
+
+        function hasPlatform(parent, platform){
+            if(gantt.getTask(parent).platform == platform)
+            return true;
+
+        var child = gantt.getChildren(parent);
+        for(var j = 0; j < child.length; j++){
+            if(hasPlatform(child[j], platform))
+                return true;
+        }
+        return false;
+    }
+
+    gantt.attachEvent("onBeforeTaskDisplay", function(id, task){
+        for (var j=0; j<platform_filter_inputs.length; j++) {
+            var platform_filter_input = platform_filter_inputs[j].getElementsByTagName("input")[0];
+            if (platform_filter_input.checked){
+                if (hasPlatform(id, platform_filter_input.value)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    });
+
+        var owner_filter_inputs = document.getElementById("owners_filter").getElementsByTagName("li");
+            for (var j=0; j<owner_filter_inputs.length; j++) {
+                var owner_filter_input = owner_filter_inputs[j].getElementsByTagName("input")[0];
+        // attach event handler to update filters object and refresh data (so filters will be applied)
+                owner_filter_input.onchange = function() {
+                gantt.refreshData();
+                }
+            }
+
+        function hasOwner(parent, owner){
+            if(gantt.getTask(parent).IS_Teams == owner)
+            return true;
+
+        var child = gantt.getChildren(parent);
+        for(var j = 0; j < child.length; j++){
+            if(hasOwner(child[j], owner))
+                return true;
+        }
+        return false;
+    }
+
+    gantt.attachEvent("onBeforeTaskDisplay", function(id, task){
+        for (var j=0; j<owner_filter_inputs.length; j++) {
+            var owner_filter_input = owner_filter_inputs[j].getElementsByTagName("input")[0];
+            if (owner_filter_input.checked){
+                if (hasOwner(id, owner_filter_input.value)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    });
+    
+   //Write into Salesforce
+    gantt.attachEvent("onAfterTaskAdd", function(id,item){
+        console.log("parent " + item.parent);
+        console.log("id " + item.id);
+        console.log("text " + item.text);
+        console.log("project " + item.parent);
+        if (item.parent == null || item.parent == 0)
+        {
+               saveProjectInSalesforce(id,item);
+        }
+        else
+        {
+            console.log("task");
+            saveTaskInSalesforce(id,item);    
+        }
+    
+    });
+    
+    gantt.attachEvent("onBeforeTaskUpdate", function(id,item){
+        if (item.parent == null || item.parent == 0)
+        {
+            saveProjectInSalesforce(id,item);
+        }
+        else
+        {
+            saveTaskInSalesforce(id,item);
+        }
+    });
+    
+    gantt.attachEvent("onBeforeTaskDelete", function(id,item){
+        if (item.parent == null || item.parent == 0)
+        {
+            deleteProjectInSalesforce(id,item);
+        }
+        else
+        {
+            deleteTaskInSalesforce(id,item);
+        }
+    
+    });
+    
+    </script>
+</body>
+</apex:page>

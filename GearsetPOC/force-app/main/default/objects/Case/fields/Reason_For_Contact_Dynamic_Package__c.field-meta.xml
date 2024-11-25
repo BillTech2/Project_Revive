@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_For_Contact_Dynamic_Package__c</fullName>
+    <label>Reason For Contact (Dynamic Package)</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Assistance Package Booking</fullName>
+                <default>false</default>
+                <label>Assistance Package Booking</label>
+            </value>
+            <value>
+                <fullName>Assistance Package Exchange</fullName>
+                <default>false</default>
+                <label>Assistance Package Exchange</label>
+            </value>
+            <value>
+                <fullName>Assistance Package Refund</fullName>
+                <default>false</default>
+                <label>Assistance Package Refund</label>
+            </value>
+            <value>
+                <fullName>Coronavirus (COVID-19) package evoucher</fullName>
+                <default>false</default>
+                <label>Coronavirus (COVID-19) package evoucher</label>
+            </value>
+            <value>
+                <fullName>Disruption</fullName>
+                <default>false</default>
+                <label>Disruption</label>
+            </value>
+            <value>
+                <fullName>Fraud</fullName>
+                <default>false</default>
+                <label>Fraud</label>
+            </value>
+            <value>
+                <fullName>High Value Booking Made By Phone</fullName>
+                <default>false</default>
+                <label>High Value Booking Made By Phone</label>
+            </value>
+            <value>
+                <fullName>Hotel Complaint</fullName>
+                <default>false</default>
+                <label>Hotel Complaint</label>
+            </value>
+            <value>
+                <fullName>Offline evoucher package booking</fullName>
+                <default>false</default>
+                <label>Offline evoucher package booking</label>
+            </value>
+            <value>
+                <fullName>On-The-Spot Hotel Complaints</fullName>
+                <default>false</default>
+                <label>On-The-Spot Hotel Complaints</label>
+            </value>
+            <value>
+                <fullName>Package/Duplicate Booking Refund</fullName>
+                <default>false</default>
+                <label>Package/Duplicate Booking Refund</label>
+            </value>
+            <value>
+                <fullName>Package Hotel Exchange</fullName>
+                <default>false</default>
+                <label>Package Hotel Exchange</label>
+            </value>
+            <value>
+                <fullName>Package hotel Exchange - with Check in dates</fullName>
+                <default>false</default>
+                <label>Package hotel Exchange - with Check in dates</label>
+            </value>
+            <value>
+                <fullName>Package Hotel query</fullName>
+                <default>false</default>
+                <label>Package Hotel query</label>
+            </value>
+            <value>
+                <fullName>Package Hotel Refund</fullName>
+                <default>false</default>
+                <label>Package Hotel Refund</label>
+            </value>
+            <value>
+                <fullName>Package hotel Refund - with Check in dates</fullName>
+                <default>false</default>
+                <label>Package hotel Refund - with Check in dates</label>
+            </value>
+            <value>
+                <fullName>Package Roll Back</fullName>
+                <default>false</default>
+                <label>Package Roll Back</label>
+            </value>
+            <value>
+                <fullName>Relocation</fullName>
+                <default>false</default>
+                <label>Relocation</label>
+            </value>
+            <value>
+                <fullName>Standalone/Duplicate Booking Refund</fullName>
+                <default>false</default>
+                <label>Standalone/Duplicate Booking Refund</label>
+            </value>
+            <value>
+                <fullName>Standalone Hotel Exchange</fullName>
+                <default>false</default>
+                <label>Standalone Hotel Exchange</label>
+            </value>
+            <value>
+                <fullName>Standalone Hotel Exchange - with Check in dates</fullName>
+                <default>false</default>
+                <label>Standalone Hotel Exchange - with Check in dates</label>
+            </value>
+            <value>
+                <fullName>Standalone Hotel query</fullName>
+                <default>false</default>
+                <label>Standalone Hotel query</label>
+            </value>
+            <value>
+                <fullName>Standalone Hotel query - with Check in dates</fullName>
+                <default>false</default>
+                <label>Standalone Hotel query - with Check in dates</label>
+            </value>
+            <value>
+                <fullName>Standalone Hotel Refund</fullName>
+                <default>false</default>
+                <label>Standalone Hotel Refund</label>
+            </value>
+            <value>
+                <fullName>Standalone Hotel Refund - with Check in dates</fullName>
+                <default>false</default>
+                <label>Standalone Hotel Refund - with Check in dates</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Staff_Complaint__c</fullName>
+    <label>Where Is The Staff Member Located?</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Type_of_Complaint__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Station</fullName>
+                <default>false</default>
+                <label>Station</label>
+            </value>
+            <value>
+                <fullName>Onboard</fullName>
+                <default>false</default>
+                <label>Onboard</label>
+            </value>
+            <value>
+                <fullName>Times House</fullName>
+                <default>false</default>
+                <label>Times House</label>
+            </value>
+            <value>
+                <fullName>Security Staff</fullName>
+                <default>false</default>
+                <label>Security Staff</label>
+            </value>
+            <value>
+                <fullName>Special Assistance</fullName>
+                <default>false</default>
+                <label>Special Assistance</label>
+            </value>
+            <value>
+                <fullName>EuroDespatch</fullName>
+                <default>false</default>
+                <label>EuroDespatch</label>
+            </value>
+            <value>
+                <fullName>Geoparts</fullName>
+                <default>false</default>
+                <label>Geoparts</label>
+            </value>
+            <value>
+                <fullName>Ashford Contact Centre</fullName>
+                <default>false</default>
+                <label>Ashford Contact Centre</label>
+            </value>
+            <value>
+                <fullName>Brussels Contact centre</fullName>
+                <default>false</default>
+                <label>Brussels Contact centre</label>
+            </value>
+            <value>
+                <fullName>ECC / Webhelp</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>ECC / Webhelp</label>
+            </value>
+            <value>
+                <fullName>Live Chat</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Live Chat</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Staff</controllingFieldValue>
+            <valueName>Station</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Staff</controllingFieldValue>
+            <valueName>Onboard</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Staff</controllingFieldValue>
+            <valueName>Times House</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Staff</controllingFieldValue>
+            <valueName>Special Assistance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Staff</controllingFieldValue>
+            <valueName>EuroDespatch</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Staff</controllingFieldValue>
+            <valueName>Geoparts</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Staff</controllingFieldValue>
+            <valueName>Ashford Contact Centre</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Staff</controllingFieldValue>
+            <valueName>Brussels Contact centre</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

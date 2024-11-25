@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_GND_s</fullName>
+    <columns>NAME</columns>
+    <filterScope>Everything</filterScope>
+    <label>All GND&#39;s</label>
+    <sharedTo>
+        <role>Sales_Admin</role>
+    </sharedTo>
+</ListView>

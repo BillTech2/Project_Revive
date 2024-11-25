@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pass_Number_Matches_Pass_Number_on_File</fullName>
+    <active>true</active>
+    <errorConditionFormula>NOT(ISPICKVAL( Staff_Member_Name__r.Type_of_Staff__c,&quot;Eurostar Board Members&quot;))
+&amp;&amp;
+NOT(ISBLANK(Staff_Member_Name__r.Pass__c))
+&amp;&amp; 
+NOT(Pass_Number__c =  Staff_Member_Name__r.Pass__c)</errorConditionFormula>
+    <errorMessage>Pass number does not match the pass number we have on file (Enter numbers only)</errorMessage>
+</ValidationRule>

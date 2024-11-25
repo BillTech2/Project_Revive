@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MembershipNumber</fullName>
+    <description>This field stores the loyalty member&#39;s unique member ID in the program. PLEASE DO NOT Edit this field, as it is auto-populated.</description>
+    <inlineHelpText>This field stores the loyalty member&#39;s unique member ID in the program. PLEASE DO NOT Edit this field, as it is auto-populated when a new loyalty account is created through the automation.</inlineHelpText>
+    <trackHistory>false</trackHistory>
+</CustomField>

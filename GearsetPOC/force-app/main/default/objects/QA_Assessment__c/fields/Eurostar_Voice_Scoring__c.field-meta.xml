@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Eurostar_Voice_Scoring__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( ISPICKVAL( Eurostar_Voice_check__c ,&quot;YES&quot;),4,IF(ISPICKVAL(Eurostar_Voice_check__c,&quot;Partial&quot;),2,0))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Eurostar Voice Scoring</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>1</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

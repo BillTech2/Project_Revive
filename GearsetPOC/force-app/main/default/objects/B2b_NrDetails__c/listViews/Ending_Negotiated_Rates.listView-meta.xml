@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ending_Negotiated_Rates</fullName>
+    <columns>B2b_Account__c</columns>
+    <columns>NAME</columns>
+    <columns>B2b_Route__c</columns>
+    <columns>B2b_Status__c</columns>
+    <columns>B2b_RouteStartDate__c</columns>
+    <columns>B2b_RouteEndDate__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>B2b_RouteEndDate__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <label>Ending Negotiated Rates</label>
+</ListView>

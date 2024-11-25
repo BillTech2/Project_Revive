@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_JournalSubTypes</fullName>
+    <columns>Name</columns>
+    <columns>JournalType</columns>
+    <columns>Description</columns>
+    <columns>Points_to_Credit__c</columns>
+    <columns>Points_to_redeem__c</columns>
+    <columns>CreatedDate</columns>
+    <filterScope>Everything</filterScope>
+    <label>All Journal SubTypes</label>
+</ListView>

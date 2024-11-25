@@ -1,0 +1,1184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Card_Refund</fullName>
+    <active>true</active>
+    <description>Ticket Refund</description>
+    <label>Card Refund</label>
+    <picklistValues>
+        <picklist>Claim_Status__c</picklist>
+        <values>
+            <fullName>Claimed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Error Occured</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Started</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Claimed_Compensation_Type__c</picklist>
+        <values>
+            <fullName>PRR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Points</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Voucher</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Comp_Approval_Status__c</picklist>
+        <values>
+            <fullName>Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Awaiting Approval</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rejected</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Integration_Status__c</picklist>
+        <values>
+            <fullName>Failed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Claimed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Success</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Language__c</picklist>
+        <values>
+            <fullName>Dutch</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>English</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>French</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>German</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Location__c</picklist>
+        <values>
+            <fullName>Ashford Station</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Avignon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Brussels Midi</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Calais Station</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ebbsfleet Station</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>French Ski</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>German station</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lille</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>London St Pancras</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lyon Part Dieu</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marne La Vallee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marseille St Charles</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other station</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Paris Gare Du Nord</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SNCF station</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UK domestic station</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Payment_Currency__c</picklist>
+        <values>
+            <fullName>EUR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GBP</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>USD</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Reason_1__c</picklist>
+        <values>
+            <fullName>After booking enquiry</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Groups</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pre-Sale Info and Booking</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Reason_2__c</picklist>
+        <values>
+            <fullName>Amend a booking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Assistance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Booking tickets</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Complaint Process</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contact Centre %2F Station booking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contact Transfer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deposit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disruption</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Final Balance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Groups Information</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Information</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Information enquiry</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loyalty</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mobile</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Onboard Catering</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Onboard Experience</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quote</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Special Requests</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Station</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Travel Agent %2F 3rd Party Booking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unable to book</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Website booking</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Reason_3__c</picklist>
+        <values>
+            <fullName>Account Issues</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Account Maintenance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Add additional pax</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Air Conditioning</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Announcements %26 signage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Arrivals</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Baggage Policy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bike Policy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Birthday %2F Anniversary</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Boarding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Booking horizon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Business Premier Lounge</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Canx</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Carte Classique Rewards</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Charity Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Check-in</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cleanliness</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Communication</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Compensation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Compensation Challenge</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Compensation Information</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Concessions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Connection</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Content %2F Tone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Core destinations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer not there</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Delay Information</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Departure Lounge</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Destinations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Doors %26 steps</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Double Booking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Eurodespatch%2FEsprit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>External Cleanliness</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Facilities</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Food %2F drink Quality</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Food %2F drink Quantity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Food %2F drink availability</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Food Hygiene %2F safety</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Future</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gift Vouchers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Groups Catering</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Held</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internal Cleanliness</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internal Eurostar transfer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Joining %2F Rules</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lost Property</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loyalty Points</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Maintenance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Missing Information</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Name change</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Trains</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Choice Of Meal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Meal Supplied</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non Eurostar Enquiry</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not held</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not our route</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Online Functionality</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other Customers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Out of Ticket Conditions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PRR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Payment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pets onboard</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Porterage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Price %2F Availability</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Process</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Queuing time</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Redemption</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Remove pax</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Safety Concern</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Seating</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Seating Allocation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Security</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Self service ticket machines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Special Meal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Speed of response</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Staff</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Staff Travel %2F PALs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Strike</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sundry products</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Systems down</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Taken</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ticket Desk and SSTs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ticket conditions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ticket desk</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ticket enquiry</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Time Table %2F RTTI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Toilets %2F Baby Changing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Travel Agent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unaccompanied Minors</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Upgrade</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Value of Compensation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Website Issue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Within Ticket Conditions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wrong way round</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Refund_Method__c</picklist>
+        <values>
+            <fullName>Datacash</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Opera</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>THA_Compensation_Status_Cash__c</picklist>
+        <values>
+            <fullName>1-Pending Validation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2-Validated</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3-Done</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4-Rejected</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>THA_Compensation_Status_Credit_Card__c</picklist>
+        <values>
+            <fullName>1-Pending Validation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2-Validated</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3-Done</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4-Rejected</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>THA_Compensation_Status_Miles__c</picklist>
+        <values>
+            <fullName>1-Pending Validation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2-Validated</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3-Done</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4-Rejected</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>THA_Compensation_Status_Voucher__c</picklist>
+        <values>
+            <fullName>1-Pending Validation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2-Validated</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3-Done</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4-Rejected</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>THA_Compensation_Sub_Category__c</picklist>
+        <values>
+            <fullName>Catering - Incomplete meal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Catering - No meal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Comfort %28Airco%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stand up journey</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wifi dysfunction</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>THA_Compensation_category__c</picklist>
+        <values>
+            <fullName>Catering</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Mistake</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Delay</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disease %2F Passed Away</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Extension Voucher Miles</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Extension Voucher SC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gift</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Refund</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Thalys Gesture</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Travel Condition</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>THA_Destination__c</picklist>
+        <values>
+            <fullName>Aachen Hbf</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Aime-La Plagne</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Aix-en-Provence</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Albertville</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Amsterdam Centraal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Antwerpen-Centraal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Avignon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bordeaux</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bourg-St-Maurice</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Brugge</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Brussels Airport</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bruxelles-Midi</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chambery-Challes-Les-Eaux</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Charleroi-Sud</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dortmund Hbf</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Duisburg Hbf</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Düsseldorf Flughafen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Düsseldorf Hbf</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Essen Hbf</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gent-Sint-Pieters</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Köln Hbf</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Köln-Ehrenfeld</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Landry</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lille Europe</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Liège</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>London StPancras</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marne-la-Vallée Chessy Disneyland%C2%AE Paris</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marseille</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mons</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Moûtiers Salins Brides L Bains</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Namur</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oostende</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Paris Nord</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Paris-Charles de Gaulle Airport</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rotterdam Centraal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Schiphol</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Valence</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>THA_Origin__c</picklist>
+        <values>
+            <fullName>Aachen Hbf</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Aime-La Plagne</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Aix-en-Provence</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Albertville</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Amsterdam Centraal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Antwerpen-Centraal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Avignon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bordeaux</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bourg-St-Maurice</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Brugge</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Brussels Airport</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bruxelles-Midi</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chambery-Challes-Les-Eaux</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Charleroi-Sud</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dortmund Hbf</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Duisburg Hbf</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Düsseldorf Flughafen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Düsseldorf Hbf</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Essen Hbf</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gent-Sint-Pieters</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Köln Hbf</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Köln-Ehrenfeld</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Landry</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lille Europe</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Liège</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>London StPancras</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marne-la-Vallée Chessy Disneyland%C2%AE Paris</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marseille</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mons</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Moûtiers Salins Brides L Bains</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Namur</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oostende</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Paris Nord</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Paris-Charles de Gaulle Airport</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rotterdam Centraal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Schiphol</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Valence</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type_of_Refund__c</picklist>
+        <values>
+            <fullName>Expenses</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other %28Please Explain in Comments%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PRR</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Voucher_Issue_Type__c</picklist>
+        <values>
+            <fullName>Cancellation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Goodwill</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Voucher_Type__c</picklist>
+        <values>
+            <fullName>Business Premier Voucher %28%C2%A332%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GBP Face Value Voucher %28%C2%A31%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Standard Premier Voucher %28%C2%A327%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Standard Voucher %28%C2%A320%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>eVoucher_appropriate__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

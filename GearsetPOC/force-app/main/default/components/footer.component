@@ -1,0 +1,105 @@
+<apex:component >
+  <footer class="bs-docs-footer" role="contentinfo">
+  <div class="container" style="padding-top:0;">
+      <hr/>
+    <div class ="footer-block"> 
+        <ul class="bs-docs-footer-links text-muted">
+        <h4>Train deals</h4>
+        <li><a href="http://www.eurostar.com/uk-en/eurostar-deals/eurostar-train-deals/trains-france">Trains to France</a></li>
+        <li><a href="http://www.eurostar.com/uk-en/eurostar-deals/eurostar-train-deals/trains-france/trains-to-paris">Trains to Paris</a></li>
+        <li><a href="http://www.eurostar.com/uk-en/eurostar-deals/eurostar-train-deals/trains-france/disneyland-paris-holidays">Trains to Disneyland Paris</a></li>
+        <li><a href="http://www.eurostar.com/uk-en/eurostar-deals/eurostar-train-deals/trains-belgium">Trains to Belgium</a></li>
+        <li><a href="http://www.eurostar.com/uk-en/eurostar-deals/eurostar-train-deals/trains-belgium/trains-to-brussels">Trains to Brussels</a></li>
+        <li><a href="http://www.eurostar.com/uk-en/eurostar-deals/eurostar-train-deals/trains-germany">Trains to Germany</a></li>
+        <li><a href="http://www.eurostar.com/uk-en/eurostar-deals/eurostar-train-deals/trains-switzerland">Trains to Switzerland</a></li>
+        <li><a href="http://www.eurostar.com/uk-en/eurostar-deals/eurostar-train-deals/trains-the-netherlands">Trains to the Netherlands</a></li>
+        </ul>
+    </div>
+    <div class ="footer-block">
+            <ul class="bs-docs-footer-links text-muted">
+        <h4>City Breaks</h4>
+        <li><a href="http://www.eurostar.com/uk-en/destinations/city-breaks/breaks-in-france">France city breaks</a></li>
+        <li><a href="http://www.eurostar.com/uk-en/destinations/city-breaks/breaks-in-france/paris-city-breaks">Paris city breaks</a></li>
+        <li><a href="http://www.eurostar.com/uk-en/destinations/city-breaks/breaks-in-belgium">Belgium city breaks</a></li>
+        <li><a href="http://www.eurostar.com/uk-en/destinations/city-breaks/breaks-in-belgium/brussels-city-breaks">Brussels city breaks</a></li>
+        <li><a href="http://www.eurostar.com/uk-en/destinations/city-breaks/breaks-in-belgium/bruges-city-breaks">Bruges city breaks</a></li>
+        <li><a href="http://www.eurostar.com/uk-en/destinations/city-breaks/breaks-in-germany">Germany city breaks</a></li>
+        <li><a href="http://www.eurostar.com/uk-en/destinations/city-breaks/breaks-in-switzerland">Switzerland city breaks</a></li>
+        <li><a href="http://www.eurostar.com/uk-en/destinations/city-breaks/breaks-in-holland/amsterdam-city-breaks">Amsterdam city breaks</a></li>
+        </ul>
+    </div>
+    <div class ="footer-block">
+        <ul class="bs-docs-footer-links text-muted">
+        <h4>Website Information</h4>
+        <li><a href="http://www.eurostar.com/uk-en/sitemap">Sitemap</a></li>
+        <li><a href="http://www.eurostar.com/uk-en/website-terms-and-conditions">Website T&amp;Cs</a></li>
+        <li><a href="http://www.eurostar.com/uk-en/conditions-carriage">Conditions of carriage</a></li>
+        <li><a href="http://www.eurostar.com/uk-en/privacy-policy">Privacy policy</a></li>
+        <li><a href="http://www.eurostar.com/uk-en/cookies-and-personal-data">Cookies and personal data</a></li>
+        <li><a href="http://www.eurostar.com/uk-en/accessibility">Accessibility</a></li>
+        <li><a href="http://www.eurostar.com/uk-en/about-eurostar/eurostar-app">Eurostar app</a></li>
+        <li><a href="http://www.eurostar.com/mobile">Mobile site</a></li>
+        </ul>
+        </div>
+        <div class ="footer-block">
+        <ul class="bs-docs-footer-links text-muted">
+        <h4>Company Information</h4>
+        <li><a href="http://www.eurostar.com/uk-en/contact-us">Contact us</a></li>
+        <li><a href="http://www.eurostar.com/uk-en/about-eurostar">About us</a></li>
+        <li><a href="http://www.eurostar.com/uk-en/about-eurostar/press-office">Press office</a></li>
+        <li><a href="http://www.eurostar.com/uk-en/about-eurostar/eurostar-careers">Careers</a></li>
+        <li><a href="http://www.eurostar.com/uk-en/customer-charter">Customer charter</a></li>
+            <h4 style="margin-top: 30px;">Stay Connected</h4>
+            <li class= "socnet"><a href="http://facebook.com/eurostar" target="_blank"><i class="fa fa-facebook-square fa-2x" style="margin-right:5px;"></i> Facebook</a></li>
+            <li class= "socnet"><a href="http://twitter.com/eurostar" target="_blank"><i class="fa fa-twitter-square fa-2x"  style="margin-right:5px;"></i> Twitter</a></li>
+              <li class= "socnetmob"><a href="http://facebook.com/eurostar" target="_blank"><i class="fa fa-facebook-square fa-4x" style="margin-right:10px;"></i></a><a href="http://twitter.com/eurostar"  target="_blank"><i class="fa fa-twitter-square fa-4x"></i></a></li>
+            <br/><li> <a href="http://www.eurostar.com/newsletters/signup">Sign up to our newsletter</a></li>
+        </ul>
+        </div>
+      
+          <!-- <div class ="footer-signup" style="margin-top: 50px; float: left; border-top: 1px solid #eee; padding-top: 20px; width: 100%;">
+        <h4>Sign up to our newsletter</h4>
+              <form role="search">
+        <div class="form-group">
+        <input type="text" class="form-control" placeholder="Enter your email address here" style="width: 33.33333%;
+height: 40px; margin-bottom: 5px; font-size: 85%; border-right: 1px solid #ccc; border-top-right-radius: 4px;
+border-bottom-right-radius: 4px; padding: 0 3px; font-size:1.2em;"/>s
+  <div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true" style="background-image: -webkit-gradient(linear,left top,left 100%,from(#66CBD9),to(#1B808E)); */
+background-image: -webkit-linear-gradient(top,#66CBD9 0,#1B808E 100%); height:40px; width:33.3333%;float: left;
+clear: none; padding:0;">
+    Choose Language
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1" style="position: relative; width: 33.33333%;">
+      <li role="presentation"><a role="menuitem" tabindex="-1" href="#" style="background-color: transparent;">English</a></li><br/>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#" style="background-color: transparent;">Francais</a></li><br/>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#" style="background-color: transparent;">Francias Belgique</a></li><br/>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#" style="background-color: transparent;">Francais Nederland</a></li>
+  </ul>
+</div>
+                    <button type="submit" class="btn btn-signup" style=" float:left; padding: 0; border-left:0; margin-left:0; clear:none; width:20%; border-top-left-radius:0; border-radius:4px; height:40px;/* background-image: -webkit-gradient(linear,left top,left 100%,from(#66CBD9),to(#1B808E)); */
+background-image: -webkit-linear-gradient(top,#66CBD9 0,#1B808E 100%); color:#FFF;">Sign Up</button>
+            </div>
+            </form>
+        </div> -->
+      
+          <div id="footer-bottom" style="margin-top: 30px; float: left; border-top: 1px solid #eee; padding-top: 50px;">
+            <div id="footer-bottom-inner">
+                <div class="region region-footer-bottom">
+    <div id="block-eurostar-gateway-legal-footer" class="block block-eurostar-gateway">
+
+    
+  <div class="content">
+    <p><strong>Eurostar International Limited</strong> is an Appointed Representative of Mondial Assistance(UK) Limited (trading as Allianz Global Assistance) which is authorised and regulated by the Financial Conduct Authority (FCA). Mondial Assistance (UK) Limited FCA registration number is 311909. FCA authorisation can be checked on the FCA register at <a href="http://www.fsa.gov.uk/register/" target="_blank">http://www.fsa.gov.uk/register/</a></p> <p>Allianz Global Assistance, 102 George Street, Croydon CR9 6HD. E-mail: <a href="mailto:Insurance@allianz-assistance.co.uk">Insurance@allianz-assistance.co.uk</a></p> 
+<p>© {!year(today())} Eurostar International Ltd. All Rights Reserved</p>   </div>
+</div>
+  </div>
+            </div>
+          </div> <!-- /#footer-bottom -->
+      
+  </div>
+
+</footer>
+             
+</apex:component>

@@ -1,0 +1,65 @@
+<apex:page sidebar="false" controller="Vendor_DispReqController" >
+    <apex:form > 
+     <apex:pageMessages />
+     <apex:outputLabel value="Request Type" id="requestTypeLbl" />
+      <apex:selectList size="1" id="applicationType"  value="{!selectedApplication}">
+             <apex:selectOptions value="{!Applications}"/>         
+             <apex:actionSupport event="onchange" reRender="Requests,statuscheck" action="{!applicationChanged}"/>               
+        </apex:selectList>
+     <apex:outputLabel value="Filter By Status  " id="searchLbl" />
+      <apex:selectList size="1" id="statuscheck"  value="{!selectedValue}">
+             <apex:selectOptions value="{!StatusOptions}"/>                        
+        </apex:selectList>   
+        <apex:commandButton value="GO" action="{!fetch}"/>
+        <apex:outputLabel value="Filter By Customer name/Vendor/Submitter " id="searchLbl2" />
+        <apex:inputText value="{!searchtext}"  id="searchtext" style="width:200px" /> 
+        <apex:commandButton value="Search" action="{!search}"/>
+       <apex:pageblock id="Requests" title="Requests" >
+       
+            <apex:pageblockTable value="{!Request}" var="req">
+            
+            <apex:column headerValue="Request Id" id="RequestID">
+            <apex:outputField value="{!req.name}"/>  
+            </apex:column>
+            <apex:column headerValue="Request Type" id="reqtype">
+            <apex:outputField value="{!req.reqtype__c}"/>  
+            </apex:column>
+            <apex:column headerValue="Category" id="category">
+            <apex:outputField value="{!req.category__c}"/>  
+            </apex:column>
+            <apex:column headerValue="Status" id="status">
+            <apex:outputField value="{!req.status__c}"/>  
+            </apex:column>
+            <apex:column headerValue="Supplier Name" id="Suppname">
+            <apex:outputField value="{!req.suppname__c}"/>  
+            </apex:column>
+            <apex:column headerValue="Submitter" id="submitter">
+            <apex:outputField value="{!req.submitter__c}"/>  
+            </apex:column>
+              <apex:column headerValue="Current Owner" id="currowner">
+            <apex:outputField value="{!req.currentowner__c}"/>  
+            </apex:column>
+             <apex:column headerValue="Last Modified" id="lastmod">
+            <apex:outputField value="{!req.lastmodifieddate}"/>  
+            </apex:column>
+              
+            <apex:column >
+         
+
+<apex:commandLink id="theCommandLink" action="{!gotoPage}" immediate="true" value="View" rendered="{!req.editmode__c  != 1}">
+ <apex:param name="p1" value="{!req.name}" />
+
+</apex:commandLink>
+ </apex:column>
+  <apex:column >
+
+<apex:commandLink value="Edit" id="theCommandLink1" action="{!gotoPage1}" immediate="true" rendered="{!req.editmode__c = 1}"> 
+ <apex:param name="p1" value="{!req.name}" />
+</apex:commandlink>
+</apex:column>
+            
+          </apex:pageblockTable>
+        </apex:pageblock>
+           
+    </apex:form>
+</apex:page>
